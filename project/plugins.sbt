@@ -1,5 +1,9 @@
 addSbtPlugin("org.scala-lang.modules.scalajs" % "scalajs-sbt-plugin" % "0.5.5")
 
+addSbtPlugin("io.spray" % "sbt-revolver" % "0.7.2")
+
+//addSbtPlugin("com.lihaoyi" % "workbench" % "0.2.3")
+
 addSbtPlugin("ru.simplesys" % "merge-js" % "1.0.0-SNAPSHOT")
 
 //addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "0.9.0")
