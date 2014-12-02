@@ -1,4 +1,4 @@
-addSbtPlugin("org.scala-lang.modules.scalajs" % "scalajs-sbt-plugin" % "0.5.5")
+addSbtPlugin("org.scala-lang.modules.scalajs" % "scalajs-sbt-plugin" % "0.5.6")
 
 addSbtPlugin("io.spray" % "sbt-revolver" % "0.7.2")
 
@@ -21,3 +21,6 @@ scalacOptions := Seq(
   "-language:existentials",
   "-deprecation",
   "-unchecked")
+
+
+//offline := true

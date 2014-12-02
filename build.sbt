@@ -17,7 +17,7 @@ scalacOptions := Seq(
   "-language:higherKinds",
   "-language:implicitConversions",
   "-language:postfixOps",
-  "-language:existentials",
+  //"-language:existentials",
   "-deprecation",
   "-unchecked")
 
@@ -43,6 +43,7 @@ libraryDependencies ++= {
   val akkaHttpVersion = "0.11"
   val kamonVersion = "0.3.5"
   val sprayVersion = "1.3.2"
+  //val scalajsVersion = "0.5.6"
   //val scalaJSVersion = "0.6"
   Seq(
     "org.scala-lang.modules.scalajs" %% "scalajs-jasmine-test-framework" % scalaJSVersion % "test",
@@ -81,3 +82,5 @@ currentProjectDevelopedDirPath in MergeWebappConfig <<= (sourceDirectory in Comp
 Revolver.settings
 
 mainClass in Revolver.reStart := Some("ru.simplesys.server.Boot")
+
+//offline := true
