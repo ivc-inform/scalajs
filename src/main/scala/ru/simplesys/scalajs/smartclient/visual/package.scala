@@ -11,7 +11,7 @@ package object visual {
 
   implicit def intToPixelPointSpec(i: Int): PixelPointSpec = PixelPointSpec(i)
 
-  implicit def toSCToJSProps[T <: js.Object](toSC: ToSC[T]): js.Object = toSC.initBlock
+  //implicit def toSCToJSProps[T <: js.Object](toSC: ToSC[T]): js.Object = toSC.initBlock
 
   implicit class ToPointSpec(i: Int) {
     def p = PixelPointSpec(i)

@@ -5,7 +5,7 @@ package visual
 import ru.simplesys.macrojs._
 
 import scala.scalajs.js
-import scala.scalajs.js.Function0
+import scala.scalajs.js.{Dictionary, Function0}
 
 
 // coordinates and sizes specifications
@@ -76,12 +76,14 @@ object Canvas {
     @inline def setLeft(l: PointSpec) = c.setLeft(l)
     //def setRight(r: PointSpec) = c.setRight(r)
   }
+
+  def apply[T <: Canvas](props: CanvasProps[T]): Canvas = js.Dynamic.global.isc.Canvas.create(props.toJSLiteral).asInstanceOf[Canvas]
 }
 
-class ToCanvas(val props: JSProps) extends ToSC[Canvas] {
-
-  override def initBlock: js.Function0[Canvas] = () => js.Dynamic.global.isc.Canvas.create(props).asInstanceOf[Canvas]
-}
+//class ToCanvas(val props: JSProps) extends ToSC[Canvas] {
+//
+//  override def initBlock: js.Function0[Canvas] = () => js.Dynamic.global.isc.Canvas.create(props).asInstanceOf[Canvas]
+//}
 
 case class CanvasProps[T <: Canvas](left: PointSpec = 0 p,
                                     top: PointSpec = 0 p,
@@ -91,7 +93,11 @@ case class CanvasProps[T <: Canvas](left: PointSpec = 0 p,
                                     click: Option[js.ThisFunction0[T, Boolean]] = None) extends SCProps[Canvas, T] {
 
 
-  def toSC: ToCanvas = new ToCanvas(this.toJSLiteral)
+
+  //def toSC: ToCanvas = new ToCanvas(this.toJSLiteral)
   //override def toSC: ToSC[Canvas] = ???
+  //  def toSC: ToSC[T]
+  //  def toSC: ToSC[T]
+  override def create: Canvas = Canvas(this)
 }
 

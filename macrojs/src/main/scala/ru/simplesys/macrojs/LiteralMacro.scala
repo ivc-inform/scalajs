@@ -5,16 +5,16 @@ import scala.reflect.macros.whitebox.Context
 
 import scala.scalajs.js
 
-trait ToSC[+T <: js.Object] {
-  def props: js.Dictionary[js.Any]
-  def initBlock: js.Function0[T]
-  def create: T = initBlock()
-}
+//trait ToSC[+T <: js.Object] {
+//  def props: js.Dictionary[js.Any]
+//  def initBlock: js.Function0[T]
+//  def create: T = initBlock()
+//}
 
 
 trait SCProps[T <: js.Object, R <: T] {
-  def toSC: ToSC[T]
-  def create: T = toSC.create
+//  def toSC: ToSC[T]
+  def create: T
 }
 
 
@@ -67,12 +67,12 @@ object ToLiteralMacro {
                 val typeArg = targs.head
                 typeArg.baseType(typeOf[SCProps[_, _]].typeSymbol) match {
                   case TypeRef(_, _, _) => q"$decoded -> {val x: js.Array[js.Any] = t.$name.map((e: SCProps[_, _]) => e.toJSLiteral); x}"
-                  case NoType =>
-                    typeArg.baseType(typeOf[ToSC[_]].typeSymbol) match {
-                      case TypeRef(_, _, _) => q"$decoded -> {val x: js.Array[js.Any] = t.$name.map((e: ToSC[_]) => e.props); x}"
+                  case NoType => q"$decoded -> t.$name"
+                    //typeArg.baseType(typeOf[ToSC[_]].typeSymbol) match {
+                      //case TypeRef(_, _, _) => q"$decoded -> {val x: js.Array[js.Any] = t.$name.map((e: ToSC[_]) => e.props); x}"
                       // or we need to force conversion to js.Any?
-                      case NoType => q"$decoded -> t.$name"
-                    }
+                      //case NoType => q"$decoded -> t.$name"
+                    //}
                 }
 
               case NoType => q"$decoded -> {val x: js.Any = t.$name; x}"

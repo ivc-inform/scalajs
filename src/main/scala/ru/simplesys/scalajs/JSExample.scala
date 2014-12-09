@@ -14,8 +14,8 @@ object ScalaJSExample extends js.JSApp {
     paragraph.innerHTML = "<strong>It works!</strong>"
     dom.document.getElementById("playground").appendChild(paragraph)
 
-    val btn1 = SCButton(IButtonProps("Vasya Pupkin", CanvasProps(0, 0, 30 pct, 30 p)))
-    val btn2 = SCButton(IButtonProps("Vasya Pupkin2", CanvasProps(0, 0, 30 pct, 30 p)))
+    //val btn1 = SCButton(IButtonProps("Vasya Pupkin", CanvasProps(0, 0, 30 pct, 30 p)))
+    //val btn2 = SCButton(IButtonProps("Vasya Pupkin2", CanvasProps(0, 0, 30 pct, 30 p)))
 
 
 
