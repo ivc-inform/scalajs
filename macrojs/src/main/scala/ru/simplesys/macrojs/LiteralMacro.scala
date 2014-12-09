@@ -33,9 +33,19 @@ object ToLiteralMacro {
       val companion = tpe.typeSymbol.companion
 
 
+
+/*
       val fields = tpe.decls.collectFirst {
         case m: MethodSymbol if m.isPrimaryConstructor => m
       }.get.paramLists.head
+*/
+
+      //val fields = tpe.members.collect {case x: TermSymbol if x.isVal || x.isVar => x}
+
+      //here should be getters for vals and vars, incl inherited members
+      val fields = tpe.members.collect {case field if field.isMethod && field.asMethod.isGetter => field}
+      //println(fields)
+
 
       val (fProps, fSimple) = fields.partition {field =>
         field.typeSignature.baseType(typeOf[SCProps[_, _]].typeSymbol) match {
@@ -55,8 +65,6 @@ object ToLiteralMacro {
         val decoded = name.decodedName.toString
         val returnType = tpe.decl(name).typeSignature
 
-        //val x: js.Array[String] = ???
-        //x.map((s: String) => s)
         //weirdddd
         field.typeSignature.baseType(typeOf[Option[_]].typeSymbol) match {
           case TypeRef(_, _, _) =>
@@ -68,21 +76,12 @@ object ToLiteralMacro {
                 typeArg.baseType(typeOf[SCProps[_, _]].typeSymbol) match {
                   case TypeRef(_, _, _) => q"$decoded -> {val x: js.Array[js.Any] = t.$name.map((e: SCProps[_, _]) => e.toJSLiteral); x}"
                   case NoType => q"$decoded -> t.$name"
-                    //typeArg.baseType(typeOf[ToSC[_]].typeSymbol) match {
-                      //case TypeRef(_, _, _) => q"$decoded -> {val x: js.Array[js.Any] = t.$name.map((e: ToSC[_]) => e.props); x}"
-                      // or we need to force conversion to js.Any?
-                      //case NoType => q"$decoded -> t.$name"
-                    //}
                 }
 
               case NoType => q"$decoded -> {val x: js.Any = t.$name; x}"
 
           }
-//            q"$decoded -> {val x: js.Any = t.$name; x}"
-
         }
-
-
       }
 
       val simpleFieldsExpansion = if (simpleFields.nonEmpty)

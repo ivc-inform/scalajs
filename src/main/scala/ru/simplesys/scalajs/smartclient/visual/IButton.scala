@@ -17,11 +17,5 @@ object IButton {
 
 
 case class IButtonProps[T <: IButton](title: String, canvasProps: CanvasProps[T]) extends SCProps[IButton, T] {
-//  def toSC: ToIButton = new ToIButton(this.toJSLiteral)
-  //  def toSC: ToSC[T]
   override def create: IButton = IButton(this)
 }
-
-//class ToIButton(val props: js.Dictionary[js.Any]) extends ToSC[IButton] {
-//  override def initBlock: js.Function0[IButton] = () => js.Dynamic.global.isc.IButton.create(props).asInstanceOf[IButton]
-//}

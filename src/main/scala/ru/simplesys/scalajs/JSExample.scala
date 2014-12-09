@@ -21,8 +21,8 @@ object ScalaJSExample extends js.JSApp {
 
     val mainLayout = VLayoutProps[VLayout](
       js.Array(
-        SCButtonProps[SCButton](IButtonProps("Vasya Pupkin", CanvasProps(0, 0, 30 pct, 30 p))).create,
-        SCButtonProps[SCButton](IButtonProps("Vasya Pupkin2", CanvasProps(0, 0, 30 pct, 30 p))).create),
+        SCButtonProps("Vasya Pupkin", 30 pct, 30 p).create,
+        SCButtonProps("Vasya Pupkin2", 30 pct, 30 p).create),
       CanvasProps(0, 0, 100 pct, 100 pct, true)).create
 
 
