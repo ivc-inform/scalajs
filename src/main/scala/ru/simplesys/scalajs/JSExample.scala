@@ -2,6 +2,8 @@ package ru.simplesys.scalajs
 
 //package example
 
+import smartclient.visual.layouts.{VLayoutProps, VLayout, HLayoutProps, HLayout}
+
 import scala.scalajs.js
 import js.annotation.JSExport
 import org.scalajs.dom

@@ -1,6 +1,7 @@
 package ru.simplesys.scalajs
 package smartclient
 package visual
+package controls
 
 import scala.scalajs.js
 import ru.simplesys.macrojs._

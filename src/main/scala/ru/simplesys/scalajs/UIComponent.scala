@@ -1,6 +1,7 @@
 package ru.simplesys.scalajs
 
 import ru.simplesys.macrojs._
+import smartclient.visual.layouts.{VLayoutProps, VLayout}
 import smartclient.visual._
 
 import scala.scalajs.js

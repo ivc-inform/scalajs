@@ -4,6 +4,7 @@ package ru.simplesys.scalajs
 import scala.scalajs.js
 import ru.simplesys.macrojs._
 import smartclient.visual._
+import smartclient.visual.controls._
 
 trait SCButton extends IButton {
   var clickCount: Int = ???

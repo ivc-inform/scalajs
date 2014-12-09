@@ -3,9 +3,9 @@ package smartclient
 package visual
 
 import ru.simplesys.macrojs._
+import smartclient.nonvisual.common.SCClass
 
 import scala.scalajs.js
-import scala.scalajs.js.{Dictionary, Function0}
 
 
 // coordinates and sizes specifications
@@ -45,7 +45,7 @@ case object ShowSplitterResizeOther extends SplitterSetting
 case object NoSplitter extends SplitterSetting
 //Splitter settings
 
-trait Canvas extends js.Object {
+trait Canvas extends SCClass {
   def autoDraw: Boolean = ???
 
   //def top: js.Number = ???
@@ -117,12 +117,12 @@ object CanvasProps {
             autoDraw: Boolean = false,
             click: Option[js.ThisFunction0[T, Boolean]] = None): CanvasProps[T] = {
 
-    val (showBar, resizeTarget) = splitterSetting match {
+    val (showResizeBar, resizeBarTarget) = splitterSetting match {
       case ShowSplitter => (true, null)
       case ShowSplitterResizeOther => (true, "next")
       case NoSplitter => (false, null)
     }
 
-    new CanvasProps(left, top, width, height, showBar, resizeTarget, autoDraw, click)
+    new CanvasProps(left, top, width, height, showResizeBar, resizeBarTarget, autoDraw, click)
   }
 }

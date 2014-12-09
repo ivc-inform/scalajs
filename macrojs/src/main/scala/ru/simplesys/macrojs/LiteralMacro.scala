@@ -5,17 +5,8 @@ import scala.reflect.macros.whitebox.Context
 
 import scala.scalajs.js
 
-//trait ToSC[+T <: js.Object] {
-//  def props: js.Dictionary[js.Any]
-//  def initBlock: js.Function0[T]
-//  def create: T = initBlock()
-//}
 
-
-trait SCProps[T <: js.Object, R <: T] {
-//  def toSC: ToSC[T]
-  //def create[X <: R]: X
-}
+trait SCProps[T <: js.Object, R <: T]
 
 trait ToLiteralMacro[T <: SCProps[_, _]] {
   def toLiteralMacro(t: T): js.Dictionary[js.Any]
@@ -32,14 +23,6 @@ object ToLiteralMacro {
       val companion = tpe.typeSymbol.companion
 
 
-
-/*
-      val fields = tpe.decls.collectFirst {
-        case m: MethodSymbol if m.isPrimaryConstructor => m
-      }.get.paramLists.head
-*/
-
-      //val fields = tpe.members.collect {case x: TermSymbol if x.isVal || x.isVar => x}
 
       //here should be getters for vals and vars, incl inherited members
       val fields = tpe.members.collect {case field if field.isMethod && field.asMethod.isGetter => field}

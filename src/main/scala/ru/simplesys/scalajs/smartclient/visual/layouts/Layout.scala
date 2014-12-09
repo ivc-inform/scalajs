@@ -1,9 +1,12 @@
 package ru.simplesys.scalajs
 package smartclient
 package visual
+package layouts
+
+import ru.simplesys.macrojs._
+import visual._
 
 import scala.scalajs.js
-import ru.simplesys.macrojs._
 
 
 trait Layout extends Canvas {
