@@ -1,16 +1,29 @@
 package ru.simplesys.scalajs
 
-import smartclient.visual._
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{JSName, JSExport, JSExportAll}
 import ru.simplesys.macrojs._
-
-
+import smartclient.visual._
 
 trait SCButton extends IButton {
   var clickCount: Int = ???
 }
+
+class ToSCButton(val props: js.Dictionary[js.Any]) extends ToSC[SCButton] {
+  override def initBlock: js.Function0[SCButton] = () => {
+    val l = props.asInstanceOf[js.Dynamic]
+    js.Dictionary
+    l.clickCount = 0
+    l.click = SCButton.click
+    js.Dynamic.global.isc.IButton.create(l).asInstanceOf[SCButton]
+  }
+}
+
+
+case class SCButtonProps[T <: SCButton](btnProps: IButtonProps[T]) extends SCProps[SCButton, T] {
+  override def toSC: ToSCButton = new ToSCButton(this.toJSLiteral)
+}
+
 
 object SCButton {
   val click: js.ThisFunction0[SCButton, js.Boolean] = {(curr: SCButton) =>
@@ -20,15 +33,4 @@ object SCButton {
     println(s"${getTitle()}")
     true
   }
-
-  def apply(props: IButtonProps[IButton]): () => SCButton = () => {
-    //import js.Dynamic.{ literal => lit }
-    import js.JSConverters._
-    val l = props.toJSLiteral.asInstanceOf[js.Dynamic]
-    js.Dictionary
-    l.clickCount = 0
-    l.click = click
-    js.Dynamic.global.isc.IButton.create(l).asInstanceOf[SCButton]
-  }
 }
-

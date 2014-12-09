@@ -1,8 +1,9 @@
 package ru.simplesys.scalajs.smartclient
 package visual
 
-import scala.scalajs.js
+import ru.simplesys.macrojs.SCProps
 
+import scala.scalajs.js
 
 
 

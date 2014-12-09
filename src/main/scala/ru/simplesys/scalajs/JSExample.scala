@@ -14,9 +14,22 @@ object ScalaJSExample extends js.JSApp {
     paragraph.innerHTML = "<strong>It works!</strong>"
     dom.document.getElementById("playground").appendChild(paragraph)
 
-    //val btn1 = SCButton(IButtonProps("Vasya Pupkin", CanvasProps(None, None, 30 pct, 30 p)))
-    //val btn2 = SCButton(IButtonProps("Vasya Pupkin2", CanvasProps(None, None, 30 pct, 30 p)))
-    val mainLayout = VLayout(VLayoutProps(js.Array(SCButton(IButtonProps("Vasya Pupkin", CanvasProps(None, None, 30 pct, 30 p))), SCButton(IButtonProps("Vasya Pupkin2", CanvasProps(None, None, 30 pct, 30 p)))), CanvasProps(None, None, 100 pct, 100 pct, true)))
+    val btn1 = SCButton(IButtonProps("Vasya Pupkin", CanvasProps(0, 0, 30 pct, 30 p)))
+    val btn2 = SCButton(IButtonProps("Vasya Pupkin2", CanvasProps(0, 0, 30 pct, 30 p)))
+
+
+
+    val mainLayout = VLayoutProps[VLayout](
+      js.Array(
+        SCButtonProps[SCButton](IButtonProps("Vasya Pupkin", CanvasProps(0, 0, 30 pct, 30 p))).create,
+        SCButtonProps[SCButton](IButtonProps("Vasya Pupkin2", CanvasProps(0, 0, 30 pct, 30 p))).create),
+      CanvasProps(0, 0, 100 pct, 100 pct, true)).create
+
+
+    //val mainLayoutProps = mainLayout.toSC
+    //mainLayoutProps.props.foreach(println(_))
+    //mainLayout.members.foreach(x => println(x.props))
+    //mainLayoutProps.create
 
     //println(btn1.toString)
     //println(btn1.getTitle())

@@ -5,48 +5,30 @@ import scala.reflect.macros.whitebox.Context
 
 import scala.scalajs.js
 
-trait SCProps
+trait ToSC[+T <: js.Object] {
+  def props: js.Dictionary[js.Any]
+  def initBlock: js.Function0[T]
+  def create: T = initBlock()
+}
 
-trait ToLiteralMacro[T <: SCProps] {
+
+trait SCProps[T <: js.Object, R <: T] {
+  def toSC: ToSC[T]
+  def create: T = toSC.create
+}
+
+
+trait ToLiteralMacro[T <: SCProps[_, _]] {
   def toLiteralMacro(t: T): js.Dictionary[js.Any]
 }
 
-//object ToLiteralMacro {
-//  implicit def materializeToLiteralMacro[T <: SCProps]: ToLiteralMacro[T] = macro materializeToLiteralMacroImpl[T]
-//
-//  def materializeToLiteralMacroImpl[T <: SCProps : c.WeakTypeTag](c: Context): c.Expr[ToLiteralMacro[T]] = {
-//    import c.universe._
-//    val tpe = weakTypeOf[T]
-//
-//    val toMapParams = tpe.members.map {s =>
-//      val name = s.name.toTermName
-//      val decodedName = name.decodedName.toString
-//      if (s.typeSignature.baseClasses.contains(typeOf[Option[_]].typeSymbol.asClass))
-//        q"$decodedName -> t.$name.orUndefined"
-//      else
-//        q"$decodedName -> t.$name"
-//    }
-//    val res = c.Expr[ToLiteralMacro[T]] { q"""
-//      new ToLiteralMacro[$tpe] {
-//        def toLiteralMacro(t: $tpe): js.Dynamic = {
-//            import js.JSConverters._
-//            //import ImplicitConversions._
-//            scala.scalajs.js.Dynamic.literal (..$toMapParams)
-//          }
-//      }
-//    """ }
-////    println(res)
-//    res
-//  }
-//}
-
-
 object ToLiteralMacro {
-  implicit def materializeToLiteralMacro[T <: SCProps]: ToLiteralMacro[T] = macro materializeToLiteralMacroImpl[T]
+  implicit def materializeToLiteralMacro[T <: SCProps[_, _]]: ToLiteralMacro[T] = macro materializeToLiteralMacroImpl[T]
 
-  def materializeToLiteralMacroImpl[T <: SCProps : c.WeakTypeTag](c: Context): c.Expr[ToLiteralMacro[T]] = {
+  def materializeToLiteralMacroImpl[T <: SCProps[_, _] : c.WeakTypeTag](c: Context): c.Expr[ToLiteralMacro[T]] = {
     import c.universe._
     val tpe = weakTypeOf[T]
+    //println(tpe)
     if (!tpe.typeSymbol.isAbstract) {
       val companion = tpe.typeSymbol.companion
 
@@ -56,7 +38,7 @@ object ToLiteralMacro {
       }.get.paramLists.head
 
       val (fProps, fSimple) = fields.partition {field =>
-        field.typeSignature.baseType(typeOf[SCProps].typeSymbol) match {
+        field.typeSignature.baseType(typeOf[SCProps[_, _]].typeSymbol) match {
           case TypeRef(_, _, _) => true
           case NoType => false
         }
@@ -73,15 +55,47 @@ object ToLiteralMacro {
         val decoded = name.decodedName.toString
         val returnType = tpe.decl(name).typeSignature
 
-
+        //val x: js.Array[String] = ???
+        //x.map((s: String) => s)
+        //weirdddd
         field.typeSignature.baseType(typeOf[Option[_]].typeSymbol) match {
           case TypeRef(_, _, _) =>
             q"$decoded -> {val x: js.Any = t.$name.orUndefined; x}"
-          case NoType => q"$decoded -> {val x: js.Any = t.$name; x}"
+          case NoType =>
+            field.typeSignature.baseType(typeOf[js.Array[_]].typeSymbol) match {
+              case TypeRef(_, _, targs) =>
+                val typeArg = targs.head
+                typeArg.baseType(typeOf[SCProps[_, _]].typeSymbol) match {
+                  case TypeRef(_, _, _) => q"$decoded -> {val x: js.Array[js.Any] = t.$name.map((e: SCProps[_, _]) => e.toJSLiteral); x}"
+                  case NoType =>
+                    typeArg.baseType(typeOf[ToSC[_]].typeSymbol) match {
+                      case TypeRef(_, _, _) => q"$decoded -> {val x: js.Array[js.Any] = t.$name.map((e: ToSC[_]) => e.props); x}"
+                      // or we need to force conversion to js.Any?
+                      case NoType => q"$decoded -> t.$name"
+                    }
+                }
+
+              case NoType => q"$decoded -> {val x: js.Any = t.$name; x}"
+
+          }
+//            q"$decoded -> {val x: js.Any = t.$name; x}"
 
         }
+
+
       }
 
+      val simpleFieldsExpansion = if (simpleFields.nonEmpty)
+        q"val simpleFields: js.Dictionary[js.Any] = js.Dictionary(..$simpleFields); simpleFields.foreach {kv => res.update(kv._1, kv._2)}" else q""
+
+      val complexFieldsExpansion = if (allProps.nonEmpty)
+        q"""val lb: js.Array[js.Dictionary[js.Any]] = js.Array(..$allProps)
+            lb.foreach {dict =>
+              dict.foreach {kv =>
+                res.update(kv._1, kv._2)
+              }
+            }"""
+      else q""
 
       val res = c.Expr[ToLiteralMacro[T]] { q"""
       new ToLiteralMacro[$tpe] {
@@ -89,21 +103,15 @@ object ToLiteralMacro {
         import js.JSConverters._
 
         def toLiteralMacro(t: $tpe): js.Dictionary[js.Any] = {
-            val lb: js.Array[js.Dictionary[js.Any]] = js.Array(..$allProps)
             val res = js.Dictionary.empty[js.Any]
-            lb.foreach {dict =>
-              dict.foreach {kv =>
-                res.update(kv._1, kv._2)
-              }
-            }
-
-            js.Dictionary(..$simpleFields).foreach {kv => res.update(kv._1, kv._2)}
+            $complexFieldsExpansion
+            $simpleFieldsExpansion
             res
         }
       }
     """
       }
-//      println(res)
+      println(res)
       res
     } else c.abort(c.enclosingPosition, "this is abstract class, it cannot be converted to JSLiteral")
   }

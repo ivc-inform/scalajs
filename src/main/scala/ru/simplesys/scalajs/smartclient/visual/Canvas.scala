@@ -5,6 +5,7 @@ package visual
 import ru.simplesys.macrojs._
 
 import scala.scalajs.js
+import scala.scalajs.js.Function0
 
 
 // coordinates and sizes specifications
@@ -75,27 +76,22 @@ object Canvas {
     @inline def setLeft(l: PointSpec) = c.setLeft(l)
     //def setRight(r: PointSpec) = c.setRight(r)
   }
-
-  def apply(props: CanvasProps[Canvas]): () => Canvas = () => {
-    val jsLit: js.Dictionary[js.Any] = props.toJSLiteral
-    //val x: js.Dictionary[js.Any] = jsLit.update( )++(jsLit)
-    js.Dynamic.global.isc.Canvas.create(jsLit).asInstanceOf[Canvas]
-  }
 }
 
+class ToCanvas(val props: JSProps) extends ToSC[Canvas] {
 
-//trait CanvasProps[T <: Canvas] extends SCProps {
-//  def left: PointSpec
-//  def top: PointSpec
-//  def width: SizeSpec
-//  def height: SizeSpec
-//  def autoDraw: Boolean
-//  def click: Option[js.ThisFunction0[T, Boolean]]
-//}
+  override def initBlock: js.Function0[Canvas] = () => js.Dynamic.global.isc.Canvas.create(props).asInstanceOf[Canvas]
+}
 
-case class CanvasProps[T <: Canvas](left: Option[PointSpec],
-                                    top: Option[PointSpec],
+case class CanvasProps[T <: Canvas](left: PointSpec = 0 p,
+                                    top: PointSpec = 0 p,
                                     width: SizeSpec,
                                     height: SizeSpec,
                                     autoDraw: Boolean = false,
-                                    click: Option[js.ThisFunction0[T, Boolean]] = None) extends SCProps
+                                    click: Option[js.ThisFunction0[T, Boolean]] = None) extends SCProps[Canvas, T] {
+
+
+  def toSC: ToCanvas = new ToCanvas(this.toJSLiteral)
+  //override def toSC: ToSC[Canvas] = ???
+}
+
