@@ -17,7 +17,7 @@ scalacOptions := Seq(
   "-language:higherKinds",
   "-language:implicitConversions",
   "-language:postfixOps",
-  "-Xlog-implicits",
+  //"-Xlog-implicits",
   //"-language:existentials",
   "-deprecation",
   "-unchecked")

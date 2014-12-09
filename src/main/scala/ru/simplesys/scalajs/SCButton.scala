@@ -10,7 +10,7 @@ trait SCButton extends IButton {
 }
 
 object SCButton {
-  def apply[T <: SCButton](props: SCButtonProps[T]): SCButton = {
+  def apply(props: SCButtonProps[SCButton]): SCButton = {
         //val l = props.toJSLiteral.asInstanceOf[js.Dynamic]
         js.Dynamic.global.isc.IButton.create(props.toJSLiteral).asInstanceOf[SCButton]
   }
@@ -19,7 +19,7 @@ object SCButton {
 case class SCButtonProps[T <: SCButton] private (btnProps: IButtonProps[T]) extends SCProps[SCButton, T] {
   val clickCount: Int = 0
 
-  override def create: SCButton = SCButton(this)
+  //override def create: SCButton = SCButton(this)
 }
 
 object SCButtonProps {

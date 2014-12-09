@@ -20,34 +20,35 @@ trait LayoutPropsAbs[T <: Layout] extends SCProps[Layout, T] {
   //def vertical: Boolean
   def members: js.Array[Canvas]
   def canvasProps: CanvasProps[T]
+
 }
 
 
 object Layout {
-  def apply[T <: Layout](props: LayoutProps[T]): Layout = js.Dynamic.global.isc.Layout.create(props.toJSLiteral).asInstanceOf[Layout]
+  def apply(props: LayoutProps[Layout]): Layout = js.Dynamic.global.isc.Layout.create(props.toJSLiteral).asInstanceOf[Layout]
 }
 
 case class LayoutProps[T <: Layout](vertical: Boolean, members: js.Array[Canvas], canvasProps: CanvasProps[T]) extends LayoutPropsAbs[T] {
-  override def create: Layout = Layout(this)
+  //override def create: Layout = Layout(this)
 }
 
 trait HLayout extends Layout
 
 object HLayout {
-  def apply[T <: HLayout](props: HLayoutProps[T]): HLayout = js.Dynamic.global.isc.HLayout.create(props.toJSLiteral).asInstanceOf[HLayout]
+  def apply(props: HLayoutProps[HLayout]): HLayout = js.Dynamic.global.isc.HLayout.create(props.toJSLiteral).asInstanceOf[HLayout]
 }
 
 case class HLayoutProps[T <: HLayout](members: js.Array[Canvas], canvasProps: CanvasProps[T]) extends LayoutPropsAbs[T] {
-  override def create: HLayout = HLayout(this)
+  //override def create: HLayout = HLayout(this)
 }
 
 trait VLayout extends Layout
 
 object VLayout {
-  def apply[T <: VLayout](props: VLayoutProps[T]): VLayout = js.Dynamic.global.isc.VLayout.create(props.toJSLiteral).asInstanceOf[VLayout]
+  def apply(props: VLayoutProps[VLayout]): VLayout = js.Dynamic.global.isc.VLayout.create(props.toJSLiteral).asInstanceOf[VLayout]
 }
 
 
 case class VLayoutProps[T <: VLayout](members: js.Array[Canvas], canvasProps: CanvasProps[T]) extends LayoutPropsAbs[T] {
-  override def create: VLayout = VLayout(this)
+  //override def create: VLayout = VLayout(this)
 }

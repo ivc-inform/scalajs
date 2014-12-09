@@ -38,6 +38,12 @@ case object WildCard extends SizeSpec {
 }
 // coordinates and sizes specifications
 
+//Splitter settings
+sealed trait SplitterSetting
+case object ShowSplitter extends SplitterSetting
+case object ShowSplitterResizeOther extends SplitterSetting
+case object NoSplitter extends SplitterSetting
+//Splitter settings
 
 trait Canvas extends js.Object {
   def autoDraw: Boolean = ???
@@ -66,6 +72,10 @@ trait Canvas extends js.Object {
   def setBottom(b: Int): Unit = ???
 
   def click(): Boolean = ???
+
+  def showResizeBar: Boolean = ???
+  def setShowResizeBar(b: Boolean): Unit = ???
+  protected def resizeBarTarget: String = ???
 }
 
 object Canvas {
@@ -75,17 +85,44 @@ object Canvas {
     @inline def setTop(t: PointSpec) = c.setTop(t)
     @inline def setLeft(l: PointSpec) = c.setLeft(l)
     //def setRight(r: PointSpec) = c.setRight(r)
+    @inline def getSplitterSetting: SplitterSetting = {
+      if (c.showResizeBar) {
+        if (c.resizeBarTarget == "next") ShowSplitterResizeOther
+        else ShowSplitter
+      }
+      else NoSplitter
+    }
   }
 
-  def apply[T <: Canvas](props: CanvasProps[T]): Canvas = js.Dynamic.global.isc.Canvas.create(props.toJSLiteral).asInstanceOf[Canvas]
+  def apply(props: CanvasProps[Canvas]): Canvas = js.Dynamic.global.isc.Canvas.create(props.toJSLiteral).asInstanceOf[Canvas]
 }
 
-case class CanvasProps[T <: Canvas](left: PointSpec = 0 p,
-                                    top: PointSpec = 0 p,
-                                    width: SizeSpec,
-                                    height: SizeSpec,
-                                    autoDraw: Boolean = false,
-                                    click: Option[js.ThisFunction0[T, Boolean]] = None) extends SCProps[Canvas, T] {
-  override def create: Canvas = Canvas(this)
+class CanvasProps[T <: Canvas] private (val left: PointSpec,
+                                        val top: PointSpec,
+                                        val width: SizeSpec,
+                                        val height: SizeSpec,
+                                        val showResizeBar: Boolean,
+                                        val resizeBarTarget: String,
+                                        val autoDraw: Boolean,
+                                        val click: Option[js.ThisFunction0[T, Boolean]]) extends SCProps[Canvas, T] {
+  //override def create: Canvas = Canvas(this)
 }
 
+object CanvasProps {
+  def apply[T <: Canvas](left: PointSpec = 0 p,
+            top: PointSpec = 0 p,
+            width: SizeSpec,
+            height: SizeSpec,
+            splitterSetting: SplitterSetting = NoSplitter,
+            autoDraw: Boolean = false,
+            click: Option[js.ThisFunction0[T, Boolean]] = None): CanvasProps[T] = {
+
+    val (showBar, resizeTarget) = splitterSetting match {
+      case ShowSplitter => (true, null)
+      case ShowSplitterResizeOther => (true, "next")
+      case NoSplitter => (false, null)
+    }
+
+    new CanvasProps(left, top, width, height, showBar, resizeTarget, autoDraw, click)
+  }
+}

@@ -14,9 +14,8 @@ import scala.scalajs.js
 
 trait SCProps[T <: js.Object, R <: T] {
 //  def toSC: ToSC[T]
-  def create: T
+  //def create[X <: R]: X
 }
-
 
 trait ToLiteralMacro[T <: SCProps[_, _]] {
   def toLiteralMacro(t: T): js.Dictionary[js.Any]
@@ -110,7 +109,7 @@ object ToLiteralMacro {
       }
     """
       }
-      println(res)
+ //     println(res)
       res
     } else c.abort(c.enclosingPosition, "this is abstract class, it cannot be converted to JSLiteral")
   }

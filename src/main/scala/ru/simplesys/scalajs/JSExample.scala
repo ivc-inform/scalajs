@@ -19,11 +19,16 @@ object ScalaJSExample extends js.JSApp {
 
 
 
-    val mainLayout = VLayoutProps[VLayout](
+    val mainLayout = HLayout(HLayoutProps(
       js.Array(
-        SCButtonProps("Vasya Pupkin", 30 pct, 30 p).create,
-        SCButtonProps("Vasya Pupkin2", 30 pct, 30 p).create),
-      CanvasProps(0, 0, 100 pct, 100 pct, true)).create
+        VLayout(VLayoutProps(members = js.Array(
+          SCButton(SCButtonProps("Vasya Pupkin", 30 pct, 30 p))/*.create*/,
+          SCButton(SCButtonProps("Vasya Pupkin2", 30 pct, 30 p))/*.create*/),
+        CanvasProps(width = 35 pct, height = 100 pct, splitterSetting = ShowSplitterResizeOther)
+        )),
+        VLayout(VLayoutProps(members = js.Array(), CanvasProps(width = WildCard, height = 100 pct, splitterSetting = NoSplitter)))
+      ),
+      CanvasProps(0, 0, 100 pct, 100 pct, NoSplitter, true)))
 
 
     //val mainLayoutProps = mainLayout.toSC
