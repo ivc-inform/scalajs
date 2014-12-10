@@ -6,6 +6,6 @@ package grids
 import smartclient.visual.common.DataBoundComponent
 import smartclient.visual.layouts.VLayout
 
-class ListGrid extends VLayout with DataBoundComponent {
+trait ListGrid extends VLayout with DataBoundComponent {
 
 }
