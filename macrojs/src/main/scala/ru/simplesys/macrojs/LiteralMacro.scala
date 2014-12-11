@@ -6,26 +6,28 @@ import scala.reflect.macros.whitebox.Context
 import scala.scalajs.js
 
 
-trait SCProps[T <: js.Object, R <: T]
+trait SCProps[+T <: js.Object, +R <: T]
 
-trait ToLiteralMacro[T <: SCProps[_, _]] {
-  def toLiteralMacro(t: T): js.Dictionary[js.Any]
+trait ToLiteralMacro[P <: SCProps[_, _]] {
+  def toLiteralMacro(t: P): js.Dictionary[js.Any]
 }
 
 object ToLiteralMacro {
-  implicit def materializeToLiteralMacro[T <: SCProps[_, _]]: ToLiteralMacro[T] = macro materializeToLiteralMacroImpl[T]
+  implicit def materializeToLiteralMacro[P <: SCProps[_, _]]: ToLiteralMacro[P] = macro materializeToLiteralMacroImpl[P]
 
-  def materializeToLiteralMacroImpl[T <: SCProps[_, _] : c.WeakTypeTag](c: Context): c.Expr[ToLiteralMacro[T]] = {
+  def materializeToLiteralMacroImpl[P <: SCProps[_, _] : c.WeakTypeTag](c: Context): c.Expr[ToLiteralMacro[P]] = {
     import c.universe._
-    val tpe = weakTypeOf[T]
+    val tpeSCProps = weakTypeOf[P]
+  //  val tpeLower = weakTypeOf[T]
+  //  val tpeUpper = weakTypeOf[R]
     //println(tpe)
-    if (!tpe.typeSymbol.isAbstract) {
-      val companion = tpe.typeSymbol.companion
+    if (!tpeSCProps.typeSymbol.isAbstract) {
+      val companion = tpeSCProps.typeSymbol.companion
 
 
 
       //here should be getters for vals and vars, incl inherited members
-      val fields = tpe.members.collect {case field if field.isMethod && field.asMethod.isGetter => field}
+      val fields = tpeSCProps.members.collect {case field if field.isMethod && field.asMethod.isGetter => field}
       //println(fields)
 
 
@@ -45,7 +47,7 @@ object ToLiteralMacro {
       val simpleFields = fSimple.map { field =>
         val name = field.name.toTermName
         val decoded = name.decodedName.toString
-        val returnType = tpe.decl(name).typeSignature
+        val returnType = tpeSCProps.decl(name).typeSignature
 
         //weirdddd
         field.typeSignature.baseType(typeOf[Option[_]].typeSymbol) match {
@@ -78,12 +80,13 @@ object ToLiteralMacro {
             }"""
       else q""
 
-      val res = c.Expr[ToLiteralMacro[T]] { q"""
-      new ToLiteralMacro[$tpe] {
+      //$tpeLower, $tpeUpper,
+      val res = c.Expr[ToLiteralMacro[P]] { q"""
+      new ToLiteralMacro[$tpeSCProps] {
         import scala.scalajs.js
         import js.JSConverters._
 
-        def toLiteralMacro(t: $tpe): js.Dictionary[js.Any] = {
+        def toLiteralMacro(t: $tpeSCProps): js.Dictionary[js.Any] = {
             val res = js.Dictionary.empty[js.Any]
             $complexFieldsExpansion
             $simpleFieldsExpansion

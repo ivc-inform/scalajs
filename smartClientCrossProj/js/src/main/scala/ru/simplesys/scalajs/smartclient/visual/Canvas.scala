@@ -78,7 +78,7 @@ trait Canvas extends SCClass {
   protected def resizeBarTarget: String = js.native
 }
 
-object Canvas {
+object Canvas extends SCApply[Canvas, CanvasProps[Canvas]] {
   implicit class ToCanvasExt(c: Canvas) {
     @inline def setHeight(h: SizeSpec) = c.setHeight(h)
     @inline def setWidth(w: SizeSpec) = c.setWidth(w)
@@ -93,8 +93,6 @@ object Canvas {
       else NoSplitter
     }
   }
-
-  def apply(props: CanvasProps[Canvas]): Canvas = js.Dynamic.global.isc.Canvas.create(props.toJSLiteral).asInstanceOf[Canvas]
 }
 
 class CanvasProps[T <: Canvas] private (val left: PointSpec,

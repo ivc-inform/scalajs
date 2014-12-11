@@ -19,7 +19,7 @@ trait Layout extends Canvas {
 
 
 
-trait LayoutPropsAbs[T <: Layout] extends SCProps[Layout, T] {
+trait LayoutPropsAbs[T <: Layout] extends SCProps[T, T] {
   //def vertical: Boolean
   def members: js.Array[Canvas]
   def canvasProps: CanvasProps[T]
@@ -27,9 +27,7 @@ trait LayoutPropsAbs[T <: Layout] extends SCProps[Layout, T] {
 }
 
 
-object Layout {
-  def apply(props: LayoutProps[Layout]): Layout = js.Dynamic.global.isc.Layout.create(props.toJSLiteral).asInstanceOf[Layout]
-}
+object Layout extends SCApply[Layout, LayoutProps[Layout]]
 
 case class LayoutProps[T <: Layout](vertical: Boolean, members: js.Array[Canvas], canvasProps: CanvasProps[T]) extends LayoutPropsAbs[T] {
   //override def create: Layout = Layout(this)
@@ -37,9 +35,7 @@ case class LayoutProps[T <: Layout](vertical: Boolean, members: js.Array[Canvas]
 
 trait HLayout extends Layout
 
-object HLayout {
-  def apply(props: HLayoutProps[HLayout]): HLayout = js.Dynamic.global.isc.HLayout.create(props.toJSLiteral).asInstanceOf[HLayout]
-}
+object HLayout extends SCApply[HLayout, HLayoutProps[HLayout]]
 
 case class HLayoutProps[T <: HLayout](members: js.Array[Canvas], canvasProps: CanvasProps[T]) extends LayoutPropsAbs[T] {
   //override def create: HLayout = HLayout(this)
@@ -47,9 +43,7 @@ case class HLayoutProps[T <: HLayout](members: js.Array[Canvas], canvasProps: Ca
 
 trait VLayout extends Layout
 
-object VLayout {
-  def apply(props: VLayoutProps[VLayout]): VLayout = js.Dynamic.global.isc.VLayout.create(props.toJSLiteral).asInstanceOf[VLayout]
-}
+object VLayout extends SCApply[VLayout, VLayoutProps[VLayout]]
 
 
 case class VLayoutProps[T <: VLayout](members: js.Array[Canvas], canvasProps: CanvasProps[T]) extends LayoutPropsAbs[T] {

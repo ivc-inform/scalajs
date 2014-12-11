@@ -1,6 +1,8 @@
 package ru.simplesys.scalajs
 
 
+import ru.simplesys.scalajs.smartclient.SCApply
+
 import scala.scalajs.js
 import ru.simplesys.macrojs._
 import smartclient.visual._
@@ -10,17 +12,13 @@ trait SCButton extends IButton {
   var clickCount: Int = js.native
 }
 
-object SCButton {
-  def apply(props: SCButtonProps[SCButton]): SCButton = {
-        //val l = props.toJSLiteral.asInstanceOf[js.Dynamic]
-        js.Dynamic.global.isc.IButton.create(props.toJSLiteral).asInstanceOf[SCButton]
-  }
-}
+object SCButton extends SCApply[SCButton, SCButtonProps[SCButton]](Some("IButton"))
 
 case class SCButtonProps[T <: SCButton] private (btnProps: IButtonProps[T]) extends SCProps[SCButton, T] {
   val clickCount: Int = 0
 
-  //override def create: SCButton = SCButton(this)
+
+
 }
 
 object SCButtonProps {

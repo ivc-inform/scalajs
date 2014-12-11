@@ -52,6 +52,7 @@ lazy val smartClientCrossProj = crossProject.
     }):_*
   ).
   jsSettings(mergeWebappSettings ++ Seq(
+    //scalacOptions += "-Xlog-implicits",
     persistLauncher := true,
     mergeMapping in MergeWebappConfig := Seq(
       ("com.simplesys", "smartclient-js") -> Seq(

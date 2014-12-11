@@ -12,9 +12,7 @@ trait IButton extends Canvas {
   def setTitle(s: String): Unit = js.native
 }
 
-object IButton {
-  def apply(props: IButtonProps[IButton]): IButton = js.Dynamic.global.isc.IButton.create(props.toJSLiteral).asInstanceOf[IButton]
-}
+object IButton extends SCApply[IButton, IButtonProps[IButton]]
 
 
 case class IButtonProps[T <: IButton](title: String, canvasProps: CanvasProps[T]) extends SCProps[IButton, T] {

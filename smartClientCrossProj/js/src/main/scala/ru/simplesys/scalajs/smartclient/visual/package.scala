@@ -18,8 +18,4 @@ package object visual {
     // % doesnt work. Why?
     def pct = PctPointSpec(i)
   }
-
-  implicit class ToJSLiteral[T <: SCProps[_, _] : ToLiteralMacro](p: T) {
-    def toJSLiteral: js.Dictionary[js.Any] = implicitly[ToLiteralMacro[T]].toLiteralMacro(p)
-  }
 }
