@@ -7,9 +7,9 @@ import scala.scalajs.js
 import ru.simplesys.macrojs._
 
 trait IButton extends Canvas {
-  //def title: String = ???
-  def getTitle(): String = ???
-  def setTitle(s: String): Unit = ???
+  //def title: String = js.native
+  def getTitle(): String = js.native
+  def setTitle(s: String): Unit = js.native
 }
 
 object IButton {

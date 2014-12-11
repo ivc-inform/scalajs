@@ -46,36 +46,36 @@ case object NoSplitter extends SplitterSetting
 //Splitter settings
 
 trait Canvas extends SCClass {
-  def autoDraw: Boolean = ???
+  def autoDraw: Boolean = js.native
 
-  //def top: js.Number = ???
-  def getTop(): Int = ???
-  protected def setTop(t: js.Any): Unit = ???
+  //def top: js.Number = js.native
+  def getTop(): Int = js.native
+  protected def setTop(t: js.Any): Unit = js.native
 
-  //def left: js.Number = ???
-  def getLeft(): Int = ???
-  protected def setLeft(l: js.Any): Unit = ???
+  //def left: js.Number = js.native
+  def getLeft(): Int = js.native
+  protected def setLeft(l: js.Any): Unit = js.native
 
-  //def height: js.Number = ???
-  def getHeight(): Int = ???
-  protected def setHeight(h: js.Any) = ??? //Number Or String
+  //def height: js.Number = js.native
+  def getHeight(): Int = js.native
+  protected def setHeight(h: js.Any): Unit = js.native //Number Or String
 
-  //def width: js.Number = ???
-  def getWidth(): Int = ???
-  protected def setWidth(w: js.Any): Unit = ??? //Number Or String
+  //def width: js.Number = js.native
+  def getWidth(): Int = js.native
+  protected def setWidth(w: js.Any): Unit = js.native //Number Or String
 
-  def getRight(): Int = ???
-  def setRight(r: Int): Unit = ??? //Number Or String
-  //protected def setRight(r: js.Any): Unit = ??? //Number Or String
+  def getRight(): Int = js.native
+  def setRight(r: Int): Unit = js.native //Number Or String
+  //protected def setRight(r: js.Any): Unit = js.native //Number Or String
 
-  def getBottom(): Int = ???
-  def setBottom(b: Int): Unit = ???
+  def getBottom(): Int = js.native
+  def setBottom(b: Int): Unit = js.native
 
-  def click(): Boolean = ???
+  def click(): Boolean = js.native
 
-  def showResizeBar: Boolean = ???
-  def setShowResizeBar(b: Boolean): Unit = ???
-  protected def resizeBarTarget: String = ???
+  def showResizeBar: Boolean = js.native
+  def setShowResizeBar(b: Boolean): Unit = js.native
+  protected def resizeBarTarget: String = js.native
 }
 
 object Canvas {

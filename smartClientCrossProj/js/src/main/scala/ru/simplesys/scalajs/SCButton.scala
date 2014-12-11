@@ -7,7 +7,7 @@ import smartclient.visual._
 import smartclient.visual.controls._
 
 trait SCButton extends IButton {
-  var clickCount: Int = ???
+  var clickCount: Int = js.native
 }
 
 object SCButton {

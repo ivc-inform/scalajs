@@ -43,7 +43,7 @@ trait DemoService extends HttpService {
         complete(index)
       } ~
       path("index-dev.html") {
-        getFromFile("src/main/webapp/index-dev.html")
+        getFromFile("smartClientCrossProj/js/src/main/webapp/index-dev.html")
       } ~
       path("ping") {
           complete("PONG!")
@@ -57,10 +57,10 @@ trait DemoService extends HttpService {
           }
         } ~
         pathPrefix("javascript") {
-          getFromDirectory("src/main/webapp/javascript/")
+          getFromDirectory("smartClientCrossProj/js/src/main/webapp/javascript/")
         } ~
         pathPrefix("scalajs") {
-          getFromDirectory("target/scala-2.11/")
+          getFromDirectory("smartClientCrossProj/js/target/scala-2.11/")
         } ~
         path("stream2") {
           sendStreamingResponse
@@ -80,17 +80,17 @@ trait DemoService extends HttpService {
         path("timeout") { ctx =>
           // we simply let the request drop to provoke a timeout
         } ~
-        path("cached") {
-          cache(simpleRouteCache) { ctx =>
-            in(1500.millis) {
-              ctx.complete("This resource is only slow the first time!\n" +
-                "It was produced on " + DateTime.now.toIsoDateTimeString + "\n\n" +
-                "(Note that your browser will likely enforce a cache invalidation with a\n" +
-                "`Cache-Control: max-age=0` header when you click 'reload', so you might need to `curl` this\n" +
-                "resource in order to be able to see the cache effect!)")
-            }
-          }
-        } ~
+//        path("cached") {
+//          cache(simpleRouteCache) { ctx =>
+//            in(1500.millis) {
+//              ctx.complete("This resource is only slow the first time!\n" +
+//                "It was produced on " + DateTime.now.toIsoDateTimeString + "\n\n" +
+//                "(Note that your browser will likely enforce a cache invalidation with a\n" +
+//                "`Cache-Control: max-age=0` header when you click 'reload', so you might need to `curl` this\n" +
+//                "resource in order to be able to see the cache effect!)")
+//            }
+//          }
+//        } ~
         path("crash") { ctx =>
           sys.error("crash boom bang")
         } ~
@@ -108,7 +108,7 @@ trait DemoService extends HttpService {
       }
   }
 
-  lazy val simpleRouteCache = routeCache()
+  //lazy val simpleRouteCache = routeCache()
 
   lazy val index =
     <html>
