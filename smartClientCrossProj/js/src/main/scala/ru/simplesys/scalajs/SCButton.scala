@@ -35,5 +35,3 @@ object SCButtonProps {
     SCButtonProps(IButtonProps(title, CanvasProps(width = width, height = height, click = Some(click))))
   }
 }
-
-

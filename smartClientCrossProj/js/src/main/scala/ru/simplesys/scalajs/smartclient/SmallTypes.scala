@@ -21,5 +21,3 @@ abstract class SCApply[T <: js.Object : ClassTag, P <: SCProps[T, T] : ToLiteral
     js.Dynamic.global.isc.selectDynamic(scClassName).create(toLiteral.toLiteralMacro(props)).asInstanceOf[T]
   }
 }
-
-
