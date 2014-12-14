@@ -5,14 +5,14 @@ import scala.reflect.macros.whitebox.Context
 
 import scala.scalajs.js
 
-trait ToLiteralMacro[P <: SCProps[_]] {
+trait ToLiteralMacro[P <: SCProps] {
   def toLiteralMacro(t: P): js.Dictionary[js.Any]
 }
 
 object ToLiteralMacro {
-  implicit def materializeToLiteralMacro[P <: SCProps[_]]: ToLiteralMacro[P] = macro materializeToLiteralMacroImpl[P]
+  implicit def materializeToLiteralMacro[P <: SCProps]: ToLiteralMacro[P] = macro materializeToLiteralMacroImpl[P]
 
-  def materializeToLiteralMacroImpl[P <: SCProps[_] : c.WeakTypeTag](c: Context): c.Expr[ToLiteralMacro[P]] = {
+  def materializeToLiteralMacroImpl[P <: SCProps : c.WeakTypeTag](c: Context): c.Expr[ToLiteralMacro[P]] = {
     import c.universe._
 
     val typeToConvertedValue = (typeDef: c.universe.Type, valueAccess: c.universe.Tree) => {
@@ -36,7 +36,7 @@ object ToLiteralMacro {
 
 
     //here should be getters for vals and vars, incl inherited members
-    val tsSCProps = typeOf[SCProps[_]].typeSymbol
+    val tsSCProps = typeOf[SCProps].typeSymbol
     val tsUnit = typeOf[Unit].typeSymbol
     val fields = tpeSCProps.members.collect {case field if field.isPublic &&
       field.isMethod &&

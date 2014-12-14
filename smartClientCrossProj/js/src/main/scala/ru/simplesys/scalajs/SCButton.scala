@@ -14,7 +14,9 @@ trait SCButton extends IButton {
 }
 
 
-trait SCButtonProps[T <: SCButton] extends IButtonProps[T] {
+class SCButtonProps extends IButtonProps {
+
+  override type ClickHandler <: SCButton
   var clickCount = 0
   click = {(that: SCButton) =>
     import that._
@@ -25,6 +27,6 @@ trait SCButtonProps[T <: SCButton] extends IButtonProps[T] {
   }: js.ThisFunction0[SCButton, js.Boolean]
 }
 
-object SCButton extends SCApply[SCButton, SCButtonProps[SCButton]](Some("IButton"))
+object SCButton extends SCApply[SCButton, SCButtonProps](Some("IButton"))
 
 

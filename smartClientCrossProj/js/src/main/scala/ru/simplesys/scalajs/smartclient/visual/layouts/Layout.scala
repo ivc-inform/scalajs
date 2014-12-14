@@ -19,31 +19,32 @@ trait Layout extends Canvas {
 }
 
 
-trait LayoutProps[T <: Layout] extends CanvasProps[T] {
+trait LayoutProps extends CanvasProps {
+  override type ClickHandler <: Layout
   var vertical = noSCProp[Boolean]
   var members = noSCProp[Seq[Canvas]]
 }
 
-object Layout extends SCApply[Layout, LayoutProps[Layout]]
+object Layout extends SCApply[Layout, LayoutProps]
 // Layout
 
 // HLayout
 trait HLayout extends Layout
 
-class HLayoutProps[T <: HLayout] extends LayoutProps[T]/* {
-  override def vertical_=(v: SCPropOpt[Boolean]): Unit = throw new RuntimeException("cannot set vertical in HLayout")
-}*/
+class HLayoutProps extends LayoutProps {
+  override type ClickHandler <: HLayout
+}
 
-object HLayout extends SCApply[HLayout, HLayoutProps[HLayout]]
+object HLayout extends SCApply[HLayout, HLayoutProps]
 // HLayout
 
 // VLayout
 trait VLayout extends Layout
 
-class VLayoutProps[T <: VLayout] extends LayoutProps[T] /*{
-  override def vertical_=(v: SCPropOpt[Boolean]): Unit = throw new RuntimeException("cannot set vertical in VLayout")
-}*/
+class VLayoutProps extends LayoutProps {
+  override type ClickHandler <: VLayout
+}
 
-object VLayout extends SCApply[VLayout, VLayoutProps[VLayout]]
+object VLayout extends SCApply[VLayout, VLayoutProps]
 // VLayout
 

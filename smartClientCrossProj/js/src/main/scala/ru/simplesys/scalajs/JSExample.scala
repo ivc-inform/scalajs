@@ -47,26 +47,26 @@ object ScalaJSExample extends js.JSApp {
 //    }
 
 
-    val mainLayout = HLayout(new HLayoutProps[HLayout] {
+    val mainLayout = HLayout(new HLayoutProps {
       width = 100.pct
       height = 100.pct
       autoDraw = true
-      members = Seq(VLayout(new VLayoutProps[VLayout] {
+      members = Seq(VLayout(new VLayoutProps {
         width = 35.pct
         height = 100.pct
         splitterSetting = ShowSplitterResizeOther
-        members = Seq(SCButton(new SCButtonProps[SCButton] {
+        members = Seq(SCButton(new SCButtonProps {
           title = "Vasya Pupkin"
           width = 30.pct
           height = 30.p
-        }), SCButton(new SCButtonProps[SCButton] {
+        }), SCButton(new SCButtonProps {
           {
             title = "Vasya Pupkin 2"
             width = 30.pct
             height = 30.p
           }
         }))
-      }), VLayout(new VLayoutProps[VLayout] {
+      }), VLayout(new VLayoutProps {
         width = WildCard
         height = 100.pct
       }))

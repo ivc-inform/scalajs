@@ -97,7 +97,7 @@ trait Canvas extends SCClass {
   protected def resizeBarTarget: String = js.native
 }
 
-object Canvas extends SCApply[Canvas, CanvasProps[Canvas]] {
+object Canvas extends SCApply[Canvas, CanvasProps] {
   implicit class ToCanvasExt(c: Canvas) {
     @inline def setHeight(h: SizeSpec) = c.setHeight(h)
     @inline def setWidth(w: SizeSpec) = c.setWidth(w)
@@ -109,8 +109,9 @@ object Canvas extends SCApply[Canvas, CanvasProps[Canvas]] {
 }
 
 
-trait CanvasProps[T <: Canvas] extends SCProps[T] {
+trait CanvasProps extends SCProps {
   //import smartclient.helperConverters._
+  type ClickHandler <: Canvas
   var left: PointSpec = 0 p
   var top: PointSpec = 0 p
   var width = noSCProp[SizeSpec]
@@ -121,7 +122,7 @@ trait CanvasProps[T <: Canvas] extends SCProps[T] {
   def resizeBarTarget = _resizeBarTarget
 
   var autoDraw = false
-  var click = noSCProp[js.ThisFunction0[T, Boolean]]
+  var click = noSCProp[js.ThisFunction0[ClickHandler, Boolean]]
 
 
   private var _splitterSetting = noProp[SplitterSetting]

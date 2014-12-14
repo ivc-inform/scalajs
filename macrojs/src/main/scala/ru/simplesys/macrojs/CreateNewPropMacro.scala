@@ -4,14 +4,14 @@ import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context
 
 
-trait CreatorMacro[P <: SCProps[_]] {
+trait CreatorMacro[P <: SCProps] {
   def create: P
 }
 
 object CreatorMacro {
-  implicit def materializeCreatorMacro[P <: SCProps[_]]: CreatorMacro[P] = macro materializeCreatorMacroImpl[P]
+  implicit def materializeCreatorMacro[P <: SCProps]: CreatorMacro[P] = macro materializeCreatorMacroImpl[P]
 
-  def materializeCreatorMacroImpl[P <: SCProps[_] : c.WeakTypeTag](c: Context): c.Expr[P] = {
+  def materializeCreatorMacroImpl[P <: SCProps : c.WeakTypeTag](c: Context): c.Expr[P] = {
     import c.universe._
     val typeP = weakTypeOf[P]
 

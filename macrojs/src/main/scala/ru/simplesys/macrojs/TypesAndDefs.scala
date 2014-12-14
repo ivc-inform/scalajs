@@ -2,7 +2,7 @@ package ru.simplesys.macrojs
 
 import scala.scalajs.js
 
-trait SCProps[+T <: js.Object] {
+trait SCProps {
   implicit def toSCPropOpt[A](x: A): SCPropOpt[A] = SCPropVal(x)
   @inline def noSCProp[A]: SCPropOpt[A] = NoSCPropVal
 

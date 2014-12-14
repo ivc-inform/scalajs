@@ -13,10 +13,12 @@ trait IButton extends Canvas {
 }
 
 
-trait IButtonProps[T <: IButton] extends CanvasProps[T] {
+class IButtonProps extends CanvasProps {
+
+  override type ClickHandler <: IButton
   var title = noSCProp[String]
 }
 
-object IButton extends SCApply[IButton, IButtonProps[IButton]]
+object IButton extends SCApply[IButton, IButtonProps]
 
 
