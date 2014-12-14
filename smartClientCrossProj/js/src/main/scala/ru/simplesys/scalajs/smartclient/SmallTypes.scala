@@ -9,15 +9,23 @@ import scala.reflect.ClassTag
 import scala.scalajs.js
 
 
-abstract class SCApply[T <: js.Object : ClassTag, P <: SCProps[T, T] : ToLiteralMacro](scClassNameOpt: Option[String] = None)/*(implicit ct: ClassTag[T])*/ {
+abstract class SCApply[T <: js.Object, P <: SCProps[T]](scClassNameOpt: Option[String] = None)(implicit ct: ClassTag[T], toLiteral: ToLiteralMacro[P], cp: ClassTag[P], creator: CreatorMacro[P]) {
   val scClassName = scClassNameOpt.getOrElse({
-    val ct = implicitly[ClassTag[T]]
+    //val ct = implicitly[ClassTag[T]]
     ct.runtimeClass.getSimpleName
   })
 
-  val toLiteral = implicitly[ToLiteralMacro[P]]
+  //val toLiteral = implicitly[ToLiteralMacro[P]]
 
-  def apply(props: P): T = {
+  //protected val cp = implicitly[ClassTag[P]]
+
+  def apply/*[Q <: P : ToLiteralMacro]*/(props: P): T = {
     js.Dynamic.global.isc.selectDynamic(scClassName).create(toLiteral.toLiteralMacro(props)).asInstanceOf[T]
   }
+
+//  def create(modifierFunc: P => Unit ): T = {
+//    val blank = creator.create
+//    modifierFunc(blank)
+//    apply(blank)
+//  }
 }

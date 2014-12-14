@@ -6,9 +6,10 @@ package layouts
 import ru.simplesys.macrojs._
 import visual._
 
+import scala.collection.mutable
 import scala.scalajs.js
 
-
+// Layout
 trait Layout extends Canvas {
   def vertical: js.Boolean = js.native
 
@@ -18,34 +19,31 @@ trait Layout extends Canvas {
 }
 
 
-
-trait LayoutPropsAbs[T <: Layout] extends SCProps[T, T] {
-  //def vertical: Boolean
-  def members: js.Array[Canvas]
-  def canvasProps: CanvasProps[T]
-
+trait LayoutProps[T <: Layout] extends CanvasProps[T] {
+  var vertical = noSCProp[Boolean]
+  var members = noSCProp[Seq[Canvas]]
 }
-
 
 object Layout extends SCApply[Layout, LayoutProps[Layout]]
+// Layout
 
-case class LayoutProps[T <: Layout](vertical: Boolean, members: js.Array[Canvas], canvasProps: CanvasProps[T]) extends LayoutPropsAbs[T] {
-  //override def create: Layout = Layout(this)
-}
-
+// HLayout
 trait HLayout extends Layout
 
+class HLayoutProps[T <: HLayout] extends LayoutProps[T]/* {
+  override def vertical_=(v: SCPropOpt[Boolean]): Unit = throw new RuntimeException("cannot set vertical in HLayout")
+}*/
+
 object HLayout extends SCApply[HLayout, HLayoutProps[HLayout]]
+// HLayout
 
-case class HLayoutProps[T <: HLayout](members: js.Array[Canvas], canvasProps: CanvasProps[T]) extends LayoutPropsAbs[T] {
-  //override def create: HLayout = HLayout(this)
-}
-
+// VLayout
 trait VLayout extends Layout
 
+class VLayoutProps[T <: VLayout] extends LayoutProps[T] /*{
+  override def vertical_=(v: SCPropOpt[Boolean]): Unit = throw new RuntimeException("cannot set vertical in VLayout")
+}*/
+
 object VLayout extends SCApply[VLayout, VLayoutProps[VLayout]]
+// VLayout
 
-
-case class VLayoutProps[T <: VLayout](members: js.Array[Canvas], canvasProps: CanvasProps[T]) extends LayoutPropsAbs[T] {
-  //override def create: VLayout = VLayout(this)
-}

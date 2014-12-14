@@ -39,10 +39,29 @@ case object WildCard extends SizeSpec {
 // coordinates and sizes specifications
 
 //Splitter settings
-sealed trait SplitterSetting
-case object ShowSplitter extends SplitterSetting
-case object ShowSplitterResizeOther extends SplitterSetting
-case object NoSplitter extends SplitterSetting
+object SplitterSetting {
+  def apply(showResizeBar: Boolean, resizeBarTarget: String): SplitterSetting = {
+    if (showResizeBar) {
+      if (resizeBarTarget == "next") ShowSplitterResizeOther
+      else ShowSplitter
+    }
+    else NoSplitter
+  }
+}
+
+sealed trait SplitterSetting {
+  def toProps: (Boolean, String)
+}
+
+case object ShowSplitter extends SplitterSetting {
+  override def toProps: (Boolean, String) = (true, null)
+}
+case object ShowSplitterResizeOther extends SplitterSetting {
+  override def toProps: (Boolean, String) = (true, "next")
+}
+case object NoSplitter extends SplitterSetting {
+  override def toProps: (Boolean, String) = (false, null)
+}
 //Splitter settings
 
 trait Canvas extends SCClass {
@@ -85,42 +104,32 @@ object Canvas extends SCApply[Canvas, CanvasProps[Canvas]] {
     @inline def setTop(t: PointSpec) = c.setTop(t)
     @inline def setLeft(l: PointSpec) = c.setLeft(l)
     //def setRight(r: PointSpec) = c.setRight(r)
-    @inline def getSplitterSetting: SplitterSetting = {
-      if (c.showResizeBar) {
-        if (c.resizeBarTarget == "next") ShowSplitterResizeOther
-        else ShowSplitter
-      }
-      else NoSplitter
-    }
+    @inline def getSplitterSetting: SplitterSetting = SplitterSetting(c.showResizeBar, c.resizeBarTarget)
   }
 }
 
-class CanvasProps[T <: Canvas] private (val left: PointSpec,
-                                        val top: PointSpec,
-                                        val width: SizeSpec,
-                                        val height: SizeSpec,
-                                        val showResizeBar: Boolean,
-                                        val resizeBarTarget: String,
-                                        val autoDraw: Boolean,
-                                        val click: Option[js.ThisFunction0[T, Boolean]]) extends SCProps[Canvas, T] {
-  //override def create: Canvas = Canvas(this)
-}
 
-object CanvasProps {
-  def apply[T <: Canvas](left: PointSpec = 0 p,
-            top: PointSpec = 0 p,
-            width: SizeSpec,
-            height: SizeSpec,
-            splitterSetting: SplitterSetting = NoSplitter,
-            autoDraw: Boolean = false,
-            click: Option[js.ThisFunction0[T, Boolean]] = None): CanvasProps[T] = {
+trait CanvasProps[T <: Canvas] extends SCProps[T] {
+  //import smartclient.helperConverters._
+  var left: PointSpec = 0 p
+  var top: PointSpec = 0 p
+  var width = noSCProp[SizeSpec]
+  var height = noSCProp[SizeSpec]
+  private var _showResizeBar = noSCProp[Boolean]
+  def showResizeBar = _showResizeBar
+  private var _resizeBarTarget = noSCProp[String]
+  def resizeBarTarget = _resizeBarTarget
 
-    val (showResizeBar, resizeBarTarget) = splitterSetting match {
-      case ShowSplitter => (true, null)
-      case ShowSplitterResizeOther => (true, "next")
-      case NoSplitter => (false, null)
-    }
+  var autoDraw = false
+  var click = noSCProp[js.ThisFunction0[T, Boolean]]
 
-    new CanvasProps(left, top, width, height, showResizeBar, resizeBarTarget, autoDraw, click)
+
+  private var _splitterSetting = noProp[SplitterSetting]
+  def splitterSetting: PropOpt[SplitterSetting] = _splitterSetting
+  def splitterSetting_= (splSettOpt: PropOpt[SplitterSetting]): Unit = {
+    _splitterSetting = splSettOpt
+    val scOpts = _splitterSetting.map(_.toProps)
+    _showResizeBar = scOpts.map(_._1)
+    _resizeBarTarget = scOpts.map(_._2)
   }
 }

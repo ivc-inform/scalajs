@@ -12,9 +12,11 @@ trait IButton extends Canvas {
   def setTitle(s: String): Unit = js.native
 }
 
+
+trait IButtonProps[T <: IButton] extends CanvasProps[T] {
+  var title = noSCProp[String]
+}
+
 object IButton extends SCApply[IButton, IButtonProps[IButton]]
 
 
-case class IButtonProps[T <: IButton](title: String, canvasProps: CanvasProps[T]) extends SCProps[IButton, T] {
-  //override def create: IButton = IButton(this)
-}

@@ -3,19 +3,13 @@ package ru.simplesys.scalajs
 import ru.simplesys.macrojs._
 import smartclient.visual.layouts.{VLayoutProps, VLayout}
 import smartclient.visual._
-
+import smartclient._
 import scala.scalajs.js
 
 trait MyComplexComponent extends VLayout {
 
 }
 
-case class MyComplexComponentProps private (vLayoutProps: VLayoutProps[MyComplexComponent]) extends SCProps[VLayout, VLayout] {
-  //override def create: MyComplexComponent = MyComplexComponent(this)
-}
+trait MyComplexComponentProps extends VLayoutProps[MyComplexComponent]
 
-object MyComplexComponent {
-  def apply(props: MyComplexComponentProps): MyComplexComponent = {
-    js.Dynamic.global.isc.VLayout.create(props.toJSLiteral).asInstanceOf[MyComplexComponent]
-  }
-}
+object MyComplexComponent extends SCApply[MyComplexComponent, MyComplexComponentProps](Some("VLayout"))

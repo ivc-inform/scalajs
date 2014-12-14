@@ -5,9 +5,12 @@ package ru.simplesys.scalajs
 import smartclient.visual.layouts.{VLayoutProps, VLayout, HLayoutProps, HLayout}
 
 import scala.scalajs.js
-import js.annotation.JSExport
 import org.scalajs.dom
 import smartclient.visual._
+import ru.simplesys.macrojs._
+import smartclient.ToJSLiteral
+
+import scala.scalajs.js.Dictionary
 
 
 object ScalaJSExample extends js.JSApp {
@@ -19,7 +22,58 @@ object ScalaJSExample extends js.JSApp {
     //val btn1 = SCButton(IButtonProps("Vasya Pupkin", CanvasProps(0, 0, 30 pct, 30 p)))
     //val btn2 = SCButton(IButtonProps("Vasya Pupkin2", CanvasProps(0, 0, 30 pct, 30 p)))
 
+//    val props: Dictionary[js.Any] = new VLayoutProps[VLayout] {
+//      width = (35 pct)
+//      height = (100 pct)
+//      splitterSetting = ShowSplitterResizeOther
+//      members = Seq(SCButton(new SCButtonProps[SCButton] {
+//        title = "Vasya Pupkin"
+//        width = (30 pct)
+//        height = (30 p)
+//      }), SCButton(new SCButtonProps[SCButton] {
+//        {
+//          title = "Vasya Pupkin 2"
+//          width = (30 pct)
+//          height = (30 p)
+//        }
+//      }))
+//    }.toJSLiteral
+//
+//    //props.foreach {case}
+//
+//    for (prop <- js.Object.keys(props)) {
+//       val value = props(prop)
+//      println(prop + " -> " + value)
+//    }
 
+
+    val mainLayout = HLayout(new HLayoutProps[HLayout] {
+      width = 100.pct
+      height = 100.pct
+      autoDraw = true
+      members = Seq(VLayout(new VLayoutProps[VLayout] {
+        width = 35.pct
+        height = 100.pct
+        splitterSetting = ShowSplitterResizeOther
+        members = Seq(SCButton(new SCButtonProps[SCButton] {
+          title = "Vasya Pupkin"
+          width = 30.pct
+          height = 30.p
+        }), SCButton(new SCButtonProps[SCButton] {
+          {
+            title = "Vasya Pupkin 2"
+            width = 30.pct
+            height = 30.p
+          }
+        }))
+      }), VLayout(new VLayoutProps[VLayout] {
+        width = WildCard
+        height = 100.pct
+      }))
+    })
+
+
+/*
 
     val mainLayout = HLayout(HLayoutProps(
       js.Array(
@@ -31,18 +85,7 @@ object ScalaJSExample extends js.JSApp {
         VLayout(VLayoutProps(members = js.Array(), CanvasProps(width = WildCard, height = 100 pct, splitterSetting = NoSplitter)))
       ),
       CanvasProps(0, 0, 100 pct, 100 pct, NoSplitter, true)))
-
-
-    //val mainLayoutProps = mainLayout.toSC
-    //mainLayoutProps.props.foreach(println(_))
-    //mainLayout.members.foreach(x => println(x.props))
-    //mainLayoutProps.create
-
-    //println(btn1.toString)
-    //println(btn1.getTitle())
-//    btn1.setWidth(30 pct)
-//    btn1.setTop(50 pct)
-    //btn.setRight(99 pct)
+*/
   }
 
 }
