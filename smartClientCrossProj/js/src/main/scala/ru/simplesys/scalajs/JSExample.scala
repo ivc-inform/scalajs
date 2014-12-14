@@ -60,11 +60,9 @@ object ScalaJSExample extends js.JSApp {
           width = 30.pct
           height = 30.p
         }), SCButton(new SCButtonProps {
-          {
-            title = "Vasya Pupkin 2"
-            width = 30.pct
-            height = 30.p
-          }
+          title = "Vasya Pupkin 2"
+          width = 30.pct
+          height = 30.p
         }))
       }), VLayout(new VLayoutProps {
         width = WildCard
