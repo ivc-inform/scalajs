@@ -65,6 +65,10 @@ project/plugins/project/
 
 smartClientCrossProj/js/src/main/webapp/javascript/isomorphic
 smartClientCrossProj/js/src/main/webapp/javascript/IncludeModules
+src/main/webapp/javascript/generated/IncludeModules
+src/main/webapp/javascript/isomorphic
+src/main/webapp/javascript/IncludeModules
+
 *.ignore
 
 # Scala-IDE specific

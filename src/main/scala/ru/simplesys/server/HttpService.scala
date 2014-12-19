@@ -43,7 +43,7 @@ trait DemoService extends HttpService {
         complete(index)
       } ~
       path("index-dev.html") {
-        getFromFile("smartClientCrossProj/js/src/main/webapp/index-dev.html")
+        getFromFile("src/main/webapp/index-dev.html")
       } ~
       path("ping") {
           complete("PONG!")
@@ -57,7 +57,7 @@ trait DemoService extends HttpService {
           }
         } ~
         pathPrefix("javascript") {
-          getFromDirectory("smartClientCrossProj/js/src/main/webapp/javascript/")
+          getFromDirectory("src/main/webapp/javascript/")
         } ~
         pathPrefix("scalajs") {
           getFromDirectory("smartClientCrossProj/js/target/scala-2.11/")
@@ -72,7 +72,7 @@ trait DemoService extends HttpService {
         } ~
         path("stats") {
           complete {
-            actorRefFactory.actorFor("/user/IO-HTTP/listener-0")
+            actorRefFactory.actorSelection("/user/IO-HTTP/listener-0")
               .ask(Http.GetStats)(1.second)
               .mapTo[Stats]
           }

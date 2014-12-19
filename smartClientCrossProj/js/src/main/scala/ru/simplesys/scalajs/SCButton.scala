@@ -9,7 +9,7 @@ import smartclient.visual._
 import smartclient.visual.controls._
 import smartclient._
 
-trait SCButton extends IButton {
+class SCButton extends IButton {
   var clickCount: Int = js.native
 }
 
@@ -29,6 +29,7 @@ object SCButton extends SCApply[SCButton, SCButtonProps](Some("IButton")) {
     println(s"${getTitle()}")
     true
   }: js.ThisFunction0[SCButton, js.Boolean]
-}
 
+
+}
 

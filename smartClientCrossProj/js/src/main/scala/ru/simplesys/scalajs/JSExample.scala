@@ -3,7 +3,6 @@ package ru.simplesys.scalajs
 //package example
 
 import smartclient.visual.layouts.{VLayoutProps, VLayout, HLayoutProps, HLayout}
-
 import scala.scalajs.js
 import org.scalajs.dom
 import smartclient.visual._
@@ -11,6 +10,7 @@ import ru.simplesys.macrojs._
 import smartclient.ToJSLiteral
 
 import scala.scalajs.js.Dictionary
+
 
 
 object ScalaJSExample extends js.JSApp {
@@ -45,7 +45,11 @@ object ScalaJSExample extends js.JSApp {
 //       val value = props(prop)
 //      println(prop + " -> " + value)
 //    }
-
+//     val btn1 = SCButton(new SCButtonProps {
+//  title = "Vasya Pupkin"
+//  width = 30.pct
+//  height = 30.p
+//})
 
     val mainLayout = HLayout(new HLayoutProps {
       width = 100.pct
@@ -70,7 +74,9 @@ object ScalaJSExample extends js.JSApp {
       }))
     })
 
-
+//    val res = btn1.click()
+//    btn1.click()
+//    btn1.click()
 /*
 
     val mainLayout = HLayout(HLayoutProps(
