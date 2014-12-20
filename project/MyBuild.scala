@@ -1,4 +1,4 @@
-package ru.simplesys.scalajs.build
+package ru.simplesys.build
 import sbt._
 import sbt.Keys._
 
@@ -19,7 +19,8 @@ object MyBuild extends Build with
   SmartClientCrossProj with
   ScalaJSStubsProj with
   CommonTypesProj with
-  CommonDomainsProj {
+  CommonDomainsProj with
+  TestSmartClientCrossProj {
   override def settings: Seq[Def.Setting[_]] = super.settings ++ Seq(
     scalaVersion := CommonSettings.scalaVersion,
     scalacOptions := CommonSettings.scalacOptions,
@@ -52,7 +53,7 @@ object MyBuild extends Build with
       mainClass in Revolver.reStart := Some("ru.simplesys.server.Boot")
 
     ): _*
-    ) dependsOn(smartClientJVM, smartClientJS) aggregate(macroSub, smartClientJS, smartClientJVM, scalaJSStubJVM, commonTypesProj, commonDomainJS, commonDomainJVM)
+    ) dependsOn(testSmartClientJVM) aggregate(macroSub, smartClientJS, smartClientJVM, scalaJSStubJVM, commonTypesProj, commonDomainJS, commonDomainJVM, testSmartClientJVM, testSmartClientJS)
 
 }
 

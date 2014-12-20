@@ -4,18 +4,13 @@ import sbt._
 import Keys._
 import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport._
 
-trait SmartClientCrossProj {
-  self: Build with MacroProject =>
+trait TestSmartClientCrossProj {
+  self: Build with MacroProject with SmartClientCrossProj with CommonDomainsProj =>
 
-  lazy val smartClientCrossProj = crossProject.
+  lazy val testSmartClientCrossProj = crossProject.dependsOn(smartClientCrossProj, commonDomainsCrossProj).
     settings(
-      name := "smartclient-wrapper",
-      version := "1.0.0-SNAPSHOT",
-      libraryDependencies ++= {
-        Seq(
-          CommonSettings.cmnDependencies.scalaAsync
-        )
-      }
+      name := "test-smartclient-infra",
+      version := "1.0.0-SNAPSHOT"
     ).
     jvmSettings(
     libraryDependencies ++= {
@@ -25,7 +20,7 @@ trait SmartClientCrossProj {
     }).
     jsSettings(
     //scalacOptions += "-Xlog-implicits",
-    //persistLauncher := true,
+    persistLauncher := true,
 
     libraryDependencies ++= Seq(
         CommonSettings.jsDependencies.smartClient % "provided"
@@ -34,7 +29,7 @@ trait SmartClientCrossProj {
     ).jsConfigure(x => x.dependsOn(macroSub))
 
   // Needed, so sbt finds the projects
-  lazy val smartClientJVM = smartClientCrossProj.jvm
-  lazy val smartClientJS = smartClientCrossProj.js
+  lazy val testSmartClientJVM = testSmartClientCrossProj.jvm
+  lazy val testSmartClientJS = testSmartClientCrossProj.js
 
 }

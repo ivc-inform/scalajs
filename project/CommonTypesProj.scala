@@ -1,4 +1,4 @@
-package ru.simplesys.scalajs.build
+package ru.simplesys.build
 
 import sbt._
 import Keys._

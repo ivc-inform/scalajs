@@ -60,7 +60,7 @@ trait DemoService extends HttpService {
           getFromDirectory("src/main/webapp/javascript/")
         } ~
         pathPrefix("scalajs") {
-          getFromDirectory("smartClientCrossProj/js/target/scala-2.11/")
+          getFromDirectory("testSmartClientCrossProj/js/target/scala-2.11/")
         } ~
         path("stream2") {
           sendStreamingResponse
