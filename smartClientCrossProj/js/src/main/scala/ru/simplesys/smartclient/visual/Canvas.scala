@@ -2,7 +2,8 @@ package ru.simplesys
 package smartclient
 package visual
 
-import ru.simplesys.macrojs._
+import macrojs._
+import cmntypes._
 import smartclient.nonvisual.common.SCClass
 
 import scala.scalajs.js

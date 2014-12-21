@@ -1,4 +1,5 @@
-package ru.simplesys.domains
+package ru.simplesys
+package domains
 
 
 
@@ -11,7 +12,18 @@ package ru.simplesys.domains
 //]
 //});
 
-trait DataType[T] {
-  //self: SCType =>
+import smartclient.nonvisual.types.SCTypeCustom
+
+trait DataType[S, JS] {
+  self: SCTypeCustom[JS] =>
 }
 
+trait DataTypeUni[T] extends DataType[T, T] {
+  self: SCTypeCustom[T] =>
+}
+
+trait DataTypeConv[S, JS] {
+  self: SCTypeCustom[JS] =>
+  def toJS: S => JS
+  def fromJS: JS => S
+}

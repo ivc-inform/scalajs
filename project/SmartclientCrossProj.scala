@@ -5,9 +5,9 @@ import Keys._
 import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport._
 
 trait SmartClientCrossProj {
-  self: Build with MacroProject =>
+  self: Build with MacroProject with CommonTypesProj =>
 
-  lazy val smartClientCrossProj = crossProject.
+  lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
     settings(
       name := "smartclient-wrapper",
       version := "1.0.0-SNAPSHOT",

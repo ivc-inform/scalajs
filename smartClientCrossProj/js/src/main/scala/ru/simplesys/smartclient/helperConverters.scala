@@ -1,7 +1,8 @@
 package ru.simplesys
 package smartclient
 
-import ru.simplesys.macrojs._
+//import macrojs._
+import cmntypes._
 
 object helperConverters {
   //implicit def toSCPropOpt[A](x: A): SCPropOpt[A] = SCPropVal(x)

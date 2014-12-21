@@ -4,7 +4,7 @@ package visual
 package controls
 
 import scala.scalajs.js
-import ru.simplesys.macrojs._
+import macrojs._
 
 trait IButton extends Canvas {
   //def title: String = js.native

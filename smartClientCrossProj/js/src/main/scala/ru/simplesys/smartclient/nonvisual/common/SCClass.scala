@@ -3,7 +3,8 @@ package smartclient
 package nonvisual
 package common
 
-import ru.simplesys.macrojs._
+import macrojs._
+import cmntypes._
 
 import scala.scalajs.js
 

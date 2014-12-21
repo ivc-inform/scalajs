@@ -1,7 +1,7 @@
 package ru.simplesys
 package smartclient
 
-import ru.simplesys.macrojs._
+import macrojs._
 import ToLiteralMacro._
 
 import scala.scalajs.js

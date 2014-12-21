@@ -1,4 +1,4 @@
-package ru.simplesys.macrojs
+package ru.simplesys.cmntypes
 
 import scala.scalajs.js
 

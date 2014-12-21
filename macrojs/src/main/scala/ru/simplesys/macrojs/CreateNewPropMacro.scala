@@ -1,8 +1,10 @@
-package ru.simplesys.macrojs
+package ru.simplesys
+package macrojs
 
 import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context
 
+import cmntypes._
 
 trait CreatorMacro[P <: SCProps] {
   def create: P

@@ -53,7 +53,17 @@ object MyBuild extends Build with
       mainClass in Revolver.reStart := Some("ru.simplesys.server.Boot")
 
     ): _*
-    ) dependsOn(testSmartClientJVM) aggregate(macroSub, smartClientJS, smartClientJVM, scalaJSStubJVM, commonTypesProj, commonDomainJS, commonDomainJVM, testSmartClientJVM, testSmartClientJS)
+    ) dependsOn(testSmartClientJVM) aggregate(
+    commonTypesJS,
+    commonTypesJVM,
+    macroSub,
+    smartClientJS,
+    smartClientJVM,
+    scalaJSStubJVM,
+    commonDomainJS,
+    commonDomainJVM,
+    testSmartClientJVM,
+    testSmartClientJS)
 
 }
 

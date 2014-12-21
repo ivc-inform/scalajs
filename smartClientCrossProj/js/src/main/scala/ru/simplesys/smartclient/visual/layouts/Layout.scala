@@ -3,7 +3,8 @@ package smartclient
 package visual
 package layouts
 
-import ru.simplesys.macrojs._
+import macrojs._
+import cmntypes._
 import visual._
 
 import scala.collection.mutable

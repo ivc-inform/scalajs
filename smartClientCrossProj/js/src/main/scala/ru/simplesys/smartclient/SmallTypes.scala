@@ -2,7 +2,8 @@ package ru.simplesys
 package smartclient
 
 
-import ru.simplesys.macrojs._
+import macrojs._
+import cmntypes._
 
 
 import scala.reflect.ClassTag

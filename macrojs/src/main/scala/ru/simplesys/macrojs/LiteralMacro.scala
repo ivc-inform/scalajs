@@ -4,6 +4,7 @@ import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context
 
 import scala.scalajs.js
+import ru.simplesys.cmntypes._
 
 trait ToLiteralMacro[P <: SCProps] {
   def toLiteralMacro(t: P): js.Dictionary[js.Any]
