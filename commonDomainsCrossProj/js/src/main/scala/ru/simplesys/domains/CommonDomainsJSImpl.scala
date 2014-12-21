@@ -1,7 +1,8 @@
 package ru.simplesys
 package domains
 
-import smartclient.nonvisual.types.{SCType, SimpleType, SCTextType, SCTypeCustom}
+import smartclient.nonvisual.types._
+import smartclient.nonvisual.types.builtin._
 
 trait SCTypeDI extends SCTypeCustom[String] {
   inheritsFrom = SCTextType
