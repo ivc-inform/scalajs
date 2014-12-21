@@ -3,6 +3,7 @@ package testapp
 
 //package example
 
+import ru.simplesys.domains.RegisterDomains
 import smartclient.visual.layouts.{VLayoutProps, VLayout, HLayoutProps, HLayout}
 import scala.scalajs.js
 //import org.scalajs.dom
@@ -51,6 +52,7 @@ object ScalaJSExample extends js.JSApp {
 //  width = 30.pct
 //  height = 30.p
 //})
+    RegisterDomains.register()
 
     val mainLayout = HLayout(new HLayoutProps {
       width = 100.pct

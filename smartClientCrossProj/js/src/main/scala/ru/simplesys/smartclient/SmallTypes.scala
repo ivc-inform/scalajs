@@ -10,7 +10,7 @@ import scala.reflect.ClassTag
 import scala.scalajs.js
 
 
-abstract class SCApply[T <: js.Object, P <: SCProps](scClassNameOpt: Option[String] = None)(implicit ct: ClassTag[T], toLiteral: ToLiteralMacro[P], cp: ClassTag[P], creator: CreatorMacro[P]) {
+abstract class SCApply[T <: js.Object, P <: SCProps](scClassNameOpt: Option[String] = None)(implicit ct: ClassTag[T], toLiteral: ToLiteralMacro[P], cp: ClassTag[P]/*, creator: CreatorMacro[P]*/) {
   val scClassName = scClassNameOpt.getOrElse({
     //val ct = implicitly[ClassTag[T]]
     ct.runtimeClass.getSimpleName

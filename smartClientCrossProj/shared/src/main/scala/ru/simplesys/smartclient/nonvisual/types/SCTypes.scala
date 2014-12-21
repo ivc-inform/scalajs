@@ -15,6 +15,6 @@ case object SCTextType extends BuiltInSCType[String] {
   override def name: String = "text"
 }
 
-trait SCTypeCustom[T] extends SCType[T] with SCProps {
+trait SCTypeCustom[T] extends SCType[T] with SCTypeProps[T] {
   //def inheritsFrom
 }
