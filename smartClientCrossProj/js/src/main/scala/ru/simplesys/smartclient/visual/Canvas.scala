@@ -27,15 +27,15 @@ object PointSpec {
 }
 
 case class PixelPointSpec(pos: Int) extends PointSpec with SizeSpec {
-  override def toJS: js.prim.Number = pos
+  override def toJS: js.Any = pos
 }
 
 case class PctPointSpec(pct: Int) extends PointSpec with SizeSpec {
-  override def toJS: js.prim.String = s"$pct%"
+  override def toJS: js.Any = s"$pct%"
 }
 
 case object WildCard extends SizeSpec {
-  override def toJS: js.prim.String = "*"
+  override def toJS: js.Any = "*"
 }
 // coordinates and sizes specifications
 

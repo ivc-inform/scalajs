@@ -28,7 +28,7 @@ object SCButton extends SCApply[SCButton, SCButtonProps](Some("IButton")) {
     setTitle(s"clicked!!! ${clickCount} times getLeft is ${getLeft()}, getRight is ${getRight()}, getWidth is ${getWidth()}, getHeight is ${getHeight()}")
     println(s"${getTitle()}")
     true
-  }: js.ThisFunction0[SCButton, js.Boolean]
+  }: js.ThisFunction0[SCButton, Boolean]
 
 
 }

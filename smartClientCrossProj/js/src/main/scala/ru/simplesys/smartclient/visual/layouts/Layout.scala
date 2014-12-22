@@ -12,7 +12,7 @@ import scala.scalajs.js
 
 // Layout
 trait Layout extends Canvas {
-  def vertical: js.Boolean = js.native
+  def vertical: Boolean = js.native
 
   //def members
   def getMembers(): js.Array[Canvas] = js.native
