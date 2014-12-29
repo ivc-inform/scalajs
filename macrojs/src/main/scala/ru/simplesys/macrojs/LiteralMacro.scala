@@ -13,23 +13,50 @@ trait ToLiteralMacro[P <: SCProps] {
 object ToLiteralMacro {
   implicit def materializeToLiteralMacro[P <: SCProps]: ToLiteralMacro[P] = macro materializeToLiteralMacroImpl[P]
 
-  def materializeToLiteralMacroImpl[P <: SCProps : c.WeakTypeTag](c: Context): c.Expr[ToLiteralMacro[P]] = {
+  def typeToConvertedValue(c: Context)(typeDef: c.universe.Type, valueAccess: c.universe.Tree): c.universe.Tree = {
     import c.universe._
+    def typeToConvertedValueInt(typeDef: c.universe.Type, valueAccess: c.universe.Tree): Option[c.universe.Tree] = {
 
-    val typeToConvertedValue = (typeDef: c.universe.Type, valueAccess: c.universe.Tree) => {
       //weirdddd
       typeDef.baseType(typeOf[Option[_]].typeSymbol) match {
-        case TypeRef(_, _, _) =>
-          q"$valueAccess.orUndefined"
+        case TypeRef(_, _, targs) =>
+          val optEx = if (targs.size == 1) {
+            val checkedType = typeToConvertedValueInt(targs.head, q"x")
+            checkedType match {
+              case Some(ex) => q"$valueAccess.map(x => $ex: js.Any)"
+              case None => valueAccess
+            }
+          } else valueAccess
+          Some(q"$optEx.orUndefined")
         case NoType =>
           typeDef.baseType(typeOf[scala.collection.Seq[_]].typeSymbol) match {
-            case TypeRef(_, _, targs) => q"$valueAccess.toJSArray"
-            case NoType => q"$valueAccess"
+            case TypeRef(_, _, targs) =>
+              val arrEx = if (targs.size == 1) {
+                val checkedType = typeToConvertedValueInt(targs.head, q"x")
+                checkedType match {
+                  case Some(ex) => q"$valueAccess.map(x => $ex: js.Any)"
+                  case None => valueAccess
+                }
+              } else valueAccess
 
+              Some(q"$arrEx.toJSArray")
+            case NoType =>
+              typeDef.baseType(typeOf[SCProps].typeSymbol) match {
+                case TypeRef(_, _, _) =>
+                  Some(q"$valueAccess.toJSLiteral")
+                case NoType =>
+                  None
+                  // Some(q"$valueAccess")
+
+              }
           }
       }
     }
+    typeToConvertedValueInt(typeDef, valueAccess).getOrElse(q"$valueAccess")
+  }
 
+  def materializeToLiteralMacroImpl[P <: SCProps : c.WeakTypeTag](c: Context): c.Expr[ToLiteralMacro[P]] = {
+    import c.universe._
 
     val tpeSCProps = weakTypeOf[P]
     val companion = tpeSCProps.typeSymbol.companion
@@ -70,7 +97,7 @@ object ToLiteralMacro {
       val name = field.name.toTermName
       val decoded = name.decodedName.toString
       val returnType = tpeSCProps.decl(name).typeSignature
-      q"""t.$name.foreach {v => res.update($decoded, ${typeToConvertedValue(typeDef, q"v")})}"""
+      q"""t.$name.foreach {v => res.update($decoded, ${typeToConvertedValue(c)(typeDef, q"v")})}"""
     }
 
 
@@ -78,7 +105,7 @@ object ToLiteralMacro {
       val name = field.name.toTermName
       val decoded = name.decodedName.toString
       val returnType = tpeSCProps.decl(name).typeSignature
-      q"""res.update($decoded, ${typeToConvertedValue(typeDef, q"t.$name")})"""
+      q"""res.update($decoded, ${typeToConvertedValue(c)(typeDef, q"t.$name")})"""
     }
 
     val simpleFieldsExpansion = if (simpleFields.nonEmpty)
@@ -102,7 +129,7 @@ object ToLiteralMacro {
     }
   """
     }
-     //println(res)
+     println(res)
     res
   }
 }
