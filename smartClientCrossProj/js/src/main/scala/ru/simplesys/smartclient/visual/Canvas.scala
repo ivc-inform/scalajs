@@ -130,7 +130,7 @@ trait CanvasProps extends SCProps {
   def splitterSetting: PropOpt[SplitterSetting] = _splitterSetting
   def splitterSetting_= (splSettOpt: PropOpt[SplitterSetting]): Unit = {
     _splitterSetting = splSettOpt
-    val scOpts = _splitterSetting.map(_.toProps)
+    val scOpts = _splitterSetting.map(_.toProps).toSCPropOpt
     _showResizeBar = scOpts.map(_._1)
     _resizeBarTarget = scOpts.map(_._2)
   }

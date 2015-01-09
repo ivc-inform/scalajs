@@ -6,6 +6,14 @@ package databinding
 import cmntypes._
 import smartclient.nonvisual.common.SCClass
 
+import scala.scalajs.js
+
 trait DataSource extends SCClass {
-  def dataURL: String
+  def dataURL: String = js.native
+  def fields: js.Array[DataSourceField[_]] = js.native
+}
+
+class DataSourceProps extends SCProps {
+  var dataURL = noSCProp[String]
+  var fields = noSCProp[Seq[DataSourceField[_]]]
 }

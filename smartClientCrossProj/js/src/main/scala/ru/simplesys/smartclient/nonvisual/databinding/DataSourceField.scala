@@ -3,7 +3,7 @@ package smartclient
 package nonvisual
 package databinding
 
-import cmntypes.SCProps
+import cmntypes.{PropOpt, SCProps}
 
 import scala.scalajs.js
 import ru.simplesys.macrojs._
@@ -16,7 +16,7 @@ trait DataSourceField[T] extends js.Object {
   def name: String
 
   @JSName("type")
-  /*protected*/ def fieldType: String
+  def fieldType: String = js.native
 }
 
 //object DataSourceField extends SCApply[DataSourceField[_], DataSourceFieldProps[_]] {
@@ -25,9 +25,17 @@ trait DataSourceField[T] extends js.Object {
 //  }
 //}
 
-//trait DataSourceFieldProps[T] extends SCProps {
-//  var name:
-//}
+class DataSourceFieldProps[T] extends SCProps {
+  var name = noSCProp[String]
+  private var _fieldType = noProp[SCType[T]]
+  def fieldType: PropOpt[SCType[T]] = _fieldType
+  def fieldType_=(t: PropOpt[SCType[T]]): Unit = {
+    _fieldType = t
+    _type = _fieldType.map(_.name).toSCPropOpt
+  }
+  private var _type = noSCProp[String]
+  def `type` = _type
+}
 
 
 //we need support of Props type in macro, even under collection types

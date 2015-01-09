@@ -45,8 +45,8 @@ trait PropOpt[+A] {
   def isEmpty: Boolean
   def isDefined: Boolean = !isEmpty
   def get: A
-  @inline final def map[B](f: A => B): SCPropOpt[B] =
-    if (isEmpty) NoSCPropVal else SCPropVal(f(this.get))
+  @inline final def map[B](f: A => B): PropOpt[B] =
+    if (isEmpty) NoPropVal else PropVal(f(this.get))
 
   @inline final def flatMap[B](f: A => Option[B]): Option[B] =
     if (isEmpty) None else f(this.get)
@@ -54,6 +54,8 @@ trait PropOpt[+A] {
   @inline final def foreach[U](f: A => U) {
     if (!isEmpty) f(this.get)
   }
+
+  def toSCPropOpt: SCPropOpt[A] = if (isEmpty) NoSCPropVal else SCPropVal(this.get)
 }
 
 case class PropVal[+A](value: A) extends PropOpt[A] {
