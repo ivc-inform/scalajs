@@ -3,6 +3,8 @@ package smartclient
 package nonvisual
 package databinding
 
+import macrojs._
+
 import cmntypes._
 import smartclient.nonvisual.common.SCClass
 
@@ -13,8 +15,11 @@ trait DataSource extends SCClass {
   def fields: js.Array[DataSourceField[_]] = js.native
 }
 
-trait DataSourceProps extends SCProps {
+class DataSourceProps extends SCProps {
   var dataURL = noSCProp[String]
   var fields = noSCProp[Seq[DataSourceField[_]]]
 }
+
+object DataSource extends SCApply[DataSource, DataSourceProps]
+
 
