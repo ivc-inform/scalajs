@@ -45,9 +45,19 @@ object ToLiteralMacro {
                 case TypeRef(_, _, _) =>
                   Some(q"$valueAccess.toJSLiteral")
                 case NoType =>
-                  None
-                  // Some(q"$valueAccess")
+                  typeDef.baseType(typeOf[Either[_, _]].typeSymbol) match {
+                    case TypeRef(_, _, targs) =>
+                      val access = q"ei"
+                      val checkedTypes = targs.map(t => typeToConvertedValueInt(t, access))
+                      val leftType = checkedTypes.head.getOrElse(valueAccess)
+                      val rightType = checkedTypes.last.getOrElse(valueAccess)
 
+                      Some( q"""$valueAccess match {
+                            case Left(ei) => $leftType: js.Any
+                            case Right(ei) => $rightType: js.Any
+                          }""")
+                    case NoType => None
+                  }
               }
           }
       }

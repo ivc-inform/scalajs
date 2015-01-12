@@ -13,7 +13,7 @@ import scala.scalajs.js.annotation.JSName
 import smartclient.nonvisual.types.SCType
 
 trait DataSourceField[T] extends js.Object {
-  def name: String
+  def name: String = js.native
 
   @JSName("type")
   def fieldType: String = js.native

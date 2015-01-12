@@ -17,7 +17,8 @@ trait DataSource extends SCClass {
 
 class DataSourceProps extends SCProps {
   var dataURL = noSCProp[String]
-  var fields = noSCProp[Seq[DataSourceField[_]]]
+  //here could be DataSourceField too
+  var fields = noSCProp[Either[Seq[DataSourceField[_]], Seq[DataSourceFieldProps[_]]]]
 }
 
 object DataSource extends SCApply[DataSource, DataSourceProps]
