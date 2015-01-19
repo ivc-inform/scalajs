@@ -4,7 +4,7 @@ import sbt._
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
 
 object CommonSettings {
-  val scalaVersion = "2.11.4"
+  val scalaVersion = "2.11.5"
   val organization = "ru.simplesys"
   val scalacOptions = Seq(
     "-feature",
