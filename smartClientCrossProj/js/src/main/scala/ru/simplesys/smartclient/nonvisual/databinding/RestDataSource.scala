@@ -13,3 +13,7 @@ import scala.scalajs.js
 class RestDataSource extends DataSource {
 
 }
+
+class RestDataSourceProps extends DataSourceProps
+
+object RestDataSource extends SCApply[RestDataSource, RestDataSourceProps]

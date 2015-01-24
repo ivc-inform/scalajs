@@ -10,7 +10,7 @@ import smartclient.nonvisual.common.SCClass
 
 import scala.scalajs.js
 
-trait DataSource extends SCClass {
+class DataSource extends SCClass {
   def dataURL: String = js.native
   def fields: js.Array[DataSourceField[_]] = js.native
 }

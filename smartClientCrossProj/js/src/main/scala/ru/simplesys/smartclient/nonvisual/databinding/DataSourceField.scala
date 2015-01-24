@@ -25,17 +25,20 @@ trait DataSourceField[T] extends js.Object {
 //  }
 //}
 
-class DataSourceFieldProps[T] extends SCProps {
-  var name = noSCProp[String]
+class DataSourceFieldProps[T](nameParam: String, fieldTypeParam: SCType[T]) extends SCProps {
+  var name = nameParam
+
   private var _fieldType = noProp[SCType[T]]
   def fieldType: PropOpt[SCType[T]] = _fieldType
   def fieldType_=(t: PropOpt[SCType[T]]): Unit = {
     _fieldType = t
     _type = _fieldType.map(_.name).toSCPropOpt
   }
+
   private var _type = noSCProp[String]
   def `type` = _type
+
+  fieldType = fieldTypeParam
 }
 
 
-//we need support of Props type in macro, even under collection types

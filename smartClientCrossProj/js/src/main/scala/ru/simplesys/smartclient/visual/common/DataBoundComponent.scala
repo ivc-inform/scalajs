@@ -13,8 +13,10 @@ trait DataBoundComponent extends SCClass {
   def dataSource: DataSource = js.native
   def setDataSource(ds: DataSource): Unit = js.native
   def setDataSource(ds: DataSource, fields: js.Array[DataSourceField[_]]): Unit = js.native
+  def autoFetchData: Boolean = js.native
 }
 
 trait DataBoundComponentProps extends SCProps {
   var dataSource = noSCProp[DataSource]
+  var autoFetchData: SCPropOpt[Boolean] = false
 }
