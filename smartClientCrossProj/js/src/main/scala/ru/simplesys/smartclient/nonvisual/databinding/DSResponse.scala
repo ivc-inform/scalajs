@@ -13,6 +13,6 @@ trait DSResponse extends RPCResponse {
 
 object DSResponse extends SCApply[DSResponse, DSResponseProps]
 
-class DSResponseProps extends SCProps {
+class DSResponseProps extends RPCResponseProps {
 
 }
