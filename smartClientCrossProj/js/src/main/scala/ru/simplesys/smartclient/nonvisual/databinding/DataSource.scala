@@ -38,7 +38,7 @@ object DataFormat {
 
 
 
-class DataSource extends SCClass {
+trait DataSource extends SCClass {
   def dataURL: String = js.native
   def fields: js.Array[DataSourceField[_]] = js.native
   protected def dataFormat: String = js.native

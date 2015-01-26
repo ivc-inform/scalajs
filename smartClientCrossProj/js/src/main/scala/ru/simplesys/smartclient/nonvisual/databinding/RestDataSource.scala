@@ -10,7 +10,7 @@ import smartclient.nonvisual.common.SCClass
 
 import scala.scalajs.js
 
-class RestDataSource extends DataSource {
+trait RestDataSource extends DataSource {
 
 }
 
