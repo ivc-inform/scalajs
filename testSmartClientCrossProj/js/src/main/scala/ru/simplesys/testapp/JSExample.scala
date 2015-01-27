@@ -5,6 +5,7 @@ package testapp
 
 import ru.simplesys.domains.RegisterDomains
 import ru.simplesys.smartclient.nonvisual.databinding.{RestDataSourceProps, RestDataSource, DataSourceFieldProps}
+import ru.simplesys.smartclient.nonvisual.rpc.RPCResponse
 import ru.simplesys.smartclient.nonvisual.types.builtin._
 import ru.simplesys.smartclient.visual.grids.{ListGrid, ListGridProps}
 import smartclient.visual.layouts.{VLayoutProps, VLayout, HLayoutProps, HLayout}
@@ -23,6 +24,8 @@ object ScalaJSExample extends js.JSApp {
   def main(): Unit = {
 
     RegisterDomains.register()
+
+    //println(RPCResponse.isc.STATUS_VALIDATION_ERROR)
 
     val ds = RestDataSource(new RestDataSourceProps {
       dataURL = "/data/testDS"
