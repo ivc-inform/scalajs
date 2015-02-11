@@ -21,7 +21,9 @@ object CommonSettings {
     val sprayVersion = "1.3.2"
     val scalaAsyncVersion = "0.9.2"
     val scalajsDOMVersion = "0.7.0"
-    val scalaRxVersion = "0.2.7-RC2"
+    val scalaRxVersion = "0.2.7"
+    val uPickleVersion = "0.2.5"
+    //val prickleVersion = "1.1.2"
     val smartclientVersion = "10.0-v20141114"
 
 
