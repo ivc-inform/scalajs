@@ -22,8 +22,8 @@ object CommonSettings {
     val scalaAsyncVersion = "0.9.2"
     val scalajsDOMVersion = "0.7.0"
     val scalaRxVersion = "0.2.7"
-    val uPickleVersion = "0.2.5"
-    //val prickleVersion = "1.1.2"
+    //val uPickleVersion = "0.2.6"
+    val prickleVersion = "1.1.3"
     val smartclientVersion = "10.0-v20141114"
 
 
@@ -32,6 +32,7 @@ object CommonSettings {
 
   object cmnDependencies {
     val scalaAsync = "org.scala-lang.modules" %% "scala-async" % versions.scalaAsyncVersion
+    val prickle = "com.github.benhutchison" %%%! "prickle" % versions.prickleVersion
   }
 
   object jsDependencies {

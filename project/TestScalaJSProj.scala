@@ -15,6 +15,7 @@ trait TestSmartClientCrossProj {
     jvmSettings(
     libraryDependencies ++= {
       Seq(
+        CommonSettings.cmnDependencies.prickle,
         CommonSettings.jvmDependencies.scalaTest % "test"
       )
     }).

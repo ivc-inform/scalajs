@@ -1,3 +1,4 @@
-package ru.simplesys.cmntypes
+package ru.simplesys
+package cmntype
 
-trait SCProps
+//trait SCProps

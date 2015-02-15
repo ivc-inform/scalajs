@@ -12,7 +12,7 @@ trait MyComplexComponent extends VLayout {
 }
 
 class MyComplexComponentProps extends VLayoutProps {
-  override type ClickHandler <: MyComplexComponent
+  //override type ClickHandler <: MyComplexComponent
 }
 
 object MyComplexComponent extends SCApply[MyComplexComponent, MyComplexComponentProps](Some("VLayout"))

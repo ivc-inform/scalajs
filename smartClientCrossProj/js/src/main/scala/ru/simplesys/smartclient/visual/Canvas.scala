@@ -123,7 +123,9 @@ trait CanvasProps extends SCProps {
   def resizeBarTarget = _resizeBarTarget
 
   var autoDraw = false
+  //var click: js.ThisFunction0[]
   var click = noSCProp[js.ThisFunction0[ClickHandler, Boolean]]
+  //def click = noSCProp[js.ThisFunction0[Canvas, Boolean]]
 
 
   private var _splitterSetting = noProp[SplitterSetting]

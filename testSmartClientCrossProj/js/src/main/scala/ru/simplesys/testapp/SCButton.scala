@@ -1,6 +1,8 @@
 package ru.simplesys
 package testapp
 
+import ru.simplesys.cmntypes.{SCPropOpt, SCPropVal}
+
 import scala.scalajs.js
 import ru.simplesys.macrojs._
 
@@ -18,7 +20,8 @@ class SCButtonProps extends IButtonProps {
 
   override type ClickHandler <: SCButton
   var clickCount = 0
-  click = SCButton.clickHandler
+  //override def click: SCPropOpt[js.ThisFunction0[SCButton, Boolean]] = SCPropVal(SCButton.clickHandler)
+  click = SCButton.clickHandlerCanvas
 }
 
 object SCButton extends SCApply[SCButton, SCButtonProps](Some("IButton")) {
@@ -30,6 +33,9 @@ object SCButton extends SCApply[SCButton, SCButtonProps](Some("IButton")) {
     true
   }: js.ThisFunction0[SCButton, Boolean]
 
-
+  val clickHandlerCanvas = {(that: Canvas) =>
+    import that._
+    true
+  }: js.ThisFunction0[SCButton, Boolean]
 }
 
