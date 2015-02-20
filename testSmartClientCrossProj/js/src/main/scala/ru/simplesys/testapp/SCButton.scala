@@ -21,7 +21,7 @@ class SCButtonProps extends IButtonProps {
   override type ClickHandler <: SCButton
   var clickCount = 0
   //override def click: SCPropOpt[js.ThisFunction0[SCButton, Boolean]] = SCPropVal(SCButton.clickHandler)
-  click = SCButton.clickHandlerCanvas
+  click = SCButton.clickHandler
 }
 
 object SCButton extends SCApply[SCButton, SCButtonProps](Some("IButton")) {

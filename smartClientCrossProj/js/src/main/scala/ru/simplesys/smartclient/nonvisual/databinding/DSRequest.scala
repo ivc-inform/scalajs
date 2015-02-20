@@ -13,6 +13,6 @@ trait DSRequest extends RPCRequest {
 
 object DSRequest extends SCApply[DSRequest, DSRequestProps]
 
-class DSRequestProps extends SCProps {
+class DSRequestProps extends RPCRequestProps {
 
 }

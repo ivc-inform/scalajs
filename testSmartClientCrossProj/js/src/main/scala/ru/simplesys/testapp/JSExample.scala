@@ -4,8 +4,8 @@ package testapp
 //package example
 
 import ru.simplesys.domains.RegisterDomains
-import ru.simplesys.smartclient.nonvisual.databinding.{RestDataSourceProps, RestDataSource, DataSourceFieldProps}
-import ru.simplesys.smartclient.nonvisual.rpc.RPCResponse
+import ru.simplesys.smartclient.nonvisual.databinding._
+import ru.simplesys.smartclient.nonvisual.rpc._
 import ru.simplesys.smartclient.nonvisual.types.builtin._
 import ru.simplesys.smartclient.visual.grids.{ListGrid, ListGridProps}
 import smartclient.visual.layouts.{VLayoutProps, VLayout, HLayoutProps, HLayout}
@@ -33,6 +33,38 @@ object ScalaJSExample extends js.JSApp {
         new DataSourceFieldProps("testFieldString", SCTextType),
         new DataSourceFieldProps("testFieldBoolean", SCBooleanType)
       ))
+
+      requestProperties = new DSRequestProps {
+        useSimpleHttp = true
+      }
+
+      //WTF?
+      dataFormat = DSDataFormat.JSon
+
+      useStrictJSON = true
+
+      operationBindings = Seq(
+        new OperationBindingProps {
+          operationType = DSOperationType.Fetch
+          dataProtocol = DSProtocol.PostXML
+          dataFormat = DSDataFormat.JSon
+          dataTransport = RPCTransport.XmlHttpRequest},
+        new OperationBindingProps {
+          operationType = DSOperationType.Add
+          dataProtocol = DSProtocol.PostXML
+          dataFormat = DSDataFormat.JSon
+          dataTransport = RPCTransport.XmlHttpRequest},
+        new OperationBindingProps {
+          operationType = DSOperationType.Update
+          dataProtocol = DSProtocol.PostXML
+          dataFormat = DSDataFormat.JSon
+          dataTransport = RPCTransport.XmlHttpRequest},
+        new OperationBindingProps {
+          operationType = DSOperationType.Remove
+          dataProtocol = DSProtocol.PostXML
+          dataFormat = DSDataFormat.JSon
+          dataTransport = RPCTransport.XmlHttpRequest}
+      )
     })
 
     val mainLayout = HLayout(new HLayoutProps {
