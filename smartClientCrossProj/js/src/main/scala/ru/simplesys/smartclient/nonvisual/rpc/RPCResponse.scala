@@ -50,7 +50,4 @@ object RPCResponse extends SCApply[RPCResponse, RPCResponseProps] {
   }
 }
 
-class RPCResponseProps extends SCProps {
-
-}
 

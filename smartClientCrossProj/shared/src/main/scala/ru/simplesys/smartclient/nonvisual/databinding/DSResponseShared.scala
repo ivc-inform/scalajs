@@ -3,9 +3,11 @@ package smartclient
 package nonvisual
 package databinding
 
+import rpc.RPCResponseProps
 
-trait DSResponseShared {
-  def startRow: Int
-  def endRow: Int
-  def totalRows: Int
+
+class DSResponseProps extends RPCResponseProps {
+  var totalRows = noSCProp[Int]
+  var endRow = noSCProp[Int]
+  var xxx: Int = 1
 }

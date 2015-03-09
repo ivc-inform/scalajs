@@ -15,7 +15,8 @@ import com.simplesys.mergewebapp.MergeWebappPlugin._
 //}
 
 object MyBuild extends Build with
-  MacroProject with
+  MacroJSProject with
+  MacroJVMProject with
   SmartClientCrossProj with
   ScalaJSStubsProj with
   CommonTypesProj with
@@ -56,7 +57,7 @@ object MyBuild extends Build with
     ) dependsOn(testSmartClientJVM) aggregate(
     commonTypesJS,
     commonTypesJVM,
-    macroSub,
+    macroJsSub,
     smartClientJS,
     smartClientJVM,
     scalaJSStubJVM,

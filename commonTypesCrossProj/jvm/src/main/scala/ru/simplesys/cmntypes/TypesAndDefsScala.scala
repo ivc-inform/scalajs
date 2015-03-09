@@ -1,4 +1,3 @@
 package ru.simplesys
-package cmntype
+package cmntypes
 
-//trait SCProps

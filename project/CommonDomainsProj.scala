@@ -7,7 +7,7 @@ import sbt.Keys._
 import sbt._
 
 trait CommonDomainsProj {
-  self: Build with MacroProject with SmartClientCrossProj =>
+  self: Build with MacroJSProject with MacroJVMProject with SmartClientCrossProj =>
 
   lazy val commonDomainsCrossProj = crossProject.dependsOn(smartClientCrossProj).
     settings(
@@ -20,7 +20,7 @@ trait CommonDomainsProj {
         CommonSettings.jsDependencies.smartClient % "provided"
       )
     //jsDependencies += "org.example" %% "js-thing" % "0.1" / "foo.js"
-  ).jsConfigure(x => x.dependsOn(macroSub))
+  ).jsConfigure(x => x.dependsOn(macroJsSub)).jvmConfigure(x => x.dependsOn(macroJvmSub))
 
   // Needed, so sbt finds the projects
   lazy val commonDomainJVM = commonDomainsCrossProj.jvm

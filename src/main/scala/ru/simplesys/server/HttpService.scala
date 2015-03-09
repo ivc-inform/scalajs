@@ -2,6 +2,7 @@ package ru.simplesys.server
 
 import java.io.File
 import org.parboiled.common.FileUtils
+import ru.simplesys.smartclient.nonvisual.databinding.DSResponseProps
 import scala.concurrent.duration._
 import akka.actor._
 import akka.pattern.ask
@@ -97,6 +98,26 @@ trait DemoService extends HttpService {
         path("fail") {
           failWith(new RuntimeException("aaaahhh"))
         }
+    } ~
+    post {
+      pathPrefix("data") {
+        path("testDS") {
+          //complete("WoW")
+          import ru.simplesys.macrojvm.SCPropsPickler._
+          import prickle._
+
+          val dsResp = new DSResponseProps {
+            totalRows = 1000
+          }
+
+          case class Test(xxx: Int, yyy: String)
+
+          val dsRespTest = Test(1, "a")
+
+          val str = Pickle.intoString(dsRespTest)
+          complete(str)
+        }
+      }
     } ~
       (post | parameter('method ! "post")) {
         path("stop") {

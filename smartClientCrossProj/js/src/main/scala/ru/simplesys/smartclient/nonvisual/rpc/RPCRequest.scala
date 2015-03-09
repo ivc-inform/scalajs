@@ -15,11 +15,18 @@ trait RPCRequest extends SCClass {
 
   def actionURL: String = js.native
   def actionURL_=(url: String): Unit = js.native
+
   def callback: js.Function3[Request, js.Any, Response, Unit] = js.native
   def callback_=(cb: js.Function3[Request, Data, Response, Unit]): Unit = js.native
+
   protected def httpMethod: String = js.native
+
   def useSimpleHttp: Boolean = js.native
   def useSimpleHttp_=(b: Boolean): Unit = js.native
+
+  def clientContext: js.Object = js.native
+  def clientContext_=(obj: js.Object): Unit = js.native
+
 }
 
 object RPCRequest extends SCApply[RPCRequest, RPCRequestProps] {
@@ -37,4 +44,6 @@ class RPCRequestProps extends SCProps {
   var callback = noSCProp[js.Function3[Request, Data, Response, Unit]]
   var httpMethod = noSCProp[HttpMethod]
   var useSimpleHttp = noSCProp[Boolean]
+
+  var clientContext = noSCProp[js.Object]
 }

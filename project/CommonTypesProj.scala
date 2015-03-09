@@ -10,7 +10,9 @@ trait CommonTypesProj {
   lazy val commonTypesCrossProj = crossProject.
     settings(
       name := "common-types",
-      version := "1.0.0-SNAPSHOT"
+      version := "1.0.0-SNAPSHOT"//,
+      //libraryDependencies ++= Seq(CommonSettings.cmnDependencies.prickle)
+
     ).
     jvmSettings(
       libraryDependencies ++= {

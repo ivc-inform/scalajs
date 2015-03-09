@@ -5,7 +5,7 @@ import Keys._
 import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport._
 
 trait SmartClientCrossProj {
-  self: Build with MacroProject with CommonTypesProj =>
+  self: Build with MacroJSProject with MacroJVMProject with CommonTypesProj =>
 
   lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
     settings(
@@ -31,7 +31,7 @@ trait SmartClientCrossProj {
         CommonSettings.jsDependencies.smartClient % "provided"
       )
     //jsDependencies += "org.example" %% "js-thing" % "0.1" / "foo.js"
-    ).jsConfigure(x => x.dependsOn(macroSub))
+    ).jsConfigure(x => x.dependsOn(macroJsSub)).jvmConfigure(x => x.dependsOn(macroJvmSub))
 
   // Needed, so sbt finds the projects
   lazy val smartClientJVM = smartClientCrossProj.jvm
