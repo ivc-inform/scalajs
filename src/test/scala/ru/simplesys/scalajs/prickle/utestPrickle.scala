@@ -13,7 +13,7 @@ object MyTestSuite extends TestSuite {
 
       val dsResp = new DSResponseProps {
         totalRows = 1000
-        var tttt = new DSResponseProps { endRow = 10 }
+        //var tttt = new DSResponseProps { endRow = 10 }
       }
 
       case class Test(xxx: Int, yyy: String)
@@ -23,8 +23,9 @@ object MyTestSuite extends TestSuite {
 
       implicit val pickleConfig = new JsConfig(areSharedObjectsSupported = false)
       val str = Pickle.intoString(dsResp)
-      //val str = Pickle.intoString(dsRespTest)
+      val strTest = Pickle.intoString(dsRespTest)
       println(s"json: $str")
+      println(s"json test: $strTest")
     }
 //    'hello{
 //      'world{

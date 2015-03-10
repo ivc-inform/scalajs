@@ -13,21 +13,22 @@ object SCPropsPickler {
 }
 
 object SCPropPicklerMaterializersImpl {
-  def materializePickler[T <: SCProps](c: Context)(implicit  tt: c.WeakTypeTag[T]): c.Expr[Pickler[T]] = {
+  def materializePickler[T <: SCProps : c.WeakTypeTag](c: Context): c.Expr[Pickler[T]] = {
     import c.universe._
 
     val tpe = weakTypeOf[T]
 
     if (!tpe.typeSymbol.isClass)
-      throw new RuntimeException("Enclosure: " + c.enclosingPosition.toString)
+      c.abort(c.enclosingPosition, s"${tpe.toString} is not class")
 
+    val tsSCProps = typeOf[SCProps].typeSymbol
+    val tsUnit = typeOf[Unit].typeSymbol
 
     //additional check for T <: SCProps. It works for some reason.!!
-    tpe.baseType(typeOf[SCProps].typeSymbol) match {
-      case NoType => throw new RuntimeException("Enclosure: " + c.enclosingPosition.toString)
-      case TypeRef(_, _, _) =>
+    if (!tpe.baseClasses.contains(tsSCProps))
+      c.abort(c.enclosingPosition, s"${tpe.toString} is not derived from SCProps")
+      //throw new RuntimeException("Enclosure: " + c.enclosingPosition.toString)
 
-    }
 
     val sym = tpe.typeSymbol.asClass
 
@@ -43,8 +44,6 @@ object SCPropPicklerMaterializersImpl {
 
 
       //here should be getters for vals and vars, incl inherited members
-      val tsSCProps = typeOf[SCProps].typeSymbol
-      val tsUnit = typeOf[Unit].typeSymbol
       val fields = tpeSCProps.members.collect {case field if field.isPublic &&
         field.isMethod &&
         !field.asMethod.isSetter &&
@@ -124,75 +123,90 @@ object SCPropPicklerMaterializersImpl {
     c.Expr[Pickler[T]](result)
   }
 
-//  def materializeUnpickler[T: c.WeakTypeTag](c: Context): c.Expr[Unpickler[T]] = {
-//    import c.universe._
-//
-//    val tpe = weakTypeOf[T]
-//    val sym = tpe.typeSymbol.asClass
-//
+  def materializeUnpickler[T <: SCProps : c.WeakTypeTag](c: Context): c.Expr[Unpickler[T]] = {
+    import c.universe._
+
+    val tpe = weakTypeOf[T]
+    val sym = tpe.typeSymbol.asClass
+
+
+
+    if (!tpe.typeSymbol.isClass)
+      c.abort(c.enclosingPosition, s"${tpe.toString} is not class")
+
+    val tsSCProps = typeOf[SCProps].typeSymbol
+    val tsUnit = typeOf[Unit].typeSymbol
+
+    //additional check for T <: SCProps. It works for some reason.!!
+    if (!tpe.baseClasses.contains(tsSCProps))
+      c.abort(c.enclosingPosition, s"${tpe.toString} is not derived from SCProps")
+    //throw new RuntimeException("Enclosure: " + c.enclosingPosition.toString)
+
+
+
 //    if (!sym.isCaseClass) {
 //      c.error(c.enclosingPosition,
 //        s"Cannot materialize pickler for non-case class: ${sym.fullName}")
 //      return c.Expr[Unpickler[T]](q"null")
 //    }
-//
-//    val unpickleLogic = if (sym.isModuleClass) {
-//      c.parse(sym.fullName)
-//    } else {
-//      val unpickleBody = {
-//        val accessors = (tpe.declarations.collect {
-//          case acc: MethodSymbol if acc.isCaseAccessor => acc
-//        }).toList
-//
-//        val unpickledFields = for {
-//          accessor <- accessors
-//        } yield {
-//          val fieldName = accessor.name
-//          val fieldTpe = accessor.typeSignatureIn(tpe)
-//          q"""
-//              config.readObjectField(pickle, ${fieldName.toString}).flatMap(field =>
-//                prickle.Unpickle[$fieldTpe].from(field, state)(config)).get
-//          """
-//        }
-//        q"""
-//          val result = new $tpe(..$unpickledFields)
-//          Unpickler.resolvingSharing[P](result, pickle, state, config)
-//          scala.util.Success(result)
-//        """
-//      }
-//      val unpickleRef = q"""(p: P) => config.readString(p).flatMap(ref => Try{state(ref).asInstanceOf[$tpe]})"""
-//
-//      q"""
-//      config.readObjectField(pickle, config.prefix + "ref").transform({$unpickleRef}, _ => {$unpickleBody}).get
-//      """
-//    }
-//
-//
-//    val nullLogic = if (sym.isPrimitive)
-//      q"""throw new RuntimeException("Cannot unpickle null into Primitive field '" +
-//        ${tpe.typeSymbol.name.toString} + "'. Context: "  + config.context(pickle))"""
-//    else
-//      q"null"
-//
-//    val name = newTermName(c.fresh("GenUnpickler"))
-//
-//    val result = q"""
-//      implicit object $name extends prickle.Unpickler[$tpe] {
-//        import prickle._
-//        import scala.util.Try
-//        override def unpickle[P](pickle: P, state: collection.mutable.Map[String, Any])(
-//          implicit config: PConfig[P]): Try[$tpe] = Try {
-//            if (config.isNull(pickle))
-//              $nullLogic
-//            else
-//              $unpickleLogic
-//          }
-//      }
-//      $name
-//    """
-//
-//    c.Expr[Unpickler[T]](result)
-//  }
+
+    val unpickleLogic = if (sym.isModuleClass) {
+      c.parse(sym.fullName)
+    } else {
+      val unpickleBody = {
+        val accessors = (tpe.declarations.collect {
+          case acc: MethodSymbol if acc.isCaseAccessor => acc
+        }).toList
+
+        val unpickledFields = for {
+          accessor <- accessors
+        } yield {
+          val fieldName = accessor.name
+          val fieldTpe = accessor.typeSignatureIn(tpe)
+          q"""
+              config.readObjectField(pickle, ${fieldName.toString}).flatMap(field =>
+                prickle.Unpickle[$fieldTpe].from(field, state)(config)).get
+          """
+        }
+        q"""
+          val result = new $tpe(..$unpickledFields)
+          Unpickler.resolvingSharing[P](result, pickle, state, config)
+          scala.util.Success(result)
+        """
+      }
+      val unpickleRef = q"""(p: P) => config.readString(p).flatMap(ref => Try{state(ref).asInstanceOf[$tpe]})"""
+
+      q"""
+      config.readObjectField(pickle, config.prefix + "ref").transform({$unpickleRef}, _ => {$unpickleBody}).get
+      """
+    }
+
+
+    val nullLogic = if (sym.isPrimitive)
+      q"""throw new RuntimeException("Cannot unpickle null into Primitive field '" +
+        ${tpe.typeSymbol.name.toString} + "'. Context: "  + config.context(pickle))"""
+    else
+      q"null"
+
+    val name = TermName(c.freshName("GenUnpickler"))
+
+    val result = q"""
+      implicit object $name extends prickle.Unpickler[$tpe] {
+        import prickle._
+        import scala.util.Try
+        override def unpickle[P](pickle: P, state: collection.mutable.Map[String, Any])(
+          implicit config: PConfig[P]): Try[$tpe] = Try {
+            if (config.isNull(pickle))
+              $nullLogic
+            else
+              $unpickleLogic
+          }
+      }
+      $name
+    """
+
+    c.Expr[Unpickler[T]](result)
+  }
 }
 
 
