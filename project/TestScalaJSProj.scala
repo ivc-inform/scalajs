@@ -16,7 +16,7 @@ trait TestSmartClientCrossProj {
     libraryDependencies ++= {
       Seq(
         //CommonSettings.cmnDependencies.prickle,
-        CommonSettings.jvmDependencies.scalaTest % "test"
+        //CommonSettings.jvmDependencies.scalaTest % "test"
       )
     }).
     jsSettings(
@@ -24,7 +24,7 @@ trait TestSmartClientCrossProj {
     persistLauncher := true,
 
     libraryDependencies ++= Seq(
-        CommonSettings.jsDependencies.smartClient % "provided"
+        CommonSettings.jsDependencies.smartClient.value % "provided"
       )
     //jsDependencies += "org.example" %% "js-thing" % "0.1" / "foo.js"
     ).jsConfigure(x => x.dependsOn(macroJsSub)).jvmConfigure(x => x.dependsOn(macroJvmSub))

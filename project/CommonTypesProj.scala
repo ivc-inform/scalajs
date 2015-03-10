@@ -17,7 +17,7 @@ trait CommonTypesProj {
     jvmSettings(
       libraryDependencies ++= {
         Seq(
-          CommonSettings.jvmDependencies.scalaTest % "test"
+          //CommonSettings.jvmDependencies.scalaTest % "test"
         )
       }).
     jsSettings(

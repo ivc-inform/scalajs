@@ -13,14 +13,14 @@ trait SmartClientCrossProj {
       version := "1.0.0-SNAPSHOT",
       libraryDependencies ++= {
         Seq(
-          CommonSettings.cmnDependencies.scalaAsync
+          //CommonSettings.cmnDependencies.scalaAsync.value
         )
       }
     ).
     jvmSettings(
     libraryDependencies ++= {
       Seq(
-        CommonSettings.jvmDependencies.scalaTest % "test"
+        //CommonSettings.jvmDependencies.scalaTest % "test"
       )
     }).
     jsSettings(
@@ -28,7 +28,7 @@ trait SmartClientCrossProj {
     //persistLauncher := true,
 
     libraryDependencies ++= Seq(
-        CommonSettings.jsDependencies.smartClient % "provided"
+        CommonSettings.jsDependencies.smartClient.value % "provided"
       )
     //jsDependencies += "org.example" %% "js-thing" % "0.1" / "foo.js"
     ).jsConfigure(x => x.dependsOn(macroJsSub)).jvmConfigure(x => x.dependsOn(macroJvmSub))

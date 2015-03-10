@@ -17,7 +17,7 @@ trait CommonDomainsProj {
     jvmSettings().
     jsSettings(
       libraryDependencies ++= Seq(
-        CommonSettings.jsDependencies.smartClient % "provided"
+        CommonSettings.jsDependencies.smartClient.value % "provided"
       )
     //jsDependencies += "org.example" %% "js-thing" % "0.1" / "foo.js"
   ).jsConfigure(x => x.dependsOn(macroJsSub)).jvmConfigure(x => x.dependsOn(macroJvmSub))

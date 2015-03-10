@@ -1,4 +1,7 @@
 package ru.simplesys.build
+
+import java.util
+
 import sbt._
 import sbt.Keys._
 
@@ -49,10 +52,11 @@ object MyBuild extends Build with
         "com.typesafe.akka" %% "akka-slf4j" % CommonSettings.versions.akkaVersion,
         "io.spray"          %%  "spray-can"     % CommonSettings.versions.sprayVersion,
         "io.spray"          %%  "spray-routing" % CommonSettings.versions.sprayVersion,
-        CommonSettings.jsDependencies.smartClient
+        CommonSettings.jsDependencies.smartClient.value,
+        CommonSettings.cmnDependencies.uTest.value
       ),
-      mainClass in Revolver.reStart := Some("ru.simplesys.server.Boot")
-
+      mainClass in Revolver.reStart := Some("ru.simplesys.server.Boot"),
+      testFrameworks += new TestFramework("utest.runner.Framework")
     ): _*
     ) dependsOn(testSmartClientJVM) aggregate(
     commonTypesJS,

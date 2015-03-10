@@ -105,16 +105,14 @@ trait DemoService extends HttpService {
           //complete("WoW")
           import ru.simplesys.macrojvm.SCPropsPickler._
           import prickle._
-
+//          import prickle.Pickler._
           val dsResp = new DSResponseProps {
             totalRows = 1000
           }
 
-          case class Test(xxx: Int, yyy: String)
+          implicit val pickleConfig = new JsConfig(areSharedObjectsSupported = false)
 
-          val dsRespTest = Test(1, "a")
-
-          val str = Pickle.intoString(dsRespTest)
+          val str = Pickle.intoString(dsResp)
           complete(str)
         }
       }

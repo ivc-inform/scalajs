@@ -9,11 +9,7 @@ import scala.reflect.macros.whitebox.Context
 import ru.simplesys.cmntypes._
 
 object SCPropsPickler {
-  import prickle.Pickler
-
   implicit def materializePicklerSCProp[T <: SCProps]: Pickler[T] = macro SCPropPicklerMaterializersImpl.materializePickler[T]
-
-  //implicit def test[T <: SCProps]: Pickler[T] = ??? //macro SCPropPicklerMaterializersImpl.materializePickler[T]
 }
 
 object SCPropPicklerMaterializersImpl {
@@ -25,13 +21,15 @@ object SCPropPicklerMaterializersImpl {
     if (!tpe.typeSymbol.isClass)
       throw new RuntimeException("Enclosure: " + c.enclosingPosition.toString)
 
-    val sym = tpe.typeSymbol.asClass
 
-//    if (!sym.isCaseClass) {
-//      c.error(c.enclosingPosition,
-//        s"Cannot materialize pickler for non-case class: ${sym.fullName}")
-//      return c.Expr[Pickler[T]](q"null")
-//    }
+    //additional check for T <: SCProps. It works for some reason.!!
+    tpe.baseType(typeOf[SCProps].typeSymbol) match {
+      case NoType => throw new RuntimeException("Enclosure: " + c.enclosingPosition.toString)
+      case TypeRef(_, _, _) =>
+
+    }
+
+    val sym = tpe.typeSymbol.asClass
 
     val pickleLogic = if (sym.isModuleClass) {
 
@@ -80,11 +78,12 @@ object SCPropPicklerMaterializersImpl {
         val decoded = name.decodedName.toString
         val returnType = tpeSCProps.decl(name).typeSignature
         val nullSafeFieldPickle =
+        //if (typeDef.typeSymbol.asClass.isPrimitive)
           q"""if (value.$name == null) {
-              config.makeNull()
+              Some(config.makeNull())
             } else if (!value.$name.isEmpty)
-                      prickle.Pickle.withConfig(value.$name.get, state, config)
-                   else config.makeNull()"""
+                      Some(prickle.Pickle.withConfig(value.$name.get, state, config))
+                   else None"""
         q"""($decoded, $nullSafeFieldPickle)"""
       }
 
@@ -101,13 +100,13 @@ object SCPropPicklerMaterializersImpl {
               config.makeNull()
             } else
               prickle.Pickle.withConfig(value.$name, state, config)"""
-        q"""($decoded, $nullSafeFieldPickle)"""
+        q"""($decoded, Some($nullSafeFieldPickle))"""
       }
 
       val pickleFields = scPropFields ++ simpleFields
 
       q"""
-        def fieldPickles = Seq(..$pickleFields)
+        def fieldPickles = Seq(..$pickleFields).collect {case (f, Some(v)) => (f, v)}
         Pickler.resolvingSharing[P](value, fieldPickles, state, config)
       """
     }
@@ -115,7 +114,6 @@ object SCPropPicklerMaterializersImpl {
 
     val result = q"""
       implicit object $name extends prickle.Pickler[$tpe] {
-        import prickle._
         override def pickle[P](value: $tpe, state: PickleState)(
             implicit config: PConfig[P]): P = $pickleLogic
       }

@@ -9,5 +9,4 @@ import rpc.RPCResponseProps
 class DSResponseProps extends RPCResponseProps {
   var totalRows = noSCProp[Int]
   var endRow = noSCProp[Int]
-  var xxx: Int = 1
 }

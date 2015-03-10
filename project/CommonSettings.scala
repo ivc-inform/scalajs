@@ -4,7 +4,7 @@ import sbt._
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
 
 object CommonSettings {
-  val scalaVersion = "2.11.5"
+  val scalaVersion = "2.11.6"
   val organization = "ru.simplesys"
   val scalacOptions = Seq(
     "-feature",
@@ -27,23 +27,25 @@ object CommonSettings {
     val smartclientVersion = "10.0-v20141114"
 
 
+    val uTestVersion = "0.3.1"
     val scalaTestVersion = "2.2.2"
   }
 
   object cmnDependencies {
-    val scalaAsync = "org.scala-lang.modules" %% "scala-async" % versions.scalaAsyncVersion
-    val prickle = "com.github.benhutchison" %%%! "prickle" % versions.prickleVersion
+    val scalaAsync = Def.setting( "org.scala-lang.modules" %% "scala-async" % versions.scalaAsyncVersion )
+    val prickle = Def.setting( "com.github.benhutchison" %%% "prickle" % versions.prickleVersion )
+    val uTest = Def.setting( "com.lihaoyi" %%% "utest" % versions.uTestVersion % "test" )
   }
 
   object jsDependencies {
-    val scalaRx = "com.scalarx" %%%! "scalarx" % versions.scalaRxVersion
-    val scalajsDOM = "org.scala-js" %%%! "scalajs-dom" % versions.scalajsDOMVersion
-    val smartClient = "com.simplesys" % "smartclient-js" % versions.smartclientVersion
+    val scalaRx = Def.setting( "com.scalarx" %%% "scalarx" % versions.scalaRxVersion )
+    val scalajsDOM = Def.setting( "org.scala-js" %%% "scalajs-dom" % versions.scalajsDOMVersion )
+    val smartClient = Def.setting( "com.simplesys" % "smartclient-js" % versions.smartclientVersion )
   }
 
   object jvmDependencies {
-    val scalaRx = "com.scalarx" %% "scalarx" % versions.scalaRxVersion
-    val scalaTest = "org.scalatest" %% "scalatest" % versions.scalaTestVersion
+    val scalaRx = Def.setting( "com.scalarx" %% "scalarx" % versions.scalaRxVersion )
+    val scalaTest = Def.setting( "org.scalatest" %% "scalatest" % versions.scalaTestVersion )
   }
 
 }

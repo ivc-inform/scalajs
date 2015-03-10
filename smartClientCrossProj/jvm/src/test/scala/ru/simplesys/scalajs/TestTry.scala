@@ -1,6 +1,6 @@
 package ru.simplesys.scalajs
 
-import org.scalatest.{Matchers, FunSuite}
+//import org.scalatest.{Matchers, FunSuite}
 
 trait One
 trait Two extends One
@@ -21,8 +21,8 @@ class ThreeProps extends TwoProps {
 }
 
 
-class TestTry extends FunSuite with Matchers {
-   test("simple test") {
-     val x = new ThreeProps()
-   }
-}
+//class TestTry extends FunSuite with Matchers {
+//   test("simple test") {
+//     val x = new ThreeProps()
+//   }
+//}
