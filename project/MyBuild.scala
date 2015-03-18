@@ -34,7 +34,7 @@ object MyBuild extends Build with
 
   lazy val root = Project("core-libs-scalajs", file(".")) settings(
     Revolver.settings ++ mergeWebappSettings ++ Seq(
-      //scalacOptions += "-Xlog-implicits",
+      scalacOptions += "-Xlog-implicits",
       persistLauncher := true,
       mergeMapping in MergeWebappConfig := Seq(
         ("com.simplesys", "smartclient-js") -> Seq(

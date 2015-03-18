@@ -10,6 +10,15 @@ import ru.simplesys.cmntypes._
 
 object SCPropsPickler {
   implicit def materializePicklerSCProp[T <: SCProps]: Pickler[T] = macro SCPropPicklerMaterializersImpl.materializePickler[T]
+  implicit def materializeUnpicklerSCProp[T <: SCProps with SCPropsFromJSON]: Unpickler[T] = macro SCPropPicklerMaterializersImpl.materializeUnpickler[T]
+
+  implicit def scPropOptUnpickler[X](implicit ku: Unpickler[X]): Unpickler[SCPropOpt[X]] =  new Unpickler[SCPropOpt[X]] {
+    import scala.collection._
+    import prickle._
+    def unpickle[P](pickle: P, state: mutable.Map[String, Any])(implicit config: PConfig[P]): scala.util.Try[SCPropOpt[X]] = {
+      ku.unpickle(pickle, state).map(x => SCPropVal(x))
+    }
+  }
 }
 
 object SCPropPicklerMaterializersImpl {
@@ -113,17 +122,18 @@ object SCPropPicklerMaterializersImpl {
 
     val result = q"""
       implicit object $name extends prickle.Pickler[$tpe] {
+        import prickle._
         override def pickle[P](value: $tpe, state: PickleState)(
             implicit config: PConfig[P]): P = $pickleLogic
       }
       $name
     """
 
-    println(result)
+    //println(result)
     c.Expr[Pickler[T]](result)
   }
 
-  def materializeUnpickler[T <: SCProps : c.WeakTypeTag](c: Context): c.Expr[Unpickler[T]] = {
+  def materializeUnpickler[T <: SCProps with SCPropsFromJSON : c.WeakTypeTag](c: Context): c.Expr[Unpickler[T]] = {
     import c.universe._
 
     val tpe = weakTypeOf[T]
@@ -135,11 +145,12 @@ object SCPropPicklerMaterializersImpl {
       c.abort(c.enclosingPosition, s"${tpe.toString} is not class")
 
     val tsSCProps = typeOf[SCProps].typeSymbol
+    val tsSCPropsFromJSON = typeOf[SCPropsFromJSON].typeSymbol
     val tsUnit = typeOf[Unit].typeSymbol
 
     //additional check for T <: SCProps. It works for some reason.!!
-    if (!tpe.baseClasses.contains(tsSCProps))
-      c.abort(c.enclosingPosition, s"${tpe.toString} is not derived from SCProps")
+    if (!(tpe.baseClasses.contains(tsSCProps) && tpe.baseClasses.contains(tsSCPropsFromJSON)))
+      c.abort(c.enclosingPosition, s"${tpe.toString} is not derived from SCProps with SCPropsFromJSON")
     //throw new RuntimeException("Enclosure: " + c.enclosingPosition.toString)
 
 
@@ -154,30 +165,66 @@ object SCPropPicklerMaterializersImpl {
       c.parse(sym.fullName)
     } else {
       val unpickleBody = {
-        val accessors = (tpe.declarations.collect {
-          case acc: MethodSymbol if acc.isCaseAccessor => acc
-        }).toList
+//        val accessors = (tpe.declarations.collect {
+//          case acc: MethodSymbol if acc.isCaseAccessor => acc
+//        }).toList
 
-        val unpickledFields = for {
-          accessor <- accessors
-        } yield {
-          val fieldName = accessor.name
-          val fieldTpe = accessor.typeSignatureIn(tpe)
-          q"""
-              config.readObjectField(pickle, ${fieldName.toString}).flatMap(field =>
-                prickle.Unpickle[$fieldTpe].from(field, state)(config)).get
-          """
+        val tpeSCProps = weakTypeOf[T]
+
+        val setters = tpeSCProps.members.collect {case field if field.isPublic &&
+          field.isMethod &&
+          field.asMethod.isSetter &&
+          !field.asMethod.isConstructor &&
+          field.asMethod.returnType.typeSymbol == tsUnit &&
+          field.owner.isClass &&
+          field.owner.asClass.baseClasses.contains(tsSCProps) &&
+          field.owner.asClass != tsSCProps
+        => field
         }
+
+        val unpickledPairs = setters.map { sett =>
+          //example is "operationType_$eq", length(_$eq) == 4
+
+          val setterMethod = sett.asMethod.name
+          val setterNameStr = sett.name.toString
+          val setterArg = sett.asMethod.paramLists.head.head.typeSignatureIn(tpe)
+          val fieldName = setterNameStr.substring(0, setterNameStr.length - 4)
+          val fieldTpe = sett.typeSignatureIn(tpe)
+
+          q"""
+          $sett(config.readObjectField(pickle, $fieldName).flatMap(field =>
+            prickle.Unpickle[$setterArg].from(field, state)(config)).get)
+            """
+
+          setterArg.baseType(typeOf[SCPropOpt[_]].typeSymbol) match {
+            case TypeRef(_, _, targs) =>
+              q"""
+              $setterMethod(config.readObjectField(pickle, $fieldName).flatMap(field =>
+                prickle.Unpickle[${targs.head}].from(field, state)(config)).get)
+                """
+            case NoType =>
+              q"""
+              $setterMethod(config.readObjectField(pickle, $fieldName).flatMap(field =>
+                prickle.Unpickle[$setterArg].from(field, state)(config)).get)
+                """
+          }
+        }
+
+        //(..$unpickledFields)
         q"""
-          val result = new $tpe(..$unpickledFields)
+          val result: $tpe = new $tpe {
+            ..$unpickledPairs
+          }
+
           Unpickler.resolvingSharing[P](result, pickle, state, config)
           scala.util.Success(result)
         """
       }
       val unpickleRef = q"""(p: P) => config.readString(p).flatMap(ref => Try{state(ref).asInstanceOf[$tpe]})"""
 
+
       q"""
-      config.readObjectField(pickle, config.prefix + "ref").transform({$unpickleRef}, _ => {$unpickleBody}).get
+          config.readObjectField(pickle, config.prefix + "ref").transform({$unpickleRef}, _ => {$unpickleBody}).get
       """
     }
 
@@ -196,15 +243,16 @@ object SCPropPicklerMaterializersImpl {
         import scala.util.Try
         override def unpickle[P](pickle: P, state: collection.mutable.Map[String, Any])(
           implicit config: PConfig[P]): Try[$tpe] = Try {
-            if (config.isNull(pickle))
-              $nullLogic
-            else
-              $unpickleLogic
-          }
+          if (config.isNull(pickle))
+            $nullLogic
+          else
+            $unpickleLogic
+        }
       }
       $name
     """
 
+    println(result)
     c.Expr[Unpickler[T]](result)
   }
 }

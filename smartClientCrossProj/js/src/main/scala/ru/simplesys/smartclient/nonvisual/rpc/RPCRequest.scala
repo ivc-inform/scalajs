@@ -35,7 +35,7 @@ object RPCRequest extends SCApply[RPCRequest, RPCRequestProps] {
   }
 }
 
-class RPCRequestProps extends SCProps {
+trait RPCRequestProps extends RPCRequestSharedProps {
   type Request <: RPCRequest
   type Response <: RPCResponse
   type Data <: js.Any
@@ -47,3 +47,6 @@ class RPCRequestProps extends SCProps {
 
   var clientContext = noSCProp[js.Object]
 }
+
+
+

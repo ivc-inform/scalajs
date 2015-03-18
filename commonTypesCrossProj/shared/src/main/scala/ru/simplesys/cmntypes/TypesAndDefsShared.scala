@@ -1,6 +1,9 @@
 package ru.simplesys.cmntypes
 
 
+// marker trait
+trait SCPropsFromJSON
+
 trait SCProps {
   implicit def toSCPropOpt[A](x: A): SCPropOpt[A] = SCPropVal(x)
   @inline def noSCProp[A]: SCPropOpt[A] = NoSCPropVal

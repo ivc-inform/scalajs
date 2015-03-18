@@ -13,6 +13,7 @@ trait SmartClientCrossProj {
       version := "1.0.0-SNAPSHOT",
       libraryDependencies ++= {
         Seq(
+          CommonSettings.cmnDependencies.prickle.value
           //CommonSettings.cmnDependencies.scalaAsync.value
         )
       }

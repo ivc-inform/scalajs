@@ -31,18 +31,15 @@ object DSRequest extends SCApply[DSRequest, DSRequestProps] {
 
 }
 
-class DSRequestProps extends RPCRequestProps {
+class DSRequestProps extends DSRequestSharedProps with RPCRequestProps {
   type Request <: DSRequest
   type Response <: DSResponse
   type Data <: js.Object
 
-  var componentId = noSCProp[String]
-
-  // usually autopopulated
-  var dataSource = noSCProp[String]
-  // usually autopopulated
-  var operationType = noSCProp[DSOperationType]
-
-
-
+//  var componentId = noSCProp[String]
+//
+//  // usually autopopulated
+//  var dataSource = noSCProp[String]
+//  // usually autopopulated
+//  var operationType = noSCProp[DSOperationType]
 }

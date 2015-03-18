@@ -3,10 +3,7 @@ package smartclient
 package nonvisual
 package rpc
 
-import scala.scalajs.js
-import macrojs._
 import common._
-import cmntypes.SCProps
 
 sealed trait HttpMethod extends SimpleStringEnum
 
