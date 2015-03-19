@@ -2,7 +2,7 @@ package ru.simplesys.server
 
 import java.io.File
 import org.parboiled.common.FileUtils
-import ru.simplesys.smartclient.nonvisual.databinding.DSResponseProps
+import ru.simplesys.smartclient.nonvisual.databinding.{DSRequestSharedProps, DSResponseProps}
 import scala.concurrent.duration._
 import akka.actor._
 import akka.pattern.ask
@@ -102,18 +102,32 @@ trait DemoService extends HttpService {
     post {
       pathPrefix("data") {
         path("testDS") {
-          //complete("WoW")
-          import ru.simplesys.macrojvm.SCPropsPickler._
-          import prickle._
-//          import prickle.Pickler._
-          val dsResp = new DSResponseProps {
-            totalRows = 1000
+          entity(as[String]) { postBody =>
+
+
+            import prickle._
+            import ru.simplesys.macrojvm.SCPropsPickler._
+
+            implicit val pickleConfig = new JsConfig(areSharedObjectsSupported = false)
+
+            val dsReqTry = Unpickle[DSRequestSharedProps].fromString(postBody)
+
+            dsReqTry match {
+              case scala.util.Success(dsReq) =>
+                val dsReqToStr = Pickle.intoString(dsReq)
+                println(dsReqToStr)
+
+                val dsResp = new DSResponseProps {
+                  totalRows = 1000
+                }
+
+                val str = Pickle.intoString(dsResp)
+                complete(str)
+              case scala.util.Failure(other) =>
+                failWith(other)
+            }
+
           }
-
-          implicit val pickleConfig = new JsConfig(areSharedObjectsSupported = false)
-
-          val str = Pickle.intoString(dsResp)
-          complete(str)
         }
       }
     } ~

@@ -20,6 +20,12 @@ trait SimpleStringEnumObj[T <: SimpleStringEnum] {
 
   def formatMap: Map[String, T]
 
+  implicit object SimpleStringEnumObjPickler extends Pickler[T] {
+    def pickle[P](x: T, state: PickleState)(implicit config: PConfig[P]): P =
+      config.makeString(x.asString)
+  }
+
+
   implicit object SimpleStringEnumObjUnpickler extends Unpickler[T] {
     def unpickle[P](pickle: P, state: mutable.Map[String, Any])(implicit config: PConfig[P]) = {
       val ret = config.readString(pickle).flatMap {str =>

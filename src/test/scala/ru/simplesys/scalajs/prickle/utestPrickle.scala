@@ -48,7 +48,8 @@ object MyTestSuite extends TestSuite {
 
       val str = """{ "dataSource":"isc_RestDataSource_0", "operationType":"fetch", "startRow":0, "endRow":75, "textMatchStyle":"substring", "useStrictJSON":true, "componentId":"isc_ListGrid_0", "data":{ }, "oldValues":null }"""
       val dsReq = Unpickle[DSRequestSharedProps].fromString(str)
-      println(dsReq.get)
+      println(dsReq.get.dataSource)
+      println(dsReq.get.streamResults)
 
     }
 

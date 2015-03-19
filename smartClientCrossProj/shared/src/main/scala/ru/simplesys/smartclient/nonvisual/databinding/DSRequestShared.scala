@@ -14,4 +14,9 @@ trait DSRequestSharedProps extends RPCRequestSharedProps {
   var dataSource = noSCProp[String]
   // usually autopopulated
   var operationType = noSCProp[DSOperationType]
+
+  var startRow = noSCProp[Int]
+  var endRow = noSCProp[Int]
+
+  var streamResults = noSCProp[Boolean]
 }
