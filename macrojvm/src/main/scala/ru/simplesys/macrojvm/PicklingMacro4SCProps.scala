@@ -1,14 +1,47 @@
 package ru.simplesys.macrojvm
 
-import prickle.{Unpickler, Pickler}
+import prickle._
 
 import scala.language.experimental.macros
 import scala.reflect.macros._
 import scala.reflect.macros.whitebox.Context
+import scala.collection._
 
 import ru.simplesys.cmntypes._
 
 object SCPropsPickler {
+  private def resolvingCollection[P](coll: Any, elems: Seq[P], state: PickleState, config: PConfig[P]): P = {
+    config.makeArray(elems: _*)
+  }
+
+
+  implicit def immutableSeqPickler[T](implicit pickler: Pickler[T]): Pickler[collection.immutable.Seq[T]] =
+    new Pickler[collection.immutable.Seq[T]] {
+
+      def pickle[P](value: collection.immutable.Seq[T], state: PickleState)(implicit config: PConfig[P]): P = {
+        resolvingCollection[P](value, value.map(e => Pickle(e, state)), state, config)
+      }
+    }
+
+  implicit def seqPickler[T](implicit pickler: Pickler[T]): Pickler[Seq[T]] = new Pickler[Seq[T]] {
+    def pickle[P](value: Seq[T], state: PickleState)(implicit config: PConfig[P]): P = {
+      resolvingCollection[P](value, value.map(e => Pickle(e, state)), state, config)
+    }
+  }
+
+  implicit def iterablePickler[T](implicit pickler: Pickler[T]): Pickler[Iterable[T]] = new Pickler[Iterable[T]] {
+    def pickle[P](value: Iterable[T], state: PickleState)(implicit config: PConfig[P]): P = {
+      resolvingCollection[P](value, value.map(e => Pickle(e, state)).toSeq, state, config)
+    }
+  }
+
+  implicit def setPickler[T](implicit pickler: Pickler[T]): Pickler[Set[T]] = new Pickler[Set[T]] {
+    def pickle[P](value: Set[T], state: PickleState)(implicit config: PConfig[P]): P = {
+      resolvingCollection[P](value, value.map(e => Pickle(e, state)).toSeq, state, config)
+    }
+  }
+
+
   implicit def materializePicklerSCProp[T <: SCProps]: Pickler[T] = macro SCPropPicklerMaterializersImpl.materializePickler[T]
 
   implicit def materializeUnpicklerSCProp[T <: SCProps with SCPropsFromJSON]: Unpickler[T] = macro SCPropPicklerMaterializersImpl.materializeUnpickler[T]
@@ -20,12 +53,45 @@ object SCPropsPickler {
 
     def unpickle[P](pickle: P, state: mutable.Map[String, Any])(implicit config: PConfig[P]): scala.util.Try[SCPropOpt[X]] = {
       ku.unpickle(pickle, state).map(x => SCPropVal(x))
-      //match {
-      //  case scala.util.Success(x) => scala.util.Success(SCPropVal(x))
-      //case scala.util.Failure(ex: NoSuchElementException) => scala.util.Success(NoSCPropVal)
-      //case scala.util.Failure(other) => scala.util.Failure(other)
-      //}
     }
+  }
+
+  implicit def immutableSeqUnpickler[T](implicit unpickler: Unpickler[T]): Unpickler[collection.immutable.Seq[T]] =  new Unpickler[collection.immutable.Seq[T]] {
+    def unpickle[P](pickle: P, state: mutable.Map[String, Any])(implicit config: PConfig[P]): scala.util.Try[collection.immutable.Seq[T]] = {
+      unpickleSeqish[T, collection.immutable.Seq[T], P](x => collection.immutable.Seq.apply(x: _*), pickle, state)
+    }
+  }
+
+  implicit def seqUnpickler[T](implicit unpickler: Unpickler[T]): Unpickler[Seq[T]] =  new Unpickler[Seq[T]] {
+    def unpickle[P](pickle: P, state: mutable.Map[String, Any])(implicit config: PConfig[P]): scala.util.Try[Seq[T]] = {
+      unpickleSeqish[T, Seq[T], P](x => x, pickle, state)
+    }
+  }
+
+  implicit def iterableUnpickler[T](implicit unpickler: Unpickler[T]): Unpickler[Iterable[T]] =  new Unpickler[Iterable[T]] {
+    def unpickle[P](pickle: P, state: mutable.Map[String, Any])(implicit config: PConfig[P]): scala.util.Try[Iterable[T]] = {
+      unpickleSeqish[T, Iterable[T], P](x => x, pickle, state)
+    }
+  }
+
+  implicit def setUnpickler[T](implicit unpickler: Unpickler[T]): Unpickler[Set[T]] =  new Unpickler[Set[T]] {
+    def unpickle[P](pickle: P, state: mutable.Map[String, Any])(implicit config: PConfig[P]): scala.util.Try[Set[T]] = {
+      unpickleSeqish[T, Set[T], P](x => x.toSet, pickle, state)
+    }
+  }
+
+  private def unpickleSeqish[T, S, P](f: Seq[T] => S, pickle: P, state: mutable.Map[String, Any])
+                                     (implicit config: PConfig[P],
+                                      u: Unpickler[T]): scala.util.Try[S] = {
+
+    import config._
+    readArrayLength(pickle).flatMap(len => {
+      val seq = (0 until len).map(index => u.unpickle(readArrayElem(pickle, index).get, state).get)
+      val result = f(seq)
+      //Unpickler.resolvingSharing(result, pickle, state, config)
+      scala.util.Try(result)
+
+    })
   }
 }
 

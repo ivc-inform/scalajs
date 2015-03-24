@@ -96,10 +96,10 @@ object ScalaJSExample extends js.JSApp {
       }))
     })
 
-    import ru.simplesys.smartclient.nonvisual.rpc.RPCResponseProps
-    val resp = new RPCResponseProps {
-    //  this.
-    }
+//    import ru.simplesys.smartclient.nonvisual.rpc.RPCResponseProps
+//    val resp = new RPCResponseProps {
+//    //  this.
+//    }
 
   }
 

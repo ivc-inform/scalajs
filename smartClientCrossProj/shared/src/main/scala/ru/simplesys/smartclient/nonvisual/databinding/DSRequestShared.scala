@@ -19,4 +19,7 @@ trait DSRequestSharedProps extends RPCRequestSharedProps {
   var endRow = noSCProp[Int]
 
   var streamResults = noSCProp[Boolean]
+
+//  var test = noSCProp[Seq[String]]
+
 }

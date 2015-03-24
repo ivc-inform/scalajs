@@ -1,5 +1,6 @@
 package ru.simplesys.scalajs.prickle
 
+import ru.simplesys.cmntypes.SCPropVal
 import ru.simplesys.smartclient.nonvisual.databinding.{DSRequestSharedProps, DSResponseProps}
 import ru.simplesys.smartclient.nonvisual.rpc.DSOperationType
 import utest._
@@ -15,7 +16,8 @@ object MyTestSuite extends TestSuite {
 
       val dsResp = new DSResponseProps {
         totalRows = 1000
-        //var tttt = new DSResponseProps { endRow = 10 }
+        //test = Seq("fff", "ttt", "kkk")
+        var test = SCPropVal(Seq("fff", "ttt", "kkk"))
       }
 
       case class Test(xxx: Int, yyy: String)
@@ -46,10 +48,11 @@ object MyTestSuite extends TestSuite {
       //val found = tttt
 
 
-      val str = """{ "dataSource":"isc_RestDataSource_0", "operationType":"fetch", "startRow":0, "endRow":75, "textMatchStyle":"substring", "useStrictJSON":true, "componentId":"isc_ListGrid_0", "data":{ }, "oldValues":null }"""
+      val str = """{ "dataSource":"isc_RestDataSource_0", "operationType":"fetch", "startRow":0, "endRow":75, "textMatchStyle":"substring", "useStrictJSON":true, "componentId":"isc_ListGrid_0", "data":{ }, "oldValues":null , "test": ["fff", "ttt", "kkk"] }"""
       val dsReq = Unpickle[DSRequestSharedProps].fromString(str)
       println(dsReq.get.dataSource)
       println(dsReq.get.streamResults)
+      println(Pickle.intoString(dsReq.get))
 
     }
 
