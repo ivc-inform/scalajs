@@ -2,7 +2,7 @@ package ru.simplesys.server
 
 import java.io.File
 import org.parboiled.common.FileUtils
-import ru.simplesys.smartclient.nonvisual.databinding.{DSRequestSharedProps, DSResponseProps}
+import ru.simplesys.smartclient.nonvisual.databinding.{ DSRequestSharedProps, DSResponseProps}
 import scala.concurrent.duration._
 import akka.actor._
 import akka.pattern.ask
@@ -108,7 +108,7 @@ trait DemoService extends HttpService {
             import prickle._
             import ru.simplesys.macrojvm.SCPropsPickler._
 
-            implicit val pickleConfig = new JsConfig(areSharedObjectsSupported = false)
+            implicit val pickleConfig = new JsConfig(areSharedObjectsSupported = false, prefix = "~~~")
 
             val dsReqTry = Unpickle[DSRequestSharedProps].fromString(postBody)
 
@@ -117,11 +117,8 @@ trait DemoService extends HttpService {
                 val dsReqToStr = Pickle.intoString(dsReq)
                 println(dsReqToStr)
 
-                val dsResp = new DSResponseProps {
-                  totalRows = 1000
-                }
-
-                val str = Pickle.intoString(dsResp)
+                val resp =  TestDataSource.getGridData( dsReq )
+                val str = Pickle.intoString(resp)
                 complete(str)
               case scala.util.Failure(other) =>
                 failWith(other)

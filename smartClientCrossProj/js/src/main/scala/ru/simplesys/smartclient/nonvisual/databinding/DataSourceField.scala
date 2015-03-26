@@ -14,7 +14,7 @@ import smartclient.nonvisual.types.SCType
 
 trait DataSourceField[T] extends js.Object {
   def name: String = js.native
-
+  def title : String = js.native
   @JSName("type")
   def fieldType: String = js.native
 }
@@ -25,8 +25,9 @@ trait DataSourceField[T] extends js.Object {
 //  }
 //}
 
-class DataSourceFieldProps[T](nameParam: String, fieldTypeParam: SCType[T]) extends SCProps {
+class DataSourceFieldProps[T](nameParam: String, titleParam : String, fieldTypeParam: SCType[T]) extends SCProps {
   var name = nameParam
+  var title = titleParam
 
   private var _fieldType = noProp[SCType[T]]
   def fieldType: PropOpt[SCType[T]] = _fieldType

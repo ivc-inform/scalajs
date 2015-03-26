@@ -13,7 +13,7 @@ import scala.scalajs.js
 //import org.scalajs.dom
 import smartclient.visual._
 import ru.simplesys.macrojs._
-import smartclient.ToJSLiteral
+import ru.simplesys.smartclient.{isc, ToJSLiteral}
 import ru.simplesys.cmntypes._
 
 import scala.scalajs.js.Dictionary
@@ -30,8 +30,8 @@ object ScalaJSExample extends js.JSApp {
     val ds = RestDataSource(new RestDataSourceProps {
       dataURL = "/data/testDS"
       fields = Right(Seq(
-        new DataSourceFieldProps("testFieldString", SCTextType),
-        new DataSourceFieldProps("testFieldBoolean", SCBooleanType)
+        new DataSourceFieldProps("testFieldString", "Наименование задачи", SCTextType),
+        new DataSourceFieldProps("testFieldBoolean", "выполнена", SCBooleanType)
       ))
 
       requestProperties = new DSRequestProps {
@@ -88,11 +88,17 @@ object ScalaJSExample extends js.JSApp {
         width = WildCard
         height = 100.pct
       }))*/
-      ListGrid(new ListGridProps {
+      ListGrid(new ListGridProps [Record]{
+
         dataSource = ds
         autoFetchData = true
         width = WildCard
         height = 100.pct
+        rowClick = ( record : Record ) => {
+          isc.say(
+            s" ${record.testFieldString} ${ if( record.testFieldBoolean ) "" else "не" } решена"
+          )
+        }
       }))
     })
 
@@ -104,3 +110,9 @@ object ScalaJSExample extends js.JSApp {
   }
 
 }
+
+class Record extends js.Object {
+  val testFieldString : String = js.native
+  val testFieldBoolean : Boolean = js.native
+}
+

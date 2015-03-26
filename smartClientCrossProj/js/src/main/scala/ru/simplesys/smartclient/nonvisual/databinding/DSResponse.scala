@@ -11,5 +11,5 @@ trait DSResponse extends RPCResponse {
 
 }
 
-object DSResponse extends SCApply[DSResponse, DSResponseProps]
+object DSResponse extends SCApply[DSResponse, DSResponseProps[_]]
 

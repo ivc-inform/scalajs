@@ -6,10 +6,10 @@ package databinding
 import rpc.RPCResponseProps
 
 
-class DSResponseProps extends RPCResponseProps {
-  var totalRows = noSCProp[Int]
-  var endRow = noSCProp[Int]
-
-  //var test = noSCProp[Seq[String]]
-
+class DSResponseProps[T] extends RPCResponseProps {
+  var totalRows   = noSCProp[Int]
+  var endRow      = noSCProp[Int]
+  var startRow    = noSCProp[Int]
+  var status      = noSCProp[Int]
+  var data        = noSCProp[Seq[T]]
 }
