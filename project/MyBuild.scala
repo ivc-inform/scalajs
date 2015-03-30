@@ -16,6 +16,7 @@ import com.simplesys.mergewebapp.MergeWebappPlugin._
 //
 //
 //}
+import aether.Aether._
 
 object MyBuild extends Build with
   MacroJSProject with
@@ -25,16 +26,32 @@ object MyBuild extends Build with
   CommonTypesProj with
   CommonDomainsProj with
   TestSmartClientCrossProj {
+
   override def settings: Seq[Def.Setting[_]] = super.settings ++ Seq(
     scalaVersion := CommonSettings.scalaVersion,
     scalacOptions := CommonSettings.scalacOptions,
     organization := CommonSettings.organization
+//    ,
+//
+//
+//    publishTo <<= version { (v: String) =>
+//      val corporateRepo = "http://toucan.simplesys.lan/"
+//      if (v.trim.endsWith("SNAPSHOT"))
+//        Some("snapshots" at corporateRepo + "artifactory/libs-snapshot-local")
+//      else
+//        Some("releases"  at corporateRepo + "artifactory/libs-release-local")
+//    },
+//    credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
+  ) //++ aetherSettings ++ aetherPublishSettings
 
-  )
 
   lazy val root = Project("core-libs-scalajs", file(".")) settings(
     Revolver.settings ++ mergeWebappSettings ++ Seq(
-      scalacOptions += "-Xlog-implicits",
+      publishArtifact in (Compile, packageBin) := false,
+      publishArtifact in (Compile, packageDoc) := false,
+      publishArtifact in (Compile, packageSrc) := false,
+
+      //scalacOptions += "-Xlog-implicits",
       persistLauncher := true,
       mergeMapping in MergeWebappConfig := Seq(
         ("com.simplesys", "smartclient-js") -> Seq(

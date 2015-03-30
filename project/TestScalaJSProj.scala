@@ -10,7 +10,10 @@ trait TestSmartClientCrossProj {
   lazy val testSmartClientCrossProj = crossProject.dependsOn(smartClientCrossProj, commonDomainsCrossProj).
     settings(
       name := "test-smartclient-infra",
-      version := "1.0.0-SNAPSHOT"
+      version := "1.0.0-SNAPSHOT",
+      publishArtifact in (Compile, packageBin) := false,
+      publishArtifact in (Compile, packageDoc) := false,
+      publishArtifact in (Compile, packageSrc) := false
     ).
     jvmSettings(
     libraryDependencies ++= {
