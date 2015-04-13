@@ -9,6 +9,7 @@ trait MacroJVMProject {
     name := "macrojvm",
     version := "1.0.0-SNAPSHOT",
     libraryDependencies <+= scalaVersion("org.scala-lang" % "scala-compiler" % _),
-    libraryDependencies ++= Seq(CommonSettings.cmnDependencies.prickle.value)
+    //libraryDependencies ++= Seq(CommonSettings.cmnDependencies.prickle.value),
+    libraryDependencies ++= Seq(CommonSettings.cmnDependencies.uPickle.value)
   ).dependsOn(commonTypesJVM)
 }

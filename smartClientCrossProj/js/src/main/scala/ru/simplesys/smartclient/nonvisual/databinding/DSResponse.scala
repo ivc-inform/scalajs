@@ -7,9 +7,14 @@ import macrojs._
 import rpc.{RPCResponse, RPCResponseProps}
 import cmntypes.SCProps
 
+import scala.scalajs.js
+
 trait DSResponse extends RPCResponse {
 
 }
 
-object DSResponse extends SCApply[DSResponse, DSResponseProps[_]]
+object DSResponse extends SCApply[DSResponse, DSResponseProps]
 
+trait DSUntyped extends DSData {
+  var data = noSCProp[js.Object]
+}

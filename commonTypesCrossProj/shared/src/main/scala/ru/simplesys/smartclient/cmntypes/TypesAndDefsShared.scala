@@ -1,4 +1,6 @@
-package ru.simplesys.cmntypes
+package ru.simplesys
+package smartclient
+package cmntypes
 
 
 // marker trait

@@ -1,10 +1,10 @@
 package ru.simplesys
 package testapp
 
-import ru.simplesys.cmntypes.{SCPropOpt, SCPropVal}
+import smartclient.cmntypes.{SCPropOpt, SCPropVal}
 
 import scala.scalajs.js
-import ru.simplesys.macrojs._
+import smartclient.macrojs._
 
 import smartclient.SCApply
 import smartclient.visual._

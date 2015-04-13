@@ -6,7 +6,7 @@ package databinding
 import cmntypes.{PropOpt, SCProps}
 
 import scala.scalajs.js
-import ru.simplesys.macrojs._
+import macrojs._
 
 import scala.scalajs.js.annotation.JSName
 

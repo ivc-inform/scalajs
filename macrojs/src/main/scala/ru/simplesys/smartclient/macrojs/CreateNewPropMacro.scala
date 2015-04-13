@@ -1,4 +1,5 @@
 package ru.simplesys
+package smartclient
 package macrojs
 
 import scala.language.experimental.macros

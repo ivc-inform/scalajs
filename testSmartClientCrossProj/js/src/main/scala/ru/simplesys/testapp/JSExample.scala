@@ -12,9 +12,9 @@ import smartclient.visual.layouts.{VLayoutProps, VLayout, HLayoutProps, HLayout}
 import scala.scalajs.js
 //import org.scalajs.dom
 import smartclient.visual._
-import ru.simplesys.macrojs._
+import smartclient.macrojs._
 import ru.simplesys.smartclient.{isc, ToJSLiteral}
-import ru.simplesys.cmntypes._
+import smartclient.cmntypes._
 
 import scala.scalajs.js.Dictionary
 
@@ -88,17 +88,17 @@ object ScalaJSExample extends js.JSApp {
         width = WildCard
         height = 100.pct
       }))*/
-      ListGrid(new ListGridProps [Record]{
+      ListGrid(new ListGridProps {
 
         dataSource = ds
         autoFetchData = true
         width = WildCard
         height = 100.pct
-        rowClick = ( record : Record ) => {
-          isc.say(
-            s" ${record.testFieldString} ${ if( record.testFieldBoolean ) "" else "не" } решена"
-          )
-        }
+//        rowClick = ( record : Record, recordNum: Int, fieldNum: Int ) => {
+//          isc.say(
+//            s" ${record.testFieldString} ${ if( record.testFieldBoolean ) "" else "не" } решена"
+//          )
+//        }
       }))
     })
 

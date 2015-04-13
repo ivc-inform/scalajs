@@ -1,7 +1,7 @@
 package ru.simplesys
 package testapp
 
-import ru.simplesys.macrojs._
+import smartclient.macrojs._
 import smartclient.visual.layouts.{VLayoutProps, VLayout}
 import smartclient.visual._
 import smartclient._

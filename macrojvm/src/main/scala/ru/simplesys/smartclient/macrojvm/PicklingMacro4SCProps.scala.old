@@ -1,6 +1,6 @@
 package ru.simplesys.macrojvm
 
-import prickle._
+import upickle._
 
 import scala.language.experimental.macros
 import scala.reflect.macros._

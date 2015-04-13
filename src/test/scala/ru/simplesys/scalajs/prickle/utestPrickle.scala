@@ -1,7 +1,7 @@
 package ru.simplesys.scalajs.prickle
 
-import ru.simplesys.cmntypes.SCPropVal
-import ru.simplesys.smartclient.nonvisual.databinding.{DSRequestSharedProps, DSResponseProps}
+import ru.simplesys.smartclient.cmntypes.SCPropVal
+import ru.simplesys.smartclient.nonvisual.databinding._
 import ru.simplesys.smartclient.nonvisual.rpc.DSOperationType
 import utest._
 import utest.ExecutionContext.RunNow
@@ -9,15 +9,15 @@ import utest.ExecutionContext.RunNow
 object MyTestSuite extends TestSuite {
   val tests = TestSuite {
     'testPricklePickle {
-      import ru.simplesys.macrojvm.SCPropsPickler._
-      import prickle._
+//      import ru.simplesys.macrojvm.SCPropsPickler._
+//      import prickle._
 
-      implicit val pickleConfig = new JsConfig(areSharedObjectsSupported = false)
+//      implicit val pickleConfig = new JsConfig(areSharedObjectsSupported = false)
 
-      val dsResp = new DSResponseProps {
+      val dsResp = new DSResponseProps with DSUntyped {
         totalRows = 1000
         //test = Seq("fff", "ttt", "kkk")
-        var test = SCPropVal(Seq("fff", "ttt", "kkk"))
+        //var test = SCPropVal(Seq("fff", "ttt", "kkk"))
       }
 
       case class Test(xxx: Int, yyy: String)
@@ -25,17 +25,17 @@ object MyTestSuite extends TestSuite {
       val dsRespTest = Test(1, "a")
 
 
-      val str = Pickle.intoString(dsResp)
-      val strTest = Pickle.intoString(dsRespTest)
-      println(s"json: $str")
-      println(s"json test: $strTest")
+//      val str = Pickle.intoString(dsResp)
+//      val strTest = Pickle.intoString(dsRespTest)
+//      println(s"json: $str")
+//      println(s"json test: $strTest")
     }
 
     'testPrickleUnpickle {
-      import ru.simplesys.macrojvm.SCPropsPickler._
-      import prickle._
+      //import ru.simplesys.smartclient.macrojvm.SCPropsPickler._
+      //import prickle._
 
-      implicit val pickleConfig = new JsConfig(areSharedObjectsSupported = false)
+ //     implicit val pickleConfig = new JsConfig(areSharedObjectsSupported = false)
 
       //import ru.simplesys.smartclient.nonvisual.rpc.DSOperationType.SimpleStringEnumObjUnpickler
 
@@ -49,10 +49,10 @@ object MyTestSuite extends TestSuite {
 
 
       val str = """{ "dataSource":"isc_RestDataSource_0", "operationType":"fetch", "startRow":0, "endRow":75, "textMatchStyle":"substring", "useStrictJSON":true, "componentId":"isc_ListGrid_0", "data":{ }, "oldValues":null , "test": ["fff", "ttt", "kkk"] }"""
-      val dsReq = Unpickle[DSRequestSharedProps].fromString(str)
-      println(dsReq.get.dataSource)
-      println(dsReq.get.streamResults)
-      println(Pickle.intoString(dsReq.get))
+  //    val dsReq = Unpickle[DSRequestSharedProps].fromString(str)
+//      println(dsReq.get.dataSource)
+//      println(dsReq.get.streamResults)
+//      println(Pickle.intoString(dsReq.get))
 
     }
 
