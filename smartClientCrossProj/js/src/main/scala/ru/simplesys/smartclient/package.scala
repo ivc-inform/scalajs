@@ -10,7 +10,7 @@ package object smartclient {
     def toJSLiteral: js.Dictionary[js.Any] = toLiteral.toLiteralMacro(p)
   }
 
-  implicit class ToSCPropOpt[A](x: A) {
-    def sc: SCPropOpt[A] = SCPropVal(x)
-  }
+//  implicit class ToSCPropOpt[A](x: A) {
+//    def sc: SCPropOpt[A] = SCPropVal(x)
+//  }
 }
