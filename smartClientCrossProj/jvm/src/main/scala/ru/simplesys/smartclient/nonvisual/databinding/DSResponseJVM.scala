@@ -4,5 +4,8 @@ package nonvisual
 package databinding
 
 trait DSUntyped extends DSData {
-  var data = noSCProp[Map[String, upickle.Js.Value]]
+  var data = noSCProp[Seq[json.JSObject]]
 }
+
+
+

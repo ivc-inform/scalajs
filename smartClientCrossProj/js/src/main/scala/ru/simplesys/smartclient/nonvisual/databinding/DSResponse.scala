@@ -16,5 +16,5 @@ trait DSResponse extends RPCResponse {
 object DSResponse extends SCApply[DSResponse, DSResponseProps]
 
 trait DSUntyped extends DSData {
-  var data = noSCProp[js.Object]
+  var data = noSCProp[Seq[js.Object]]
 }

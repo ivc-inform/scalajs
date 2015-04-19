@@ -105,25 +105,26 @@ trait DemoService extends HttpService {
           entity(as[String]) { postBody =>
 
 
-//            import prickle._
-//            import ru.simplesys.macrojvm.SCPropsPickler._
+            import prickle._
+            import ru.simplesys.smartclient.macrojvm.SCPropsPickler._
 
-//            implicit val pickleConfig = new JsConfig(areSharedObjectsSupported = false, prefix = "~~~")
+            implicit val pickleConfig = new JsConfig(areSharedObjectsSupported = false)
 
-//            val dsReqTry = Unpickle[DSRequestSharedProps].fromString(postBody)
+            val dsReqTry = Unpickle[DSRequestSharedProps].fromString(postBody)
 
-//            dsReqTry match {
-//              case scala.util.Success(dsReq) =>
-//                val dsReqToStr = Pickle.intoString(dsReq)
-//                println(dsReqToStr)
-//
-//                val resp =  TestDataSource.getGridData( dsReq )
-//                val str = Pickle.intoString(resp)
-//                complete(str)
-//              case scala.util.Failure(other) =>
-//                failWith(other)
-//            }
-            complete("ouououou!")
+            dsReqTry match {
+              case scala.util.Success(dsReq) =>
+                //val r = dsReq
+                val dsReqToStr = Pickle.intoString(dsReq)
+                println(dsReqToStr)
+
+                val resp =  TestDataSource.getGridData(dsReq)
+                val str = Pickle.intoString(resp)
+                complete(str)
+              case scala.util.Failure(other) =>
+                failWith(other)
+            }
+            //complete("ouououou!")
 
           }
         }

@@ -25,7 +25,7 @@ trait SmartClientCrossProj {
       )
     }).
     jsSettings(
-      scalacOptions += "-Xlog-implicits",
+      //scalacOptions += "-Xlog-implicits",
     //persistLauncher := true,
 
     libraryDependencies ++= Seq(

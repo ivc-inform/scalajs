@@ -3,9 +3,9 @@ package smartclient
 package nonvisual
 package common
 
-//import prickle._
+import prickle._
 import scala.collection._
-//import scala.util.{Failure, Try, Success}
+import scala.util.{Failure, Try, Success}
 
 //import scala.scalajs.js
 
@@ -20,22 +20,22 @@ trait SimpleStringEnumObj[T <: SimpleStringEnum] {
 
   def formatMap: Map[String, T]
 
-//  implicit object SimpleStringEnumObjPickler extends Pickler[T] {
-//    def pickle[P](x: T, state: PickleState)(implicit config: PConfig[P]): P =
-//      config.makeString(x.asString)
-//  }
-//
-//
-//  implicit object SimpleStringEnumObjUnpickler extends Unpickler[T] {
-//    def unpickle[P](pickle: P, state: mutable.Map[String, Any])(implicit config: PConfig[P]) = {
-//      val ret = config.readString(pickle).flatMap {str =>
-//        formatMap.get(str) match {
-//          case Some(el) => Success(el)
-//          case None => Failure[T](new NoSuchElementException(str))
-//        }
-//      }
-//      ret
-//    }
-//  }
+  implicit object SimpleStringEnumObjPickler extends Pickler[T] {
+    def pickle[P](x: T, state: PickleState)(implicit config: PConfig[P]): P =
+      config.makeString(x.asString)
+  }
+
+
+  implicit object SimpleStringEnumObjUnpickler extends Unpickler[T] {
+    def unpickle[P](pickle: P, state: mutable.Map[String, Any])(implicit config: PConfig[P]) = {
+      val ret = config.readString(pickle).flatMap {str =>
+        formatMap.get(str) match {
+          case Some(el) => Success(el)
+          case None => Failure[T](new NoSuchElementException(str))
+        }
+      }
+      ret
+    }
+  }
 
 }

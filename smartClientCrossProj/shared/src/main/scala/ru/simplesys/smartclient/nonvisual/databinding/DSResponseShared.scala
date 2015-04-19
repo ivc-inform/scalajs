@@ -21,3 +21,8 @@ trait DSResponseProps extends RPCResponseProps {
 trait DSData extends SCProps
 
 
+trait DSTyped[T] extends DSData {
+  var data = noSCProp[Seq[T]]
+}
+
+trait DSResponsePropsTyped[T] extends DSResponseProps with DSTyped[T]

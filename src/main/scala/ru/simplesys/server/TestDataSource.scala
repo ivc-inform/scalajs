@@ -1,32 +1,32 @@
 package ru.simplesys.server
 
-import ru.simplesys.smartclient.nonvisual.databinding.{DSUntyped, DSRequestSharedProps, DSResponseProps}
+import ru.simplesys.json
+import ru.simplesys.smartclient.nonvisual.databinding._
+import ru.simplesys.smartclient.nonvisual.rpc.ServerResponse
 
 object TestDataSource {
 
-   def getGridData( req : DSRequestSharedProps ) = {
+   def getGridData(req : DSRequestSharedProps) = {
 
       val start = req.startRow.get
       val end   = req.endRow.get
       val total = req.endRow.get + 2
 
-      //val returnData = ( start to end  ).toList.map( indx => SomeType( "Задача #" + indx, indx % 2 == 0 ) )
+      val returnData: List[SomeType] = ( start to end  ).toList.map( indx => SomeType( "Задача #" + indx, indx % 2 == 0 ) )
+      //val json =
 
-      ServerEndResponse(
-        new DSResponseProps with DSUntyped {
+      val ret = new DSResponsePropsTyped[SomeType] {
             status    = 0
             startRow  = start
             endRow    = end
             totalRows = total
-            //data = returnData
+            data = returnData
         }
-      )
-
+     ServerResponse(ret)
    }
 
 }
 
-case class ServerEndResponse[T]( response : DSResponseProps )
 case class SomeType( testFieldString : String, testFieldBoolean : Boolean )
 
 
