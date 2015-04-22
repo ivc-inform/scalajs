@@ -23,7 +23,7 @@ object CommonSettings {
     val scalajsDOMVersion = "0.7.0"
     //val scalaRxVersion = "0.2.7"
     val uPickleVersion = "0.2.8"
-    val prickleVersion = "1.1.4"
+    val prickleVersion = "1.1.5"
     val smartclientVersion = "10.0-v20141114"
 
 

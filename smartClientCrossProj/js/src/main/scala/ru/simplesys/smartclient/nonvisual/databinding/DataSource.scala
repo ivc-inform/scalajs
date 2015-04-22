@@ -28,7 +28,13 @@ trait DataSource extends SCClass {
 class DataSourceProps extends SCProps {
   var dataURL = noSCProp[String]
   //here could be DataSourceField too
-  var fields = noSCProp[Either[Seq[DataSourceField[_]], Seq[DataSourceFieldProps[_]]]]
+
+  private var _fields = noSCProp[Either[Seq[DataSourceField[_]], Seq[DataSourceFieldProps[_]]]]
+
+  def fields_=(f: Seq[DataSourceFieldProps[_]])(implicit i1: scala.Predef.DummyImplicit): Unit = _fields = SCPropVal(Right(f))
+  def fields_=(f: Seq[DataSourceField[_]])(implicit i1: scala.Predef.DummyImplicit, i2: scala.Predef.DummyImplicit): Unit = _fields = SCPropVal(Left(f))
+  def fields: SCPropOpt[Either[Seq[DataSourceField[_]], Seq[DataSourceFieldProps[_]]]] = _fields
+
   var dataFormat = noSCProp[DSDataFormat]
   var dataProtocol = noSCProp[DSProtocol]
   var operationBindings = noSCProp[Seq[OperationBindingProps]]

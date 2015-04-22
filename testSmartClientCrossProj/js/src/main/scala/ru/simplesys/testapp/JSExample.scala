@@ -29,10 +29,10 @@ object ScalaJSExample extends js.JSApp {
 
     val ds = RestDataSource(new RestDataSourceProps {
       dataURL = "/data/testDS"
-      fields = Right(Seq(
+      fields = Seq(
         new DataSourceFieldProps("testFieldString", "Наименование задачи", SCTextType),
         new DataSourceFieldProps("testFieldBoolean", "выполнена", SCBooleanType)
-      ))
+      )
 
       requestProperties = new DSRequestProps {
         useSimpleHttp = true

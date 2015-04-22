@@ -25,4 +25,4 @@ trait DSTyped[T] extends DSData {
   var data = noSCProp[Seq[T]]
 }
 
-trait DSResponsePropsTyped[T] extends DSResponseProps with DSTyped[T]
+trait DSResponseTypedProps[T] extends DSResponseProps with DSTyped[T]
