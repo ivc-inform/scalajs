@@ -29,3 +29,6 @@ object TestDataSource {
 case class SomeType( testFieldString : String, testFieldBoolean : Boolean )
 
 
+object testSome {
+
+}

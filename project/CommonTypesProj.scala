@@ -11,12 +11,17 @@ trait CommonTypesProj {
     settings(
       name := "common-types",
       version := "1.0.0-SNAPSHOT",
-      libraryDependencies ++= Seq(CommonSettings.cmnDependencies.prickle.value)
+      libraryDependencies ++= Seq(
+        CommonSettings.cmnDependencies.prickle.value//,
+        //CommonSettings.cmnDependencies.shapeless.value
+
+      )
       //libraryDependencies ++= Seq(CommonSettings.cmnDependencies.uPickle.value)
     ).
     jvmSettings(
       libraryDependencies ++= {
         Seq(
+//          CommonSettings.cmnDependencies.shapeless.value
           //CommonSettings.jvmDependencies.scalaTest % "test"
         )
       }).

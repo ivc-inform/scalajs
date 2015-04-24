@@ -67,12 +67,13 @@ object MyBuild extends Build with
       libraryDependencies ++= Seq(
         "com.typesafe.akka" %% "akka-actor" % CommonSettings.versions.akkaVersion,
         "com.typesafe.akka" %% "akka-slf4j" % CommonSettings.versions.akkaVersion,
-        "io.spray"          %%  "spray-can"     % CommonSettings.versions.sprayVersion,
-        "io.spray"          %%  "spray-routing" % CommonSettings.versions.sprayVersion,
+        CommonSettings.jvmDependencies.akkaHttp.value,
+        //"io.spray"          %%  "spray-can"     % CommonSettings.versions.sprayVersion,
+        //"io.spray"          %%  "spray-routing" % CommonSettings.versions.sprayVersion,
         CommonSettings.jsDependencies.smartClient.value,
         CommonSettings.cmnDependencies.uTest.value
       ),
-      mainClass in Revolver.reStart := Some("ru.simplesys.server.Boot"),
+      mainClass in Revolver.reStart := Some("ru.simplesys.server.AkkaHttpMicroservice"),
       testFrameworks += new TestFramework("utest.runner.Framework")
     ): _*
     ) dependsOn(testSmartClientJVM) aggregate(
