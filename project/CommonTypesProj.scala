@@ -12,16 +12,17 @@ trait CommonTypesProj {
       name := "common-types",
       version := "1.0.0-SNAPSHOT",
       libraryDependencies ++= Seq(
-        CommonSettings.cmnDependencies.prickle.value//,
+        CommonSettings.cmnDependencies.prickle.value,
         //CommonSettings.cmnDependencies.shapeless.value
+        CommonSettings.cmnDependencies.uTest.value
 
-      )
-      //libraryDependencies ++= Seq(CommonSettings.cmnDependencies.uPickle.value)
+      ),
+      testFrameworks += new TestFramework("utest.runner.Framework")
     ).
     jvmSettings(
       libraryDependencies ++= {
         Seq(
-//          CommonSettings.cmnDependencies.shapeless.value
+          CommonSettings.cmnDependencies.shapeless.value
           //CommonSettings.jvmDependencies.scalaTest % "test"
         )
       }).

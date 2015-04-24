@@ -13,7 +13,11 @@ trait TestSmartClientCrossProj {
       version := "1.0.0-SNAPSHOT",
       publishArtifact in (Compile, packageBin) := false,
       publishArtifact in (Compile, packageDoc) := false,
-      publishArtifact in (Compile, packageSrc) := false
+      publishArtifact in (Compile, packageSrc) := false,
+      libraryDependencies ++= Seq(
+        CommonSettings.cmnDependencies.uTest.value
+      ),
+      testFrameworks += new TestFramework("utest.runner.Framework")
     ).
     jvmSettings(
     libraryDependencies ++= {

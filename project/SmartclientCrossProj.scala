@@ -15,8 +15,10 @@ trait SmartClientCrossProj {
         Seq(
           //CommonSettings.cmnDependencies.prickle.value
           //CommonSettings.cmnDependencies.scalaAsync.value
+          CommonSettings.cmnDependencies.uTest.value
         )
-      }
+      },
+      testFrameworks += new TestFramework("utest.runner.Framework")
     ).
     jvmSettings(
     libraryDependencies ++= {

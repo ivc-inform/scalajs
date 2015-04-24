@@ -12,7 +12,14 @@ trait CommonDomainsProj {
   lazy val commonDomainsCrossProj = crossProject.dependsOn(smartClientCrossProj).
     settings(
       name := "common-domains",
-      version := "1.0.0-SNAPSHOT"
+      version := "1.0.0-SNAPSHOT",
+
+      libraryDependencies ++= Seq(
+        CommonSettings.cmnDependencies.uTest.value
+
+      ),
+
+      testFrameworks += new TestFramework("utest.runner.Framework")
     ).
     jvmSettings().
     jsSettings(

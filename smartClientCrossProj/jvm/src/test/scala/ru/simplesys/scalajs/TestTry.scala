@@ -1,5 +1,9 @@
 package ru.simplesys.scalajs
 
+import shapeless._
+import utest._
+import utest.ExecutionContext.RunNow
+
 //import org.scalatest.{Matchers, FunSuite}
 
 trait One
@@ -26,3 +30,14 @@ class ThreeProps extends TwoProps {
 //     val x = new ThreeProps()
 //   }
 //}
+
+case class TestCaseClass(a: Int, b: String)
+
+object MyTestSuiteSCJVM extends TestSuite {
+  val tests = TestSuite {
+    'testShapeless {
+      val genTestCaseClass = Generic[TestCaseClass]
+      println(genTestCaseClass)
+    }
+  }
+}
