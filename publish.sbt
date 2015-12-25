@@ -1,5 +1,3 @@
-import aether.Aether._
-
 publishTo <<= version { (v: String) =>
   val corporateRepo = "http://toucan.simplesys.lan/"
   if (v.trim.endsWith("SNAPSHOT"))
@@ -9,9 +7,5 @@ publishTo <<= version { (v: String) =>
 }
 
 credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
-
-aetherSettings
-
-aetherPublishSettings
 
 

@@ -71,9 +71,7 @@ object ToLiteralMacro {
     import c.universe._
 
     val tpeSCProps = weakTypeOf[P]
-    val companion = tpeSCProps.typeSymbol.companion
-
-
+    //val companion = tpeSCProps.typeSymbol.companion
 
     //here should be getters for vals and vars, incl inherited members
     val tsSCProps = typeOf[SCProps].typeSymbol

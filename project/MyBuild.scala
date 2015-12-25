@@ -16,7 +16,6 @@ import com.simplesys.mergewebapp.MergeWebappPlugin._
 //
 //
 //}
-import aether.Aether._
 
 object MyBuild extends Build with
   MacroJSProject with
