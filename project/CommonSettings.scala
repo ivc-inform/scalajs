@@ -15,7 +15,6 @@ object CommonSettings {
     "-unchecked")
 
   object versions {
-    val akkaVersion = "2.3.7"
     val uTestVersion = "0.3.1"
     val scalaTestVersion = "2.2.5"
   }
