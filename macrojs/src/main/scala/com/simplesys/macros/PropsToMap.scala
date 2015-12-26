@@ -1,5 +1,8 @@
 package com.simplesys.macros
 
+import com.simplesys.SmartClient.System.props.AbstractPropsClass
+import com.simplesys.SmartClient.option.ScOption
+
 import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context
 
