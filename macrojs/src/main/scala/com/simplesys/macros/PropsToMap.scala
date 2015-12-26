@@ -1,7 +1,4 @@
-package com.simplesys.SmartClient.System.macroJS
-
-import com.simplesys.SmartClient.System.props.AbstractPropsClass
-import com.simplesys.SmartClient.option.ScOption
+package com.simplesys.macros
 
 import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context

@@ -6,11 +6,11 @@ import com.simplesys.SmartClient.Foundation.inst._
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.Layout.inst.PrintWindow
 import com.simplesys.SmartClient.System.Types.Callback
-import com.simplesys.SmartClient.System.macroJS.PropsToMap
 import com.simplesys.SmartClient.System.props.AbstractPropsClass
 import com.simplesys.SmartClient.System.{AbstractClassCompanion, Types}
 import com.simplesys.isc.System.Types.EdgeName.EdgeName
 import com.simplesys.isc.System.Types.{HTMLString, SCImgURL}
+import com.simplesys.macros.PropsToMap
 
 import scala.reflect.ClassTag
 import scala.scalajs.js
