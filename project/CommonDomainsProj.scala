@@ -1,7 +1,6 @@
 package ru.simplesys.build
 
 
-import com.simplesys.mergewebapp.MergeWebappPlugin._
 import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport._
 import sbt.Keys._
 import sbt._
@@ -12,7 +11,7 @@ trait CommonDomainsProj {
   lazy val commonDomainsCrossProj = crossProject.dependsOn(smartClientCrossProj).
     settings(
       name := "common-domains",
-      version := "1.0.0-SNAPSHOT",
+      version := "1.0-SNAPSHOT",
 
       libraryDependencies ++= Seq(
         CommonSettings.cmnDependencies.uTest.value
@@ -23,9 +22,7 @@ trait CommonDomainsProj {
     ).
     jvmSettings().
     jsSettings(
-      libraryDependencies ++= Seq(
-        CommonSettings.jsDependencies.smartClient.value % "provided"
-      )
+      libraryDependencies ++= Seq()
     //jsDependencies += "org.example" %% "js-thing" % "0.1" / "foo.js"
   ).jsConfigure(x => x.dependsOn(macroJsSub)).jvmConfigure(x => x.dependsOn(macroJvmSub))
 

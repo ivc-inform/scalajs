@@ -10,11 +10,9 @@ trait SmartClientCrossProj {
   lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
     settings(
       name := "smartclient-wrapper",
-      version := "1.0.0-SNAPSHOT",
+      version := "1.0-SNAPSHOT",
       libraryDependencies ++= {
         Seq(
-          //CommonSettings.cmnDependencies.prickle.value
-          //CommonSettings.cmnDependencies.scalaAsync.value
           CommonSettings.cmnDependencies.uTest.value
         )
       },
@@ -23,16 +21,10 @@ trait SmartClientCrossProj {
     jvmSettings(
     libraryDependencies ++= {
       Seq(
-        //CommonSettings.jvmDependencies.scalaTest % "test"
       )
     }).
     jsSettings(
-      //scalacOptions += "-Xlog-implicits",
-    //persistLauncher := true,
-
-    libraryDependencies ++= Seq(
-        CommonSettings.jsDependencies.smartClient.value % "provided"
-      )
+    libraryDependencies ++= Seq(     )
     //jsDependencies += "org.example" %% "js-thing" % "0.1" / "foo.js"
     ).jsConfigure(x => x.dependsOn(macroJsSub)).jvmConfigure(x => x.dependsOn(macroJvmSub))
 

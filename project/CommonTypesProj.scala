@@ -10,26 +10,18 @@ trait CommonTypesProj {
   lazy val commonTypesCrossProj = crossProject.
     settings(
       name := "common-types",
-      version := "1.0.0-SNAPSHOT",
+      version := "1.0-SNAPSHOT",
       libraryDependencies ++= Seq(
-        CommonSettings.cmnDependencies.prickle.value,
-        //CommonSettings.cmnDependencies.shapeless.value
         CommonSettings.cmnDependencies.uTest.value
-
       ),
       testFrameworks += new TestFramework("utest.runner.Framework")
     ).
     jvmSettings(
       libraryDependencies ++= {
         Seq(
-          CommonSettings.cmnDependencies.shapeless.value
-          //CommonSettings.jvmDependencies.scalaTest % "test"
         )
       }).
     jsSettings(
-      //scalacOptions += "-Xlog-implicits",
-      //persistLauncher := true,
-
       //jsDependencies += "org.example" %% "js-thing" % "0.1" / "foo.js"
     )
 
