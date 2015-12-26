@@ -3,7 +3,6 @@ package ru.simplesys.build
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
 import sbt.Keys._
 import sbt._
-import spray.revolver.RevolverPlugin.Revolver
 
 object MyBuild extends Build with
   MacroJSProject with
@@ -27,7 +26,6 @@ object MyBuild extends Build with
       libraryDependencies ++= Seq(
         CommonSettings.cmnDependencies.uTest.value
       ),
-      mainClass in Revolver.reStart := Some("ru.simplesys.server.AkkaHttpMicroservice"),
       testFrameworks += new TestFramework("utest.runner.Framework")
     ): _*
     ) aggregate(
