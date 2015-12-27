@@ -13,6 +13,7 @@ trait SmartClientCrossProj {
       version := "1.0-SNAPSHOT",
       libraryDependencies ++= {
         Seq(
+          CommonSettings.cmnDependencies.xmlExtender.value,
           CommonSettings.cmnDependencies.uTest.value
         )
       },

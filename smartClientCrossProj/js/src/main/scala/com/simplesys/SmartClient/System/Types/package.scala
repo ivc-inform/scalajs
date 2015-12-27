@@ -23,8 +23,4 @@ package object Types {
 
     type Callback = js.Function | CallbackObject
     type ValueMap = Array[Object] | js.Dictionary[Object]
-
-    implicit def str2TypeObject(str: String) = str.asInstanceOf[Types.Object]
-    implicit def int2TypeObject(int: Int) = int.asInstanceOf[Types.Object]
-
 }
