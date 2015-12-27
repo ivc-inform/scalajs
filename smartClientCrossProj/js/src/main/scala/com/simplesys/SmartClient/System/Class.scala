@@ -79,5 +79,5 @@ abstract class AbstractClassCompanion[T <: Types.Object, P <: AbstractPropsClass
 
 @js.native
 object Class extends AbstractClassCompanion[inst.Class, ClassProps] {
-    type Class = Class.type
+
 }
