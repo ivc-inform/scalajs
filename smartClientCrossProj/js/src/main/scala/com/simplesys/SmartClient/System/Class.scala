@@ -1,6 +1,5 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.System.macroJS._
 import com.simplesys.SmartClient.System.props.{AbstractPropsClass, ClassProps}
 import com.simplesys.isc.System.Types.LogPriority._
 import com.simplesys.macros.PropsToMap
@@ -19,8 +18,8 @@ abstract class SCApply[T <: Types.Object, P <: AbstractPropsClass](implicit ct: 
     lazy protected val className: String = ct.runtimeClass.getSimpleName.capitalize
 
     def create(obj: P): T = {
-        //val props = materializePropsMap getMap obj
-        val props = Map.empty[String, Any]
+        val props = materializePropsMap getMap obj
+        //val props = Map.empty[String, Any]
 
         def props2Dict(abstractProps: Map[String, Any]): js.Dictionary[Types.Object] = {
             val result = Dictionary.empty[Types.Object]
