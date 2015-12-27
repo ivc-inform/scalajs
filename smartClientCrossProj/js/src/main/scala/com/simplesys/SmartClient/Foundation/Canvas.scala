@@ -40,6 +40,5 @@ abstract class AbstractCanvasCompanion[T <: Types.Object, P <: AbstractPropsClas
 
 @js.native
 object Canvas extends AbstractCanvasCompanion[Canvas, CanvasProps] {
-    type Canvas = Canvas.type
 }
 
