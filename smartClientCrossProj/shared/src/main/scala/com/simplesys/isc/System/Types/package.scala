@@ -8,6 +8,7 @@ package object Types {
     type FormatString = String
     type SCClassName = String
     type CSSStyleName = String
+    type CSSColor = String
     type HTMLString = String
     type URL = String
     type SCImgURL = String
