@@ -9,7 +9,7 @@ import com.simplesys.SmartClient.System.Number._
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{Callback, ValueMap}
 import com.simplesys.SmartClient.System.inst.{PrintProperties, Class}
-import com.simplesys.SmartClient.Tools.inst.EditNode
+import com.simplesys.SmartClient.Tools.inst.{EditContext, EditNode}
 import com.simplesys.isc.System.Types.Alignment.Alignment
 import com.simplesys.isc.System.Types.BackgroundRepeat.BackgroundRepeat
 import com.simplesys.isc.System.Types.Cursor.Cursor
@@ -340,5 +340,56 @@ trait Canvas extends Class {
     def scrollToRight(): Unit
     def scrollToTop(): Unit
     def sendToBack(): Unit
-    def setAccessKey(accessKey:Char): Unit
+    def setAccessKey(accessKey: Char): Unit
+    def setAriaState(stateName: String, stateValue: String | Boolean | Int | Double): Unit
+    def setBackgroundColor(newColor: CSSColor): Unit
+    def setBackgroundImage(newImage: URL): Unit
+    def setBorder(newBorder: String): Unit
+    def setBottom(bottom: Number): Unit
+    def setCanFocus(canFocus: Boolean): Unit
+    def setContents(newContents: HTMLString): Unit
+    def setCursor(newCursor: Cursor): Unit
+    def setDataPath(dataPath: DataPath): Unit
+    def setDisabled(disabled: Boolean): Unit
+    var setDragTracker: js.ThisFunction0[canvasHandler, Boolean]
+    def setEdgeOpacity(newOpacity: Number): Unit
+    def setEditMode(editingOn: Boolean, editContext: EditContext = js.native, editNode: EditNode = js.native): Unit
+    def setGroupLabelBackgroundColor(groupLabelBackgroundColor: CSSColor): Unit
+    def setGroupTitle(newTitle: HTMLString): Unit
+    def setHeight(height: Number): Unit
+    def setHtmlElement(element: DocumentEvent): Unit
+    def setHtmlPosition(element: DrawPosition): Unit
+    def setImage(identifier: String, URL: SCImgURL = js.native, imgDir: String = js.native): Unit
+    def setLeavePageSpace(newPageSpace: Int): Unit
+    def setLeft(left: Number): Unit
+    def setMargin(margin: Number): Unit
+    def setOpacity(newOpacity: Number): Unit
+    def setOverflow(newOverflow: Overflow): Unit
+    def setPadding(newPadding: Number): Unit
+    def setPageLeft(left: Number): Unit
+    def setPageTop(top: Number): Unit
+    def setPercentSource(sourceWidget: Canvas = js.native): Unit
+    def setRect(left: Number = js.native, top: Number = js.native, width: Number = js.native, height: Number = js.native): Unit
+    def setRight(right: Number): Unit
+    def setShowResizeBar(show: Boolean): Unit
+    def setShowShadow(showShadow: Boolean): Unit
+    def setShowSnapGrid(show: Boolean): Unit
+    def setSnapEdge(snapEdge: String): Unit
+    def setSnapOffsetLeft(snapOffsetLeft: Int): Unit
+    def setSnapOffsetTop(snapOffsetTop: Int): Unit
+    def setSnapTo(snapTo: String): Unit
+    def setStyleName(newStyle: CSSStyleName): Unit
+    def setTabIndex (tabIndex:Number) : Unit
+    def setTop (top:Number):Unit
+    def  setValuesManager (dataPath:DataPath):Unit
+    def  setWidth (width:Number):Unit
+    val shadowDepth:Number
+    val shadowImage:Number
+    var shadowOffset:Number
+    var shadowSoftness:Number
+    def shouldDragScroll () :Unit
+    var shouldPrint:Boolean
+    def shouldSnapOnDrop (dragTarget:Canvas):Boolean
+    def show ():Unit
+    def showClickMask (clickAction:Callback, mode, unmaskedTargets)
 }
