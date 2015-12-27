@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.Foundation.inst
 import com.simplesys.SmartClient.Control.inst.Menu
 import com.simplesys.SmartClient.DataBinding.AnimationCallback
 import com.simplesys.SmartClient.Forms.FormsItems.inst.CanvasItem
+import com.simplesys.SmartClient.Forms.inst.ValuesManager
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.System
 import com.simplesys.SmartClient.System.Number._
@@ -12,6 +13,7 @@ import com.simplesys.SmartClient.System.inst.{PrintProperties, Class}
 import com.simplesys.SmartClient.Tools.inst.{EditContext, EditNode}
 import com.simplesys.isc.System.Types.Alignment.Alignment
 import com.simplesys.isc.System.Types.BackgroundRepeat.BackgroundRepeat
+import com.simplesys.isc.System.Types.ClickMaskMode.ClickMaskMode
 import com.simplesys.isc.System.Types.Cursor.Cursor
 import com.simplesys.isc.System.Types.DragAppearance.DragAppearance
 import com.simplesys.isc.System.Types.DragIntersectStyle.DragIntersectStyle
@@ -25,6 +27,7 @@ import com.simplesys.isc.System.Types.PercentBoxModel.PercentBoxModel
 import com.simplesys.isc.System.Types.Positioning.Positioning
 import com.simplesys.isc.System.Types.ProportionalResizeMode.ProportionalResizeMode
 import com.simplesys.isc.System.Types.VerticalAlignment.VerticalAlignment
+import com.simplesys.isc.System.Types.Visibility.Visibility
 import com.simplesys.isc.System.Types._
 import com.simplesys.isc.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.SmartClient.Foundation.AnimateShowEffect._
@@ -379,17 +382,68 @@ trait Canvas extends Class {
     def setSnapOffsetTop(snapOffsetTop: Int): Unit
     def setSnapTo(snapTo: String): Unit
     def setStyleName(newStyle: CSSStyleName): Unit
-    def setTabIndex (tabIndex:Number) : Unit
-    def setTop (top:Number):Unit
-    def  setValuesManager (dataPath:DataPath):Unit
-    def  setWidth (width:Number):Unit
-    val shadowDepth:Number
-    val shadowImage:Number
-    var shadowOffset:Number
-    var shadowSoftness:Number
-    def shouldDragScroll () :Unit
-    var shouldPrint:Boolean
-    def shouldSnapOnDrop (dragTarget:Canvas):Boolean
-    def show ():Unit
-    def showClickMask (clickAction:Callback, mode, unmaskedTargets)
+    def setTabIndex(tabIndex: Number): Unit
+    def setTop(top: Number): Unit
+    def setValuesManager(dataPath: DataPath): Unit
+    def setWidth(width: Number): Unit
+    val shadowDepth: Number
+    val shadowImage: Number
+    var shadowOffset: Number
+    var shadowSoftness: Number
+    def shouldDragScroll(): Unit
+    var shouldPrint: Boolean
+    def shouldSnapOnDrop(dragTarget: Canvas): Boolean
+    def show(): Unit
+    def showClickMask(clickAction: Callback, mode: ClickMaskMode, unmaskedTargets: Canvas | js.Array[Canvas]): String
+    def showComponentMask(unmaskedChildren: js.Array[Canvas] = js.native): Unit
+    var showContextMenu: js.ThisFunction0[canvasHandler, Boolean]
+    val showCustomScrollbars: Boolean
+    var showDragShadow: Boolean
+    val showEdges: Boolean
+    var showHover: Boolean
+    var showHoverComponents: Boolean
+    def showNextTo(otherWidget: Canvas, side: String = js.native, canOcclude: Boolean = js.native, skipAnimation: Boolean = js.native): Unit
+    def showRecursively(): Unit
+    var showResizeBar: Boolean
+    var showShadow: Boolean
+    var showSnapGrid: Boolean
+    var shrinkElementOnHide: Boolean
+    var skinImgDir: URL
+    var snapAlignCandidates: js.Array[Canvas]
+    val snapAlignCenterLineStyle: String
+    val snapAlignEdgeLineStyle: String
+    var snapAxis: String
+    var snapEdge: String
+    val snapHDirection: String
+    var snapHGap: Number
+    var snapOffsetLeft: Int
+    var snapOffsetTop: Int
+    var snapOnDrop: Int
+    var snapResizeToAlign: Int
+    var snapResizeToGrid: Int
+    var snapTo: String
+    var snapToAlign: Boolean
+    var snapToCenterAlign: Boolean
+    var snapToEdgeAlign: Boolean
+    var snapToGrid: Boolean
+    var snapVDirection: String
+    var snapVGap: Number
+    var styleName: CSSStyleName
+    var tabIndex: Number
+    val top: Number | String
+    val topElement: Canvas
+    def updateEditNode(editContext: EditContext, editNode: EditNode): Unit
+    def updateHover(hoverHTML: HTMLString = js.native): Unit
+    var useBackMask: Boolean
+    var useDragMask: Boolean
+    var useNativeDrag: Boolean
+    val useOpacityFilter: Boolean
+    val useTouchScrolling: Boolean
+    var valuesManager: ValuesManager
+    var visibility: Visibility
+    var visibilityChanged: js.ThisFunction1[canvasHandler, Boolean, Unit]
+    def visibleAtPoint(x: Number, y: Number, withinViewport: Boolean = js.native, ignoreWidgets: Canvas = js.native, upToParent: Canvas = js.native): Boolean
+    val width: Number | String
+    def willAcceptDrop(): Boolean
 }
+
