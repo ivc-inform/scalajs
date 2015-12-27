@@ -6,7 +6,7 @@ import org.scalajs.sbtplugin.ScalaJSPlugin
 
 trait MacroJSProject {
   self: Build with CommonTypesProj =>
-  lazy val macroJsSub = Project("macrojs", file("macrojs")).settings(
+  lazy val macroJS = Project("macrojs", file("macrojs")).settings(
     name := "macrojs",
     version := "1.0-SNAPSHOT",
     libraryDependencies <+= scalaVersion("org.scala-lang" % "scala-compiler" % _)

@@ -31,7 +31,7 @@ object MyBuild extends Build with
     ) aggregate(
     commonTypesJS,
     commonTypesJVM,
-    macroJsSub,
+    macroJS,
     smartClientJS,
     smartClientJVM,
     commonDomainJS,

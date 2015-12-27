@@ -24,7 +24,7 @@ trait CommonDomainsProj {
     jsSettings(
       libraryDependencies ++= Seq()
     //jsDependencies += "org.example" %% "js-thing" % "0.1" / "foo.js"
-  ).jsConfigure(x => x.dependsOn(macroJsSub)).jvmConfigure(x => x.dependsOn(macroJvmSub))
+  ).jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
 
   // Needed, so sbt finds the projects
   lazy val commonDomainJVM = commonDomainsCrossProj.jvm

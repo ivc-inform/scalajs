@@ -107,17 +107,17 @@ object PropsToMap {
 
         val res = c.Expr[PropsToMap[P]] {
             q"""
-                        import com.simplesys.SmartClient.System.props.AbstractPropsClass
-                        import collection.immutable.HashMap
+                import com.simplesys.SmartClient.System.props.AbstractPropsClass
+                import collection.immutable.HashMap
 
-                        new PropsToMap[$tpeAbstractPropsClass] {
-                          def getMap(t: $tpeAbstractPropsClass): Map[String, Any] = {
-                              val res = HashMap.empty[String, Any]
-                              $AbstractPropsClassFieldsExpansion
-                              $simpleFieldsExpansion
-                              res
-                          }
-                        }"""
+                new PropsToMap[$tpeAbstractPropsClass] {
+                  def getMap(t: $tpeAbstractPropsClass): Map[String, Any] = {
+                      val res = HashMap.empty[String, Any]
+                      $AbstractPropsClassFieldsExpansion
+                      $simpleFieldsExpansion
+                      res
+                  }
+            }"""
         }
         println(res)
         res

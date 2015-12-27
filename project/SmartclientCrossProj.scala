@@ -21,13 +21,12 @@ trait SmartClientCrossProj {
     ).
     jvmSettings(
     libraryDependencies ++= {
-      Seq(
-      )
+      Seq()
     }).
     jsSettings(
     libraryDependencies ++= Seq(     )
     //jsDependencies += "org.example" %% "js-thing" % "0.1" / "foo.js"
-    ).jsConfigure(x => x.dependsOn(macroJsSub)).jvmConfigure(x => x.dependsOn(macroJvmSub))
+    ).dependsOn().jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
 
   // Needed, so sbt finds the projects
   lazy val smartClientJVM = smartClientCrossProj.jvm
