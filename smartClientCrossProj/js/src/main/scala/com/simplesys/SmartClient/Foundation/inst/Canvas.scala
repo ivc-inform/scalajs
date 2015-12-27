@@ -1,11 +1,13 @@
 package com.simplesys.SmartClient.Foundation.inst
 
 import com.simplesys.SmartClient.DataBinding.AnimationCallback
+import com.simplesys.SmartClient.Forms.FormsItems.inst.CanvasItem
+import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.System
 import com.simplesys.SmartClient.System.Number._
 import com.simplesys.SmartClient.System.inst.Class
 import com.simplesys.isc.System.Types.BackgroundRepeat.BackgroundRepeat
-import com.simplesys.isc.System.Types.{SCImgURL, CSSColor, URL, AnimateShowEffectId}
+import com.simplesys.isc.System.Types._
 import com.simplesys.isc.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.SmartClient.Foundation.AnimateShowEffect._
 
@@ -45,29 +47,46 @@ trait Canvas extends Class {
     var animateShowAcceleration: AnimationAcceleration
     var animateShowEffect: AnimateShowEffectId
     var animateShowTime: Number
-    var animateTime:Number
-    var appImgDir:URL
-    val ariaRole:String
-    val ariaState:String
-    val autoDraw:Boolean
-    var autoShowParent:Boolean
-    var backgroundColor:CSSColor
-    var backgroundImage:SCImgURL
-    val backgroundPosition:String
-    val backgroundRepeat:BackgroundRepeat
-    def blur():Unit
-    var border:String
-    def bringToFront():Unit
-    var canAcceptDrop:Boolean
-    var canDrag:Boolean
-    var canDragReposition:Boolean
-    var canDragResize:Boolean
-    var canDragScroll:Boolean
-    var canDrop:Boolean
-    var canDropBefore:Boolean
-    var canFocus:Boolean
-    var canHover:Boolean
-    var canSelectText:Boolean
-
+    var animateTime: Number
+    var appImgDir: URL
+    val ariaRole: String
+    val ariaState: String
+    val autoDraw: Boolean
+    var autoShowParent: Boolean
+    var backgroundColor: CSSColor
+    var backgroundImage: SCImgURL
+    val backgroundPosition: String
+    val backgroundRepeat: BackgroundRepeat
+    def blur(): Unit
+    var border: String
+    def bringToFront(): Unit
+    var canAcceptDrop: Boolean
+    var canDrag: Boolean
+    var canDragReposition: Boolean
+    var canDragResize: Boolean
+    var canDragScroll: Boolean
+    var canDrop: Boolean
+    var canDropBefore: Boolean
+    var canFocus: Boolean
+    var canHover: Boolean
+    var canSelectText: Boolean
+    val canvasItem: CanvasItem
+    val children: js.Array[Canvas]
+    var childrenResizeSnapAlign: Boolean
+    var childrenSnapAlign: Boolean
+    var childrenSnapCenterAlign: Boolean
+    var childrenSnapEdgeAlign: Boolean
+    var childrenSnapResizeToGrid: Boolean
+    var childrenSnapToGrid: Boolean
+    def clear(): Unit
     var click: js.ThisFunction0[canvasHandler, Boolean]
+    def clickMaskUp(ID: String = js.native): Boolean
+    val componentMask: Canvas with AutoChild
+    val componentMaskDefaults: CanvasProps
+    def contains(canvas: Canvas, testSelf: Boolean = js.native): Boolean
+    def containsEvent(): Boolean
+    def containsFocus(): Boolean
+    def containsPoint(x: Int, y: Int, withinViewport: Boolean = js.native): Boolean
+    var contents:HTMLString
+
 }
