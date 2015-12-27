@@ -4,7 +4,8 @@ import com.simplesys.SmartClient.System.props.AbstractPropsClass
 import com.simplesys.SmartClient.option.ScOption
 
 import scala.language.experimental.macros
-import scala.reflect.macros.blackbox.Context
+import scala.reflect.macros.whitebox.Context
+import scala.reflect.macros.Universe
 
 trait PropsToMap[T <: AbstractPropsClass] {
     def getMap(props: T): Map[String, Any]
@@ -56,19 +57,19 @@ object PropsToMap {
     def materializePropsMapImpl[P <: AbstractPropsClass : c.WeakTypeTag](c: Context): c.Expr[PropsToMap[P]] = {
         import c.universe._
 
-//        val tpeAbstractPropsClass = weakTypeOf[P]
-//        val tsScOption = typeOf[ScOption[_]].typeSymbol
-//        val tsUnit = typeOf[Unit].typeSymbol
-//        val fields = tpeAbstractPropsClass.members.collect { case field if field.isPublic &&
-//          field.isMethod &&
-//          !field.asMethod.isSetter &&
-//          !field.asMethod.isConstructor &&
-//          field.asMethod.returnType.typeSymbol != tsUnit &&
-//          field.owner.isClass &&
-//          field.owner.asClass.baseClasses.contains(tsScOption) &&
-//          field.owner.asClass != tsScOption
-//        => field
-//        }
+        val tpeAbstractPropsClass = weakTypeOf[P]
+        val tsScOption = typeOf[ScOption[_]].typeSymbol
+        val tsUnit = typeOf[Unit].typeSymbol
+        val fields = tpeAbstractPropsClass.members.collect { case field if field.isPublic &&
+          field.isMethod &&
+          !field.asMethod.isSetter &&
+          !field.asMethod.isConstructor &&
+          field.asMethod.returnType.typeSymbol != tsUnit &&
+          field.owner.isClass &&
+          field.owner.asClass.baseClasses.contains(tsScOption) &&
+          field.owner.asClass != tsScOption
+        => field
+        }
         //println(fields)
 
         /*val (fAbstractPropsClass, fSimple) = fields.map { field =>
