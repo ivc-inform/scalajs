@@ -2,6 +2,7 @@ package com.simplesys.macros
 
 import com.simplesys.SmartClient.System.props.AbstractPropsClass
 import com.simplesys.SmartClient.option.ScOption
+import com.simplesys.common.Strings._
 
 import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context
@@ -70,9 +71,14 @@ object PropsToMap {
           field.owner.asClass != tsScOption
         => field
         }
-        //println(fields)
 
-        /*val (fAbstractPropsClass, fSimple) = fields.map { field =>
+        println(s"$newLine// Class: $tpeAbstractPropsClass ///////////////////////////////////////////////////////////////".newLine)
+
+        println("//////////////////////////////////////////////// Fields: ///////////////////////////////////////////////////////////////")
+        fields.foreach(println)
+        println("//////////////////////////////////////////////// End Fields: ///////////////////////////////////////////////////////////")
+
+        val (fAbstractPropsClass, fSimple) = fields.map { field =>
             field.typeSignature.baseType(typeOf[ScOption[_]].typeSymbol) match {
                 case TypeRef(_, _, tArg) => (field, tArg.head, true)
                 case NoType => (field, field.typeSignature, false)
@@ -97,25 +103,23 @@ object PropsToMap {
 
         val AbstractPropsClassFieldsExpansion = if (abstractPropsClassFields.nonEmpty)
             q"""..$abstractPropsClassFields"""
-        else q""*/
-
-        //        val res = c.Expr[PropsToMap[P]] {
-        //            q"""new PropsToDict[$tpeAbstractPropsClass] {
-        //                  def getMap(t: $tpeAbstractPropsClass): Map[String, Any] = {
-        //                      val res = HashMap.empty[String, Any]
-        //                      $AbstractPropsClassFieldsExpansion
-        //                      $simpleFieldsExpansion
-        //                      res
-        //                  }
-        //                }
-        //              """
+        else q""
 
         val res = c.Expr[PropsToMap[P]] {
-            q"""new PropsToDict[AbstractPropsClass] {
-                              def getMap(t: AbstractPropsClass): Map[String, Any] = HashMap.empty[String, Any]
-            }"""
+            q"""
+                        import com.simplesys.SmartClient.System.props.AbstractPropsClass
+                        import collection.immutable.HashMap
+
+                        new PropsToMap[$tpeAbstractPropsClass] {
+                          def getMap(t: $tpeAbstractPropsClass): Map[String, Any] = {
+                              val res = HashMap.empty[String, Any]
+                              $AbstractPropsClassFieldsExpansion
+                              $simpleFieldsExpansion
+                              res
+                          }
+                        }"""
         }
-        //println(res)
+        println(res)
         res
     }
 }

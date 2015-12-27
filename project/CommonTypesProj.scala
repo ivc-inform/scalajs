@@ -12,7 +12,8 @@ trait CommonTypesProj {
       name := "common-types",
       version := "1.0-SNAPSHOT",
       libraryDependencies ++= Seq(
-        CommonSettings.cmnDependencies.uTest.value
+        CommonSettings.cmnDependencies.uTest.value,
+        CommonSettings.cmnDependencies.common.value
       ),
       testFrameworks += new TestFramework("utest.runner.Framework")
     ).
