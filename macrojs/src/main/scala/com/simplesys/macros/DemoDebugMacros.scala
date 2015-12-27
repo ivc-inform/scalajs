@@ -14,6 +14,8 @@ object DemoDebugMacros {
 
         val listApply = Select(reify(List).tree, TermName("apply"))
 
-        c.Expr[List[String]](Apply(listApply, List(methods.map(x => Literal(Constant(x))): _*)))
+        val res = c.Expr[List[String]](Apply(listApply, List(methods.map(x => Literal(Constant(x))): _*)))
+        println(res)
+        res
     }
 }
