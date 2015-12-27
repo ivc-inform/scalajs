@@ -168,4 +168,27 @@ trait Canvas extends Class {
     def getFullDataPath(): DataPath
     def getHeight(): Number
     def getHoverComponent(): Canvas
+    def getHoverHTML(): HTMLString
+    def getHSnapOrigin(snapChild: Canvas = js.native): Int
+    def getHSnapPosition(coordinate: Int, direction: String = js.native): Int
+    def getImage(identifier: String): DocumentEvent
+    def getImgURL(URL: String, imgDir: String = js.native): String
+    def getInnerContentHeight(): Number
+    def getInnerContentWidth(): Number
+    def getInnerHeight(): Number
+    def getInnerHTML(): HTMLString
+    def getInnerWidth(): Number
+    def getLeft(): Number
+    def getMasterCanvas(): Canvas
+    def getOffsetX(): Number
+    def getOffsetY(): Number
+    def getOuterElement(): DocumentEvent
+    def getPageBottom():Number
+    def getPageLeft():Number
+    def getPageRight():Number
+    def getPageTop():Number
+    def getPanelContainer():Canvas
+    def getParentCanvas():Canvas
+    def getParentElements():js.Array[Canvas]
+    def getPrintHTML ([printProperties, callback])
 }
