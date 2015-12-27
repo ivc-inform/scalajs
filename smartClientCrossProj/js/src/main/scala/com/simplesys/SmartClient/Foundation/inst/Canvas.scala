@@ -17,6 +17,13 @@ import com.simplesys.isc.System.Types.DragAppearance.DragAppearance
 import com.simplesys.isc.System.Types.DragIntersectStyle.DragIntersectStyle
 import com.simplesys.isc.System.Types.DragMaskType.DragMaskType
 import com.simplesys.isc.System.Types.DrawPosition.DrawPosition
+import com.simplesys.isc.System.Types.EdgeName.EdgeName
+import com.simplesys.isc.System.Types.LocatorStrategy.LocatorStrategy
+import com.simplesys.isc.System.Types.LocatorTypeStrategy.LocatorTypeStrategy
+import com.simplesys.isc.System.Types.Overflow.Overflow
+import com.simplesys.isc.System.Types.PercentBoxModel.PercentBoxModel
+import com.simplesys.isc.System.Types.Positioning.Positioning
+import com.simplesys.isc.System.Types.ProportionalResizeMode.ProportionalResizeMode
 import com.simplesys.isc.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.isc.System.Types._
 import com.simplesys.isc.System.Types.AnimationAcceleration.AnimationAcceleration
@@ -261,4 +268,77 @@ trait Canvas extends Class {
     var leavePageSpace: Int
     var left: String | Number
     def linkHTML(href: String, text: HTMLString = js.native, target: String = js.native, ID: String = js.native, tabIndex: Int = js.native, accessKey: String = js.native): HTMLString
+    var locateChildrenBy: LocatorStrategy
+    var locateChildrenType: LocatorTypeStrategy
+    var locatePeersBy: LocatorStrategy
+    var locatePeersType: LocatorTypeStrategy
+    var margin: Number
+    def markForDestroy(): Unit
+    def markForRedraw(reason: String = js.native): Unit
+    val masterElement: Canvas
+    var matchElement: Boolean
+    var maxHeight: Number
+    var maxWidth: Number
+    var menuConstructor: SCClassName
+    var minHeight: Number
+    var minNonEdgeSize: Number
+    var minWidth: Number
+    var momentumScrollMinSpeed: Number
+    var mouseDown: js.ThisFunction0[canvasHandler, Boolean]
+    var mouseMove: js.ThisFunction0[canvasHandler, Boolean]
+    var mouseOut: js.ThisFunction0[canvasHandler, Boolean]
+    var mouseOver: js.ThisFunction0[canvasHandler, Boolean]
+    var mouseStillDown: js.ThisFunction0[canvasHandler, Boolean]
+    var mouseStillDownDelay: Number
+    var mouseStillDownInitialDelay: Number
+    var mouseUp: js.ThisFunction0[canvasHandler, Boolean]
+    var mouseWheel: js.ThisFunction0[canvasHandler, Boolean]
+    def moveAbove(canvas: Canvas): Unit
+    def moveBelow(canvas: Canvas): Unit
+    def moveBy(deltaX: Number, deltaY: Number): Boolean
+    var moved: js.ThisFunction2[canvasHandler, Number, Number, Unit]
+    def moveTo(left: Number = js.native, top: Number = js.native): Boolean
+    var noDoubleClicks: Boolean
+    var opacity: Number
+    var overflow: Overflow
+    var padding: Number
+    def pageScrollDown(): Unit
+    def pageScrollUp(): Unit
+    val parentCanvas: Canvas
+    var parentMoved: js.ThisFunction2[canvasHandler, Number, Number, Unit]
+    def parentResized()
+    val peers: js.Array[Canvas]
+    val percentBox: PercentBoxModel
+    var percentSource: Canvas
+    def placeNear(left: Number = js.native, top: Number = js.native): Unit
+    var position: Positioning
+    var printChildrenAbsolutelyPositioned: Boolean
+    var prompt: HTMLString
+    val proportionalResizeModifiers: js.Array[KeyName]
+    val proportionalResizing: ProportionalResizeMode
+    def redraw(reason: String = js.native): Unit
+    var redrawOnResize: Boolean
+    def removeChild(child: Canvas, name: String = js.native): Unit
+    def removePeer(peer: Canvas, name: String = js.native): Unit
+    def removeSnapAlignCandidate(candidate: Canvas): Unit
+    val resizeBarTarget: String
+    def resizeBy(deltaX: Number = js.native, deltaY: Number = js.native): Boolean
+    var resized: js.ThisFunction0[canvasHandler, Boolean]
+    var resizeFrom: js.Array[EdgeName]
+    def resizeTo(width: Number = js.native, height: Number = js.native): Boolean
+    def revealChild(child: Canvas | String): Unit
+    var rightMouseDown: js.ThisFunction0[canvasHandler, Boolean]
+    val scrollbarConstructor: String
+    val scrollbarSize: Number
+    def scrollBy(dX: Number, dY: Number): Unit
+    def scrollByPercent(dX: Number, dY: Number): Unit
+    var scrolled: js.ThisFunction0[canvasHandler, Boolean]
+    def scrollTo(left: Number = js.native, top: Number = js.native): Number
+    def scrollToBottom(): Unit
+    def scrollToLeft(): Unit
+    def scrollToPercent(left: Number, top: Number): Unit
+    def scrollToRight(): Unit
+    def scrollToTop(): Unit
+    def sendToBack(): Unit
+    def setAccessKey(accessKey:Char): Unit
 }
