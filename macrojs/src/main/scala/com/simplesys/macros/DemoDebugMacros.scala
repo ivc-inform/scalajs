@@ -1,11 +1,10 @@
 package com.simplesys.macros
 
+import scala.language.experimental.macros
 import scala.reflect.macros.whitebox
-import scala.reflect.macros.Universe
-import language.experimental.macros
 
 
-class DemoDebugMacros {
+object DemoDebugMacros {
     def methodNames[A]: List[String] = macro methodNames_impl[A]
 
     def methodNames_impl[A: c.WeakTypeTag](c: whitebox.Context): c.Expr[List[String]] = {

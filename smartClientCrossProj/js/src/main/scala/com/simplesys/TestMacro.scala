@@ -1,6 +1,6 @@
-package com.simplesys.macros
+package com.simplesys
 
-//import com.simplesys.macros
+import com.simplesys.macros.DemoDebugMacros._
 
 object TestMacro extends App{
     class A {
