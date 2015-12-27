@@ -21,6 +21,6 @@ package object Types {
     type Record = js.Dictionary[Object]
     type ListGridRecord = js.Dictionary[Object]
 
-    type Callback = js.Function | CallbackObject
+    type Callback = js.ThisFunction | CallbackObject
     type ValueMap = Array[Object] | js.Dictionary[Object]
 }

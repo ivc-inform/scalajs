@@ -7,14 +7,17 @@ import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.System
 import com.simplesys.SmartClient.System.Number._
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.ValueMap
-import com.simplesys.SmartClient.System.inst.Class
+import com.simplesys.SmartClient.System.Types.{Callback, ValueMap}
+import com.simplesys.SmartClient.System.inst.{PrintProperties, Class}
 import com.simplesys.SmartClient.Tools.inst.EditNode
+import com.simplesys.isc.System.Types.Alignment.Alignment
 import com.simplesys.isc.System.Types.BackgroundRepeat.BackgroundRepeat
 import com.simplesys.isc.System.Types.Cursor.Cursor
 import com.simplesys.isc.System.Types.DragAppearance.DragAppearance
 import com.simplesys.isc.System.Types.DragIntersectStyle.DragIntersectStyle
 import com.simplesys.isc.System.Types.DragMaskType.DragMaskType
+import com.simplesys.isc.System.Types.DrawPosition.DrawPosition
+import com.simplesys.isc.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.isc.System.Types._
 import com.simplesys.isc.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.SmartClient.Foundation.AnimateShowEffect._
@@ -183,12 +186,79 @@ trait Canvas extends Class {
     def getOffsetX(): Number
     def getOffsetY(): Number
     def getOuterElement(): DocumentEvent
-    def getPageBottom():Number
-    def getPageLeft():Number
-    def getPageRight():Number
-    def getPageTop():Number
-    def getPanelContainer():Canvas
-    def getParentCanvas():Canvas
-    def getParentElements():js.Array[Canvas]
-    def getPrintHTML ([printProperties, callback])
+    def getPageBottom(): Number
+    def getPageLeft(): Number
+    def getPageRight(): Number
+    def getPageTop(): Number
+    def getPanelContainer(): Canvas
+    def getParentCanvas(): Canvas
+    def getParentElements(): js.Array[Canvas]
+    def getPrintHTML(printProperties: PrintProperties = js.native, callback: Callback): HTMLString
+    def getRight(): Number
+    def getScrollbarSize(): Number
+    def getScrollBottom(): Number
+    def getScrollHeight(): Number
+    def getScrollLeft(): Number
+    def getScrollRight(): Number
+    def getScrollTop(): Number
+    def getScrollWidth(): Number
+    def getSnapEdge(): String
+    def getSnapTo(): String
+    def getTop(): Number
+    def getViewportHeight(): Number
+    def getViewportWidth(): Number
+    def getVisibleHeight(): Number
+    def getVisibleWidth(): Number
+    def getVSnapOrigin(snapChild: Canvas): Number
+    def getVSnapPosition(coordinate: Int, direction: String = js.native): Number
+    def getWidth(): Number
+    def getZIndex(resolveToNumber: Boolean): Number
+    val groupBorderCSS: String
+    var groupLabelBackgroundColor: CSSColor
+    val groupLabelStyleName: CSSStyleName
+    var groupTitle: HTMLString
+    def handleHover(): Unit
+    var height: String | Number
+    def hide(): Unit
+    def hideClickMask(ID: String = js.native): Unit
+    def hideComponentMask(): Unit
+    def hideContextMenu(): Unit
+    val hideUsingDisplayNone: Boolean
+    var hover: js.ThisFunction0[canvasHandler, Boolean]
+    var hoverAlign: Alignment
+    var hoverAutoDestroy: Boolean
+    var hoverDelay: Number
+    var hoverHeight: Int
+    def hoverHidden(): Unit
+    var hoverMoveWithMouse: Boolean
+    var hoverOpacity: Number
+    var hoverStyle: CSSStyleName
+    var hoverVAlign: VerticalAlignment
+    var hoverWidth: Int
+    var hoverWrap: Boolean
+    var htmlElement: HTMLElement
+    var htmlPosition: DrawPosition
+    val ID: String
+    def imgHTML(src: SCImgURL, width: Number = js.native, height: Number = js.native, name: String = js.native, extraStuff: String = js.native, imgDir: String = js.native): String
+    def init(arguments: js.Dictionary[js.Any]): Unit
+    def initWidget(arguments: js.Dictionary[js.Any]): Unit
+    def intersects(other: Canvas): Boolean
+    def intersectsRect(left: Number | js.Array[Number], top: Number, width: Number, height: Number): Boolean
+    def isDirty(): Boolean
+    def isDisabled(): Boolean
+    def isDrawn(): Boolean
+    def isFocused(): Boolean
+    val isGroup: Boolean
+    val isPrinting: Boolean
+    var isSnapAlignCandidate: Boolean
+    def isVisible(): Boolean
+    var keepInParentRect: Boolean | VerticalAlignment
+    var keyDown: js.ThisFunction0[canvasHandler, Boolean]
+    var keyPress: js.ThisFunction0[canvasHandler, Boolean]
+    var keyUp: js.ThisFunction0[canvasHandler, Boolean]
+    var layoutAlign: Alignment | VerticalAlignment
+    def layoutChildren(reason: String): Unit
+    var leavePageSpace: Int
+    var left: String | Number
+    def linkHTML(href: String, text: HTMLString = js.native, target: String = js.native, ID: String = js.native, tabIndex: Int = js.native, accessKey: String = js.native): HTMLString
 }
