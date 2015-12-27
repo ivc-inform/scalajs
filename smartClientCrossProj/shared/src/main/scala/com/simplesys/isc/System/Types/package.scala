@@ -15,4 +15,5 @@ package object Types {
     type KeyName = String
     type PageHtml = Elem
     type DataPath = String
+    type AnimateShowEffectId = String
 }
