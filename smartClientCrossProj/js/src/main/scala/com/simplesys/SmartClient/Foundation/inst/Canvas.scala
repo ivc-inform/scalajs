@@ -18,6 +18,7 @@ import com.simplesys.isc.System.Types.DragMaskType.DragMaskType
 import com.simplesys.isc.System.Types._
 import com.simplesys.isc.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.SmartClient.Foundation.AnimateShowEffect._
+import org.scalajs.dom.raw.{HTMLElement, DocumentEvent}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -160,7 +161,11 @@ trait Canvas extends Class {
     var focusChanged: js.ThisFunction1[canvasHandler, Boolean, Unit]
     def focusInNextTabElement(): Unit
     def focusInPreviousTabElement(): Unit
-    def  getBottom ():Number
-    def getByLocalId (localId:String):Canvas
-    def getContentElement ()
+    def getBottom(): Number
+    def getByLocalId(localId: String): Canvas
+    def getContentElement(): DocumentEvent
+    def getContents(): HTMLElement
+    def getFullDataPath(): DataPath
+    def getHeight(): Number
+    def getHoverComponent(): Canvas
 }

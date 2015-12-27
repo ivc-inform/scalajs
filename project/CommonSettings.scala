@@ -19,6 +19,7 @@ object CommonSettings {
         val uTestVersion = "0.3.1"
         val scalaTestVersion = "2.2.5"
         val ssysCoreVersion = "1.2-SNAPSHOT"
+        val scalajsDOMVersion = "0.8.1"
     }
 
     object cmnDependencies {
@@ -33,7 +34,9 @@ object CommonSettings {
         val uTest = Def.setting("com.lihaoyi" %%% "utest" % versions.uTestVersion % "test")
     }
 
-    object jsDependencies {}
+    object jsDependencies {
+        val scalajsDOM = Def.setting("org.scala-js" %%% "scalajs-dom" % versions.scalajsDOMVersion)
+    }
 
     object jvmDependencies {}
 

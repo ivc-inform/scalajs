@@ -24,7 +24,9 @@ trait SmartClientCrossProj {
       Seq()
     }).
     jsSettings(
-    libraryDependencies ++= Seq(     )
+    libraryDependencies ++= Seq(
+        CommonSettings.jsDependencies.scalajsDOM.value
+    )
     //jsDependencies += "org.example" %% "js-thing" % "0.1" / "foo.js"
     ).dependsOn().jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
 
