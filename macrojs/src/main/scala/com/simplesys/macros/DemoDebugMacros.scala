@@ -4,6 +4,8 @@ import scala.language.experimental.macros
 import scala.reflect.macros.whitebox
 
 
+trait DemoDebugMacros
+
 object DemoDebugMacros {
     def methodNames[A]: List[String] = macro methodNames_impl[A]
 
