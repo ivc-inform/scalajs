@@ -6,7 +6,6 @@ import com.simplesys.common.Strings._
 
 import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context
-import scala.reflect.macros.Universe
 
 trait PropsToMap[T <: AbstractPropsClass] {
     def getMap(props: T): Map[String, Any]
@@ -15,9 +14,9 @@ trait PropsToMap[T <: AbstractPropsClass] {
 object PropsToMap {
     def materializePropsMap[P <: AbstractPropsClass]: PropsToMap[P] = macro materializePropsMapImpl[P]
 
-    def typeToConvertedValue(c: Context)(typeDef: c.universe.Type, valueAccess: c.universe.Tree): c.universe.Tree = {
-        import c.universe._
-        def typeToConvertedValueInt(typeDef: c.universe.Type, valueAccess: c.universe.Tree): Option[c.universe.Tree] = {
+    def typeToConvertedValue(context: Context)(typeDef: context.universe.Type, valueAccess: context.universe.Tree): context.universe.Tree = {
+        import context.universe._
+        def typeToConvertedValueInt(typeDef: context.universe.Type, valueAccess: context.universe.Tree): Option[context.universe.Tree] = {
 
             typeDef.baseType(typeOf[scala.collection.Seq[_]].typeSymbol) match {
                 case TypeRef(_, _, targs) =>
