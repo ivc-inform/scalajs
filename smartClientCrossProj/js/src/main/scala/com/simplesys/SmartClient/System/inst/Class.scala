@@ -49,5 +49,5 @@ trait Class extends Types.Object {
     def setLogPriority(category: String, priority: LogPriority): Unit
     def setProperties(arguments: js.Dictionary[Types.Object]): Unit
     def setProperty(propertyName: String, newValue: js.Any): Unit
-    def Super(methodName: String, args: Array[js.Any], nativeArgs: Array[js.Any] = js.native): js.Any
+    def Super(methodName: String, args: js.Array[js.Any], nativeArgs: js.Array[js.Any] = js.native): js.Any
 }

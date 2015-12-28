@@ -1,17 +1,15 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.System.inst
 import com.simplesys.SmartClient.System.props.{AbstractPropsClass, ClassProps}
 import com.simplesys.isc.System.Types.LogPriority._
 import com.simplesys.macros.PropsToMap
+import com.simplesys.macros.PropsToMap._
 
+import scala.language.experimental.macros
 import scala.reflect.ClassTag
 import scala.scalajs.js
 import scala.scalajs.js.Dictionary
 import scala.scalajs.js.annotation.ScalaJSDefined
-import PropsToMap._
-import scala.language.experimental.macros
-import scala.reflect.macros.whitebox.Context
 
 @ScalaJSDefined
 abstract class SCApply[T <: Types.Object, P <: AbstractPropsClass](implicit ct: ClassTag[T]) extends Types.Object {
@@ -75,7 +73,7 @@ abstract class AbstractClassCompanion[T <: Types.Object, P <: AbstractPropsClass
     def setInstanceProperty(property: String, value: js.Any): Unit = js.native
     def setLogPriority(category: String, priority: LogPriority): Unit = js.native
     def setProperties(arguments: js.Dictionary[Types.Object]): Unit = js.native
-    def Super(methodName: String, args: inst.Array[js.Any], nativeArgs: inst.Array[js.Any] = js.native): js.Any = js.native
+    def Super(methodName: String, args: js.Array[js.Any], nativeArgs: js.Array[js.Any] = js.native): js.Any = js.native
 }
 
 @js.native
