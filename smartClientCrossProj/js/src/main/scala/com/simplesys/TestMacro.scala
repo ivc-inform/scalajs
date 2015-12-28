@@ -1,7 +1,6 @@
 package com.simplesys
 
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.macros.DemoDebugMacros._
 
 /*object TestMacro extends App{
     class A {
@@ -19,7 +18,7 @@ import com.simplesys.macros.DemoDebugMacros._
 
 import com.simplesys.SmartClient.System.{Class0, Class}
 object Test_Class extends App{
-   val map = Class.getMap(
+   val map = Class0.getMap(
      new ClassProps {
 
      }

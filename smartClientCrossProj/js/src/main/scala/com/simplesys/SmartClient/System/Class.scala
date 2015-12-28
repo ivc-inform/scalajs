@@ -11,8 +11,16 @@ import scala.scalajs.js
 import scala.scalajs.js.Dictionary
 import scala.scalajs.js.annotation.ScalaJSDefined
 
+abstract class SCApply0[T <: Types.Object, P <: AbstractPropsClass](implicit ct: ClassTag[T], propsToMap: PropsToMap[P]){
+
+    def getMap(props: P): Map[String, Any] = {
+        val res = propsToMap getMap props
+        res
+    }
+}
+
 @ScalaJSDefined
-abstract class SCApply[T <: Types.Object, P <: AbstractPropsClass](implicit ct: ClassTag[T], propsToMap: PropsToMap[P]) extends Types.Object {
+abstract class SCApply[T <: Types.Object, P <: AbstractPropsClass](implicit ct: ClassTag[T]) extends Types.Object {
 
     lazy protected val className: String = ct.runtimeClass.getSimpleName.capitalize
 
@@ -28,7 +36,7 @@ abstract class SCApply[T <: Types.Object, P <: AbstractPropsClass](implicit ct: 
     }
 
     def getMap(props: P): Map[String, Any] = {
-        val res = propsToMap getMap props
+        val res = materializePropsMap getMap props
         res
     }
 }
@@ -84,3 +92,6 @@ object Class extends AbstractClassCompanion[Class, ClassProps] {
 
 }
 
+object Class0 extends SCApply0[Class, ClassProps] {
+
+}
