@@ -40,7 +40,7 @@ import scala.scalajs.js.|
 trait Canvas extends Class {
     type canvasHandler <: this.type
 
-    var accessKey: String
+    val accessKey: String
     def addChild(newChild: Canvas, name: String = js.native, autoDraw: Boolean = js.native): Canvas
     def addPeer(newChild: Canvas, name: String = js.native, autoDraw: Boolean = js.native, preDraw: Boolean = js.native): Canvas
     def addSnapAlignCandidate(newCandidate: Canvas): Unit
@@ -75,12 +75,12 @@ trait Canvas extends Class {
     val ariaState: String
     val autoDraw: Boolean
     var autoShowParent: Boolean
-    var backgroundColor: CSSColor
-    var backgroundImage: SCImgURL
+    val backgroundColor: CSSColor
+    val backgroundImage: SCImgURL
     val backgroundPosition: String
     val backgroundRepeat: BackgroundRepeat
     def blur(): Unit
-    var border: String
+    val border: String
     def bringToFront(): Unit
     var canAcceptDrop: Boolean
     var canDrag: Boolean
@@ -89,7 +89,7 @@ trait Canvas extends Class {
     var canDragScroll: Boolean
     var canDrop: Boolean
     var canDropBefore: Boolean
-    var canFocus: Boolean
+    val canFocus: Boolean
     var canHover: Boolean
     var canSelectText: Boolean
     val canvasItem: CanvasItem
@@ -111,9 +111,9 @@ trait Canvas extends Class {
     def containsPoint(x: Int, y: Int, withinViewport: Boolean = js.native): Boolean
     var contents: HTMLString
     var contextMenu: Menu
-    var cursor = Cursor
+    val cursor : Cursor
     val customEdges: js.Array[String]
-    var dataPath: DataPath
+    val dataPath: DataPath
     var defaultHeight: Int
     var defaultWidth: Int
     def deparent(): Unit
@@ -121,7 +121,7 @@ trait Canvas extends Class {
     val destroyed: Boolean
     val destroying: Boolean
     def disable(): Unit
-    var disabled: Boolean
+    val disabled: Boolean
     var disabledCursor: Cursor
     val disableTouchScrollingForDrag: Boolean
     var doubleClick: js.ThisFunction0[canvasHandler, Boolean]
@@ -224,11 +224,11 @@ trait Canvas extends Class {
     def getWidth(): Number
     def getZIndex(resolveToNumber: Boolean): Number
     val groupBorderCSS: String
-    var groupLabelBackgroundColor: CSSColor
+    val groupLabelBackgroundColor: CSSColor
     val groupLabelStyleName: CSSStyleName
-    var groupTitle: HTMLString
+    val groupTitle: HTMLString
     def handleHover(): Unit
-    var height: String | Number
+    val height: String | Number
     def hide(): Unit
     def hideClickMask(ID: String = js.native): Unit
     def hideComponentMask(): Unit
@@ -246,8 +246,8 @@ trait Canvas extends Class {
     var hoverVAlign: VerticalAlignment
     var hoverWidth: Int
     var hoverWrap: Boolean
-    var htmlElement: HTMLElement
-    var htmlPosition: DrawPosition
+    val htmlElement: HTMLElement
+    val htmlPosition: DrawPosition
     val ID: String
     def imgHTML(src: SCImgURL, width: Number = js.native, height: Number = js.native, name: String = js.native, extraStuff: String = js.native, imgDir: String = js.native): String
     def init(arguments: js.Dictionary[js.Any]): Unit
@@ -268,14 +268,14 @@ trait Canvas extends Class {
     var keyUp: js.ThisFunction0[canvasHandler, Boolean]
     var layoutAlign: Alignment | VerticalAlignment
     def layoutChildren(reason: String): Unit
-    var leavePageSpace: Int
-    var left: String | Number
+    val leavePageSpace: Int
+    val left: String | Number
     def linkHTML(href: String, text: HTMLString = js.native, target: String = js.native, ID: String = js.native, tabIndex: Int = js.native, accessKey: String = js.native): HTMLString
     var locateChildrenBy: LocatorStrategy
     var locateChildrenType: LocatorTypeStrategy
     var locatePeersBy: LocatorStrategy
     var locatePeersType: LocatorTypeStrategy
-    var margin: Number
+    val margin: Number
     def markForDestroy(): Unit
     def markForRedraw(reason: String = js.native): Unit
     val masterElement: Canvas
@@ -302,9 +302,9 @@ trait Canvas extends Class {
     var moved: js.ThisFunction2[canvasHandler, Number, Number, Unit]
     def moveTo(left: Number = js.native, top: Number = js.native): Boolean
     var noDoubleClicks: Boolean
-    var opacity: Number
-    var overflow: Overflow
-    var padding: Number
+    val opacity: Number
+    val overflow: Overflow
+    val padding: Number
     def pageScrollDown(): Unit
     def pageScrollUp(): Unit
     val parentCanvas: Canvas
@@ -312,7 +312,7 @@ trait Canvas extends Class {
     def parentResized()
     val peers: js.Array[Canvas]
     val percentBox: PercentBoxModel
-    var percentSource: Canvas
+    val percentSource: Canvas
     def placeNear(left: Number = js.native, top: Number = js.native): Unit
     var position: Positioning
     var printChildrenAbsolutelyPositioned: Boolean
