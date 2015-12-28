@@ -10,6 +10,7 @@ import scala.reflect.ClassTag
 import scala.scalajs.js
 import scala.scalajs.js.Dictionary
 import scala.scalajs.js.annotation.ScalaJSDefined
+import inst._
 
 @ScalaJSDefined
 abstract class SCApply[T <: Types.Object, P <: AbstractPropsClass](implicit ct: ClassTag[T]) extends Types.Object {
@@ -77,6 +78,6 @@ abstract class AbstractClassCompanion[T <: Types.Object, P <: AbstractPropsClass
 }
 
 @js.native
-object Class extends AbstractClassCompanion[inst.Class, ClassProps] {
+object Class extends AbstractClassCompanion[Class, ClassProps] {
 
 }
