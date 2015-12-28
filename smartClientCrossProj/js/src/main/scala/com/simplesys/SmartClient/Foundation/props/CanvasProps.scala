@@ -44,6 +44,7 @@ import com.simplesys.isc.System.Types._
 import org.scalajs.dom.raw.{HTMLElement, DocumentEvent}
 
 import scala.scalajs.js
+import scala.scalajs.js.Function3
 
 class CanvasProps extends ClassProps {
     val accessKey: ScOption[String] = ScNone
@@ -86,7 +87,7 @@ class CanvasProps extends ClassProps {
     var canHover: ScOption[Boolean] = ScNone
     var canSelectText: ScOption[Boolean] = ScNone
     val canvasItem: ScOption[CanvasItem] = ScNone
-    val children: ScOption[js.Array[Canvas]] = ScNone
+    val children: ScOption[Array[Canvas]] = ScNone
     var childrenResizeSnapAlign: ScOption[Boolean] = ScNone
     var childrenSnapAlign: ScOption[Boolean] = ScNone
     var childrenSnapCenterAlign: ScOption[Boolean] = ScNone
@@ -99,7 +100,7 @@ class CanvasProps extends ClassProps {
     var contents: ScOption[HTMLString] = ScNone
     var contextMenu: ScOption[Menu] = ScNone
     val cursor: ScOption[Cursor] = ScNone
-    val customEdges: ScOption[js.Array[String]] = ScNone
+    val customEdges: ScOption[Array[String]] = ScNone
     val dataPath: ScOption[DataPath] = ScNone
     var defaultHeight: ScOption[Int] = ScNone
     var defaultWidth: ScOption[Int] = ScNone
@@ -134,7 +135,7 @@ class CanvasProps extends ClassProps {
     var dropMove: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
     var dropOut: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
     var dropOver: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
-    var dropTypes: ScOption[js.Array[String]] = ScNone
+    var dropTypes: ScOption[Array[String]] = ScNone
     var dynamicContents: ScOption[Boolean] = ScNone
     var dynamicContentsVars: ScOption[ValueMap] = ScNone
     val edgeBackgroundColor: ScOption[Color] = ScNone
@@ -150,7 +151,7 @@ class CanvasProps extends ClassProps {
     var editProxy: ScOption[EditNode with AutoChild] = ScNone
     val editProxyConstructor: ScOption[SCClassName] = ScNone
     val extraSpace: ScOption[Int] = ScNone
-    var focusChanged: Function2[Canvas#canvasHandler, Boolean, Unit]
+    var focusChanged: ScOption[Function2[Canvas#canvasHandler, Boolean, Unit]] = ScNone
     val groupBorderCSS: ScOption[String] = ScNone
     val groupLabelBackgroundColor: ScOption[CSSColor] = ScNone
     val groupLabelStyleName: ScOption[CSSStyleName] = ScNone
@@ -173,189 +174,107 @@ class CanvasProps extends ClassProps {
     val ID: ScOption[String] = ScNone
     val isGroup: ScOption[Boolean] = ScNone
     val isPrinting: ScOption[Boolean] = ScNone
-    var isSnapAlignCandidate: Boolean
-    def isVisible(): Boolean
-    var keepInParentRect: Boolean | VerticalAlignment
-    var keyDown: ScOption[Function1[Canvas#canvasHandler, Boolean] = ScNone
-    var keyPress: ScOption[Function1[Canvas#canvasHandler, Boolean] = ScNone
-    var keyUp: ScOption[Function1[Canvas#canvasHandler, Boolean] = ScNone
-    var layoutAlign: Alignment | VerticalAlignment
-    def layoutChildren(reason: String): Unit
-    val leavePageSpace: Int
-    val left: String | Number
-    def linkHTML(href: String, text: HTMLString = js.native, target: String = js.native, ID: String = js.native, tabIndex: Int = js.native, accessKey: String = js.native): HTMLString
-    var locateChildrenBy: LocatorStrategy
-    var locateChildrenType: LocatorTypeStrategy
-    var locatePeersBy: LocatorStrategy
-    var locatePeersType: LocatorTypeStrategy
-    val margin: Number
-    def markForDestroy(): Unit
-    def markForRedraw(reason: String = js.native): Unit
-    val masterElement: Canvas
-    var matchElement: Boolean
-    var maxHeight: Number
-    var maxWidth: Number
-    var menuConstructor: SCClassName
-    var minHeight: Number
-    var minNonEdgeSize: Number
-    var minWidth: Number
-    var momentumScrollMinSpeed: Number
-    var mouseDown: ScOption[Function1[Canvas#canvasHandler, Boolean] = ScNone
-    var mouseMove: ScOption[Function1[Canvas#canvasHandler, Boolean] = ScNone
-    var mouseOut: ScOption[Function1[Canvas#canvasHandler, Boolean] = ScNone
-    var mouseOver: ScOption[Function1[Canvas#canvasHandler, Boolean] = ScNone
-    var mouseStillDown: ScOption[Function1[Canvas#canvasHandler, Boolean] = ScNone
-    var mouseStillDownDelay: Number
-    var mouseStillDownInitialDelay: Number
-    var mouseUp: ScOption[Function1[Canvas#canvasHandler, Boolean] = ScNone
-    var mouseWheel: ScOption[Function1[Canvas#canvasHandler, Boolean] = ScNone
-    def moveAbove(canvas: Canvas): Unit
-    def moveBelow(canvas: Canvas): Unit
-    def moveBy(deltaX: Number, deltaY: Number): Boolean
-    var moved: js.ThisFunction2[canvasHandler, Number, Number, Unit]
-    def moveTo(left: Number = js.native, top: Number = js.native): Boolean
-    var noDoubleClicks: Boolean
-    val opacity: Number
-    val overflow: Overflow
-    val padding: Number
-    def pageScrollDown(): Unit
-    def pageScrollUp(): Unit
-    val parentCanvas: Canvas
-    var parentMoved: js.ThisFunction2[canvasHandler, Number, Number, Unit]
-    def parentResized()
-    val peers: js.Array[Canvas]
-    val percentBox: PercentBoxModel
-    val percentSource: Canvas
-    def placeNear(left: Number = js.native, top: Number = js.native): Unit
-    var position: Positioning
-    var printChildrenAbsolutelyPositioned: Boolean
-    var prompt: HTMLString
-    val proportionalResizeModifiers: js.Array[KeyName]
-    val proportionalResizing: ProportionalResizeMode
-    def redraw(reason: String = js.native): Unit
-    var redrawOnResize: Boolean
-    def removeChild(child: Canvas, name: String = js.native): Unit
-    def removePeer(peer: Canvas, name: String = js.native): Unit
-    def removeSnapAlignCandidate(candidate: Canvas): Unit
-    val resizeBarTarget: String
-    def resizeBy(deltaX: Number = js.native, deltaY: Number = js.native): Boolean
-    var resized: ScOption[Function1[Canvas#canvasHandler, Boolean] = ScNone
-    var resizeFrom: js.Array[EdgeName]
-    def resizeTo(width: Number = js.native, height: Number = js.native): Boolean
-    def revealChild(child: Canvas | String): Unit
-    var rightMouseDown: ScOption[Function1[Canvas#canvasHandler, Boolean] = ScNone
-    val scrollbarConstructor: String
-    val scrollbarSize: Number
-    def scrollBy(dX: Number, dY: Number): Unit
-    def scrollByPercent(dX: Number, dY: Number): Unit
-    var scrolled: ScOption[Function1[Canvas#canvasHandler, Boolean] = ScNone
-    def scrollTo(left: Number = js.native, top: Number = js.native): Number
-    def scrollToBottom(): Unit
-    def scrollToLeft(): Unit
-    def scrollToPercent(left: Number, top: Number): Unit
-    def scrollToRight(): Unit
-    def scrollToTop(): Unit
-    def sendToBack(): Unit
-    def setAccessKey(accessKey: Char): Unit
-    def setAriaState(stateName: String, stateValue: String | Boolean | Int | Double): Unit
-    def setBackgroundColor(newColor: CSSColor): Unit
-    def setBackgroundImage(newImage: URL): Unit
-    def setBorder(newBorder: String): Unit
-    def setBottom(bottom: Number): Unit
-    def setCanFocus(canFocus: Boolean): Unit
-    def setContents(newContents: HTMLString): Unit
-    def setCursor(newCursor: Cursor): Unit
-    def setDataPath(dataPath: DataPath): Unit
-    def setDisabled(disabled: Boolean): Unit
-    var setDragTracker: ScOption[Function1[Canvas#canvasHandler, Boolean] = ScNone
-    def setEdgeOpacity(newOpacity: Number): Unit
-    def setEditMode(editingOn: Boolean, editContext: EditContext = js.native, editNode: EditNode = js.native): Unit
-    def setGroupLabelBackgroundColor(groupLabelBackgroundColor: CSSColor): Unit
-    def setGroupTitle(newTitle: HTMLString): Unit
-    def setHeight(height: Number): Unit
-    def setHtmlElement(element: DocumentEvent): Unit
-    def setHtmlPosition(element: DrawPosition): Unit
-    def setImage(identifier: String, URL: SCImgURL = js.native, imgDir: String = js.native): Unit
-    def setLeavePageSpace(newPageSpace: Int): Unit
-    def setLeft(left: Number): Unit
-    def setMargin(margin: Number): Unit
-    def setOpacity(newOpacity: Number): Unit
-    def setOverflow(newOverflow: Overflow): Unit
-    def setPadding(newPadding: Number): Unit
-    def setPageLeft(left: Number): Unit
-    def setPageTop(top: Number): Unit
-    def setPercentSource(sourceWidget: Canvas = js.native): Unit
-    def setRect(left: Number = js.native, top: Number = js.native, width: Number = js.native, height: Number = js.native): Unit
-    def setRight(right: Number): Unit
-    def setShowResizeBar(show: Boolean): Unit
-    def setShowShadow(showShadow: Boolean): Unit
-    def setShowSnapGrid(show: Boolean): Unit
-    def setSnapEdge(snapEdge: String): Unit
-    def setSnapOffsetLeft(snapOffsetLeft: Int): Unit
-    def setSnapOffsetTop(snapOffsetTop: Int): Unit
-    def setSnapTo(snapTo: String): Unit
-    def setStyleName(newStyle: CSSStyleName): Unit
-    def setTabIndex(tabIndex: Number): Unit
-    def setTop(top: Number): Unit
-    def setValuesManager(dataPath: DataPath): Unit
-    def setWidth(width: Number): Unit
-    val shadowDepth: Number
-    val shadowImage: Number
-    var shadowOffset: Number
-    var shadowSoftness: Number
-    def shouldDragScroll(): Unit
-    var shouldPrint: Boolean
-    def shouldSnapOnDrop(dragTarget: Canvas): Boolean
-    def show(): Unit
-    def showClickMask(clickAction: Callback, mode: ClickMaskMode, unmaskedTargets: Canvas | js.Array[Canvas]): String
-    def showComponentMask(unmaskedChildren: js.Array[Canvas] = js.native): Unit
-    var showContextMenu: ScOption[Function1[Canvas#canvasHandler, Boolean] = ScNone
-    val showCustomScrollbars: Boolean
-    var showDragShadow: Boolean
-    val showEdges: Boolean
-    var showHover: Boolean
-    var showHoverComponents: Boolean
-    def showNextTo(otherWidget: Canvas, side: String = js.native, canOcclude: Boolean = js.native, skipAnimation: Boolean = js.native): Unit
-    def showRecursively(): Unit
-    var showResizeBar: Boolean
-    var showShadow: Boolean
-    var showSnapGrid: Boolean
-    var shrinkElementOnHide: Boolean
-    var skinImgDir: URL
-    var snapAlignCandidates: js.Array[Canvas]
-    val snapAlignCenterLineStyle: String
-    val snapAlignEdgeLineStyle: String
-    var snapAxis: String
-    var snapEdge: String
-    val snapHDirection: String
-    var snapHGap: Number
-    var snapOffsetLeft: Int
-    var snapOffsetTop: Int
-    var snapOnDrop: Int
-    var snapResizeToAlign: Int
-    var snapResizeToGrid: Int
-    var snapTo: String
-    var snapToAlign: Boolean
-    var snapToCenterAlign: Boolean
-    var snapToEdgeAlign: Boolean
-    var snapToGrid: Boolean
-    var snapVDirection: String
-    var snapVGap: Number
-    var styleName: CSSStyleName
-    var tabIndex: Number
-    val top: Number | String
-    val topElement: Canvas
-    def updateEditNode(editContext: EditContext, editNode: EditNode): Unit
-    def updateHover(hoverHTML: HTMLString = js.native): Unit
-    var useBackMask: Boolean
-    var useDragMask: Boolean
-    var useNativeDrag: Boolean
-    val useOpacityFilter: Boolean
-    val useTouchScrolling: Boolean
-    var valuesManager: ValuesManager
-    var visibility: Visibility
-    var visibilityChanged: js.ThisFunction1[canvasHandler, Boolean, Unit]
-    def visibleAtPoint(x: Number, y: Number, withinViewport: Boolean = js.native, ignoreWidgets: Canvas = js.native, upToParent: Canvas = js.native): Boolean
-    val width: Number | String
-    def willAcceptDrop(): Boolean
+    var isSnapAlignCandidate: ScOption[Boolean] = ScNone
+    var keepInParentRect: ScOption[VerticalAlignment] = ScNone
+    var keyDown: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
+    var keyPress: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
+    var keyUp: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
+    var layoutAlign: ScOption[Alignment] = ScNone
+    val leavePageSpace: ScOption[Int] = ScNone
+    val left: ScOption[Number] = ScNone
+    var locateChildrenBy: ScOption[LocatorStrategy] = ScNone
+    var locateChildrenType: ScOption[LocatorTypeStrategy] = ScNone
+    var locatePeersBy: ScOption[LocatorStrategy] = ScNone
+    var locatePeersType: ScOption[LocatorTypeStrategy] = ScNone
+    val margin: ScOption[Number] = ScNone
+    val masterElement: ScOption[Canvas] = ScNone
+    var matchElement: ScOption[Boolean] = ScNone
+    var maxHeight: ScOption[Number] = ScNone
+    var maxWidth: ScOption[Number] = ScNone
+    var menuConstructor: ScOption[SCClassName] = ScNone
+    var minHeight: ScOption[Number] = ScNone
+    var minNonEdgeSize: ScOption[Number] = ScNone
+    var minWidth: ScOption[Number] = ScNone
+    var momentumScrollMinSpeed: ScOption[Number] = ScNone
+    var mouseDown: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
+    var mouseMove: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
+    var mouseOut: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
+    var mouseOver: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
+    var mouseStillDown: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
+    var mouseStillDownDelay: ScOption[Number] = ScNone
+    var mouseStillDownInitialDelay: ScOption[Number] = ScNone
+    var mouseUp: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
+    var mouseWheel: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
+    var moved: ScOption[Function3[Canvas#canvasHandler, Number, Number, Unit]] = ScNone
+    var noDoubleClicks: ScOption[Boolean] = ScNone
+    val opacity: ScOption[Number] = ScNone
+    val overflow: ScOption[Overflow] = ScNone
+    val padding: ScOption[Number] = ScNone
+    val parentCanvas: ScOption[Canvas] = ScNone
+    var parentMoved: ScOption[Function3[Canvas#canvasHandler, Number, Number, Unit]] = ScNone
+    val peers: ScOption[Array[Canvas]] = ScNone
+    val percentBox: ScOption[PercentBoxModel] = ScNone
+    val percentSource: ScOption[Canvas] = ScNone
+    var position: ScOption[Positioning] = ScNone
+    var printChildrenAbsolutelyPositioned: ScOption[Boolean] = ScNone
+    var prompt: ScOption[HTMLString] = ScNone
+    val proportionalResizeModifiers: ScOption[Array[KeyName]] = ScNone
+    val proportionalResizing: ScOption[ProportionalResizeMode] = ScNone
+    var redrawOnResize: ScOption[Boolean] = ScNone
+    val resizeBarTarget: ScOption[String] = ScNone
+    var resized: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
+    var resizeFrom: ScOption[Array[EdgeName]] = ScNone
+    var rightMouseDown: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
+    val scrollbarConstructor: ScOption[String] = ScNone
+    val scrollbarSize: ScOption[Number] = ScNone
+    var scrolled: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
+    var setDragTracker: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
+    val shadowDepth: ScOption[Number] = ScNone
+    val shadowImage: ScOption[Number] = ScNone
+    var shadowOffset: ScOption[Number] = ScNone
+    var shadowSoftness: ScOption[Number] = ScNone
+    var shouldPrint: ScOption[Boolean] = ScNone
+    var showContextMenu: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
+    val showCustomScrollbars: ScOption[Boolean] = ScNone
+    var showDragShadow: ScOption[Boolean] = ScNone
+    val showEdges: ScOption[Boolean] = ScNone
+    var showHover: ScOption[Boolean] = ScNone
+    var showHoverComponents: ScOption[Boolean] = ScNone
+    var showResizeBar: ScOption[Boolean] = ScNone
+    var showShadow: ScOption[Boolean] = ScNone
+    var showSnapGrid: ScOption[Boolean] = ScNone
+    var shrinkElementOnHide: ScOption[Boolean] = ScNone
+    var skinImgDir: ScOption[URL] = ScNone
+    var snapAlignCandidates: ScOption[Array[Canvas]] = ScNone
+    val snapAlignCenterLineStyle: ScOption[String] = ScNone
+    val snapAlignEdgeLineStyle: ScOption[String] = ScNone
+    var snapAxis: ScOption[String] = ScNone
+    var snapEdge: ScOption[String] = ScNone
+    val snapHDirection: ScOption[String] = ScNone
+    var snapHGap: ScOption[Number] = ScNone
+    var snapOffsetLeft: ScOption[Int] = ScNone
+    var snapOffsetTop: ScOption[Int] = ScNone
+    var snapOnDrop: ScOption[Int] = ScNone
+    var snapResizeToAlign: ScOption[Int] = ScNone
+    var snapResizeToGrid: ScOption[Int] = ScNone
+    var snapTo: ScOption[String] = ScNone
+    var snapToAlign: ScOption[Boolean] = ScNone
+    var snapToCenterAlign: ScOption[Boolean] = ScNone
+    var snapToEdgeAlign: ScOption[Boolean] = ScNone
+    var snapToGrid: ScOption[Boolean] = ScNone
+    var snapVDirection: ScOption[String] = ScNone
+    var snapVGap: ScOption[Number] = ScNone
+    var styleName: ScOption[CSSStyleName] = ScNone
+    var tabIndex: ScOption[Number] = ScNone
+    val top: ScOption[Number] = ScNone
+    val topElement: ScOption[Canvas] = ScNone
+    var useBackMask: ScOption[Boolean] = ScNone
+    var useDragMask: ScOption[Boolean] = ScNone
+    var useNativeDrag: ScOption[Boolean] = ScNone
+    val useOpacityFilter: ScOption[Boolean] = ScNone
+    val useTouchScrolling: ScOption[Boolean] = ScNone
+    var valuesManager: ScOption[ValuesManager] = ScNone
+    var visibility: ScOption[Visibility] = ScNone
+    var visibilityChanged: ScOption[Function2[Canvas#canvasHandler, Boolean, Unit]] = ScNone
+    val width: ScOption[Number] = ScNone
 }

@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.System
 
+import com.simplesys.SmartClient.System.inst
 import com.simplesys.SmartClient.System.props.{AbstractPropsClass, ClassProps}
 import com.simplesys.isc.System.Types.LogPriority._
 import com.simplesys.macros.PropsToMap
@@ -74,7 +75,7 @@ abstract class AbstractClassCompanion[T <: Types.Object, P <: AbstractPropsClass
     def setInstanceProperty(property: String, value: js.Any): Unit = js.native
     def setLogPriority(category: String, priority: LogPriority): Unit = js.native
     def setProperties(arguments: js.Dictionary[Types.Object]): Unit = js.native
-    def Super(methodName: String, args: Array[js.Any], nativeArgs: Array[js.Any] = js.native): js.Any = js.native
+    def Super(methodName: String, args: inst.Array[js.Any], nativeArgs: inst.Array[js.Any] = js.native): js.Any = js.native
 }
 
 @js.native

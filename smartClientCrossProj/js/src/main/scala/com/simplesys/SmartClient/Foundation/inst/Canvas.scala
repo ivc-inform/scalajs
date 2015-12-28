@@ -111,7 +111,7 @@ trait Canvas extends Class {
     def containsPoint(x: Int, y: Int, withinViewport: Boolean = js.native): Boolean
     var contents: HTMLString
     var contextMenu: Menu
-    val cursor : Cursor
+    val cursor: Cursor
     val customEdges: js.Array[String]
     val dataPath: DataPath
     var defaultHeight: Int
@@ -250,8 +250,7 @@ trait Canvas extends Class {
     val htmlPosition: DrawPosition
     val ID: String
     def imgHTML(src: SCImgURL, width: Number = js.native, height: Number = js.native, name: String = js.native, extraStuff: String = js.native, imgDir: String = js.native): String
-    def init(arguments: js.Dictionary[js.Any]): Unit
-    def initWidget(arguments: js.Dictionary[js.Any]): Unit
+    var initWidget: js.ThisFunction0[canvasHandler, Unit]
     def intersects(other: Canvas): Boolean
     def intersectsRect(left: Number | js.Array[Number], top: Number, width: Number, height: Number): Boolean
     def isDirty(): Boolean

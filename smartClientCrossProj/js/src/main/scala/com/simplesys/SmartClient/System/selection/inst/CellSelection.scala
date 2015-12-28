@@ -13,11 +13,11 @@ trait CellSelection extends Class {
     def anySelected(): Boolean
     def cellIsSelected(rowNum: Number, colNum: Number): Boolean
     def deselectCell(rowNum: Number, colNum: Number): Boolean
-    def deselectCellList(list: Array): Boolean
-    def getSelectedCells(): Array
+    def deselectCellList(list: inst.Array): Boolean
+    def getSelectedCells(): inst.Array
     def getSelectedRecord(): ListGridRecord
     def selectCell(rowNum: Number, colNum: Number): Boolean
-    def selectCellList(list: Array): Boolean
+    def selectCellList(list: inst.Array): Boolean
     def selectionChanged(): Unit
     def selectSingleCell(rowNum: Number, colNum: Number): Boolean
 }

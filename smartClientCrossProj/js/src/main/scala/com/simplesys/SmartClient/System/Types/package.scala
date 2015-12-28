@@ -1,5 +1,7 @@
 package com.simplesys.SmartClient.System
 
+import com.simplesys.SmartClient.System.inst.Array
+
 import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.|
