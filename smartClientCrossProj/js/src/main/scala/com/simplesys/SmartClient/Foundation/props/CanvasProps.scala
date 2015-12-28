@@ -1,49 +1,34 @@
 package com.simplesys.SmartClient.Foundation.props
 
 import com.simplesys.SmartClient.Control.inst.Menu
-import com.simplesys.SmartClient.DataBinding.AnimationCallback
 import com.simplesys.SmartClient.Forms.FormsItems.inst.CanvasItem
 import com.simplesys.SmartClient.Forms.inst.ValuesManager
-import com.simplesys.SmartClient.Foundation.AnimateShowEffect._
 import com.simplesys.SmartClient.Foundation.inst.Canvas
 import com.simplesys.SmartClient.System.Number._
-import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types._
-import com.simplesys.SmartClient.System.inst.PrintProperties
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.SmartClient.Tools.inst.{EditContext, EditNode}
+import com.simplesys.SmartClient.Tools.inst.EditNode
 import com.simplesys.SmartClient.option.{ScNone, ScOption}
-import com.simplesys.isc.System.Types.Alignment
 import com.simplesys.isc.System.Types.Alignment._
 import com.simplesys.isc.System.Types.AnimationAcceleration.AnimationAcceleration
-import com.simplesys.isc.System.Types.AnimationAcceleration._
 import com.simplesys.isc.System.Types.BackgroundRepeat._
-import com.simplesys.isc.System.Types.ClickMaskMode._
-import com.simplesys.isc.System.Types.Cursor
 import com.simplesys.isc.System.Types.Cursor._
-import com.simplesys.isc.System.Types.DragAppearance
 import com.simplesys.isc.System.Types.DragAppearance._
 import com.simplesys.isc.System.Types.DragIntersectStyle._
 import com.simplesys.isc.System.Types.DragMaskType._
-import com.simplesys.isc.System.Types.DrawPosition
 import com.simplesys.isc.System.Types.DrawPosition._
 import com.simplesys.isc.System.Types.EdgeName._
-import com.simplesys.isc.System.Types.LocatorStrategy
 import com.simplesys.isc.System.Types.LocatorStrategy._
-import com.simplesys.isc.System.Types.LocatorTypeStrategy
 import com.simplesys.isc.System.Types.LocatorTypeStrategy._
-import com.simplesys.isc.System.Types.Overflow
 import com.simplesys.isc.System.Types.Overflow._
 import com.simplesys.isc.System.Types.PercentBoxModel._
 import com.simplesys.isc.System.Types.Positioning._
 import com.simplesys.isc.System.Types.ProportionalResizeMode._
-import com.simplesys.isc.System.Types.VerticalAlignment
 import com.simplesys.isc.System.Types.VerticalAlignment._
 import com.simplesys.isc.System.Types.Visibility._
 import com.simplesys.isc.System.Types._
-import org.scalajs.dom.raw.{HTMLElement, DocumentEvent}
+import org.scalajs.dom.raw.HTMLElement
 
-import scala.scalajs.js
 import scala.scalajs.js.Function3
 
 class CanvasProps extends ClassProps {

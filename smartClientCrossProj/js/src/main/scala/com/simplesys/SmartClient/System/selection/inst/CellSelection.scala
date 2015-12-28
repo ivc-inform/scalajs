@@ -1,6 +1,5 @@
 package com.simplesys.SmartClient.System.selection.inst
 
-import com.simplesys.SmartClient.System.Array._
 import com.simplesys.SmartClient.System.Number._
 import com.simplesys.SmartClient.System.Types.ListGridRecord
 import com.simplesys.SmartClient.System._
