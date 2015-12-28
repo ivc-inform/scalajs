@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.System.inst
 
+import com.simplesys.SmartClient.System
 import com.simplesys.SmartClient.System.Number._
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.Record

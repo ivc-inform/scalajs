@@ -21,5 +21,5 @@ trait Array extends List {
     def slide(start: Number, destination: Number): Unit
     def slideRange(start: Number, end: Number, destination: Number): Unit
     def sum(start: Number = js.native, end: Number = js.native): Number
-    def unsort(): Boolean = js.native
+    def unsort(): Boolean
 }
