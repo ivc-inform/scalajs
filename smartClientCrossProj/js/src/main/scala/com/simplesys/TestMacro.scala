@@ -19,9 +19,10 @@ import com.simplesys.macros.DemoDebugMacros._
 
 import com.simplesys.SmartClient.System.{Class0, Class}
 object Test_Class extends App{
-   val map = Class0.getMap(
+   val map = Class.getMap(
      new ClassProps {
 
      }
    )
+   val a  = 0
 }
