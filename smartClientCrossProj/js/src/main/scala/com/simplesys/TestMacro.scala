@@ -12,6 +12,10 @@ object TestMacro extends App{
         def beta: String = "beta"
       }
 
-      println(methodNames[A])
-      println(methodNames[B])
+//      println(methodNames[A])
+//      println(methodNames[B])
+}
+
+object Test_Class extends App{
+
 }
