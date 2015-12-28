@@ -55,8 +55,8 @@ object PropsToMap {
         typeToConvertedValueInt(typeDef, valueAccess).getOrElse(q"$valueAccess")
     }
 
-    def materializePropsMapImpl[P <: AbstractPropsClass : c.WeakTypeTag](c: Context): c.Expr[PropsToMap[P]] = {
-        import c.universe._
+    def materializePropsMapImpl[P <: AbstractPropsClass : context.WeakTypeTag](context: Context): context.Expr[PropsToMap[P]] = {
+        import context.universe._
 
         val tpeAbstractPropsClass = weakTypeOf[P]
         val tsScOption = typeOf[ScOption[_]].typeSymbol
@@ -88,13 +88,13 @@ object PropsToMap {
         val abstractPropsClassFields = fAbstractPropsClass.map { case (field, typeDef, _) =>
             val name = field.name.toTermName
             val decoded = name.decodedName.toString
-            q"""t.$name.foreach {v => res.update($decoded, ${typeToConvertedValue(c)(typeDef, q"v")})}"""
+            q"""t.$name.foreach {v => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"v")})}"""
         }
 
         val simpleFields = fSimple.map { case (field, typeDef, _) =>
             val name = field.name.toTermName
             val decoded = name.decodedName.toString
-            q"""res.update($decoded, ${typeToConvertedValue(c)(typeDef, q"t.$name")})"""
+            q"""res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"t.$name")})"""
         }
 
         val simpleFieldsExpansion = if (simpleFields.nonEmpty)
@@ -105,7 +105,7 @@ object PropsToMap {
             q"""..$abstractPropsClassFields"""
         else q""
 
-        val res = c.Expr[PropsToMap[P]] {
+        val res = context.Expr[PropsToMap[P]] {
             q"""
                 import com.simplesys.SmartClient.System.props.AbstractPropsClass
                 import collection.immutable.HashMap
