@@ -3,18 +3,15 @@ package com.simplesys.SmartClient.Foundation
 import com.simplesys.SmartClient.Foundation.Point.Point
 import com.simplesys.SmartClient.Foundation.PrintProperties.PrintProperties
 import com.simplesys.SmartClient.Foundation.inst._
-import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.Layout.inst.PrintWindow
+import com.simplesys.SmartClient.System.AbstractClassCompanion
 import com.simplesys.SmartClient.System.Types.Callback
-import com.simplesys.SmartClient.System.props.AbstractPropsClass
-import com.simplesys.SmartClient.System.{AbstractClassCompanion, Types}
 import com.simplesys.isc.System.Types.EdgeName.EdgeName
 import com.simplesys.isc.System.Types.{HTMLString, SCImgURL}
-import com.simplesys.macros.PropsToMap
 
-import scala.reflect.ClassTag
 import scala.scalajs.js
 import scala.scalajs.js.|
+import scala.scalajs.js.annotation.ScalaJSDefined
 
 @js.native
 abstract class AbstractCanvasCompanion extends AbstractClassCompanion {
@@ -38,7 +35,8 @@ abstract class AbstractCanvasCompanion extends AbstractClassCompanion {
     val TAB_INDEX_FLOOR: Int = js.native
 }
 
-@js.native
+@ScalaJSDefined
 object Canvas extends AbstractCanvasCompanion {
+    //private val sCApply = new SCApply[Canvas, CanvasProps]()
 }
 

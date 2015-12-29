@@ -51,5 +51,11 @@ class TestSuit extends FunSuite {
                 case NoType => (field, field.typeSignature, false)
             }
         }.partition { case (f, t, p) => p }
+
+        val abstractPropsClassFields = fAbstractPropsClass.map { case (field, typeDef, _) =>
+            val name = field.name.toTermName
+            val decoded = name.decodedName.toString
+            q"""t.$name.foreach {v => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"v")})}"""
+        }
     }
 }

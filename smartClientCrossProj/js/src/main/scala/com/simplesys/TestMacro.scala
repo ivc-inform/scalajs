@@ -19,13 +19,13 @@ import com.simplesys.macros.DemoDebugMacros._
       println(methodNames[B])
 }*/
 
-object Test_Class {
-    def main(args: Array[String]) = {
-        val map = Class.getMap(
-            new ClassProps {
-                override val addPropertiesOnCreate = ScNone
-            }
-        )
-        val a = 0
-    }
-}
+//object Test_Class {
+//    def main(args: Array[String]) = {
+//        val map = Class.getMap(
+//            new ClassProps {
+//                //override val addPropertiesOnCreate = ScNone
+//            }
+//        )
+//        val a = 0
+//    }
+//}

@@ -83,6 +83,6 @@ abstract class AbstractClassCompanion extends Types.Object {
 @ScalaJSDefined
 object Class extends AbstractClassCompanion {
     private val sCApply = new SCApply[Class, ClassProps]()
-    def create(props: ClassProps) = sCApply create props
-    def getMap(props: ClassProps) = sCApply getMap props
+    //def create(props: ClassProps) = sCApply create props
+    //def getMap(props: ClassProps) = sCApply getMap props
 }

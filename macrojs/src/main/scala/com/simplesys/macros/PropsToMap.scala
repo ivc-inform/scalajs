@@ -64,10 +64,10 @@ object PropsToMap {
 
         val fields = tpeAbstractPropsClass.members.collect { case field if field.isPublic &&
           field.isMethod &&
-          !field.asMethod.isGetter &&
+          !field.asMethod.isConstructor &&
           (field.asMethod.returnType.typeSymbol == tsScOption || field.asMethod.returnType.typeSymbol == tsScSome) &&
-          field.owner.isClass &&
-          field.owner.asClass.baseClasses.contains(tsScOption)
+          field.owner.isTerm &&
+          field.owner.asTerm.isGetter
         => field
         }
 
