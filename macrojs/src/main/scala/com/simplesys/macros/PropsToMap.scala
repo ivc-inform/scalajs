@@ -68,8 +68,7 @@ object PropsToMap {
           !field.asMethod.isConstructor &&
           field.asMethod.returnType.typeSymbol != tsUnit &&
           field.owner.isClass &&
-          field.owner.asClass.baseClasses.contains(tsScOption) &&
-          field.owner.asClass != tsScOption
+          field.owner.asClass.baseClasses.contains(tsScOption)
         => field
         }
 

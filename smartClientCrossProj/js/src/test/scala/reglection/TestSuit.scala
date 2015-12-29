@@ -1,8 +1,8 @@
 package reglection
 
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.SmartClient.option.{ScNone, ScOption, ScSome}
 import com.simplesys.SmartClient.option.ScOption._
+import com.simplesys.SmartClient.option.{ScNone, ScOption, ScSome}
 import com.simplesys.common.Strings._
 import org.scalatest.FunSuite
 
@@ -15,7 +15,7 @@ class TestSuit extends FunSuite {
 
         val cls = new ClassProps {
             override val addPropertiesOnCreate: ScOption[Boolean] = false
-             val addPropertiesOnCreate1 = ScNone
+            val addPropertiesOnCreate1 = ScNone
         }
 
         val tpeAbstractPropsClass = weakTypeOf[cls.type]
@@ -44,5 +44,12 @@ class TestSuit extends FunSuite {
                 println(s"field.name ${field.name.toString}, typeSymbol: $typeSymbol. typeParams: $typeParams")
         }
         println("//////////////////////////////////////////////// End Fields: ///////////////////////////////////////////////////////////".newLine)
+
+        val (fAbstractPropsClass, fSimple) = fields.map { field =>
+            field.typeSignature.baseType(typeOf[ScOption[_]].typeSymbol) match {
+                case TypeRef(_, _, tArg) => (field, tArg.head, true)
+                case NoType => (field, field.typeSignature, false)
+            }
+        }.partition { case (f, t, p) => p }
     }
 }
