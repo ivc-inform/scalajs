@@ -86,14 +86,7 @@ object PropsToMap {
             q"""res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"clazz.$name")})"""
         }
 
-        val simpleFieldsExpansion = if (simpleFields.nonEmpty)
-            q"..$simpleFields"
-        else q""
-
-        val AbstractPropsClassFieldsExpansion = if (abstractPropsClassFields.nonEmpty)
-            q"""..$abstractPropsClassFields"""
-        else q""
-
+        println(context.enclosingPosition.toString)
         val res = context.Expr[PropsToMap[P]] {
             q"""
                 import com.simplesys.SmartClient.System.props.AbstractPropsClass
@@ -102,8 +95,8 @@ object PropsToMap {
                 new PropsToMap[$tpeAbstractPropsClass] {
                   def getMap(clazz: $tpeAbstractPropsClass): Map[String, Any] = {
                       val res = mutable.HashMap.empty[String, Any]
-                      $AbstractPropsClassFieldsExpansion
-                      $simpleFieldsExpansion
+                      ..$abstractPropsClassFields
+                      ..$simpleFields
                       println(s"Size map: " + res.size.toString)
                       res.toMap
                   }
