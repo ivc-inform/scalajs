@@ -3,9 +3,6 @@ package com.simplesys.SmartClient.Control.props
 import com.simplesys.SmartClient.Foundation.props.StatefulCanvasProps
 import com.simplesys.SmartClient.option.{ScNone, ScOption}
 import com.simplesys.isc.System.Types.Cursor.Cursor
-import com.simplesys.isc.System.Types._
-
-import scala.scalajs.js
 
 class ButtonProps extends StatefulCanvasProps {
     type buttonHandler <: this.type

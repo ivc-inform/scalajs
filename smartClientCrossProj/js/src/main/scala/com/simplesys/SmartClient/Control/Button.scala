@@ -1,12 +1,17 @@
 package com.simplesys.SmartClient.Control
 
+import com.simplesys.SmartClient.Control.inst.Button
+import com.simplesys.SmartClient.Control.props.ButtonProps
 import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
+import com.simplesys.SmartClient.System.SCApply
+import com.simplesys.macros.PropsToMap
 
 import scala.language.implicitConversions
-import scala.scalajs.js
+import scala.scalajs.js.annotation.ScalaJSDefined
 
-@js.native
+@ScalaJSDefined
 object Button extends AbstractCanvasCompanion {
-    type Button = Button.type
+    private val sCApply = new SCApply[Button, ButtonProps]()
+    def create(props: ButtonProps): Button = sCApply create props
 }
 
