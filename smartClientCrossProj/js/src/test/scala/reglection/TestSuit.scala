@@ -41,6 +41,7 @@ class TestSuit extends FunSuite {
                 val typeParams = f.asMethod.returnType.typeArgs
                 val typeParams1 = f.asTerm.isVal
                 val typeParams2 = f.asTerm.isVar
+                f.
                 println(s"field.name ${field.name.toString}, typeSymbol: $typeSymbol. typeParams: $typeParams")
         }
         println("//////////////////////////////////////////////// End Fields: ///////////////////////////////////////////////////////////".newLine)
