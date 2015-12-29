@@ -29,7 +29,8 @@ object CommonSettings {
         val logbackWrapper = Def.setting("com.simplesys.core" %% "logback-wrapper" % versions.ssysCoreVersion)
         val scalaReflect = Def.setting("org.scala-lang" % "scala-reflect" % scalaVersion)
         val scalaCompiler = Def.setting("org.scala-lang" % "scala-compiler" % scalaVersion)
-        val scalaTest = Def.setting("org.scalatest" %% "scalatest" % "2.2.5" % versions.scalaTestVersion)
+        val scalaReflection = Def.setting("org.scala-lang" % "scala-reflection" % scalaVersion)
+        val scalaTest = Def.setting("org.scalatest" %% "scalatest" %  versions.scalaTestVersion % "test")
         val spray = Def.setting("io.spray" % "spray-json_2.11" % versions.scalaTestVersion % "test")
         val uTest = Def.setting("com.lihaoyi" %%% "utest" % versions.uTestVersion % "test")
     }

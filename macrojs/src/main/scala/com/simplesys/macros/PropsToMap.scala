@@ -58,8 +58,10 @@ object PropsToMap {
         import context.universe._
 
         val tpeAbstractPropsClass = weakTypeOf[P]
+
         val tsScOption = typeOf[ScOption[_]].typeSymbol
         val tsUnit = typeOf[Unit].typeSymbol
+
         val fields = tpeAbstractPropsClass.members.collect { case field if field.isPublic &&
           field.isMethod &&
           !field.asMethod.isSetter &&
