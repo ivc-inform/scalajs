@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.SmartClient.option.ScOption._
 import com.simplesys.SmartClient.option.{ScNone, ScOption, ScSome}
 import com.simplesys.common.Strings._
+import com.simplesys.macros.PropsToMap
 import org.scalatest.FunSuite
 
 import scala.reflect.runtime.{universe => ru}
@@ -15,7 +16,6 @@ class TestSuit extends FunSuite {
 
         val cls = new ClassProps {
             override val addPropertiesOnCreate: ScOption[Boolean] = false
-            val addPropertiesOnCreate1 = ScNone
         }
 
         val tpeAbstractPropsClass = weakTypeOf[cls.type]
@@ -51,11 +51,20 @@ class TestSuit extends FunSuite {
                 case NoType => (field, field.typeSignature, false)
             }
         }.partition { case (f, t, p) => p }
+    }
 
-        val abstractPropsClassFields = fAbstractPropsClass.map { case (field, typeDef, _) =>
-            val name = field.name.toTermName
-            val decoded = name.decodedName.toString
-            q"""t.$name.foreach {v => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"v")})}"""
+    test("2") {
+        import collection.immutable.HashMap
+
+        new PropsToMap[ClassProps] {
+            def getMap(t: ClassProps): Map[String, Any] = {
+                val res = HashMap.empty[String, Any]
+                res.updated("", 1)
+                //t.addPropertiesOnCreate.foreach(((v) => res.update("addPropertiesOnCreate", v)))
+                res
+            }
         }
     }
 }
+
+

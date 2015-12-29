@@ -16,7 +16,10 @@ object PropsToMap {
 
     def typeToConvertedValue(context: Context)(typeDef: context.universe.Type, valueAccess: context.universe.Tree): context.universe.Tree = {
         import context.universe._
+
         def typeToConvertedValueInt(typeDef: context.universe.Type, valueAccess: context.universe.Tree): Option[context.universe.Tree] = {
+            val tsScOption = typeOf[ScOption[_]].typeSymbol
+            val tsScSome = typeOf[ScSome[_]].typeSymbol
 
             typeDef.baseType(typeOf[scala.collection.Seq[_]].typeSymbol) match {
                 case TypeRef(_, _, targs) =>
@@ -34,20 +37,7 @@ object PropsToMap {
                         case TypeRef(_, _, _) =>
                             Some(q"$valueAccess")
                         case NoType =>
-                            typeDef.baseType(typeOf[Either[_, _]].typeSymbol) match {
-                                case TypeRef(_, _, targs) =>
-                                    val access = q"ei"
-                                    val checkedTypes = targs.map(t => typeToConvertedValueInt(t, access))
-                                    val leftType = checkedTypes.head.getOrElse(valueAccess)
-                                    val rightType = checkedTypes.last.getOrElse(valueAccess)
-
-                                    Some(
-                                        q"""$valueAccess match {
-                                case Left(ei) => $leftType
-                                case Right(ei) => $rightType
-                              }""")
-                                case NoType => None
-                            }
+                            None
                     }
             }
         }
@@ -66,8 +56,8 @@ object PropsToMap {
           field.isMethod &&
           !field.asMethod.isConstructor &&
           (field.asMethod.returnType.typeSymbol == tsScOption || field.asMethod.returnType.typeSymbol == tsScSome) &&
-          field.owner.isTerm &&
-          field.owner.asTerm.isGetter
+          field.isTerm &&
+          field.asTerm.isGetter
         => field
         }
 
@@ -87,7 +77,7 @@ object PropsToMap {
         val abstractPropsClassFields = fAbstractPropsClass.map { case (field, typeDef, _) =>
             val name = field.name.toTermName
             val decoded = name.decodedName.toString
-            q"""t.$name.foreach {v => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"v")})}"""
+            q"""t.$name.foreach {v => res.updated($decoded, ${typeToConvertedValue(context)(typeDef, q"v")})}"""
         }
 
         val simpleFields = fSimple.map { case (field, typeDef, _) =>
