@@ -9,10 +9,6 @@ import scala.scalajs.js.|
 @js.native
 trait Button extends StatefulCanvas {
     var title: HTMLString
-    var icon: CSSStyleName
-    var iconOrientation: String
     var iconClick: js.Function0[Boolean] | String
-
-    def setTitle (newTitle: HTMLString)
 }
 
