@@ -1,9 +1,6 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
 import com.simplesys.SmartClient.System.RelativeDate._
-import com.simplesys.SmartClient.System.inst._
-import com.simplesys.SmartClient.System.props.DateUtilProps
 import com.simplesys.isc.System.Types.RelativeDateRangePosition._
 import com.simplesys.isc.System.Types.RelativeDateShortcut.RelativeDateShortcut
 import com.simplesys.isc.System.Types._
