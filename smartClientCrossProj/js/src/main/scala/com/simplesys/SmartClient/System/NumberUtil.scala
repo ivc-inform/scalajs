@@ -8,7 +8,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object NumberUtil extends AbstractClassCompanion[NumberUtil, NumberUtilProps] {
+object NumberUtil extends AbstractClassCompanion {
     type NumberUtil = NumberUtil.type
 
     val currencySymbol: String = js.native

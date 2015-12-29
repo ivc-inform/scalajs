@@ -8,6 +8,6 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object PrintWindow extends AbstractCanvasCompanion[PrintWindow, PrintWindowProps] {
+object PrintWindow extends AbstractCanvasCompanion {
     type PrintWindow = PrintWindow.type
 }

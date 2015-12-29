@@ -7,6 +7,6 @@ import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
 import scala.scalajs.js
 
 @js.native
-object Dialog extends AbstractCanvasCompanion[Dialog, DialogProps] {
+object Dialog extends AbstractCanvasCompanion {
     type Dialog = Dialog.type
 }

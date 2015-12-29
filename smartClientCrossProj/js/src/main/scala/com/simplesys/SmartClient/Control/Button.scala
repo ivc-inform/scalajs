@@ -9,7 +9,7 @@ import scala.scalajs.js
 import language.implicitConversions
 
 @js.native
-object Button extends AbstractCanvasCompanion[Button, ButtonProps] {
+object Button extends AbstractCanvasCompanion {
     type Button = Button.type
 }
 

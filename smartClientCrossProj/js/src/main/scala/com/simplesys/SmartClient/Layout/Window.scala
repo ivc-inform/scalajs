@@ -8,6 +8,6 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object Window extends AbstractCanvasCompanion[Window, WindowProps] {
+object Window extends AbstractCanvasCompanion {
     type Window = Window.type
 }

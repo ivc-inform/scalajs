@@ -7,6 +7,6 @@ import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
 import scala.scalajs.js
 
 @js.native
-object IButton extends AbstractCanvasCompanion[IButton, IButtonProps] {
+object IButton extends AbstractCanvasCompanion {
     type IButton = IButton.type
 }

@@ -8,6 +8,6 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object Layout extends AbstractCanvasCompanion[Layout, LayoutProps] {
+object Layout extends AbstractCanvasCompanion {
     type Layout = Layout.type
 }

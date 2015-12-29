@@ -17,7 +17,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-abstract class AbstractCanvasCompanion[T <: Types.Object, P <: AbstractPropsClass](implicit ct: ClassTag[T]) extends AbstractClassCompanion[T, P] {
+abstract class AbstractCanvasCompanion extends AbstractClassCompanion {
     var allowExternalFilters: Boolean = js.native
     var defaultPageSpace: Int = js.native
     def getById(ID: String): Canvas = js.native
@@ -39,6 +39,6 @@ abstract class AbstractCanvasCompanion[T <: Types.Object, P <: AbstractPropsClas
 }
 
 @js.native
-object Canvas extends AbstractCanvasCompanion[Canvas, CanvasProps] {
+object Canvas extends AbstractCanvasCompanion {
 }
 

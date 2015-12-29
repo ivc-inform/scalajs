@@ -12,7 +12,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object DateUtil extends AbstractClassCompanion[DateUtil, DateUtilProps] {
+object DateUtil extends AbstractClassCompanion {
     type DateUtil = DateUtil.type
 
     def createLogicalDate(year: Int, month: Int, date: Int): Date = js.native

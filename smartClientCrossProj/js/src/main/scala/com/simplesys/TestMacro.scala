@@ -1,10 +1,10 @@
 package com.simplesys
 
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.SmartClient.option.{ScSome, ScNone, ScOption}
-import com.simplesys.macros.DemoDebugMacros._
+import com.simplesys.SmartClient.option.ScSome
+import com.simplesys.SmartClient.System._
 
-object TestMacro extends App{
+/*object TestMacro extends App{
     class A {
         def a: Int = 42
         def b: String = "b"
@@ -16,14 +16,14 @@ object TestMacro extends App{
 
       println(methodNames[A])
       println(methodNames[B])
-}
+}*/
 
-/*import com.simplesys.SmartClient.System.{Class0, Class}
 object Test_Class extends App{
-   val map = Class0.getMap(
+   val map = Class.getMap(
      new ClassProps {
          override val addPropertiesOnCreate = ScSome(true)
      }
    )
+    //Class.isA("")
    val a  = 0
-}*/
+}

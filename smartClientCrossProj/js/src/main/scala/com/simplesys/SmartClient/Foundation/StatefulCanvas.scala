@@ -7,6 +7,6 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object StatefulCanvas extends AbstractCanvasCompanion[StatefulCanvas, StatefulCanvasProps] {
+object StatefulCanvas extends AbstractCanvasCompanion {
     type StatefulCanvas = StatefulCanvas.type
 }

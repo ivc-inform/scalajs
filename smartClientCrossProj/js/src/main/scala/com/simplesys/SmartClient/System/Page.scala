@@ -14,7 +14,7 @@ import scala.reflect.ClassTag
 import scala.scalajs.js
 
 @js.native
-abstract class AbstractPageCompanion [T <: Types.Object , P <: AbstractPropsClass](implicit ct: ClassTag[T]) extends AbstractClassCompanion[T, P] {
+abstract class AbstractPageCompanion extends AbstractClassCompanion {
     def checkBrowserAndRedirect(url: URL): Unit = js.native
     def clearEvent(eventType: PageEvent, ID: Number): Unit = js.native
     var defaultUnsupportedBrowserURL: URL = js.native
@@ -62,6 +62,6 @@ abstract class AbstractPageCompanion [T <: Types.Object , P <: AbstractPropsClas
 }
 
 @js.native
-object Page extends AbstractPageCompanion[Page, PageProps] {
+object Page extends AbstractPageCompanion {
 
 }
