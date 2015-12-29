@@ -24,7 +24,6 @@ class TestSuit extends FunSuite {
 
         val fields = tpeAbstractPropsClass.members.collect { case field if field.isPublic &&
           field.isMethod &&
-          //!field.asMethod.isSetter &&
           !field.asMethod.isConstructor &&
           (field.asMethod.returnType.typeSymbol == tsScOption || field.asMethod.returnType.typeSymbol == tsScSome) &&
           field.asTerm.isGetter
