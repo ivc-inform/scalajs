@@ -2,6 +2,7 @@ package reglection
 
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.SmartClient.option.{ScNone, ScOption, ScSome}
+import com.simplesys.SmartClient.option.ScOption._
 import com.simplesys.common.Strings._
 import org.scalatest.FunSuite
 
@@ -13,7 +14,7 @@ class TestSuit extends FunSuite {
         import ru._
 
         val cls = new ClassProps {
-            override val addPropertiesOnCreate = ScSome(false)
+            override val addPropertiesOnCreate: ScOption[Boolean] = false
              val addPropertiesOnCreate1 = ScNone
         }
 

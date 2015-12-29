@@ -1,5 +1,9 @@
 package com.simplesys.SmartClient.option
 
+object ScOption {
+    implicit def anyToScOpt[T](x: T): ScOption[T] = ScSome(x)
+}
+
 sealed abstract class ScOption[+A] extends Product with Serializable {
     self =>
 
@@ -80,3 +84,4 @@ case object ScNone extends ScOption[Nothing] {
     def isEmpty = true
     def get = throw new NoSuchElementException("ScNone.get")
 }
+
