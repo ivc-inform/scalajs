@@ -4,5 +4,5 @@ import language.implicitConversions
 
 object State extends Enumeration {
     type State = Value
-    val "", Down, Over, Disabled = Value
+    val Empty, Down, Over, Disabled = Value
 }
