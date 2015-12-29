@@ -77,7 +77,7 @@ object PropsToMap {
         val abstractPropsClassFields = fAbstractPropsClass.map { case (field, typeDef, _) =>
             val name = field.name.toTermName
             val decoded = name.decodedName.toString
-            q"""`class`.$name.foreach {item => res.updated($decoded, ${typeToConvertedValue(context)(typeDef, q"item")})}"""
+            q"""`class`.$name.foreach {item => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"item")})}"""
         }
 
         val simpleFields = fSimple.map { case (field, typeDef, _) =>
@@ -97,14 +97,14 @@ object PropsToMap {
         val res = context.Expr[PropsToMap[P]] {
             q"""
                 import com.simplesys.SmartClient.System.props.AbstractPropsClass
-                import collection.immutable.HashMap
+                import scala.collection.mutable
 
                 new PropsToMap[$tpeAbstractPropsClass] {
                   def getMap(`class`: $tpeAbstractPropsClass): Map[String, Any] = {
-                      val res = HashMap.empty[String, Any]
+                      val res = mutable.HashMap.empty[String, Any]
                       $AbstractPropsClassFieldsExpansion
                       $simpleFieldsExpansion
-                      res
+                      res.toMap
                   }
             }"""
         }

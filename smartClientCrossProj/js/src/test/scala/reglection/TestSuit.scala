@@ -2,7 +2,7 @@ package reglection
 
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.SmartClient.option.ScOption._
-import com.simplesys.SmartClient.option.{ScNone, ScOption, ScSome}
+import com.simplesys.SmartClient.option.{ScOption, ScSome}
 import com.simplesys.common.Strings._
 import com.simplesys.macros.PropsToMap
 import org.scalatest.FunSuite
@@ -41,7 +41,7 @@ class TestSuit extends FunSuite {
                 val typeParams = f.asMethod.returnType.typeArgs
                 val typeParams1 = f.asTerm.isVal
                 val typeParams2 = f.asTerm.isVar
-                f.
+
                 println(s"field.name ${field.name.toString}, typeSymbol: $typeSymbol. typeParams: $typeParams")
         }
         println("//////////////////////////////////////////////// End Fields: ///////////////////////////////////////////////////////////".newLine)
@@ -55,16 +55,22 @@ class TestSuit extends FunSuite {
     }
 
     test("2") {
-        import collection.immutable.HashMap
 
-        new PropsToMap[ClassProps] {
-            def getMap(t: ClassProps): Map[String, Any] = {
-                val res = HashMap.empty[String, Any]
-                res.updated("", 1)
-                t.addPropertiesOnCreate.foreach(((_) => res.updated("addPropertiesOnCreate", _)))
-                res
+        import scala.collection.mutable
+
+        val a = new PropsToMap[ClassProps] {
+            def getMap(t: ClassProps) = {
+                val res = mutable.HashMap.empty[String, Any]
+                t.addPropertiesOnCreate.foreach(v => res.update("addPropertiesOnCreate", v))
+                res.toMap
             }
         }
+
+        println(s"Size map: ${
+            a.getMap(new ClassProps {
+                override val addPropertiesOnCreate: ScOption[Boolean] = true
+            }).size
+        }")
     }
 }
 

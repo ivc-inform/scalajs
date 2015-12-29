@@ -1,9 +1,8 @@
 package com.simplesys
 
-import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.SmartClient.option.{ScNone, ScOption, ScSome}
 import com.simplesys.SmartClient.System._
-import com.simplesys.macros.DemoDebugMacros._
+import com.simplesys.SmartClient.System.props.ClassProps
+import com.simplesys.SmartClient.option.ScOption
 
 /*object TestMacro extends App{
     class A {
@@ -19,13 +18,14 @@ import com.simplesys.macros.DemoDebugMacros._
       println(methodNames[B])
 }*/
 
-//object Test_Class {
-//    def main(args: Array[String]) = {
-//        val map = Class.getMap(
-//            new ClassProps {
-//                //override val addPropertiesOnCreate = ScNone
-//            }
-//        )
-//        val a = 0
-//    }
-//}
+import com.simplesys.SmartClient.option.ScOption._
+
+object Test_Class extends App {
+    val map = Class.getMap(
+        new ClassProps {
+            override val addPropertiesOnCreate: ScOption[Boolean] = true
+        }
+    )
+
+    println(s"Size map: ${map.size}")
+}
