@@ -99,7 +99,7 @@ object PropsToMap extends Logging {
                       val res = mutable.HashMap.empty[String, Any]
                       ..$abstractPropsClassFields
                       ..$simpleFields
-                      logger debug s"Size map: " + res.size.toString
+                      logger trace s"Size map: " + res.size.toString
                       res.toMap
                   }
             }"""

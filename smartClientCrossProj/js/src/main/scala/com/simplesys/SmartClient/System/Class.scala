@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.System.inst._
 import com.simplesys.SmartClient.System.props.{AbstractPropsClass, ClassProps}
 import com.simplesys.isc.System.Types.LogPriority.LogPriority
 import com.simplesys.macros.PropsToMap
-import com.simplesys.macros.PropsToMap._
+//import com.simplesys.macros.PropsToMap._
 
 import scala.language.experimental.macros
 import scala.reflect.ClassTag
@@ -12,27 +12,6 @@ import scala.scalajs.js
 import scala.scalajs.js.Dictionary
 import scala.scalajs.js.annotation.ScalaJSDefined
 
-
-class SCApply[T <: Types.Object, P <: AbstractPropsClass](implicit ct: ClassTag[T], propsToMap: PropsToMap[P]) {
-
-    lazy protected val className: String = ct.runtimeClass.getSimpleName.capitalize
-
-    def create(propsClass: P): T = {
-
-        def props2Dict(abstractProps: Map[String, Any]): js.Dictionary[Types.Object] = {
-            val result = Dictionary.empty[Types.Object]
-            abstractProps.foreach { case (key, value) => result(key) = value.asInstanceOf[Types.Object] }
-            result
-        }
-
-        js.Dynamic.global.isc.selectDynamic(className).create(props2Dict(getMap(propsClass))).asInstanceOf[T]
-    }
-
-    private def getMap(props: P): Map[String, Any] = {
-        val res = propsToMap getMap props
-        res
-    }
-}
 
 @js.native
 abstract class AbstractClassCompanion extends Types.Object {
@@ -84,5 +63,4 @@ abstract class AbstractClassCompanion extends Types.Object {
 object Class extends AbstractClassCompanion {
     private val sCApply = new SCApply[Class, ClassProps]()
     def create(props: ClassProps): Class = sCApply create props
-    //def getMap(props: ClassProps): Map[String, Any] = sCApply getMap props
 }

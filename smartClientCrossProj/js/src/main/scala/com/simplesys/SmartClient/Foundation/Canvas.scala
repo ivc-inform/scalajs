@@ -9,6 +9,7 @@ import com.simplesys.SmartClient.System.{SCApply, AbstractClassCompanion}
 import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.isc.System.Types.EdgeName.EdgeName
 import com.simplesys.isc.System.Types.{HTMLString, SCImgURL}
+import com.simplesys.macros.PropsToMap._
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -38,7 +39,7 @@ abstract class AbstractCanvasCompanion extends AbstractClassCompanion {
 
 @ScalaJSDefined
 object Canvas extends AbstractCanvasCompanion {
-    private val sCApply = new SCApply[Canvas, CanvasProps]()
-    def create(props: CanvasProps): Canvas = sCApply create props
+    //private val sCApply = new SCApply[Canvas, CanvasProps]()
+    //def create(props: CanvasProps): Canvas = sCApply create props
 }
 

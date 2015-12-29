@@ -1,5 +1,6 @@
 package reglection
 
+import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.SmartClient.option.ScOption._
 import com.simplesys.SmartClient.option.{ScOption, ScSome}
@@ -57,10 +58,31 @@ class TestSuit extends FunSuite {
 
     test("2") {
 
+        /*Expr[com.simplesys.macros.PropsToMap[com.simplesys.SmartClient.Foundation.props.CanvasProps]]({
+          import com.simplesys.SmartClient.System.props.AbstractPropsClass;
+          import scala.collection.mutable;
+          import com.simplesys.log.Logging;
+          {
+            final class $anon extends PropsToMap[com.simplesys.SmartClient.Foundation.props.CanvasProps] with Logging {
+              def <init>() = {
+                super.<init>();
+                ()
+              };
+              def getMap(clazz: com.simplesys.SmartClient.Foundation.props.CanvasProps): Map[String, Any] = {
+                val res = mutable.HashMap.empty[String, Any];
+                clazz.addPropertiesOnCreate.foreach(((item) => res.update("addPropertiesOnCreate", item)));
+                logger.debug(StringContext("Size map: ").s().$plus(res.size.toString));
+                res.toMap
+              }
+            };
+            new $anon()
+          }
+        })*/
+
         import scala.collection.mutable
 
-        val a = new PropsToMap[ClassProps] with Logging {
-            def getMap(t: ClassProps) = {
+        val a = new PropsToMap[CanvasProps] with Logging {
+            def getMap(t: CanvasProps) = {
                 val res = mutable.HashMap.empty[String, Any]
                 println(t.addPropertiesOnCreate.isEmpty);
                 println(false);
@@ -69,11 +91,11 @@ class TestSuit extends FunSuite {
             }
         }
 
-        println(s"Size map: ${
+        /*println(s"Size map: ${
             a.getMap(new ClassProps {
                 override val addPropertiesOnCreate: ScOption[Boolean] = true
             }).size
-        }")
+        }")*/
     }
 }
 
