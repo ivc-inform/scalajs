@@ -1,7 +1,7 @@
 package com.simplesys
 
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.SmartClient.option.{ScOption, ScSome}
+import com.simplesys.SmartClient.option.{ScNone, ScOption, ScSome}
 import com.simplesys.SmartClient.System._
 import com.simplesys.macros.DemoDebugMacros._
 
@@ -23,7 +23,7 @@ object Test_Class {
     def main(args: Array[String]) = {
         val map = Class.getMap(
             new ClassProps {
-                override val addPropertiesOnCreate: ScOption[Boolean] = ScSome(true)
+                override val addPropertiesOnCreate = ScNone
             }
         )
         val a = 0
