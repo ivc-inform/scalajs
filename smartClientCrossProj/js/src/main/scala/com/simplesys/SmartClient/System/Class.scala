@@ -29,7 +29,7 @@ class SCApply[T <: Types.Object, P <: AbstractPropsClass](implicit ct: ClassTag[
     }
 
     def getMap(props: P): Map[String, Any] = {
-        val res = materializePropsMap getMap props
+        val res = propsToMap getMap props
         res
     }
 }
