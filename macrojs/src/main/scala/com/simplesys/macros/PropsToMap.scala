@@ -77,13 +77,13 @@ object PropsToMap {
         val abstractPropsClassFields = fAbstractPropsClass.map { case (field, typeDef, _) =>
             val name = field.name.toTermName
             val decoded = name.decodedName.toString
-            q"""t.$name.foreach {v => res.updated($decoded, ${typeToConvertedValue(context)(typeDef, q"v")})}"""
+            q"""`class`.$name.foreach {item => res.updated($decoded, ${typeToConvertedValue(context)(typeDef, q"item")})}"""
         }
 
         val simpleFields = fSimple.map { case (field, typeDef, _) =>
             val name = field.name.toTermName
             val decoded = name.decodedName.toString
-            q"""res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"t.$name")})"""
+            q"""res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"`class`.$name")})"""
         }
 
         val simpleFieldsExpansion = if (simpleFields.nonEmpty)
@@ -100,7 +100,7 @@ object PropsToMap {
                 import collection.immutable.HashMap
 
                 new PropsToMap[$tpeAbstractPropsClass] {
-                  def getMap(t: $tpeAbstractPropsClass): Map[String, Any] = {
+                  def getMap(`class`: $tpeAbstractPropsClass): Map[String, Any] = {
                       val res = HashMap.empty[String, Any]
                       $AbstractPropsClassFieldsExpansion
                       $simpleFieldsExpansion

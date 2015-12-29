@@ -60,7 +60,7 @@ class TestSuit extends FunSuite {
             def getMap(t: ClassProps): Map[String, Any] = {
                 val res = HashMap.empty[String, Any]
                 res.updated("", 1)
-                //t.addPropertiesOnCreate.foreach(((v) => res.update("addPropertiesOnCreate", v)))
+                t.addPropertiesOnCreate.foreach(((_) => res.updated("addPropertiesOnCreate", _)))
                 res
             }
         }
