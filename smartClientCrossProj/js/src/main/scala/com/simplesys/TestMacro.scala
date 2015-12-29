@@ -21,9 +21,8 @@ import com.simplesys.SmartClient.option.{ScSome, ScOption}
 import com.simplesys.SmartClient.option.ScOption._
 
 object Test_Class extends App {
-//    val map = Class.getMap(
-//        new ClassProps {
-//            override val addPropertiesOnCreate: ScOption[Boolean] = ScSome(true)
-//        }
-//    )
+
+        new ClassProps {
+            override val addPropertiesOnCreate: ScOption[Boolean] = ScSome(true)
+        }
 }
