@@ -28,7 +28,7 @@ class SCApply[T <: Types.Object, P <: AbstractPropsClass](implicit ct: ClassTag[
         js.Dynamic.global.isc.selectDynamic(className).create(props2Dict(getMap(propsClass))).asInstanceOf[T]
     }
 
-    def getMap(props: P): Map[String, Any] = {
+    private def getMap(props: P): Map[String, Any] = {
         val res = propsToMap getMap props
         res
     }
@@ -84,5 +84,5 @@ abstract class AbstractClassCompanion extends Types.Object {
 object Class extends AbstractClassCompanion {
     private val sCApply = new SCApply[Class, ClassProps]()
     def create(props: ClassProps): Class = sCApply create props
-    def getMap(props: ClassProps): Map[String, Any] = sCApply getMap props
+    //def getMap(props: ClassProps): Map[String, Any] = sCApply getMap props
 }

@@ -3,8 +3,9 @@ package com.simplesys.SmartClient.Foundation
 import com.simplesys.SmartClient.Foundation.Point.Point
 import com.simplesys.SmartClient.Foundation.PrintProperties.PrintProperties
 import com.simplesys.SmartClient.Foundation.inst._
+import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.Layout.inst.PrintWindow
-import com.simplesys.SmartClient.System.AbstractClassCompanion
+import com.simplesys.SmartClient.System.{SCApply, AbstractClassCompanion}
 import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.isc.System.Types.EdgeName.EdgeName
 import com.simplesys.isc.System.Types.{HTMLString, SCImgURL}
@@ -37,6 +38,7 @@ abstract class AbstractCanvasCompanion extends AbstractClassCompanion {
 
 @ScalaJSDefined
 object Canvas extends AbstractCanvasCompanion {
-    //private val sCApply = new SCApply[Canvas, CanvasProps]()
+    private val sCApply = new SCApply[Canvas, CanvasProps]()
+    def create(props: CanvasProps): Canvas = sCApply create props
 }
 
