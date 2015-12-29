@@ -1,7 +1,7 @@
 package com.simplesys.macros
 
 import com.simplesys.SmartClient.System.props.AbstractPropsClass
-import com.simplesys.SmartClient.option.ScOption
+import com.simplesys.SmartClient.option.{ScSome, ScOption}
 import com.simplesys.common.Strings._
 
 import scala.language.experimental.macros
@@ -60,13 +60,12 @@ object PropsToMap {
         val tpeAbstractPropsClass = weakTypeOf[P]
 
         val tsScOption = typeOf[ScOption[_]].typeSymbol
-        val tsUnit = typeOf[Unit].typeSymbol
+        val tsScSome = typeOf[ScSome[_]].typeSymbol
 
         val fields = tpeAbstractPropsClass.members.collect { case field if field.isPublic &&
           field.isMethod &&
-          !field.asMethod.isSetter &&
-          !field.asMethod.isConstructor &&
-          field.asMethod.returnType.typeSymbol != tsUnit &&
+          !field.asMethod.isGetter &&
+          (field.asMethod.returnType.typeSymbol == tsScOption || field.asMethod.returnType.typeSymbol == tsScSome) &&
           field.owner.isClass &&
           field.owner.asClass.baseClasses.contains(tsScOption)
         => field
