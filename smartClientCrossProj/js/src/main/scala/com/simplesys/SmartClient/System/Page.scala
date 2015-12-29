@@ -3,15 +3,13 @@ package com.simplesys.SmartClient.System
 import com.simplesys.SmartClient.System.Number._
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System.inst._
-import com.simplesys.SmartClient.System.props.{PageProps, AbstractPropsClass}
 import com.simplesys.isc.System.Types.FireStyle._
 import com.simplesys.isc.System.Types.PageEvent._
 import com.simplesys.isc.System.Types.PageOrientation._
 import com.simplesys.isc.System.Types._
-import com.simplesys.macros.PropsToMap
 
-import scala.reflect.ClassTag
 import scala.scalajs.js
+import scala.scalajs.js.|
 
 @js.native
 abstract class AbstractPageCompanion extends AbstractClassCompanion {
