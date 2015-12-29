@@ -3,6 +3,7 @@ package com.simplesys.macros
 import com.simplesys.SmartClient.System.props.AbstractPropsClass
 import com.simplesys.SmartClient.option.{ScSome, ScOption}
 import com.simplesys.common.Strings._
+import com.simplesys.log.Logging
 
 import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context
@@ -11,7 +12,7 @@ trait PropsToMap[T <: AbstractPropsClass] {
     def getMap(props: T): Map[String, Any]
 }
 
-object PropsToMap {
+object PropsToMap extends Logging {
     implicit def materializePropsMap[P <: AbstractPropsClass]: PropsToMap[P] = macro materializePropsMapImpl[P]
 
     def typeToConvertedValue(context: Context)(typeDef: context.universe.Type, valueAccess: context.universe.Tree): context.universe.Tree = {
@@ -61,11 +62,11 @@ object PropsToMap {
         => field
         }
 
-        println(s"$newLine// Class: $tpeAbstractPropsClass ///////////////////////////////////////////////////////////////".newLine)
+        logger trace s"$newLine// Class: $tpeAbstractPropsClass ///////////////////////////////////////////////////////////////".newLine
 
-        println("//////////////////////////////////////////////// Fields: ///////////////////////////////////////////////////////////////")
-        fields.foreach(println)
-        println("//////////////////////////////////////////////// End Fields: ///////////////////////////////////////////////////////////".newLine)
+        logger trace "//////////////////////////////////////////////// Fields: ///////////////////////////////////////////////////////////////"
+        fields.foreach(field => logger trace field.toString)
+        logger trace "//////////////////////////////////////////////// End Fields: ///////////////////////////////////////////////////////////".newLine
 
         val (fAbstractPropsClass, fSimple) = fields.map { field =>
             field.typeSignature.baseType(typeOf[ScOption[_]].typeSymbol) match {
@@ -86,23 +87,24 @@ object PropsToMap {
             q"""res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"clazz.$name")})"""
         }
 
-        println(context.enclosingPosition.toString)
+        logger trace context.enclosingPosition.toString
         val res = context.Expr[PropsToMap[P]] {
             q"""
                 import com.simplesys.SmartClient.System.props.AbstractPropsClass
                 import scala.collection.mutable
+                import com.simplesys.log.Logging
 
-                new PropsToMap[$tpeAbstractPropsClass] {
+                new PropsToMap[$tpeAbstractPropsClass] with Logging {
                   def getMap(clazz: $tpeAbstractPropsClass): Map[String, Any] = {
                       val res = mutable.HashMap.empty[String, Any]
                       ..$abstractPropsClassFields
                       ..$simpleFields
-                      println(s"Size map: " + res.size.toString)
+                      logger debug s"Size map: " + res.size.toString
                       res.toMap
                   }
             }"""
         }
-        println(res)
+        logger trace res.toString()
         res
     }
 }

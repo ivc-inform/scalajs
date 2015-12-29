@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.SmartClient.option.ScOption._
 import com.simplesys.SmartClient.option.{ScOption, ScSome}
 import com.simplesys.common.Strings._
+import com.simplesys.log.Logging
 import com.simplesys.macros.PropsToMap
 import org.scalatest.FunSuite
 
@@ -58,7 +59,7 @@ class TestSuit extends FunSuite {
 
         import scala.collection.mutable
 
-        val a = new PropsToMap[ClassProps] {
+        val a = new PropsToMap[ClassProps] with Logging {
             def getMap(t: ClassProps) = {
                 val res = mutable.HashMap.empty[String, Any]
                 println(t.addPropertiesOnCreate.isEmpty);
