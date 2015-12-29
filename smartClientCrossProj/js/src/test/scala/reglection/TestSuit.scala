@@ -61,7 +61,9 @@ class TestSuit extends FunSuite {
         val a = new PropsToMap[ClassProps] {
             def getMap(t: ClassProps) = {
                 val res = mutable.HashMap.empty[String, Any]
-                t.addPropertiesOnCreate.foreach(v => res.update("addPropertiesOnCreate", v))
+                println(t.addPropertiesOnCreate.isEmpty);
+                println(false);
+                t.addPropertiesOnCreate.foreach(((v) => res.update("addPropertiesOnCreate", v)))
                 res.toMap
             }
         }

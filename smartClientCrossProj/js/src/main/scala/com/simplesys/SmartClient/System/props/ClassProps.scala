@@ -5,4 +5,5 @@ import com.simplesys.SmartClient.System.inst.Class
 
 class ClassProps extends AbstractPropsClass {
     val addPropertiesOnCreate: ScOption[Boolean] = ScNone
+    val addPropertiesOnCreate1: ScOption[Boolean] = ScNone
 }

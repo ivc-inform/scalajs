@@ -2,7 +2,7 @@ package com.simplesys
 
 import com.simplesys.SmartClient.System._
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.SmartClient.option.ScOption
+import com.simplesys.SmartClient.option.{ScSome, ScOption}
 
 /*object TestMacro extends App{
     class A {
@@ -23,9 +23,7 @@ import com.simplesys.SmartClient.option.ScOption._
 object Test_Class extends App {
     val map = Class.getMap(
         new ClassProps {
-            override val addPropertiesOnCreate: ScOption[Boolean] = true
+            override val addPropertiesOnCreate: ScOption[Boolean] = ScSome(true)
         }
     )
-
-    println(s"Size map: ${map.size}")
 }
