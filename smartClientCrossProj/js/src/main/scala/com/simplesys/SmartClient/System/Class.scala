@@ -4,7 +4,6 @@ import com.simplesys.SmartClient.System.inst._
 import com.simplesys.SmartClient.System.props.{AbstractPropsClass, ClassProps}
 import com.simplesys.isc.System.Types.LogPriority.LogPriority
 import com.simplesys.macros.PropsToMap
-//import com.simplesys.macros.PropsToMap._
 
 import scala.language.experimental.macros
 import scala.reflect.ClassTag
