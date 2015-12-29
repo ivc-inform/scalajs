@@ -14,8 +14,8 @@ trait CommonDomainsProj {
       version := "1.0-SNAPSHOT",
 
       libraryDependencies ++= Seq(
-        CommonSettings.cmnDependencies.uTest.value
-
+        CommonSettings.cmnDependencies.uTest.value,
+        CommonSettings.cmnDependencies.logbackWrapper.value
       ),
 
       testFrameworks += new TestFramework("utest.runner.Framework")
