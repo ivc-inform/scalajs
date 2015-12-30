@@ -19,8 +19,7 @@ class SCApply[T <: Types.Object, P <: AbstractPropsClass](implicit ct: ClassTag[
             result
         }
 
-        //js.Dynamic.global.isc.selectDynamic(className).create(props2Dict(getMap(propsClass))).asInstanceOf[T]
-        js.Dynamic.global.isc.selectDynamic(className).create(Dictionary.empty[Types.Object]).asInstanceOf[T]
+        js.Dynamic.global.isc.selectDynamic(className).create(props2Dict(getMap(propsClass))).asInstanceOf[T]
     }
 
     private def getMap(props: P): Map[String, Any] = {
