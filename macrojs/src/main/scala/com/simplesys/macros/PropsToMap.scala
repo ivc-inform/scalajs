@@ -12,7 +12,7 @@ trait PropsToMap[T <: AbstractPropsClass] {
     def getMap(props: T): Map[String, Any]
 }
 
-object PropsToMap /*extends Logging*/ {
+object PropsToMap extends Logging {
     implicit def materializePropsMap[P <: AbstractPropsClass]: PropsToMap[P] = macro materializePropsMapImpl[P]
 
     def typeToConvertedValue(context: Context)(typeDef: context.universe.Type, valueAccess: context.universe.Tree): context.universe.Tree = {
@@ -62,11 +62,11 @@ object PropsToMap /*extends Logging*/ {
         => field
         }
 
-        //logger trace s"$newLine// Class: $tpeAbstractPropsClass ///////////////////////////////////////////////////////////////".newLine
+        logger trace s"$newLine// Class: $tpeAbstractPropsClass ///////////////////////////////////////////////////////////////".newLine
 
-        //logger trace "//////////////////////////////////////////////// Fields: ///////////////////////////////////////////////////////////////"
-        //fields.foreach(field => logger trace field.toString)
-        //logger trace "//////////////////////////////////////////////// End Fields: ///////////////////////////////////////////////////////////".newLine
+        logger trace "//////////////////////////////////////////////// Fields: ///////////////////////////////////////////////////////////////"
+        fields.foreach(field => logger trace field.toString)
+        logger trace "//////////////////////////////////////////////// End Fields: ///////////////////////////////////////////////////////////".newLine
 
         val (fAbstractPropsClass, fSimple) = fields.map { field =>
             field.typeSignature.baseType(typeOf[ScOption[_]].typeSymbol) match {
@@ -87,24 +87,24 @@ object PropsToMap /*extends Logging*/ {
             q"""res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"clazz.$name")})"""
         }
 
-        //logger trace context.enclosingPosition.toString
+        logger trace context.enclosingPosition.toString
         val res = context.Expr[PropsToMap[P]] {
             q"""
                 import com.simplesys.SmartClient.System.props.AbstractPropsClass
                 import scala.collection.mutable
-                import com.simplesys.log.Logging
+                /*import com.simplesys.log.Logging*/
 
-                new PropsToMap[$tpeAbstractPropsClass] with Logging {
+                new PropsToMap[$tpeAbstractPropsClass] /*with Logging */{
                   def getMap(clazz: $tpeAbstractPropsClass): Map[String, Any] = {
                       val res = mutable.HashMap.empty[String, Any]
                       ..$abstractPropsClassFields
                       ..$simpleFields
-                      logger trace s"Size map: " + res.size.toString
+                      /*logger trace s"Size map: " + res.size.toString*/
                       res.toMap
                   }
             }"""
         }
-        //logger trace res.toString()
+        logger trace res.toString()
         res
     }
 }
