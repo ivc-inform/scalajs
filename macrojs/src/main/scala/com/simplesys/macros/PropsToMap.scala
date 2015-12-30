@@ -7,9 +7,11 @@ import com.simplesys.log.Logging
 
 import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context
+import scala.scalajs.js
 
 trait PropsToMap[T <: AbstractPropsClass] {
     def getMap(props: T): Map[String, Any]
+    def getDictionary(props: T): js.Dictionary[js.Any]
 }
 
 object PropsToMap extends Logging {
@@ -92,16 +94,20 @@ object PropsToMap extends Logging {
             q"""
                 import com.simplesys.SmartClient.System.props.AbstractPropsClass
                 import scala.collection.mutable
-                /*import com.simplesys.log.Logging*/
+                import scala.scalajs.js
 
-                new PropsToMap[$tpeAbstractPropsClass] /*with Logging */{
+                new PropsToMap[$tpeAbstractPropsClass] {
                   def getMap(clazz: $tpeAbstractPropsClass): Map[String, Any] = {
                       val res = mutable.HashMap.empty[String, Any]
                       ..$abstractPropsClassFields
                       ..$simpleFields
-                      /*logger trace s"Size map: " + res.size.toString*/
                       res.toMap
                   }
+
+               def getDictionary(clazz: $tpeAbstractPropsClass): js.Dictionary[js.Any] = {
+                     val res = js.Dictionary.empty[js.Any]
+                     res
+                 }
             }"""
         }
         logger trace res.toString()

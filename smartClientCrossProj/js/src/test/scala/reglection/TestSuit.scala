@@ -10,6 +10,7 @@ import com.simplesys.macros.PropsToMap
 import org.scalatest.FunSuite
 
 import scala.reflect.runtime.{universe => ru}
+import scala.scalajs.js
 
 
 class TestSuit extends FunSuite {
@@ -88,6 +89,10 @@ class TestSuit extends FunSuite {
                 println(false);
                 t.addPropertiesOnCreate.foreach(((v) => res.update("addPropertiesOnCreate", v)))
                 res.toMap
+            }
+            def getDictionary(props: CanvasProps): js.Dictionary[js.Any] = {
+                val res = js.Dictionary.empty[js.Any]
+                res
             }
         }
 
