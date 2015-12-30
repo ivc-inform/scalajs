@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.Foundation.props
 import com.simplesys.SmartClient.Foundation.inst.Canvas
 import com.simplesys.SmartClient.option.{ScNone, ScOption}
 import com.simplesys.isc.System.Types.Alignment.Alignment
+import com.simplesys.isc.System.Types.IconOrientation.IconOrientation
 import com.simplesys.isc.System.Types.SelectionType.SelectionType
 import com.simplesys.isc.System.Types.State._
 import com.simplesys.isc.System.Types.VerticalAlignment._
@@ -15,7 +16,7 @@ class StatefulCanvasProps extends CanvasProps {
     val baseStyle: ScOption[CSSStyleName] = ScNone
     val icon: ScOption[SCImgURL] = ScNone
     val iconHeight: ScOption[Int] = ScNone
-    val iconOrientation: ScOption[String] = ScNone
+    val iconOrientation: ScOption[IconOrientation] = ScNone
     val iconSize: ScOption[Int] = ScNone
     val iconSpacing: ScOption[Int] = ScNone
     val iconStyle: ScOption[CSSStyleName] = ScNone
