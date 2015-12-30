@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Control
 
-import com.simplesys.SmartClient.Control.inst.Button
+import com.simplesys.SmartClient.Control.inst._
 import com.simplesys.SmartClient.Control.props.ButtonProps
 import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
 import com.simplesys.SmartClient.System.SCApply
