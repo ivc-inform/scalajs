@@ -83,15 +83,18 @@ class TestSuit extends FunSuite {
         import scala.collection.mutable
 
         val a = new PropsToMap[CanvasProps] with Logging {
-            def getMap(t: CanvasProps) = {
+            def getMap(props: CanvasProps) = {
                 val res = mutable.HashMap.empty[String, Any]
-                println(t.addPropertiesOnCreate.isEmpty);
+                println(props.addPropertiesOnCreate.isEmpty);
                 println(false);
-                t.addPropertiesOnCreate.foreach(((v) => res.update("addPropertiesOnCreate", v)))
+                props.addPropertiesOnCreate.foreach(((v) => res.update("addPropertiesOnCreate", v)))
+                props.animateAcceleration.foreach(((v) => res.update("addPropertiesOnCreate", v)))
                 res.toMap
             }
             def getDictionary(props: CanvasProps): js.Dictionary[js.Any] = {
                 val res = js.Dictionary.empty[js.Any]
+                props.addPropertiesOnCreate.foreach(((v) => res.update("addPropertiesOnCreate", v)))
+                //props.animateAcceleration.foreach(((v) => res.update("addPropertiesOnCreate", v.asInstanceOf[js.Any])))
                 res
             }
         }
