@@ -4,7 +4,10 @@ import sbt._
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
 
 object CommonSettings {
+    val baseVersion = "10.1"
+
     val scalaVersion = "2.11.7"
+    val crossScalaVersions = Seq("2.11.7", "2.10.6")
     val organization = "ru.simplesys"
     val scalacOptions = Seq(
         "-feature",
