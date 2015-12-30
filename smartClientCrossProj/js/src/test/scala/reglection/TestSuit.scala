@@ -99,11 +99,11 @@ class TestSuit extends FunSuite {
             }
         }
 
-        /*println(s"Size map: ${
-            a.getMap(new ClassProps {
+        println(s"Size map: ${
+            a.getMap(new CanvasProps {
                 override val addPropertiesOnCreate: ScOption[Boolean] = true
             }).size
-        }")*/
+        }")
     }
 }
 
