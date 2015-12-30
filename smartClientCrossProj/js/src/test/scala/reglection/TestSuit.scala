@@ -73,36 +73,7 @@ class TestSuit extends FunSuite {
 
             def getDictionary(props: CanvasProps): js.Dictionary[js.Any] = {
                 val res = js.Dictionary.empty[js.Any]
-                props.width.foreach(((item) => res.update("width", item)));
-                props.visibilityChanged.foreach(((item) => res.update("visibilityChanged", item)));
-                props.visibility.foreach(((item) => res.update("visibility", item.toString)));
-                props.valuesManager.foreach(((item) => res.update("valuesManager", item)));
-                props.useTouchScrolling.foreach(((item) => res.update("useTouchScrolling", item)));
-                props.useOpacityFilter.foreach(((item) => res.update("useOpacityFilter", item)));
-                props.useNativeDrag.foreach(((item) => res.update("useNativeDrag", item)));
-                props.useDragMask.foreach(((item) => res.update("useDragMask", item)));
-                props.useBackMask.foreach(((item) => res.update("useBackMask", item)));
-                props.topElement.foreach(((item) => res.update("topElement", item)));
-                props.top.foreach(((item) => res.update("top", item)));
-                props.tabIndex.foreach(((item) => res.update("tabIndex", item)));
-                props.styleName.foreach(((item) => res.update("styleName", item)));
-                props.snapVGap.foreach(((item) => res.update("snapVGap", item)));
-                props.snapVDirection.foreach(((item) => res.update("snapVDirection", item)));
-                props.snapToGrid.foreach(((item) => res.update("snapToGrid", item)));
-                props.snapToEdgeAlign.foreach(((item) => res.update("snapToEdgeAlign", item)));
-                props.snapToCenterAlign.foreach(((item) => res.update("snapToCenterAlign", item)));
-                props.snapToAlign.foreach(((item) => res.update("snapToAlign", item)));
-                props.snapTo.foreach(((item) => res.update("snapTo", item)));
-                props.snapResizeToGrid.foreach(((item) => res.update("snapResizeToGrid", item)));
-                props.snapResizeToAlign.foreach(((item) => res.update("snapResizeToAlign", item)));
-                props.snapOnDrop.foreach(((item) => res.update("snapOnDrop", item)));
-                props.snapOffsetTop.foreach(((item) => res.update("snapOffsetTop", item)));
-                props.snapOffsetLeft.foreach(((item) => res.update("snapOffsetLeft", item)));
-                props.snapHGap.foreach(((item) => res.update("snapHGap", item)));
-                props.snapHDirection.foreach(((item) => res.update("snapHDirection", item)));
-                props.snapEdge.foreach(((item) => res.update("snapEdge", item)));
-                props.snapAxis.foreach(((item) => res.update("snapAxis", item)));
-
+                props.children.foreach(((item) => res.update("children", item)));
                 res
             }
         }
