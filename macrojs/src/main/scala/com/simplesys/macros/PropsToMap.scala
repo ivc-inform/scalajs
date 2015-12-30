@@ -54,6 +54,7 @@ object PropsToMap extends Logging {
 
         val tsScOption = typeOf[ScOption[_]].typeSymbol
         val tsScSome = typeOf[ScSome[_]].typeSymbol
+        val tsScEnumeration = typeOf[Enumeration].typeSymbol
 
         val fields = tpeAbstractPropsClass.members.collect { case field if field.isPublic &&
           field.isMethod &&
@@ -80,7 +81,11 @@ object PropsToMap extends Logging {
         val abstractPropsClassFields = fAbstractPropsClass.map { case (field, typeDef, _) =>
             val name = field.name.toTermName
             val decoded = name.decodedName.toString
-            q"""clazz.$name.foreach {item => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"item")})}"""
+
+            if (typeDef.typeSymbol.owner != tsScEnumeration)
+                q"""clazz.$name.foreach {item => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"item")})}"""
+            else
+                q"""clazz.$name.foreach {item => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"item.toString")})}"""
         }
 
         val simpleFields = fSimple.map { case (field, typeDef, _) =>
@@ -106,11 +111,13 @@ object PropsToMap extends Logging {
 
                def getDictionary(clazz: $tpeAbstractPropsClass): js.Dictionary[js.Any] = {
                      val res = js.Dictionary.empty[js.Any]
+                    ..$abstractPropsClassFields
+                    ..$simpleFields
                      res
                  }
             }"""
         }
-        logger trace res.toString()
+        logger debug res.toString()
         res
     }
 }
