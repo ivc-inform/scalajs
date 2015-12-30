@@ -49,8 +49,6 @@ object isc extends Types.Object {
     def timeStamp(): Int = js.native
     def warn(message: String, callback: Callback = js.native, properties: Dialog = js.native):Unit = js.native
 
-    val Page:  com.simplesys.SmartClient.System.Page.type = js.native
-    val FileLoader: com.simplesys.SmartClient.System.FileLoader.type = js.native
     val params : com.simplesys.SmartClient.System.params.type = js.native
 }
 
