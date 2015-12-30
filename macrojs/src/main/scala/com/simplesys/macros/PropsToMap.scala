@@ -107,6 +107,7 @@ object PropsToMap extends Logging {
                 import com.simplesys.SmartClient.System.props.AbstractPropsClass
                 import scala.collection.mutable
                 import scala.scalajs.js
+                import scala.scalajs.js.JSConverters._
 
                 new PropsToMap[$tpeAbstractPropsClass] {
                   def getMap(clazz: $tpeAbstractPropsClass): Map[String, Any] = {

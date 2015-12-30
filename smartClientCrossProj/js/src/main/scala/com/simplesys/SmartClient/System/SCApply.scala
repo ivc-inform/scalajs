@@ -5,7 +5,6 @@ import com.simplesys.macros.PropsToMap
 
 import scala.reflect.ClassTag
 import scala.scalajs.js
-import scala.scalajs.js.Dictionary
 
 class SCApply[T <: Types.Object, P <: AbstractPropsClass](implicit ct: ClassTag[T], propsToMap: PropsToMap[P]) {
 
