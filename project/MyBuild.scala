@@ -1,4 +1,4 @@
-package ru.simplesys.build
+package com.simplesys.build
 
 import com.typesafe.sbt.SbtGit.git
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._

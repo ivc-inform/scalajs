@@ -1,4 +1,4 @@
-package ru.simplesys.build
+package com.simplesys.build
 
 import sbt._
 import Keys._

@@ -1,4 +1,4 @@
-package ru.simplesys.build
+package com.simplesys.build
 
 import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport._
 import sbt.Keys._

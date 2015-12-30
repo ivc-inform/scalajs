@@ -1,4 +1,4 @@
-package ru.simplesys.build
+package com.simplesys.build
 
 import sbt._
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
@@ -8,7 +8,7 @@ object CommonSettings {
 
     val scalaVersion = "2.11.7"
     val crossScalaVersions = Seq("2.11.7", "2.10.6")
-    val organization = "ru.simplesys"
+    val organization = "com.simplesys"
     val scalacOptions = Seq(
         "-feature",
         "-language:higherKinds",
