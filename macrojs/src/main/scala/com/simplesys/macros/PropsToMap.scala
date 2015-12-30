@@ -82,6 +82,13 @@ object PropsToMap extends Logging {
             val name = field.name.toTermName
             val decoded = name.decodedName.toString
 
+            q"""clazz.$name.foreach {item => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"item")})}"""
+        }
+
+        val abstractPropsClassFields4Dict = fAbstractPropsClass.map { case (field, typeDef, _) =>
+            val name = field.name.toTermName
+            val decoded = name.decodedName.toString
+
             if (typeDef.typeSymbol.owner != tsScEnumeration)
                 q"""clazz.$name.foreach {item => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"item")})}"""
             else
@@ -111,7 +118,7 @@ object PropsToMap extends Logging {
 
                def getDictionary(clazz: $tpeAbstractPropsClass): js.Dictionary[js.Any] = {
                      val res = js.Dictionary.empty[js.Any]
-                    ..$abstractPropsClassFields
+                    ..$abstractPropsClassFields4Dict
                     ..$simpleFields
                      res
                  }
