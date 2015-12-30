@@ -29,7 +29,7 @@ object CommonSettings {
         val common = Def.setting("com.simplesys.core" %% "common" % versions.ssysCoreVersion)
         val coreUtils = Def.setting("com.simplesys.core" %% "core-utils" % versions.ssysCoreVersion)
         val xmlExtender = Def.setting("com.simplesys.core" %% "xml-extender" % versions.ssysCoreVersion)
-        val logbackWrapper = Def.setting("com.simplesys.core" %% "logback-wrapper" % versions.ssysCoreVersion)
+        //val logbackWrapper = Def.setting("com.simplesys.core" %% "logback-wrapper" % versions.ssysCoreVersion)
         val scalaReflect = Def.setting("org.scala-lang" % "scala-reflect" % scalaVersion)
         val scalaCompiler = Def.setting("org.scala-lang" % "scala-compiler" % scalaVersion)
         val scalaReflection = Def.setting("org.scala-lang" % "scala-reflection" % scalaVersion)
