@@ -8,6 +8,7 @@ import scala.language.experimental.macros
 import scala.scalajs.js
 import scala.scalajs.js.|
 import scala.scalajs.js.annotation.ScalaJSDefined
+import com.simplesys.macros.PropsToMap
 
 
 @js.native
