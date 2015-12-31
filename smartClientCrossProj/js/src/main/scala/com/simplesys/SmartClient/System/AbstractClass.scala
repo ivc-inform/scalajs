@@ -7,7 +7,10 @@ import scala.reflect.ClassTag
 import scala.scalajs.js
 import inst._
 
-abstract class AbstractClass[T <: Class, P <: AbstractPropsClass](implicit classTag_T: ClassTag[T], propsToDictionary: PropsToDictionary[P]) {
+import scala.scalajs.js.annotation.ScalaJSDefined
+
+@ScalaJSDefined
+abstract class AbstractClass[T <: Class, P <: AbstractPropsClass](implicit classTag_T: ClassTag[T], propsToDictionary: PropsToDictionary[P]) extends js.Any{
     def create(propsClass: P): T = js.Dynamic.global.isc.selectDynamic(classTag_T.runtimeClass.getSimpleName).create(propsToDictionary.getDictionary(propsClass)).asInstanceOf[T]
 }
 
