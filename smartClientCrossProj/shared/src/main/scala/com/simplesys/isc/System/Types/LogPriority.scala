@@ -8,3 +8,4 @@ object LogPriority extends Enumeration {
     val _4 = Value(4)
     val _5 = Value(5)
 }
+
