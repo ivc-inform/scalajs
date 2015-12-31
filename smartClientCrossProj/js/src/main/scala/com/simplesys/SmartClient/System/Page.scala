@@ -1,9 +1,11 @@
 package com.simplesys.SmartClient.System
 
+import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.SmartClient.System.inst._
 import com.simplesys.SmartClient.System.props.PageProps
 import com.simplesys.isc.System.Types.FireStyle.FireStyle
 import com.simplesys.isc.System.Types.PageEvent.PageEvent
+import com.simplesys.isc.System.Types.PageOrientation.PageOrientation
 import com.simplesys.isc.System.Types._
 import com.simplesys.macros.PropsToDictionary
 
@@ -21,7 +23,7 @@ object Page extends AbstractClassCompanion {
     def getHeight(wd: Object = js.native): Int = js.native
     def getImgURL(src: SCImgURL, imgDir: String): String = js.native
     def getIsomorphicDir(): String = js.native
-    //def getOrientation(): PageOrientation = js.native
+    def getOrientation(): PageOrientation = js.native
     def getScreenHeight(): Int = js.native
     def getScreenWidth(): Int = js.native
     def getScrollHeight(): Int = js.native
@@ -40,7 +42,7 @@ object Page extends AbstractClassCompanion {
     def loadStyleSheet(url: URL): Unit = js.native
     def moveTo(left: Int, top: Int): Unit = js.native
     val protocolURLs: js.Array[String] = js.native
-    //def registerKey(key: KeyIdentifier, action: js.Function1[Types.Object, _]): Unit = js.native
+    def registerKey(key: KeyIdentifier, action: js.Function1[Types.Object, _]): Unit = js.native
     def resizeTo(width: Int, height: Int): Unit = js.native
     def scrollTo(left: Int, top: Int): Unit = js.native
     def setAddVersionToSkinCSS(addVersionToSkinCss: Boolean): Unit = js.native
@@ -54,8 +56,8 @@ object Page extends AbstractClassCompanion {
     def unregisterKey(actionID: KeyName, target: Types.Object = js.native): Unit = js.native
     val unsupportedBrowserAction: UnsupportedOperationException = js.native
     def updateViewport(scale: Int, width: Int, height: Int, scalable: Int): Unit = js.native
-    //def waitFor(obj: Types.Object, methodName: String, callback: Callback, timeout: Int = js.native, timeoutCallback: Callback = js.native): Boolean = js.native
-    //def waitForMultiple(obj: Types.Object, methodName: String, callback: Callback, timeout: Int = js.native, timeoutCallback: Callback = js.native): Boolean = js.native
+    def waitFor(obj: Types.Object, methodName: String, callback: Callback, timeout: Int = js.native, timeoutCallback: Callback = js.native): Boolean = js.native
+    def waitForMultiple(obj: Types.Object, methodName: String, callback: Callback, timeout: Int = js.native, timeoutCallback: Callback = js.native): Boolean = js.native
 }
 
 //@ScalaJSDefined
