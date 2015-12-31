@@ -9,12 +9,12 @@ import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context
 import scala.scalajs.js
 
-trait PropsToMap[T <: AbstractPropsClass] {
-    def getDictionary(props: T): js.Dictionary[js.Any]
+trait PropsToDictionary[P <: AbstractPropsClass] {
+    def getDictionary(props: P): js.Dictionary[js.Any]
 }
 
-object PropsToMap extends Logging {
-    implicit def materializePropsMap[P <: AbstractPropsClass]: PropsToMap[P] = macro materializePropsMapImpl[P]
+object PropsToDictionary extends Logging {
+    implicit def materializePropsMap[P <: AbstractPropsClass]: PropsToDictionary[P] = macro materializePropsMapImpl[P]
 
     def typeToConvertedValue(context: Context)(typeDef: context.universe.Type, valueAccess: context.universe.Tree): context.universe.Tree = {
         import context.universe._
@@ -46,7 +46,7 @@ object PropsToMap extends Logging {
         typeToConvertedValueInt(typeDef, valueAccess).getOrElse(q"$valueAccess")
     }
 
-    def materializePropsMapImpl[P <: AbstractPropsClass : context.WeakTypeTag](context: Context): context.Expr[PropsToMap[P]] = {
+    def materializePropsMapImpl[P <: AbstractPropsClass : context.WeakTypeTag](context: Context): context.Expr[PropsToDictionary[P]] = {
         import context.universe._
 
         val tpeAbstractPropsClass = weakTypeOf[P]
@@ -94,13 +94,13 @@ object PropsToMap extends Logging {
         }
 
         logger trace context.enclosingPosition.toString
-        val res = context.Expr[PropsToMap[P]] {
+        val res = context.Expr[PropsToDictionary[P]] {
             q"""
                 import com.simplesys.SmartClient.System.props.AbstractPropsClass
                 import scala.scalajs.js
                 import scala.scalajs.js.JSConverters._
 
-                new PropsToMap[$tpeAbstractPropsClass] {
+                new PropsToDictionary[$tpeAbstractPropsClass] {
 
                     def getDictionary(clazz: $tpeAbstractPropsClass): js.Dictionary[js.Any] = {
                          val res = js.Dictionary.empty[js.Any]
@@ -110,7 +110,7 @@ object PropsToMap extends Logging {
                  }
             }"""
         }
-        logger trace res.toString()
+        logger debug res.toString()
         res
     }
 }
