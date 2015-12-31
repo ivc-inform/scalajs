@@ -5,5 +5,5 @@ import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.SmartClient.option.{ScNone, ScOption}
 
 class CanvasProps extends ClassProps {
-    val title: ScOption[HTMLString] = ScNone
+    var title: ScOption[HTMLString] = ScNone
 }
