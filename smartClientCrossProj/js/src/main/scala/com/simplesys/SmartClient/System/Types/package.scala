@@ -4,4 +4,5 @@ import scala.scalajs.js
 
 package object Types {
   type Object = js.Object
+  type URL = String
 }
