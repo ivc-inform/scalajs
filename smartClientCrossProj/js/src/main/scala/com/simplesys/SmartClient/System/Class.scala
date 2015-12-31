@@ -7,7 +7,10 @@ import inst.Class
 
 @js.native
 abstract class AbstractClass[T <: Class, P <: ClassProps] {
-    def create(): T = js.native
+
+    lazy protected val className: String = ct.runtimeClass.getSimpleName.capitalize
+
+    def create(propsClass: P): T = js.Dynamic.global.isc.selectDynamic(className).create().asInstanceOf[T]
 }
 
 object Class extends AbstractClass[Class, ClassProps]
