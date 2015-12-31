@@ -5,10 +5,9 @@ import com.simplesys.macros.PropsToDictionary
 
 import scala.reflect.ClassTag
 import scala.scalajs.js
-import scala.scalajs.js.JSConverters._
 import inst._
 
-abstract class AbstractClass[T <: Class, P <: AbstractPropsClass](implicit classTag_T: ClassTag[T], propsToDictionary:PropsToDictionary[P]) {
+abstract class AbstractClass[T <: Class, P <: AbstractPropsClass](implicit classTag_T: ClassTag[T], propsToDictionary: PropsToDictionary[P]) {
     def create(propsClass: P): T = js.Dynamic.global.isc.selectDynamic(classTag_T.runtimeClass.getSimpleName).create(propsToDictionary.getDictionary(propsClass)).asInstanceOf[T]
 }
 
