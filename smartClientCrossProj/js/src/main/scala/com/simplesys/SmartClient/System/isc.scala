@@ -6,11 +6,14 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object isc extends Types.Object {
-
-}
-
-@js.native
 object parms extends Types.Object {
     var locale: String = js.native
 }
+
+@js.native
+object isc extends Types.Object {
+    val params: parms.type = js.native
+    val IButton: IButton = js.native
+}
+
+
