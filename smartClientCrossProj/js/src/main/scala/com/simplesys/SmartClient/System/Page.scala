@@ -1,14 +1,17 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.System.Types._
+import com.simplesys.SmartClient.System.inst._
+import com.simplesys.SmartClient.System.props.PageProps
 import com.simplesys.isc.System.Types.FireStyle.FireStyle
 import com.simplesys.isc.System.Types.PageEvent.PageEvent
 import com.simplesys.isc.System.Types._
+import com.simplesys.macros.PropsToDictionary
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.ScalaJSDefined
 
 @js.native
-object Page extends Types.Object {
+object Page extends AbstractClassCompanion {
     def checkBrowserAndRedirect(url: URL): Unit = js.native
     def clearEvent(eventType: PageEvent, ID: Int): Unit = js.native
     var defaultUnsupportedBrowserURL: URL = js.native
@@ -42,7 +45,7 @@ object Page extends Types.Object {
     def scrollTo(left: Int, top: Int): Unit = js.native
     def setAddVersionToSkinCSS(addVersionToSkinCss: Boolean): Unit = js.native
     def setAppFilesDir(url: URL = js.native): Unit = js.native
-    def setAppImgDir(url: URL = js.native): Unit = js.native
+    def setAppImgDir(url: URL = js.native) : Unit = js.native
     def setEvent(eventType: PageEvent, action: js.Function1[Types.Object, _], fireStyle: FireStyle = js.native, functionName: js.Function = js.native): Int = js.native
     def setIsomorphicDir(url: URL): Unit = js.native
     def setSkinDir(url: URL): Unit = js.native
@@ -51,7 +54,13 @@ object Page extends Types.Object {
     def unregisterKey(actionID: KeyName, target: Types.Object = js.native): Unit = js.native
     val unsupportedBrowserAction: UnsupportedOperationException = js.native
     def updateViewport(scale: Int, width: Int, height: Int, scalable: Int): Unit = js.native
-    def waitFor(obj: Types.Object, methodName: String, callback: Callback, timeout: Int = js.native, timeoutCallback: Callback = js.native): Boolean = js.native
-    def waitForMultiple(obj: Types.Object, methodName: String, callback: Callback, timeout: Int = js.native, timeoutCallback: Callback = js.native): Boolean = js.native
+    //def waitFor(obj: Types.Object, methodName: String, callback: Callback, timeout: Int = js.native, timeoutCallback: Callback = js.native): Boolean = js.native
+    //def waitForMultiple(obj: Types.Object, methodName: String, callback: Callback, timeout: Int = js.native, timeoutCallback: Callback = js.native): Boolean = js.native
 }
+
+//@ScalaJSDefined
+//object Page extends AbstractPageCompanion{
+//    private val _apply = new SCApply[Page, PageProps]
+//    def create(props: PageProps) = _apply create props
+//}
 

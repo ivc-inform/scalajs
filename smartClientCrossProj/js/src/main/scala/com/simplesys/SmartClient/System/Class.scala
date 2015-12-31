@@ -18,7 +18,7 @@ abstract class AbstractClassCompanion extends Types.Object {
     def addPropertyList(list: js.Array[js.Dictionary[Types.Object]]): Types.Object = js.native
     def changeDefaults(defaultsName: String, newDefaults: Types.Object): Unit = js.native
     def clearLogPriority(category: String): Unit = js.native
-    def delayCall(methodName: String, arrayArgs: js.Array[Any] = js.native, time: Number = js.native, target: Types.Object = js.native): String = js.native
+    def delayCall(methodName: String, arrayArgs: js.Array[Any] = js.native, time: Int = js.native, target: Types.Object = js.native): String = js.native
     def echo(obj: js.Any): String = js.native
     def echoAll(obj: js.Any): String = js.native
     def echoLeaf(obj: js.Any): String = js.native
@@ -58,6 +58,6 @@ abstract class AbstractClassCompanion extends Types.Object {
 
 @ScalaJSDefined
 object Class extends AbstractClassCompanion{
-    private val _apply = new CSApply[Class, ClassProps]
+    private val _apply = new SCApply[Class, ClassProps]
     def create(props: ClassProps) = _apply create props
 }
