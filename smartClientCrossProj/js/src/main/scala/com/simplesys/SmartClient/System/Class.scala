@@ -2,15 +2,17 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.System.props.ClassProps
 
+import scala.reflect.ClassTag
 import scala.scalajs.js
-import inst.Class
+import inst._
 
-@js.native
-abstract class AbstractClass[T <: Class, P <: ClassProps] {
+abstract class AbstractClass[T <: Class, P <: ClassProps](implicit classTag_T: ClassTag[T], classTag_P: ClassTag[P]) {
 
-    lazy protected val className: String = classOf[T].getClass.getSimpleName
-
-    def create(propsClass: P): T = js.Dynamic.global.isc.selectDynamic(className).create().asInstanceOf[T]
+    def create(propsClass: P): T = {
+        val className = classTag_T.runtimeClass.getClass.getSimpleName
+        println(className)
+        js.Dynamic.global.isc.selectDynamic(className).create().asInstanceOf[T]
+    }
 }
 
 object Class extends AbstractClass[Class, ClassProps]

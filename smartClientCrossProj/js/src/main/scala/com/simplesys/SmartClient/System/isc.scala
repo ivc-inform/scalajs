@@ -13,7 +13,6 @@ object parms extends Types.Object {
 @js.native
 object isc extends Types.Object {
     val params: parms.type = js.native
-    val IButton: IButton = js.native
 }
 
 
