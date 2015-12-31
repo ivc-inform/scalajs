@@ -1,4 +1,4 @@
-package com.simplesys.SmartClient.System.Types
+package com.simplesys.isc.System.Types
 
 object FireStyle extends Enumeration {
     type FireStyle = Value
