@@ -1,18 +1,14 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.System.Types._
-import com.simplesys.SmartClient.System.inst._
-import com.simplesys.SmartClient.System.props.PageProps
 import com.simplesys.isc.System.Types.FireStyle.FireStyle
 import com.simplesys.isc.System.Types.PageEvent.PageEvent
 import com.simplesys.isc.System.Types._
-import com.simplesys.macros.PropsToDictionary
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.ScalaJSDefined
 
 @js.native
-abstract class AbstractPageCompanion extends AbstractClassCompanion {
+object Page extends Types.Object {
     def checkBrowserAndRedirect(url: URL): Unit = js.native
     def clearEvent(eventType: PageEvent, ID: Int): Unit = js.native
     var defaultUnsupportedBrowserURL: URL = js.native
@@ -59,8 +55,3 @@ abstract class AbstractPageCompanion extends AbstractClassCompanion {
     def waitForMultiple(obj: Types.Object, methodName: String, callback: Callback, timeout: Int = js.native, timeoutCallback: Callback = js.native): Boolean = js.native
 }
 
-@ScalaJSDefined
-object Page extends AbstractPageCompanion {
-    private val _apply = new CSApply[Page, PageProps]
-    def create(props: PageProps) = _apply create props
-}
