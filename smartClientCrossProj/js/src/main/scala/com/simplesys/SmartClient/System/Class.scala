@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.System.props.ClassProps
 
 import scala.reflect.ClassTag
 import scala.scalajs.js
+import scala.scalajs.js.JSConverters._
 import inst._
 
 abstract class AbstractClass[T <: Class, P <: ClassProps](implicit classTag_T: ClassTag[T], classTag_P: ClassTag[P]) {
