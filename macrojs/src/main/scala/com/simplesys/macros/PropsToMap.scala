@@ -10,7 +10,6 @@ import scala.reflect.macros.whitebox.Context
 import scala.scalajs.js
 
 trait PropsToMap[T <: AbstractPropsClass] {
-    def getMap(props: T): Map[String, Any]
     def getDictionary(props: T): js.Dictionary[js.Any]
 }
 
@@ -82,13 +81,6 @@ object PropsToMap extends Logging {
             val name = field.name.toTermName
             val decoded = name.decodedName.toString
 
-            q"""clazz.$name.foreach {item => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"item")})}"""
-        }
-
-        val abstractPropsClassFields4Dict = fAbstractPropsClass.map { case (field, typeDef, _) =>
-            val name = field.name.toTermName
-            val decoded = name.decodedName.toString
-
             if (typeDef.typeSymbol.owner != tsScEnumeration)
                 q"""clazz.$name.foreach {item => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"item")})}"""
             else
@@ -105,23 +97,16 @@ object PropsToMap extends Logging {
         val res = context.Expr[PropsToMap[P]] {
             q"""
                 import com.simplesys.SmartClient.System.props.AbstractPropsClass
-                import scala.collection.mutable
                 import scala.scalajs.js
                 import scala.scalajs.js.JSConverters._
 
                 new PropsToMap[$tpeAbstractPropsClass] {
-                  def getMap(clazz: $tpeAbstractPropsClass): Map[String, Any] = {
-                      val res = mutable.HashMap.empty[String, Any]
-                      ..$abstractPropsClassFields
-                      ..$simpleFields
-                      res.toMap
-                  }
 
-               def getDictionary(clazz: $tpeAbstractPropsClass): js.Dictionary[js.Any] = {
-                     val res = js.Dictionary.empty[js.Any]
-                    ..$abstractPropsClassFields4Dict
-                    ..$simpleFields
-                     res
+                    def getDictionary(clazz: $tpeAbstractPropsClass): js.Dictionary[js.Any] = {
+                         val res = js.Dictionary.empty[js.Any]
+                        ..$abstractPropsClassFields
+                        ..$simpleFields
+                         res
                  }
             }"""
         }

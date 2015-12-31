@@ -11,9 +11,4 @@ class SCApply[T <: Types.Object, P <: AbstractPropsClass](implicit ct: ClassTag[
     lazy protected val className: String = ct.runtimeClass.getSimpleName.capitalize
 
     def create(propsClass: P): T =  js.Dynamic.global.isc.selectDynamic(className).create(propsToMap getDictionary propsClass).asInstanceOf[T]
-
-    private def getMap(propsClass: P): Map[String, Any] = {
-        val res = propsToMap getMap propsClass
-        res
-    }
 }
