@@ -7,8 +7,8 @@ import scala.scalajs.js
 import scala.scalajs.js.JSConverters._
 import inst._
 
-abstract class AbstractClass[T <: Class, P <: ClassProps](implicit classTag_T: ClassTag[T], classTag_P: ClassTag[P]) {
-    def create(propsClass: P): T = js.Dynamic.global.isc.selectDynamic(classTag_T.runtimeClass.getSimpleName).create().asInstanceOf[T]
+abstract class AbstractClass[T <: Class, P <: ClassProps](implicit classTag_T: ClassTag[T]) {
+    def create(propsClass: P): T = js.Dynamic.global.isc.selectDynamic(classTag_T.runtimeClass.getSimpleName).create(propsClass.toJSDictionary).asInstanceOf[T]
 }
 
 object Class extends AbstractClass[Class, ClassProps]
