@@ -16,7 +16,7 @@ class StatefulCanvasProps extends CanvasProps {
     val baseStyle: ScOption[CSSStyleName] = ScNone
     val icon: ScOption[SCImgURL] = ScNone
     val iconHeight: ScOption[Int] = ScNone
-    val iconOrientation: ScOption[String] = ScNone
+    val iconOrientation: ScOption[IconOrientation] = ScNone
     val iconSize: ScOption[Int] = ScNone
     val iconSpacing: ScOption[Int] = ScNone
     val iconStyle: ScOption[CSSStyleName] = ScNone
