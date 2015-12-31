@@ -7,5 +7,4 @@ import scala.scalajs.js
 
 @js.native
 trait Class extends Types.Object {
-    def create[T <: ClassProps](): this.type
 }
