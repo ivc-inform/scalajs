@@ -11,4 +11,3 @@ abstract class AbstractClass[T <: Class, P <: AbstractPropsClass](implicit class
     def create(propsClass: P): T = js.Dynamic.global.isc.selectDynamic(classTag_T.runtimeClass.getSimpleName).create(propsToDictionary.getDictionary(propsClass)).asInstanceOf[T]
 }
 
-object Class extends AbstractClass[Class, ClassProps]
