@@ -8,7 +8,7 @@ import inst.Class
 @js.native
 abstract class AbstractClass[T <: Class, P <: ClassProps] {
 
-    lazy protected val className: String = ct.runtimeClass.getSimpleName.capitalize
+    lazy protected val className: String = classOf[T].getClass.getSimpleName
 
     def create(propsClass: P): T = js.Dynamic.global.isc.selectDynamic(className).create().asInstanceOf[T]
 }
