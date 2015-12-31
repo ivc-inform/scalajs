@@ -110,7 +110,7 @@ object PropsToDictionary extends Logging {
                  }
             }"""
         }
-        logger debug res.toString()
+        logger trace res.toString()
         res
     }
 }
