@@ -1,4 +1,4 @@
-package com.simplesys.SmartClient.Grids.inst
+package com.simplesys.SmartClient.Grids
 
 import com.simplesys.SmartClient.Layout.inst.VLayout
 

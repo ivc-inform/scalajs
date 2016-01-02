@@ -1,6 +1,5 @@
-package com.simplesys.SmartClient.DataBinding.inst
+package com.simplesys.SmartClient.DataBinding
 
-import com.simplesys.SmartClient.System
 import com.simplesys.SmartClient.System.inst.Class
 
 import scala.scalajs.js

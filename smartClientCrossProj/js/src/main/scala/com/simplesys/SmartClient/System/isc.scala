@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.Control.inst.{Dialog, LoginDialog}
+import com.simplesys.SmartClient.Control.{LoginDialog, Dialog}
 import com.simplesys.SmartClient.System.Types.Callback
 
 import scala.scalajs.js

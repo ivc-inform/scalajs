@@ -1,4 +1,4 @@
-package com.simplesys.SmartClient.DataBinding.inst
+package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.RPC.inst.RPCRequest
 

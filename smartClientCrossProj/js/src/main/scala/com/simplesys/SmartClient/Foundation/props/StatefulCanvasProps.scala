@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Foundation.props
 
-import com.simplesys.SmartClient.Foundation.inst.Canvas
+import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.isc.System.Types.Alignment.Alignment
 import com.simplesys.isc.System.Types.Alignment._
 import com.simplesys.isc.System.Types.SelectionType.SelectionType

@@ -1,9 +1,9 @@
 package com.simplesys.SmartClient.Foundation.props
 
-import com.simplesys.SmartClient.Control.inst.Menu
-import com.simplesys.SmartClient.Forms.FormsItems.inst.CanvasItem
-import com.simplesys.SmartClient.Forms.inst.ValuesManager
-import com.simplesys.SmartClient.Foundation.inst.Canvas
+import com.simplesys.SmartClient.Control.Menu
+import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
+import com.simplesys.SmartClient.Forms.ValuesManager
+import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.SmartClient.Tools.inst.EditNode

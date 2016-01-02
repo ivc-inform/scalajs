@@ -1,12 +1,10 @@
-package com.simplesys.SmartClient.Control.inst
+package com.simplesys.SmartClient.Control
 
 import com.simplesys.SmartClient.Layout.inst.Window
 
 import scala.scalajs.js
 
 @js.native
-trait Dialog extends Window {
+trait LoginDialog extends Window{
 }
-
-
 

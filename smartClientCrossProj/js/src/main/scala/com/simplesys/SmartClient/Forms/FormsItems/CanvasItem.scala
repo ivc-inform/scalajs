@@ -1,4 +1,4 @@
-package com.simplesys.SmartClient.Forms.FormsItems.inst
+package com.simplesys.SmartClient.Forms.FormsItems
 
 import scala.scalajs.js
 

@@ -1,4 +1,4 @@
-package com.simplesys.SmartClient.Forms.FormsItems.inst
+package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.SmartClient.System.inst.Class
 

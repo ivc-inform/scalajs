@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Layout.inst
 
-import com.simplesys.SmartClient.Foundation.inst.Canvas
+import com.simplesys.SmartClient.Foundation.Canvas
 
 import scala.scalajs.js
 

@@ -1,12 +1,10 @@
-package com.simplesys.SmartClient.Foundation.inst
+package com.simplesys.SmartClient.Foundation
 
 import com.simplesys.isc.System.Types.Alignment.Alignment
-import com.simplesys.isc.System.Types.Alignment._
 import com.simplesys.isc.System.Types.SelectionType.SelectionType
-import com.simplesys.isc.System.Types.SelectionType._
+import com.simplesys.isc.System.Types.State._
 import com.simplesys.isc.System.Types.VerticalAlignment._
 import com.simplesys.isc.System.Types._
-import com.simplesys.isc.System.Types.State._
 
 import scala.scalajs.js
 

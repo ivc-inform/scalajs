@@ -1,4 +1,4 @@
-package com.simplesys.SmartClient.DataBinding.dataSource.inst
+package com.simplesys.SmartClient.DataBinding.dataSource
 
 import com.simplesys.SmartClient.System.Types
 

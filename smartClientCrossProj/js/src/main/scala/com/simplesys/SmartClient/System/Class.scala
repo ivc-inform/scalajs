@@ -1,13 +1,9 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.System.inst._
-import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.isc.System.Types.LogPriority.LogPriority
-import com.simplesys.macros.PropsToDictionary
 
 import scala.language.experimental.macros
 import scala.scalajs.js
-import scala.scalajs.js.annotation.ScalaJSDefined
 
 
 @js.native

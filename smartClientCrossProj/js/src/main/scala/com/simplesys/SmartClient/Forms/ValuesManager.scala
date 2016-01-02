@@ -1,9 +1,8 @@
-package com.simplesys.SmartClient.Forms.inst
-
-import scala.scalajs.js
-import scala.scalajs.js.|
+package com.simplesys.SmartClient.Forms
 
 import com.simplesys.SmartClient.System.inst.Class
+
+import scala.scalajs.js
 
 @js.native
 trait ValuesManager extends Class {
