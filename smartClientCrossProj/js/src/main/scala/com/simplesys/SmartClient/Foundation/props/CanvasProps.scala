@@ -28,6 +28,7 @@ import com.simplesys.isc.System.Types.Visibility._
 import com.simplesys.isc.System.Types._
 import org.scalajs.dom.raw.HTMLElement
 
+import scala.scalajs.js
 import scala.scalajs.js.Function3
 
 class CanvasProps extends ClassProps {
@@ -78,7 +79,7 @@ class CanvasProps extends ClassProps {
     var childrenSnapEdgeAlign: ScOption[Boolean] = ScNone
     var childrenSnapResizeToGrid: ScOption[Boolean] = ScNone
     var childrenSnapToGrid: ScOption[Boolean] = ScNone
-    var click: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
+    var click: ScOption[js.ThisFunction0[Canvas#canvasHandler, Boolean]] = ScNone
     var componentMask: ScOption[Canvas with AutoChild] = ScNone
     var componentMaskDefaults: ScOption[Canvas] = ScNone
     var contents: ScOption[HTMLString] = ScNone
@@ -93,16 +94,16 @@ class CanvasProps extends ClassProps {
     var disabled: ScOption[Boolean] = ScNone
     var disabledCursor: ScOption[Cursor] = ScNone
     var disableTouchScrollingForDrag: ScOption[Boolean] = ScNone
-    var doubleClick: ScOption[Function[Canvas#canvasHandler, Boolean]] = ScNone
+    var doubleClick: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
     var doubleClickDelay: ScOption[Int] = ScNone
     var dragAppearance: ScOption[DragAppearance] = ScNone
     var dragIntersectStyle: ScOption[DragIntersectStyle] = ScNone
     var dragMaskType: ScOption[DragMaskType] = ScNone
-    var dragMove: ScOption[Function[Canvas#canvasHandler, Boolean]] = ScNone
+    var dragMove: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
     var dragOpacity: ScOption[Int] = ScNone
     var dragRepositionAppearance: ScOption[DragAppearance] = ScNone
     var dragRepositionCursor: ScOption[Cursor] = ScNone
-    var dragRepositionMove: ScOption[Function[Canvas#canvasHandler, Boolean]] = ScNone
+    var dragRepositionMove: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
     var dragRepositionStart: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
     var dragRepositionStop: ScOption[Function1[Canvas#canvasHandler, Boolean]] = ScNone
     var dragResizeAppearance: ScOption[DragAppearance] = ScNone
