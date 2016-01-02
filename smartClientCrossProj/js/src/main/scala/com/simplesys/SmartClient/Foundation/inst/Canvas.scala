@@ -8,6 +8,7 @@ import com.simplesys.SmartClient.Foundation.AnimateShowEffect.AnimateShowEffect
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types._
+import com.simplesys.SmartClient.System.inst.PrintProperties
 import com.simplesys.SmartClient.Tools.inst.{EditContext, EditNode}
 import com.simplesys.isc.System.Types.Alignment._
 import com.simplesys.isc.System.Types.AnimationAcceleration.AnimationAcceleration

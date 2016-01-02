@@ -16,7 +16,7 @@ trait Class extends Types.Object {
     def clearLogPriority(category: String): Unit
     def createAutoChild(childName: String, defaults: js.Dictionary[Types.Object]): this.type
     def destroy(): Unit
-    def delayCall(methodName: String, arrayArgs: js.Array[Any] = js.native, time: Number = js.native): String
+    def delayCall(methodName: String, arrayArgs: js.Array[Any] = js.native, time: Int = js.native): String
     def echo(obj: js.Any): String
     def echoAll(obj: js.Any): String
     def echoLeaf(obj: js.Any): String

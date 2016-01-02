@@ -5,6 +5,7 @@ import com.simplesys.isc.System.Types.RelativeDateShortcut.RelativeDateShortcut
 import com.simplesys.isc.System.Types.RelativeDateString
 
 import scala.scalajs.js
+import scala.scalajs.js.|
 
 @js.native
 object RelativeDate extends Types.Object{

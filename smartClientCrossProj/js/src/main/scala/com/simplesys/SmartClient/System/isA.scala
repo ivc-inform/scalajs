@@ -16,7 +16,7 @@ object isA extends Types.Object {
     def Interface(`object`: Types.Object): Boolean = js.native
     def List(`object`: Types.Object): Boolean = js.native
     def nonemptyString(`object`: Types.Object): Boolean = js.native
-    def Number(`object`: Types.Object): Boolean = js.native
+    def Int(`object`: Types.Object): Boolean = js.native
     def Object(`object`: Types.Object): Boolean = js.native
     def RegularExpression(`object`: Types.Object): Boolean = js.native
     def String(`object`: Types.Object): Boolean = js.native

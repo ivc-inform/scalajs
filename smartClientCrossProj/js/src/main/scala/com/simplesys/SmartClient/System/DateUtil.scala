@@ -6,6 +6,7 @@ import com.simplesys.isc.System.Types.RelativeDateShortcut.RelativeDateShortcut
 import com.simplesys.isc.System.Types._
 
 import scala.scalajs.js
+import scala.scalajs.js.|
 
 @js.native
 object DateUtil extends AbstractClassCompanion {

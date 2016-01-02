@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.System
 import com.simplesys.SmartClient.System.RelativeDate.RelativeDate
 
 import scala.scalajs.js
+import scala.scalajs.js.|
 
 @js.native
 object DateRange extends Types.Object {

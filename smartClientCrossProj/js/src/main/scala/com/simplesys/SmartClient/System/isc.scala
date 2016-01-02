@@ -1,10 +1,10 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.Control.inst.{Dialog, LoginDialog}
-import com.simplesys.SmartClient.System.Number._
 import com.simplesys.SmartClient.System.Types.Callback
 
 import scala.scalajs.js
+import scala.scalajs.js.|
 
 @js.native
 object isc extends Types.Object {
@@ -22,13 +22,13 @@ object isc extends Types.Object {
     def echoLeaf(value: js.Any): String = js.native
     def eval(expression: String): js.Any = js.native
     def firstKey(obj: Types.Object): String = js.native
-    def getIconLeft(icon: Types.Object): Number = js.native
+    def getIconLeft(icon: Types.Object): Int = js.native
     def getIconPageRect(icon: Types.Object): js.Array[Int] = js.native
     def getIconRect(icon: Types.Object): js.Array[Int] = js.native
-    def getIconTop(icon: Types.Object): Number = js.native
-    def getKeyForValue(value: Number, valueMap: js.Dictionary[Types.Object], defaultKey: js.Any): js.Any = js.native
+    def getIconTop(icon: Types.Object): Int = js.native
+    def getKeyForValue(value: Int, valueMap: js.Dictionary[Types.Object], defaultKey: js.Any): js.Any = js.native
     def getKeys(obj: Types.Object): js.Array[String] = js.native
-    def getValueForKey(value: Number, valueMap: js.Dictionary[Types.Object], defaultKey: js.Any): js.Any = js.native
+    def getValueForKey(value: Int, valueMap: js.Dictionary[Types.Object], defaultKey: js.Any): js.Any = js.native
     def getValues(obj: Types.Object): js.Array[js.Any] = js.native
     def logEcho(value: js.Any, message: String): Unit = js.native
     def logEchoAll(value: js.Any, message: String): Unit = js.native
@@ -40,7 +40,7 @@ object isc extends Types.Object {
     def setAutoDraw(enable: Boolean = js.native): Unit = js.native
     def setScreenReaderMode(newState: Boolean): Unit = js.native
     def shallowClone(obj: Types.Object | js.Array[Types.Object]): Types.Object | js.Array[Types.Object] = js.native
-    def showFadingPrompt(message: String, duration: Number, callback: Callback = js.native, properties: Dialog = js.native): Unit = js.native
+    def showFadingPrompt(message: String, duration: Int, callback: Callback = js.native, properties: Dialog = js.native): Unit = js.native
     def showLoginDialog(loginFunc: js.Function2[js.Dictionary[String], js.Function1[Boolean, Unit], Unit], properties: LoginDialog = js.native): Unit = js.native
     def showPrompt(message: String, properties: Dialog = js.native): Unit = js.native
     def sortObject(obj: Types.Object, comparator: js.Function): Types.Object = js.native

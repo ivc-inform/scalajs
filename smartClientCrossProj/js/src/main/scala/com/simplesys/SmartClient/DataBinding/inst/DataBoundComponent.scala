@@ -2,13 +2,13 @@ package com.simplesys.SmartClient.DataBinding.inst
 
 import com.simplesys.SmartClient.DataBinding.SortSpecifier.SortSpecifier
 import com.simplesys.SmartClient.Foundation.inst.Canvas
+import com.simplesys.SmartClient.Grids.listGrid.Hilite.Hilite
+import com.simplesys.SmartClient.Grids.listGrid.ListGridField.ListGridField
 import com.simplesys.SmartClient.Layout.inst.{HiliteEditor, Window}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 import com.simplesys.SmartClient.System.Types.{Callback, Criteria, Field, Record}
 import com.simplesys.SmartClient.System.inst.Class
-import com.simplesys.SmartClient.grids.listGrid.Hilite.Hilite
-import com.simplesys.SmartClient.grids.listGrid.ListGridField.ListGridField
 import com.simplesys.isc.System.Types.Alignment.Alignment
 import com.simplesys.isc.System.Types.DragDataAction.DragDataAction
 import com.simplesys.isc.System.Types.FetchMode.FetchMode
@@ -46,7 +46,7 @@ trait DataBoundComponent extends Class {
     var descriptionField: String
     def deselectAllRecords(): Unit
     def deselectRange(startRow: Int, endRow: Int): Unit
-    def deselectRecord(record: Record | Number): Unit
+    def deselectRecord(record: Record | Int): Unit
     def deselectRecords(records: js.Array[Record]): Unit
     def disableHilite(hiliteID: String): Unit
     def disableHiliting(): Unit
@@ -75,7 +75,7 @@ trait DataBoundComponent extends Class {
     var fetchOperation: String
     val fieldEditorWindow: Window
     var fieldEditorWindowTitle: HTMLString
-    def fieldIsEditable(field: Types.Object | Number | String): Boolean
+    def fieldIsEditable(field: Types.Object | Int | String): Boolean
     var fieldNamingStrategy: FieldNamingStrategy
     var fields: js.Array[Field]
     def find(advancedCriteria: AdvancedCriteria): Types.Object
@@ -86,9 +86,9 @@ trait DataBoundComponent extends Class {
     def getDataPathField(dataPath: DataPath): Field
     def getDragData(source: DataBoundComponent): js.Array[Record]
     def getDropValues(record: Record, sourceDS: DataSource, targetRecord: Record, index: Int, sourceWidget: Canvas): Types.Object
-    def getField(fieldID: String | Number): Field
+    def getField(fieldID: String | Int): Field
     def getFieldAlignments(): js.Array[Alignment]
-    def getFieldNum(fieldID: String | Number): Int
+    def getFieldNum(fieldID: String | Int): Int
     def getFormulaFieldValue(field: Field, record: Record): Double | String
     def getHilites(): js.Array[Hilite]
     def getHiliteState(): String
@@ -100,13 +100,13 @@ trait DataBoundComponent extends Class {
     def getTitleField(): String
     def getTitleFieldValue(record: Record): String
     val hiliteEditor: HiliteEditor
-    var hiliteIconHeight: Number
-    var hiliteIconLeftPadding: Number
+    var hiliteIconHeight: Int
+    var hiliteIconLeftPadding: Int
     val hiliteIconPosition: HiliteIconPosition
-    var hiliteIconRightPadding: Number
+    var hiliteIconRightPadding: Int
     val hiliteIcons: js.Array[String]
-    var hiliteIconSize: Number
-    var hiliteIconWidth: Number
+    var hiliteIconSize: Int
+    var hiliteIconWidth: Int
     var hiliteProperty: String
     var hilites: js.Array[Hilite]
     var hiliteState: String
@@ -125,7 +125,7 @@ trait DataBoundComponent extends Class {
     var removeSummaryFieldText: String
     def selectAllRecords(): Unit
     def selectionUpdated(record: Record, recordList: js.Array[Record]): Unit
-    def selectRange(startRow: Number, endRow: Number, newState: Boolean = js.native): Unit
+    def selectRange(startRow: Int, endRow: Int, newState: Boolean = js.native): Unit
     def selectRecord(record: Record, newState: Boolean = js.native): Unit
     def selectRecords(records: js.Array[Record], newState: Boolean = js.native): Unit
     def selectSingleRecord(record: Record): Unit
@@ -141,8 +141,8 @@ trait DataBoundComponent extends Class {
     var showOfflineMessage: Boolean
     val titleField: String
     def transferDragData(): js.Array[Types.Object]
-    def transferRecords(dropRecords: js.Array[Record], targetRecord: Record, index: Number, sourceWidget: Canvas, callback: Callback = js.native): Unit
-    def transferSelectedData(source: DataBoundComponent, index: Number, callback: Callback = js.native): Unit
+    def transferRecords(dropRecords: js.Array[Record], targetRecord: Record, index: Int, sourceWidget: Canvas, callback: Callback = js.native): Unit
+    def transferSelectedData(source: DataBoundComponent, index: Int, callback: Callback = js.native): Unit
     var unknownErrorMessage: HTMLString
     var updateOperation: String
     var useAllDataSourceFields: Boolean

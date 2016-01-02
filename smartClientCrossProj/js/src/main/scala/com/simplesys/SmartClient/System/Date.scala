@@ -19,8 +19,8 @@ object Date extends Types.Object {
     def getDefaultDateSeparator(): String = js.native
     def getFirstDayOfWeek(): Int = js.native
     def getFiscalCalendar(): FiscalCalendar = js.native
-    def getFiscalStartDate(date: Date | Number, fiscalCalendar: FiscalCalendar = js.native): Date = js.native
-    def getFiscalYear(date: Date | Number, fiscalCalendar: FiscalCalendar = js.native): FiscalYear = js.native
+    def getFiscalStartDate(date: Date | Int, fiscalCalendar: FiscalCalendar = js.native): Date = js.native
+    def getFiscalYear(date: Date | Int, fiscalCalendar: FiscalCalendar = js.native): FiscalYear = js.native
     def getFiscalWeek(date: Date, fiscalCalendar: FiscalCalendar = js.native): Int = js.native
     def getInputFormat(): String = js.native
     def getLogicalDateOnly(date: Date): Date = js.native

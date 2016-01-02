@@ -9,10 +9,10 @@ import scala.scalajs.js.|
 @js.native
 trait List extends Class {
     def add(`object`: js.Any): this.type = js.native
-    def addPos(`object`: js.Any, pos: Number): this.type = js.native
-    def addList(list: this.type, listStartRow: Number = js.native, listEndRow: Number = js.native): this.type = js.native
-    def addListAt(list: this.type, pos: Number = js.native): this.type = js.native
-    def contains(obj: js.Any, pos: Number = js.native): Boolean = js.native
+    def addPos(`object`: js.Any, pos: Int): this.type = js.native
+    def addList(list: this.type, listStartRow: Int = js.native, listEndRow: Int = js.native): this.type = js.native
+    def addListAt(list: this.type, pos: Int = js.native): this.type = js.native
+    def contains(obj: js.Any, pos: Int = js.native): Boolean = js.native
     def containsAll(list: this.type): Boolean = js.native
     var dataChanged: Function0[Unit] = js.native
     def duplicate(): this.type= js.native
@@ -27,17 +27,17 @@ trait List extends Class {
     def getItems(itemList: js.Array[Int]): js.Array[Types.Object] = js.native
     def getLength(): Int = js.native
     def getProperty(property: String): js.Array[Types.Object] = js.native
-    def getRange(start: Number, end: Number): js.Array[Types.Object] = js.native
+    def getRange(start: Int, end: Int): js.Array[Types.Object] = js.native
     def getValueMap(idField: String, displayField: String): Types.Object = js.native
-    def indexOf(obj: Types.Object, pos: Number = js.native, endPos: Number = js.native): Int = js.native
-    def lastIndexOf(obj: Types.Object, pos: Number = js.native, endPos: Number = js.native): Int = js.native
+    def indexOf(obj: Types.Object, pos: Int = js.native, endPos: Int = js.native): Int = js.native
+    def lastIndexOf(obj: Types.Object, pos: Int = js.native, endPos: Int = js.native): Int = js.native
     def intersect(lists: this.type): this.type = js.native
     def removeList(lists: this.type): this.type = js.native
     def isEmpty(): Boolean = js.native
     def remove(obj: Types.Object): Boolean = js.native
-    def removeAt(pos: Number): Types.Object = js.native
-    def set(pos: Number, obj: Types.Object): Types.Object = js.native
-    def setLength(length: Number): Unit = js.native
+    def removeAt(pos: Int): Types.Object = js.native
+    def set(pos: Int, obj: Types.Object): Types.Object = js.native
+    def setLength(length: Int): Unit = js.native
     def sort(comparator: Function2[_, _, Int]): this.type = js.native
     def sortByProperty(property: String, up: Boolean, normalizer: Function2[_, _, Int] = js.native, context: Types.Object = js.native): this.type = js.native
 }

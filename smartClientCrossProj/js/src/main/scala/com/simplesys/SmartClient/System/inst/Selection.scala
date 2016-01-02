@@ -10,9 +10,9 @@ trait Selection extends Class {
     def anySelected(): Boolean
     def deselect(item: Types.Object): Boolean
     def deselectAll(): Boolean
-    def deselectItem(position: Number): Boolean
+    def deselectItem(position: Int): Boolean
     def deselectList(list: Array): Boolean
-    def deselectRange(start: Number, end: Number): Boolean
+    def deselectRange(start: Int, end: Int): Boolean
     def getLength(): Int
     def getSelectedRecord(): Record
     def getSelection(excludePartialSelections: Boolean = js.native): Array
@@ -22,7 +22,7 @@ trait Selection extends Class {
     def select(item: Record): Boolean
     def selectAll(visibleNodesOnly: Boolean = js.native): Boolean
     var selectionRangeNotLoadedMessage: String
-    def selectItem(position: Number): Boolean
+    def selectItem(position: Int): Boolean
     def selectList(list: Array): Boolean
     def selectSingle(item: Record): Boolean
     def setSelected(item: Record, newState: Boolean): Boolean
