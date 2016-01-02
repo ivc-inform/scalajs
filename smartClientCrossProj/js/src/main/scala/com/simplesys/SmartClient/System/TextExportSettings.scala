@@ -1,4 +1,4 @@
-package com.simplesys.SmartClient.System.inst
+package com.simplesys.SmartClient.System
 
 import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.isc.System.Types.ForceTextApproach.ForceTextApproach

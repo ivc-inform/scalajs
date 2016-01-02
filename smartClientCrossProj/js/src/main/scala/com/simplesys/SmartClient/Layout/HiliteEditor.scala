@@ -1,4 +1,4 @@
-package com.simplesys.SmartClient.Layout.inst
+package com.simplesys.SmartClient.Layout
 
 import scala.scalajs.js
 

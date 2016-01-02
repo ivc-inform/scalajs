@@ -1,8 +1,10 @@
 package com.simplesys.SmartClient.Layout
 
-import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
-
 import scala.scalajs.js
 
 @js.native
-object PrintWindow extends AbstractCanvasCompanion
+trait PrintWindow extends Window {
+}
+
+
+

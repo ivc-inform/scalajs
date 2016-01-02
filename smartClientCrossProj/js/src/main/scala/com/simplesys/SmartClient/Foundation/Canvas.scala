@@ -7,10 +7,9 @@ import com.simplesys.SmartClient.Forms.ValuesManager
 import com.simplesys.SmartClient.Foundation.AnimateShowEffect.AnimateShowEffect
 import com.simplesys.SmartClient.Foundation.Point._
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
-import com.simplesys.SmartClient.Layout.inst.PrintWindow
+import com.simplesys.SmartClient.Layout.PrintWindow
 import com.simplesys.SmartClient.System.Types._
-import com.simplesys.SmartClient.System.inst._
-import com.simplesys.SmartClient.System.{AbstractClassCompanion, Types}
+import com.simplesys.SmartClient.System.{PrintProperties, AbstractClassCompanion, Types}
 import com.simplesys.SmartClient.Tools.inst.{EditContext, EditNode}
 import com.simplesys.isc.System.Types.Alignment._
 import com.simplesys.isc.System.Types.AnimationAcceleration.AnimationAcceleration
@@ -38,7 +37,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait Canvas extends com.simplesys.SmartClient.System.inst.Class {
+trait Canvas extends com.simplesys.SmartClient.System.Class {
     type canvasHandler <: this.type
 
     val accessKey: String

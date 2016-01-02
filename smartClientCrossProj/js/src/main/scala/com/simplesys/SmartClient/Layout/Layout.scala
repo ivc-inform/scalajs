@@ -1,8 +1,10 @@
 package com.simplesys.SmartClient.Layout
 
-import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
+import com.simplesys.SmartClient.Foundation.Canvas
 
 import scala.scalajs.js
 
 @js.native
-object Layout extends AbstractCanvasCompanion
+trait Layout extends Canvas{
+}
+

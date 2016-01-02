@@ -9,9 +9,10 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object DateUtil extends AbstractClassCompanion {
-    type DateUtil = DateUtil.type
+trait DateUtil extends Class
 
+@js.native
+object DateUtil extends AbstractClassCompanion {
     def createLogicalDate(year: Int, month: Int, date: Int): Date = js.native
     def format(date: Date, format: String): String = js.native
     def getAbsoluteDate(relativeDate: RelativeDate | RelativeDateShortcut | RelativeDateString, baseDate: Date = js.native, rangePosition: RelativeDateRangePosition = js.native, isLogicalDate: Boolean = js.native): Date = js.native

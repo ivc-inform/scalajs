@@ -15,7 +15,7 @@ object isc extends Types.Object {
     def clearPrompt(): Unit = js.native
     def clone(obj: Types.Object): Types.Object = js.native
     def confirm(message: String, callback: Callback = js.native, properties: Dialog = js.native): Unit = js.native
-    def defineClass(className: String, superClass: inst.Class = js.native): inst.Class = js.native
+    def defineClass(className: String, superClass: Class = js.native): Class = js.native
     def dismissCurrentDialog(): Unit = js.native
     def echo(value: js.Any): String = js.native
     def echoAll(value: js.Any): String = js.native

@@ -4,11 +4,11 @@ import com.simplesys.SmartClient.DataBinding.SortSpecifier.SortSpecifier
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.Hilite.Hilite
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField.ListGridField
-import com.simplesys.SmartClient.Layout.inst.{HiliteEditor, Window}
+import com.simplesys.SmartClient.Layout.{Window, HiliteEditor}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 import com.simplesys.SmartClient.System.Types.{Callback, Criteria, Field, Record}
-import com.simplesys.SmartClient.System.inst.Class
+import com.simplesys.SmartClient.System.Class
 import com.simplesys.isc.System.Types.Alignment.Alignment
 import com.simplesys.isc.System.Types.DragDataAction.DragDataAction
 import com.simplesys.isc.System.Types.FetchMode.FetchMode

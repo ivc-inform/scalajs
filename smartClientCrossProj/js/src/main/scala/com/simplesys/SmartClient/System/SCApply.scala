@@ -1,6 +1,5 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.System.inst._
 import com.simplesys.SmartClient.System.props.AbstractPropsClass
 import com.simplesys.macros.PropsToDictionary
 

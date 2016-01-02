@@ -1,7 +1,5 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.System.inst._
-
 import scala.scalajs.js
 
 @js.native

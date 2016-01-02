@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Control
 
-import com.simplesys.SmartClient.Layout.inst.Window
+import com.simplesys.SmartClient.Layout.Window
 
 import scala.scalajs.js
 

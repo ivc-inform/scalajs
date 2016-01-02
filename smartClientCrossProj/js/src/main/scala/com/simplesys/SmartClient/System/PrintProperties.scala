@@ -1,6 +1,4 @@
-package com.simplesys.SmartClient.System.inst
-
-import com.simplesys.SmartClient.System.Types
+package com.simplesys.SmartClient.System
 
 import scala.scalajs.js
 
