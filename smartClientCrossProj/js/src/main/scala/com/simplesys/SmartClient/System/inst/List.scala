@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.System.inst
 
 import com.simplesys.SmartClient.System.Types
+import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 
 import scala.scalajs.js
 import scala.scalajs.js.|
