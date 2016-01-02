@@ -56,8 +56,8 @@ abstract class AbstractClassCompanion extends Types.Object {
     def Super(methodName: String, args: js.Array[js.Any], nativeArgs: js.Array[js.Any] = js.native): js.Any = js.native
 }
 
-@ScalaJSDefined
+/*@ScalaJSDefined
 object Class extends AbstractClassCompanion {
     private val sCApply = new SCApply[Class, ClassProps]()
     def create(props: ClassProps): Class = sCApply create props
-}
+}*/
