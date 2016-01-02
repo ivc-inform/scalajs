@@ -11,7 +11,7 @@ import scala.scalajs.js.annotation.ScalaJSDefined
 
 
 @js.native
-abstract class AbstractClassCompanion extends Types.Object {
+abstract trait AbstractClassCompanion extends Types.Object {
     def addClassProperties(arguments: js.Dictionary[Types.Object]): Types.Object = js.native
     def addMethods(arguments: js.Dictionary[Types.Object]): Types.Object = js.native
     def addProperties(arguments: js.Dictionary[Types.Object]): Types.Object = js.native
@@ -55,9 +55,3 @@ abstract class AbstractClassCompanion extends Types.Object {
     def setProperties(arguments: js.Dictionary[Types.Object]): Unit = js.native
     def Super(methodName: String, args: js.Array[js.Any], nativeArgs: js.Array[js.Any] = js.native): js.Any = js.native
 }
-
-/*@ScalaJSDefined
-object Class extends AbstractClassCompanion {
-    private val sCApply = new SCApply[Class, ClassProps]()
-    def create(props: ClassProps): Class = sCApply create props
-}*/

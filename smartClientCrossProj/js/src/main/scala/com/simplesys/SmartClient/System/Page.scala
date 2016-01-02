@@ -10,7 +10,7 @@ import com.simplesys.isc.System.Types._
 import scala.scalajs.js
 
 @js.native
-abstract class AbstractPageCompanion extends AbstractClassCompanion {
+abstract trait AbstractPageCompanion extends AbstractClassCompanion {
     def checkBrowserAndRedirect(url: URL): Unit = js.native
     def clearEvent(eventType: PageEvent, ID: Int): Unit = js.native
     var defaultUnsupportedBrowserURL: URL = js.native
@@ -58,6 +58,4 @@ abstract class AbstractPageCompanion extends AbstractClassCompanion {
 }
 
 @js.native
-object Page extends AbstractPageCompanion {
-
-}
+object Page extends AbstractPageCompanion
