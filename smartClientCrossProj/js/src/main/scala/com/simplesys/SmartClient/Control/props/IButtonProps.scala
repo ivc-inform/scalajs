@@ -1,5 +1,7 @@
 package com.simplesys.SmartClient.Control.props
 
-class IButtonProps extends ButtonProps{
+import com.simplesys.SmartClient.Control.IButton
 
+class IButtonProps extends ButtonProps{
+    type canvasHandler <: IButton
 }
