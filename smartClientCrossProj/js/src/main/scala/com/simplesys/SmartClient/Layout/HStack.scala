@@ -6,12 +6,12 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait VLayout extends Layout {
+trait HStack extends Layout {
 }
 
 @js.native
-abstract trait AbstractVLayoutCompanion extends AbstractCanvasCompanion {
+abstract trait AbstractHStackCompanion extends AbstractCanvasCompanion {
 }
 
 @js.native
-object VLayout extends AbstractVLayoutCompanion        
+object HStack extends AbstractHStackCompanion        
