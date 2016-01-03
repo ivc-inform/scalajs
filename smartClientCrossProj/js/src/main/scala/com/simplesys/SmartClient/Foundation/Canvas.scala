@@ -261,7 +261,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val isPrinting: Boolean
     var isSnapAlignCandidate: Boolean
     def isVisible(): Boolean
-    var keepInParentRect: Boolean | VerticalAlignment
+    var keepInParentRect: Boolean | js.Array[Int]
     var keyDown: js.ThisFunction0[callbackHandler, Boolean]
     var keyPress: js.ThisFunction0[callbackHandler, Boolean]
     var keyUp: js.ThisFunction0[callbackHandler, Boolean]
