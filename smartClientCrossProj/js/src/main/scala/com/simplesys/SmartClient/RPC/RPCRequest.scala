@@ -10,12 +10,6 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-abstract trait AbstractRPCRequestCompanion extends AbstractClassCompanion {
-    def create(): Unit = js.native
-    var useCursorTracker: Boolean = js.native
-}
-
-@js.native
 trait RPCRequest extends Class {
     var actionURL: URL
     val allowIE9Leak: Boolean
@@ -51,6 +45,12 @@ trait RPCRequest extends Class {
     var useXmlHttpRequest: Boolean
     var willHandleError: Boolean
     var withCredentials: Boolean
+}
+
+@js.native
+abstract trait AbstractRPCRequestCompanion extends AbstractClassCompanion {
+    def create(): Unit = js.native
+    var useCursorTracker: Boolean = js.native
 }
 
 @js.native
