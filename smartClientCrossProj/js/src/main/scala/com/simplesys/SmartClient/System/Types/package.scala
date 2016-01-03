@@ -22,4 +22,8 @@ package object Types {
 
     type Callback = js.ThisFunction | CallbackObject
     type ValueMap = js.Dictionary[js.Any]
+    type XMLDocument = js.Object
+    type XMLElement = js.Object
+    type XMLNode = js.Object
+    type XPath = String
 }
