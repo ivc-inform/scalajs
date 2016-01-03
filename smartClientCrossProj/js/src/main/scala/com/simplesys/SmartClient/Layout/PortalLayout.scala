@@ -56,7 +56,6 @@ trait PortalLayout extends Layout {
     var showColumnMenus: Boolean
     var stretchColumnWidthsProportionally: Boolean
     def willAcceptPortletDrop(dragTarget: Int, colNum: Int, rowNum: Int, dropPosition: Int = js.native): Boolean
-    var portletsResized: js.ThisFunction1[callbackHandler, Portlet, Boolean]
     var willMaximizePortlet: js.ThisFunction1[callbackHandler, Portlet, Boolean]
     var willMinimizePortlet: js.ThisFunction1[callbackHandler, Portlet, Boolean]
     var willRestorePortlet: js.ThisFunction1[callbackHandler, Portlet, Boolean]
