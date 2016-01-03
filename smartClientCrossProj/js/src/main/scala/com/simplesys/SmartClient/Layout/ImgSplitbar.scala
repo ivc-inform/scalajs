@@ -1,0 +1,24 @@
+package com.simplesys.SmartClient.Layout
+
+import com.simplesys.SmartClient.Foundation.{Canvas, AbstractCanvasCompanion, Img}
+import com.simplesys.isc.System.Types.SCImgURL
+
+import scala.scalajs.js
+import scala.scalajs.js.|
+
+@js.native
+trait ImgSplitbar extends Img {
+    var canCollapse:Boolean
+    val hSrc:SCImgURL
+    val src:String
+    var target:Canvas
+    val vertical:Boolean
+    val vSrc:SCImgURL
+}
+
+@js.native
+abstract trait AbstractImgSplitbarCompanion extends AbstractCanvasCompanion {
+}
+
+@js.native
+object ImgSplitbar extends AbstractImgSplitbarCompanion        
