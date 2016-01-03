@@ -38,7 +38,7 @@ import scala.scalajs.js.|
 
 @js.native
 trait Canvas extends com.simplesys.SmartClient.System.Class {
-    type canvasHandler <: this.type
+    type callbackHandler <: this.type
 
     val accessKey: String
     def addChild(newChild: Canvas, name: String = js.native, autoDraw: Boolean = js.native): Canvas
@@ -101,7 +101,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var childrenSnapResizeToGrid: Boolean
     var childrenSnapToGrid: Boolean
     def clear(): Unit
-    var click: js.ThisFunction0[canvasHandler, Boolean]
+    var click: js.ThisFunction0[callbackHandler, Boolean]
     def clickMaskUp(ID: String = js.native): Boolean
     val componentMask: Canvas with AutoChild
     val componentMaskDefaults: CanvasProps
@@ -124,33 +124,33 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val disabled: Boolean
     var disabledCursor: Cursor
     val disableTouchScrollingForDrag: Boolean
-    var doubleClick: js.ThisFunction0[canvasHandler, Boolean]
+    var doubleClick: js.ThisFunction0[callbackHandler, Boolean]
     var doubleClickDelay: Int
     var dragAppearance: DragAppearance
     var dragIntersectStyle: DragIntersectStyle
     var dragMaskType: DragMaskType
-    var dragMove: js.ThisFunction0[canvasHandler, Boolean]
+    var dragMove: js.ThisFunction0[callbackHandler, Boolean]
     var dragOpacity: Int
     var dragRepositionAppearance: DragAppearance
     var dragRepositionCursor: Cursor
-    var dragRepositionMove: js.ThisFunction0[canvasHandler, Boolean]
-    var dragRepositionStart: js.ThisFunction0[canvasHandler, Boolean]
-    var dragRepositionStop: js.ThisFunction0[canvasHandler, Boolean]
+    var dragRepositionMove: js.ThisFunction0[callbackHandler, Boolean]
+    var dragRepositionStart: js.ThisFunction0[callbackHandler, Boolean]
+    var dragRepositionStop: js.ThisFunction0[callbackHandler, Boolean]
     var dragResizeAppearance: DragAppearance
-    var dragResizeMove: js.ThisFunction0[canvasHandler, Boolean]
-    var dragResizeStart: js.ThisFunction0[canvasHandler, Boolean]
-    var dragResizeStop: js.ThisFunction0[canvasHandler, Boolean]
+    var dragResizeMove: js.ThisFunction0[callbackHandler, Boolean]
+    var dragResizeStart: js.ThisFunction0[callbackHandler, Boolean]
+    var dragResizeStop: js.ThisFunction0[callbackHandler, Boolean]
     var dragScrollDelay: Int
-    var dragStart: js.ThisFunction0[canvasHandler, Boolean]
+    var dragStart: js.ThisFunction0[callbackHandler, Boolean]
     var dragStartDistance: Int
-    var dragStop: js.ThisFunction0[canvasHandler, Boolean]
+    var dragStop: js.ThisFunction0[callbackHandler, Boolean]
     var dragTarget: Canvas
     var dragType: String
     def draw(): Canvas
-    var drop: js.ThisFunction0[canvasHandler, Boolean]
-    var dropMove: js.ThisFunction0[canvasHandler, Boolean]
-    var dropOut: js.ThisFunction0[canvasHandler, Boolean]
-    var dropOver: js.ThisFunction0[canvasHandler, Boolean]
+    var drop: js.ThisFunction0[callbackHandler, Boolean]
+    var dropMove: js.ThisFunction0[callbackHandler, Boolean]
+    var dropOut: js.ThisFunction0[callbackHandler, Boolean]
+    var dropOver: js.ThisFunction0[callbackHandler, Boolean]
     var dropTypes: js.Array[String] | String
     var dynamicContents: Boolean
     var dynamicContentsVars: ValueMap
@@ -171,7 +171,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def enclosesRect(left: Int | js.Array[Int], top: Int, width: Int, height: Int): Boolean
     val extraSpace: Int
     def focus(): Unit
-    var focusChanged: js.ThisFunction1[canvasHandler, Boolean, Unit]
+    var focusChanged: js.ThisFunction1[callbackHandler, Boolean, Unit]
     def focusInNextTabElement(): Unit
     def focusInPreviousTabElement(): Unit
     def getBottom(): Int
@@ -234,7 +234,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def hideComponentMask(): Unit
     def hideContextMenu(): Unit
     val hideUsingDisplayNone: Boolean
-    var hover: js.ThisFunction0[canvasHandler, Boolean]
+    var hover: js.ThisFunction0[callbackHandler, Boolean]
     var hoverAlign: Alignment
     var hoverAutoDestroy: Boolean
     var hoverDelay: Int
@@ -250,7 +250,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val htmlPosition: DrawPosition
     val ID: String
     def imgHTML(src: SCImgURL, width: Int = js.native, height: Int = js.native, name: String = js.native, extraStuff: String = js.native, imgDir: String = js.native): String
-    var initWidget: js.ThisFunction0[canvasHandler, Unit]
+    var initWidget: js.ThisFunction0[callbackHandler, Unit]
     def intersects(other: Canvas): Boolean
     def intersectsRect(left: Int | js.Array[Int], top: Int, width: Int, height: Int): Boolean
     def isDirty(): Boolean
@@ -262,9 +262,9 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var isSnapAlignCandidate: Boolean
     def isVisible(): Boolean
     var keepInParentRect: Boolean | VerticalAlignment
-    var keyDown: js.ThisFunction0[canvasHandler, Boolean]
-    var keyPress: js.ThisFunction0[canvasHandler, Boolean]
-    var keyUp: js.ThisFunction0[canvasHandler, Boolean]
+    var keyDown: js.ThisFunction0[callbackHandler, Boolean]
+    var keyPress: js.ThisFunction0[callbackHandler, Boolean]
+    var keyUp: js.ThisFunction0[callbackHandler, Boolean]
     var layoutAlign: Alignment | VerticalAlignment
     def layoutChildren(reason: String): Unit
     val leavePageSpace: Int
@@ -286,19 +286,19 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var minNonEdgeSize: Int
     var minWidth: Int
     var momentumScrollMinSpeed: Int
-    var mouseDown: js.ThisFunction0[canvasHandler, Boolean]
-    var mouseMove: js.ThisFunction0[canvasHandler, Boolean]
-    var mouseOut: js.ThisFunction0[canvasHandler, Boolean]
-    var mouseOver: js.ThisFunction0[canvasHandler, Boolean]
-    var mouseStillDown: js.ThisFunction0[canvasHandler, Boolean]
+    var mouseDown: js.ThisFunction0[callbackHandler, Boolean]
+    var mouseMove: js.ThisFunction0[callbackHandler, Boolean]
+    var mouseOut: js.ThisFunction0[callbackHandler, Boolean]
+    var mouseOver: js.ThisFunction0[callbackHandler, Boolean]
+    var mouseStillDown: js.ThisFunction0[callbackHandler, Boolean]
     var mouseStillDownDelay: Int
     var mouseStillDownInitialDelay: Int
-    var mouseUp: js.ThisFunction0[canvasHandler, Boolean]
-    var mouseWheel: js.ThisFunction0[canvasHandler, Boolean]
+    var mouseUp: js.ThisFunction0[callbackHandler, Boolean]
+    var mouseWheel: js.ThisFunction0[callbackHandler, Boolean]
     def moveAbove(canvas: Canvas): Unit
     def moveBelow(canvas: Canvas): Unit
     def moveBy(deltaX: Int, deltaY: Int): Boolean
-    var moved: js.ThisFunction2[canvasHandler, Int, Int, Unit]
+    var moved: js.ThisFunction2[callbackHandler, Int, Int, Unit]
     def moveTo(left: Int = js.native, top: Int = js.native): Boolean
     var noDoubleClicks: Boolean
     val opacity: Int
@@ -307,7 +307,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def pageScrollDown(): Unit
     def pageScrollUp(): Unit
     val parentCanvas: Canvas
-    var parentMoved: js.ThisFunction2[canvasHandler, Int, Int, Unit]
+    var parentMoved: js.ThisFunction2[callbackHandler, Int, Int, Unit]
     def parentResized()
     val peers: js.Array[Canvas]
     val percentBox: PercentBoxModel
@@ -325,16 +325,16 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def removeSnapAlignCandidate(candidate: Canvas): Unit
     val resizeBarTarget: String
     def resizeBy(deltaX: Int = js.native, deltaY: Int = js.native): Boolean
-    var resized: js.ThisFunction0[canvasHandler, Boolean]
+    var resized: js.ThisFunction0[callbackHandler, Boolean]
     var resizeFrom: js.Array[EdgeName]
     def resizeTo(width: Int = js.native, height: Int = js.native): Boolean
     def revealChild(child: Canvas | String): Unit
-    var rightMouseDown: js.ThisFunction0[canvasHandler, Boolean]
+    var rightMouseDown: js.ThisFunction0[callbackHandler, Boolean]
     val scrollbarConstructor: String
     val scrollbarSize: Int
     def scrollBy(dX: Int, dY: Int): Unit
     def scrollByPercent(dX: Int, dY: Int): Unit
-    var scrolled: js.ThisFunction0[canvasHandler, Boolean]
+    var scrolled: js.ThisFunction0[callbackHandler, Boolean]
     def scrollTo(left: Int = js.native, top: Int = js.native): Int
     def scrollToBottom(): Unit
     def scrollToLeft(): Unit
@@ -353,7 +353,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def setCursor(newCursor: Cursor): Unit
     def setDataPath(dataPath: DataPath): Unit
     def setDisabled(disabled: Boolean): Unit
-    var setDragTracker: js.ThisFunction0[canvasHandler, Boolean]
+    var setDragTracker: js.ThisFunction0[callbackHandler, Boolean]
     def setEdgeOpacity(newOpacity: Int): Unit
     def setEditMode(editingOn: Boolean, editContext: EditContext = js.native, editNode: EditNode = js.native): Unit
     def setGroupLabelBackgroundColor(groupLabelBackgroundColor: CSSColor): Unit
@@ -395,7 +395,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def show(): Unit
     def showClickMask(clickAction: Callback, mode: ClickMaskMode, unmaskedTargets: Canvas | js.Array[Canvas]): String
     def showComponentMask(unmaskedChildren: js.Array[Canvas] = js.native): Unit
-    var showContextMenu: js.ThisFunction0[canvasHandler, Boolean]
+    var showContextMenu: js.ThisFunction0[callbackHandler, Boolean]
     val showCustomScrollbars: Boolean
     var showDragShadow: Boolean
     val showEdges: Boolean
@@ -440,7 +440,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val useTouchScrolling: Boolean
     var valuesManager: ValuesManager
     var visibility: Visibility
-    var visibilityChanged: js.ThisFunction1[canvasHandler, Boolean, Unit]
+    var visibilityChanged: js.ThisFunction1[callbackHandler, Boolean, Unit]
     def visibleAtPoint(x: Int, y: Int, withinViewport: Boolean = js.native, ignoreWidgets: Canvas = js.native, upToParent: Canvas = js.native): Boolean
     val width: Int | String
     def willAcceptDrop(): Boolean
