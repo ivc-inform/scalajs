@@ -1,0 +1,23 @@
+package com.simplesys.SmartClient.Layout.sectionStack
+
+import com.simplesys.SmartClient.Foundation.{Canvas, AbstractCanvasCompanion, Label}
+import com.simplesys.SmartClient.Layout.{SectionStack, Layout}
+import com.simplesys.isc.System.Types.{HTMLString, AutoChild}
+
+import scala.scalajs.js
+import scala.scalajs.js.|
+
+@js.native
+trait SectionHeader extends Label {
+    var clipTitle: Boolean
+    val controls: js.Array[Canvas]
+    val controlsLayout: Layout with AutoChild
+    def getSectionStack(): SectionStack
+}
+
+@js.native
+abstract trait AbstractSectionHeaderCompanion extends AbstractCanvasCompanion {
+}
+
+@js.native
+object SectionHeader extends AbstractSectionHeaderCompanion        
