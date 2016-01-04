@@ -592,9 +592,17 @@ trait ListGrid extends VLayout with DataBoundComponent {
     def refreshCellStyle(rowNum: Int, colNum: Int): Unit
     def refreshData(callback: DSCallback = js.native): Unit
     def refreshFields(): Unit
-    def refreshRecordComponent((rowNum: Int, colNum: Int = js.native): Unit
+    def refreshRecordComponent(rowNum: Int, colNum: Int = js.native): Unit
     def refreshRow(rowNum: Int): Unit
     def regroup(): Unit
+    def removeData(data: ListGridRecord, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    var removedCSSText: String
+    def removeEmbeddedComponent(record: ListGridRecord | Canvas, component: Canvas = js.native): Unit
+    val removeFieldDefaults: ListGridField
+    val removeFieldProperties: ListGridField
+    var removeFieldTitle: String
+    val removeIcon: SCImgURL
+    var removeIconSize: Int
 }
 
 @js.native
