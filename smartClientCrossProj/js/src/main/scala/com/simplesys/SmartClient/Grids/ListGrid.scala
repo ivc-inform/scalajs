@@ -29,6 +29,7 @@ import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.isc.System.Types.DragDataAction.DragDataAction
 import com.simplesys.isc.System.Types.DragTrackerMode.DragTrackerMode
 import com.simplesys.isc.System.Types.EditCompletionEvent.EditCompletionEvent
+import com.simplesys.isc.System.Types.EmbeddedPosition.EmbeddedPosition
 import com.simplesys.isc.System.Types.EnterKeyEditAction.EnterKeyEditAction
 import com.simplesys.isc.System.Types.EscapeKeyEditAction.EscapeKeyEditAction
 import com.simplesys.isc.System.Types.ExpansionComponentPoolingMode.ExpansionComponentPoolingMode
@@ -39,6 +40,8 @@ import com.simplesys.isc.System.Types.HoverMode.HoverMode
 import com.simplesys.isc.System.Types.ListGridComponent.ListGridComponent
 import com.simplesys.isc.System.Types.ListGridEditEvent.ListGridEditEvent
 import com.simplesys.isc.System.Types.Overflow.Overflow
+import com.simplesys.isc.System.Types.RecordComponentPoolingMode.RecordComponentPoolingMode
+import com.simplesys.isc.System.Types.RecordDropAppearance.RecordDropAppearance
 import com.simplesys.isc.System.Types.RecordDropPosition.RecordDropPosition
 import com.simplesys.isc.System.Types.ReorderPosition.ReorderPosition
 import com.simplesys.isc.System.Types.RowEndEditAction.RowEndEditAction
@@ -557,6 +560,41 @@ trait ListGrid extends VLayout with DataBoundComponent {
     var printBaseStyle: CSSStyleName
     var printBooleanBaseStyle: CSSStyleName
     var printBooleanFalseImage: SCImgURL
+    var printBooleanPartialImage: SCImgURL
+    var printBooleanTrueImage: SCImgURL
+    var printCheckboxFieldFalseImage: SCImgURL
+    var printCheckboxFieldPartialImage: SCImgURL
+    var printCheckboxFieldTrueImage: SCImgURL
+    var printHeaderStyle: CSSStyleName
+    var printMaxRows: Int
+    var printWrapCells: Boolean
+    var quickDrawAheadRatio: Double
+    def recalculateGridSummary(): Unit
+    def recalculateSummaries(records: js.Array[ListGridRecord] = js.native, fields: js.Array[ListGridField] = js.native): Unit
+    var recordBaseStyleProperty: String
+    var recordCanRemoveProperty: String
+    var recordCanSelectProperty: String
+    var recordClick: js.ThisFunction7[callbackHandler, ListGrid, ListGridRecord, Int, ListGridField, Int, js.Any, js.Any, Boolean]
+    var recordComponentHeight: Int
+    var recordComponentPoolingMode: RecordComponentPoolingMode
+    var recordComponentPosition: EmbeddedPosition
+    var recordCustomStyleProperty: String
+    var recordDetailDSProperty: String
+    var recordDoubleClick: js.ThisFunction7[callbackHandler, ListGrid, ListGridRecord, Int, ListGridField, Int, js.Any, js.Any, Boolean]
+    def recordDrop(dropRecords: js.Array[ListGridRecord], targetRecord: ListGridRecord, index: Int, sourceWidget: Canvas): Unit
+    var recordDropAppearance: RecordDropAppearance
+    var recordEditProperty: String
+    val recordEnabledProperty: String
+    def recordMarkedAsRemoved(rowNum: Int): Boolean
+    var recordSummaryBaseStyle: CSSStyleName
+    def redrawHeader(rightNow: Boolean): Unit
+    def refreshCell(rowNum: Int, colNum: Int): Unit
+    def refreshCellStyle(rowNum: Int, colNum: Int): Unit
+    def refreshData(callback: DSCallback = js.native): Unit
+    def refreshFields(): Unit
+    def refreshRecordComponent((rowNum: Int, colNum: Int = js.native): Unit
+    def refreshRow(rowNum: Int): Unit
+    def regroup(): Unit
 }
 
 @js.native
