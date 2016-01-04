@@ -6,19 +6,21 @@ import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.DataBinding.dataSource.{RPCCallback, DSCallback}
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
-import com.simplesys.SmartClient.Foundation.{HTMLFlow, GridRenderer, Canvas}
+import com.simplesys.SmartClient.Foundation.{StatefulCanvas, HTMLFlow, GridRenderer, Canvas}
 import com.simplesys.SmartClient.Grids.listGrid.HeaderSpan.HeaderSpan
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField.ListGridField
 import com.simplesys.SmartClient.Grids.listGrid.{UserFormula, RecordEditor}
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, AbstractVLayoutCompanion, VLayout}
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
-import com.simplesys.SmartClient.System.Types
+import com.simplesys.SmartClient.System.{Tree, Types}
 import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 import com.simplesys.SmartClient.System.Types._
+import com.simplesys.SmartClient.System.Class
 import com.simplesys.SmartClient.System.selection.CellSelection
 import com.simplesys.isc.System.Types.Alignment.Alignment
 import com.simplesys.isc.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.isc.System.Types.AutoComplete.AutoComplete
+import com.simplesys.isc.System.Types.AutoFitEvent.AutoFitEvent
 import com.simplesys.isc.System.Types.AutoFitIconFieldType.AutoFitIconFieldType
 import com.simplesys.isc.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
 import com.simplesys.isc.System.Types.Autofit.Autofit
@@ -33,11 +35,13 @@ import com.simplesys.isc.System.Types.ExpansionComponentPoolingMode.ExpansionCom
 import com.simplesys.isc.System.Types.ExpansionMode.ExpansionMode
 import com.simplesys.isc.System.Types.FetchMode.FetchMode
 import com.simplesys.isc.System.Types.GroupStartOpen.GroupStartOpen
+import com.simplesys.isc.System.Types.HoverMode.HoverMode
 import com.simplesys.isc.System.Types.ListGridComponent.ListGridComponent
 import com.simplesys.isc.System.Types.ListGridEditEvent.ListGridEditEvent
 import com.simplesys.isc.System.Types.Overflow.Overflow
 import com.simplesys.isc.System.Types.RecordDropPosition.RecordDropPosition
 import com.simplesys.isc.System.Types.ReorderPosition.ReorderPosition
+import com.simplesys.isc.System.Types.RowEndEditAction.RowEndEditAction
 import com.simplesys.isc.System.Types.SortDirection.SortDirection
 import com.simplesys.isc.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
@@ -453,6 +457,85 @@ trait ListGrid extends VLayout with DataBoundComponent {
     var groupSummaryStyle: CSSStyleName
     val groupTitleColumnDefaults: ListGridField
     val groupTitleColumnProperties: ListGridField
+    val groupTitleField: String
+    val groupTree: Tree with AutoChild
+    var handleGroupBy: js.Function1[js.Array[String], Boolean]
+    def hasChanges(): Boolean
+    def hasErrors(): Boolean
+    val header: Layout with AutoChild
+    val headerAutoFitEvent: AutoFitEvent
+    val headerBackgroundColor: CSSColor
+    val headerBarStyle: CSSStyleName
+    val headerBaseStyle: CSSStyleName
+    val headerButtonConstructor: Class
+    val headerButtonDefaults: Button
+    val headerButtonProperties: Button
+    var headerClick: js.Function1[Int, Unit]
+    val headerContextMenu: Canvas with AutoChild
+    var headerDoubleClick: js.Function1[Int, Unit]
+    var headerHeight: Int
+    var headerHover: js.Function1[Int, Unit]
+    var headerHoverAlign: Alignment
+    var headerHoverHeight: Int
+    def headerHoverHTML(fieldNum: Int, defaultHTML: HTMLString): HTMLString
+    var headerHoverOpacity: Int
+    var headerHoverStyle: CSSStyleName
+    var headerHoverVAlign: VerticalAlignment
+    var headerHoverWidth: Int
+    var headerHoverWrap: Boolean
+    var headerMenuButton: StatefulCanvas with AutoChild
+    val headerMenuButtonConstructor: SCClassName
+    val headerMenuButtonHeight: String
+    val headerMenuButtonIcon: SCImgURL
+    val headerMenuButtonIconHeight: Int
+    val headerMenuButtonIconWidth: Int
+    val headerMenuButtonWidth: Int
+    var headerSpan: StatefulCanvas with MultiAutoChild
+    val headerSpanConstructor: SCClassName
+    val headerSpanHeight: Int
+    var headerSpans: js.Array[HeaderSpan]
+    val headerSpanVAlign: VerticalAlignment
+    def headerTitleClipped(fieldNum: Int): Boolean
+    val headerTitleStyle: SCClassName
+    var hideEmptySummaryRow: Boolean
+    def hideField(field: String | ListGridField, suppressRelayout: Boolean = js.native): Unit
+    def hideFields(fields: js.Array[String] | js.Array[ListGridField], suppressRelayout: Boolean = js.native): Unit
+    val hiliteCanReplaceValue: Boolean
+    var hiliteEditorSpanTitleSeparator: String
+    val hiliteHTMLAfterFormat: Boolean
+    val hiliteReplaceValueFieldTitle: String
+    var hiliteRowOnFocus: Boolean
+    var hilitesChanged: js.ThisFunction0[callbackHandler, Unit]
+    var hoverMode: HoverMode
+    var iconPadding: Int
+    var imageSize: Int
+    var includeInSummaryProperty: String
+    val initialSort: js.Array[SortSpecifier]
+    var instantScrollTrackRedraw: Boolean
+    def invalidateCache(): Unit
+    def invalidateRecordComponents(): Unit
+    var invalidSummaryValue: String
+    def isCheckboxField(field: ListGridField): Boolean
+    def isExpanded(record: ListGridRecord): Boolean
+    def isExpansionField(field: ListGridField): Boolean
+    val isGrouped: Boolean
+    def isGroupNode(record: ListGridRecord): Boolean
+    def isPartiallySelected(record: ListGridRecord): Boolean
+    def isRowNumberField(field: ListGridField): Boolean
+    def isSelected(record: ListGridRecord): Boolean
+    var isSeparatorProperty: String
+    def isSortField(fieldName: String): Boolean
+    var leaveHeaderMenuButtonSpace: Boolean
+    var linkTextProperty: Boolean
+    var listEndEditAction: RowEndEditAction
+    var loadingDataMessage: HTMLString
+    var loadingDataMessageStyle: CSSStyleName
+    val loadingMessage: String
+    var locateColumnsBy: String
+    var locateRowsBy: String
+    var longTextEditorThreshold: Int
+    var longTextEditorType: String
+
 }
 
 @js.native
