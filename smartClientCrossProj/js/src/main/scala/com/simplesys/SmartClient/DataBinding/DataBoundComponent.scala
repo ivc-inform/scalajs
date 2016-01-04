@@ -76,9 +76,7 @@ trait DataBoundComponent extends Class {
     var fetchOperation: String
     val fieldEditorWindow: Window
     var fieldEditorWindowTitle: HTMLString
-    def fieldIsEditable(field: Types.Object | Int | String): Boolean
     var fieldNamingStrategy: FieldNamingStrategy
-    var fields: js.Array[Field]
     def find(advancedCriteria: AdvancedCriteria): Types.Object
     def findAll(advancedCriteria: AdvancedCriteria): js.Array[Types.Object]
     def findByKey(keyValue: Types.Object): Record

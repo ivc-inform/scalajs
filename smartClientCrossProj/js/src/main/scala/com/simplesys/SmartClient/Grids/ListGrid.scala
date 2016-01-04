@@ -1,12 +1,13 @@
 package com.simplesys.SmartClient.Grids
 
 import com.simplesys.SmartClient.Charts.{FacetChart, Chart}
-import com.simplesys.SmartClient.Control.IButton
+import com.simplesys.SmartClient.Control.{Button, IButton}
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.DataBinding.dataSource.{RPCCallback, DSCallback}
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Foundation.{HTMLFlow, GridRenderer, Canvas}
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField.ListGridField
+import com.simplesys.SmartClient.Grids.listGrid.{UserFormula, RecordEditor}
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, AbstractVLayoutCompanion, VLayout}
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
 import com.simplesys.SmartClient.System.Types
@@ -267,8 +268,36 @@ trait ListGrid extends VLayout with DataBoundComponent {
     def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
     var fetchDelay: Int
     def fetchRelatedData(record: ListGridRecord, schema: Canvas | DataSource | String, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
-    //def fieldIsEditable(field: ListGridField | Int | String): Boolean
+    def fieldIsEditable(field: ListGridField | Int | String): Boolean
     def fieldIsVisible(field: ListGridField | String): Boolean
+    val fieldPickerFieldProperties: js.Array[String]
+    val fieldPickerShowSampleValues: String
+    var fields: js.Array[ListGridField]
+    var fieldState: String
+    var fieldStateChanged: js.ThisFunction0[Unit, Unit]
+    var fieldVisibilitySubmenuTitle: String
+    val filterButtonPrompt: String
+    val filterButtonProperties: js.Array[Button]
+    var filterByCell: Boolean
+    def filterByEditor(): Unit
+    def filterData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    val filterEditor: RecordEditor with AutoChild
+    var filterEditorHeight: Int
+    val filterEditorProperties: RecordEditor
+    var filterEditorSubmit: js.ThisFunction1[callbackHandler, Criteria, Boolean]
+    val filterLocalData: Boolean
+    var filterOnKeypress: Boolean
+    def findNextEditCell(rowNum: Int, colNum: Int, direction: Int, stepThroughFields: Boolean, checkStartingCell: Boolean = js.native): js.Array[Int]
+    var fixedFieldWidths: Boolean
+    var fixedRecordHeights: Boolean
+    def focusInCell(row: Int, col: Int): Unit
+    def focusInFilterEditor(fieldName: String): Unit
+    def focusInRow(row: Int): Unit
+    var formatCellValue: js.ThisFunction3[callbackHandler, ListGridRecord, Int, Int, HTMLString]
+    var formatEditorValue: js.ThisFunction3[callbackHandler, ListGridRecord, Int, Int, js.Any]
+    var formulaBuilderSpanTitleSeparator: String
+    def formulaUpdated(field: ListGridField, formula: UserFormula): Unit
+    var freezeFieldText: HTMLString
 }
 
 @js.native
