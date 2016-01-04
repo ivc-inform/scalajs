@@ -328,6 +328,23 @@ trait ListGrid extends VLayout with DataBoundComponent {
     var getCellValue: js.ThisFunction3[callbackHandler, ListGridRecord, Int, Int, String]
     def getCheckboxField(): ListGridField
     def getColumnLeft(colNum: Int): Int
+    def getColumnPageLeft(colNum: Int): Int
+    def getColumnWidth(colNum: Int): Int
+    def getCriteria(): Criteria
+    def getCurrentExpansionComponent(record: ListGridRecord | Int): Canvas
+    def getCurrentFieldWidths(): js.Array[Int]
+    def getDefaultFieldWidth(field: ListGridField): Int
+    def getDefaultFormattedFieldValue(record: ListGridRecord, field: ListGridField, rowNum: Int = js.native, colNum: Int = js.native): String
+    def getDefaultFormattedValue(record: ListGridRecord, rowNum: Int, colNum: Int): String
+    def getDisplayValue(fieldID: String | Int | ListGridField, valueFieldValue: js.Any): String
+    var getDragData: js.Function1[DataBoundComponent, js.Array[ListGridRecord]]
+    def getDragTrackerIcon(records: js.Array[ListGridRecord]): String
+    def getDragTrackerTitle(record: ListGridRecord, rowNum: Int): String
+    def getDrawArea(): js.Array[Int]
+    def getDrawnRowHeight(rowNum:Int):Int
+    def getDrawnRows(): js.Array[Int]
+    def getDropIndex (recordNum:Int, reorderPosition])
+
 }
 
 @js.native
