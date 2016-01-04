@@ -256,7 +256,6 @@ trait ListGrid extends VLayout with DataBoundComponent {
     val expansionRelated: ListGrid with MultiAutoChild
     val exportAlternateRowBGColor: CSSColor
     def exportClientData(requestProperties: DSRequest = js.native, callback: RPCCallback): Unit
-    def exportData(requestProperties: DSRequest = js.native, callback: DSCallback): Unit
     val exportDefaultBGColor: CSSColor
     var exportFieldAlignments: Boolean
     var exportFieldWidths: Boolean
@@ -268,7 +267,7 @@ trait ListGrid extends VLayout with DataBoundComponent {
     def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
     var fetchDelay: Int
     def fetchRelatedData(record: ListGridRecord, schema: Canvas | DataSource | String, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
-    def fieldIsEditable(field: ListGridField | Int | String): Boolean
+    //def fieldIsEditable(field: ListGridField | Int | String): Boolean
     def fieldIsVisible(field: ListGridField | String): Boolean
 }
 

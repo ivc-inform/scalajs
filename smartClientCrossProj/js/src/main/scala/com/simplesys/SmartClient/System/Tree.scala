@@ -2,9 +2,9 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource, ResultSet}
 import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
-import com.simplesys.SmartClient.System.Types.{Callback, Criteria}
-import com.simplesys.SmartClient.System.tree.TreeNode.TreeNode
-import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
+import com.simplesys.SmartClient.System.Types._
+import com.simplesys.SmartClient.System.tree.TreeNode
+import com.simplesys.SmartClient.System._
 import com.simplesys.isc.System.Types.LoadState.LoadState
 import com.simplesys.isc.System.Types.TreeFilterMode.TreeFilterMode
 import com.simplesys.isc.System.Types.TreeModelType.TreeModelType

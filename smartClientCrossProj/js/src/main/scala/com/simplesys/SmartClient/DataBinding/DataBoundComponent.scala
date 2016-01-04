@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.DataBinding.SortSpecifier.SortSpecifier
+import com.simplesys.SmartClient.DataBinding.dataSource.DSCallback
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.Hilite.Hilite
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField.ListGridField
@@ -69,7 +70,7 @@ trait DataBoundComponent extends Class {
     def enableHilite(hiliteID: String, enable: Boolean = js.native): Unit
     def enableHiliting(enable: Boolean = js.native): Unit
     var exportAll: Boolean
-    def exportData(requestProperties: DSRequest = js.native, callback: Callback = js.native)
+    def exportData(requestProperties: DSRequest = js.native, callback: DSCallback = js.native)
     var exportFields: js.Array[String]
     var exportIncludeSummaries: Boolean
     var fetchOperation: String
