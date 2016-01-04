@@ -7,6 +7,7 @@ import com.simplesys.SmartClient.DataBinding.dataSource.{RPCCallback, DSCallback
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.{HTMLFlow, GridRenderer, Canvas}
+import com.simplesys.SmartClient.Grids.listGrid.HeaderSpan.HeaderSpan
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField.ListGridField
 import com.simplesys.SmartClient.Grids.listGrid.{UserFormula, RecordEditor}
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, AbstractVLayoutCompanion, VLayout}
@@ -33,7 +34,9 @@ import com.simplesys.isc.System.Types.ExpansionMode.ExpansionMode
 import com.simplesys.isc.System.Types.FetchMode.FetchMode
 import com.simplesys.isc.System.Types.ListGridEditEvent.ListGridEditEvent
 import com.simplesys.isc.System.Types.Overflow.Overflow
+import com.simplesys.isc.System.Types.RecordDropPosition.RecordDropPosition
 import com.simplesys.isc.System.Types.ReorderPosition.ReorderPosition
+import com.simplesys.isc.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.isc.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.isc.System.Types._
@@ -375,7 +378,43 @@ trait ListGrid extends VLayout with DataBoundComponent {
     def getFieldTitle(fieldId: String | Int): String
     def getFieldWidth(fieldNum: Int | String): Int
     def getFilterEditorCriteria(omitHiddenFields: Boolean = js.native): Criteria | AdvancedCriteria
-    def  getFilterEditorType (field:ListGridField):String
+    def getFilterEditorType(field: ListGridField): String
+    def getFilterEditorValueMap(field: ListGridField): ValueMap
+    def getFocusRow(): Int
+    def getFormulaFieldValue(field: ListGridField, record: ListGridRecord): Double | String
+    def getGridSummary(field: ListGridField): js.Any
+    def getGridSummaryData(): js.Array[ListGridRecord]
+    def getGridSummaryFunction(field: ListGridField): SummaryFunction
+    def getGroupByFields(): js.Array[String]
+    def getGroupByText(field: ListGridField): HTMLString
+    def getGroupNodeHTML(node: Types.Object): Unit
+    def getGroupState(): ListGridGroupState
+    def getGroupSummaryData(records: js.Array[ListGridRecord], groupNode: ListGridRecord): js.Array[ListGridRecord]
+    def getGroupTreeSelection(excludePartialSelection: Boolean = js.native, groupNodesOnly: Boolean = js.native): js.Array[ListGridRecord]
+    def getHeaderContextMenuItems(fieldNum: Int): js.Array[MenuItem]
+    def getHeaderSpanContextMenuItems(headerSpan: HeaderSpan): js.Array[MenuItem]
+    def getOriginalData(): Types.Object
+    def getRecord(recordNum: Int): ListGridRecord
+    def getRecordComponent(rowNum: Int, colNum: Int = js.native): Canvas
+    def getRecordDropPosition(): RecordDropPosition
+    def getRecordIndex(record: ListGridRecord): Int
+    def getRecordSummary(record: ListGridRecord, field: ListGridField): js.Any
+    def getRelatedDataSource(record: ListGridRecord): DataSource
+    def getRequiredFieldMessage(field: ListGridField, record: ListGridRecord): String
+    def getRollOverCanvas(rowNum: Int, colNum: Int): Canvas
+    def getRollUnderCanvas(rowNum: Int, colNum: Int): Canvas
+    def getRowErrors(rowNum: Int): Types.Object
+    var getRowHeight: js.Function2[Int, Int, Int]
+    def getRowNum(record: ListGridRecord): Int
+    def getRowPageTop(rowNum: Int): Int
+    var getRowSpan: js.Function3[ListGridRecord, Int, Int, Int]
+    def getRowTop(rowNum: Int): Int
+    def getSelectedCellData(): js.Array[ListGridRecord]
+    def getSelectedRecord(): ListGridRecord
+    def getSelectedRecords(excludePartialSelections: Boolean = js.native): js.Array[ListGridRecord]
+    def getSelectedState(): ListGridSelectedState
+    def getSelection(excludePartialSelections: Boolean = js.native): js.Array[ListGridRecord]
+    def getSortByGroupFirst(): Unit
 }
 
 @js.native
