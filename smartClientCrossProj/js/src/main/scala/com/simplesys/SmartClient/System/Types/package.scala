@@ -21,6 +21,9 @@ package object Types {
     type ListGridRecord = js.Dictionary[js.Any]
     type MenuItem = js.Dictionary[js.Any]
     type ListGridSelectedState = Object
+    type ListGridSortState = Object
+    type ListGridViewState = Object
+    type ListGridGroupState = Object
 
     type Callback = js.ThisFunction | CallbackObject
     type ValueMap = js.Dictionary[js.Any]
@@ -28,6 +31,5 @@ package object Types {
     type XMLElement = Object
     type XMLNode = Object
     type ListGridFieldState = Object
-    type ListGridGroupState = Object
     type XPath = String
 }

@@ -32,10 +32,13 @@ import com.simplesys.isc.System.Types.EscapeKeyEditAction.EscapeKeyEditAction
 import com.simplesys.isc.System.Types.ExpansionComponentPoolingMode.ExpansionComponentPoolingMode
 import com.simplesys.isc.System.Types.ExpansionMode.ExpansionMode
 import com.simplesys.isc.System.Types.FetchMode.FetchMode
+import com.simplesys.isc.System.Types.GroupStartOpen.GroupStartOpen
+import com.simplesys.isc.System.Types.ListGridComponent.ListGridComponent
 import com.simplesys.isc.System.Types.ListGridEditEvent.ListGridEditEvent
 import com.simplesys.isc.System.Types.Overflow.Overflow
 import com.simplesys.isc.System.Types.RecordDropPosition.RecordDropPosition
 import com.simplesys.isc.System.Types.ReorderPosition.ReorderPosition
+import com.simplesys.isc.System.Types.SortDirection.SortDirection
 import com.simplesys.isc.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.isc.System.Types.VerticalAlignment.VerticalAlignment
@@ -415,6 +418,41 @@ trait ListGrid extends VLayout with DataBoundComponent {
     def getSelectedState(): ListGridSelectedState
     def getSelection(excludePartialSelections: Boolean = js.native): js.Array[ListGridRecord]
     def getSortByGroupFirst(): Unit
+    def getSortField(): String
+    def getSortFieldCount(): Int
+    def getSortNumeralHTML(fieldName: String, sortIndex: Int): HTMLString
+    def getSortSpecifier(fieldName: String): SortSpecifier
+    def getSortState(): ListGridSortState
+    def getSummaryFieldValue(field: ListGridField, record: ListGridRecord): String
+    def getSummaryTitle(field: ListGridField): String
+    def getToggleFreezeText(field: ListGridField): HTMLString
+    def getTotalRows(): Int
+    def getValueIcon(field: ListGridField, value: js.Any, record: ListGridRecord): SCImgURL
+    def getViewState(): ListGridViewState
+    def getVisibleRows(): js.Array[Int]
+    val gridComponents: js.Array[ListGridComponent] | js.Array[js.Any]
+    var gridSummaryRecordProperty: String
+    def groupBy(arguments: js.Dictionary[js.Any] = js.native): Unit
+    var groupByAsyncThreshold: Int
+    var groupByComplete: js.Function1[js.Array[String], Unit]
+    val groupByField: js.Array[String] | String
+    var groupByFieldSummaries: js.Array[String]
+    var groupByMaxRecords: Int
+    var groupByText: HTMLString
+    var groupIcon: SCImgURL
+    var groupIconSize: Int
+    var groupIndentSize: Int
+    var groupLeadingIndent: Int
+    var groupNodeBaseStyle: String
+    var groupNodeStyle: String
+    var groupSortDirection: SortDirection
+    var groupStartOpen: js.Array[GroupStartOpen] | GroupStartOpen
+    var groupState: ListGridGroupState
+    var groupStateChanged: js.ThisFunction0[callbackHandler, Unit]
+    var groupSummaryRecordProperty: String
+    var groupSummaryStyle: CSSStyleName
+    val groupTitleColumnDefaults: ListGridField
+    val groupTitleColumnProperties: ListGridField
 }
 
 @js.native
