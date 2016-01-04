@@ -12,6 +12,8 @@ import com.simplesys.SmartClient.Layout.{HLayout, Layout, AbstractVLayoutCompani
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{Criteria, ListGridRecord, Record}
+import com.simplesys.SmartClient.System.selection.CellSelection
+import com.simplesys.isc.System.Types.Alignment.Alignment
 import com.simplesys.isc.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.isc.System.Types.AutoComplete.AutoComplete
 import com.simplesys.isc.System.Types.AutoFitIconFieldType.AutoFitIconFieldType
@@ -30,6 +32,7 @@ import com.simplesys.isc.System.Types.FetchMode.FetchMode
 import com.simplesys.isc.System.Types.ListGridEditEvent.ListGridEditEvent
 import com.simplesys.isc.System.Types.Overflow.Overflow
 import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.isc.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.isc.System.Types._
 
 import scala.scalajs.js
@@ -298,6 +301,33 @@ trait ListGrid extends VLayout with DataBoundComponent {
     var formulaBuilderSpanTitleSeparator: String
     def formulaUpdated(field: ListGridField, formula: UserFormula): Unit
     var freezeFieldText: HTMLString
+    var freezeOnLeftText: String
+    var freezeOnRightText: String
+    var frozenBaseStyle: String
+    val frozenHeaderBaseStyle: CSSStyleName
+    val frozenHeaderTitleStyle: CSSStyleName
+    var generateClickOnEnter: Boolean
+    var generateClickOnSpace: Boolean
+    var generateDoubleClickOnEnter: Boolean
+    var generateDoubleClickOnSpace: Boolean
+    def getAllEditRows(): js.Array[Int]
+    def getAllFields(): js.Array[ListGridField]
+    var getBaseStyle: js.ThisFunction3[callbackHandler, ListGridRecord, Int, Int, CSSStyleName]
+    def getBody(): GridRenderer
+    def getCellAlign(record: ListGridRecord, rowNum: Int, colNum: Int): Alignment
+    def getCellCSSText(record: ListGridRecord, rowNum: Int, colNum: Int): String
+    def getCellErrors(rowNum: Int, fieldName: String | Int): js.Array[String]
+    var getCellHoverComponent: js.ThisFunction3[callbackHandler, ListGridRecord, Int, Int, Canvas]
+    def getCellPageRect(record: ListGridRecord, rowNum: Int, colNum: Int): js.Array[Int]
+    var getCellRecord: js.ThisFunction1[callbackHandler, Int, ListGridRecord]
+    def getCellRowSpan(record: ListGridRecord, rowNum: Int, colNum: Int): Int
+    def getCellSelection(): CellSelection
+    def getCellStartRow(record: ListGridRecord, rowNum: Int, colNum: Int): Int
+    var getCellStyle: js.ThisFunction3[callbackHandler, ListGridRecord, Int, Int, CSSStyleName]
+    def getCellVAlign(record: ListGridRecord, rowNum: Int, colNum: Int): VerticalAlignment
+    var getCellValue: js.ThisFunction3[callbackHandler, ListGridRecord, Int, Int, String]
+    def getCheckboxField(): ListGridField
+    def getColumnLeft(colNum: Int): Int
 }
 
 @js.native
