@@ -15,16 +15,16 @@ package object Types {
         val methodName: String
     }
 
-    type Properties = js.Object
-    type ObjectLiteral = js.Dynamic
+    type Properties = Object
     type Record = js.Dictionary[Object]
-    type CellRecord = js.Object
+    type CellRecord = Object
     type ListGridRecord = js.Dictionary[Object]
 
     type Callback = js.ThisFunction | CallbackObject
     type ValueMap = js.Dictionary[js.Any]
-    type XMLDocument = js.Object
-    type XMLElement = js.Object
-    type XMLNode = js.Object
+    type XMLDocument = Object
+    type XMLElement = Object
+    type XMLNode = Object
+    type ListGridFieldState= Object
     type XPath = String
 }

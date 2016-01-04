@@ -5,13 +5,15 @@ import com.simplesys.SmartClient.Control.{Button, IButton}
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.DataBinding.dataSource.{RPCCallback, DSCallback}
 import com.simplesys.SmartClient.Forms.DynamicForm
+import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.{HTMLFlow, GridRenderer, Canvas}
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField.ListGridField
 import com.simplesys.SmartClient.Grids.listGrid.{UserFormula, RecordEditor}
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, AbstractVLayoutCompanion, VLayout}
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.{Criteria, ListGridRecord, Record}
+import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
+import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System.selection.CellSelection
 import com.simplesys.isc.System.Types.Alignment.Alignment
 import com.simplesys.isc.System.Types.AnimationAcceleration.AnimationAcceleration
@@ -31,6 +33,7 @@ import com.simplesys.isc.System.Types.ExpansionMode.ExpansionMode
 import com.simplesys.isc.System.Types.FetchMode.FetchMode
 import com.simplesys.isc.System.Types.ListGridEditEvent.ListGridEditEvent
 import com.simplesys.isc.System.Types.Overflow.Overflow
+import com.simplesys.isc.System.Types.ReorderPosition.ReorderPosition
 import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.isc.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.isc.System.Types._
@@ -341,10 +344,37 @@ trait ListGrid extends VLayout with DataBoundComponent {
     def getDragTrackerIcon(records: js.Array[ListGridRecord]): String
     def getDragTrackerTitle(record: ListGridRecord, rowNum: Int): String
     def getDrawArea(): js.Array[Int]
-    def getDrawnRowHeight(rowNum:Int):Int
+    def getDrawnRowHeight(rowNum: Int): Int
     def getDrawnRows(): js.Array[Int]
-    def getDropIndex (recordNum:Int, reorderPosition])
-
+    def getDropIndex(recordNum: Int = js.native, reorderPosition: ReorderPosition = js.native): Int
+    def getEditCol(): Int
+    def getEditedCell(record: ListGridRecord, field: Int | String): js.Any
+    def getEditedRecord(valuesID: Int | Types.Object): Types.Object
+    def getEditField(): Types.Object
+    def getEditFormItem(field: String | Int): FormItem
+    def getEditorProperties(field: ListGridField): Types.Object
+    def getEditorType(field: ListGridField, values: Types.Object): String
+    def getEditorValueIcons(field: ListGridField, values: Types.Object): Types.Object
+    def getEditorValueMap(field: ListGridField, values: Types.Object): ValueMap
+    def getEditRow(): Int
+    def getEditValue(rowNum: Int, colNum: Int): js.Any
+    def getEditValues(valuesID: Types.Object | Int): Types.Object
+    def getEventColumn(x: Int): Int
+    def getEventRow(y: Int): Int
+    def getExpandedRecords(): js.Array[ListGridRecord]
+    def getExpansionComponent(record: ListGridRecord): Canvas
+    def getExpansionField(): ListGridField
+    def getExportBGColor(rowNum: Int, colNum: Int, record: ListGridRecord): CSSColor
+    def getExportColumnBGColor(colNum: Int): CSSColor
+    def getExportRowBGColor(rowNum: Int, record: ListGridRecord): CSSColor
+    def getField(colNum: Int): ListGridField
+    def getFieldByName(fieldName: String): ListGridField
+    def getFieldContentWidth(field: ListGridField): Int
+    def getFieldName(colNum: Int): String
+    def getFieldState(): ListGridFieldState
+    def getFieldTitle(fieldId: String | Int): String
+    def getFieldWidth(fieldNum: Int | String): Int
+    def getFilterEditorCriteria(omitHiddenFields: Boolean = js.native): Criteria | AdvancedCriteria
 }
 
 @js.native
