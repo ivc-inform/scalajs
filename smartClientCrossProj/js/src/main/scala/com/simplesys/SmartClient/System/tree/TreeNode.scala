@@ -7,8 +7,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object TreeNode extends Types.Object {
-    type TreeNode = TreeNode.type
+trait TreeNode extends Types.Object {
 
     var canAcceptDrop: Boolean = js.native
     var canDrag: Boolean = js.native

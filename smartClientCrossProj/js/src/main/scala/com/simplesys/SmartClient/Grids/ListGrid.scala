@@ -1,14 +1,16 @@
 package com.simplesys.SmartClient.Grids
 
 import com.simplesys.SmartClient.Charts.{FacetChart, Chart}
-import com.simplesys.SmartClient.DataBinding.{DataSource, ResultSet, DSRequest, DataBoundComponent}
-import com.simplesys.SmartClient.DataBinding.dataSource.DSCallback
-import com.simplesys.SmartClient.Foundation.{GridRenderer, Canvas}
+import com.simplesys.SmartClient.Control.IButton
+import com.simplesys.SmartClient.DataBinding._
+import com.simplesys.SmartClient.DataBinding.dataSource.{RPCCallback, DSCallback}
+import com.simplesys.SmartClient.Forms.DynamicForm
+import com.simplesys.SmartClient.Foundation.{HTMLFlow, GridRenderer, Canvas}
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField.ListGridField
-import com.simplesys.SmartClient.Layout.{Layout, AbstractVLayoutCompanion, VLayout}
+import com.simplesys.SmartClient.Layout.{HLayout, Layout, AbstractVLayoutCompanion, VLayout}
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.{ListGridRecord, Record}
+import com.simplesys.SmartClient.System.Types.{Criteria, ListGridRecord, Record}
 import com.simplesys.isc.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.isc.System.Types.AutoComplete.AutoComplete
 import com.simplesys.isc.System.Types.AutoFitIconFieldType.AutoFitIconFieldType
@@ -18,8 +20,13 @@ import com.simplesys.isc.System.Types.ChartType.ChartType
 import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.isc.System.Types.DragDataAction.DragDataAction
 import com.simplesys.isc.System.Types.DragTrackerMode.DragTrackerMode
+import com.simplesys.isc.System.Types.EditCompletionEvent.EditCompletionEvent
+import com.simplesys.isc.System.Types.EnterKeyEditAction.EnterKeyEditAction
+import com.simplesys.isc.System.Types.EscapeKeyEditAction.EscapeKeyEditAction
+import com.simplesys.isc.System.Types.ExpansionComponentPoolingMode.ExpansionComponentPoolingMode
 import com.simplesys.isc.System.Types.ExpansionMode.ExpansionMode
 import com.simplesys.isc.System.Types.FetchMode.FetchMode
+import com.simplesys.isc.System.Types.ListGridEditEvent.ListGridEditEvent
 import com.simplesys.isc.System.Types.Overflow.Overflow
 import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.isc.System.Types._
@@ -200,6 +207,69 @@ trait ListGrid extends VLayout with DataBoundComponent {
     def displayHeaderContextMenu(target: Canvas, position: js.Array[Int] = js.native): Unit
     def displaySort(sortSpecifiers: js.Array[SortSpecifier]): Unit
     val dragTrackerMode: DragTrackerMode
+    var drawAheadRatio: Double
+    var drawAllMaxCells: Int
+    var drawAreaChanged: js.ThisFunction4[callbackHandler, Int, Int, Int, Int, Unit]
+    var editByCell: Boolean
+    var editComplete: js.ThisFunction6[callbackHandler, Int, Int, Record, Record, EditCompletionEvent, DSResponse, Unit]
+    var editEvent: ListGridEditEvent
+    var editFailed: js.ThisFunction6[callbackHandler, Int, Int, Record, Record, EditCompletionEvent, DSResponse, Unit]
+    var editFailedBaseStyle: CSSStyleName
+    var editFailedCSSText: String
+    var editOnF2Keypress: Boolean
+    var editOnFocus: Boolean
+    var editorEnter: js.ThisFunction4[callbackHandler, ListGridRecord, js.Any, Int, Int, Unit]
+    var editorExit: js.ThisFunction5[callbackHandler, EditCompletionEvent, ListGridRecord, js.Any, Int, Int, Boolean]
+    val editPendingBaseStyle: CSSStyleName
+    var editPendingCSSText: String
+    var emptyCellValue: HTMLString
+    var emptyMessage: HTMLString
+    var emptyMessageStyle: CSSStyleName
+    def endEditing(): Unit
+    var enforceVClipping: Boolean
+    var enterKeyEditAction: EnterKeyEditAction
+    val enumCriteriaAsInitialValues: Boolean
+    var errorIconHeight: Int
+    var errorIconSrc: SCImgURL
+    var errorIconWidth: Int
+    var escapeKeyEditAction: EscapeKeyEditAction
+    def expandRecord(record: ListGridRecord): Unit
+    def expandRecords(record: js.Array[ListGridRecord]): Unit
+    var expansionCanEdit: Boolean
+    var expansionComponentPoolingMode: ExpansionComponentPoolingMode
+    val expansionDetailField: HTMLFlow with MultiAutoChild
+    val expansionDetailRelated: HLayout with MultiAutoChild
+    val expansionDetails: DetailViewer with MultiAutoChild
+    val expansionEditor: DynamicForm with MultiAutoChild
+    var expansionEditorCollapseOnSave: Boolean
+    val expansionEditorSaveButton: IButton with MultiAutoChild
+    var expansionEditorSaveButtonTitle: String
+    val expansionEditorSaveDialogPrompt: String
+    val expansionEditorShowSaveDialog: Boolean
+    var expansionField: ListGrid with AutoChild
+    var expansionFieldFalseImage: SCImgURL
+    val expansionFieldImageHeight: Int
+    val expansionFieldImageWidth: Int
+    var expansionFieldTrueImage: SCImgURL
+    val expansionLayout: VLayout with MultiAutoChild
+    var expansionMode: ExpansionMode
+    val expansionRelated: ListGrid with MultiAutoChild
+    val exportAlternateRowBGColor: CSSColor
+    def exportClientData(requestProperties: DSRequest = js.native, callback: RPCCallback): Unit
+    def exportData(requestProperties: DSRequest = js.native, callback: DSCallback): Unit
+    val exportDefaultBGColor: CSSColor
+    var exportFieldAlignments: Boolean
+    var exportFieldWidths: Boolean
+    var exportHeaderHeights: Boolean
+    val exportRawValues: Boolean
+    var exportWidthScale: Double
+    var exportWrapHeaderTitles: Boolean
+    val fastCellUpdates: Boolean
+    def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    var fetchDelay: Int
+    def fetchRelatedData(record: ListGridRecord, schema: Canvas | DataSource | String, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    def fieldIsEditable(field: ListGridField | Int | String): Boolean
+    def fieldIsVisible(field: ListGridField | String): Boolean
 }
 
 @js.native
@@ -208,3 +278,24 @@ abstract trait AbstractListGridCompanion extends AbstractVLayoutCompanion {
 
 @js.native
 object ListGrid extends AbstractListGridCompanion        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
