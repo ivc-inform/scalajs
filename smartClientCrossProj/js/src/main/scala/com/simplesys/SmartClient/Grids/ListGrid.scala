@@ -375,6 +375,7 @@ trait ListGrid extends VLayout with DataBoundComponent {
     def getFieldTitle(fieldId: String | Int): String
     def getFieldWidth(fieldNum: Int | String): Int
     def getFilterEditorCriteria(omitHiddenFields: Boolean = js.native): Criteria | AdvancedCriteria
+    def  getFilterEditorType (field:ListGridField):String
 }
 
 @js.native
