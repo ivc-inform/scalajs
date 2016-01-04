@@ -18,6 +18,7 @@ package object Types {
     type Properties = js.Object
     type ObjectLiteral = js.Dynamic
     type Record = js.Dictionary[Object]
+    type CellRecord = js.Object
     type ListGridRecord = js.Dictionary[Object]
 
     type Callback = js.ThisFunction | CallbackObject
