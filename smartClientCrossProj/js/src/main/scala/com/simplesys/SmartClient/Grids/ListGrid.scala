@@ -535,7 +535,25 @@ trait ListGrid extends VLayout with DataBoundComponent {
     var locateRowsBy: String
     var longTextEditorThreshold: Int
     var longTextEditorType: String
-
+    def markRecordRemoved(rowNum: Int): Unit
+    def markRecordsRemoved(records: js.Array[ListGridRecord] | js.Array[Int]): Unit
+    def markSelectionRemoved(): Unit
+    var maxExpandedRecords: Int
+    val maxExpandedRecordsPrompt: HTMLString
+    var minFieldWidth: Int
+    var modalEditing: Boolean
+    var navigateOnTab: Boolean
+    var neverValidate: Boolean
+    val normalBaseStyle: CSSStyleName
+    var normalCellHeight: Int
+    var nullGroupTitle: String
+    var offlineMessageStyle: CSSStyleName
+    def openGroup(record: ListGridRecord): Boolean
+    var originalData: Types.Object
+    var originBaseStyle: CSSStyleName
+    var parseEditorValue: js.Function4[js.Any, ListGridRecord, Int, Int, js.Any]
+    var poolComponentsPerColumn: Boolean
+    var printAutoFit: Boolean
 }
 
 @js.native
