@@ -16,6 +16,8 @@ import com.simplesys.isc.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
 import com.simplesys.isc.System.Types.Autofit.Autofit
 import com.simplesys.isc.System.Types.ChartType.ChartType
 import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.isc.System.Types.DragDataAction.DragDataAction
+import com.simplesys.isc.System.Types.DragTrackerMode.DragTrackerMode
 import com.simplesys.isc.System.Types.ExpansionMode.ExpansionMode
 import com.simplesys.isc.System.Types.FetchMode.FetchMode
 import com.simplesys.isc.System.Types.Overflow.Overflow
@@ -188,6 +190,16 @@ trait ListGrid extends VLayout with DataBoundComponent {
     var dateInputFormat: DateInputFormat
     var datetimeFormatter: DateDisplayFormat
     val defaultFields: js.Array[ListGridField]
+    val deferRemoval: Boolean
+    var detailDS: String
+    var detailField: String
+    def discardAllEdits(rows: js.Array[Int] = js.native, dontHideEditor: Boolean = js.native): Unit
+    def discardEdits(rowNum: Int, colNum: Int, dontHideEditor: Boolean = js.native): Unit
+    var discardEditsOnHideField: Boolean
+    var discardEditsSaveButtonTitle: String
+    def displayHeaderContextMenu(target: Canvas, position: js.Array[Int] = js.native): Unit
+    def displaySort(sortSpecifiers: js.Array[SortSpecifier]): Unit
+    val dragTrackerMode: DragTrackerMode
 }
 
 @js.native
