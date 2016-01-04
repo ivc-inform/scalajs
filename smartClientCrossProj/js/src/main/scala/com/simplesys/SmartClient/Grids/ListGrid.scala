@@ -554,6 +554,9 @@ trait ListGrid extends VLayout with DataBoundComponent {
     var parseEditorValue: js.Function4[js.Any, ListGridRecord, Int, Int, js.Any]
     var poolComponentsPerColumn: Boolean
     var printAutoFit: Boolean
+    var printBaseStyle: CSSStyleName
+    var printBooleanBaseStyle: CSSStyleName
+    var printBooleanFalseImage: SCImgURL
 }
 
 @js.native
