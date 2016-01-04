@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.Foundation.{GridRenderer, Canvas}
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField.ListGridField
 import com.simplesys.SmartClient.Layout.{AbstractVLayoutCompanion, VLayout}
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
-import com.simplesys.SmartClient.System.Types.Record
+import com.simplesys.SmartClient.System.Types.{ListGridRecord, Record}
 import com.simplesys.isc.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.isc.System.Types.AutoComplete.AutoComplete
 import com.simplesys.isc.System.Types.AutoFitIconFieldType.AutoFitIconFieldType
@@ -99,7 +99,27 @@ trait ListGrid extends VLayout with DataBoundComponent {
     var canDropInEmptyArea: Boolean
     var canEdit: Boolean
     def canEditCell(rowNum: Int, colNum: Int): Boolean
-    val canEditFieldAttribute:Boolean
+    var canEditTitles: Boolean
+    var canExpandMultipleRecords: Boolean
+    def canExpandRecord(record: ListGridRecord, rowNum: Int): Boolean
+    val canExpandRecordProperty: String
+    var canExpandRecords: Boolean
+    val canFocusInEmptyGrid: Boolean
+    var canFreezeFields: Boolean
+    var canGroupBy: Boolean
+    var canMultiGroup: Boolean
+    var canMultiSort: Boolean
+    var canPickFields: Boolean
+    val canPickOmittedFields: Boolean
+    val canRemoveRecords: Boolean
+    var canReorderFields: Boolean
+    var canReorderRecords: Boolean
+    var canResizeFields: Boolean
+    var canSelectAll: Boolean
+    def canSelectCell(rowNum: Int, colNum: Int): Boolean
+    val canSelectCells: Boolean
+    var canSelectGroups: Boolean
+    def canSelectRecord(record: ListGridRecord): Boolean
 }
 
 @js.native
