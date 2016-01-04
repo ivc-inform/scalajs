@@ -1,12 +1,13 @@
 package com.simplesys.SmartClient.Grids
 
 import com.simplesys.SmartClient.Charts.{FacetChart, Chart}
-import com.simplesys.SmartClient.DataBinding.{DSRequest, DataBoundComponent}
+import com.simplesys.SmartClient.DataBinding.{DataSource, ResultSet, DSRequest, DataBoundComponent}
 import com.simplesys.SmartClient.DataBinding.dataSource.DSCallback
 import com.simplesys.SmartClient.Foundation.{GridRenderer, Canvas}
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField.ListGridField
 import com.simplesys.SmartClient.Layout.{Layout, AbstractVLayoutCompanion, VLayout}
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
+import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{ListGridRecord, Record}
 import com.simplesys.isc.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.isc.System.Types.AutoComplete.AutoComplete
@@ -14,7 +15,9 @@ import com.simplesys.isc.System.Types.AutoFitIconFieldType.AutoFitIconFieldType
 import com.simplesys.isc.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
 import com.simplesys.isc.System.Types.Autofit.Autofit
 import com.simplesys.isc.System.Types.ChartType.ChartType
+import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.isc.System.Types.ExpansionMode.ExpansionMode
+import com.simplesys.isc.System.Types.FetchMode.FetchMode
 import com.simplesys.isc.System.Types.Overflow.Overflow
 import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.isc.System.Types._
@@ -160,6 +163,31 @@ trait ListGrid extends VLayout with DataBoundComponent {
     var childExpansionMode: ExpansionMode
     var clearAllSortingText: String
     def clearCriteria(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    def clearEditValue(editValuesID: String | Types.Object, colNum: Int | String): Unit
+    def clearFieldError(rowNum: Int, fieldName: Int | String): Unit
+    var clearFilterText: String
+    def clearRowErrors(rowNum: Int): Unit
+    def clearSort(): Unit
+    var clearSortFieldText: String
+    val clipHeaderTitles: Boolean
+    def closeGroup(record: Record): Boolean
+    val collapseGroupOnRowClick: Boolean
+    def collapseRecord(record: ListGridRecord): Unit
+    def collapseRecords(records: js.Array[ListGridRecord]): Unit
+    def configureGrouping(): Unit
+    var configureGroupingText: String
+    var configureSortText: String
+    var confirmCancelEditing: Boolean
+    var confirmDiscardEdits: Boolean
+    var confirmDiscardEditsMessage: String
+    var createRecordComponent: js.ThisFunction2[callbackHandler, ListGridRecord, Int, Canvas]
+    val data: js.Array[ListGridRecord]
+    var dataArrived: js.ThisFunction2[callbackHandler, Int, Int, Unit]
+    var dataProperties: ResultSet
+    var dateFormatter: DateDisplayFormat
+    var dateInputFormat: DateInputFormat
+    var datetimeFormatter: DateDisplayFormat
+    val defaultFields: js.Array[ListGridField]
 }
 
 @js.native

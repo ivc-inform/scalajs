@@ -18,4 +18,5 @@ package object Types {
     type PageHtml = Elem
     type DataPath = String
     type AnimateShowEffectId = String
+    type DateInputFormat = String
 }
