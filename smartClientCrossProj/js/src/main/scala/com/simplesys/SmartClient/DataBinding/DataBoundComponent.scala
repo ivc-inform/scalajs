@@ -92,7 +92,6 @@ trait DataBoundComponent extends Class {
     def getHilites(): js.Array[Hilite]
     def getHiliteState(): String
     def getRecordHiliteCSSText(record: Record, cssText: String, field: Field): String
-    def getRecordIndex(record: Record): Int
     def getSelectionLength(): Int
     def getSort(): js.Array[SortSpecifier]
     def getSummaryFieldValue(field: Field, record: Record): String
