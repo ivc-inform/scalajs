@@ -645,7 +645,7 @@ trait ListGrid extends VLayout with DataBoundComponent {
     val screenReaderCellSeparator: HTMLString
     val screenReaderRowSeparator: HTMLString
     var scrollRedrawDelay: Int
-    def scrollToCell(rowNum: Int, colNum: Int[, xPosition: Alignment = js.native, yPosition: VerticalAlignment = js.native): Unit
+    def scrollToCell(rowNum: Int, colNum: Int, xPosition: Alignment = js.native, yPosition: VerticalAlignment = js.native): Unit
     var scrollToCellXPosition: Alignment
     var scrollToCellYPosition: VerticalAlignment
     def scrollToColumn(colNum: Int, xPosition: Alignment = js.native): Unit

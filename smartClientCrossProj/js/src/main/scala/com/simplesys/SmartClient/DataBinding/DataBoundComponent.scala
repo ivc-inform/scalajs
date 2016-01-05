@@ -124,10 +124,6 @@ trait DataBoundComponent extends Class {
     def selectAllRecords(): Unit
     def selectionUpdated(record: Record, recordList: js.Array[Record]): Unit
     def selectRange(startRow: Int, endRow: Int, newState: Boolean = js.native): Unit
-    def selectRecord(record: Record, newState: Boolean = js.native): Unit
-    def selectRecords(records: js.Array[Record], newState: Boolean = js.native): Unit
-    def selectSingleRecord(record: Record): Unit
-    def setDataSource(dataSource: DataSource, fields: js.Array[Field]): Unit
     def setHilites(hilites: Hilite): Unit
     def setHiliteState(hiliteState: String): Unit
     def setSort(sortSpecifiers: SortSpecifier): Unit
