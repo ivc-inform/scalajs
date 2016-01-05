@@ -1,14 +1,184 @@
 package com.simplesys.SmartClient.Grids.listGrid
 
-import com.simplesys.SmartClient.DataBinding.DataSource
+import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
+import com.simplesys.SmartClient.Forms.DynamicForm
+import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Foundation.Canvas
+import com.simplesys.SmartClient.Grids.ListGrid
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.isc.System.Types.{HTMLString, CSSStyleName}
+import com.simplesys.SmartClient.System.Types.{Criteria, ValueMap}
+import com.simplesys.isc.System.Types.Alignment.Alignment
+import com.simplesys.isc.System.Types.AutoComplete.AutoComplete
+import com.simplesys.isc.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
+import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.isc.System.Types.EditCompletionEvent.EditCompletionEvent
+import com.simplesys.isc.System.Types.EnterKeyEditAction.EnterKeyEditAction
+import com.simplesys.isc.System.Types.EscapeKeyEditAction.EscapeKeyEditAction
+import com.simplesys.isc.System.Types.HiliteIconPosition.HiliteIconPosition
+import com.simplesys.isc.System.Types.OperatorId.OperatorId
+import com.simplesys.isc.System.Types.RecordSummaryFunction.RecordSummaryFunction
+import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.isc.System.Types._
 
 import scala.scalajs.js
-import scala.scalajs.js.|
+import scala.scalajs.js.{Array, |}
 
 @js.native
 trait ListGridField extends Types.Object {
-
+    var align: Alignment
+    var applyAfterSummary: Boolean
+    var autoComplete: AutoComplete
+    var autoFetchDisplayMap: Boolean
+    var autoFitWidth: Boolean
+    var autoFitWidthApproach: AutoFitWidthApproach
+    var autoFreeze: Boolean
+    var baseStyle: CSSStyleName
+    var canAutoFitWidth: Boolean
+    var canDragResize: Boolean
+    var canEdit: Boolean
+    var canEditFormula: Boolean
+    var canEditSummary: Boolean
+    var canExport: Boolean
+    var canFilter: Boolean
+    var canFreeze: Boolean
+    var canGroupBy: Boolean
+    var canHide: Boolean
+    var canHilite: Boolean
+    var canReorder: Boolean
+    var canSort: Boolean
+    var canSortClientOnly: Boolean
+    var canToggle: Boolean
+    var cellAlign: Alignment
+    var cellChanged: js.Function6[ListGridRecord, js.Any, js.Any, Int, Int, ListGrid, Unit]
+    var cellIcon: SCImgURL
+    var change: js.Function4[DynamicForm, FormItem, js.Any, js.Any, Boolean]
+    var changed: js.Function3[DynamicForm, FormItem, js.Any, Unit]
+    var dataPath: String
+    var dateFormatter: DateDisplayFormat
+    var decimalPad: Int
+    var decimalPrecision: Int
+    def defaultDynamicValue(item: FormItem, form: DynamicForm, values: Types.Object): Unit
+    var defaultFilterValue: js.Any
+    val defaultGroupingMode: String
+    val defaultIconSrc: String
+    var defaultValue: js.Any
+    var defaultWidth: Int
+    var displayField: String
+    var displayValueFromRecord: Boolean
+    var editorEnter: js.Function5[ListGridRecord, js.Any, Int, Int, ListGrid, Unit]
+    var editorExit: js.Function6[EditCompletionEvent, ListGridRecord, js.Any, Int, Int, ListGrid, Unit]
+    val editorIconHeight: Int
+    val editorIconWidth: Int
+    var editorImageURLPrefix: String
+    var editorImageURLSuffix: String
+    var editorProperties: FormItem
+    var editorType: FormItem
+    var editorValueIconHeight: Int
+    var editorValueIcons: Types.Object
+    var editorValueIconWidth: Int
+    var editorValueMap: Types.Object
+    var emptyCellValue: HTMLString
+    var enterKeyEditAction: EnterKeyEditAction
+    var escapeHTML: Boolean
+    var escapeKeyEditAction: EscapeKeyEditAction
+    var exportFieldWidth: Boolean
+    var exportFormat: FormatString
+    val exportRawValues: Boolean
+    var filterEditorProperties: FormItem
+    var filterEditorType: FormItem
+    var filterEditorValueMap: Types.Object
+    var filterOnKeypress: Boolean
+    var filterOperator: OperatorId
+    val format: FormatString
+    def formatCellValue(value: js.Any, record: ListGridRecord, rowNum: Int, colNum: Int, grid: ListGrid): HTMLString
+    def formatEditorValue(value: js.Any, record: ListGridRecord, rowNum: Int, colNum: Int, grid: ListGrid): js.Any
+    var formatGridSummary: String
+    var formatGroupSummary: String
+    var frozen: Boolean
+    def getAutoFreezePosition(): Int
+    def getEditorValueMap(values: Types.Object, field: ListGridField, grid: ListGrid): ValueMap
+    def getFieldTitle(viewer: ListGrid, fieldNum: Int): String
+    def getGridSummary(records: Array[ListGridRecord], field: ListGridField, groupSummaries: Array[Types.Object] = js.native): js.Any
+    def getGroupSummary(records: Array[ListGridRecord], field: ListGridField, groupNode: Types.Object = js.native): js.Any
+    def getGroupTitle(groupValue: js.Any, groupNode: GroupNode, field: Types.Object, fieldName: String, grid: ListGrid): js.Any
+    def getGroupValue(value: js.Any, record: ListGridRecord, field: Types.Object, fieldName: String, grid: ListGrid): js.Any
+    def getRecordSummary(record: ListGridRecord, field: ListGridField, grid: ListGrid): js.Any
+    def getSummaryTitle(viewer: ListGrid, field: ListGridField): Unit
+    val groupGranularity: Int
+    val groupingMode: String
+    val groupingModes: ValueMap
+    val groupPrecision: Int
+    val headerBaseStyle: CSSStyleName
+    var headerHoverDelay: Int
+    val headerTitle: String
+    var headerTitleStyle: CSSStyleName
+    var hidden: Boolean
+    val hiliteHTMLAfterFormat: Boolean
+    val hiliteIconHeight: Int
+    val hiliteIconLeftPadding: Int
+    var hiliteIconPosition: HiliteIconPosition
+    var hiliteIconRightPadding: Int
+    var hiliteIconSize: Int
+    var hiliteIconWidth: Int
+    var hoverDelay: Int
+    var hoverHTML: js.Function5[ListGridRecord, js.Any, Int, Int, ListGrid, HTMLString]
+    var hoverWidth: Int
+    var hoverWrap: Boolean
+    var icon: SCImgURL
+    var iconHeight: Int
+    var iconOrientation: String
+    var icons: Array[FormItemIcon]
+    var iconSize: Int
+    var iconSpacing: Int
+    var iconVAlign: String
+    var iconWidth: Int
+    var ignoreKeyboardClicks: Boolean
+    var imageHeight: Int
+    var imageSize: Int
+    var imageURLPrefix: String
+    var imageURLSuffix: String
+    var imageWidth: Int
+    var includeFrom: String
+    var includeInRecordSummary: Boolean
+    val includeInRecordSummaryFields: Array[String]
+    val initialValue: js.Any
+    var inputFormat: DateInputFormat
+    val isRemoveField: Boolean
+    val leaveHeaderMenuButtonSpace: Boolean
+    var linkText: String
+    var linkTextProperty: String
+    var linkURLPrefix: String
+    var linkURLSuffix: String
+    var multiple: Boolean
+    var name: String
+    var optionCriteria: Criteria
+    var optionDataSource: String
+    var optionFilterContext: DSRequest
+    var optionOperationId: String
+    var optionTextMatchStyle: TextMatchStyle
+    def parseEditorValue(value: js.Any, record: Types.Object, rowNum: Int, colNum: Int, grid: ListGrid): js.Any
+    var partialSummary:Boolean
+    var prompt:HTMLString
+    var recordClick:js.Function7[ListGrid, ListGridRecord, Int, ListGridField,Int, js.Any, js.Any, Boolean]
+    var recordDoubleClick:js.Function7[ListGrid, ListGridRecord, Int, ListGridField,Int, js.Any, js.Any, Boolean]
+    var recordSummaryFunction:RecordSummaryFunction
+    var required:Boolean
+    var shouldPrint:Boolean
+    var showAlternateStyle:Boolean
+    var showDefaultContextMenu:Boolean
+    var showDisabledIcon:Boolean
+    var showDownIcon:Boolean
+    var showFileInline:Boolean
+    var showFocusedIcon:Boolean
+    var showGridSummary:Boolean
+    var showGroupSummary:Boolean
+    var showHover:Boolean
+    var showIf:js.Function3[ListGrid, ListGridField, Int, Boolean]
+    var showRollOverIcon:Boolean
+    var showSelectedIcon:Boolean
+    var showTitle:Boolean
+    var showValueIconOnly:Boolean
+    var sortByDisplayField:Boolean
+    var sortByMappedValue:Boolean
 }
