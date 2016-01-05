@@ -733,7 +733,12 @@ trait ListGrid extends VLayout with DataBoundComponent {
     def setUserSummaryText(field: ListGridField | String, text: String = js.native): Unit
     def setValueMap(fieldID: String | Int, map: Types.Object): Unit
     def setViewState(viewState: ListGridViewState): Unit
-    def shouldIncludeHiliteInSummaryField(summaryFieldName: String, usedFieldName: String): Boolean
+    var showAllColumns:Boolean
+    var showAllRecords:Boolean
+    var showAsynchGroupingPrompt:Boolean
+    var showBackgroundComponents:Boolean
+    var showCellContextMenus:Boolean
+    var showClippedHeaderTitlesOnHover:Boolean
 }
 
 @js.native
