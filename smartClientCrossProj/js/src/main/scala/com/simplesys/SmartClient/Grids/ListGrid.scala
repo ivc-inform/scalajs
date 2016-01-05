@@ -9,7 +9,7 @@ import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties.ImgProperties
 import com.simplesys.SmartClient.Foundation.{StatefulCanvas, HTMLFlow, GridRenderer, Canvas}
 import com.simplesys.SmartClient.Grids.listGrid.HeaderSpan.HeaderSpan
-import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, UserSummary, UserFormula, RecordEditor}
+import com.simplesys.SmartClient.Grids.listGrid._
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, AbstractVLayoutCompanion, VLayout}
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
 import com.simplesys.SmartClient.System.{Selection, Tree, Types, Class}

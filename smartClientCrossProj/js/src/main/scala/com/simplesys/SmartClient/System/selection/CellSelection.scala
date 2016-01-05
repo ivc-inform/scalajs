@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.System.selection
 
+import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
 
