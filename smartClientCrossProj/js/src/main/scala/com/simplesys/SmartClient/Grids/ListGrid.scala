@@ -12,10 +12,9 @@ import com.simplesys.SmartClient.Grids.listGrid.ListGridField.ListGridField
 import com.simplesys.SmartClient.Grids.listGrid.{UserFormula, RecordEditor}
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, AbstractVLayoutCompanion, VLayout}
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
-import com.simplesys.SmartClient.System.{Tree, Types}
+import com.simplesys.SmartClient.System.{Selection, Tree, Types, Class}
 import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 import com.simplesys.SmartClient.System.Types._
-import com.simplesys.SmartClient.System.Class
 import com.simplesys.SmartClient.System.selection.CellSelection
 import com.simplesys.isc.System.Types.Alignment.Alignment
 import com.simplesys.isc.System.Types.AnimationAcceleration.AnimationAcceleration
@@ -47,7 +46,9 @@ import com.simplesys.isc.System.Types.ReorderPosition.ReorderPosition
 import com.simplesys.isc.System.Types.RowEndEditAction.RowEndEditAction
 import com.simplesys.isc.System.Types.RowSpanEditMode.RowSpanEditMode
 import com.simplesys.isc.System.Types.RowSpanSelectionMode.RowSpanSelectionMode
+import com.simplesys.isc.System.Types.SelectionAppearance.SelectionAppearance
 import com.simplesys.isc.System.Types.SelectionNotificationType.SelectionNotificationType
+import com.simplesys.isc.System.Types.SelectionStyle.SelectionStyle
 import com.simplesys.isc.System.Types.SortDirection.SortDirection
 import com.simplesys.isc.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
@@ -647,6 +648,73 @@ trait ListGrid extends VLayout with DataBoundComponent {
     def scrollToCell(rowNum: Int, colNum: Int[, xPosition: Alignment = js.native, yPosition: VerticalAlignment = js.native): Unit
     var scrollToCellXPosition: Alignment
     var scrollToCellYPosition: VerticalAlignment
+    def scrollToColumn(colNum: Int, xPosition: Alignment = js.native): Unit
+    def scrollToRow(rowNum: Int, yPosition: VerticalAlignment = js.native): Unit
+    var scrollWheelRedrawDelay: Int
+    def selectAllRecords(visibleNodesOnly: Boolean = js.native): Unit
+    var selectedState: ListGridSelectedState
+    var selectHeaderOnSort: Boolean
+    val selection: Selection
+    var selectionAppearance: SelectionAppearance
+    var selectionCanvas: Canvas with AutoChild
+    var selectionChanged: js.Function2[ListGridRecord, Boolean, Unit]
+    val selectionProperty: String
+    var selectionType: SelectionStyle
+    val selectionUnderCanvas: Canvas with AutoChild
+    var selectionUpdated: js.Function2[ListGridRecord, js.Array[ListGridRecord], Unit]
+    var selectOnEdit: Boolean
+    def selectRecord(record: ListGridRecord, newState: Boolean = js.native): Unit
+    def selectRecords(records: js.Array[ListGridRecord], newState: Boolean = js.native): Unit
+    def selectSingleRecord(record: ListGridRecord): Unit
+    def setAlternateBodyStyleName(styleName: CSSStyleName): Unit
+    def setAlternateRecordStyles(alternateStyles: Boolean): Unit
+    def setAutoFitData(autoFitData: String): Unit
+    def setAutoFitExtraRecords(extraRecords: Int): Unit
+    def setAutoFitFieldWidths(autoFit: Boolean, dontResetWidths: Boolean = js.native): Unit
+    def setAutoFitMaxColumns(maxColumns: Int): Unit
+    def setAutoFitMaxHeight(height: Int): Unit
+    def setAutoFitMaxRecords(maxRecords: Int): Unit
+    def setAutoFitMaxWidth(width: Int): Unit
+    def setAutoFitWidth(fieldName: String, autoFit: Boolean): Unit
+    def setAutoFitWidthApproach(approach: AutoFitWidthApproach): Unit
+    def setBodyOverflow(overflow: Overflow): Unit
+    def setBodyStyleName(styleName: CSSStyleName): Unit
+    def setCanExpandRecords(canExpand: Boolean): Unit
+    def setCanFreezeFields(canFreeze: Boolean): Unit
+    def setCanReorderRecords(canReorderRecords: Boolean): Unit
+    def setCanResizeFields(canResize: Boolean): Unit
+    def setCriteria(criteria: Criteria | AdvancedCriteria): Unit
+    def setData(newData: js.Array[ListGridRecord]): Unit
+    def setDataSource(dataSource: DataSource, fields: js.Array[ListGridField]): Unit
+    def setDontAutoDestroyComponent(component: Canvas, dontAutoDestroy: Boolean): Unit
+    def setEditorValueMap(fieldID: Types.Object | Int | String, map: Types.Object): Unit
+    def setEditValue(rowNum: Int, colNum: Int, value: js.Any): Unit
+    def setEditValues(rowNum: Int, values: Types.Object): Unit
+    def setFastCellUpdates(fastCellUpdates: Boolean): Unit
+    def setFieldButtonProperties(name: String, properties: Canvas): Unit
+    def setFieldCellIcon(fieldName: String, cellIcon: SCImgURL): Unit
+    def setFieldError(rowNum: Int, fieldName: Int, errorMessage: String): Unit
+    def setFieldHeaderBaseStyle(name: String, newStyle: CSSStyleName): Unit
+    def setFieldHeaderTitleStyle(name: String, newStyle: CSSStyleName): Unit
+    def setFieldIcon(fieldName: String, icon: SCImgURL): Unit
+    def setFieldProperties(fieldNum: String, properties: ListGridField): Unit
+    def setFields(newFields: js.Array[ListGridField] = js.native): Unit
+    def setFieldState(fieldState: ListGridFieldState): Unit
+    def setFieldTitle(fieldNum: Int | String, title: String): Unit
+    def setFilterEditorCriteria(criteria: Criteria | AdvancedCriteria): Unit
+    def setGroupByFieldSummaries(groupByFieldSummaries: js.Array[String]): Unit
+    def setGroupState(groupState: ListGridGroupState): Unit
+    def setHeaderHeight(height: Int): Unit
+    def setHeaderSpanBaseStyle(name: String, newStyle: CSSStyleName): Unit
+    def setHeaderSpanButtonProperties(name: String, properties: Canvas): Unit
+    def setHeaderSpanHeaderTitle(name: String, newTitle: String): Unit
+    def setHeaderSpans(headerSpans: js.Array[HeaderSpan]): Unit
+    def setHeaderSpanTitle(name: String, newTitle: String): Unit
+    def setHeaderSpanTitleStyle(name: String, newTitle: CSSStyleName): Unit
+    def setRecordComponentHeight(height: Int): Unit
+    def setRowErrors(rowNum: Int, errors: js.Any): Unit
+    def setSelectedState(selectedState: ListGridSelectedState): Unit
+    def setSelectionAppearance(selectionAppearance: String): Unit
 
 }
 
