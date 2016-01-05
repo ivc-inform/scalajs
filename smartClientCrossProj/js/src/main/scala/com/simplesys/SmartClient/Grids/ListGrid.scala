@@ -49,6 +49,7 @@ import com.simplesys.isc.System.Types.RowSpanSelectionMode.RowSpanSelectionMode
 import com.simplesys.isc.System.Types.SelectionAppearance.SelectionAppearance
 import com.simplesys.isc.System.Types.SelectionNotificationType.SelectionNotificationType
 import com.simplesys.isc.System.Types.SelectionStyle.SelectionStyle
+import com.simplesys.isc.System.Types.SortArrow.SortArrow
 import com.simplesys.isc.System.Types.SortDirection.SortDirection
 import com.simplesys.isc.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
@@ -733,12 +734,48 @@ trait ListGrid extends VLayout with DataBoundComponent {
     def setUserSummaryText(field: ListGridField | String, text: String = js.native): Unit
     def setValueMap(fieldID: String | Int, map: Types.Object): Unit
     def setViewState(viewState: ListGridViewState): Unit
-    var showAllColumns:Boolean
-    var showAllRecords:Boolean
-    var showAsynchGroupingPrompt:Boolean
-    var showBackgroundComponents:Boolean
-    var showCellContextMenus:Boolean
-    var showClippedHeaderTitlesOnHover:Boolean
+    var showAllColumns: Boolean
+    var showAllRecords: Boolean
+    var showAsynchGroupingPrompt: Boolean
+    var showBackgroundComponents: Boolean
+    var showCellContextMenus: Boolean
+    var showClippedHeaderTitlesOnHover: Boolean
+    var showClippedValuesOnHover: Boolean
+    var showCollapsedGroupSummary: Boolean
+    var showEmptyMessage: Boolean
+    var showErrorIcons: Boolean
+    var showExpansionEditorSaveButton: Boolean
+    def showField(field: String | ListGridField, suppressRelayout: Boolean = js.native): Unit
+    def showFields(fields: js.Array[String] | js.Array[ListGridField], suppressRelayout: Boolean = js.native): Unit
+    var showFilterEditor:Boolean
+    var showGridSummary:Boolean
+    var showGroupSummary:Boolean
+    var showGroupSummaryInHeader:Boolean
+    var showGroupTitleColumn:Boolean
+    var showHeader:Boolean
+    var showHeaderContextMenu:Boolean
+    var showHeaderMenuButton:Boolean
+    var showHeaderSpanTitlesInFormulaBuilder:Boolean
+    var showHeaderSpanTitlesInHiliteEditor:Boolean
+    var showHeaderSpanTitlesInSortEditor:Boolean
+    var showHilitesInGroupSummary:Boolean
+    var showPartialSelection:Boolean
+    var showRecordComponent:js.Function2[ListGridRecord, Int, Boolean]
+    var showRecordComponents:Boolean
+    var showRecordComponentsByCell:Boolean
+    var showRollOver:Boolean
+    var showRollOverCanvas:Boolean
+    var showRollUnderCanvas:Boolean
+    var showRowNumbers:Boolean
+    var showSelectedStyle:Boolean
+    var showSelectionCanvas:Boolean
+    var showSelectionUnderCanvas:Boolean
+    var showSortArrow:SortArrow
+    var showSortNumerals:Boolean
+    var showTreeColumnPicker:Boolean
+    var shrinkForFreeze:Boolean
+    var singleCellValueProperty:String
+    def sort (sortField:String|Int = js.native, sortDirection:SortDirection)
 }
 
 @js.native
