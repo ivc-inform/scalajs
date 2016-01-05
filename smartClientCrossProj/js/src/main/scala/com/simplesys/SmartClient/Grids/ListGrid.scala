@@ -9,7 +9,7 @@ import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.{StatefulCanvas, HTMLFlow, GridRenderer, Canvas}
 import com.simplesys.SmartClient.Grids.listGrid.HeaderSpan.HeaderSpan
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField.ListGridField
-import com.simplesys.SmartClient.Grids.listGrid.{UserFormula, RecordEditor}
+import com.simplesys.SmartClient.Grids.listGrid.{UserSummary, UserFormula, RecordEditor}
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, AbstractVLayoutCompanion, VLayout}
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
 import com.simplesys.SmartClient.System.{Selection, Tree, Types, Class}
@@ -715,7 +715,25 @@ trait ListGrid extends VLayout with DataBoundComponent {
     def setRowErrors(rowNum: Int, errors: js.Any): Unit
     def setSelectedState(selectedState: ListGridSelectedState): Unit
     def setSelectionAppearance(selectionAppearance: String): Unit
-
+    def setSelectionType(selectionType: SelectionStyle): Unit
+    def setShowCollapsedGroupSummary(showCollapsedGroupSummary: Boolean): Unit
+    def setShowFilterEditor(value: Boolean): Unit
+    def setShowGridSummary(showGridSummary: Boolean): Unit
+    def setShowGroupSummary(showGroupSummary: Boolean): Unit
+    def setShowGroupSummaryInHeader(showGroupSummaryInHeader: Boolean): Unit
+    def setShowHeader(show: Boolean): Unit
+    def setShowRecordComponents(showRecordComponents: Boolean): Unit
+    def setSort(sortSpecifiers: js.Array[SortSpecifier]): Unit
+    def setSortByGroupFirst(sortByGroupFirst: Boolean): Unit
+    def setSortHandler(sortSpecifiers: js.Array[SortSpecifier]): Unit
+    def setSortState(sortState: ListGridSortState): Unit
+    def setUserFormula(field: ListGridField | String, userFormula: UserFormula = js.native): Unit
+    def setUserFormulaText(field: ListGridField | String, text: String = js.native): Unit
+    def setUserSummary(field: ListGridField | String, userSummary: UserSummary = js.native): Unit
+    def setUserSummaryText(field: ListGridField | String, text: String = js.native): Unit
+    def setValueMap(fieldID: String | Int, map: Types.Object): Unit
+    def setViewState(viewState: ListGridViewState): Unit
+    def shouldIncludeHiliteInSummaryField(summaryFieldName: String, usedFieldName: String): Boolean
 }
 
 @js.native
