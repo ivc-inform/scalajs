@@ -2,10 +2,9 @@ package com.simplesys.SmartClient.Grids
 
 
 import com.simplesys.SmartClient.Foundation.{Canvas, AbstractCanvasCompanion}
-import com.simplesys.SmartClient.Grids.treeGrid.TreeGridField
+import com.simplesys.SmartClient.Grids.treeGrid.{TreeNode, TreeGridField}
 import com.simplesys.SmartClient.System.{Types, Tree}
 import com.simplesys.SmartClient.System.Types._
-import com.simplesys.SmartClient.System.tree.TreeNode
 import com.simplesys.isc.System.Types.Alignment.Alignment
 import com.simplesys.isc.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.isc.System.Types.DisplayNodeType.DisplayNodeType

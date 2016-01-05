@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Layout.navPanel
 
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.System.tree.TreeNode
+import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
 import com.simplesys.isc.System.Types.CSSStyleName
 
 import scala.scalajs.js

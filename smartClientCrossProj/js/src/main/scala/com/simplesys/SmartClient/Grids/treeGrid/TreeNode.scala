@@ -1,4 +1,4 @@
-package com.simplesys.SmartClient.System.tree
+package com.simplesys.SmartClient.Grids.treeGrid
 
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.isc.System.Types.{HTMLString, SCImgURL}
