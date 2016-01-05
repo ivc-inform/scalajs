@@ -6,7 +6,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait RecordEditor extends ListGrid {
+trait RecordEditor extends ListGrid[ListGridField] {
 }
 
 @js.native

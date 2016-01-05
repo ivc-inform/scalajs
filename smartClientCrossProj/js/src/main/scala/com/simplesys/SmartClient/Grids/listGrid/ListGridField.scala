@@ -6,6 +6,6 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object ListGridField extends Types.Object {
-    type ListGridField = ListGridField.type
+trait ListGridField extends Types.Object {
+
 }
