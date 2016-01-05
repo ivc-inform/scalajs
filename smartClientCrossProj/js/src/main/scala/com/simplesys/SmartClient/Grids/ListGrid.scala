@@ -45,6 +45,9 @@ import com.simplesys.isc.System.Types.RecordDropAppearance.RecordDropAppearance
 import com.simplesys.isc.System.Types.RecordDropPosition.RecordDropPosition
 import com.simplesys.isc.System.Types.ReorderPosition.ReorderPosition
 import com.simplesys.isc.System.Types.RowEndEditAction.RowEndEditAction
+import com.simplesys.isc.System.Types.RowSpanEditMode.RowSpanEditMode
+import com.simplesys.isc.System.Types.RowSpanSelectionMode.RowSpanSelectionMode
+import com.simplesys.isc.System.Types.SelectionNotificationType.SelectionNotificationType
 import com.simplesys.isc.System.Types.SortDirection.SortDirection
 import com.simplesys.isc.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
@@ -603,6 +606,48 @@ trait ListGrid extends VLayout with DataBoundComponent {
     var removeFieldTitle: String
     val removeIcon: SCImgURL
     var removeIconSize: Int
+    var removeRecordClick: js.ThisFunction1[callbackHandler, Int, Unit]
+    def removeSelectedData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    def reorderField(fieldNum: Int, moveToPosition: Int): Unit
+    def reorderFields(start: Int, end: Int, moveDelta: Int): Unit
+    val reselectOnUpdate: Boolean
+    var reselectOnUpdateNotifications: SelectionNotificationType
+    def resizeField(fieldNum: Int, newWidth: Int): Unit
+    var resizeFieldsInRealTime: Boolean
+    def resort(): Unit
+    var reverseRTLAlign: Boolean
+    val rollOverCanvas: Canvas with AutoChild
+    val rollUnderCanvas: Canvas with AutoChild
+    var rowClick: js.Function4[ListGridRecord, Int, Int, Boolean, Boolean]
+    var rowContextClick: js.Function3[ListGridRecord, Int, Int, Boolean]
+    var rowDoubleClick: js.Function4[ListGridRecord, Int, Int, Boolean, Boolean]
+    var rowEditorEnter: js.Function3[ListGridRecord, Types.Object, Int, Unit]
+    var rowEditorExit: js.Function4[EditCompletionEvent, ListGridRecord, Types.Object, Int, Boolean]
+    var rowEndEditAction: RowEndEditAction
+    def rowHasChanges(rowNum: Int): Boolean
+    def rowHasErrors(rowNum: Int): Boolean
+    var rowHover: js.Function3[ListGridRecord, Int, Int, Boolean]
+    var rowMouseDown: js.Function3[ListGridRecord, Int, Int, Boolean]
+    var rowMouseUp: js.Function3[ListGridRecord, Int, Int, Boolean]
+    var rowNumberField: ListGridField with AutoChild
+    var rowNumberStart: Int
+    var rowNumberStyle: CSSStyleName
+    var rowOut: js.Function3[ListGridRecord, Int, Int, Boolean]
+    var rowOver: js.Function3[ListGridRecord, Int, Int, Boolean]
+    var rowSpanEditMode: RowSpanEditMode
+    var rowSpanSelectionMode: RowSpanSelectionMode
+    def saveAllEdits(rows: js.Array[Int] = js.native, saveCallback: Callback = js.native): Boolean
+    var saveByCell: Boolean
+    def saveEdits(editCompletionEvent: EditCompletionEvent = js.native, callback: js.Function4[Int, Int, EditCompletionEvent, Boolean, Unit] = js.native, rowNum: Int = js.native): Unit
+    val saveLocally: Boolean
+    var saveRequestProperties: DSRequest
+    val screenReaderCellSeparator: HTMLString
+    val screenReaderRowSeparator: HTMLString
+    var scrollRedrawDelay: Int
+    def scrollToCell(rowNum: Int, colNum: Int[, xPosition: Alignment = js.native, yPosition: VerticalAlignment = js.native): Unit
+    var scrollToCellXPosition: Alignment
+    var scrollToCellYPosition: VerticalAlignment
+
 }
 
 @js.native
