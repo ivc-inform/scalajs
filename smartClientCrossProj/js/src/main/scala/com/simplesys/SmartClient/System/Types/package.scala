@@ -25,6 +25,9 @@ package object Types {
     type ListGridViewState = Object
     type ListGridGroupState = Object
 
+    type TreeGridOpenState = Object
+    type TreeGridViewState = Object
+
     type Callback = js.ThisFunction | CallbackObject
     type ValueMap = js.Dictionary[js.Any]
     type XMLDocument = Object
