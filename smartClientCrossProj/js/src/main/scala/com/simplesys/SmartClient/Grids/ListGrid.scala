@@ -6,6 +6,7 @@ import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.DataBinding.dataSource.{RPCCallback, DSCallback}
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Foundation.canvas.ImgProperties.ImgProperties
 import com.simplesys.SmartClient.Foundation.{StatefulCanvas, HTMLFlow, GridRenderer, Canvas}
 import com.simplesys.SmartClient.Grids.listGrid.HeaderSpan.HeaderSpan
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField.ListGridField
@@ -53,6 +54,7 @@ import com.simplesys.isc.System.Types.SortArrow.SortArrow
 import com.simplesys.isc.System.Types.SortDirection.SortDirection
 import com.simplesys.isc.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.isc.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.isc.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.isc.System.Types._
 
@@ -747,35 +749,104 @@ trait ListGrid extends VLayout with DataBoundComponent {
     var showExpansionEditorSaveButton: Boolean
     def showField(field: String | ListGridField, suppressRelayout: Boolean = js.native): Unit
     def showFields(fields: js.Array[String] | js.Array[ListGridField], suppressRelayout: Boolean = js.native): Unit
-    var showFilterEditor:Boolean
-    var showGridSummary:Boolean
-    var showGroupSummary:Boolean
-    var showGroupSummaryInHeader:Boolean
-    var showGroupTitleColumn:Boolean
-    var showHeader:Boolean
-    var showHeaderContextMenu:Boolean
-    var showHeaderMenuButton:Boolean
-    var showHeaderSpanTitlesInFormulaBuilder:Boolean
-    var showHeaderSpanTitlesInHiliteEditor:Boolean
-    var showHeaderSpanTitlesInSortEditor:Boolean
-    var showHilitesInGroupSummary:Boolean
-    var showPartialSelection:Boolean
-    var showRecordComponent:js.Function2[ListGridRecord, Int, Boolean]
-    var showRecordComponents:Boolean
-    var showRecordComponentsByCell:Boolean
-    var showRollOver:Boolean
-    var showRollOverCanvas:Boolean
-    var showRollUnderCanvas:Boolean
-    var showRowNumbers:Boolean
-    var showSelectedStyle:Boolean
-    var showSelectionCanvas:Boolean
-    var showSelectionUnderCanvas:Boolean
-    var showSortArrow:SortArrow
-    var showSortNumerals:Boolean
-    var showTreeColumnPicker:Boolean
-    var shrinkForFreeze:Boolean
-    var singleCellValueProperty:String
-    def sort (sortField:String|Int = js.native, sortDirection:SortDirection)
+    var showFilterEditor: Boolean
+    var showGridSummary: Boolean
+    var showGroupSummary: Boolean
+    var showGroupSummaryInHeader: Boolean
+    var showGroupTitleColumn: Boolean
+    var showHeader: Boolean
+    var showHeaderContextMenu: Boolean
+    var showHeaderMenuButton: Boolean
+    var showHeaderSpanTitlesInFormulaBuilder: Boolean
+    var showHeaderSpanTitlesInHiliteEditor: Boolean
+    var showHeaderSpanTitlesInSortEditor: Boolean
+    var showHilitesInGroupSummary: Boolean
+    var showPartialSelection: Boolean
+    var showRecordComponent: js.Function2[ListGridRecord, Int, Boolean]
+    var showRecordComponents: Boolean
+    var showRecordComponentsByCell: Boolean
+    var showRollOver: Boolean
+    var showRollOverCanvas: Boolean
+    var showRollUnderCanvas: Boolean
+    var showRowNumbers: Boolean
+    var showSelectedStyle: Boolean
+    var showSelectionCanvas: Boolean
+    var showSelectionUnderCanvas: Boolean
+    var showSortArrow: SortArrow
+    var showSortNumerals: Boolean
+    var showTreeColumnPicker: Boolean
+    var shrinkForFreeze: Boolean
+    var singleCellValueProperty: String
+    def sort(sortField: String | Int = js.native, sortDirection: SortDirection = js.native): Boolean
+    var sortAscendingImage: ImgProperties
+    var sortByGroupFirst: Boolean
+    var sortChanged: js.Function1[js.Array[SortSpecifier], Unit]
+    var sortDescendingImage: ImgProperties
+    var sortDirection: SortDirection
+    var sortEditorSpanTitleSeparator: String
+    var sorterButtonTitle: String
+    var sorterClick: js.ThisFunction0[callbackHandler, Boolean]
+    val sorterConstructor: Class
+    var sorterContextClick: js.ThisFunction0[callbackHandler, Boolean]
+    val sorterDefaults: Types.Object
+    val sorterProperties: Button
+    val sortField: String
+    var sortFieldAscendingText: String
+    var sortFieldDescendingText: String
+    var sortFieldNum: Int
+    var sortNumeralStyle: CSSStyleName
+    var sortState: ListGridSortState
+    val spanContextMenu: Layout with AutoChild
+    def startEditing(rowNum: Int = js.native, colNum: Int = js.native, suppressFocus: Boolean = js.native): Boolean
+    def startEditingNew(newValues: Types.Object | ListGridRecord = js.native, suppressFocus: Boolean = js.native): Unit
+    var stopHover: js.ThisFunction0[callbackHandler, Unit]
+    var stopOnErrors: Boolean
+    val summaryRow: ListGrid with AutoChild
+    var summaryRowCriteria: Criteria
+    val summaryRowDataSource: DataSource
+    var summaryRowFetchRequestProperties: DSRequest
+    val summaryRowHeight: Int
+    var summaryRowStyle: CSSStyleName
+    var summaryUpdated: js.ThisFunction2[callbackHandler, ListGridField, UserSummary, Unit]
+    val tallBaseStyle: CSSStyleName
+    var timeFormatter: TimeDisplayFormat
+    def toggleFrozen(field: ListGridField | Int | String): Unit
+    def toggleSort(fieldName: String): Unit
+    var trackerImage: ImgProperties
+    def unfreezeField(field: ListGridField | Int | String): Unit
+    var unfreezeFieldText: HTMLString
+    def ungroup(): Unit
+    var ungroupText: String
+    def unmarkRecordRemoved(rowNum: Int): Unit
+    val unremoveIcon: SCImgURL
+    def unsort(): Unit
+    val unspannedHeaderVAlign: VerticalAlignment
+    def updateData(updatedRecord: ListGridRecord, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    var updateRecordComponent: js.Function4[ListGridRecord, Int, Canvas, Boolean, Canvas]
+    val useAdvancedFieldPicker: Boolean
+    var useCellRollOvers: Boolean
+    var useCopyPasteShortcuts: Boolean
+    var useRemoteValidators: Boolean
+    var useRowSpanStyling: Boolean
+    def userSelectAllRecords(): Unit
+    var validateByCell: Boolean
+    def validateCell(rowNum: Int, fieldName: String | Int): Boolean
+    var validateOnChange: Boolean
+    def validateRow(rowNum: Int): Boolean
+    var valueIconHeight: Int
+    var valueIconLeftPadding: Int
+    var valueIconRightPadding: Int
+    var valueIconSize: Int
+    var valueIconWidth: Int
+    var viewState: Int
+    var viewStateChanged: js.ThisFunction0[callbackHandler, Unit]
+    val virtualScrolling: Boolean
+    var waitForSave: Boolean
+    var warnOnRemoval: Boolean
+    var warnOnRemovalMessage: Boolean
+    var warnOnUnmappedValueFieldChange: Boolean
+    var wrapCells: Boolean
+    var wrapHeaderTitles: Boolean
 }
 
 @js.native
