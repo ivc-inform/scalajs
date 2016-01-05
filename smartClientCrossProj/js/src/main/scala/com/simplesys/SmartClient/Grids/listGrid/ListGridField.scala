@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Grids.listGrid
 
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
-import com.simplesys.SmartClient.Forms.DynamicForm
+import com.simplesys.SmartClient.Forms.{Validator, DynamicForm}
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Foundation.Canvas
@@ -16,9 +16,13 @@ import com.simplesys.isc.System.Types.EditCompletionEvent.EditCompletionEvent
 import com.simplesys.isc.System.Types.EnterKeyEditAction.EnterKeyEditAction
 import com.simplesys.isc.System.Types.EscapeKeyEditAction.EscapeKeyEditAction
 import com.simplesys.isc.System.Types.HiliteIconPosition.HiliteIconPosition
+import com.simplesys.isc.System.Types.ListGridFieldType.ListGridFieldType
 import com.simplesys.isc.System.Types.OperatorId.OperatorId
 import com.simplesys.isc.System.Types.RecordSummaryFunction.RecordSummaryFunction
+import com.simplesys.isc.System.Types.SortDirection.SortDirection
+import com.simplesys.isc.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.isc.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.isc.System.Types._
 
 import scala.scalajs.js
@@ -158,27 +162,54 @@ trait ListGridField extends Types.Object {
     var optionOperationId: String
     var optionTextMatchStyle: TextMatchStyle
     def parseEditorValue(value: js.Any, record: Types.Object, rowNum: Int, colNum: Int, grid: ListGrid): js.Any
-    var partialSummary:Boolean
-    var prompt:HTMLString
-    var recordClick:js.Function7[ListGrid, ListGridRecord, Int, ListGridField,Int, js.Any, js.Any, Boolean]
-    var recordDoubleClick:js.Function7[ListGrid, ListGridRecord, Int, ListGridField,Int, js.Any, js.Any, Boolean]
-    var recordSummaryFunction:RecordSummaryFunction
-    var required:Boolean
-    var shouldPrint:Boolean
-    var showAlternateStyle:Boolean
-    var showDefaultContextMenu:Boolean
-    var showDisabledIcon:Boolean
-    var showDownIcon:Boolean
-    var showFileInline:Boolean
-    var showFocusedIcon:Boolean
-    var showGridSummary:Boolean
-    var showGroupSummary:Boolean
-    var showHover:Boolean
-    var showIf:js.Function3[ListGrid, ListGridField, Int, Boolean]
-    var showRollOverIcon:Boolean
-    var showSelectedIcon:Boolean
-    var showTitle:Boolean
-    var showValueIconOnly:Boolean
-    var sortByDisplayField:Boolean
-    var sortByMappedValue:Boolean
+    var partialSummary: Boolean
+    var prompt: HTMLString
+    var recordClick: js.Function7[ListGrid, ListGridRecord, Int, ListGridField, Int, js.Any, js.Any, Boolean]
+    var recordDoubleClick: js.Function7[ListGrid, ListGridRecord, Int, ListGridField, Int, js.Any, js.Any, Boolean]
+    var recordSummaryFunction: RecordSummaryFunction
+    var required: Boolean
+    var shouldPrint: Boolean
+    var showAlternateStyle: Boolean
+    var showDefaultContextMenu: Boolean
+    var showDisabledIcon: Boolean
+    var showDownIcon: Boolean
+    var showFileInline: Boolean
+    var showFocusedIcon: Boolean
+    var showGridSummary: Boolean
+    var showGroupSummary: Boolean
+    var showHover: Boolean
+    var showIf: js.Function3[ListGrid, ListGridField, Int, Boolean]
+    var showRollOverIcon: Boolean
+    var showSelectedIcon: Boolean
+    var showTitle: Boolean
+    var showValueIconOnly: Boolean
+    var sortByDisplayField: Boolean
+    var sortByMappedValue: Boolean
+    var sortDirection: SortDirection
+    def sortNormalizer(recordObject: Types.Object, fieldName: String, context: ListGrid): js.Any
+    var summaryFunction: SummaryFunction | js.Array[SummaryFunction]
+    var summaryTitle: String
+    var summaryValue: HTMLString
+    val summaryValueTitle: String
+    var suppressValueIcon: Boolean
+    var target: String
+    var timeFormatter: TimeDisplayFormat
+    var title: String
+    var `type`: ListGridFieldType
+    var userFormula: UserFormula
+    var userSummary: UserSummary
+    var validateOnChange: Boolean
+    var validators: Array[Validator]
+    var valueField: String
+    var valueIconClick: js.Function6[ListGrid, ListGridRecord, Int, ListGridField, js.Any, FormItem, Boolean]
+    var valueIconHeight: Int
+    var valueIconLeftPadding: Int
+    var valueIconOrientation: String
+    var valueIconRightPadding: Int
+    var valueIcons: Types.Object
+    var valueIconSize: Int
+    var valueIconWidth: Int
+    var valueMap: Types.Object | js.Array[String]
+    var width: Int | String
+    var wrap: Boolean
 }
