@@ -10,6 +10,7 @@ package object Types {
     type CSSStyleName = String
     type CSSColor = String
     type CSSText = String
+    type CSSClassName = String
     type Color = String
     type HTMLString = String
     type URL = String
