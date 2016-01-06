@@ -7,6 +7,7 @@ import scala.language.implicitConversions
 package object Types {
     type FormatString = String
     type SCClassName = String
+    type FormItemBaseStyle = SCClassName
     type CSSStyleName = String
     type CSSColor = String
     type CSSText = String
