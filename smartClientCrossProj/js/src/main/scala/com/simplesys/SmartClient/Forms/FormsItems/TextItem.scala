@@ -26,7 +26,6 @@ trait TextItem extends FormItem {
     def getEnteredValue(): String
     def getHint(): HTMLString
     def getSelectionRange(): Array[Int]
-    var height: Int
     var keyPressFilter: String
     var length: Int
     var mask: String
