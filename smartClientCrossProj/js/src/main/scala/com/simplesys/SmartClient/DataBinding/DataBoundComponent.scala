@@ -4,8 +4,8 @@ import com.simplesys.SmartClient.DataBinding.SortSpecifier.SortSpecifier
 import com.simplesys.SmartClient.DataBinding.dataSource.DSCallback
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.Hilite.Hilite
-import com.simplesys.SmartClient.Grids.listGrid.ListGridField
-import com.simplesys.SmartClient.Layout.{Window, HiliteEditor}
+import com.simplesys.SmartClient.Grids.listGrid.{HiliteEditor, ListGridField}
+import com.simplesys.SmartClient.Layout.{Window}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 import com.simplesys.SmartClient.System.Types.{Callback, Criteria, Field, Record}
