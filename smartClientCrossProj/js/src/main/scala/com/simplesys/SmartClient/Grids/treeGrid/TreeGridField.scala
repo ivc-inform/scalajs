@@ -7,6 +7,7 @@ import scala.scalajs.js.|
 
 @js.native
 trait TreeGridField extends ListGridField {
+    val treeField:Boolean
 }
 
 

@@ -9,6 +9,7 @@ package object Types {
     type SCClassName = String
     type CSSStyleName = String
     type CSSColor = String
+    type CSSText = String
     type Color = String
     type HTMLString = String
     type URL = String
