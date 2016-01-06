@@ -1,22 +1,28 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.SmartClient.DataBinding.DataSource
-import com.simplesys.SmartClient.Forms.DynamicForm
+import com.simplesys.SmartClient.Forms.{Validator, DynamicForm}
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
+import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
+import com.simplesys.SmartClient.RPC.RPCRequest
 import com.simplesys.SmartClient.System.Types.Criteria
-import com.simplesys.SmartClient.System.{Criterion, Types, AbstractClassCompanion, Class}
+import com.simplesys.SmartClient.System._
 import com.simplesys.isc.System.Types.Alignment.Alignment
 import com.simplesys.isc.System.Types.AutoComplete.AutoComplete
 import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.isc.System.Types.FormItemElementType.FormItemElementType
+import com.simplesys.isc.System.Types.FormItemType.FormItemType
 import com.simplesys.isc.System.Types.OperatorId.OperatorId
+import com.simplesys.isc.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
 import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.isc.System.Types.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.isc.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.isc.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.isc.System.Types._
 
 import scala.scalajs.js
-import scala.scalajs.js.|
+import scala.scalajs.js.{Array, |}
 
 @js.native
 trait FormItem extends Class {
@@ -175,6 +181,135 @@ trait FormItem extends Class {
     val operator: OperatorId
     val optionCriteria: Criteria
     val optionDataSource: String | DataSource
+    var optionFilterContext: RPCRequest
+    var optionOperationId: String
+    var originalValueMessage: HTMLString
+    var parseEditorValue: js.Function3[String, DynamicForm, FormItem, js.Any]
+    var pendingStatusChanged: js.Function5[DynamicForm, FormItem, Boolean, js.Any, js.Any, Boolean]
+    var picker: Canvas with AutoChild
+    var pickerConstructor: SCClassName
+    var pickerIconClick: js.Function3[DynamicForm, FormItem, FormItemIcon, _]
+    var pickerIconDefaults: FormItemIcon
+    var pickerIconHeight: Int
+    var pickerIconName: String
+    var pickerIconPrompt: HTMLString
+    var pickerIconProperties: FormItemIcon
+    var pickerIconSrc: SCImgURL
+    var pickerIconStyle: FormItemBaseStyle
+    var pickerIconWidth: Int
+    var pickerProperties: Canvas
+    var printTextBoxStyle: FormItemBaseStyle
+    var printTitleStyle: FormItemBaseStyle
+    var prompt: HTMLString
+    var readOnlyDisplay: ReadOnlyDisplayAppearance
+    var readOnlyTextBoxStyle: FormItemBaseStyle
+    def redraw(reason: String): Unit
+    var redrawOnChange: Boolean
+    var rejectInvalidValueOnChange: Boolean
+    var required: Boolean
+    var requiredMessage: String
+    var rowSpan: Int
+    var saveOnEnter: Boolean
+    var selectOnClick: Boolean
+    var selectOnFocus: Boolean
+    def setCanEdit(canEdit: Boolean): Unit
+    def setCellStyle(newCellStyle: FormItemBaseStyle): Unit
+    def setCriterion(criterion: Criterion): Unit
+    def setDisabled(disabled: Boolean): Unit
+    def setErrors(errors: Array[String] | String): Unit
+    def setHint(newHint: HTMLString): Unit
+    def setHintStyle(hintStyle: CSSStyleName): Unit
+    def setIconDisabled(icon: String, disabled: Boolean): Unit
+    def setLeft(): Unit
+    def setOptionDataSource(dataSource: DataSource): Unit
+    def setPrompt(newPrompt: HTMLString): Unit
+    def setReadOnlyDisplay(appearance: ReadOnlyDisplayAppearance): Unit
+    def setRequired(required: Boolean): Unit
+    def setShowDisabled(showDisabled: Boolean): Unit
+    def setTabIndex(): Unit
+    def setTop(): Unit
+    def setValue(newValue: js.Any): Unit
+    def setValueIcons(map: Types.Object): Unit
+    def setValueMap(valueMap: Array[Types.Object]): Unit
+    def shouldApplyHeightToTextBox(): Boolean
+    def shouldFetchMissingValue(newValue: js.Any): Boolean
+    def shouldSaveOnEnter(): Boolean
+    var shouldSaveValue: Boolean
+    var shouldStopKeyPressBubbling: js.Function2[String, Int, Boolean]
+    def show(): Unit
+    var showClippedTitleOnHover: Boolean
+    var showClippedValueOnHover: Boolean
+    var showDeletions: Boolean
+    var showDisabled: Boolean
+    var showErrorIcon: Boolean
+    var showErrorStyle: Boolean
+    var showErrorText: Boolean
+    var showFocused: Boolean
+    var showFocusedErrorState: Boolean
+    var showFocusedIcons: Boolean
+    var showFocusedPickerIcon: Boolean
+    var showHint: Boolean
+    def showIcon(icon: String): Unit
+    var showIcons: Boolean
+    var showIf: js.Function4[FormItem, js.Any, DynamicForm, Types.Object, Boolean]
+    var showOldValueInHover: Boolean
+    var showOverIcons: Boolean
+    var showPending: Boolean
+    def showPicker(): Unit
+    var showPickerIcon: Boolean
+    var showRTL: Boolean
+    var showTitle: Boolean
+    var showValueIconOnly: Boolean
+    var startRow: Boolean
+    var staticHeight: Int
+    def stopHover(): Unit
+    var stopOnError: Boolean
+    def storeValue(value: js.Any, showValue: Boolean = js.native): Unit
+    var suppressValueIcon: Boolean
+    var synchronousValidation: Boolean
+    var tabIndex: Int
+    var textAlign: Alignment
+    var textBoxStyle: FormItemBaseStyle
+    var timeFormatter: TimeDisplayFormat
+    var title: String
+    var titleAlign: Alignment
+    var titleClassName: CSSStyleName
+    var titleClick: js.Function2[DynamicForm, FormItem, Boolean]
+    var titleColSpan: Int
+    var titleDoubleClick: js.Function2[DynamicForm, FormItem, Boolean]
+    var titleHover: js.Function2[DynamicForm, FormItem, Boolean]
+    var titleHoverHTML: js.Function2[DynamicForm, FormItem, HTMLString]
+    var titleOrientation: TitleOrientation
+    var titleStyle: FormItemBaseStyle
+    var titleVAlign: VerticalAlignment
+    var top: Int
+    var transformInput: js.Function4[DynamicForm, FormItem, js.Any, js.Any, js.Any]
+    var `type`: FormItemType
+    def updateState(): Unit
+    var useDisabledHintStyleForReadOnly: Boolean
+    def validate(): Boolean
+    var validateOnChange: Boolean
+    var validateOnExit: Boolean
+    val validators: Array[Validator]
+    val validOperators: Array[OperatorId]
+    var vAlign: VerticalAlignment
+    val value: js.Any
+    def valueClipped(): Boolean
+    val valueDeselectedCSSText: CSSText
+    val valueField: String
+    var valueHover: js.Function2[FormItem, DynamicForm, _]
+    var valueHoverHTML: js.Function2[FormItem, DynamicForm, HTMLString]
+    var valueIconClick: js.Function3[FormItem, DynamicForm, js.Any, Boolean]
+    var valueIconHeight: Int
+    var valueIconLeftPadding: Int
+    var valueIconRightPadding: Int
+    var valueIcons: Types.Object
+    var valueIconSize: Int
+    var valueIconWidth: Int
+    var valueMap: Array[Types.Object]
+    var visible: Boolean
+    var width: String | Int
+    var wrapTitle: Boolean
 }
 
 @js.native

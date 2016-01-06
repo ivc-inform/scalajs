@@ -1,9 +1,12 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
+import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
+import com.simplesys.SmartClient.System.Criterion
 import com.simplesys.isc.System.Types.CharacterCasing.CharacterCasing
 import com.simplesys.isc.System.Types.CharacterCasing._
+import com.simplesys.isc.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
 import com.simplesys.isc.System.Types._
 
 import scala.scalajs.js
@@ -33,19 +36,12 @@ trait TextItem extends FormItem {
     var maskPadChar: String
     var maskPromptChar: String
     var maskSaveLiterals: Boolean
-    var pendingStatusChanged: js.Function5[DynamicForm, FormItem, Boolean, js.Any, js.Any, Boolean]
     var printFullText: Boolean
-    var saveOnEnter: Boolean
-    var selectOnClick: Boolean
-    var selectOnFocus: Boolean
     def selectValue(): Unit
     def setKeyPressFilter(filter: String): Unit
     def setSelectionRange(start: Int, end: Int): Unit
-    def shouldFetchMissingValue(newValue: js.Any): Boolean
     var showHintInField: Boolean
-    var textBoxStyle: FormItemBaseStyle
     var usePlaceholderForHint: Boolean
-    var width: Int
 }
 
 @js.native
