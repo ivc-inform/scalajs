@@ -6,7 +6,6 @@ import scala.scalajs.js.|
 @js.native
 trait IntegerItem extends TextItem {
     def getValueAsInteger ():Int
-    def getValueAsInteger ():Int
 }
 
 @js.native
