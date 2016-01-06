@@ -31,6 +31,7 @@ import com.simplesys.isc.System.Types.VerticalAlignment._
 import com.simplesys.isc.System.Types.Visibility._
 import com.simplesys.isc.System.Types._
 import org.scalajs.dom.DocumentEvent
+import org.scalajs.dom.html.{Element, Document}
 import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js
@@ -176,7 +177,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def focusInPreviousTabElement(): Unit
     def getBottom(): Int
     def getByLocalId(localId: String): Canvas
-    def getContentElement(): DocumentEvent
+    def getContentElement(): Element
     def getContents(): HTMLElement
     def getFullDataPath(): DataPath
     def getHeight(): Int
