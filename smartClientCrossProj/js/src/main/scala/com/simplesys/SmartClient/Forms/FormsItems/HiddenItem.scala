@@ -5,6 +5,7 @@ import scala.scalajs.js.|
 
 @js.native
 trait HiddenItem extends FormItem {
+    var fetchMissingValues:Boolean
 }
 
 @js.native
