@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.Forms.FormsItems
 import com.simplesys.SmartClient.Forms.DateChooser
 import com.simplesys.SmartClient.System.Date
 import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
+import com.simplesys.isc.System.Types.Alignment.Alignment
 import com.simplesys.isc.System.Types.DateItemSelectorFormat.DateItemSelectorFormat
 import com.simplesys.isc.System.Types.{DateInputFormat, SCClassName, AutoChild}
 import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
@@ -39,6 +40,20 @@ trait DateItem extends FormItem {
     def setFiscalCalendar(fiscalCalendar: FiscalCalendar = js.native): Unit
     def setSelectionRange(start: Int, end: Int): Unit
     def setStartDate(endDate: Date | String): Unit
+    var showChooserFiscalYearPicker: Boolean
+    var showChooserWeekPicker: Boolean
+    var showHintInField: Boolean
+    var showPickerTimeItem: Boolean
+    var startDate: Date
+    var textField: TextItem with AutoChild
+    var textFieldProperties: TextItem
+    var use24HourTime: Boolean
+    var useMask: Boolean
+    var usePlaceholderForHint: Boolean
+    var useSharedPicker: Boolean
+    var useTextField: Boolean
+    var yearSelector: SelectItem with AutoChild
+    var yearSelectorProperties: SelectItem
 }
 
 @js.native
