@@ -39,7 +39,7 @@ trait PickList extends Class {
     var hideEmptyPickList: Boolean
     val iconPlacement: PickListItemIconPlacement
     val initialSort: Array[SortSpecifier]
-    val optionDataSource: DataSource | String
+    val optionDataSource: String| DataSource
     val optionFilterContext: DSRequest
     var pickListApplyRowNumberStyle: Boolean
     val pickListBaseStyle: CSSStyleName
