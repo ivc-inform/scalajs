@@ -296,7 +296,7 @@ trait FormItem extends Class {
     val value: js.Any
     def valueClipped(): Boolean
     val valueDeselectedCSSText: CSSText
-    val valueField: String
+    val valueField: js.Any
     var valueHover: js.Function2[FormItem, DynamicForm, _]
     var valueHoverHTML: js.Function2[FormItem, DynamicForm, HTMLString]
     var valueIconClick: js.Function3[FormItem, DynamicForm, js.Any, Boolean]

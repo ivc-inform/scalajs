@@ -60,7 +60,7 @@ trait PickList extends Class {
     val specialValues: ValueMap
     var textMatchStyle: TextMatchStyle
     val useClientFiltering: Boolean
-    val valueField: String
+    val valueField: js.Any
     var valueIconField: String
 }
 
