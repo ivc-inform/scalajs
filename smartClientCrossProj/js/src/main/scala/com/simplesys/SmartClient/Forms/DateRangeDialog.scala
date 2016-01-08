@@ -1,12 +1,21 @@
 package com.simplesys.SmartClient.Forms
 
+import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.Layout.{AbstractWindowCompanion, Window}
+import com.simplesys.isc.System.Types.AutoChild
 
 import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
 trait DateRangeDialog extends Window {
+    val cancelButton: IButton with AutoChild
+    val cancelButtonTitle: String
+    val clearButton: IButton with AutoChild
+    val clearButtonTitle: String
+    var headerTitle:String
+    val okButton: IButton with AutoChild
+    val okButtonTitle: String
 }
 
 @js.native

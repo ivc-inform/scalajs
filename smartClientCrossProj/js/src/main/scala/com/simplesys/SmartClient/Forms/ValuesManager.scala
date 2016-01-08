@@ -58,17 +58,35 @@ trait ValuesManager extends Class {
     def isNewRecord(): Boolean
     var members: Array[DynamicForm]
     val operator: OperatorId
-    def rememberValues ():Types.Object
-    def removeMember (member:DynamicForm|String):Unit
-    def removeMembers (members:js.Array[DynamicForm]| js.Array[String]):Unit
-    var removeOperation:String
-    def resetValues ():Unit
-    def saveData (callback:DSCallback = js.native, requestProperties:DSRequest):Unit
-
+    def rememberValues(): Types.Object
+    def removeMember(member: DynamicForm | String): Unit
+    def removeMembers(members: js.Array[DynamicForm] | js.Array[String]): Unit
+    var removeOperation: String
+    def resetValues(): Unit
+    def saveData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    var saveOperationType: DSOperationType
+    def setDataSource(dataSource: DataSource): Unit
+    def setErrors(errors: Object, showErrors: Boolean): Unit
+    def setFieldErrors(fieldName: String, errors: Array[String], showErrors: Boolean): Unit
+    def setMemberValues(ID: String, values: Types.Object): Unit
+    def setValue(fieldName: String, newValue: js.Any): Unit
+    def setValues(values: Types.Object): Unit
+    def showErrors(): Unit
+    def showFieldErrors(): Unit
+    def submit(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    var submitValues: js.Function2[Types.Object, ValuesManager, _]
+    var suppressValidationErrorCallback: Boolean
+    def synchronizeMember(member: Canvas): Unit
+    def synchronizeMembers(): Unit
+    def synchronizeMembersOnDataPath(dataPath: String): Unit
+    var updateOperation: String
+    def validate(): Boolean
+    def valuesHaveChanged(): Boolean
 }
 
 @js.native
 abstract trait AbstractValuesManagerCompanion extends AbstractClassCompanion {
+    def getById(ID: String): ValuesManager = js.native
 }
 
 @js.native
