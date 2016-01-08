@@ -19,9 +19,6 @@ trait ServerObject extends Types.Object {
     val targetXPath:String
     val visibleMethods : js.Array[Types.Object]
     val serverObject:ServerObject
-    val errorMessage:String
-    val serverCondition:String
-    val `type` :
 }
 
 

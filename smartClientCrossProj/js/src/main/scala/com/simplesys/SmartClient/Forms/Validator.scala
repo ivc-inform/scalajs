@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.Forms
 
 import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.RPC.ServerObject
 import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
 import com.simplesys.isc.System.Types.ValidatorType.ValidatorType
@@ -22,6 +23,9 @@ trait Validator extends Class {
     val stopIfFalse: Boolean
     val clientOnly: Boolean
     val resultingValue: Types.Object
+    val serverObject: ServerObject
+    val errorMessage: String
+    val serverCondition: String
     val `type`: ValidatorType | String
 }
 
