@@ -101,7 +101,6 @@ trait Window extends Layout {
     var status: String
     val statusBar: Canvas with AutoChild
     var title: HTMLString
-    val useBackMask: Boolean
 }
 
 @js.native
