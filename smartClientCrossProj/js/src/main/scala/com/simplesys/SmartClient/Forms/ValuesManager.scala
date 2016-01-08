@@ -20,7 +20,7 @@ import scala.scalajs.js.{Array, |}
 trait ValuesManager extends Class {
     def addFieldErrors(fieldName: String, errors: Array[String], showErrors: Boolean): Unit
     def addMember(member: DynamicForm | String): Unit
-    def addMember(member: js.Array[DynamicForm] | js.Array[String]): Unit
+    def addMembers(members: js.Array[DynamicForm] | js.Array[String]): Unit
     var addOperation: String
     var autoSynchronize: Boolean
     def cancel(requestProperties: DSRequest = js.native): Unit

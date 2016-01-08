@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.Forms
 
 import com.simplesys.SmartClient.Control.IButton
+import com.simplesys.SmartClient.Forms.FormsItems.DateRangeItem
 import com.simplesys.SmartClient.Layout.{AbstractWindowCompanion, Window}
 import com.simplesys.isc.System.Types.AutoChild
 
@@ -16,6 +17,7 @@ trait DateRangeDialog extends Window {
     var headerTitle:String
     val okButton: IButton with AutoChild
     val okButtonTitle: String
+    val rangeItem:DateRangeItem with AutoChild
 }
 
 @js.native
