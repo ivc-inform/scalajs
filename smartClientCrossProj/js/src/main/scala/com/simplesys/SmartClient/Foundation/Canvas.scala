@@ -396,7 +396,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def show(): void
     def showClickMask(clickAction: Callback, mode: ClickMaskMode, unmaskedTargets: Canvas | js.Array[Canvas]): String
     def showComponentMask(unmaskedChildren: js.Array[Canvas] = js.native): void
-    var showContextMenu: js.ThisFunction0[callbackHandler, Boolean]
+    def showContextMenu ():Boolean
     val showCustomScrollbars: Boolean
     var showDragShadow: Boolean
     val showEdges: Boolean

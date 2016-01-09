@@ -10,7 +10,6 @@ import scala.scalajs.js.|
 trait PickListMenu extends ScrollingMenu {
     var bodyStyleName: CSSStyleName
     var dataProperties: ResultSet
-    var emptyMessage: String
     var normalCellHeight: Int
     var styleName: CSSStyleName
 }
