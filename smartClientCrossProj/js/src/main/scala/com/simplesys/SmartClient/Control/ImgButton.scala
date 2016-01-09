@@ -19,7 +19,6 @@ trait ImgButton extends Img {
     var showClippedTitleOnHover: Boolean
     var showDisabledIcon: Boolean
     var showTitle: Boolean
-    var src: SCImgURL
     var titleClipped: js.Function1[void, Boolean]
     var titleHover: js.Function1[void, Boolean]
 }

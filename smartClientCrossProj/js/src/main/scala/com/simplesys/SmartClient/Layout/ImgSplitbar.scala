@@ -10,7 +10,6 @@ import scala.scalajs.js.|
 trait ImgSplitbar extends Img {
     var canCollapse:Boolean
     val hSrc:SCImgURL
-    val src:String
     var target:Canvas
     val vertical:Boolean
     val vSrc:SCImgURL
