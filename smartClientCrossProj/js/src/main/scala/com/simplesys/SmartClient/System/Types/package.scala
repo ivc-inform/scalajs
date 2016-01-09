@@ -17,6 +17,7 @@ package object Types {
 
     type Properties = Object
     type Record = js.Dictionary[Object]
+    type DataSourceRecord = js.Dictionary[Object]
     type CellRecord = Object
     type ListGridSelectedState = Object
     type ListGridSortState = Object
