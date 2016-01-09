@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.System.DateRange.DateRange
 import com.simplesys.SmartClient.System.{Date, Criterion}
 import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.isc.System.Types.{AutoChild, RelativeDateString}
+import com.simplesys.isc.System.Types.{void, AutoChild, RelativeDateString}
 import com.simplesys.isc.System.Types.TimeUnit.TimeUnit
 
 import scala.scalajs.js
@@ -22,8 +22,8 @@ trait MiniDateRangeItem extends StaticTextItem {
     def getValue(): DateRange
     val pickerIcon: FormItemIcon
     val rangeDialog: DateRangeDialog with AutoChild
-    def setAutoValidate(autoValidate: Boolean): Unit
-    def setValue(value: DateRange): Unit
+    def setAutoValidate(autoValidate: Boolean): void
+    def setValue(value: DateRange): void
     var toDate: Date | RelativeDateString | TimeUnit
     val toDateOnlyPrefix: String
 }

@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.DataBinding.SortSpecifier.SortSpecifier
+import com.simplesys.isc.System.Types.void
 
 import scala.scalajs.js
 
@@ -17,8 +18,8 @@ trait Array extends List {
     def min(start: Int = js.native, end: Int = js.native): Int
     def or(start: Int = js.native, end: Int = js.native): Boolean
     def setSort(sortSpecifiers: SortSpecifier): Array
-    def slide(start: Int, destination: Int): Unit
-    def slideRange(start: Int, end: Int, destination: Int): Unit
+    def slide(start: Int, destination: Int): void
+    def slideRange(start: Int, end: Int, destination: Int): void
     def sum(start: Int = js.native, end: Int = js.native): Int
     def unsort(): Boolean
 }

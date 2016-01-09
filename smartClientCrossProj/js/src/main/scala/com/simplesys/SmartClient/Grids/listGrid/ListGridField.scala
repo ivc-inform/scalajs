@@ -54,15 +54,15 @@ trait ListGridField extends Types.Object {
     var canSortClientOnly: Boolean
     var canToggle: Boolean
     var cellAlign: Alignment
-    var cellChanged: js.Function6[ListGridRecord, js.Any, js.Any, Int, Int, ListGrid[ListGridField], Unit]
+    var cellChanged: js.Function6[ListGridRecord, js.Any, js.Any, Int, Int, ListGrid[ListGridField], void]
     var cellIcon: SCImgURL
     var change: js.Function4[DynamicForm, FormItem, js.Any, js.Any, Boolean]
-    var changed: js.Function3[DynamicForm, FormItem, js.Any, Unit]
+    var changed: js.Function3[DynamicForm, FormItem, js.Any, void]
     var dataPath: String
     var dateFormatter: DateDisplayFormat
     var decimalPad: Int
     var decimalPrecision: Int
-    def defaultDynamicValue(item: FormItem, form: DynamicForm, values: Types.Object): Unit
+    def defaultDynamicValue(item: FormItem, form: DynamicForm, values: Types.Object): void
     var defaultFilterValue: js.Any
     val defaultGroupingMode: String
     val defaultIconSrc: String
@@ -70,8 +70,8 @@ trait ListGridField extends Types.Object {
     var defaultWidth: Int
     var displayField: String
     var displayValueFromRecord: Boolean
-    var editorEnter: js.Function5[ListGridRecord, js.Any, Int, Int, ListGrid[ListGridField], Unit]
-    var editorExit: js.Function6[EditCompletionEvent, ListGridRecord, js.Any, Int, Int, ListGrid[ListGridField], Unit]
+    var editorEnter: js.Function5[ListGridRecord, js.Any, Int, Int, ListGrid[ListGridField], void]
+    var editorExit: js.Function6[EditCompletionEvent, ListGridRecord, js.Any, Int, Int, ListGrid[ListGridField], void]
     val editorIconHeight: Int
     val editorIconWidth: Int
     var editorImageURLPrefix: String
@@ -108,7 +108,7 @@ trait ListGridField extends Types.Object {
     def getGroupTitle(groupValue: js.Any, groupNode: GroupNode, field: Types.Object, fieldName: String, grid: ListGrid[ListGridField]): js.Any
     def getGroupValue(value: js.Any, record: ListGridRecord, field: Types.Object, fieldName: String, grid: ListGrid[ListGridField]): js.Any
     def getRecordSummary(record: ListGridRecord, field: ListGridField, grid: ListGrid[ListGridField]): js.Any
-    def getSummaryTitle(viewer: ListGrid[ListGridField], field: ListGridField): Unit
+    def getSummaryTitle(viewer: ListGrid[ListGridField], field: ListGridField): void
     val groupGranularity: Int
     val groupingMode: String
     val groupingModes: ValueMap

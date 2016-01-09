@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
+import com.simplesys.isc.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -13,7 +14,7 @@ trait List extends Class {
     def addListAt(list: this.type, pos: Int = js.native): this.type = js.native
     def contains(obj: js.Any, pos: Int = js.native): Boolean = js.native
     def containsAll(list: this.type): Boolean = js.native
-    var dataChanged: Function0[Unit] = js.native
+    var dataChanged: Function0[void] = js.native
     def duplicate(): this.type= js.native
     def equals(list: this.type): Boolean = js.native
     def find(propertyName: String | Types.Object | AdvancedCriteria, value: Types.Object = js.native): Types.Object = js.native
@@ -36,7 +37,7 @@ trait List extends Class {
     def remove(obj: Types.Object): Boolean = js.native
     def removeAt(pos: Int): Types.Object = js.native
     def set(pos: Int, obj: Types.Object): Types.Object = js.native
-    def setLength(length: Int): Unit = js.native
+    def setLength(length: Int): void = js.native
     def sort(comparator: Function2[_, _, Int]): this.type = js.native
     def sortByProperty(property: String, up: Boolean, normalizer: Function2[_, _, Int] = js.native, context: Types.Object = js.native): this.type = js.native
 }

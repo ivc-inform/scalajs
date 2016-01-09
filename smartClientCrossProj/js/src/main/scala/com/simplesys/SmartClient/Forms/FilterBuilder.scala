@@ -11,7 +11,7 @@ import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 import com.simplesys.isc.System.Types.FieldType.FieldType
 import com.simplesys.isc.System.Types.TopOperatorAppearance.TopOperatorAppearance
 import com.simplesys.isc.System.Types.ValueItemType.ValueItemType
-import com.simplesys.isc.System.Types.{MultiAutoChild, SCClassName, AutoChild}
+import com.simplesys.isc.System.Types.{void, MultiAutoChild, SCClassName, AutoChild}
 import com.simplesys.isc.System.Types.LogicalOperator.LogicalOperator
 import com.simplesys.isc.System.Types.OperatorId.OperatorId
 
@@ -27,7 +27,7 @@ trait FilterBuilder extends Layout {
     val allowEmpty: Boolean
     val bracket: Canvas with AutoChild
     val clauseStack: VStack with AutoChild
-    def clearCriteria(): Unit
+    def clearCriteria(): void
     val criteria: AdvancedCriteria
     val dataSource: DataSource
     val defaultSubClauseOperator: LogicalOperator
@@ -35,7 +35,7 @@ trait FilterBuilder extends Layout {
     val fieldPicker: PickList with AutoChild
     val fieldPickerProperties: FormItem
     val fieldPickerTitle: String
-    var filterChanged: js.Function1[Unit, _]
+    var filterChanged: js.Function1[void, _]
     def getChildFilters(): Array[FilterBuilder]
     def getCriteria(includeEmptyValues: Boolean = js.native): AdvancedCriteria
     def getEditorType(field: DataSourceField, operatorId: OperatorId): SCClassName
@@ -64,13 +64,13 @@ trait FilterBuilder extends Layout {
     val rangeSeparator: String
     val removeButton: ImgButton with AutoChild
     val removeButtonPrompt: String
-    def removeClause(clause: FilterClause): Unit
+    def removeClause(clause: FilterClause): void
     var retainValuesAcrossFields: Boolean
     var saveOnEnter: Boolean
     var search: js.Function1[AdvancedCriteria, _]
-    def setCriteria(criteria: AdvancedCriteria): Unit
-    def setTopOperator(operator: OperatorId): Unit
-    def setTopOperatorAppearance(value: TopOperatorAppearance): Unit
+    def setCriteria(criteria: AdvancedCriteria): void
+    def setTopOperator(operator: OperatorId): void
+    def setTopOperatorAppearance(value: TopOperatorAppearance): void
     val showAddButton: Boolean
     val showFieldTitles: Boolean
     val showModeSwitcher: Boolean

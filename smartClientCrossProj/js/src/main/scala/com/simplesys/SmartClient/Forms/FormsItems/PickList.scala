@@ -11,7 +11,7 @@ import com.simplesys.SmartClient.System.Class
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
 import com.simplesys.SmartClient.System.Types.{ValueMap, Criteria}
 import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.isc.System.Types.{SCClassName, CSSStyleName}
+import com.simplesys.isc.System.Types.{void, SCClassName, CSSStyleName}
 import com.simplesys.isc.System.Types.PickListItemIconPlacement.PickListItemIconPlacement
 
 import scala.scalajs.js
@@ -26,7 +26,7 @@ trait PickList extends Class {
     var displayField: String
     var emptyPickListHeight: Int
     var emptyPickListMessage: String
-    def fetchData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    def fetchData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     var fetchDelay: Int
     var fetchDisplayedFieldsOnly: Boolean
     def filterClientPickListData(): Array[ListGridRecord]

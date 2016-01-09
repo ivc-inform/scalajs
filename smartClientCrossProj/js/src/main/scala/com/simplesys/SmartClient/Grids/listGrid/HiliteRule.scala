@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Forms.{DynamicForm, FilterClause}
 import com.simplesys.SmartClient.Foundation.Label
 import com.simplesys.SmartClient.Grids.listGrid.Hilite.Hilite
 import com.simplesys.SmartClient.Layout.{AbstractHLayoutCompanion, HLayout}
-import com.simplesys.isc.System.Types.AutoChild
+import com.simplesys.isc.System.Types.{void, AutoChild}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -21,7 +21,7 @@ trait HiliteRule extends HLayout {
     def getHilite(): Hilite
     val hiliteForm: DynamicForm with AutoChild
     val iconFieldTitle: String
-    def remove(): Unit
+    def remove(): void
     val removeButton: ImgButton with AutoChild
     val removeButtonPrompt: String
     val showRemoveButton: Boolean

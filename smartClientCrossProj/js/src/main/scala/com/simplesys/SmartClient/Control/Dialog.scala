@@ -14,7 +14,7 @@ trait Dialog extends Window {
     var buttonClick:js.Function2[Button, Int, _]
     val buttons: Array[Button]
     var cancelClick:js.Function1[void, _]
-    var closeClick:js.Function1[void, Boolean]
+    val confirmIcon:SCImgURL
 }
 
 @js.native

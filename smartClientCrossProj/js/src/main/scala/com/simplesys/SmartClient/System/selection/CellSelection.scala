@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.System.selection
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
+import com.simplesys.isc.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -17,7 +18,7 @@ trait CellSelection extends Class {
     def getSelectedRecord(): ListGridRecord
     def selectCell(rowNum: Int, colNum: Int): Boolean
     def selectCellList(list: js.Array[Types.Object]): Boolean
-    def selectionChanged(): Unit
+    def selectionChanged(): void
     def selectSingleCell(rowNum: Int, colNum: Int): Boolean
 }
 

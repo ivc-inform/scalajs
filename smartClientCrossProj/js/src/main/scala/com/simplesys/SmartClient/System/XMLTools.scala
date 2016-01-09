@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.RPC.RPCRequest
 import com.simplesys.SmartClient.System.Types._
-import com.simplesys.isc.System.Types.URL
+import com.simplesys.isc.System.Types.{void, URL}
 
 import scala.scalajs.js
 import scala.scalajs.js.{Object, |}
@@ -12,10 +12,10 @@ trait XMLTools extends Class
 
 @js.native
 abstract trait AbstractXMLToolsCompanion extends AbstractClassCompanion {
-    def disableIEXMLHackaround: Unit = js.native
-    def loadWSDL(wsdlURL: URL, callback: Callback, requestProperties: RPCRequest = js.native, autoLoadImports: Boolean = js.native): Unit = js.native
-    def loadXML(URL: URL, callback: Callback, requestProperties: RPCRequest = js.native): Unit = js.native
-    def loadXMLSchema(schemaURL: URL, callback: Callback, requestProperties: RPCRequest = js.native, autoLoadImports: Boolean = js.native): Unit = js.native
+    def disableIEXMLHackaround: void = js.native
+    def loadWSDL(wsdlURL: URL, callback: Callback, requestProperties: RPCRequest = js.native, autoLoadImports: Boolean = js.native): void = js.native
+    def loadXML(URL: URL, callback: Callback, requestProperties: RPCRequest = js.native): void = js.native
+    def loadXMLSchema(schemaURL: URL, callback: Callback, requestProperties: RPCRequest = js.native, autoLoadImports: Boolean = js.native): void = js.native
     def nativeXMLAvailable(): Boolean = js.native
     def parseXML(xmlText: String): XMLDocument = js.native
     def selectNodes(element: XMLDocument | XMLElement | String, expression: XPath, namespaces: String = js.native): js.Array[XMLNode] = js.native

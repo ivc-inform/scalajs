@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.isc.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.isc.System.Types.TimeUnit.TimeUnit
-import com.simplesys.isc.System.Types.{HTMLString, AutoChild}
+import com.simplesys.isc.System.Types.{void, HTMLString, AutoChild}
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -13,7 +13,7 @@ trait TimeItem extends FormItem {
     val ampmItemProperties: SelectItem
     var ampmItemTitle: HTMLString
     var browserInputType: String
-    def deselectValue(start: Boolean = js.native): Unit
+    def deselectValue(start: Boolean = js.native): void
     def getDuration(timeUnit: TimeUnit = js.native): Int
     def getEnteredValue(): String
     def getHourValues(): Array[Int]
@@ -54,16 +54,16 @@ trait TimeItem extends FormItem {
     var secondMaxValue: Int
     var secondMinValue: Int
     var secondValues: js.Array[Int]
-    def selectValue(): Unit
-    def setHours(hours: Int): Unit
-    def setHourValues(values: Array[Int]): Unit
-    def setMilliseconds(milliseconds: Int): Unit
-    def setMillisecondValues(values: Array[Int]): Unit
-    def setsetMinutes(milliseconds: Int): Unit
-    def setsetMinutesValues(values: Array[Int]): Unit
-    def setSeconds(milliseconds: Int): Unit
-    def setSecondValues(values: Array[Int]): Unit
-    def setSelectionRange(start: Int, end: Int): Unit
+    def selectValue(): void
+    def setHours(hours: Int): void
+    def setHourValues(values: Array[Int]): void
+    def setMilliseconds(milliseconds: Int): void
+    def setMillisecondValues(values: Array[Int]): void
+    def setsetMinutes(milliseconds: Int): void
+    def setsetMinutesValues(values: Array[Int]): void
+    def setSeconds(milliseconds: Int): void
+    def setSecondValues(values: Array[Int]): void
+    def setSelectionRange(start: Int, end: Int): void
     var showHintInField:Boolean
     var showHourItem:Boolean
     var showMillisecondItem:Boolean

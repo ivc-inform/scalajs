@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Forms.FormsItems
 import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.Tree
-import com.simplesys.isc.System.Types.{CSSStyleName, HTMLString, AutoChild}
+import com.simplesys.isc.System.Types.{void, CSSStyleName, HTMLString, AutoChild}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -15,11 +15,11 @@ trait PickTreeItem extends CanvasItem {
     val dataProperties: Tree
     val dataSource: DataSource | String
     val emptyMenuMessage: HTMLString
-    def fetchData(): Unit
+    def fetchData(): void
     val loadDataOnDemand: Boolean
     var pendingButtonStyle: CSSStyleName
-    def setEmptyDisplayValue(emptyDisplayValue: String): Unit
-    def setValueTree(valueTree: Tree): Unit
+    def setEmptyDisplayValue(emptyDisplayValue: String): void
+    def setValueTree(valueTree: Tree): void
     val valueTree: Tree
 }
 

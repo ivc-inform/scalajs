@@ -138,7 +138,7 @@ class CanvasProps extends ClassProps {
     var editProxy: ScOption[EditNode with AutoChild] = ScNone
     var editProxyConstructor: ScOption[SCClassName] = ScNone
     var extraSpace: ScOption[Int] = ScNone
-    var focusChanged: ScOption[Function2[canvasHandler, Boolean, Unit]] = ScNone
+    var focusChanged: ScOption[Function2[canvasHandler, Boolean, void]] = ScNone
     var groupBorderCSS: ScOption[String] = ScNone
     var groupLabelBackgroundColor: ScOption[CSSColor] = ScNone
     var groupLabelStyleName: ScOption[CSSStyleName] = ScNone
@@ -192,13 +192,13 @@ class CanvasProps extends ClassProps {
     var mouseStillDownInitialDelay: ScOption[Int] = ScNone
     var mouseUp: ScOption[js.ThisFunction0[canvasHandler, Boolean]] = ScNone
     var mouseWheel: ScOption[js.ThisFunction0[canvasHandler, Boolean]] = ScNone
-    var moved: ScOption[Function3[canvasHandler, Int, Int, Unit]] = ScNone
+    var moved: ScOption[Function3[canvasHandler, Int, Int, void]] = ScNone
     var noDoubleClicks: ScOption[Boolean] = ScNone
     var opacity: ScOption[Int] = ScNone
     var overflow: ScOption[Overflow] = ScNone
     var padding: ScOption[Int] = ScNone
     var parentCanvas: ScOption[Canvas] = ScNone
-    var parentMoved: ScOption[Function3[canvasHandler, Int, Int, Unit]] = ScNone
+    var parentMoved: ScOption[Function3[canvasHandler, Int, Int, void]] = ScNone
     var peers: ScOption[Seq[Canvas]] = ScNone
     var percentBox: ScOption[PercentBoxModel] = ScNone
     var percentSource: ScOption[Canvas] = ScNone
@@ -262,6 +262,6 @@ class CanvasProps extends ClassProps {
     var useTouchScrolling: ScOption[Boolean] = ScNone
     var valuesManager: ScOption[ValuesManager] = ScNone
     var visibility: ScOption[Visibility] = ScNone
-    var visibilityChanged: ScOption[Function2[canvasHandler, Boolean, Unit]] = ScNone
+    var visibilityChanged: ScOption[Function2[canvasHandler, Boolean, void]] = ScNone
     var width: ScOption[Int] = ScNone
 }

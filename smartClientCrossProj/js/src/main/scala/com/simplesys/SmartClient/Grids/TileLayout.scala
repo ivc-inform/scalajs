@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.DataBinding.DataBoundComponent
 import com.simplesys.SmartClient.Foundation.{AbstractCanvasCompanion, Canvas}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{Object, Record}
-import com.simplesys.isc.System.Types.AutoChild
+import com.simplesys.isc.System.Types.{void, AutoChild}
 import com.simplesys.isc.System.Types.DragDataAction.DragDataAction
 import com.simplesys.isc.System.Types.Orientation.Orientation
 import com.simplesys.isc.System.Types.Overflow.Overflow
@@ -17,7 +17,7 @@ import scala.scalajs.js.|
 
 @js.native
 trait TileLayout extends Canvas {
-    def addTile(tile: Canvas, index: Int = js.native): Unit
+    def addTile(tile: Canvas, index: Int = js.native): void
     var animateTileChange: Boolean
     var autoWrapLines: Boolean
     var dragDataAction: DragDataAction
@@ -30,13 +30,13 @@ trait TileLayout extends Canvas {
     val orientation: Orientation
     var paddingAsLayoutMargin: Boolean
     def removeTile(tileID: String | Canvas): Boolean
-    def setTileHeight(height: Int): Unit
-    def setTileHMargin(margin: Int): Unit
-    def setTileMargin(margin: Int): Unit
-    def setTileSize(size: Int): Unit
-    def setTilesPerLine(tilesPerLine: Int): Unit
-    def setTileVMargin(margin: Int): Unit
-    def setTileWidth(width: Int): Unit
+    def setTileHeight(height: Int): void
+    def setTileHMargin(margin: Int): void
+    def setTileMargin(margin: Int): void
+    def setTileSize(size: Int): void
+    def setTilesPerLine(tilesPerLine: Int): void
+    def setTileVMargin(margin: Int): void
+    def setTileWidth(width: Int): void
     val tileHeight: Int
     val tileHMargin: Int
     val tileMargin: Int

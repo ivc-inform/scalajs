@@ -31,15 +31,15 @@ import scala.scalajs.js.{Any, Array, |}
 @js.native
 trait DynamicForm extends Canvas with DataBoundComponent {
     var action: URL
-    def addFieldErrors(fieldName: String, errors: Array[String], show: Boolean): Unit
+    def addFieldErrors(fieldName: String, errors: Array[String], show: Boolean): void
     var allowExpressions: Boolean
     var autoComplete: AutoComplete
     val autoFetchTextMatchStyle: TextMatchStyle
     var autoFocus: Boolean
     var autoFocusOnError: Boolean
     var browserSpellCheck: Boolean
-    def cancel(requestProperties: DSRequest = js.native): Unit
-    def cancelEditing(): Unit
+    def cancel(requestProperties: DSRequest = js.native): void
+    def cancelEditing(): void
     var cancelParamName: String
     var cancelParamValue: String
     var canEdit: Boolean
@@ -47,35 +47,35 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     val canTabToSectionHeaders: Boolean
     var cellBorder: Int
     var cellPadding: Int
-    def clearErrors(show: Boolean): Unit
-    def clearFieldErrors(fieldName: String, show: Boolean): Unit
-    def clearValue(fieldName: String): Unit
-    def clearValues(): Unit
+    def clearErrors(show: Boolean): void
+    def clearFieldErrors(fieldName: String, show: Boolean): void
+    def clearValue(fieldName: String): void
+    def clearValues(): void
     var clipItemTitles: Boolean
     var clipStaticValue: Boolean
     var colWidths: Array[Any]
-    def completeEditing(): Unit
+    def completeEditing(): void
     var dateFormatter: DateDisplayFormat
     var datetimeFormatter: DateDisplayFormat
     val defaultSearchOperator: OperatorId
     var disableValidation: Boolean
-    def editNewRecord(initialValues: Types.Object | Record = js.native): Unit
-    def editRecord(record: Record): Unit
-    def editSelectedData(selectionComponent: ListGrid[ListGridField] | String): Unit
+    def editNewRecord(initialValues: Types.Object | Record = js.native): void
+    def editRecord(record: Record): void
+    def editSelectedData(selectionComponent: ListGrid[ListGridField] | String): void
     var encoding: Encoding
     val errorItemCellStyle: String
     val errorItemProperties: Types.Object
     var errorOrientation: Alignment
     var errors: Array[Types.Object]
     val errorsPreamble: HTMLString
-    def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
-    def fetchRelatedData(record: ListGridRecord, schema: Canvas | DataSource | String, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
+    def fetchRelatedData(record: ListGridRecord, schema: Canvas | DataSource | String, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def fieldIsEditable(field: FormItem | Int | String): Boolean
     var fields: Array[FormItem]
-    def filterData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    def filterData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     var fixedColWidths: Boolean
-    def focusInItem(itemName: String): Unit
-    def formSubmitFailed(): Unit
+    def focusInItem(itemName: String): void
+    def formSubmitFailed(): void
     var formSubmitFailedWarning: String
     def getChangedValues(): Types.Object
     def getEditorType(field: Types.Object, values: Types.Object = js.native): String
@@ -88,7 +88,7 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     def getFields(): Array[FormItem]
     def getFocusItem(): FormItem
     def getItem(itemName: String): FormItem
-    def getItemErrorHTML(item: FormItem, error: Array[String]): Unit
+    def getItemErrorHTML(item: FormItem, error: Array[String]): void
     def getItems(): Array[FormItem]
     def getOldValues(): Types.Object
     def getSaveOperationType(requestProperties: DSRequest = js.native): DSOperationType
@@ -99,11 +99,11 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     def getValues(): Types.Object
     def getValuesAsAdvancedCriteria(textMatchStyle: TextMatchStyle = js.native): AdvancedCriteria
     def getValuesAsCriteria(advanced: Boolean, textMatchStyle: TextMatchStyle = js.native): Criteria | AdvancedCriteria
-    def handleAsyncValidationReply(success: Boolean, errors: Types.Object): Unit
+    def handleAsyncValidationReply(success: Boolean, errors: Types.Object): void
     var handleHiddenValidationErrors: js.ThisFunction1[DynamicForm, Types.Object, Boolean]
     def hasErrors(): Boolean
     def hasFieldErrors(fieldName: String): Boolean
-    def hideItem(itemName: String): Unit
+    def hideItem(itemName: String): void
     var hiliteRequiredFields: Boolean
     var implicitSave: Boolean
     var implicitSaveDelay: Int
@@ -140,46 +140,46 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     var requiredRightTitlePrefix: HTMLString
     var requiredTitlePrefix: HTMLString
     var requiredTitleSuffix: HTMLString
-    def reset(): Unit
-    def resetValues(): Unit
+    def reset(): void
+    def resetValues(): void
     val revertValueKey: KeyIdentifier
     var rightTitlePrefix: HTMLString
     var rightTitleSuffix: HTMLString
-    def saveData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    def saveData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     var saveOnEnter: Boolean
     var saveOperationType: DSOperationType
     var sectionVisibilityMode: VisibilityMode
     var selectOnClick: Boolean
     var selectOnFocus: Boolean
-    def setAction(action: URL): Unit
-    def setCanEdit(canEdit: Boolean): Unit
-    def setErrors(errors: Types.Object, showErrors: Boolean): Unit
-    def setFieldErrors(fieldName: String, errors: Array[String], show: Boolean): Unit
-    def setFields(itemList: Array[FormItem]): Unit
-    def setItems(itemList: Array[FormItem]): Unit
-    def setMethod(method: FormMethod): Unit
-    def setReadOnlyDisplay(appearance: ReadOnlyDisplayAppearance): Unit
-    def setSaveOperationType(operationType: DSOperationType): Unit
-    def setTarget(target: String): Unit
-    def setTitleOrientation(titleOrientation: TitleOrientation): Unit
-    def setValue(fieldName: String, value: js.Any): Unit
-    def setValueMap(itemName: String, valueMap: ValueMap): Unit
-    def setValues(newData: Types.Object = js.native): Unit
-    def setValuesAsCriteria(criteria: Criterion): Unit
+    def setAction(action: URL): void
+    def setCanEdit(canEdit: Boolean): void
+    def setErrors(errors: Types.Object, showErrors: Boolean): void
+    def setFieldErrors(fieldName: String, errors: Array[String], show: Boolean): void
+    def setFields(itemList: Array[FormItem]): void
+    def setItems(itemList: Array[FormItem]): void
+    def setMethod(method: FormMethod): void
+    def setReadOnlyDisplay(appearance: ReadOnlyDisplayAppearance): void
+    def setSaveOperationType(operationType: DSOperationType): void
+    def setTarget(target: String): void
+    def setTitleOrientation(titleOrientation: TitleOrientation): void
+    def setValue(fieldName: String, value: js.Any): void
+    def setValueMap(itemName: String, valueMap: ValueMap): void
+    def setValues(newData: Types.Object = js.native): void
+    def setValuesAsCriteria(criteria: Criterion): void
     val showComplexFieldsRecursively: Boolean
     val showDeletions: Boolean
     val showErrorIcons: Boolean
-    def showErrors(): Unit
+    def showErrors(): void
     var showErrorStyle: Boolean
     var showErrorText: Boolean
-    def showFieldErrors(fieldName: String): Unit
+    def showFieldErrors(fieldName: String): void
     var showInlineErrors: Boolean
-    def showItem(fieldName: String): Unit
+    def showItem(fieldName: String): void
     var showOldValueInHover: Boolean
     var showTitlesWithErrorMessages: Boolean
     val stopOnError: Boolean
-    def submit(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
-    def submitForm(): Unit
+    def submit(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
+    def submitForm(): void
     var submitValues: js.Function2[Types.Object, DynamicForm, _]
     var suppressValidationErrorCallback: Boolean
     var synchronousValidation: Boolean
@@ -194,11 +194,11 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     var titleWidth: String | Int
     var userTask: UserTask
     def validate(validateHiddenFields: Boolean): Boolean
-    def validateData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    def validateData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     var validateOnChange: Boolean
     var validateOnExit: Boolean
     var validationURL: URL
-    def valueHoverHTML(item: FormItem): Unit
+    def valueHoverHTML(item: FormItem): void
     var values: Types.Object
     def valuesAreValid(validateHiddenFields: Boolean, returnErrors: Boolean): Boolean | Types.Object
     var valuesChanged: js.ThisFunction0[DynamicForm, _]

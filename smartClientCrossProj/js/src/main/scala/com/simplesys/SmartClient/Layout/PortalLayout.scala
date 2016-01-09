@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Layout
 import com.simplesys.SmartClient.Foundation.{Canvas, AbstractCanvasCompanion}
 import com.simplesys.SmartClient.Layout.portalLayout.PortalPosition.PortalPosition
 import com.simplesys.SmartClient.Layout.portalLayout.Portlet
-import com.simplesys.isc.System.Types.MultiAutoChild
+import com.simplesys.isc.System.Types.{void, MultiAutoChild}
 import com.simplesys.isc.System.Types.Overflow.Overflow
 
 import scala.scalajs.js
@@ -11,8 +11,8 @@ import scala.scalajs.js.|
 
 @js.native
 trait PortalLayout extends Layout {
-    def addColumn(index: Int): Unit
-    def addPortlet(portlet: Portlet, colNum: Int = js.native, rowWithinCol: Int = js.native, positionInExistingRow: Int = js.native): Unit
+    def addColumn(index: Int): void
+    def addPortlet(portlet: Portlet, colNum: Int = js.native, rowWithinCol: Int = js.native, positionInExistingRow: Int = js.native): void
     var canResizeColumns: Boolean
     var canResizePortlets: Boolean
     var canShrinkColumnWidths: Boolean
@@ -28,31 +28,31 @@ trait PortalLayout extends Layout {
     def getPortlets(): js.Array[Portlet]
     val numColumns: Int
     var portletDropTypes: js.Array[String]
-    def portletMaximized(portlet: Portlet): Unit
-    def portletMinimized(portlet: Portlet): Unit
-    def portletRestored(portlet: Portlet): Unit
+    def portletMaximized(portlet: Portlet): void
+    def portletMinimized(portlet: Portlet): void
+    def portletRestored(portlet: Portlet): void
     val portlets: js.Array[Portlet]
-    var portletsChanged: js.ThisFunction0[callbackHandler, Unit]
-    var portletsResized: js.ThisFunction0[callbackHandler, Unit]
+    var portletsChanged: js.ThisFunction0[callbackHandler, void]
+    var portletsResized: js.ThisFunction0[callbackHandler, void]
     var preventColumnUnderflow: Boolean
     var preventRowUnderflow: Boolean
     var preventUnderflow: Boolean
-    def removeColumn(index: Int): Unit
-    def removePortlet(portlet: Portlet): Unit
+    def removeColumn(index: Int): void
+    def removePortlet(portlet: Portlet): void
     val row: Layout with MultiAutoChild
     val rowLayout: Layout with MultiAutoChild
-    def setCanResizeColumns(canResize: Boolean): Unit
-    def setCanResizePortlets(canResize: Boolean): Unit
-    def setCanShrinkColumnWidths(canShrink: Boolean): Unit
-    def setCanStretchColumnWidths(canStretch: Boolean): Unit
-    def setColumnBorder(columnBorder: String): Unit
-    def setColumnOverflow(overflow: Overflow): Unit
-    def setColumnWidth(colNumber: Int, width: String | Int): Unit
-    def setPortletDropTypes(portletDropTypes: js.Array[String]): Unit
-    def setPreventRowUnderflow(preventRowUnderflow: Boolean): Unit
-    def setPreventUnderflow(preventUnderflow: Boolean): Unit
-    def setShowColumnMenus(showMenus: Boolean): Unit
-    def setStretchColumnWidthsProportionally(stretchProportionally: Boolean): Unit
+    def setCanResizeColumns(canResize: Boolean): void
+    def setCanResizePortlets(canResize: Boolean): void
+    def setCanShrinkColumnWidths(canShrink: Boolean): void
+    def setCanStretchColumnWidths(canStretch: Boolean): void
+    def setColumnBorder(columnBorder: String): void
+    def setColumnOverflow(overflow: Overflow): void
+    def setColumnWidth(colNumber: Int, width: String | Int): void
+    def setPortletDropTypes(portletDropTypes: js.Array[String]): void
+    def setPreventRowUnderflow(preventRowUnderflow: Boolean): void
+    def setPreventUnderflow(preventUnderflow: Boolean): void
+    def setShowColumnMenus(showMenus: Boolean): void
+    def setStretchColumnWidthsProportionally(stretchProportionally: Boolean): void
     var showColumnMenus: Boolean
     var stretchColumnWidthsProportionally: Boolean
     def willAcceptPortletDrop(dragTarget: Int, colNum: Int, rowNum: Int, dropPosition: Int = js.native): Boolean

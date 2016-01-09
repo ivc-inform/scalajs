@@ -28,28 +28,28 @@ trait ColumnTree extends Layout with DataBoundComponent {
     var customIconProperty: String
     var data: Tree
     var dataProperties: Tree
-    def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     var fields: Array[ListGridField]
-    def filterData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    def filterData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     val firstColumnTitle: String
     var folderIcon: SCImgURL
     def getColumn(column: TreeNode): ListGrid[ListGridField]
     def getColumnProperties(node: TreeNode, colNum: Int): ListGrid[ListGridField]
-    def getColumnTitle(node: TreeNode, colNum: Int): Unit
+    def getColumnTitle(node: TreeNode, colNum: Int): void
     def getData(): Tree
     def getIcon(node: TreeNode): URL
     def getNodeTitle(node: TreeNode, recordNum: Int, field: String): HTMLString
     def getRecord(index: Int, colNum: Int): TreeNode
     def getSelectedRecord(): ListGridRecord
     val loadDataOnDemand: Boolean
-    def navigateBack(): Unit
+    def navigateBack(): void
     var nodeIcon: SCImgURL
     var nodeSelected: js.Function2[ListGrid[ListGridField], TreeNode, Boolean]
     var openIconSuffix: String
-    def selectRecord(record: ListGridRecord | Int, newState: Boolean = js.native, colNum: Int = js.native): Unit
-    def selectRecords(records: js.Array[ListGridRecord] | js.Array[Int], newState: Boolean = js.native, colNum: Int = js.native): Unit
-    def setData(newData: Tree): Unit
-    def shouldShowHeader(node: TreeNode, colNum: Int): Unit
+    def selectRecord(record: ListGridRecord | Int, newState: Boolean = js.native, colNum: Int = js.native): void
+    def selectRecords(records: js.Array[ListGridRecord] | js.Array[Int], newState: Boolean = js.native, colNum: Int = js.native): void
+    def setData(newData: Tree): void
+    def shouldShowHeader(node: TreeNode, colNum: Int): void
     var showCustomIconOpen:Boolean
     var showHeaders:Boolean
     var showMultipleColumns:Boolean

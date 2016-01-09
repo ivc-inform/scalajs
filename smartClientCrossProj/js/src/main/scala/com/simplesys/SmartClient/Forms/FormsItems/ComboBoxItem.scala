@@ -8,7 +8,7 @@ import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
 import com.simplesys.SmartClient.System.Criterion
 import com.simplesys.isc.System.Types.PanelPlacement.PanelPlacement
-import com.simplesys.isc.System.Types.{HTMLString, AutoChild, CSSStyleName}
+import com.simplesys.isc.System.Types.{void, HTMLString, AutoChild, CSSStyleName}
 import com.simplesys.isc.System.Types.PickListItemIconPlacement.PickListItemIconPlacement
 
 import scala.scalajs.js
@@ -19,7 +19,7 @@ trait ComboBoxItem extends TextItem with PickList {
     var addUnknownValues: Boolean
     var allowEmptyValue: Boolean
     var autoFetchData: Boolean
-    def canEditCriterion(): Unit
+    def canEditCriterion(): void
     var completeOnTab: Boolean
     var defaultToFirstOption: Boolean
     val filterFields: Array[String]
@@ -41,7 +41,7 @@ trait ComboBoxItem extends TextItem with PickList {
     var searchStringTooShortMessage:String
     var separateSpecialValues:Boolean
     var separateValuesList:ListGrid[ListGridField]
-    def setCriterion ():Unit
+    def setCriterion ():void
     def shouldGenerateExactMatchCriteria ():Boolean
     var showPickListOnKeypress:Boolean
 }

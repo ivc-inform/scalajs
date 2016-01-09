@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
-import com.simplesys.isc.System.Types.HTMLString
+import com.simplesys.isc.System.Types.{void, HTMLString}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -8,7 +8,7 @@ import scala.scalajs.js.|
 @js.native
 trait LinkItem extends TextItem {
     var linkTitle: HTMLString
-    def setLinkTitle(title: HTMLString): Unit
+    def setLinkTitle(title: HTMLString): void
     var target: String
 }
 

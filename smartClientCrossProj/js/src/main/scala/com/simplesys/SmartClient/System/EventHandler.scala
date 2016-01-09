@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System._
-import com.simplesys.isc.System.Types.{SCImgURL, KeyName}
+import com.simplesys.isc.System.Types.{void, SCImgURL, KeyName}
 import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js
@@ -33,9 +33,9 @@ abstract trait AbstractEventHandlerCompanion extends AbstractClassCompanion {
     def leftButtonDown(): Boolean = js.native
     def middleButtonDown(): Boolean = js.native
     def rightButtonDown(): Boolean = js.native
-    def setDragTracker(html: String, newWidth: Int = js.native, newHeight: Int = js.native, offsetX: Int = js.native, offsetY: Int = js.native, properties: Canvas = js.native): Unit = js.native
-    def setDragTrackerImage(src: SCImgURL, x: Int = js.native, y: Int = js.native): Unit = js.native
-    def setNativeDragData(data: Types.Object | String, strData: String = js.native): Unit = js.native
+    def setDragTracker(html: String, newWidth: Int = js.native, newHeight: Int = js.native, offsetX: Int = js.native, offsetY: Int = js.native, properties: Canvas = js.native): void = js.native
+    def setDragTrackerImage(src: SCImgURL, x: Int = js.native, y: Int = js.native): void = js.native
+    def setNativeDragData(data: Types.Object | String, strData: String = js.native): void = js.native
     def shiftKeyDown(): Boolean = js.native
     var STILL_DOWN_DELAY: Int = js.native
     var STOP_BUBBLING: String = js.native

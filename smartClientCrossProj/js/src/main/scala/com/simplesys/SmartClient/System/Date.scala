@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.System
 import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
 import com.simplesys.SmartClient.System.date.FiscalYear.FiscalYear
 import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.isc.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -28,17 +29,17 @@ object Date extends Types.Object {
     def getWeekendDays(): js.Array[Int] = js.native
     var monthNames: js.Array[String] = js.native
     def parseInput(dateString: String, format: String = js.native, centuryThreshold: Int = js.native, suppressConversion: Boolean = js.native): Date = js.native
-    def setDefaultDateSeparator(separator: String): Unit = js.native
-    def setFirstDayOfWeek(firstDayOfWeek: Int): Unit = js.native
-    def setFiscalCalendar (fiscalCalendar:FiscalCalendar ): Unit = js.native
-    def setInputFormat (format:String): Unit = js.native
-    def setNormalDatetimeDisplayFormat (format: String | DateDisplayFormat): Unit = js.native
-    def setNormalDisplayFormat (format: String | DateDisplayFormat): Unit = js.native
-    def setShortDatetimeDisplayFormat (format: String | DateDisplayFormat): Unit = js.native
-    def setShortDisplayFormat (format: String | DateDisplayFormat): Unit = js.native
-    def  setShowChooserFiscalYearPickers (showChooserFiscalYearPickers:Boolean): Unit = js.native
-    def  setShowChooserWeekPickers (showChooserWeekPickers:Boolean): Unit = js.native
-    def  setWeekendDays (weekendDays:js.Array[Int]): Unit = js.native
+    def setDefaultDateSeparator(separator: String): void = js.native
+    def setFirstDayOfWeek(firstDayOfWeek: Int): void = js.native
+    def setFiscalCalendar (fiscalCalendar:FiscalCalendar ): void = js.native
+    def setInputFormat (format:String): void = js.native
+    def setNormalDatetimeDisplayFormat (format: String | DateDisplayFormat): void = js.native
+    def setNormalDisplayFormat (format: String | DateDisplayFormat): void = js.native
+    def setShortDatetimeDisplayFormat (format: String | DateDisplayFormat): void = js.native
+    def setShortDisplayFormat (format: String | DateDisplayFormat): void = js.native
+    def  setShowChooserFiscalYearPickers (showChooserFiscalYearPickers:Boolean): void = js.native
+    def  setShowChooserWeekPickers (showChooserWeekPickers:Boolean): void = js.native
+    def  setWeekendDays (weekendDays:js.Array[Int]): void = js.native
     var shortDayNames:js.Array[String] = js.native
     var shortMonthNames:js.Array[String] = js.native
     var weekendDays:js.Array[Int] = js.native
@@ -56,7 +57,7 @@ trait Date extends Types.Object {
     def getShortDayName(length: Int): String
     def getShortMonthName(length: Int): String
     def getWeek(): Int
-    def setDefaultDateSeparator(separator: String): Unit
+    def setDefaultDateSeparator(separator: String): void
     def toDateStamp(): String
     def toEuropeanShortDate(): String
     def toEuropeanShortDateTime(): String

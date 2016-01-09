@@ -25,8 +25,8 @@ trait Window extends Layout {
     var bodyStyle: CSSStyleName
     var bringToFrontOnMouseUp: Boolean
     var canFocusInHeaderButtons: Boolean
-    def centerInPage(): Unit
-    def close(): Unit
+    def centerInPage(): void
+    def close(): void
     val closeButton: ImgButton with AutoChild
     var closeClick: js.ThisFunction0[callbackHandler, Boolean]
     var contentLayout: ContentLayoutPolicy
@@ -35,7 +35,7 @@ trait Window extends Layout {
     var dismissOnEscape: Boolean
     var dismissOnOutsideClick: Boolean
     val fillSpaceStyleName: CSSStyleName
-    def flash(): Unit
+    def flash(): void
     val footer: HLayout with AutoChild
     val footerControls: js.Array[String]
     val footerHeight: Int
@@ -53,10 +53,10 @@ trait Window extends Layout {
     var hiliteHeaderStyle: CSSStyleName
     var isModal: Boolean
     val items: js.Array[Canvas]
-    def maximize(): Unit
+    def maximize(): void
     val maximizeButton: ImgButton with AutoChild
     var maximized: Boolean
-    def minimize(): Unit
+    def minimize(): void
     var minimizeAcceleration: AnimationAcceleration
     val minimizeButton: ImgButton with AutoChild
     val minimized: Boolean
@@ -71,21 +71,21 @@ trait Window extends Layout {
     def removeItem(item: Canvas): js.Array[Canvas]
     def removeItems(items: js.Array[Canvas]): js.Array[Canvas]
     val resizer: ImgButton with AutoChild
-    def restore(): Unit
+    def restore(): void
     val restoreButton: ImgButton with AutoChild
-    def setAutoSize(autoSize: Boolean): Unit
-    def setBodyColor(newBodyColor: CSSColor): Unit
-    def setBodyStyle(newBodyStyle: CSSStyleName): Unit
-    def setHeaderStyle(newHeaderStyle: CSSStyleName): Unit
-    def setHiliteBodyColor(newHiliteBodyColor: CSSColor): Unit
-    def setShowCloseButton(): Unit
-    def setShowHeaderIcon(): Unit
-    def setShowMaximizeButton(): Unit
-    def setShowMinimizeButton(): Unit
-    def setSrc(url: String): Unit
-    def setStatus(statusString: String): Unit
-    def setTitle(newTitle: String): Unit
-    def shouldDismissOnEscape(): Unit
+    def setAutoSize(autoSize: Boolean): void
+    def setBodyColor(newBodyColor: CSSColor): void
+    def setBodyStyle(newBodyStyle: CSSStyleName): void
+    def setHeaderStyle(newHeaderStyle: CSSStyleName): void
+    def setHiliteBodyColor(newHiliteBodyColor: CSSColor): void
+    def setShowCloseButton(): void
+    def setShowHeaderIcon(): void
+    def setShowMaximizeButton(): void
+    def setShowMinimizeButton(): void
+    def setSrc(url: String): void
+    def setStatus(statusString: String): void
+    def setTitle(newTitle: String): void
+    def shouldDismissOnEscape(): void
     var showBody: Boolean
     var showCloseButton: Boolean
     var showFooter: Boolean

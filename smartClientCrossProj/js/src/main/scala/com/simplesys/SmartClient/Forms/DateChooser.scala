@@ -5,7 +5,8 @@ import com.simplesys.SmartClient.Forms.FormsItems.TimeItem
 import com.simplesys.SmartClient.Layout.{HLayout, AbstractVLayoutCompanion, VLayout}
 import com.simplesys.SmartClient.System.Date
 import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
-import com.simplesys.isc.System.Types.{SCImgURL, SCClassName, CSSStyleName, AutoChild}
+import com.simplesys.isc.System.Types._
+import com.simplesys.isc.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -71,8 +72,8 @@ trait DateChooser extends VLayout {
     var prevYearIconRTL: SCImgURL
     var prevYearIconWidth: Int
     var selectedWeekStyle: CSSStyleName
-    def setData(date: Date): Unit
-    def setFiscalCalendar(fiscalCalendar: FiscalCalendar = js.native): Unit
+    def setData(date: Date): void
+    def setFiscalCalendar(fiscalCalendar: FiscalCalendar = js.native): void
     var showApplyButton: Boolean
     var showCancelButton: Boolean
     var showDoubleYearIcon: Boolean

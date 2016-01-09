@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Layout.tabSet
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Layout.TabSet
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.isc.System.Types.{HTMLString, SCImgURL}
+import com.simplesys.isc.System.Types.{void, HTMLString, SCImgURL}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -29,7 +29,7 @@ object Tab extends Types.Object {
     var pickerTitle: HTMLString = js.native
     var prompt: HTMLString = js.native
     var tabDeselected: js.Function7[TabSet, Int, Canvas, String, Tab, Tab, String, Boolean] = js.native
-    var tabSelected: js.Function6[TabSet, Int, Canvas, String, Tab, String, Unit] = js.native
+    var tabSelected: js.Function6[TabSet, Int, Canvas, String, Tab, String, void] = js.native
     var title: HTMLString = js.native
     var width: Int = js.native
 }

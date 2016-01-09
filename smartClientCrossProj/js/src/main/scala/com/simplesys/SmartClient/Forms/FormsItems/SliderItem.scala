@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.Class
-import com.simplesys.isc.System.Types.AutoChild
+import com.simplesys.isc.System.Types.{void, AutoChild}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -15,9 +15,9 @@ trait SliderItem extends CanvasItem {
     var numValues:Int
     val roundPrecision:Int
     val roundValues:Boolean
-    def setMaxValue (newValue:Double):Unit
-    def setMinValue (newValue:Double):Unit
-    def setNumValues (newNumValues:Double):Unit
+    def setMaxValue (newValue:Double):void
+    def setMinValue (newValue:Double):void
+    def setNumValues (newNumValues:Double):void
     val slider:Canvas with AutoChild
     val sliderConstructor:Class
     val sliderProperties:js.Dictionary[js.Any]

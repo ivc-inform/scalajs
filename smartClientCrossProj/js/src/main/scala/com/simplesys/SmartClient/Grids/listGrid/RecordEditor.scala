@@ -2,7 +2,8 @@ package com.simplesys.SmartClient.Grids.listGrid
 
 import com.simplesys.SmartClient.Control.Button
 import com.simplesys.SmartClient.Grids.{AbstractListGridCompanion, ListGrid}
-import com.simplesys.isc.System.Types.{URL, SCImgURL, CSSStyleName, AutoChild}
+import com.simplesys.isc.System.Types._
+import com.simplesys.isc.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -13,7 +14,7 @@ trait RecordEditor extends ListGrid[ListGridField] {
     val actionButtonProperties: js.Dictionary[js.Any]
     val actionButtonStyle: CSSStyleName
     val filterImg: SCImgURL
-    var performAction: js.ThisFunction0[Unit, Unit]
+    var performAction: js.ThisFunction0[void, void]
     val skinImgDir: URL
 }
 

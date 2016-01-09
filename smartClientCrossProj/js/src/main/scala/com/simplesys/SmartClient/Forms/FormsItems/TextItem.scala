@@ -19,7 +19,7 @@ trait TextItem extends FormItem {
     val browserInputType: String
     var changeOnKeypress: js.ThisFunction0[FormItemIcon, Boolean]
     var characterCasing: CharacterCasing
-    def deselectValue(start: Boolean): Unit
+    def deselectValue(start: Boolean): void
     val editProxyConstructor: SCClassName
     var emptyStringValue: js.Any
     var enforceLength: Boolean
@@ -37,9 +37,9 @@ trait TextItem extends FormItem {
     var maskPromptChar: String
     var maskSaveLiterals: Boolean
     var printFullText: Boolean
-    def selectValue(): Unit
-    def setKeyPressFilter(filter: String): Unit
-    def setSelectionRange(start: Int, end: Int): Unit
+    def selectValue(): void
+    def setKeyPressFilter(filter: String): void
+    def setSelectionRange(start: Int, end: Int): void
     var showHintInField: Boolean
     var usePlaceholderForHint: Boolean
 }

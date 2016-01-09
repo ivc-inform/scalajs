@@ -63,9 +63,9 @@ import scala.scalajs.js.|
 
 @js.native
 trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
-    def addData(newRecord: Record, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
-    def addEmbeddedComponent(component: Canvas, record: Record, rowNum: Int = js.native, colNum: Int = js.native, position: Int = js.native): Unit
-    def addSort(sortSpecifier: SortSpecifier): Unit
+    def addData(newRecord: Record, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
+    def addEmbeddedComponent(component: Canvas, record: Record, rowNum: Int = js.native, colNum: Int = js.native, position: Int = js.native): void
+    def addSort(sortSpecifier: SortSpecifier): void
     val advancedFieldPickerThreshold: Int
     val allowFilterExpressions: Boolean
     val allowRowSpanning: Boolean
@@ -87,11 +87,11 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     var animateRollUnder: Boolean
     var animateSelection: Boolean
     var animateSelectionUnder: Boolean
-    def applyCellData(cellData: js.Array[Record]): Unit
+    def applyCellData(cellData: js.Array[Record]): void
     var applyFormulaAfterSummary: Boolean
-    def applyRecordData(recordData: js.Array[Record]): Unit
+    def applyRecordData(recordData: js.Array[Record]): void
     var applyRowNumberStyle: Boolean
-    def applySortToData(sortSpecifiers: js.Array[SortSpecifier]): Unit
+    def applySortToData(sortSpecifiers: js.Array[SortSpecifier]): void
     var arrowKeyAction: String
     val asynchGroupingPrompt: HTMLString
     var autoComplete: AutoComplete
@@ -104,7 +104,7 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     val autoFitExpandField: String
     var autoFitExtraRecords: Int
     def autoFitField(fieldName: String): Int
-    def autoFitFields(fields: js.Array[T] = js.native): Unit
+    def autoFitFields(fields: js.Array[T] = js.native): void
     val autoFitFieldsFillViewport: Boolean
     var autoFitFieldText: String
     val autoFitFieldWidths: Boolean
@@ -132,7 +132,7 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     var booleanTrueImage: SCImgURL
     var canAcceptDroppedRecords: Boolean
     var canAutoFitFields: Boolean
-    def cancelEditing(): Unit
+    def cancelEditing(): void
     var cancelEditingConfirmationMessage: String
     val canCollapseGroup: Boolean
     var canDragRecordsOut: Boolean
@@ -164,7 +164,7 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     def canSelectRecord(record: ListGridRecord): Boolean
     var canSort: Boolean
     val canTabToHeader: Boolean
-    val cellChanged: js.Function5[ListGridRecord, js.Any, Int, Int, ListGrid[T], Unit]
+    val cellChanged: js.Function5[ListGridRecord, js.Any, Int, Int, ListGrid[T], void]
     val cellClick: js.Function3[ListGridRecord, Int, Int, Boolean]
     val cellContextClick: js.Function3[ListGridRecord, Int, Int, Boolean]
     val cellContextMenu: Layout with AutoChild
@@ -198,19 +198,19 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     var checkboxFieldTrueImage: SCImgURL
     var childExpansionMode: ExpansionMode
     var clearAllSortingText: String
-    def clearCriteria(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
-    def clearEditValue(editValuesID: String | Types.Object, colNum: Int | String): Unit
-    def clearFieldError(rowNum: Int, fieldName: Int | String): Unit
+    def clearCriteria(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
+    def clearEditValue(editValuesID: String | Types.Object, colNum: Int | String): void
+    def clearFieldError(rowNum: Int, fieldName: Int | String): void
     var clearFilterText: String
-    def clearRowErrors(rowNum: Int): Unit
-    def clearSort(): Unit
+    def clearRowErrors(rowNum: Int): void
+    def clearSort(): void
     var clearSortFieldText: String
     val clipHeaderTitles: Boolean
     def closeGroup(record: Record): Boolean
     val collapseGroupOnRowClick: Boolean
-    def collapseRecord(record: ListGridRecord): Unit
-    def collapseRecords(records: js.Array[ListGridRecord]): Unit
-    def configureGrouping(): Unit
+    def collapseRecord(record: ListGridRecord): void
+    def collapseRecords(records: js.Array[ListGridRecord]): void
+    def configureGrouping(): void
     var configureGroupingText: String
     var configureSortText: String
     var confirmCancelEditing: Boolean
@@ -218,7 +218,7 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     var confirmDiscardEditsMessage: String
     var createRecordComponent: js.ThisFunction2[callbackHandler, ListGridRecord, Int, Canvas]
     val data: js.Array[ListGridRecord]
-    var dataArrived: js.ThisFunction2[callbackHandler, Int, Int, Unit]
+    var dataArrived: js.ThisFunction2[callbackHandler, Int, Int, void]
     var dataProperties: ResultSet
     var dateFormatter: DateDisplayFormat
     var dateInputFormat: DateInputFormat
@@ -227,32 +227,32 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     val deferRemoval: Boolean
     var detailDS: String
     var detailField: String
-    def discardAllEdits(rows: js.Array[Int] = js.native, dontHideEditor: Boolean = js.native): Unit
-    def discardEdits(rowNum: Int, colNum: Int, dontHideEditor: Boolean = js.native): Unit
+    def discardAllEdits(rows: js.Array[Int] = js.native, dontHideEditor: Boolean = js.native): void
+    def discardEdits(rowNum: Int, colNum: Int, dontHideEditor: Boolean = js.native): void
     var discardEditsOnHideField: Boolean
     var discardEditsSaveButtonTitle: String
-    def displayHeaderContextMenu(target: Canvas, position: js.Array[Int] = js.native): Unit
-    def displaySort(sortSpecifiers: js.Array[SortSpecifier]): Unit
+    def displayHeaderContextMenu(target: Canvas, position: js.Array[Int] = js.native): void
+    def displaySort(sortSpecifiers: js.Array[SortSpecifier]): void
     val dragTrackerMode: DragTrackerMode
     var drawAheadRatio: Double
     var drawAllMaxCells: Int
-    var drawAreaChanged: js.ThisFunction4[callbackHandler, Int, Int, Int, Int, Unit]
+    var drawAreaChanged: js.ThisFunction4[callbackHandler, Int, Int, Int, Int, void]
     var editByCell: Boolean
-    var editComplete: js.ThisFunction6[callbackHandler, Int, Int, Record, Record, EditCompletionEvent, DSResponse, Unit]
+    var editComplete: js.ThisFunction6[callbackHandler, Int, Int, Record, Record, EditCompletionEvent, DSResponse, void]
     var editEvent: ListGridEditEvent
-    var editFailed: js.ThisFunction6[callbackHandler, Int, Int, Record, Record, EditCompletionEvent, DSResponse, Unit]
+    var editFailed: js.ThisFunction6[callbackHandler, Int, Int, Record, Record, EditCompletionEvent, DSResponse, void]
     var editFailedBaseStyle: CSSStyleName
     var editFailedCSSText: String
     var editOnF2Keypress: Boolean
     var editOnFocus: Boolean
-    var editorEnter: js.ThisFunction4[callbackHandler, ListGridRecord, js.Any, Int, Int, Unit]
+    var editorEnter: js.ThisFunction4[callbackHandler, ListGridRecord, js.Any, Int, Int, void]
     var editorExit: js.ThisFunction5[callbackHandler, EditCompletionEvent, ListGridRecord, js.Any, Int, Int, Boolean]
     val editPendingBaseStyle: CSSStyleName
     var editPendingCSSText: String
     var emptyCellValue: HTMLString
     var emptyMessage: HTMLString
     var emptyMessageStyle: CSSStyleName
-    def endEditing(): Unit
+    def endEditing(): void
     var enforceVClipping: Boolean
     var enterKeyEditAction: EnterKeyEditAction
     val enumCriteriaAsInitialValues: Boolean
@@ -260,8 +260,8 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     var errorIconSrc: SCImgURL
     var errorIconWidth: Int
     var escapeKeyEditAction: EscapeKeyEditAction
-    def expandRecord(record: ListGridRecord): Unit
-    def expandRecords(record: js.Array[ListGridRecord]): Unit
+    def expandRecord(record: ListGridRecord): void
+    def expandRecords(record: js.Array[ListGridRecord]): void
     var expansionCanEdit: Boolean
     var expansionComponentPoolingMode: ExpansionComponentPoolingMode
     val expansionDetailField: HTMLFlow with MultiAutoChild
@@ -282,7 +282,7 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     var expansionMode: ExpansionMode
     val expansionRelated: ListGrid[T] with MultiAutoChild
     val exportAlternateRowBGColor: CSSColor
-    def exportClientData(requestProperties: DSRequest = js.native, callback: RPCCallback): Unit
+    def exportClientData(requestProperties: DSRequest = js.native, callback: RPCCallback): void
     val exportDefaultBGColor: CSSColor
     var exportFieldAlignments: Boolean
     var exportFieldWidths: Boolean
@@ -291,22 +291,22 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     var exportWidthScale: Double
     var exportWrapHeaderTitles: Boolean
     val fastCellUpdates: Boolean
-    def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     var fetchDelay: Int
-    def fetchRelatedData(record: ListGridRecord, schema: Canvas | DataSource | String, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    def fetchRelatedData(record: ListGridRecord, schema: Canvas | DataSource | String, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def fieldIsEditable(field: T | Int | String): Boolean
     def fieldIsVisible(field: T | String): Boolean
     val fieldPickerFieldProperties: js.Array[String]
     val fieldPickerShowSampleValues: String
     var fields: js.Array[T]
     var fieldState: String
-    var fieldStateChanged: js.ThisFunction0[Unit, Unit]
+    var fieldStateChanged: js.ThisFunction0[void, void]
     var fieldVisibilitySubmenuTitle: String
     val filterButtonPrompt: String
     val filterButtonProperties: js.Array[Button]
     var filterByCell: Boolean
-    def filterByEditor(): Unit
-    def filterData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    def filterByEditor(): void
+    def filterData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     val filterEditor: RecordEditor with AutoChild
     var filterEditorHeight: Int
     val filterEditorProperties: RecordEditor
@@ -316,13 +316,13 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     def findNextEditCell(rowNum: Int, colNum: Int, direction: Int, stepThroughFields: Boolean, checkStartingCell: Boolean = js.native): js.Array[Int]
     var fixedFieldWidths: Boolean
     var fixedRecordHeights: Boolean
-    def focusInCell(row: Int, col: Int): Unit
-    def focusInFilterEditor(fieldName: String): Unit
-    def focusInRow(row: Int): Unit
+    def focusInCell(row: Int, col: Int): void
+    def focusInFilterEditor(fieldName: String): void
+    def focusInRow(row: Int): void
     var formatCellValue: js.ThisFunction3[callbackHandler, ListGridRecord, Int, Int, HTMLString]
     var formatEditorValue: js.ThisFunction3[callbackHandler, ListGridRecord, Int, Int, js.Any]
     var formulaBuilderSpanTitleSeparator: String
-    def formulaUpdated(field: T, formula: UserFormula): Unit
+    def formulaUpdated(field: T, formula: UserFormula): void
     var freezeFieldText: HTMLString
     var freezeOnLeftText: String
     var freezeOnRightText: String
@@ -404,7 +404,7 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     def getGridSummaryFunction(field: T): SummaryFunction
     def getGroupByFields(): js.Array[String]
     def getGroupByText(field: T): HTMLString
-    def getGroupNodeHTML(node: Types.Object): Unit
+    def getGroupNodeHTML(node: Types.Object): void
     def getGroupState(): ListGridGroupState
     def getGroupSummaryData(records: js.Array[ListGridRecord], groupNode: ListGridRecord): js.Array[ListGridRecord]
     def getGroupTreeSelection(excludePartialSelection: Boolean = js.native, groupNodesOnly: Boolean = js.native): js.Array[ListGridRecord]
@@ -431,7 +431,7 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     def getSelectedRecords(excludePartialSelections: Boolean = js.native): js.Array[ListGridRecord]
     def getSelectedState(): ListGridSelectedState
     def getSelection(excludePartialSelections: Boolean = js.native): js.Array[ListGridRecord]
-    def getSortByGroupFirst(): Unit
+    def getSortByGroupFirst(): void
     def getSortField(): String
     def getSortFieldCount(): Int
     def getSortNumeralHTML(fieldName: String, sortIndex: Int): HTMLString
@@ -446,9 +446,9 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     def getVisibleRows(): js.Array[Int]
     val gridComponents: js.Array[ListGridComponent] | js.Array[js.Any]
     var gridSummaryRecordProperty: String
-    def groupBy(arguments: js.Dictionary[js.Any] = js.native): Unit
+    def groupBy(arguments: js.Dictionary[js.Any] = js.native): void
     var groupByAsyncThreshold: Int
-    var groupByComplete: js.Function1[js.Array[String], Unit]
+    var groupByComplete: js.Function1[js.Array[String], void]
     val groupByField: js.Array[String] | String
     var groupByFieldSummaries: js.Array[String]
     var groupByMaxRecords: Int
@@ -462,7 +462,7 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     var groupSortDirection: SortDirection
     var groupStartOpen: js.Array[GroupStartOpen] | GroupStartOpen
     var groupState: ListGridGroupState
-    var groupStateChanged: js.ThisFunction0[callbackHandler, Unit]
+    var groupStateChanged: js.ThisFunction0[callbackHandler, void]
     var groupSummaryRecordProperty: String
     var groupSummaryStyle: CSSStyleName
     val groupTitleColumnDefaults: T
@@ -480,11 +480,11 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     val headerButtonConstructor: Class
     val headerButtonDefaults: Button
     val headerButtonProperties: Button
-    var headerClick: js.Function1[Int, Unit]
+    var headerClick: js.Function1[Int, void]
     val headerContextMenu: Canvas with AutoChild
-    var headerDoubleClick: js.Function1[Int, Unit]
+    var headerDoubleClick: js.Function1[Int, void]
     var headerHeight: Int
-    var headerHover: js.Function1[Int, Unit]
+    var headerHover: js.Function1[Int, void]
     var headerHoverAlign: Alignment
     var headerHoverHeight: Int
     def headerHoverHTML(fieldNum: Int, defaultHTML: HTMLString): HTMLString
@@ -508,22 +508,22 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     def headerTitleClipped(fieldNum: Int): Boolean
     val headerTitleStyle: SCClassName
     var hideEmptySummaryRow: Boolean
-    def hideField(field: String | T, suppressRelayout: Boolean = js.native): Unit
-    def hideFields(fields: js.Array[String] | js.Array[T], suppressRelayout: Boolean = js.native): Unit
+    def hideField(field: String | T, suppressRelayout: Boolean = js.native): void
+    def hideFields(fields: js.Array[String] | js.Array[T], suppressRelayout: Boolean = js.native): void
     val hiliteCanReplaceValue: Boolean
     var hiliteEditorSpanTitleSeparator: String
     val hiliteHTMLAfterFormat: Boolean
     val hiliteReplaceValueFieldTitle: String
     var hiliteRowOnFocus: Boolean
-    var hilitesChanged: js.ThisFunction0[callbackHandler, Unit]
+    var hilitesChanged: js.ThisFunction0[callbackHandler, void]
     var hoverMode: HoverMode
     var iconPadding: Int
     var imageSize: Int
     var includeInSummaryProperty: String
     val initialSort: js.Array[SortSpecifier]
     var instantScrollTrackRedraw: Boolean
-    def invalidateCache(): Unit
-    def invalidateRecordComponents(): Unit
+    def invalidateCache(): void
+    def invalidateRecordComponents(): void
     var invalidSummaryValue: String
     def isCheckboxField(field: T): Boolean
     def isExpanded(record: ListGridRecord): Boolean
@@ -545,9 +545,9 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     var locateRowsBy: String
     var longTextEditorThreshold: Int
     var longTextEditorType: String
-    def markRecordRemoved(rowNum: Int): Unit
-    def markRecordsRemoved(records: js.Array[ListGridRecord] | js.Array[Int]): Unit
-    def markSelectionRemoved(): Unit
+    def markRecordRemoved(rowNum: Int): void
+    def markRecordsRemoved(records: js.Array[ListGridRecord] | js.Array[Int]): void
+    def markSelectionRemoved(): void
     var maxExpandedRecords: Int
     val maxExpandedRecordsPrompt: HTMLString
     var minFieldWidth: Int
@@ -576,8 +576,8 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     var printMaxRows: Int
     var printWrapCells: Boolean
     var quickDrawAheadRatio: Double
-    def recalculateGridSummary(): Unit
-    def recalculateSummaries(records: js.Array[ListGridRecord] = js.native, fields: js.Array[T] = js.native): Unit
+    def recalculateGridSummary(): void
+    def recalculateSummaries(records: js.Array[ListGridRecord] = js.native, fields: js.Array[T] = js.native): void
     var recordBaseStyleProperty: String
     var recordCanRemoveProperty: String
     var recordCanSelectProperty: String
@@ -588,44 +588,44 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     var recordCustomStyleProperty: String
     var recordDetailDSProperty: String
     var recordDoubleClick: js.ThisFunction7[callbackHandler, ListGrid[T], ListGridRecord, Int, T, Int, js.Any, js.Any, Boolean]
-    def recordDrop(dropRecords: js.Array[ListGridRecord], targetRecord: ListGridRecord, index: Int, sourceWidget: Canvas): Unit
+    def recordDrop(dropRecords: js.Array[ListGridRecord], targetRecord: ListGridRecord, index: Int, sourceWidget: Canvas): void
     var recordDropAppearance: RecordDropAppearance
     var recordEditProperty: String
     val recordEnabledProperty: String
     def recordMarkedAsRemoved(rowNum: Int): Boolean
     var recordSummaryBaseStyle: CSSStyleName
-    def redrawHeader(rightNow: Boolean): Unit
-    def refreshCell(rowNum: Int, colNum: Int): Unit
-    def refreshCellStyle(rowNum: Int, colNum: Int): Unit
-    def refreshData(callback: DSCallback = js.native): Unit
-    def refreshFields(): Unit
-    def refreshRecordComponent(rowNum: Int, colNum: Int = js.native): Unit
-    def refreshRow(rowNum: Int): Unit
-    def regroup(): Unit
-    def removeData(data: ListGridRecord, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    def redrawHeader(rightNow: Boolean): void
+    def refreshCell(rowNum: Int, colNum: Int): void
+    def refreshCellStyle(rowNum: Int, colNum: Int): void
+    def refreshData(callback: DSCallback = js.native): void
+    def refreshFields(): void
+    def refreshRecordComponent(rowNum: Int, colNum: Int = js.native): void
+    def refreshRow(rowNum: Int): void
+    def regroup(): void
+    def removeData(data: ListGridRecord, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     var removedCSSText: String
-    def removeEmbeddedComponent(record: ListGridRecord | Canvas, component: Canvas = js.native): Unit
+    def removeEmbeddedComponent(record: ListGridRecord | Canvas, component: Canvas = js.native): void
     val removeFieldDefaults: T
     val removeFieldProperties: T
     var removeFieldTitle: String
     val removeIcon: SCImgURL
     var removeIconSize: Int
-    var removeRecordClick: js.ThisFunction1[callbackHandler, Int, Unit]
-    def removeSelectedData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
-    def reorderField(fieldNum: Int, moveToPosition: Int): Unit
-    def reorderFields(start: Int, end: Int, moveDelta: Int): Unit
+    var removeRecordClick: js.ThisFunction1[callbackHandler, Int, void]
+    def removeSelectedData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
+    def reorderField(fieldNum: Int, moveToPosition: Int): void
+    def reorderFields(start: Int, end: Int, moveDelta: Int): void
     val reselectOnUpdate: Boolean
     var reselectOnUpdateNotifications: SelectionNotificationType
-    def resizeField(fieldNum: Int, newWidth: Int): Unit
+    def resizeField(fieldNum: Int, newWidth: Int): void
     var resizeFieldsInRealTime: Boolean
-    def resort(): Unit
+    def resort(): void
     var reverseRTLAlign: Boolean
     val rollOverCanvas: Canvas with AutoChild
     val rollUnderCanvas: Canvas with AutoChild
     var rowClick: js.Function4[ListGridRecord, Int, Int, Boolean, Boolean]
     var rowContextClick: js.Function3[ListGridRecord, Int, Int, Boolean]
     var rowDoubleClick: js.Function4[ListGridRecord, Int, Int, Boolean, Boolean]
-    var rowEditorEnter: js.Function3[ListGridRecord, Types.Object, Int, Unit]
+    var rowEditorEnter: js.Function3[ListGridRecord, Types.Object, Int, void]
     var rowEditorExit: js.Function4[EditCompletionEvent, ListGridRecord, Types.Object, Int, Boolean]
     var rowEndEditAction: RowEndEditAction
     def rowHasChanges(rowNum: Int): Boolean
@@ -642,100 +642,100 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     var rowSpanSelectionMode: RowSpanSelectionMode
     def saveAllEdits(rows: js.Array[Int] = js.native, saveCallback: Callback = js.native): Boolean
     var saveByCell: Boolean
-    def saveEdits(editCompletionEvent: EditCompletionEvent = js.native, callback: js.Function4[Int, Int, EditCompletionEvent, Boolean, Unit] = js.native, rowNum: Int = js.native): Unit
+    def saveEdits(editCompletionEvent: EditCompletionEvent = js.native, callback: js.Function4[Int, Int, EditCompletionEvent, Boolean, void] = js.native, rowNum: Int = js.native): void
     val saveLocally: Boolean
     var saveRequestProperties: DSRequest
     val screenReaderCellSeparator: HTMLString
     val screenReaderRowSeparator: HTMLString
     var scrollRedrawDelay: Int
-    def scrollToCell(rowNum: Int, colNum: Int, xPosition: Alignment = js.native, yPosition: VerticalAlignment = js.native): Unit
+    def scrollToCell(rowNum: Int, colNum: Int, xPosition: Alignment = js.native, yPosition: VerticalAlignment = js.native): void
     var scrollToCellXPosition: Alignment
     var scrollToCellYPosition: VerticalAlignment
-    def scrollToColumn(colNum: Int, xPosition: Alignment = js.native): Unit
-    def scrollToRow(rowNum: Int, yPosition: VerticalAlignment = js.native): Unit
+    def scrollToColumn(colNum: Int, xPosition: Alignment = js.native): void
+    def scrollToRow(rowNum: Int, yPosition: VerticalAlignment = js.native): void
     var scrollWheelRedrawDelay: Int
-    def selectAllRecords(visibleNodesOnly: Boolean = js.native): Unit
+    def selectAllRecords(visibleNodesOnly: Boolean = js.native): void
     var selectedState: ListGridSelectedState
     var selectHeaderOnSort: Boolean
     val selection: Selection
     var selectionAppearance: SelectionAppearance
     var selectionCanvas: Canvas with AutoChild
-    var selectionChanged: js.Function2[ListGridRecord, Boolean, Unit]
+    var selectionChanged: js.Function2[ListGridRecord, Boolean, void]
     val selectionProperty: String
     var selectionType: SelectionStyle
     val selectionUnderCanvas: Canvas with AutoChild
-    var selectionUpdated: js.Function2[ListGridRecord, js.Array[ListGridRecord], Unit]
+    var selectionUpdated: js.Function2[ListGridRecord, js.Array[ListGridRecord], void]
     var selectOnEdit: Boolean
-    def selectRecord(record: ListGridRecord, newState: Boolean = js.native): Unit
-    def selectRecords(records: js.Array[ListGridRecord], newState: Boolean = js.native): Unit
-    def selectSingleRecord(record: ListGridRecord): Unit
-    def setAlternateBodyStyleName(styleName: CSSStyleName): Unit
-    def setAlternateRecordStyles(alternateStyles: Boolean): Unit
-    def setAutoFitData(autoFitData: String): Unit
-    def setAutoFitExtraRecords(extraRecords: Int): Unit
-    def setAutoFitFieldWidths(autoFit: Boolean, dontResetWidths: Boolean = js.native): Unit
-    def setAutoFitMaxColumns(maxColumns: Int): Unit
-    def setAutoFitMaxHeight(height: Int): Unit
-    def setAutoFitMaxRecords(maxRecords: Int): Unit
-    def setAutoFitMaxWidth(width: Int): Unit
-    def setAutoFitWidth(fieldName: String, autoFit: Boolean): Unit
-    def setAutoFitWidthApproach(approach: AutoFitWidthApproach): Unit
-    def setBodyOverflow(overflow: Overflow): Unit
-    def setBodyStyleName(styleName: CSSStyleName): Unit
-    def setCanExpandRecords(canExpand: Boolean): Unit
-    def setCanFreezeFields(canFreeze: Boolean): Unit
-    def setCanReorderRecords(canReorderRecords: Boolean): Unit
-    def setCanResizeFields(canResize: Boolean): Unit
-    def setCriteria(criteria: Criteria | AdvancedCriteria): Unit
-    def setData(newData: js.Array[ListGridRecord]): Unit
-    def setDataSource(dataSource: DataSource, fields: js.Array[T]): Unit
-    def setDontAutoDestroyComponent(component: Canvas, dontAutoDestroy: Boolean): Unit
-    def setEditorValueMap(fieldID: Types.Object | Int | String, map: Types.Object): Unit
-    def setEditValue(rowNum: Int, colNum: Int, value: js.Any): Unit
-    def setEditValues(rowNum: Int, values: Types.Object): Unit
-    def setFastCellUpdates(fastCellUpdates: Boolean): Unit
-    def setFieldButtonProperties(name: String, properties: Canvas): Unit
-    def setFieldCellIcon(fieldName: String, cellIcon: SCImgURL): Unit
-    def setFieldError(rowNum: Int, fieldName: Int, errorMessage: String): Unit
-    def setFieldHeaderBaseStyle(name: String, newStyle: CSSStyleName): Unit
-    def setFieldHeaderTitleStyle(name: String, newStyle: CSSStyleName): Unit
-    def setFieldIcon(fieldName: String, icon: SCImgURL): Unit
-    def setFieldProperties(fieldNum: String, properties: T): Unit
-    def setFields(newFields: js.Array[T] = js.native): Unit
-    def setFieldState(fieldState: State): Unit
-    def setFieldTitle(fieldNum: Int | String, title: String): Unit
-    def setFilterEditorCriteria(criteria: Criteria | AdvancedCriteria): Unit
-    def setGroupByFieldSummaries(groupByFieldSummaries: js.Array[String]): Unit
-    def setGroupState(groupState: ListGridGroupState): Unit
-    def setHeaderHeight(height: Int): Unit
-    def setHeaderSpanBaseStyle(name: String, newStyle: CSSStyleName): Unit
-    def setHeaderSpanButtonProperties(name: String, properties: Canvas): Unit
-    def setHeaderSpanHeaderTitle(name: String, newTitle: String): Unit
-    def setHeaderSpans(headerSpans: js.Array[HeaderSpan]): Unit
-    def setHeaderSpanTitle(name: String, newTitle: String): Unit
-    def setHeaderSpanTitleStyle(name: String, newTitle: CSSStyleName): Unit
-    def setRecordComponentHeight(height: Int): Unit
-    def setRowErrors(rowNum: Int, errors: js.Any): Unit
-    def setSelectedState(selectedState: ListGridSelectedState): Unit
-    def setSelectionAppearance(selectionAppearance: String): Unit
-    def setSelectionType(selectionType: SelectionStyle): Unit
-    def setShowCollapsedGroupSummary(showCollapsedGroupSummary: Boolean): Unit
-    def setShowFilterEditor(value: Boolean): Unit
-    def setShowGridSummary(showGridSummary: Boolean): Unit
-    def setShowGroupSummary(showGroupSummary: Boolean): Unit
-    def setShowGroupSummaryInHeader(showGroupSummaryInHeader: Boolean): Unit
-    def setShowHeader(show: Boolean): Unit
-    def setShowRecordComponents(showRecordComponents: Boolean): Unit
-    def setSort(sortSpecifiers: js.Array[SortSpecifier]): Unit
-    def setSortByGroupFirst(sortByGroupFirst: Boolean): Unit
-    def setSortHandler(sortSpecifiers: js.Array[SortSpecifier]): Unit
-    def setSortState(sortState: ListGridSortState): Unit
-    def setUserFormula(field: T | String, userFormula: UserFormula = js.native): Unit
-    def setUserFormulaText(field: T | String, text: String = js.native): Unit
-    def setUserSummary(field: T | String, userSummary: UserSummary = js.native): Unit
-    def setUserSummaryText(field: T | String, text: String = js.native): Unit
-    def setValueMap(fieldID: String | Int, map: Types.Object): Unit
-    def setViewState(viewState: ListGridViewState): Unit
+    def selectRecord(record: ListGridRecord, newState: Boolean = js.native): void
+    def selectRecords(records: js.Array[ListGridRecord], newState: Boolean = js.native): void
+    def selectSingleRecord(record: ListGridRecord): void
+    def setAlternateBodyStyleName(styleName: CSSStyleName): void
+    def setAlternateRecordStyles(alternateStyles: Boolean): void
+    def setAutoFitData(autoFitData: String): void
+    def setAutoFitExtraRecords(extraRecords: Int): void
+    def setAutoFitFieldWidths(autoFit: Boolean, dontResetWidths: Boolean = js.native): void
+    def setAutoFitMaxColumns(maxColumns: Int): void
+    def setAutoFitMaxHeight(height: Int): void
+    def setAutoFitMaxRecords(maxRecords: Int): void
+    def setAutoFitMaxWidth(width: Int): void
+    def setAutoFitWidth(fieldName: String, autoFit: Boolean): void
+    def setAutoFitWidthApproach(approach: AutoFitWidthApproach): void
+    def setBodyOverflow(overflow: Overflow): void
+    def setBodyStyleName(styleName: CSSStyleName): void
+    def setCanExpandRecords(canExpand: Boolean): void
+    def setCanFreezeFields(canFreeze: Boolean): void
+    def setCanReorderRecords(canReorderRecords: Boolean): void
+    def setCanResizeFields(canResize: Boolean): void
+    def setCriteria(criteria: Criteria | AdvancedCriteria): void
+    def setData(newData: js.Array[ListGridRecord]): void
+    def setDataSource(dataSource: DataSource, fields: js.Array[T]): void
+    def setDontAutoDestroyComponent(component: Canvas, dontAutoDestroy: Boolean): void
+    def setEditorValueMap(fieldID: Types.Object | Int | String, map: Types.Object): void
+    def setEditValue(rowNum: Int, colNum: Int, value: js.Any): void
+    def setEditValues(rowNum: Int, values: Types.Object): void
+    def setFastCellUpdates(fastCellUpdates: Boolean): void
+    def setFieldButtonProperties(name: String, properties: Canvas): void
+    def setFieldCellIcon(fieldName: String, cellIcon: SCImgURL): void
+    def setFieldError(rowNum: Int, fieldName: Int, errorMessage: String): void
+    def setFieldHeaderBaseStyle(name: String, newStyle: CSSStyleName): void
+    def setFieldHeaderTitleStyle(name: String, newStyle: CSSStyleName): void
+    def setFieldIcon(fieldName: String, icon: SCImgURL): void
+    def setFieldProperties(fieldNum: String, properties: T): void
+    def setFields(newFields: js.Array[T] = js.native): void
+    def setFieldState(fieldState: State): void
+    def setFieldTitle(fieldNum: Int | String, title: String): void
+    def setFilterEditorCriteria(criteria: Criteria | AdvancedCriteria): void
+    def setGroupByFieldSummaries(groupByFieldSummaries: js.Array[String]): void
+    def setGroupState(groupState: ListGridGroupState): void
+    def setHeaderHeight(height: Int): void
+    def setHeaderSpanBaseStyle(name: String, newStyle: CSSStyleName): void
+    def setHeaderSpanButtonProperties(name: String, properties: Canvas): void
+    def setHeaderSpanHeaderTitle(name: String, newTitle: String): void
+    def setHeaderSpans(headerSpans: js.Array[HeaderSpan]): void
+    def setHeaderSpanTitle(name: String, newTitle: String): void
+    def setHeaderSpanTitleStyle(name: String, newTitle: CSSStyleName): void
+    def setRecordComponentHeight(height: Int): void
+    def setRowErrors(rowNum: Int, errors: js.Any): void
+    def setSelectedState(selectedState: ListGridSelectedState): void
+    def setSelectionAppearance(selectionAppearance: String): void
+    def setSelectionType(selectionType: SelectionStyle): void
+    def setShowCollapsedGroupSummary(showCollapsedGroupSummary: Boolean): void
+    def setShowFilterEditor(value: Boolean): void
+    def setShowGridSummary(showGridSummary: Boolean): void
+    def setShowGroupSummary(showGroupSummary: Boolean): void
+    def setShowGroupSummaryInHeader(showGroupSummaryInHeader: Boolean): void
+    def setShowHeader(show: Boolean): void
+    def setShowRecordComponents(showRecordComponents: Boolean): void
+    def setSort(sortSpecifiers: js.Array[SortSpecifier]): void
+    def setSortByGroupFirst(sortByGroupFirst: Boolean): void
+    def setSortHandler(sortSpecifiers: js.Array[SortSpecifier]): void
+    def setSortState(sortState: ListGridSortState): void
+    def setUserFormula(field: T | String, userFormula: UserFormula = js.native): void
+    def setUserFormulaText(field: T | String, text: String = js.native): void
+    def setUserSummary(field: T | String, userSummary: UserSummary = js.native): void
+    def setUserSummaryText(field: T | String, text: String = js.native): void
+    def setValueMap(fieldID: String | Int, map: Types.Object): void
+    def setViewState(viewState: ListGridViewState): void
     var showAllColumns: Boolean
     var showAllRecords: Boolean
     var showAsynchGroupingPrompt: Boolean
@@ -747,8 +747,8 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     var showEmptyMessage: Boolean
     var showErrorIcons: Boolean
     var showExpansionEditorSaveButton: Boolean
-    def showField(field: String | T, suppressRelayout: Boolean = js.native): Unit
-    def showFields(fields: js.Array[String] | js.Array[T], suppressRelayout: Boolean = js.native): Unit
+    def showField(field: String | T, suppressRelayout: Boolean = js.native): void
+    def showFields(fields: js.Array[String] | js.Array[T], suppressRelayout: Boolean = js.native): void
     var showFilterEditor: Boolean
     var showGridSummary: Boolean
     var showGroupSummary: Boolean
@@ -780,7 +780,7 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     def sort(sortField: String | Int = js.native, sortDirection: SortDirection = js.native): Boolean
     var sortAscendingImage: ImgProperties
     var sortByGroupFirst: Boolean
-    var sortChanged: js.Function1[js.Array[SortSpecifier], Unit]
+    var sortChanged: js.Function1[js.Array[SortSpecifier], void]
     var sortDescendingImage: ImgProperties
     var sortDirection: SortDirection
     var sortEditorSpanTitleSeparator: String
@@ -798,8 +798,8 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     var sortState: ListGridSortState
     val spanContextMenu: Layout with AutoChild
     def startEditing(rowNum: Int = js.native, colNum: Int = js.native, suppressFocus: Boolean = js.native): Boolean
-    def startEditingNew(newValues: Types.Object | ListGridRecord = js.native, suppressFocus: Boolean = js.native): Unit
-    var stopHover: js.ThisFunction0[callbackHandler, Unit]
+    def startEditingNew(newValues: Types.Object | ListGridRecord = js.native, suppressFocus: Boolean = js.native): void
+    var stopHover: js.ThisFunction0[callbackHandler, void]
     var stopOnErrors: Boolean
     val summaryRow: ListGrid[T] with AutoChild
     var summaryRowCriteria: Criteria
@@ -807,28 +807,28 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     var summaryRowFetchRequestProperties: DSRequest
     val summaryRowHeight: Int
     var summaryRowStyle: CSSStyleName
-    var summaryUpdated: js.ThisFunction2[callbackHandler, T, UserSummary, Unit]
+    var summaryUpdated: js.ThisFunction2[callbackHandler, T, UserSummary, void]
     val tallBaseStyle: CSSStyleName
     var timeFormatter: TimeDisplayFormat
-    def toggleFrozen(field: T | Int | String): Unit
-    def toggleSort(fieldName: String): Unit
+    def toggleFrozen(field: T | Int | String): void
+    def toggleSort(fieldName: String): void
     var trackerImage: ImgProperties
-    def unfreezeField(field: T | Int | String): Unit
+    def unfreezeField(field: T | Int | String): void
     var unfreezeFieldText: HTMLString
-    def ungroup(): Unit
+    def ungroup(): void
     var ungroupText: String
-    def unmarkRecordRemoved(rowNum: Int): Unit
+    def unmarkRecordRemoved(rowNum: Int): void
     val unremoveIcon: SCImgURL
-    def unsort(): Unit
+    def unsort(): void
     val unspannedHeaderVAlign: VerticalAlignment
-    def updateData(updatedRecord: ListGridRecord, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): Unit
+    def updateData(updatedRecord: ListGridRecord, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     var updateRecordComponent: js.Function4[ListGridRecord, Int, Canvas, Boolean, Canvas]
     val useAdvancedFieldPicker: Boolean
     var useCellRollOvers: Boolean
     var useCopyPasteShortcuts: Boolean
     var useRemoteValidators: Boolean
     var useRowSpanStyling: Boolean
-    def userSelectAllRecords(): Unit
+    def userSelectAllRecords(): void
     var validateByCell: Boolean
     def validateCell(rowNum: Int, fieldName: String | Int): Boolean
     var validateOnChange: Boolean
@@ -839,7 +839,7 @@ trait ListGrid[T <: ListGridField] extends VLayout with DataBoundComponent {
     var valueIconSize: Int
     var valueIconWidth: Int
     var viewState: Int
-    var viewStateChanged: js.ThisFunction0[callbackHandler, Unit]
+    var viewStateChanged: js.ThisFunction0[callbackHandler, void]
     val virtualScrolling: Boolean
     var waitForSave: Boolean
     var warnOnRemoval: Boolean

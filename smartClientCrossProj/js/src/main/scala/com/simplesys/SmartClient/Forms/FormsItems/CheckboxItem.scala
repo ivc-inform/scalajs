@@ -22,7 +22,7 @@ trait CheckboxItem extends FormItem {
     var printPartialSelectedImage:SCImgURL
     var printUncheckedImage:SCImgURL
     var printUnsetImage:SCImgURL
-    def setValueMap():Unit
+    def setValueMap():void
     var showLabel:Boolean
     var showUnsetImage:Boolean
     var showValueIconDisabled:Boolean

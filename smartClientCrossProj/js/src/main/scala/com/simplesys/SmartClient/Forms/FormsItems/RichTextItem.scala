@@ -1,5 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
+import com.simplesys.isc.System.Types.void
+
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
 
@@ -7,7 +9,7 @@ import scala.scalajs.js.{Array, |}
 trait RichTextItem extends CanvasItem {
     var controlGroups: Array[String]
     var moveFocusOnTab:Boolean
-    def  setMoveFocusOnTab (moveFocusOnTab:Boolean):Unit
+    def  setMoveFocusOnTab (moveFocusOnTab:Boolean):void
 
 }
 

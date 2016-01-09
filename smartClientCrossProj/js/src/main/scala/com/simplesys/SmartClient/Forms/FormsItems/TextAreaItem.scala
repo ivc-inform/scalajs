@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
-import com.simplesys.isc.System.Types.SCClassName
+import com.simplesys.isc.System.Types.{void, SCClassName}
 import com.simplesys.isc.System.Types.TEXTAREA_WRAP.TEXTAREA_WRAP
 
 import scala.scalajs.js
@@ -11,7 +11,7 @@ trait TextAreaItem extends FormItem {
     var browserAutoCapitalize: Boolean
     var browserAutoCorrect: Boolean
     var changeOnKeypress: Boolean
-    def deselectValue(start: Boolean = js.native): Unit
+    def deselectValue(start: Boolean = js.native): void
     var editProxyConstructor: SCClassName
     var emptyStringValue: Any
     var enforceLength: Boolean
@@ -21,8 +21,8 @@ trait TextAreaItem extends FormItem {
     var length: Int
     var minHeight: Int
     var printFullText: Boolean
-    def selectValue(): Unit
-    def setSelectionRange(start: Int, end: Int): Unit
+    def selectValue(): void
+    def setSelectionRange(start: Int, end: Int): void
     var showHintInField: Boolean
     var usePlaceholderForHint: Boolean
     var wrap: TEXTAREA_WRAP

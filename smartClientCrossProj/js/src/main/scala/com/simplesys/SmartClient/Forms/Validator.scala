@@ -7,6 +7,7 @@ import com.simplesys.SmartClient.RPC.ServerObject
 import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
 import com.simplesys.isc.System.Types.ValidatorType.ValidatorType
+import com.simplesys.isc.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -31,10 +32,10 @@ trait Validator extends Class {
 
 @js.native
 abstract trait AbstractValidatorCompanion extends AbstractClassCompanion {
-    def addValidator(`type`: String, condition: js.Function): Unit = js.native
-    def addValidatorDefinition(`type`: String, definition: Types.Object): Unit = js.native
-    def addValidators(newValidators: Types.Object): Unit = js.native
-    def create(): Unit = js.native
+    def addValidator(`type`: String, condition: js.Function): void = js.native
+    def addValidatorDefinition(`type`: String, definition: Types.Object): void = js.native
+    def addValidators(newValidators: Types.Object): void = js.native
+    def create(): void = js.native
     val mustBeEarlierThan: String = js.native
     val mustBeEarlierThanTime: String = js.native
     val mustBeExactLength: String = js.native

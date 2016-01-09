@@ -4,7 +4,8 @@ import com.simplesys.SmartClient.DataBinding.DetailViewer
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.isc.System.Types.HiliteIconPosition.HiliteIconPosition
 import com.simplesys.isc.System.Types.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.isc.System.Types.{CSSStyleName, FormatString, HTMLString, CSSClassName}
+import com.simplesys.isc.System.Types._
+import com.simplesys.isc.System.Types.void
 import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
 
 import scala.scalajs.js
@@ -24,7 +25,7 @@ trait DetailViewerField extends Types.Object {
     val escapeHTML: Boolean
     val exportFormat: FormatString
     val format: FormatString
-    def formatCellValue(value: String, record: DetailViewerRecord, field: DetailViewerField, viewer: DetailViewer): Unit
+    def formatCellValue(value: String, record: DetailViewerRecord, field: DetailViewerField, viewer: DetailViewer): void
     def getCellStyle(value: String, field: DetailViewerField, record: DetailViewerRecord, viewer: DetailViewer): CSSStyleName
     val height: Int
     val hiliteIconHeight: Int

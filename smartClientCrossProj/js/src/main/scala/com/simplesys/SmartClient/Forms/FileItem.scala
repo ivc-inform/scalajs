@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Forms
 
 import com.simplesys.SmartClient.Forms.FormsItems.{UploadItem, StaticTextItem, AbstractCanvasItemCompanion, CanvasItem}
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.isc.System.Types.{SCImgURL, AutoChild}
+import com.simplesys.isc.System.Types.{void, SCImgURL, AutoChild}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -15,7 +15,7 @@ trait FileItem extends CanvasItem {
     val displayItem: StaticTextItem with AutoChild
     val downloadIconSrc: SCImgURL
     val editForm: DynamicForm with AutoChild
-    def setMultiple(multiple: Boolean): Unit
+    def setMultiple(multiple: Boolean): void
     val showFileInline: Boolean
     val uploadItem: UploadItem with AutoChild
     val viewIconSrc: SCImgURL

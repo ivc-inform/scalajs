@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.RPC
 
 import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
+import com.simplesys.isc.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -18,7 +19,7 @@ trait RPCResponse extends Class {
 
 @js.native
 abstract trait AbstractRPCResponseCompanion extends AbstractClassCompanion {
-    def create(): Unit = js.native
+    def create(): void = js.native
 
     val STATUS_CONNECTION_RESET_ERROR: Int = js.native
     //-92

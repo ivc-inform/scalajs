@@ -2,7 +2,8 @@ package com.simplesys.SmartClient.Layout.sectionStack
 
 import com.simplesys.SmartClient.Foundation.{Canvas, StretchImg}
 import com.simplesys.SmartClient.Layout.{SectionStack, Layout, AbstractHLayoutCompanion, HLayout}
-import com.simplesys.isc.System.Types.{URL, HTMLString, SCImgURL, AutoChild}
+import com.simplesys.isc.System.Types._
+import com.simplesys.isc.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -20,10 +21,10 @@ trait ImgSectionHeader extends HLayout {
     val iconOrientation: String
     val iconSize: Int
     val iconWidth: Int
-    def setAlign(align: String): Unit
-    def setIcon(icon: URL): Unit
-    def setIconOrientation(orientation: String): Unit
-    def setPrompt(prompt: HTMLString): Unit
+    def setAlign(align: String): void
+    def setIcon(icon: URL): void
+    def setIconOrientation(orientation: String): void
+    def setPrompt(prompt: HTMLString): void
     var showClippedTitleOnHover: Boolean
     var title: HTMLString
     var titleClipped: js.ThisFunction0[callbackHandler, Boolean]

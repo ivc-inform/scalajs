@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Foundation.{Label, Canvas, AbstractCanvasCompanion}
 import com.simplesys.isc.System.Types.Alignment.Alignment
-import com.simplesys.isc.System.Types.{SCClassName, AutoChild}
+import com.simplesys.isc.System.Types.{void, SCClassName, AutoChild}
 import com.simplesys.isc.System.Types.VerticalAlignment.VerticalAlignment
 
 import scala.scalajs.js
@@ -10,8 +10,8 @@ import scala.scalajs.js.|
 
 @js.native
 trait ToolStripGroup extends VLayout {
-    def addControl(control: Canvas, index: Int = js.native): Unit
-    def addControls(controls: js.Array[Canvas], index: Int = js.native): Unit
+    def addControl(control: Canvas, index: Int = js.native): void
+    def addControls(controls: js.Array[Canvas], index: Int = js.native): void
     val autoSizeToTitle: Boolean
     val body: HLayout with AutoChild
     val bodyConstructor: String
@@ -19,14 +19,14 @@ trait ToolStripGroup extends VLayout {
     val label: HLayout with AutoChild
     val labelConstructor: String
     var numRows: Int
-    def removeControl(control: Canvas): Unit
+    def removeControl(control: Canvas): void
     var rowHeight: Int
-    def setControlColumn(control: Canvas): Unit
-    def setControls(controls: js.Array[Canvas]): Unit
-    def setShowTitle(showTitle: Boolean): Unit
-    def setTitle(title: String): Unit
-    def setTitleAlign(align: Alignment): Unit
-    def setTitleOrientation(orientation: VerticalAlignment): Unit
+    def setControlColumn(control: Canvas): void
+    def setControls(controls: js.Array[Canvas]): void
+    def setShowTitle(showTitle: Boolean): void
+    def setTitle(title: String): void
+    def setTitleAlign(align: Alignment): void
+    def setTitleOrientation(orientation: VerticalAlignment): void
     val titleAlign: Alignment
     val titleHeight: Int
     val titleOrientation: VerticalAlignment

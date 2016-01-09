@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Control.Button
 import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
-import com.simplesys.isc.System.Types.SCImgURL
+import com.simplesys.isc.System.Types.{void, SCImgURL}
 import com.simplesys.isc.System.Types.VerticalAlignment.VerticalAlignment
 
 import scala.scalajs.js
@@ -18,7 +18,7 @@ trait IconButton extends Button {
     var menuIconWidth: Int
     var orientation: String
     var rowSpan: Int
-    def setLargeIcon(icon: SCImgURL): Unit
+    def setLargeIcon(icon: SCImgURL): void
     var showButtonTitle: Boolean
     var showIcon: Boolean
     var showMenuIcon: Boolean

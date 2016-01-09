@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Layout.portalLayout
 import com.simplesys.SmartClient.Control.Dialog
 import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
 import com.simplesys.SmartClient.Layout.{PortalLayout, Window}
-import com.simplesys.isc.System.Types.SCClassName
+import com.simplesys.isc.System.Types.{void, SCClassName}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -16,7 +16,7 @@ trait Portlet extends Window {
     def getPortalLayout(): PortalLayout
     def getPortalPosition(): PortalLayout
     var rowHeight: Int | String
-    def setRowHeight(height: Int): Unit
+    def setRowHeight(height: Int): void
     var showCloseConfirmationMessage: Boolean
 }
 

@@ -17,7 +17,7 @@ import com.simplesys.isc.System.Types.FieldNamingStrategy.FieldNamingStrategy
 import com.simplesys.isc.System.Types.HiliteIconPosition.HiliteIconPosition
 import com.simplesys.isc.System.Types.RecategorizeMode.RecategorizeMode
 import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.isc.System.Types.{CSSStyleName, DataPath, HTMLString}
+import com.simplesys.isc.System.Types.{void, CSSStyleName, DataPath, HTMLString}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -25,13 +25,13 @@ import scala.scalajs.js.|
 @js.native
 trait DataBoundComponent extends Class {
     var addDropValues: Boolean
-    def addFormulaField(): Unit
+    def addFormulaField(): void
     var addFormulaFieldText: String
     var addOperation: String
-    def addSummaryField(): Unit
+    def addSummaryField(): void
     var addSummaryFieldText: String
     def anySelected(): Boolean
-    def askForSort(): Unit
+    def askForSort(): void
     val autoFetchData: Boolean
     var badFormulaResultValue: String
     var canAddFormulaFields: Boolean
@@ -45,30 +45,30 @@ trait DataBoundComponent extends Class {
     var dataSource: DataSource | String
     var deepCloneOnEdit: Boolean
     var descriptionField: String
-    def deselectAllRecords(): Unit
-    def deselectRange(startRow: Int, endRow: Int): Unit
-    def deselectRecord(record: Record | Int): Unit
-    def deselectRecords(records: js.Array[Record]): Unit
-    def disableHilite(hiliteID: String): Unit
-    def disableHiliting(): Unit
-    def dragComplete(): Unit
+    def deselectAllRecords(): void
+    def deselectRange(startRow: Int, endRow: Int): void
+    def deselectRecord(record: Record | Int): void
+    def deselectRecords(records: js.Array[Record]): void
+    def disableHilite(hiliteID: String): void
+    def disableHiliting(): void
+    def dragComplete(): void
     var dragDataAction: DragDataAction
     var dragRecategorize: RecategorizeMode
     var dragTrackerStyle: CSSStyleName
-    def dropComplete(transferredRecords: js.Array[Record]): Unit
+    def dropComplete(transferredRecords: js.Array[Record]): void
     var dropValues: Types.Object
     val duplicateDragMessage: String
-    def editFields(): Unit
-    def editFormulaField(field: Field): Unit
+    def editFields(): void
+    def editFormulaField(field: Field): void
     var editFormulaFieldText: String
-    def editHilites(): Unit
+    def editHilites(): void
     var editHilitesDialogTitle: String
     var editHilitesText: String
-    def editSummaryField(field: Field): Unit
+    def editSummaryField(field: Field): void
     var editSummaryFieldText: String
     var emptyExportMessage: String
-    def enableHilite(hiliteID: String, enable: Boolean = js.native): Unit
-    def enableHiliting(enable: Boolean = js.native): Unit
+    def enableHilite(hiliteID: String, enable: Boolean = js.native): void
+    def enableHiliting(enable: Boolean = js.native): void
     var exportAll: Boolean
     def exportData(requestProperties: DSRequest = js.native, callback: DSCallback = js.native)
     var exportFields: js.Array[String]
@@ -121,12 +121,12 @@ trait DataBoundComponent extends Class {
     var removeFormulaFieldText: String
     var removeOperation: String
     var removeSummaryFieldText: String
-    def selectAllRecords(): Unit
-    def selectionUpdated(record: Record, recordList: js.Array[Record]): Unit
-    def selectRange(startRow: Int, endRow: Int, newState: Boolean = js.native): Unit
-    def setHilites(hilites: Hilite): Unit
-    def setHiliteState(hiliteState: String): Unit
-    def setSort(sortSpecifiers: SortSpecifier): Unit
+    def selectAllRecords(): void
+    def selectionUpdated(record: Record, recordList: js.Array[Record]): void
+    def selectRange(startRow: Int, endRow: Int, newState: Boolean = js.native): void
+    def setHilites(hilites: Hilite): void
+    def setHiliteState(hiliteState: String): void
+    def setSort(sortSpecifiers: SortSpecifier): void
     def shouldIncludeHiliteInSummaryField(summaryFieldName: String, usedFieldName: String): Boolean
     var showComplexFields: Boolean
     var showDetailFields: Boolean
@@ -134,8 +134,8 @@ trait DataBoundComponent extends Class {
     var showOfflineMessage: Boolean
     val titleField: String
     def transferDragData(): js.Array[Types.Object]
-    def transferRecords(dropRecords: js.Array[Record], targetRecord: Record, index: Int, sourceWidget: Canvas, callback: Callback = js.native): Unit
-    def transferSelectedData(source: DataBoundComponent, index: Int, callback: Callback = js.native): Unit
+    def transferRecords(dropRecords: js.Array[Record], targetRecord: Record, index: Int, sourceWidget: Canvas, callback: Callback = js.native): void
+    def transferSelectedData(source: DataBoundComponent, index: Int, callback: Callback = js.native): void
     var unknownErrorMessage: HTMLString
     var updateOperation: String
     var useAllDataSourceFields: Boolean

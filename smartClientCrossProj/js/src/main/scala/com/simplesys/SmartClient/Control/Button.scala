@@ -2,23 +2,23 @@ package com.simplesys.SmartClient.Control
 
 import com.simplesys.SmartClient.Foundation.StatefulCanvas
 import com.simplesys.isc.System.Types.Cursor.Cursor
-import com.simplesys.isc.System.Types.HTMLString
+import com.simplesys.isc.System.Types.{void, HTMLString}
 
 import scala.scalajs.js
 
 @js.native
 trait Button extends StatefulCanvas {
     type buttonHandler <: this.type
-    var action: js.ThisFunction0[buttonHandler, Unit]
+    var action: js.ThisFunction0[buttonHandler, void]
     val disabledIconCursor: Cursor
     var hiliteAccessKey: Boolean
     val iconAlign: String
     var iconClick: js.ThisFunction0[buttonHandler, Boolean]
     val iconCursor: Cursor
-    def setAlign(): Unit
-    def setSelected(): Unit
-    def setVAlign(): Unit
-    def setWrap(newWrap: Boolean): Unit
+    def setAlign(): void
+    def setSelected(): void
+    def setVAlign(): void
+    def setWrap(newWrap: Boolean): void
     var showClippedTitleOnHover: Boolean
     var showDisabledIcon: Boolean
     var titleClipped: js.ThisFunction0[buttonHandler, Boolean]

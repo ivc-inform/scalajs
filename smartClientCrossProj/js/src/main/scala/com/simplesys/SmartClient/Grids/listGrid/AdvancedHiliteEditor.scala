@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Forms.{DynamicForm, FilterBuilder}
 import com.simplesys.SmartClient.Foundation.StatefulCanvas
 import com.simplesys.SmartClient.Layout.{AbstractVStackCompanion, VStack}
 import com.simplesys.SmartClient.System.Types.Callback
-import com.simplesys.isc.System.Types.{SCImgURL, AutoChild}
+import com.simplesys.isc.System.Types.{void, SCImgURL, AutoChild}
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -15,7 +15,7 @@ trait AdvancedHiliteEditor extends VStack {
     val callback: Callback
     val cancelButton: StatefulCanvas with AutoChild
     val cancelButtonTitle: String
-    def cancelEditing(): Unit
+    def cancelEditing(): void
     val filterBuilder: FilterBuilder
     val filterGroupTitle: String
     val hiliteForm: DynamicForm with AutoChild
@@ -23,7 +23,7 @@ trait AdvancedHiliteEditor extends VStack {
     val invalidHilitePrompt: String
     val saveButton: StatefulCanvas with AutoChild
     val saveButtonTitle: String
-    def saveHilite(): Unit
+    def saveHilite(): void
     val targetFieldsItemTitle: String
     val title: String
 }

@@ -6,7 +6,8 @@ import com.simplesys.SmartClient.System.Types
 import com.simplesys.isc.System.Types.Alignment.Alignment
 import com.simplesys.isc.System.Types.CharacterCasing.CharacterCasing
 import com.simplesys.isc.System.Types.PickListItemIconPlacement.PickListItemIconPlacement
-import com.simplesys.isc.System.Types.{SCImgURL, CSSStyleName, HTMLString, SCClassName}
+import com.simplesys.isc.System.Types._
+import com.simplesys.isc.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -14,7 +15,7 @@ import scala.scalajs.js.{Array, |}
 @js.native
 trait FormItemIcon extends Types.Object {
     var baseStyle: CSSStyleName
-    var click: js.Function3[DynamicForm, FormItem, FormItemIcon, Unit]
+    var click: js.Function3[DynamicForm, FormItem, FormItemIcon, void]
     var disabled: Boolean
     var disableOnReadOnly: Boolean
     var height: Int

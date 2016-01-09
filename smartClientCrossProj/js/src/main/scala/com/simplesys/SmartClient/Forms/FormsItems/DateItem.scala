@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.System.Date
 import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
 import com.simplesys.isc.System.Types.Alignment.Alignment
 import com.simplesys.isc.System.Types.DateItemSelectorFormat.DateItemSelectorFormat
-import com.simplesys.isc.System.Types.{DateInputFormat, SCClassName, AutoChild}
+import com.simplesys.isc.System.Types.{void, DateInputFormat, SCClassName, AutoChild}
 import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
 
 import scala.scalajs.js
@@ -18,7 +18,7 @@ trait DateItem extends FormItem {
     var daySelector: SelectItem with AutoChild
     val daySelectorProperties: SelectItem
     var defaultChooserDate: Date
-    def deselectValue(start: Boolean): Unit
+    def deselectValue(start: Boolean): void
     var displayFormat: DateDisplayFormat
     val editProxyConstructor: SCClassName
     var endDate: Date
@@ -35,11 +35,11 @@ trait DateItem extends FormItem {
     var pickerProperties: DateChooser
     var pickerTimeItemProperties: TimeItem
     var selectorFormat: DateItemSelectorFormat
-    def selectValue(): Unit
-    def setEndDate(endDate: Date | String): Unit
-    def setFiscalCalendar(fiscalCalendar: FiscalCalendar = js.native): Unit
-    def setSelectionRange(start: Int, end: Int): Unit
-    def setStartDate(endDate: Date | String): Unit
+    def selectValue(): void
+    def setEndDate(endDate: Date | String): void
+    def setFiscalCalendar(fiscalCalendar: FiscalCalendar = js.native): void
+    def setSelectionRange(start: Int, end: Int): void
+    def setStartDate(endDate: Date | String): void
     var showChooserFiscalYearPicker: Boolean
     var showChooserWeekPicker: Boolean
     var showHintInField: Boolean

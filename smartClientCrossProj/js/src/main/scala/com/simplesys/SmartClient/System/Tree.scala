@@ -8,6 +8,7 @@ import com.simplesys.SmartClient.System._
 import com.simplesys.isc.System.Types.LoadState.LoadState
 import com.simplesys.isc.System.Types.TreeFilterMode.TreeFilterMode
 import com.simplesys.isc.System.Types.TreeModelType.TreeModelType
+import com.simplesys.isc.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.{ThisFunction0, |}
@@ -19,11 +20,11 @@ trait Tree extends Class {
     def allChildrenLoaded(node: TreeNode): Boolean
     var autoOpenRoot: Boolean
     var childrenProperty: String
-    def closeAll(node: TreeNode = js.native): Unit
-    def closeFolder(node: TreeNode): Unit
-    def closeFolders(nodeList: js.Array[TreeNode]): Unit
+    def closeAll(node: TreeNode = js.native): void
+    def closeFolder(node: TreeNode): void
+    def closeFolders(nodeList: js.Array[TreeNode]): void
     val data: js.Array[TreeNode]
-    var dataChanged: ThisFunction0[Unit, Unit]
+    var dataChanged: ThisFunction0[void, void]
     val defaultIsFolder: Boolean
     var defaultNodeTitle: String
     val discardParentlessNodes: Boolean
@@ -62,29 +63,29 @@ trait Tree extends Class {
     def isOpen(node: TreeNode): Boolean
     def isRoot(node: TreeNode): Boolean
     def lastIndexOf(obj: Types.Object, pos: Int = js.native, endPos: Int = js.native): Int
-    def linkNodes(nodes: js.Array[TreeNode]): Unit
-    def loadChildren(node: TreeNode, callback: Callback = js.native): Unit
+    def linkNodes(nodes: js.Array[TreeNode]): void
+    def loadChildren(node: TreeNode, callback: Callback = js.native): void
     var modelType: TreeModelType
-    def move(node: TreeNode, newParent: TreeNode, position: Int = js.native): Unit
+    def move(node: TreeNode, newParent: TreeNode, position: Int = js.native): void
     var nameProperty: String
-    def openAll(node: TreeNode): Unit
-    def openFolders(nodeList: js.Array[TreeNode]): Unit
+    def openAll(node: TreeNode): void
+    def openFolders(nodeList: js.Array[TreeNode]): void
     var openProperty: String
     val parentIdField: String
     var pathDelim: String
-    def reloadChildren(node: TreeNode): Unit
+    def reloadChildren(node: TreeNode): void
     def remove(node: TreeNode): Boolean
-    def removeChildren(node: TreeNode): Unit
+    def removeChildren(node: TreeNode): void
     def removeList(nodeList: js.Array[TreeNode]): Boolean
     val reportCollisions: Boolean
     var root: TreeNode
     val rootValue: String | Int
     var separateFolders: Boolean
-    def setChildren(parent: TreeNode, newChildren: js.Array[TreeNode]): Unit
-    def setRoot(newRoot: TreeNode, autoOpen: Boolean): Unit
-    def setSeparateFolders(separateFolders: Boolean): Unit
-    def setShowRoot(showRoot: Boolean): Unit
-    def setSortFoldersBeforeLeaves(sortFoldersBeforeLeaves: Boolean): Unit
+    def setChildren(parent: TreeNode, newChildren: js.Array[TreeNode]): void
+    def setRoot(newRoot: TreeNode, autoOpen: Boolean): void
+    def setSeparateFolders(separateFolders: Boolean): void
+    def setShowRoot(showRoot: Boolean): void
+    def setSortFoldersBeforeLeaves(sortFoldersBeforeLeaves: Boolean): void
     var showRoot: Boolean
     var sortFoldersBeforeLeaves: Boolean
     var titleProperty: String

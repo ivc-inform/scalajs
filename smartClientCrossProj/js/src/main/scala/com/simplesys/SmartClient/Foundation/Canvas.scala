@@ -44,29 +44,29 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val accessKey: String
     def addChild(newChild: Canvas, name: String = js.native, autoDraw: Boolean = js.native): Canvas
     def addPeer(newChild: Canvas, name: String = js.native, autoDraw: Boolean = js.native, preDraw: Boolean = js.native): Canvas
-    def addSnapAlignCandidate(newCandidate: Canvas): Unit
-    def adjustForContent(immediate: Boolean): Unit
+    def addSnapAlignCandidate(newCandidate: Canvas): void
+    def adjustForContent(immediate: Boolean): void
     val alwaysShowScrollbars: Boolean
     var animateAcceleration: AnimationAcceleration
-    def animateFade(opacity: Int, callback: AnimationCallback = js.native, duration: Int = js.native, acceleration: AnimationAcceleration = js.native): Unit
+    def animateFade(opacity: Int, callback: AnimationCallback = js.native, duration: Int = js.native, acceleration: AnimationAcceleration = js.native): void
     var animateFadeTime: Int
-    def animateHide(effect: AnimateShowEffectId | AnimateShowEffect = js.native, callback: AnimationCallback = js.native, duration: Int = js.native, acceleration: AnimationAcceleration = js.native): Unit
+    def animateHide(effect: AnimateShowEffectId | AnimateShowEffect = js.native, callback: AnimationCallback = js.native, duration: Int = js.native, acceleration: AnimationAcceleration = js.native): void
     var animateHideAcceleration: AnimationAcceleration
     var animateHideEffect: AnimateShowEffectId
     var animateHideTime: Int
-    def animateMove(left: Int, top: Int, callback: AnimationCallback = js.native, duration: Int = js.native, acceleration: AnimationAcceleration = js.native): Unit
+    def animateMove(left: Int, top: Int, callback: AnimationCallback = js.native, duration: Int = js.native, acceleration: AnimationAcceleration = js.native): void
     var animateMoveAcceleration: AnimationAcceleration
     var animateMoveTime: Int
-    def animateRect(left: Int, top: Int, width: Int, height: Int, callback: AnimationCallback = js.native, duration: Int = js.native, acceleration: AnimationAcceleration = js.native): Unit
+    def animateRect(left: Int, top: Int, width: Int, height: Int, callback: AnimationCallback = js.native, duration: Int = js.native, acceleration: AnimationAcceleration = js.native): void
     var animateRectAcceleration: AnimationAcceleration
     var animateRectTime: Int
-    def animateResize(width: Int, height: Int, callback: AnimationCallback = js.native, duration: Int = js.native, acceleration: AnimationAcceleration = js.native): Unit
+    def animateResize(width: Int, height: Int, callback: AnimationCallback = js.native, duration: Int = js.native, acceleration: AnimationAcceleration = js.native): void
     var animateResizeAcceleration: AnimationAcceleration
     var animateResizeTime: Int
-    def animateScroll(scrollLeft: Int, scrollTop: Int, callback: AnimationCallback = js.native, duration: Int = js.native, acceleration: AnimationAcceleration = js.native): Unit
+    def animateScroll(scrollLeft: Int, scrollTop: Int, callback: AnimationCallback = js.native, duration: Int = js.native, acceleration: AnimationAcceleration = js.native): void
     var animateScrollAcceleration: AnimationAcceleration
     var animateScrollTime: Int
-    def animateShow(effect: AnimateShowEffectId | AnimateShowEffect = js.native, callback: AnimationCallback = js.native, duration: Int = js.native, acceleration: AnimationAcceleration = js.native): Unit
+    def animateShow(effect: AnimateShowEffectId | AnimateShowEffect = js.native, callback: AnimationCallback = js.native, duration: Int = js.native, acceleration: AnimationAcceleration = js.native): void
     var animateShowAcceleration: AnimationAcceleration
     var animateShowEffect: AnimateShowEffectId
     var animateShowTime: Int
@@ -80,9 +80,9 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val backgroundImage: SCImgURL
     val backgroundPosition: String
     val backgroundRepeat: BackgroundRepeat
-    def blur(): Unit
+    def blur(): void
     val border: String
-    def bringToFront(): Unit
+    def bringToFront(): void
     var canAcceptDrop: Boolean
     var canDrag: Boolean
     var canDragReposition: Boolean
@@ -101,7 +101,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var childrenSnapEdgeAlign: Boolean
     var childrenSnapResizeToGrid: Boolean
     var childrenSnapToGrid: Boolean
-    def clear(): Unit
+    def clear(): void
     var click: js.ThisFunction0[callbackHandler, Boolean]
     def clickMaskUp(ID: String = js.native): Boolean
     val componentMask: Canvas with AutoChild
@@ -117,11 +117,11 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val dataPath: DataPath
     var defaultHeight: Int
     var defaultWidth: Int
-    def deparent(): Unit
-    def depeer(): Unit
+    def deparent(): void
+    def depeer(): void
     val destroyed: Boolean
     val destroying: Boolean
-    def disable(): Unit
+    def disable(): void
     val disabled: Boolean
     var disabledCursor: Cursor
     val disableTouchScrollingForDrag: Boolean
@@ -167,14 +167,14 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val editNode: EditNode
     var editProxy: EditNode with AutoChild
     val editProxyConstructor: SCClassName
-    def enable(): Unit
+    def enable(): void
     def encloses(other: Canvas): Boolean
     def enclosesRect(left: Int | js.Array[Int], top: Int, width: Int, height: Int): Boolean
     val extraSpace: Int
-    def focus(): Unit
-    var focusChanged: js.ThisFunction1[callbackHandler, Boolean, Unit]
-    def focusInNextTabElement(): Unit
-    def focusInPreviousTabElement(): Unit
+    def focus(): void
+    var focusChanged: js.ThisFunction1[callbackHandler, Boolean, void]
+    def focusInNextTabElement(): void
+    def focusInPreviousTabElement(): void
     def getBottom(): Int
     def getByLocalId(localId: String): Canvas
     def getContentElement(): Element
@@ -228,19 +228,19 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val groupLabelBackgroundColor: CSSColor
     val groupLabelStyleName: CSSStyleName
     val groupTitle: HTMLString
-    def handleHover(): Unit
+    def handleHover(): void
     val height: String | Int
-    def hide(): Unit
-    def hideClickMask(ID: String = js.native): Unit
-    def hideComponentMask(): Unit
-    def hideContextMenu(): Unit
+    def hide(): void
+    def hideClickMask(ID: String = js.native): void
+    def hideComponentMask(): void
+    def hideContextMenu(): void
     val hideUsingDisplayNone: Boolean
     var hover: js.ThisFunction0[callbackHandler, Boolean]
     var hoverAlign: Alignment
     var hoverAutoDestroy: Boolean
     var hoverDelay: Int
     var hoverHeight: Int
-    def hoverHidden(): Unit
+    def hoverHidden(): void
     var hoverMoveWithMouse: Boolean
     var hoverOpacity: Int
     var hoverStyle: CSSStyleName
@@ -251,7 +251,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val htmlPosition: DrawPosition
     val ID: String
     def imgHTML(src: SCImgURL, width: Int = js.native, height: Int = js.native, name: String = js.native, extraStuff: String = js.native, imgDir: String = js.native): String
-    var initWidget: js.ThisFunction0[callbackHandler, Unit]
+    var initWidget: js.ThisFunction0[callbackHandler, void]
     def intersects(other: Canvas): Boolean
     def intersectsRect(left: Int | js.Array[Int], top: Int, width: Int, height: Int): Boolean
     def isDirty(): Boolean
@@ -267,7 +267,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var keyPress: js.ThisFunction0[callbackHandler, Boolean]
     var keyUp: js.ThisFunction0[callbackHandler, Boolean]
     var layoutAlign: Alignment | VerticalAlignment
-    def layoutChildren(reason: String): Unit
+    def layoutChildren(reason: String): void
     val leavePageSpace: Int
     val left: String | Int
     def linkHTML(href: String, text: HTMLString = js.native, target: String = js.native, ID: String = js.native, tabIndex: Int = js.native, accessKey: String = js.native): HTMLString
@@ -276,8 +276,8 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var locatePeersBy: LocatorStrategy
     var locatePeersType: LocatorTypeStrategy
     val margin: Int
-    def markForDestroy(): Unit
-    def markForRedraw(reason: String = js.native): Unit
+    def markForDestroy(): void
+    def markForRedraw(reason: String = js.native): void
     val masterElement: Canvas
     var matchElement: Boolean
     var maxHeight: Int
@@ -296,114 +296,114 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var mouseStillDownInitialDelay: Int
     var mouseUp: js.ThisFunction0[callbackHandler, Boolean]
     var mouseWheel: js.ThisFunction0[callbackHandler, Boolean]
-    def moveAbove(canvas: Canvas): Unit
-    def moveBelow(canvas: Canvas): Unit
+    def moveAbove(canvas: Canvas): void
+    def moveBelow(canvas: Canvas): void
     def moveBy(deltaX: Int, deltaY: Int): Boolean
-    var moved: js.ThisFunction2[callbackHandler, Int, Int, Unit]
+    var moved: js.ThisFunction2[callbackHandler, Int, Int, void]
     def moveTo(left: Int = js.native, top: Int = js.native): Boolean
     var noDoubleClicks: Boolean
     val opacity: Int
     val overflow: Overflow
     val padding: Int
-    def pageScrollDown(): Unit
-    def pageScrollUp(): Unit
+    def pageScrollDown(): void
+    def pageScrollUp(): void
     val parentCanvas: Canvas
-    var parentMoved: js.ThisFunction2[callbackHandler, Int, Int, Unit]
+    var parentMoved: js.ThisFunction2[callbackHandler, Int, Int, void]
     def parentResized()
     val peers: js.Array[Canvas]
     val percentBox: PercentBoxModel
     val percentSource: Canvas
-    def placeNear(left: Int = js.native, top: Int = js.native): Unit
+    def placeNear(left: Int = js.native, top: Int = js.native): void
     var position: Positioning
     var printChildrenAbsolutelyPositioned: Boolean
     var prompt: HTMLString
     val proportionalResizeModifiers: js.Array[KeyName]
     val proportionalResizing: ProportionalResizeMode
-    def redraw(reason: String = js.native): Unit
+    def redraw(reason: String = js.native): void
     var redrawOnResize: Boolean
-    def removeChild(child: Canvas, name: String = js.native): Unit
-    def removePeer(peer: Canvas, name: String = js.native): Unit
-    def removeSnapAlignCandidate(candidate: Canvas): Unit
+    def removeChild(child: Canvas, name: String = js.native): void
+    def removePeer(peer: Canvas, name: String = js.native): void
+    def removeSnapAlignCandidate(candidate: Canvas): void
     val resizeBarTarget: String
     def resizeBy(deltaX: Int = js.native, deltaY: Int = js.native): Boolean
     var resized: js.ThisFunction0[callbackHandler, Boolean]
     var resizeFrom: js.Array[EdgeName]
     def resizeTo(width: Int = js.native, height: Int = js.native): Boolean
-    def revealChild(child: Canvas | String): Unit
+    def revealChild(child: Canvas | String): void
     var rightMouseDown: js.ThisFunction0[callbackHandler, Boolean]
     val scrollbarConstructor: String
     val scrollbarSize: Int
-    def scrollBy(dX: Int, dY: Int): Unit
-    def scrollByPercent(dX: Int, dY: Int): Unit
+    def scrollBy(dX: Int, dY: Int): void
+    def scrollByPercent(dX: Int, dY: Int): void
     var scrolled: js.ThisFunction0[callbackHandler, Boolean]
     def scrollTo(left: Int = js.native, top: Int = js.native): Int
-    def scrollToBottom(): Unit
-    def scrollToLeft(): Unit
-    def scrollToPercent(left: Int, top: Int): Unit
-    def scrollToRight(): Unit
-    def scrollToTop(): Unit
-    def sendToBack(): Unit
-    def setAccessKey(accessKey: Char): Unit
-    def setAriaState(stateName: String, stateValue: String | Boolean | Int | Double): Unit
-    def setBackgroundColor(newColor: CSSColor): Unit
-    def setBackgroundImage(newImage: URL): Unit
-    def setBorder(newBorder: String): Unit
-    def setBottom(bottom: Int): Unit
-    def setCanFocus(canFocus: Boolean): Unit
-    def setContents(newContents: HTMLString): Unit
-    def setCursor(newCursor: Cursor): Unit
-    def setDataPath(dataPath: DataPath): Unit
-    def setDisabled(disabled: Boolean): Unit
+    def scrollToBottom(): void
+    def scrollToLeft(): void
+    def scrollToPercent(left: Int, top: Int): void
+    def scrollToRight(): void
+    def scrollToTop(): void
+    def sendToBack(): void
+    def setAccessKey(accessKey: Char): void
+    def setAriaState(stateName: String, stateValue: String | Boolean | Int | Double): void
+    def setBackgroundColor(newColor: CSSColor): void
+    def setBackgroundImage(newImage: URL): void
+    def setBorder(newBorder: String): void
+    def setBottom(bottom: Int): void
+    def setCanFocus(canFocus: Boolean): void
+    def setContents(newContents: HTMLString): void
+    def setCursor(newCursor: Cursor): void
+    def setDataPath(dataPath: DataPath): void
+    def setDisabled(disabled: Boolean): void
     var setDragTracker: js.ThisFunction0[callbackHandler, Boolean]
-    def setEdgeOpacity(newOpacity: Int): Unit
-    def setEditMode(editingOn: Boolean, editContext: EditContext = js.native, editNode: EditNode = js.native): Unit
-    def setGroupLabelBackgroundColor(groupLabelBackgroundColor: CSSColor): Unit
-    def setGroupTitle(newTitle: HTMLString): Unit
-    def setHeight(height: Int): Unit
-    def setHtmlElement(element: DocumentEvent): Unit
-    def setHtmlPosition(element: DrawPosition): Unit
-    def setImage(identifier: String, URL: SCImgURL = js.native, imgDir: String = js.native): Unit
-    def setLeavePageSpace(newPageSpace: Int): Unit
-    def setLeft(left: Int): Unit
-    def setMargin(margin: Int): Unit
-    def setOpacity(newOpacity: Int): Unit
-    def setOverflow(newOverflow: Overflow): Unit
-    def setPadding(newPadding: Int): Unit
-    def setPageLeft(left: Int): Unit
-    def setPageTop(top: Int): Unit
-    def setPercentSource(sourceWidget: Canvas = js.native): Unit
-    def setRect(left: Int = js.native, top: Int = js.native, width: Int = js.native, height: Int = js.native): Unit
-    def setRight(right: Int): Unit
-    def setShowResizeBar(show: Boolean): Unit
-    def setShowShadow(showShadow: Boolean): Unit
-    def setShowSnapGrid(show: Boolean): Unit
-    def setSnapEdge(snapEdge: String): Unit
-    def setSnapOffsetLeft(snapOffsetLeft: Int): Unit
-    def setSnapOffsetTop(snapOffsetTop: Int): Unit
-    def setSnapTo(snapTo: String): Unit
-    def setStyleName(newStyle: CSSStyleName): Unit
-    def setTabIndex(tabIndex: Int): Unit
-    def setTop(top: Int): Unit
-    def setValuesManager(dataPath: DataPath): Unit
-    def setWidth(width: Int): Unit
+    def setEdgeOpacity(newOpacity: Int): void
+    def setEditMode(editingOn: Boolean, editContext: EditContext = js.native, editNode: EditNode = js.native): void
+    def setGroupLabelBackgroundColor(groupLabelBackgroundColor: CSSColor): void
+    def setGroupTitle(newTitle: HTMLString): void
+    def setHeight(height: Int): void
+    def setHtmlElement(element: DocumentEvent): void
+    def setHtmlPosition(element: DrawPosition): void
+    def setImage(identifier: String, URL: SCImgURL = js.native, imgDir: String = js.native): void
+    def setLeavePageSpace(newPageSpace: Int): void
+    def setLeft(left: Int): void
+    def setMargin(margin: Int): void
+    def setOpacity(newOpacity: Int): void
+    def setOverflow(newOverflow: Overflow): void
+    def setPadding(newPadding: Int): void
+    def setPageLeft(left: Int): void
+    def setPageTop(top: Int): void
+    def setPercentSource(sourceWidget: Canvas = js.native): void
+    def setRect(left: Int = js.native, top: Int = js.native, width: Int = js.native, height: Int = js.native): void
+    def setRight(right: Int): void
+    def setShowResizeBar(show: Boolean): void
+    def setShowShadow(showShadow: Boolean): void
+    def setShowSnapGrid(show: Boolean): void
+    def setSnapEdge(snapEdge: String): void
+    def setSnapOffsetLeft(snapOffsetLeft: Int): void
+    def setSnapOffsetTop(snapOffsetTop: Int): void
+    def setSnapTo(snapTo: String): void
+    def setStyleName(newStyle: CSSStyleName): void
+    def setTabIndex(tabIndex: Int): void
+    def setTop(top: Int): void
+    def setValuesManager(dataPath: DataPath): void
+    def setWidth(width: Int): void
     val shadowDepth: Int
     val shadowImage: Int
     var shadowOffset: Int
     var shadowSoftness: Int
-    def shouldDragScroll(): Unit
+    def shouldDragScroll(): void
     var shouldPrint: Boolean
     def shouldSnapOnDrop(dragTarget: Canvas): Boolean
-    def show(): Unit
+    def show(): void
     def showClickMask(clickAction: Callback, mode: ClickMaskMode, unmaskedTargets: Canvas | js.Array[Canvas]): String
-    def showComponentMask(unmaskedChildren: js.Array[Canvas] = js.native): Unit
+    def showComponentMask(unmaskedChildren: js.Array[Canvas] = js.native): void
     var showContextMenu: js.ThisFunction0[callbackHandler, Boolean]
     val showCustomScrollbars: Boolean
     var showDragShadow: Boolean
     val showEdges: Boolean
     var showHover: Boolean
     var showHoverComponents: Boolean
-    def showNextTo(otherWidget: Canvas, side: String = js.native, canOcclude: Boolean = js.native, skipAnimation: Boolean = js.native): Unit
-    def showRecursively(): Unit
+    def showNextTo(otherWidget: Canvas, side: String = js.native, canOcclude: Boolean = js.native, skipAnimation: Boolean = js.native): void
+    def showRecursively(): void
     var showResizeBar: Boolean
     var showShadow: Boolean
     var showSnapGrid: Boolean
@@ -432,8 +432,8 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var tabIndex: Int
     val top: Int | String
     val topElement: Canvas
-    def updateEditNode(editContext: EditContext, editNode: EditNode): Unit
-    def updateHover(hoverHTML: HTMLString = js.native): Unit
+    def updateEditNode(editContext: EditContext, editNode: EditNode): void
+    def updateHover(hoverHTML: HTMLString = js.native): void
     var useBackMask: Boolean
     var useDragMask: Boolean
     var useNativeDrag: Boolean
@@ -441,7 +441,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val useTouchScrolling: Boolean
     var valuesManager: ValuesManager
     var visibility: Visibility
-    var visibilityChanged: js.ThisFunction1[callbackHandler, Boolean, Unit]
+    var visibilityChanged: js.ThisFunction1[callbackHandler, Boolean, void]
     def visibleAtPoint(x: Int, y: Int, withinViewport: Boolean = js.native, ignoreWidgets: Canvas = js.native, upToParent: Canvas = js.native): Boolean
     val width: Int | String
     def willAcceptDrop(): Boolean
@@ -461,10 +461,10 @@ abstract class AbstractCanvasCompanion extends AbstractClassCompanion {
     var loadingImageSrc: SCImgURL = js.native
     val neverUseFilters: Boolean = js.native
     val neverUsePNGWorkaround: Boolean = js.native
-    def printComponents(components: js.Array[Canvas], printProperties: PrintProperties = js.native): Unit = js.native
-    def setAllowExternalFilters(allExternalFilters: Boolean): Unit = js.native
-    def setDefaultPageSpace(newDefaultPageSpace: Int): Unit = js.native
-    def setNeverUseFilters(neverUseFilters: Boolean): Unit = js.native
-    def showPrintPreview(components: js.Array[Canvas], printProperties: PrintProperties = js.native, printWindowProperties: PrintWindow = js.native, callback: Callback = js.native, separator: String): Unit = js.native
+    def printComponents(components: js.Array[Canvas], printProperties: PrintProperties = js.native): void = js.native
+    def setAllowExternalFilters(allExternalFilters: Boolean): void = js.native
+    def setDefaultPageSpace(newDefaultPageSpace: Int): void = js.native
+    def setNeverUseFilters(neverUseFilters: Boolean): void = js.native
+    def showPrintPreview(components: js.Array[Canvas], printProperties: PrintProperties = js.native, printWindowProperties: PrintWindow = js.native, callback: Callback = js.native, separator: String): void = js.native
     val TAB_INDEX_FLOOR: Int = js.native
 }

@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.Control.{LoginDialog, Dialog}
 import com.simplesys.SmartClient.System.Types.Callback
+import com.simplesys.isc.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -10,13 +11,13 @@ import scala.scalajs.js.|
 object isc extends Types.Object {
     def addDefaults(destination: Types.Object, source: Types.Object): Types.Object = js.native
     def addProperties(destination: Types.Object, propsArray: js.Array[Types.Object]): Types.Object = js.native
-    def ask(message: String, callback: Callback = js.native, properties: Dialog = js.native): Unit = js.native
-    def askForValue(message: String, callback: Callback = js.native, properties: Dialog = js.native): Unit = js.native
-    def clearPrompt(): Unit = js.native
+    def ask(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
+    def askForValue(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
+    def clearPrompt(): void = js.native
     def clone(obj: Types.Object): Types.Object = js.native
-    def confirm(message: String, callback: Callback = js.native, properties: Dialog = js.native): Unit = js.native
+    def confirm(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
     def defineClass(className: String, superClass: Class = js.native): Class = js.native
-    def dismissCurrentDialog(): Unit = js.native
+    def dismissCurrentDialog(): void = js.native
     def echo(value: js.Any): String = js.native
     def echoAll(value: js.Any): String = js.native
     def echoLeaf(value: js.Any): String = js.native
@@ -30,23 +31,23 @@ object isc extends Types.Object {
     def getKeys(obj: Types.Object): js.Array[String] = js.native
     def getValueForKey(value: Int, valueMap: js.Dictionary[Types.Object], defaultKey: js.Any): js.Any = js.native
     def getValues(obj: Types.Object): js.Array[js.Any] = js.native
-    def logEcho(value: js.Any, message: String): Unit = js.native
-    def logEchoAll(value: js.Any, message: String): Unit = js.native
-    def logWarn(message: String, category: String = js.native): Unit = js.native
+    def logEcho(value: js.Any, message: String): void = js.native
+    def logEchoAll(value: js.Any, message: String): void = js.native
+    def logWarn(message: String, category: String = js.native): void = js.native
     def makeReverseMap(valueMap: js.Dictionary[Types.Object]): js.Dictionary[Types.Object] = js.native
-    def overwriteClass(): Unit = js.native
+    def overwriteClass(): void = js.native
     def propertyDefined(obj: Types.Object, propertyName: String): Boolean = js.native
-    def say(message: String, callback: Callback = js.native, properties: Dialog = js.native):Unit = js.native
-    def setAutoDraw(enable: Boolean = js.native): Unit = js.native
-    def setScreenReaderMode(newState: Boolean): Unit = js.native
+    def say(message: String, callback: Callback = js.native, properties: Dialog = js.native):void = js.native
+    def setAutoDraw(enable: Boolean = js.native): void = js.native
+    def setScreenReaderMode(newState: Boolean): void = js.native
     def shallowClone(obj: Types.Object | js.Array[Types.Object]): Types.Object | js.Array[Types.Object] = js.native
-    def showFadingPrompt(message: String, duration: Int, callback: Callback = js.native, properties: Dialog = js.native): Unit = js.native
-    def showLoginDialog(loginFunc: js.Function2[js.Dictionary[String], js.Function1[Boolean, Unit], Unit], properties: LoginDialog = js.native): Unit = js.native
-    def showPrompt(message: String, properties: Dialog = js.native): Unit = js.native
+    def showFadingPrompt(message: String, duration: Int, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
+    def showLoginDialog(loginFunc: js.Function2[js.Dictionary[String], js.Function1[Boolean, void], void], properties: LoginDialog = js.native): void = js.native
+    def showPrompt(message: String, properties: Dialog = js.native): void = js.native
     def sortObject(obj: Types.Object, comparator: js.Function): Types.Object = js.native
     def sortObjectByProperties(obj: Types.Object, comparator: js.Function): Types.Object = js.native
     def timeStamp(): Int = js.native
-    def warn(message: String, callback: Callback = js.native, properties: Dialog = js.native):Unit = js.native
+    def warn(message: String, callback: Callback = js.native, properties: Dialog = js.native):void = js.native
 
     val params : com.simplesys.SmartClient.System.params.type = js.native
 }

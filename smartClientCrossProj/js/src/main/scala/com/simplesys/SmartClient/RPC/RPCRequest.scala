@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.System.Types.{Record, Callback}
 import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
 import com.simplesys.isc.System.Types.PromptStyle.PromptStyle
 import com.simplesys.isc.System.Types.RPCTransport.RPCTransport
-import com.simplesys.isc.System.Types.URL
+import com.simplesys.isc.System.Types.{void, URL}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -49,7 +49,7 @@ trait RPCRequest extends Class {
 
 @js.native
 abstract trait AbstractRPCRequestCompanion extends AbstractClassCompanion {
-    def create(): Unit = js.native
+    def create(): void = js.native
     var useCursorTracker: Boolean = js.native
 }
 

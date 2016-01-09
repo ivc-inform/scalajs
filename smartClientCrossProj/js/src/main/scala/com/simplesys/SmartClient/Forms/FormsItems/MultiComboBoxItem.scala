@@ -4,7 +4,8 @@ import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Layout.Layout
 import com.simplesys.isc.System.Types.MultiComboBoxLayoutStyle.MultiComboBoxLayoutStyle
-import com.simplesys.isc.System.Types.{CSSStyleName, SCClassName, AutoChild, MultiAutoChild}
+import com.simplesys.isc.System.Types._
+import com.simplesys.isc.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -22,8 +23,8 @@ trait MultiComboBoxItem extends CanvasItem {
     val deselectedButtonStyle: CSSStyleName
     var layoutStyle: MultiComboBoxLayoutStyle
     val pendingButtonStyle: CSSStyleName
-    def setAutoFitButtons(autoFitButtons: Boolean): Unit
-    def setLayoutStyle(layoutStyle: MultiComboBoxLayoutStyle): Unit
+    def setAutoFitButtons(autoFitButtons: Boolean): void
+    def setLayoutStyle(layoutStyle: MultiComboBoxLayoutStyle): void
     val useInsertionOrder: Boolean
     val valueLayout: Layout with MultiAutoChild
 }

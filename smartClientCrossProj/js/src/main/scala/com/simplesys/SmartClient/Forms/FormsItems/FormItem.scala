@@ -36,7 +36,7 @@ trait FormItem extends Class {
     var ariaState: Types.Object
     var autoComplete: AutoComplete
     var blur: js.Function2[DynamicForm, FormItem, _]
-    def blurItem(): Unit
+    def blurItem(): void
     var browserSpellCheck: Boolean
     var canEdit: Boolean
     def canEditCriterion(criterion: Criterion): Boolean
@@ -47,8 +47,8 @@ trait FormItem extends Class {
     var cellStyle: FormItemBaseStyle
     var change: js.Function4[DynamicForm, FormItem, js.Any, js.Any, Boolean]
     var changed: js.Function3[DynamicForm, FormItem, js.Any, _]
-    def clearErrors(): Unit
-    def clearValue(): Unit
+    def clearErrors(): void
+    def clearValue(): void
     var click: js.Function2[DynamicForm, FormItem, Boolean]
     var clipStaticValue: Boolean
     var clipTitle: Boolean
@@ -63,9 +63,9 @@ trait FormItem extends Class {
     var defaultDynamicValue: js.Function3[FormItem, DynamicForm, Types.Object, _]
     var defaultIconSrc: SCImgURL
     var defaultValue: js.Any
-    def disable(): Unit
+    def disable(): void
     var disabled: Boolean
-    def disableIcon(icon: String): Unit
+    def disableIcon(icon: String): void
     var disableIconsOnReadOnly: Boolean
     var displayField: String
     var doubleClick: js.Function2[DynamicForm, FormItem, Boolean]
@@ -86,7 +86,7 @@ trait FormItem extends Class {
     var exportFormat: FormatString
     var filterLocally: Boolean
     var focus: js.Function2[DynamicForm, FormItem, _]
-    def focusInItem(): Unit
+    def focusInItem(): void
     val foreignDisplayField: String
     val form: DynamicForm
     val format: FormatString
@@ -135,8 +135,8 @@ trait FormItem extends Class {
     def hasErrors(): Boolean
     var height: String | Int
     var hidden: Boolean
-    def hide(): Unit
-    def hideIcon(icon: String): Unit
+    def hide(): void
+    def hideIcon(icon: String): void
     var hint: HTMLString
     var hintStyle: CSSClassName
     var hoverAlign: Alignment
@@ -160,7 +160,7 @@ trait FormItem extends Class {
     var implicitSave: Boolean
     var implicitSaveOnBlur: Boolean
     var inputFormat: DateInputFormat
-    def invalidateDisplayValueCache(): Unit
+    def invalidateDisplayValueCache(): void
     def isDisabled(): Boolean
     def isDrawn(): Boolean
     def isFocused(): Boolean
@@ -203,7 +203,7 @@ trait FormItem extends Class {
     var prompt: HTMLString
     var readOnlyDisplay: ReadOnlyDisplayAppearance
     var readOnlyTextBoxStyle: FormItemBaseStyle
-    def redraw(reason: String): Unit
+    def redraw(reason: String): void
     var redrawOnChange: Boolean
     var rejectInvalidValueOnChange: Boolean
     var required: Boolean
@@ -212,31 +212,31 @@ trait FormItem extends Class {
     var saveOnEnter: Boolean
     var selectOnClick: Boolean
     var selectOnFocus: Boolean
-    def setCanEdit(canEdit: Boolean): Unit
-    def setCellStyle(newCellStyle: FormItemBaseStyle): Unit
-    def setCriterion(criterion: Criterion): Unit
-    def setDisabled(disabled: Boolean): Unit
-    def setErrors(errors: Array[String] | String): Unit
-    def setHint(newHint: HTMLString): Unit
-    def setHintStyle(hintStyle: CSSStyleName): Unit
-    def setIconDisabled(icon: String, disabled: Boolean): Unit
-    def setLeft(): Unit
-    def setOptionDataSource(dataSource: DataSource): Unit
-    def setPrompt(newPrompt: HTMLString): Unit
-    def setReadOnlyDisplay(appearance: ReadOnlyDisplayAppearance): Unit
-    def setRequired(required: Boolean): Unit
-    def setShowDisabled(showDisabled: Boolean): Unit
-    def setTabIndex(): Unit
-    def setTop(): Unit
-    def setValue(newValue: js.Any): Unit
-    def setValueIcons(map: Types.Object): Unit
-    def setValueMap(valueMap: Array[Types.Object]): Unit
+    def setCanEdit(canEdit: Boolean): void
+    def setCellStyle(newCellStyle: FormItemBaseStyle): void
+    def setCriterion(criterion: Criterion): void
+    def setDisabled(disabled: Boolean): void
+    def setErrors(errors: Array[String] | String): void
+    def setHint(newHint: HTMLString): void
+    def setHintStyle(hintStyle: CSSStyleName): void
+    def setIconDisabled(icon: String, disabled: Boolean): void
+    def setLeft(): void
+    def setOptionDataSource(dataSource: DataSource): void
+    def setPrompt(newPrompt: HTMLString): void
+    def setReadOnlyDisplay(appearance: ReadOnlyDisplayAppearance): void
+    def setRequired(required: Boolean): void
+    def setShowDisabled(showDisabled: Boolean): void
+    def setTabIndex(): void
+    def setTop(): void
+    def setValue(newValue: js.Any): void
+    def setValueIcons(map: Types.Object): void
+    def setValueMap(valueMap: Array[Types.Object]): void
     def shouldApplyHeightToTextBox(): Boolean
     def shouldFetchMissingValue(newValue: js.Any): Boolean
     def shouldSaveOnEnter(): Boolean
     var shouldSaveValue: Boolean
     var shouldStopKeyPressBubbling: js.Function2[String, Int, Boolean]
-    def show(): Unit
+    def show(): void
     var showClippedTitleOnHover: Boolean
     var showClippedValueOnHover: Boolean
     var showDeletions: Boolean
@@ -249,22 +249,22 @@ trait FormItem extends Class {
     var showFocusedIcons: Boolean
     var showFocusedPickerIcon: Boolean
     var showHint: Boolean
-    def showIcon(icon: String): Unit
+    def showIcon(icon: String): void
     var showIcons: Boolean
     var showIf: js.Function4[FormItem, js.Any, DynamicForm, Types.Object, Boolean]
     var showOldValueInHover: Boolean
     var showOverIcons: Boolean
     var showPending: Boolean
-    def showPicker(): Unit
+    def showPicker(): void
     var showPickerIcon: Boolean
     var showRTL: Boolean
     var showTitle: Boolean
     var showValueIconOnly: Boolean
     var startRow: Boolean
     var staticHeight: Int
-    def stopHover(): Unit
+    def stopHover(): void
     var stopOnError: Boolean
-    def storeValue(value: js.Any, showValue: Boolean = js.native): Unit
+    def storeValue(value: js.Any, showValue: Boolean = js.native): void
     var suppressValueIcon: Boolean
     var synchronousValidation: Boolean
     var tabIndex: Int
@@ -285,7 +285,7 @@ trait FormItem extends Class {
     var top: Int
     var transformInput: js.Function4[DynamicForm, FormItem, js.Any, js.Any, js.Any]
     var `type`: FormItemType
-    def updateState(): Unit
+    def updateState(): void
     var useDisabledHintStyleForReadOnly: Boolean
     def validate(): Boolean
     var validateOnChange: Boolean
@@ -314,7 +314,7 @@ trait FormItem extends Class {
 
 @js.native
 abstract trait AbstractFormItemCompanion extends AbstractClassCompanion {
-    def create(): Unit = js.native
+    def create(): void = js.native
 }
 
 @js.native

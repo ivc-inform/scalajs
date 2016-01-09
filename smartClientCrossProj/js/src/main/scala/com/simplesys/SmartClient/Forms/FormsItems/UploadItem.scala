@@ -1,5 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
+import com.simplesys.isc.System.Types.void
+
 import scala.scalajs.js
 import scala.scalajs.js.|
 
@@ -7,8 +9,8 @@ import scala.scalajs.js.|
 trait UploadItem extends TextItem {
     val accept:String
     val multiple:Boolean
-    def  setSelectionRange ():Unit
-    def  setValue ():Unit
+    def  setSelectionRange ():void
+    def  setValue ():void
 }
 
 @js.native

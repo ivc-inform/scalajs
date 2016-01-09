@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.System.DateRange.DateRange
 import com.simplesys.SmartClient.System.{Date, Criterion}
 import com.simplesys.isc.System.Types.TimeUnit.TimeUnit
 import com.simplesys.isc.System.Types.TitleOrientation.TitleOrientation
-import com.simplesys.isc.System.Types.{RelativeDateString, AutoChild}
+import com.simplesys.isc.System.Types.{void, RelativeDateString, AutoChild}
 import com.simplesys.isc.System.Types.DateFieldLayout.DateFieldLayout
 
 import scala.scalajs.js
@@ -25,9 +25,9 @@ trait DateRangeItem extends CanvasItem {
     val innerTitleOrientation: TitleOrientation
     val invalidRangeErrorMessage: String
     val relativeItemConstructor: String
-    def setFromDate(fromDate: Date): Unit
-    def setToDate(fromDate: Date): Unit
-    def setValue(value: DateRange): Unit
+    def setFromDate(fromDate: Date): void
+    def setToDate(fromDate: Date): void
+    def setValue(value: DateRange): void
     var toDate: Date | RelativeDateString | TimeUnit
     val toField: FormItem with AutoChild
     val toTitle: String
