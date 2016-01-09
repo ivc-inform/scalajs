@@ -5,7 +5,6 @@ import com.simplesys.SmartClient.Foundation.{Canvas, Img}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
 import com.simplesys.SmartClient.Grids.{AbstractListGridCompanion, ListGrid}
 import com.simplesys.SmartClient.Layout.NavigationBar
-import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 import com.simplesys.SmartClient.System.{Types, Tree}
 import com.simplesys.SmartClient.System.Types.Criteria
 import com.simplesys.isc.System.Types.PanelPlacement.PanelPlacement
