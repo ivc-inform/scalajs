@@ -1,14 +1,19 @@
 package com.simplesys.SmartClient.Forms
 
-import com.simplesys.SmartClient.Control.ImgButton
+import com.simplesys.SmartClient.Control.{IButton, ImgButton}
 import com.simplesys.SmartClient.DataBinding.DataSource
-import com.simplesys.SmartClient.Forms.FormsItems.{FormItem, PickList}
-import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.Layout.{VStack, AbstractLayoutCompanion, Layout}
+import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
+import com.simplesys.SmartClient.Forms.FormsItems.{SelectItem, FormItem, PickList}
+import com.simplesys.SmartClient.Foundation.{Label, Canvas}
+import com.simplesys.SmartClient.Layout.{HLayout, VStack, AbstractLayoutCompanion, Layout}
 import com.simplesys.SmartClient.System.Criterion
 import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
-import com.simplesys.isc.System.Types.AutoChild
+import com.simplesys.isc.System.Types.FieldType.FieldType
+import com.simplesys.isc.System.Types.TopOperatorAppearance.TopOperatorAppearance
+import com.simplesys.isc.System.Types.ValueItemType.ValueItemType
+import com.simplesys.isc.System.Types.{MultiAutoChild, SCClassName, AutoChild}
 import com.simplesys.isc.System.Types.LogicalOperator.LogicalOperator
+import com.simplesys.isc.System.Types.OperatorId.OperatorId
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -33,6 +38,59 @@ trait FilterBuilder extends Layout {
     var filterChanged: js.Function1[Unit, _]
     def getChildFilters(): Array[FilterBuilder]
     def getCriteria(includeEmptyValues: Boolean = js.native): AdvancedCriteria
+    def getEditorType(field: DataSourceField, operatorId: OperatorId): SCClassName
+    def getFieldOperators(fieldName: String): Array[OperatorId]
+    def getFilterDescription(): String
+    def getSelectedClauses(): Array[FilterClause]
+    var getValueFieldProperties: js.Function4[FieldType, String, OperatorId, ValueItemType, FormItem]
+    val inlineAndNotTitle: String
+    val inlineAndTitle: String
+    val inlineOrTitle: String
+    val matchAllTitle: String
+    val matchAnyTitle: String
+    val matchNoneTitle: String
+    val missingFieldPrompt: String
+    val modeSwitcher: Label with AutoChild
+    val modeSwitcherAdvancedMessage: String
+    val modeSwitcherFlattenWarningMessage: String
+    val modeSwitcherSimpleMessage: String
+    val operatorPicker: SelectItem with MultiAutoChild
+    val operatorPickerProperties: FormItem
+    val operatorPickerTitle: String
+    val operatorPickerWidth: String | Int
+    val radioOperatorForm: DynamicForm with AutoChild
+    val radioOperatorLayout: HLayout with AutoChild
+    val radioOperatorTitle: String
+    val rangeSeparator: String
+    val removeButton: ImgButton with AutoChild
+    val removeButtonPrompt: String
+    def removeClause(clause: FilterClause): Unit
+    var retainValuesAcrossFields: Boolean
+    var saveOnEnter: Boolean
+    var search: js.Function1[AdvancedCriteria, _]
+    def setCriteria(criteria: AdvancedCriteria): Unit
+    def setTopOperator(operator: OperatorId): Unit
+    def setTopOperatorAppearance(value: TopOperatorAppearance): Unit
+    val showAddButton: Boolean
+    val showFieldTitles: Boolean
+    val showModeSwitcher: Boolean
+    val showRemoveButton: Boolean
+    val showSelectionCheckbox: Boolean
+    val showSubClauseButton: Boolean
+    val sortFields: Boolean
+    val subClauseButton: IButton with AutoChild
+    val subClauseButtonPrompt: String
+    val subClauseButtonTitle: String
+    var topOperator: LogicalOperator
+    var topOperatorAppearance: TopOperatorAppearance
+    val topOperatorForm: DynamicForm with AutoChild
+    val topOperatorItem: SelectItem with AutoChild
+    val topOperatorItemWidth: String | Int
+    val topOperatorOptions: Array[OperatorId]
+    val topOperatorTitle: String
+    def validate(): Boolean
+    val validateOnChange: Boolean
+    val valueItemWidth: Int | String
 }
 
 @js.native
