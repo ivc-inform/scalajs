@@ -3,19 +3,23 @@ package com.simplesys.SmartClient.DataBinding
 import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.Grids.ListGrid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
-import com.simplesys.SmartClient.Layout.{AbstractLayoutCompanion, Layout}
+import com.simplesys.SmartClient.Layout.{AbstractWindowCompanion, Window}
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.Object
-import com.simplesys.isc.System.Types.{HTMLString, AutoChild}
+import com.simplesys.SmartClient.System.Types.{Callback, Object}
+import com.simplesys.isc.System.Types._
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
 
 @js.native
-trait MultiSortPanel extends Layout {
+trait MultiSortDialog extends Window {
     val addLevelButton: IButton with AutoChild
     val addLevelButtonTitle: String
+    val applyButton: IButton with AutoChild
+    val applyButtonTitle: String
     val ascendingTitle: String
+    val cancelButton: IButton with AutoChild
+    val cancelButtonTitle: String
     val copyLevelButton: IButton with AutoChild
     val copyLevelButtonTitle: String
     val deleteLevelButton: IButton with AutoChild
@@ -37,13 +41,14 @@ trait MultiSortPanel extends Layout {
     val optionsGrid: ListGrid[ListGridField, ListGridRecord] with AutoChild
     val otherSortLevelTitle: String
     val propertyFieldTitle: String
-    def sortChanged (sortLevels: Array[SortSpecifier])
+    val tile: String
     def validate(): Boolean
 }
 
 @js.native
-abstract trait AbstractMultiSortPanelCompanion extends AbstractLayoutCompanion {
+abstract trait AbstractMultiSortDialogCompanion extends AbstractWindowCompanion {
+    def askForSort(fieldSource: Array[Object] | DataSource | DataBoundComponent, initialSort: Array[SortSpecifier], callback: Callback): void = js.native
 }
 
 @js.native
-object MultiSortPanel extends AbstractMultiSortPanelCompanion        
+object MultiSortDialog extends AbstractMultiSortDialogCompanion        

@@ -9,7 +9,7 @@ import scala.scalajs.js.|
 @js.native
 trait RPCResponse extends Class {
     val clientContext: Types.Object
-    val data: String | Types.Object
+    val data: Types.Object
     val httpHeaders: Types.Object
     val httpResponseCode: Int
     val httpResponseText: String

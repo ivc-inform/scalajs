@@ -19,7 +19,7 @@ trait RPCRequest extends Class {
     var clientContext: Types.Object
     var containsCredentials: Boolean
     var contentType: String
-    var data: String | Record | Types.Object
+    var data:Types.Object| js.Array[Types.Object]
     var downloadResult: Boolean
     var downloadToNewWindow: Boolean
     var evalResult: Boolean
