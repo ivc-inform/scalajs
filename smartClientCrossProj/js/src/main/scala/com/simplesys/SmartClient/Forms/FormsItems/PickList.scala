@@ -50,7 +50,7 @@ trait PickList extends Class {
     var pickListHeaderHeight: Int
     var pickListHeight: Int
     var pickListMaxWidth: Int
-    var pickListProperties: ListGrid[ListGridField]
+    var pickListProperties: ListGrid[ListGridField, ListGridRecord]
     val pickListTallBaseStyle: CSSStyleName
     var pickListWidth: Int
     var separatorRows: Array[ListGridRecord]

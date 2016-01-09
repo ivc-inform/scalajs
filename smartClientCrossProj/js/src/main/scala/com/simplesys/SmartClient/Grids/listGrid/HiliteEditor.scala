@@ -19,7 +19,7 @@ trait HiliteEditor extends VLayout {
     val cancelButton: StatefulCanvas with AutoChild
     val cancelButtonTitle: String
     def clearHilites(): void
-    val fieldList: ListGrid[ListGridField]
+    val fieldList: ListGrid[ListGridField, ListGridRecord]
     val hiliteIcons: js.Array[SCImgURL]
     val hiliteRule: HiliteRule with AutoChild
     def removeRule(hiliteRule: HiliteRule): void

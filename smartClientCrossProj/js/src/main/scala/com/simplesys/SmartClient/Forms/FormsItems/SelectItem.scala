@@ -36,7 +36,7 @@ trait SelectItem extends FormItem with PickList {
     val pickListPlacement :PanelPlacement | Canvas | String
     val progressiveLoading: Boolean
     val separateSpecialValues: Boolean
-    val separateValuesList:ListGrid[ListGridField]
+    val separateValuesList:ListGrid[ListGridField, ListGridRecord]
     var showHintInField:Boolean
     var showOver:Boolean
 }

@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.Grids
 
 
 import com.simplesys.SmartClient.Foundation.{Canvas, AbstractCanvasCompanion}
+import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.treeGrid.{TreeNode, TreeGridField}
 import com.simplesys.SmartClient.System.{Types, Tree}
 import com.simplesys.SmartClient.System.Types._
@@ -16,7 +17,7 @@ import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
 
 @js.native
-trait TreeGrid extends ListGrid[TreeGridField] {
+trait TreeGrid extends ListGrid[TreeGridField, ListGridRecord] {
     var alwaysShowOpener: Boolean
     var autoPreserveOpenState: PreserveOpenState
     var canDropOnLeaves: Boolean

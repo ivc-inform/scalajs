@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.HTMLFlow
 import com.simplesys.SmartClient.Grids.ListGrid
-import com.simplesys.SmartClient.Grids.listGrid.ListGridField
+import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
 import com.simplesys.SmartClient.Layout.{AbstractVStackCompanion, VStack}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.isc.System.Types.AutoChild
@@ -28,7 +28,7 @@ trait BatchUploader extends VStack {
     var defaultQuoteString: String
     var discardedColumnsMessage: String
     val displayDiscardedColumns: Boolean
-    var grid: ListGrid[ListGridField] with AutoChild
+    var grid: ListGrid[ListGridField, ListGridRecord] with AutoChild
     var gridFields: Array[ListGridField]
     var partialCommit: PartialCommitOption
     val partialCommitConfirmationMessage: String

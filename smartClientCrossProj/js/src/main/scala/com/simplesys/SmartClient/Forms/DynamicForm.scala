@@ -61,7 +61,7 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     var disableValidation: Boolean
     def editNewRecord(initialValues: Types.Object | Record = js.native): void
     def editRecord(record: Record): void
-    def editSelectedData(selectionComponent: ListGrid[ListGridField] | String): void
+    def editSelectedData(selectionComponent: ListGrid[ListGridField, ListGridRecord] | String): void
     var encoding: Encoding
     val errorItemCellStyle: String
     val errorItemProperties: Types.Object

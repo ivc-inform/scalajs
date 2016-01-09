@@ -10,7 +10,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait TableView extends ListGrid[ListGridField] {
+trait TableView extends ListGrid[ListGridField, ListGridRecord] {
     var formatRecord: js.Function1[ListGridRecord, HTMLString]
     var imageClick: js.Function1[ListGridRecord, HTMLString]
     var navIcon: SCImgURL

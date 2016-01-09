@@ -60,7 +60,7 @@ trait DetailViewer extends Canvas with DataBoundComponent {
     val showEmptyMessage: Boolean
     val timeFormatter: TimeDisplayFormat
     var valueAlign: Alignment
-    def viewSelectedData(selectionComponent: ListGrid[ListGridField] | String): void
+    def viewSelectedData(selectionComponent: ListGrid[ListGridField, ListGridRecord] | String): void
     var wrapLabel: Boolean
     var wrapValues: Boolean
 }

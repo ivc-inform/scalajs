@@ -9,7 +9,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait RecordEditor extends ListGrid[ListGridField] {
+trait RecordEditor extends ListGrid[ListGridField, ListGridRecord] {
     val actionButton: Button with AutoChild
     val actionButtonProperties: js.Dictionary[js.Any]
     val actionButtonStyle: CSSStyleName

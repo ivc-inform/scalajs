@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.DataBinding.{DataSource, DSRequest}
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.ListGrid
-import com.simplesys.SmartClient.Grids.listGrid.ListGridField
+import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
 import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 import com.simplesys.SmartClient.System.Types.{Criteria, Record}
 import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
@@ -34,7 +34,7 @@ trait ValuesManager extends Class {
     var disableValidation: Boolean
     def editNewRecord(initialValues: Types.Object | Record = js.native): void
     def editRecord(record: Record): void
-    def editSelectedData(selectionComponent: ListGrid[ListGridField] | String): void
+    def editSelectedData(selectionComponent: ListGrid[ListGridField, ListGridRecord] | String): void
     def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def filterData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def getChangedValues(): Types.Object
