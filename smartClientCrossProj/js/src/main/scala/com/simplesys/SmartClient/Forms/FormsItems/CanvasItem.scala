@@ -1,8 +1,9 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
+import com.simplesys.SmartClient.DataBinding.Criterion
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.System.{Types, Criterion}
+import com.simplesys.SmartClient.System.Types
 import com.simplesys.isc.System.Types.{void, HTMLString}
 import com.simplesys.isc.System.Types.Overflow.Overflow
 import com.simplesys.isc.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance

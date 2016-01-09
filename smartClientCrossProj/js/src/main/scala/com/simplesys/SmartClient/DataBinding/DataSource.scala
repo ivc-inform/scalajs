@@ -1,6 +1,5 @@
 package com.simplesys.SmartClient.DataBinding
 
-import com.simplesys.SmartClient.DataBinding.SortSpecifier.SortSpecifier
 import com.simplesys.SmartClient.DataBinding.dataSource._
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.Canvas
@@ -8,7 +7,6 @@ import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerField
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.RPC.ServerObject
 import com.simplesys.SmartClient.System._
-import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.isc.System.Types.CriteriaCombineOperator.CriteriaCombineOperator
 import com.simplesys.isc.System.Types.CriteriaPolicy.CriteriaPolicy

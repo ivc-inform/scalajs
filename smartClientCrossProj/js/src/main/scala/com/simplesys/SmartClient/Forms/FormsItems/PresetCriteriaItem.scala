@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
-import com.simplesys.SmartClient.System.{Types, Criterion}
-import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
+import com.simplesys.SmartClient.DataBinding.{AdvancedCriteria, Criterion}
+import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.isc.System.Types.void
 

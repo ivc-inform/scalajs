@@ -14,7 +14,6 @@ import com.simplesys.SmartClient.Grids.listGrid._
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, AbstractVLayoutCompanion, VLayout}
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
 import com.simplesys.SmartClient.System.{Selection, Tree, Types, Class}
-import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System.selection.CellSelection
 import com.simplesys.isc.System.Types.Alignment.Alignment

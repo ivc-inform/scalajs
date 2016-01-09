@@ -1,8 +1,7 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource, ResultSet}
+import com.simplesys.SmartClient.DataBinding.{AdvancedCriteria, DSRequest, DataSource, ResultSet}
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
-import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System._
 import com.simplesys.isc.System.Types.LoadState.LoadState

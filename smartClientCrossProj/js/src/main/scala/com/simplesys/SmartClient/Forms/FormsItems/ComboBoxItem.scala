@@ -1,12 +1,12 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
+import com.simplesys.SmartClient.DataBinding.Criterion
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.ListGrid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
-import com.simplesys.SmartClient.System.Criterion
 import com.simplesys.isc.System.Types.PanelPlacement.PanelPlacement
 import com.simplesys.isc.System.Types.{void, HTMLString, AutoChild, CSSStyleName}
 import com.simplesys.isc.System.Types.PickListItemIconPlacement.PickListItemIconPlacement

@@ -1,9 +1,8 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
-import com.simplesys.SmartClient.DataBinding.DataSource
+import com.simplesys.SmartClient.DataBinding.{Criterion, DataSource}
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
-import com.simplesys.SmartClient.System.Criterion
 import com.simplesys.isc.System.Types.CharacterCasing.CharacterCasing
 import com.simplesys.isc.System.Types.CharacterCasing._
 import com.simplesys.isc.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance

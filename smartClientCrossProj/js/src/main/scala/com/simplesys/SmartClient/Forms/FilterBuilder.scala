@@ -1,13 +1,11 @@
 package com.simplesys.SmartClient.Forms
 
 import com.simplesys.SmartClient.Control.{IButton, ImgButton}
-import com.simplesys.SmartClient.DataBinding.DataSource
+import com.simplesys.SmartClient.DataBinding.{AdvancedCriteria, Criterion, DataSource}
 import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
 import com.simplesys.SmartClient.Forms.FormsItems.{SelectItem, FormItem, PickList}
 import com.simplesys.SmartClient.Foundation.{Label, Canvas}
 import com.simplesys.SmartClient.Layout.{HLayout, VStack, AbstractLayoutCompanion, Layout}
-import com.simplesys.SmartClient.System.Criterion
-import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 import com.simplesys.isc.System.Types.FieldType.FieldType
 import com.simplesys.isc.System.Types.TopOperatorAppearance.TopOperatorAppearance
 import com.simplesys.isc.System.Types.ValueItemType.ValueItemType

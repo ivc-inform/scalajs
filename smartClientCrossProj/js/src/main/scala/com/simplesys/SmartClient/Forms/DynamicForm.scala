@@ -1,15 +1,14 @@
 package com.simplesys.SmartClient.Forms
 
 import com.simplesys.SmartClient.DataBinding.dataSource.DSCallback
-import com.simplesys.SmartClient.DataBinding.{DataSource, DSRequest, DataBoundComponent}
+import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.dynamicForm.FormItemEventInfo
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.ListGrid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
-import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 import com.simplesys.SmartClient.System.Types.{ValueMap, Criteria, Record}
-import com.simplesys.SmartClient.System.{Criterion, KeyIdentifier, Types, AbstractClassCompanion}
+import com.simplesys.SmartClient.System.{KeyIdentifier, Types, AbstractClassCompanion}
 import com.simplesys.SmartClient.Workdlow.UserTask
 import com.simplesys.isc.System.Types.Alignment.Alignment
 import com.simplesys.isc.System.Types.AutoComplete.AutoComplete

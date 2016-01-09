@@ -1,8 +1,9 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
+import com.simplesys.SmartClient.DataBinding.Criterion
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
-import com.simplesys.SmartClient.System.{Types, Criterion, Date}
+import com.simplesys.SmartClient.System.{Types, Date}
 import com.simplesys.isc.System.Types.OperatorId.OperatorId
 import com.simplesys.isc.System.Types.RelativeDateRangePosition.RelativeDateRangePosition
 import com.simplesys.isc.System.Types.TimeUnit.TimeUnit

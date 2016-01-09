@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Grids.listGrid
 
+import com.simplesys.SmartClient.DataBinding.AdvancedCriteria
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 import com.simplesys.SmartClient.System.Types.Criteria
 import com.simplesys.isc.System.Types.{SCImgURL, HTMLString}
 

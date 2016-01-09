@@ -1,9 +1,10 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
+import com.simplesys.SmartClient.DataBinding.Criterion
 import com.simplesys.SmartClient.Forms.DateRangeDialog
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.System.DateRange.DateRange
-import com.simplesys.SmartClient.System.{Date, Criterion}
+import com.simplesys.SmartClient.System.Date
 import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.isc.System.Types.{void, AutoChild, RelativeDateString}
 import com.simplesys.isc.System.Types.TimeUnit.TimeUnit
