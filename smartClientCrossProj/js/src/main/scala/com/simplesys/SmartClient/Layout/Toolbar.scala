@@ -29,8 +29,8 @@ trait Toolbar extends Layout {
 }
 
 @js.native
-abstract trait AbstractToolBarCompanion extends AbstractCanvasCompanion {
+abstract trait AbstractToolbarCompanion extends AbstractCanvasCompanion {
 }
 
 @js.native
-object Toolbar extends AbstractToolBarCompanion
+object Toolbar extends AbstractToolbarCompanion
