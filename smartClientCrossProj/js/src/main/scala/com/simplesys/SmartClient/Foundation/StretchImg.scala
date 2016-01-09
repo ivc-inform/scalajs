@@ -15,7 +15,7 @@ trait StretchImg extends StatefulCanvas {
     val items: Array[StretchItem]
     def setItems (items: Array[StretchItem]):void
     def setSrc (src:URL):void
-    def setState (newState:String[, whichPart:String = js.native):void
+    def setState (newState:String, whichPart:String = js.native):void
     var showDownGrip:Boolean
     var showGrip:Boolean
     var showRollOverGrip:Boolean

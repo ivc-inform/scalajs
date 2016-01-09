@@ -20,7 +20,6 @@ trait EdgedCanvas extends Canvas {
     val edgeStyleName: CSSStyleName
     var edgeTop: Int
     var showCenter: Int
-    var skinImgDir: Int
 }
 
 @js.native
