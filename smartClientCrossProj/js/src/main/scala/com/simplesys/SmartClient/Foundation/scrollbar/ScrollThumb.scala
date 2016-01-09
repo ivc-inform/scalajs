@@ -8,7 +8,6 @@ import scala.scalajs.js.|
 @js.native
 trait ScrollThumb extends StretchImg {
     var capSize:Int
-    val src
 }
 
 @js.native
