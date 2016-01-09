@@ -23,4 +23,5 @@ package object Types {
     type AnimateShowEffectId = String
     type DateInputFormat = String
     type void = Unit
+    type ID = String
 }
