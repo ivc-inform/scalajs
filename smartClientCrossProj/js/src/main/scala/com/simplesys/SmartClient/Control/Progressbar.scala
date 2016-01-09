@@ -17,8 +17,6 @@ trait Progressbar extends StretchImg {
     def setBreadth(newBreadth: Int): void
     def setLength(newLength: Int): void
     def setPercentDone(newPercent: Int): void
-    var src: SCImgURL
-    var vertical:Boolean
 }
 
 @js.native

@@ -8,7 +8,6 @@ import scala.scalajs.js.|
 
 @js.native
 trait ImgTab extends StretchImgButton {
-    var src: SCImgURL
 }
 
 @js.native

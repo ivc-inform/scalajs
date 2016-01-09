@@ -24,12 +24,10 @@ trait StretchImgButton extends StretchImg {
     def setTitleStyle(style: CSSStyleName): void
     var showClippedTitleOnHover: Boolean
     var showDisabledIcon: Boolean
-    var showTitle: Boolean
     var titleClipped: js.Function1[void, Boolean]
     var titleHover: js.Function1[void, Boolean]
     def titleHoverHTML (defaultHTML:HTMLString):HTMLString
     var titleStyle:CSSStyleName
-    var vertical:Boolean
     var wrap:Boolean
 }
 
