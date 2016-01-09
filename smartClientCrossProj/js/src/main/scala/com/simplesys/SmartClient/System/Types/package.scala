@@ -33,6 +33,8 @@ package object Types {
     type XMLDocument = Object
     type XMLElement = Object
     type XMLNode = Object
+    type VelocityExpression = Object
+    type XPathExpression = Object
     type ListGridFieldState = Object
     type XPath = String
 }
