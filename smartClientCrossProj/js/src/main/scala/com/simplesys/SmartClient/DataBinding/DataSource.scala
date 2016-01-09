@@ -1,11 +1,12 @@
 package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.DataBinding.SortSpecifier.SortSpecifier
-import com.simplesys.SmartClient.DataBinding.dataSource.{FileSpec, DSCallback, DataSourceField, Operator}
+import com.simplesys.SmartClient.DataBinding.dataSource._
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerField
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField
+import com.simplesys.SmartClient.RPC.ServerObject
 import com.simplesys.SmartClient.System._
 import com.simplesys.SmartClient.System.Types.AdvancedCriteria.AdvancedCriteria
 import com.simplesys.SmartClient.System.Types._
@@ -14,15 +15,18 @@ import com.simplesys.isc.System.Types.CriteriaPolicy.CriteriaPolicy
 import com.simplesys.isc.System.Types.DSDataFormat.DSDataFormat
 import com.simplesys.isc.System.Types.DSInheritanceMode.DSInheritanceMode
 import com.simplesys.isc.System.Types.DSProtocol.DSProtocol
+import com.simplesys.isc.System.Types.DSServerType.DSServerType
 import com.simplesys.isc.System.Types.EnumTranslateStrategy.EnumTranslateStrategy
 import com.simplesys.isc.System.Types.FieldType.FieldType
 import com.simplesys.isc.System.Types.MultiUpdatePolicy.MultiUpdatePolicy
 import com.simplesys.isc.System.Types.OperatorId.OperatorId
 import com.simplesys.isc.System.Types.OperatorValueType.OperatorValueType
 import com.simplesys.isc.System.Types.RPCTransport.RPCTransport
+import com.simplesys.isc.System.Types.SQLPagingStrategy.SQLPagingStrategy
+import com.simplesys.isc.System.Types.SequenceMode.SequenceMode
 import com.simplesys.isc.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.isc.System.Types.{URL, DataPath, ID, void}
+import com.simplesys.isc.System.Types._
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -145,7 +149,7 @@ trait DataSource extends Class {
     val jsonPrefix: String
     val jsonSuffix: String
     def listFiles(criteria: Criteria, callback: DSCallback): void
-    def listFileVersions (fileSpec: FileSpec| String, callback: DSCallback): void
+    def listFileVersions(fileSpec: FileSpec | String, callback: DSCallback): void
     val lookAhead: Int
     val maxFileVersions: Int
     val noNullUpdates: Boolean
@@ -156,6 +160,80 @@ trait DataSource extends Class {
     val nullStringValue: String
     val omitNullDefaultsOnAdd: String
     val operationBindings: Array[OperationBinding]
+    val ownerIdField: String
+    val patternEscapeChar: String
+    val patternMultiWildcard: String | Array[String]
+    val patternSingleWildcard: String | Array[String]
+    def performCustomOperation(operationId: String, data: Record = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
+    val pluralTitle: String
+    val preventHTTPCaching: Boolean
+    def processResponse(requestId: String, dsResponse: DSResponse): void
+    val progressiveLoading: Boolean
+    val progressiveLoadingThreshold: Int
+    val projectFileKey: String
+    val projectFileLocations: Array[String]
+    val qualifyColumnNames: Boolean
+    val quoteColumnNames: Boolean
+    val quoteTableName: Boolean
+    val recordName: String
+    def recordsAreEqual(record1: Record, record2: Record): Boolean
+    def recordsAsText(records: Array[Record], settings: TextExportSettings = js.native): String
+    def recordsFromText(text: String, settings: TextExportSettings = js.native): Array[Record]
+    def recordsFromXML(elements: Array[XMLElement], callback: Callback): Array[Record]
+    val recordXPath: XPathExpression
+    def removeFile(fileSpec: FileSpec | String, callback: DSCallback = js.native): void
+    def removeFileVersion(fileSpec: FileSpec | String, version: Date, callback: DSCallback = js.native): void
+    def renameFile(oldFileSpec: FileSpec | String, newFileSpec: FileSpec | String, callback: DSCallback = js.native): void
+    val requestProperties: DSRequest
+    val requiredMessage: String
+    val requires: VelocityExpression
+    val requiresAuthentication: Boolean
+    val requiresRole: String
+    val resultBatchSize: Int
+    val resultSetClass: Types.Object
+    val resultTreeClass: Types.Object
+    def saveFile(fileSpec: FileSpec | String, contents: String, callback: DSCallback = js.native): void
+    val schema: String
+    val schemaBean: String
+    val schemaNamespace: URN
+    val script: String
+    val sendExtraFields: Boolean
+    val sendParentNode: Boolean
+    val sequenceMode: SequenceMode
+    val serverConstructor: String
+    val serverObject: ServerObject
+    val serverType: DSServerType
+    val serviceNamespace: URN
+    def setCacheAllData(shouldCache: Boolean): void
+    def setCacheData(data: Array[Record]): void
+    def setClientOnly()
+    def setTypeOperators(typeName: FieldType | String, operators: Array[OperatorId]): void
+    val showLocalFieldsOnly: Boolean
+    val showPrompt: Boolean
+    val sparseUpdates: Boolean
+    def splitCriteria(criteria: Criteria, fields: Array[String]): Criteria
+    val sqlPaging: SQLPagingStrategy
+    val sqlUsePagingHint: Boolean
+    val strictSQLFiltering: Boolean
+    def supportsAdvancedCriteria(): Boolean
+    def supportsTextMatchStyle(textMatchStyle: TextMatchStyle): Boolean
+    val tableCode: String
+    val tableName: String
+    val tagName: String
+    val title: String
+    val titleField: String
+    val transformMultipleFields: Boolean
+    var transformReques: js.Function1[DSRequest, js.Any]
+    var transformResponse: js.Function3[DSResponse, DSRequest, XMLDocument | JSON, DSResponse]
+    val translatePatternOperators: Boolean
+    val trimMilliseconds: Boolean
+    def updateCaches(dsResponse: DSResponse, dsRequest: DSRequest = js.native): void
+    def updateData(updatedRecord: Record, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
+    val useAnsiJoins: Boolean
+    val useFlatFields: Boolean
+    val useHttpProxy: Boolean
+    val useLocalValidators: Boolean
+    def useOfflineResponse(dsResponse: DSResponse, dsRequest: DSRequest): Boolean
 }
 
 @js.native
@@ -189,6 +267,7 @@ abstract trait AbstractDataSourceCompanion extends AbstractClassCompanion {
     var serializeTimeAsDatetime: Boolean = js.native
     def setLoaderURL(url: URL): void = js.native
     def setTypeOperators(typeName: String | FieldType, operators: Array[OperatorId]): void = js.native
+    def removeData(data: Record, fieldName: String = js.native, requestProperties: DSRequest = js.native): void = js.native
 }
 
 
