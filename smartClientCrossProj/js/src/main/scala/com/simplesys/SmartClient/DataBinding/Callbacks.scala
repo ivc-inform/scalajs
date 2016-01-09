@@ -8,28 +8,28 @@ import scala.scalajs.js
 import scala.scalajs.js.{ThisFunction2, ThisFunction0, ThisFunction1}
 
 @js.native
-trait AnimationCallback extends ThisFunction1[Canvas#callbackHandler, Boolean, _]
+trait AnimationCallback extends ThisFunction1[Canvas#callbackHandler, Boolean, void]
 
 @js.native
-trait CollapseSectionCallback extends ThisFunction0[SectionStack#callbackHandler, _]
+trait CollapseSectionCallback extends ThisFunction0[SectionStack#callbackHandler, void]
 
 @js.native
-trait ExpandSectionCallback extends ThisFunction0[SectionStack#callbackHandler, _]
+trait ExpandSectionCallback extends ThisFunction0[SectionStack#callbackHandler, void]
 
 @js.native
-trait HideSectionCallback extends ThisFunction0[SectionStack#callbackHandler, _]
+trait HideSectionCallback extends ThisFunction0[SectionStack#callbackHandler, void]
 
 @js.native
-trait ShowSectionCallback extends ThisFunction0[SectionStack#callbackHandler, _]
+trait ShowSectionCallback extends ThisFunction0[SectionStack#callbackHandler, void]
 
 @js.native
-trait ClientOnlyDataSourceCallback extends ThisFunction0[DataSource, _]
+trait ClientOnlyDataSourceCallback extends ThisFunction0[DataSource, void]
 
 @js.native
-trait  GetFileCallback extends ThisFunction2[DSResponse, String, DSRequest, _]
+trait  GetFileCallback extends ThisFunction2[DSResponse, String, DSRequest, void]
 
 @js.native
-trait  GetFileVersionCallback extends ThisFunction2[DSResponse, String, DSRequest, _]
+trait  GetFileVersionCallback extends ThisFunction2[DSResponse, String, DSRequest, void]
 
 @js.native
-trait  HasFileCallback extends ThisFunction2[DSResponse, String, DSRequest, _]
+trait  HasFileCallback extends ThisFunction2[DSResponse, String, DSRequest, void]
