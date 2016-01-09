@@ -16,6 +16,7 @@ import com.simplesys.isc.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.isc.System.Types.{ID, FormatString, void, HTMLString}
 
 import scala.scalajs.js
+import scala.scalajs.js.|
 import scala.scalajs.js.Array
 
 @js.native
