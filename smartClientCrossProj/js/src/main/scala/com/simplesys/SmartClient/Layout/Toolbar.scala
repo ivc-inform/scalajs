@@ -9,7 +9,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait ToolBar extends Layout {
+trait Toolbar extends Layout {
     def addButtons(buttons: js.Array[Button] = js.native, position: Int = js.native): void
     var buttonConstructor: Class
     var buttonDefaults: Types.Object
@@ -33,4 +33,4 @@ abstract trait AbstractToolBarCompanion extends AbstractCanvasCompanion {
 }
 
 @js.native
-object ToolBar extends AbstractToolBarCompanion
+object Toolbar extends AbstractToolBarCompanion

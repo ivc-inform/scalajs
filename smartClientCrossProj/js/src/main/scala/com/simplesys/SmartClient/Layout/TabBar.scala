@@ -10,7 +10,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait TabBar extends ToolBar {
+trait TabBar extends Toolbar {
     val baseLineCapSize: Int
     val baseLineSrc: SCImgURL
     val baseLineThickness: Int
