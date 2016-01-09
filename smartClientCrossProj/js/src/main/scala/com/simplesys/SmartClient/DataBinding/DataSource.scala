@@ -112,7 +112,7 @@ trait DataSource extends Class {
     def getClientOnlyResponse(request: DSRequest, serverData: Array[Record]): DSResponse
     def getDataProtocol(dsRequest: DSRequest): DSProtocol
     def getDisplayValue(fieldName: String, value: js.Any): js.Any
-    def getFetchDataURL(criteria: Criteria[, requestProperties: DSRequest = js.native): String
+    def getFetchDataURL(criteria: Criteria, requestProperties: DSRequest = js.native): String
     def getField(fieldName: String): DataSourceField
     def getFieldCriterion(criterion: Criteria, fieldName: String): Criteria
     def getFieldForDataPath(dataPath: DataPath): DataSourceField
@@ -234,6 +234,17 @@ trait DataSource extends Class {
     val useHttpProxy: Boolean
     val useLocalValidators: Boolean
     def useOfflineResponse(dsResponse: DSResponse, dsRequest: DSRequest): Boolean
+    val useOfflineStorage: Boolean
+    val useParentFieldOrder: Boolean
+    val useSpringTransaction: Boolean
+    val useStrictJSON: Boolean
+    val useSubselectForRowCount: Boolean
+    val useTestDataFetch: Boolean
+    def validateData(values: Record, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
+    val validateRelatedRecords: Boolean
+    def viewFile(data: Record, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
+    val xmlNamespaces: Types.Object
+    def xmlSerialize(data: js.Any, flags: SerializationContext)
 }
 
 @js.native

@@ -35,7 +35,7 @@ trait OperationBinding extends Types.Object {
     val dataFormat: DSDataFormat
     val dataProtocol: DSProtocol
     val dataTransport: RPCTransport
-    val dataURL: URL K
+    val dataURL: URL
     val defaultParams: Types.Object
     val excludeCriteriaFields: Array[String]
     val exportAs: ExportFormat
