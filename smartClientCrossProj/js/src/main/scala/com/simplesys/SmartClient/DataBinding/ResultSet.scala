@@ -28,11 +28,7 @@ trait ResultSet extends Class with List {
     val fetchMode: FetchMode
     val fetchOperation: String
     def filterLocalData(): void
-    def find(propertyName: String, value: js.Any = js.native): Types.Object
-    def findAll(propertyName: String, value: js.Any = js.native): js.Array[Types.Object]
     def findByKey(keyValue: Types.Object): Record
-    def findIndex(propertyName: String, value: js.Any = js.native): Int
-    def findNextIndex(startIndex: Int, propertyName: String | Function | Types.Object, value: js.Any = js.native, endIndex: Int = js.native): Int
     def getAllCachedRows(): js.Array[Record]
     def getAllVisibleRows(): js.Array[Record]
     def getCriteria(): Criteria
@@ -49,7 +45,6 @@ trait ResultSet extends Class with List {
     def rowIsLoaded(rowNum: Int): Boolean
     def setCriteria(newCriteria: Criteria): Boolean
     def setSort(): void
-    def sortByProperty(property: String, up: Boolean, normalizer: Function | ValueMap = js.native, context: js.Any = js.native): this.type
     val sortSpecifiers: js.Array[SortSpecifier]
     var transformData: js.Function2[js.Any, DSResponse, js.Array[Types.Object]]
     val updateCacheFromRequest: Boolean

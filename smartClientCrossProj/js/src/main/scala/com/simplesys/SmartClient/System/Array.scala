@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.DataBinding.SortSpecifier
+import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.isc.System.Types.void
 
 import scala.scalajs.js
