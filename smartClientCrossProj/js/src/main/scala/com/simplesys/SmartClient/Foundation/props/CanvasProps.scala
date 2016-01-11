@@ -4,7 +4,6 @@ import com.simplesys.SmartClient.Control.Menu
 import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.SmartClient.Tools.inst.EditNode
@@ -75,7 +74,7 @@ class CanvasProps extends ClassProps {
     var canHover: ScOption[Boolean] = ScNone
     var canSelectText: ScOption[Boolean] = ScNone
     var canvasItem: ScOption[CanvasItem] = ScNone
-    var children: ScOption[js.Array[Canvas]] = ScNone
+    var children: ScOption[Seq[Canvas]] = ScNone
     var childrenResizeSnapAlign: ScOption[Boolean] = ScNone
     var childrenSnapAlign: ScOption[Boolean] = ScNone
     var childrenSnapCenterAlign: ScOption[Boolean] = ScNone
@@ -83,12 +82,12 @@ class CanvasProps extends ClassProps {
     var childrenSnapResizeToGrid: ScOption[Boolean] = ScNone
     var childrenSnapToGrid: ScOption[Boolean] = ScNone
     var click: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
-    var componentMask: ScOption[Canvas ] = ScNone
-    var componentMaskDefaults: ScOption[CanvasProps] = ScNone
+    var componentMask: ScOption[Canvas with AutoChild] = ScNone
+    var componentMaskDefaults: ScOption[Canvas] = ScNone
     var contents: ScOption[HTMLString] = ScNone
     var contextMenu: ScOption[Menu] = ScNone
     var cursor: ScOption[Cursor] = ScNone
-    var customEdges: ScOption[js.Array[String]] = ScNone
+    var customEdges: ScOption[Seq[String]] = ScNone
     var dataPath: ScOption[DataPath] = ScNone
     var defaultHeight: ScOption[Int] = ScNone
     var defaultWidth: ScOption[Int] = ScNone
@@ -123,12 +122,12 @@ class CanvasProps extends ClassProps {
     var dropMove: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var dropOut: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var dropOver: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
-    var dropTypes: ScOption[js.Array[String] | String] = ScNone
+    var dropTypes: ScOption[Seq[String]] = ScNone
     var dynamicContents: ScOption[Boolean] = ScNone
     var dynamicContentsVars: ScOption[ValueMap] = ScNone
     var edgeBackgroundColor: ScOption[Color] = ScNone
     var edgeCenterBackgroundColor: ScOption[Color] = ScNone
-    var edgeCursorMap: ScOption[Types.Object] = ScNone
+    var edgeCursorMap: ScOption[Object] = ScNone
     var edgeImage: ScOption[SCImgURL] = ScNone
     var edgeMarginSize: ScOption[Int] = ScNone
     var edgeOffset: ScOption[Int] = ScNone
@@ -136,15 +135,15 @@ class CanvasProps extends ClassProps {
     var edgeShowCenter: ScOption[Boolean] = ScNone
     var edgeSize: ScOption[Int] = ScNone
     var editNode: ScOption[EditNode] = ScNone
-    var editProxy: ScOption[EditNode ] = ScNone
+    var editProxy: ScOption[EditNode with AutoChild] = ScNone
     var editProxyConstructor: ScOption[SCClassName] = ScNone
     var extraSpace: ScOption[Int] = ScNone
-    var focusChanged: ScOption[js.ThisFunction1[callbackHandler, Boolean, void]] = ScNone
+    var focusChanged: ScOption[Function2[callbackHandler, Boolean, void]] = ScNone
     var groupBorderCSS: ScOption[String] = ScNone
     var groupLabelBackgroundColor: ScOption[CSSColor] = ScNone
     var groupLabelStyleName: ScOption[CSSStyleName] = ScNone
     var groupTitle: ScOption[HTMLString] = ScNone
-    var height: ScOption[String | Int] = ScNone
+    var height: ScOption[Int] = ScNone
     var hideUsingDisplayNone: ScOption[Boolean] = ScNone
     var hover: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var hoverAlign: ScOption[Alignment] = ScNone
@@ -160,17 +159,16 @@ class CanvasProps extends ClassProps {
     var htmlElement: ScOption[HTMLElement] = ScNone
     var htmlPosition: ScOption[DrawPosition] = ScNone
     var ID: ScOption[String] = ScNone
-    var initWidget: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone
     var isGroup: ScOption[Boolean] = ScNone
     var isPrinting: ScOption[Boolean] = ScNone
     var isSnapAlignCandidate: ScOption[Boolean] = ScNone
-    var keepInParentRect: ScOption[Boolean | js.Array[Int]] = ScNone
+    var keepInParentRect: ScOption[VerticalAlignment] = ScNone
     var keyDown: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var keyPress: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var keyUp: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
-    var layoutAlign: ScOption[Alignment | VerticalAlignment] = ScNone
+    var layoutAlign: ScOption[Alignment] = ScNone
     var leavePageSpace: ScOption[Int] = ScNone
-    var left: ScOption[String | Int] = ScNone
+    var left: ScOption[Int] = ScNone
     var locateChildrenBy: ScOption[LocatorStrategy] = ScNone
     var locateChildrenType: ScOption[LocatorTypeStrategy] = ScNone
     var locatePeersBy: ScOption[LocatorStrategy] = ScNone
@@ -194,25 +192,25 @@ class CanvasProps extends ClassProps {
     var mouseStillDownInitialDelay: ScOption[Int] = ScNone
     var mouseUp: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var mouseWheel: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
-    var moved: ScOption[js.ThisFunction2[callbackHandler, Int, Int, void]] = ScNone
+    var moved: ScOption[Function3[callbackHandler, Int, Int, void]] = ScNone
     var noDoubleClicks: ScOption[Boolean] = ScNone
     var opacity: ScOption[Int] = ScNone
     var overflow: ScOption[Overflow] = ScNone
     var padding: ScOption[Int] = ScNone
     var parentCanvas: ScOption[Canvas] = ScNone
-    var parentMoved: ScOption[js.ThisFunction2[callbackHandler, Int, Int, void]] = ScNone
-    var peers: ScOption[js.Array[Canvas]] = ScNone
+    var parentMoved: ScOption[Function3[callbackHandler, Int, Int, void]] = ScNone
+    var peers: ScOption[Seq[Canvas]] = ScNone
     var percentBox: ScOption[PercentBoxModel] = ScNone
     var percentSource: ScOption[Canvas] = ScNone
     var position: ScOption[Positioning] = ScNone
     var printChildrenAbsolutelyPositioned: ScOption[Boolean] = ScNone
     var prompt: ScOption[HTMLString] = ScNone
-    var proportionalResizeModifiers: ScOption[js.Array[KeyName]] = ScNone
+    var proportionalResizeModifiers: ScOption[Seq[KeyName]] = ScNone
     var proportionalResizing: ScOption[ProportionalResizeMode] = ScNone
     var redrawOnResize: ScOption[Boolean] = ScNone
     var resizeBarTarget: ScOption[String] = ScNone
     var resized: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
-    var resizeFrom: ScOption[js.Array[EdgeName]] = ScNone
+    var resizeFrom: ScOption[Seq[EdgeName]] = ScNone
     var rightMouseDown: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var scrollbarConstructor: ScOption[String] = ScNone
     var scrollbarSize: ScOption[Int] = ScNone
@@ -223,6 +221,7 @@ class CanvasProps extends ClassProps {
     var shadowOffset: ScOption[Int] = ScNone
     var shadowSoftness: ScOption[Int] = ScNone
     var shouldPrint: ScOption[Boolean] = ScNone
+    var showContextMenu: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var showCustomScrollbars: ScOption[Boolean] = ScNone
     var showDragShadow: ScOption[Boolean] = ScNone
     var showEdges: ScOption[Boolean] = ScNone
@@ -233,7 +232,7 @@ class CanvasProps extends ClassProps {
     var showSnapGrid: ScOption[Boolean] = ScNone
     var shrinkElementOnHide: ScOption[Boolean] = ScNone
     var skinImgDir: ScOption[URL] = ScNone
-    var snapAlignCandidates: ScOption[js.Array[Canvas]] = ScNone
+    var snapAlignCandidates: ScOption[Seq[Canvas]] = ScNone
     var snapAlignCenterLineStyle: ScOption[String] = ScNone
     var snapAlignEdgeLineStyle: ScOption[String] = ScNone
     var snapAxis: ScOption[String] = ScNone
@@ -254,7 +253,7 @@ class CanvasProps extends ClassProps {
     var snapVGap: ScOption[Int] = ScNone
     var styleName: ScOption[CSSStyleName] = ScNone
     var tabIndex: ScOption[Int] = ScNone
-    var top: ScOption[Int | String] = ScNone
+    var top: ScOption[Int] = ScNone
     var topElement: ScOption[Canvas] = ScNone
     var useBackMask: ScOption[Boolean] = ScNone
     var useDragMask: ScOption[Boolean] = ScNone
@@ -263,6 +262,6 @@ class CanvasProps extends ClassProps {
     var useTouchScrolling: ScOption[Boolean] = ScNone
     var valuesManager: ScOption[ValuesManager] = ScNone
     var visibility: ScOption[Visibility] = ScNone
-    var visibilityChanged: ScOption[js.ThisFunction1[callbackHandler, Boolean, void]] = ScNone
-    var width: ScOption[Int | String] = ScNone
+    var visibilityChanged: ScOption[Function2[callbackHandler, Boolean, void]] = ScNone
+    var width: ScOption[Int] = ScNone
 }
