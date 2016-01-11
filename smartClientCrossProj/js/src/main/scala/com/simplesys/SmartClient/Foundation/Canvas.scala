@@ -6,7 +6,6 @@ import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
 import com.simplesys.SmartClient.Foundation.AnimateShowEffect.AnimateShowEffect
 import com.simplesys.SmartClient.Foundation.Point._
-import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.Layout.PrintWindow
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System._
@@ -31,7 +30,7 @@ import com.simplesys.isc.System.Types.VerticalAlignment._
 import com.simplesys.isc.System.Types.Visibility._
 import com.simplesys.isc.System.Types._
 import org.scalajs.dom.DocumentEvent
-import org.scalajs.dom.html.{Element, Document}
+import org.scalajs.dom.html.Element
 import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js
@@ -105,7 +104,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var click: js.ThisFunction0[callbackHandler, Boolean]
     def clickMaskUp(ID: String = js.native): Boolean
     val componentMask: Canvas with AutoChild
-    val componentMaskDefaults: CanvasProps
+    val componentMaskDefaults: Canvas
     def contains(canvas: Canvas, testSelf: Boolean = js.native): Boolean
     def containsEvent(): Boolean
     def containsFocus(): Boolean

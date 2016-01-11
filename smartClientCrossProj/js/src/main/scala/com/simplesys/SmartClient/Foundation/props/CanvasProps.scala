@@ -83,7 +83,7 @@ class CanvasProps extends ClassProps {
     var childrenSnapToGrid: ScOption[Boolean] = ScNone
     var click: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var componentMask: ScOption[Canvas] = ScNone
-    var componentMaskDefaults: ScOption[CanvasProps] = ScNone
+    var componentMaskDefaults: ScOption[Canvas] = ScNone
     var contents: ScOption[HTMLString] = ScNone
     var contextMenu: ScOption[Menu] = ScNone
     var cursor: ScOption[Cursor] = ScNone
