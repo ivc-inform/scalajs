@@ -143,7 +143,7 @@ class CanvasProps extends ClassProps {
     var groupLabelBackgroundColor: ScOption[CSSColor] = ScNone
     var groupLabelStyleName: ScOption[CSSStyleName] = ScNone
     var groupTitle: ScOption[HTMLString] = ScNone
-    var height: ScOption[Int] = ScNone
+    var height: ScOption[Either[Int, String]] = ScNone
     var hideUsingDisplayNone: ScOption[Boolean] = ScNone
     var hover: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var hoverAlign: ScOption[Alignment] = ScNone
@@ -263,5 +263,5 @@ class CanvasProps extends ClassProps {
     var valuesManager: ScOption[ValuesManager] = ScNone
     var visibility: ScOption[Visibility] = ScNone
     var visibilityChanged: ScOption[Function2[callbackHandler, Boolean, void]] = ScNone
-    var width: ScOption[Int] = ScNone
+    var width: ScOption[Either[Int, String]] = ScNone
 }

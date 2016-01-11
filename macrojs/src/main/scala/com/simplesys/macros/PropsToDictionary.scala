@@ -1,7 +1,7 @@
 package com.simplesys.macros
 
 import com.simplesys.SmartClient.System.props.AbstractPropsClass
-import com.simplesys.SmartClient.option.{ScSome, ScOption}
+import com.simplesys.SmartClient.option.{ScOption, ScSome}
 import com.simplesys.common.Strings._
 import com.simplesys.log.Logging
 
@@ -21,7 +21,7 @@ object PropsToDictionary extends Logging {
 
         def typeToConvertedValueInt(typeDef: context.universe.Type, valueAccess: context.universe.Tree): Option[context.universe.Tree] = {
             val tsScOption = typeOf[ScOption[_]].typeSymbol
-            val tsScSome = typeOf[ScSome[_]].typeSymbol
+            //val tsScSome = typeOf[ScSome[_]].typeSymbol
 
             typeDef.baseType(typeOf[scala.collection.Seq[_]].typeSymbol) match {
                 case TypeRef(_, _, targs) =>
@@ -35,11 +35,24 @@ object PropsToDictionary extends Logging {
 
                     Some(q"$arrEx")
                 case NoType =>
-                    typeDef.baseType(typeOf[ScOption[_]].typeSymbol) match {
+                    typeDef.baseType(tsScOption) match {
                         case TypeRef(_, _, _) =>
                             Some(q"$valueAccess")
                         case NoType =>
-                            None
+                            typeDef.baseType(typeOf[Either[_, _]].typeSymbol) match {
+                                case TypeRef(_, _, targs) =>
+                                    val access = q"ei"
+                                    val checkedTypes = targs.map(t => typeToConvertedValueInt(t, access))
+                                    val leftType = checkedTypes.head.getOrElse(valueAccess)
+                                    val rightType = checkedTypes.last.getOrElse(valueAccess)
+
+                                    Some(
+                                        q"""$valueAccess match {
+                                            case Left(item) => $leftType
+                                            case Right(item) => $rightType
+                                        }""")
+                                case NoType => None
+                            }
                     }
             }
         }
