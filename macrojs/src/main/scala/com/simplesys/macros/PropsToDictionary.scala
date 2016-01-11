@@ -21,7 +21,6 @@ object PropsToDictionary extends Logging {
 
         def typeToConvertedValueInt(typeDef: context.universe.Type, valueAccess: context.universe.Tree): Option[context.universe.Tree] = {
             val tsScOption = typeOf[ScOption[_]].typeSymbol
-            //val tsScSome = typeOf[ScSome[_]].typeSymbol
 
             typeDef.baseType(typeOf[scala.collection.Seq[_]].typeSymbol) match {
                 case TypeRef(_, _, targs) =>
