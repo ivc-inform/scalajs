@@ -10,7 +10,16 @@ import scala.scalajs.js
 trait IButton extends Button
 
 @js.native
+abstract class AbstractIButtonCompanion extends AbstractButtonCompanion {
+}
+
 object IButton extends SCApply[IButton, IButtonProps]
+
+package companion {
+   @js.native
+   object IButton extends AbstractIButtonCompanion
+}
+
 
 
 

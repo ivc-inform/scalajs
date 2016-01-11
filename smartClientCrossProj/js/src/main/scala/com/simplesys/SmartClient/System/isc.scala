@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.Control.{LoginDialog, Dialog}
+import com.simplesys.SmartClient.Control.props.IButtonProps
+import com.simplesys.SmartClient.Control.{Dialog, IButton, LoginDialog}
 import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.isc.System.Types.void
 
@@ -37,7 +38,7 @@ object isc extends Types.Object {
     def makeReverseMap(valueMap: js.Dictionary[Types.Object]): js.Dictionary[Types.Object] = js.native
     def overwriteClass(): void = js.native
     def propertyDefined(obj: Types.Object, propertyName: String): Boolean = js.native
-    def say(message: String, callback: Callback = js.native, properties: Dialog = js.native):void = js.native
+    def say(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
     def setAutoDraw(enable: Boolean = js.native): void = js.native
     def setScreenReaderMode(newState: Boolean): void = js.native
     def shallowClone(obj: Types.Object | js.Array[Types.Object]): Types.Object | js.Array[Types.Object] = js.native
@@ -47,9 +48,10 @@ object isc extends Types.Object {
     def sortObject(obj: Types.Object, comparator: js.Function): Types.Object = js.native
     def sortObjectByProperties(obj: Types.Object, comparator: js.Function): Types.Object = js.native
     def timeStamp(): Int = js.native
-    def warn(message: String, callback: Callback = js.native, properties: Dialog = js.native):void = js.native
+    def warn(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
 
-    val params : com.simplesys.SmartClient.System.params.type = js.native
+    val params: com.simplesys.SmartClient.System.params.type = js.native
+
 }
 
 
