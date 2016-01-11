@@ -62,3 +62,11 @@ trait StatefulCanvas extends Canvas {
         val title: HTMLString
         var valign: VerticalAlignment
 }
+
+@js.native
+abstract class AbstractStatefulCanvasCompanion extends AbstractCanvasCompanion {
+}
+
+@js.native
+object StatefulCanvas extends AbstractStatefulCanvasCompanion {
+}

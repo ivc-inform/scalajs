@@ -6,6 +6,7 @@ import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
 import com.simplesys.SmartClient.Foundation.AnimateShowEffect.AnimateShowEffect
 import com.simplesys.SmartClient.Foundation.Point._
+import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.Layout.PrintWindow
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System._
@@ -32,6 +33,7 @@ import com.simplesys.isc.System.Types._
 import org.scalajs.dom.DocumentEvent
 import org.scalajs.dom.html.Element
 import org.scalajs.dom.raw.HTMLElement
+import com.simplesys.macros.PropsToDictionary
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -466,4 +468,8 @@ abstract class AbstractCanvasCompanion extends AbstractClassCompanion {
     def setNeverUseFilters(neverUseFilters: Boolean): void = js.native
     def showPrintPreview(components: js.Array[Canvas], printProperties: PrintProperties = js.native, printWindowProperties: PrintWindow = js.native, callback: Callback = js.native, separator: String): void = js.native
     val TAB_INDEX_FLOOR: Int = js.native
+}
+
+@js.native
+object Canvas extends AbstractCanvasCompanion {
 }
