@@ -1,0 +1,22 @@
+val allowBlankPassword: Boolean
+val dismissable: Boolean
+val errorMessage: String
+val errorStyle: String
+val formFields: Array[FormItem]
+val loginButton: IButton with AutoChild
+val loginButtonTitle: String
+val loginFailureItem: BlurbItem with AutoChild
+val loginForm: DynamicForm with AutoChild
+var loginFunc: js.Function2[Types.Object, js.Function1[Boolean, _], _]
+var lostPassword: js.Function2[Types.Object, DynamicForm, _]
+val lostPasswordItem: LinkItem with AutoChild
+val lostPasswordItemTitle: String
+val passwordItem: PasswordItem with AutoChild
+val passwordItemTitle: String
+var register: js.Function2[Types.Object, DynamicForm, _]
+val registrationItem: LinkItem with AutoChild
+val registrationItemTitle: String
+val showLostPasswordLink: Boolean
+val showRegistrationLink: Boolean
+val usernameItem: TextItem with AutoChild
+val usernameItemTitle: String

@@ -14,6 +14,7 @@ trait SmartClientCrossProj {
           libraryDependencies ++= {
               Seq(
                   CommonSettings.cmnDependencies.xmlExtender.value,
+                  CommonSettings.cmnDependencies.scalaIOExtender.value,
                   CommonSettings.cmnDependencies.scalaTest.value,
                   CommonSettings.cmnDependencies.uTest.value
               )
