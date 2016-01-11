@@ -20,7 +20,9 @@ object PropsToDictionary extends Logging {
         import context.universe._
 
         def typeToConvertedValueInt(typeDef: context.universe.Type, valueAccess: context.universe.Tree): Option[context.universe.Tree] = {
+
             val tsScOption = typeOf[ScOption[_]].typeSymbol
+            val tsScEnumeration = typeOf[Enumeration].typeSymbol
 
             typeDef.baseType(typeOf[scala.collection.Seq[_]].typeSymbol) match {
                 case TypeRef(_, _, targs) =>
@@ -50,7 +52,11 @@ object PropsToDictionary extends Logging {
                                             case Left(item) => $leftType
                                             case Right(item) => $rightType
                                         }""")
-                                case NoType => None
+                                case NoType =>
+                                    if (typeDef.typeSymbol.owner == tsScEnumeration)
+                                        Some(q"item.toString")
+                                    else
+                                        None
                             }
                     }
             }
@@ -122,7 +128,7 @@ object PropsToDictionary extends Logging {
                  }
             }"""
         }
-        //logger debug res.toString()
+        logger debug res.toString()
         res
     }
 }
