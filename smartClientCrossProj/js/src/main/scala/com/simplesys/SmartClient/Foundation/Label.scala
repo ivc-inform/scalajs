@@ -1,7 +1,10 @@
 package com.simplesys.SmartClient.Foundation
 
 import com.simplesys.SmartClient.Control.Button
+import com.simplesys.SmartClient.Foundation.props.LabelProps
+import com.simplesys.SmartClient.System.SCApply
 import com.simplesys.isc.System.Types.{CSSStyleName, URL}
+import com.simplesys.macros.PropsToDictionary
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -14,5 +17,9 @@ trait Label extends Button {
 abstract trait AbstractLabelCompanion extends AbstractCanvasCompanion {
 }
 
-@js.native
-object Label extends AbstractLabelCompanion        
+object Label extends SCApply[Label, LabelProps]
+
+package companion {
+    @js.native
+    object Label extends AbstractLabelCompanion
+}
