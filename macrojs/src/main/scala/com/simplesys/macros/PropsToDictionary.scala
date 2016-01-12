@@ -136,7 +136,7 @@ object PropsToDictionary extends Logging {
                  }
             }"""
         }
-        //logger debug res.toString()
+        logger debug res.toString()
         res
     }
 }

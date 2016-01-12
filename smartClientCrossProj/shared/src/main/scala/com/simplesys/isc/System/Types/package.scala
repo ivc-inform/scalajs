@@ -1,5 +1,7 @@
 package com.simplesys.isc.System
 
+import com.simplesys.isc.System.Types.Alignment.Alignment
+import com.simplesys.isc.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.xml.Elem
 
 import scala.language.implicitConversions
@@ -25,4 +27,10 @@ package object Types {
     type DateInputFormat = String
     type void = Unit
     type ID = String
+
+
+    sealed abstract class DoubleAlignment[+A, +B]
+
+    case class AlignmentfromDoubleAlignment(a:Alignment)
+    case class VerticalAlignmentfromDoubleAlignment(a:VerticalAlignment)
 }
