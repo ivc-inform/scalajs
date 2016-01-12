@@ -28,5 +28,8 @@ case class VerticalAlignmentfromDoubleAlignment(a: VerticalAlignment) extends Do
 object DoubleType {
     implicit def Int2IntString(x: Int) = ScSome(IntFRomIntString(x))
     implicit def Stringt2IntString(x: String) = ScSome(StringFRomIntString(x))
+
+    implicit def Alignment2DoubleAlignment(x: Alignment) = ScSome(AlignmentfromDoubleAlignment(x))
+    implicit def VerticalAlignment2DoubleAlignment(x: VerticalAlignment) = ScSome(VerticalAlignmentfromDoubleAlignment(x))
 }
 
