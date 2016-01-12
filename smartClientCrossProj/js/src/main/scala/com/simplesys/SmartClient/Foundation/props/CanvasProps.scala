@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.Forms.ValuesManager
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types._
-import com.simplesys.SmartClient.System.props.ClassProps
+import com.simplesys.props.ClassProps
 import com.simplesys.SmartClient.Tools.inst.EditNode
 import com.simplesys.option.{IntString, DoubleType, ScNone, ScOption}
 import com.simplesys.System.Types.Alignment.Alignment

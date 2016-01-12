@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.System.props.AbstractPropsClass
+import com.simplesys.props.AbstractPropsClass
 import com.simplesys.macros.PropsToDictionary
 
 import scala.reflect.ClassTag
