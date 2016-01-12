@@ -16,6 +16,5 @@ case class StringFRomIntString(a: String) extends IntString[Int, String]
 object DoubleType {
     implicit def Int2IntString(x: Int) = ScSome(IntFRomIntString(x))
     implicit def Stringt2IntString(x: String) = ScSome(StringFRomIntString(x))
-
 }
 
