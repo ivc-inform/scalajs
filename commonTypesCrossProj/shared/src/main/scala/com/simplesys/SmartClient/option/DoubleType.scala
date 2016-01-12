@@ -1,7 +1,5 @@
 package com.simplesys.SmartClient.option
 
-import scala.language.implicitConversions
-
 
 sealed abstract class DoubleType[+A, +B]
 
