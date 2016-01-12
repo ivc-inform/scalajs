@@ -4,11 +4,12 @@ import com.simplesys.SmartClient.DataBinding.dataSource.DSCallback
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.dynamicForm.FormItemEventInfo
+import com.simplesys.SmartClient.Forms.props.DynamicFormProps
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.ListGrid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
 import com.simplesys.SmartClient.System.Types.{ValueMap, Criteria, Record}
-import com.simplesys.SmartClient.System.{KeyIdentifier, Types, AbstractClassCompanion}
+import com.simplesys.SmartClient.System.{SCApply, KeyIdentifier, Types, AbstractClassCompanion}
 import com.simplesys.SmartClient.Workdlow.UserTask
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AutoComplete.AutoComplete
@@ -23,6 +24,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VisibilityMode.VisibilityMode
 import com.simplesys.System.Types._
+import com.simplesys.macros.PropsToDictionary
 
 import scala.scalajs.js
 import scala.scalajs.js.{Any, Array, |}
@@ -206,9 +208,13 @@ trait DynamicForm extends Canvas with DataBoundComponent {
 }
 
 
+object DynamicForm extends SCApply[DynamicForm, DynamicFormProps]
+
 @js.native
 abstract trait AbstractDynamicFormCompanion extends AbstractClassCompanion {
 }
 
-@js.native
-object DynamicForm extends AbstractDynamicFormCompanion        
+package companion {
+    @js.native
+    object DynamicForm extends AbstractDynamicFormCompanion
+}
