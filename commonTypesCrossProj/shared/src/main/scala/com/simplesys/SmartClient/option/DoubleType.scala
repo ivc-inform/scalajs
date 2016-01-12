@@ -7,7 +7,7 @@ import scala.language.implicitConversions
 
 sealed abstract class DoubleType[+A, +B] {
 
-  def left = Type1Projection(this)
+  /*def left = Type1Projection(this)
 
   def right = Type2Projection(this)
 
@@ -33,7 +33,7 @@ sealed abstract class DoubleType[+A, +B] {
 
   def isLeft: Boolean
 
-  def isRight: Boolean
+  def isRight: Boolean*/
 }
 
 object DoubleType {
@@ -155,13 +155,13 @@ object DoubleType {
 }
 
 final case class Type1[+A, +B](a: A) extends DoubleType[A, B] {
-  def isLeft = true
-  def isRight = false
+  /*def isLeft = true
+  def isRight = false*/
 }
 
 final case class Type2[+A, +B](b: B) extends DoubleType[A, B] {
-  def isLeft = false
-  def isRight = true
+  /*def isLeft = false
+  def isRight = true*/
 }
 
 sealed abstract class IntString extends DoubleType[Int, String]
