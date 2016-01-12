@@ -8,22 +8,22 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.ListGrid
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{Criteria, ValueMap}
-import com.simplesys.isc.System.Types.Alignment.Alignment
-import com.simplesys.isc.System.Types.AutoComplete.AutoComplete
-import com.simplesys.isc.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
-import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.isc.System.Types.EditCompletionEvent.EditCompletionEvent
-import com.simplesys.isc.System.Types.EnterKeyEditAction.EnterKeyEditAction
-import com.simplesys.isc.System.Types.EscapeKeyEditAction.EscapeKeyEditAction
-import com.simplesys.isc.System.Types.HiliteIconPosition.HiliteIconPosition
-import com.simplesys.isc.System.Types.ListGridFieldType.ListGridFieldType
-import com.simplesys.isc.System.Types.OperatorId.OperatorId
-import com.simplesys.isc.System.Types.RecordSummaryFunction.RecordSummaryFunction
-import com.simplesys.isc.System.Types.SortDirection.SortDirection
-import com.simplesys.isc.System.Types.SummaryFunction.SummaryFunction
-import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.isc.System.Types.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.isc.System.Types._
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.AutoComplete.AutoComplete
+import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.EditCompletionEvent.EditCompletionEvent
+import com.simplesys.System.Types.EnterKeyEditAction.EnterKeyEditAction
+import com.simplesys.System.Types.EscapeKeyEditAction.EscapeKeyEditAction
+import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
+import com.simplesys.System.Types.ListGridFieldType.ListGridFieldType
+import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types.RecordSummaryFunction.RecordSummaryFunction
+import com.simplesys.System.Types.SortDirection.SortDirection
+import com.simplesys.System.Types.SummaryFunction.SummaryFunction
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types._
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Foundation.canvas
 
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.isc.System.Types.URL
+import com.simplesys.System.Types.URL
 
 import scala.scalajs.js
 import scala.scalajs.js.|

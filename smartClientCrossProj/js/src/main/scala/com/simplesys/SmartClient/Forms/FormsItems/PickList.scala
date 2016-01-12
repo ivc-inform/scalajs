@@ -10,9 +10,9 @@ import com.simplesys.SmartClient.System.AbstractClassCompanion
 import com.simplesys.SmartClient.System.Class
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
 import com.simplesys.SmartClient.System.Types.{ValueMap, Criteria}
-import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.isc.System.Types.{void, SCClassName, CSSStyleName}
-import com.simplesys.isc.System.Types.PickListItemIconPlacement.PickListItemIconPlacement
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.{void, SCClassName, CSSStyleName}
+import com.simplesys.System.Types.PickListItemIconPlacement.PickListItemIconPlacement
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

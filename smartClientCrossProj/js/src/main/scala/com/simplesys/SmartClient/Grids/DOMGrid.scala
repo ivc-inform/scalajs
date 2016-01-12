@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Grids
 
-import com.simplesys.isc.System.Types.void
+import com.simplesys.System.Types.void
 import org.scalajs.dom.html._
 import org.scalajs.dom.raw.Document
 

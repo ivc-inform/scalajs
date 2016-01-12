@@ -1,9 +1,9 @@
 package com.simplesys.SmartClient.Control
 
 import com.simplesys.SmartClient.Foundation.{AbstractCanvasCompanion, Img}
-import com.simplesys.isc.System.Types.State.State
-import com.simplesys.isc.System.Types.VerticalAlignment.VerticalAlignment
-import com.simplesys.isc.System.Types.{SCImgURL, URL, CSSStyleName, void}
+import com.simplesys.System.Types.State.State
+import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
+import com.simplesys.System.Types.{SCImgURL, URL, CSSStyleName, void}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

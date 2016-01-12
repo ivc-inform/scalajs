@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
-import com.simplesys.isc.System.Types.{void, HTMLString}
+import com.simplesys.System.Types.{void, HTMLString}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

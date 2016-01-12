@@ -4,10 +4,10 @@ import com.simplesys.SmartClient.DataBinding.Criterion
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.System.Types.Record
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.isc.System.Types.FieldType.FieldType
-import com.simplesys.isc.System.Types.ID
-import com.simplesys.isc.System.Types.OperatorId.OperatorId
-import com.simplesys.isc.System.Types.OperatorValueType.OperatorValueType
+import com.simplesys.System.Types.FieldType.FieldType
+import com.simplesys.System.Types.ID
+import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types.OperatorValueType.OperatorValueType
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

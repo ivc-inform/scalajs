@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Forms.{DynamicForm, FilterClause}
 import com.simplesys.SmartClient.Foundation.Label
 import com.simplesys.SmartClient.Grids.listGrid.Hilite.Hilite
 import com.simplesys.SmartClient.Layout.{AbstractHLayoutCompanion, HLayout}
-import com.simplesys.isc.System.Types.{void, AutoChild}
+import com.simplesys.System.Types.{void, AutoChild}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

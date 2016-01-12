@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Forms
 
 import com.simplesys.SmartClient.Forms.FormsItems.{UploadItem, StaticTextItem, AbstractCanvasItemCompanion, CanvasItem}
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.isc.System.Types.{void, SCImgURL, AutoChild}
+import com.simplesys.System.Types.{void, SCImgURL, AutoChild}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

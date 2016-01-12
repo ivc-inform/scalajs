@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Layout.tabSet
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Layout.TabSet
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.isc.System.Types.{void, HTMLString, SCImgURL}
+import com.simplesys.System.Types.{void, HTMLString, SCImgURL}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

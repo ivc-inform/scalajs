@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Grids.ListGrid
 import com.simplesys.SmartClient.Grids.listGrid.Hilite.Hilite
 import com.simplesys.SmartClient.Layout.{AbstractVLayoutCompanion, VLayout}
 import com.simplesys.SmartClient.System.Types.Callback
-import com.simplesys.isc.System.Types.{void, SCImgURL, AutoChild}
+import com.simplesys.System.Types.{void, SCImgURL, AutoChild}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

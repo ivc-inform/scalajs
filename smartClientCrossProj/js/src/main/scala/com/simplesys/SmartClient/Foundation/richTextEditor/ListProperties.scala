@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Foundation.richTextEditor
 
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.isc.System.Types.SCImgURL
+import com.simplesys.System.Types.SCImgURL
 
 import scala.scalajs.js
 import scala.scalajs.js.|

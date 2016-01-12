@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.SmartClient.DataBinding.ResultSet
-import com.simplesys.isc.System.Types.CSSStyleName
+import com.simplesys.System.Types.CSSStyleName
 
 import scala.scalajs.js
 import scala.scalajs.js.|

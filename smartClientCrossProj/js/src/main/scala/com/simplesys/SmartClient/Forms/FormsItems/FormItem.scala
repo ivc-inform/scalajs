@@ -8,18 +8,18 @@ import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.RPC.RPCRequest
 import com.simplesys.SmartClient.System.Types.Criteria
 import com.simplesys.SmartClient.System._
-import com.simplesys.isc.System.Types.Alignment.Alignment
-import com.simplesys.isc.System.Types.AutoComplete.AutoComplete
-import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.isc.System.Types.FormItemElementType.FormItemElementType
-import com.simplesys.isc.System.Types.FormItemType.FormItemType
-import com.simplesys.isc.System.Types.OperatorId.OperatorId
-import com.simplesys.isc.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
-import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.isc.System.Types.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.isc.System.Types.TitleOrientation.TitleOrientation
-import com.simplesys.isc.System.Types.VerticalAlignment.VerticalAlignment
-import com.simplesys.isc.System.Types._
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.AutoComplete.AutoComplete
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.FormItemElementType.FormItemElementType
+import com.simplesys.System.Types.FormItemType.FormItemType
+import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types.TitleOrientation.TitleOrientation
+import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
+import com.simplesys.System.Types._
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

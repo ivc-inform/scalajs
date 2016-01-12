@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.Control
 
 import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
-import com.simplesys.isc.System.Types.Alignment.Alignment
-import com.simplesys.isc.System.Types.{void, SCImgURL}
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.{void, SCImgURL}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

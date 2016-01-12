@@ -3,10 +3,10 @@ package com.simplesys.SmartClient.Forms.FormsItems
 import com.simplesys.SmartClient.Forms.DateChooser
 import com.simplesys.SmartClient.System.Date
 import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
-import com.simplesys.isc.System.Types.Alignment.Alignment
-import com.simplesys.isc.System.Types.DateItemSelectorFormat.DateItemSelectorFormat
-import com.simplesys.isc.System.Types.{void, DateInputFormat, SCClassName, AutoChild}
-import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.DateItemSelectorFormat.DateItemSelectorFormat
+import com.simplesys.System.Types.{void, DateInputFormat, SCClassName, AutoChild}
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

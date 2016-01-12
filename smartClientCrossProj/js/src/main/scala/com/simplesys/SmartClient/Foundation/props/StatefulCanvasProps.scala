@@ -2,12 +2,12 @@ package com.simplesys.SmartClient.Foundation.props
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.option.{ScNone, ScOption}
-import com.simplesys.isc.System.Types.Alignment.Alignment
-import com.simplesys.isc.System.Types.IconOrientation.IconOrientation
-import com.simplesys.isc.System.Types.SelectionType.SelectionType
-import com.simplesys.isc.System.Types.State._
-import com.simplesys.isc.System.Types.VerticalAlignment._
-import com.simplesys.isc.System.Types._
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.IconOrientation.IconOrientation
+import com.simplesys.System.Types.SelectionType.SelectionType
+import com.simplesys.System.Types.State._
+import com.simplesys.System.Types.VerticalAlignment._
+import com.simplesys.System.Types._
 
 class StatefulCanvasProps extends CanvasProps {
     var actionType: ScOption[SelectionType] = ScNone

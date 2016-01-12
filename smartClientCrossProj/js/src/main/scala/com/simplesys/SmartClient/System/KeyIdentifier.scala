@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.isc.System.Types.KeyName
+import com.simplesys.System.Types.KeyName
 
 import scala.scalajs.js
 

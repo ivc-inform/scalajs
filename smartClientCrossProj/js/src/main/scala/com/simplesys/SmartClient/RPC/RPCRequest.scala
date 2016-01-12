@@ -2,9 +2,9 @@ package com.simplesys.SmartClient.RPC
 
 import com.simplesys.SmartClient.System.Types.{Record, Callback}
 import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
-import com.simplesys.isc.System.Types.PromptStyle.PromptStyle
-import com.simplesys.isc.System.Types.RPCTransport.RPCTransport
-import com.simplesys.isc.System.Types.{void, URL}
+import com.simplesys.System.Types.PromptStyle.PromptStyle
+import com.simplesys.System.Types.RPCTransport.RPCTransport
+import com.simplesys.System.Types.{void, URL}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

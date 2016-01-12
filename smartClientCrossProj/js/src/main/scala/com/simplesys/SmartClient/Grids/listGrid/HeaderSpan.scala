@@ -1,9 +1,9 @@
 package com.simplesys.SmartClient.Grids.listGrid
 
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.isc.System.Types.Alignment.Alignment
-import com.simplesys.isc.System.Types.VerticalAlignment.VerticalAlignment
-import com.simplesys.isc.System.Types._
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
+import com.simplesys.System.Types._
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

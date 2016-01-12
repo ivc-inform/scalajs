@@ -5,8 +5,8 @@ import com.simplesys.SmartClient.Forms.FormsItems.TimeItem
 import com.simplesys.SmartClient.Layout.{HLayout, AbstractVLayoutCompanion, VLayout}
 import com.simplesys.SmartClient.System.Date
 import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
-import com.simplesys.isc.System.Types._
-import com.simplesys.isc.System.Types.void
+import com.simplesys.System.Types._
+import com.simplesys.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

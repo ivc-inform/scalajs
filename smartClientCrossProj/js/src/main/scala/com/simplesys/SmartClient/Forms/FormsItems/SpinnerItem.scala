@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
-import com.simplesys.isc.System.Types.{FormItemBaseStyle, AutoChild}
+import com.simplesys.System.Types.{FormItemBaseStyle, AutoChild}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

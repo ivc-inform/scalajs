@@ -5,9 +5,9 @@ import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource, DataBoundCo
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.RPC.{RPCResponse, RPCRequest}
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.isc.System.Types.ContentsType.ContentsType
-import com.simplesys.isc.System.Types.SendMethod.SendMethod
-import com.simplesys.isc.System.Types._
+import com.simplesys.System.Types.ContentsType.ContentsType
+import com.simplesys.System.Types.SendMethod.SendMethod
+import com.simplesys.System.Types._
 import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js

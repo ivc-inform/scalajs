@@ -3,11 +3,11 @@ package com.simplesys.SmartClient.Forms.FormsItems.formItem
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.isc.System.Types.Alignment.Alignment
-import com.simplesys.isc.System.Types.CharacterCasing.CharacterCasing
-import com.simplesys.isc.System.Types.PickListItemIconPlacement.PickListItemIconPlacement
-import com.simplesys.isc.System.Types._
-import com.simplesys.isc.System.Types.void
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.CharacterCasing.CharacterCasing
+import com.simplesys.System.Types.PickListItemIconPlacement.PickListItemIconPlacement
+import com.simplesys.System.Types._
+import com.simplesys.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

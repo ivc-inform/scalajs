@@ -5,14 +5,14 @@ import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
 import com.simplesys.SmartClient.RPC.{AbstractRPCRequestCompanion, RPCRequest}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{Record, Object}
-import com.simplesys.isc.System.Types.DSOperationType.DSOperationType
-import com.simplesys.isc.System.Types.DSProtocol.DSProtocol
-import com.simplesys.isc.System.Types.ExportDisplay.ExportDisplay
-import com.simplesys.isc.System.Types.ExportFormat.ExportFormat
-import com.simplesys.isc.System.Types.ExportImageFormat.ExportImageFormat
-import com.simplesys.isc.System.Types.PropertyIdentifier.PropertyIdentifier
-import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.isc.System.Types.ValidationMode.ValidationMode
+import com.simplesys.System.Types.DSOperationType.DSOperationType
+import com.simplesys.System.Types.DSProtocol.DSProtocol
+import com.simplesys.System.Types.ExportDisplay.ExportDisplay
+import com.simplesys.System.Types.ExportFormat.ExportFormat
+import com.simplesys.System.Types.ExportImageFormat.ExportImageFormat
+import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.ValidationMode.ValidationMode
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

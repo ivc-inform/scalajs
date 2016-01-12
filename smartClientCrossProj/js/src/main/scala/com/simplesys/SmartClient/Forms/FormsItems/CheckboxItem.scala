@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.SmartClient.Forms.DynamicForm
-import com.simplesys.isc.System.Types._
+import com.simplesys.System.Types._
 
 import scala.scalajs.js
 import scala.scalajs.js.|

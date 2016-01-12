@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Control
 
 import com.simplesys.SmartClient.Foundation.{AbstractStretchImgCompanion, StretchImg}
-import com.simplesys.isc.System.Types.{SCImgURL, void}
+import com.simplesys.System.Types.{SCImgURL, void}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

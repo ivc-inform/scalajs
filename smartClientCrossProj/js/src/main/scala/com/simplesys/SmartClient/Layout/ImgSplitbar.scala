@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Foundation.{Canvas, AbstractCanvasCompanion, Img}
-import com.simplesys.isc.System.Types.SCImgURL
+import com.simplesys.System.Types.SCImgURL
 
 import scala.scalajs.js
 import scala.scalajs.js.|

@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Foundation
 
 import com.simplesys.SmartClient.RPC.{RPCResponse, RPCRequest}
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.isc.System.Types.{void, URL, HTMLString}
+import com.simplesys.System.Types.{void, URL, HTMLString}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

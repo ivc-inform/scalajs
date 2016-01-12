@@ -8,10 +8,10 @@ import com.simplesys.SmartClient.Grids.ListGrid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
 import com.simplesys.SmartClient.System.Types.{Criteria, Record}
 import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
-import com.simplesys.isc.System.Types.DSOperationType.DSOperationType
-import com.simplesys.isc.System.Types.OperatorId.OperatorId
-import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.isc.System.Types.void
+import com.simplesys.System.Types.DSOperationType.DSOperationType
+import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

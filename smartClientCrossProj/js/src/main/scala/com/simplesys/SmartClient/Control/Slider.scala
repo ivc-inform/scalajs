@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.Control
 
 import com.simplesys.SmartClient.Foundation.{AbstractCanvasCompanion, Canvas}
-import com.simplesys.isc.System.Types.ImageStyle.ImageStyle
-import com.simplesys.isc.System.Types.{void, CSSStyleName}
+import com.simplesys.System.Types.ImageStyle.ImageStyle
+import com.simplesys.System.Types.{void, CSSStyleName}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

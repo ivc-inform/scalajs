@@ -2,8 +2,8 @@ package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Control.Button
 import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
-import com.simplesys.isc.System.Types.{void, SCImgURL}
-import com.simplesys.isc.System.Types.VerticalAlignment.VerticalAlignment
+import com.simplesys.System.Types.{void, SCImgURL}
+import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 
 import scala.scalajs.js
 import scala.scalajs.js.|

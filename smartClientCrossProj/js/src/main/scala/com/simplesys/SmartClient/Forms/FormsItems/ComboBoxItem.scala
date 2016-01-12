@@ -7,9 +7,9 @@ import com.simplesys.SmartClient.Grids.ListGrid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
-import com.simplesys.isc.System.Types.PanelPlacement.PanelPlacement
-import com.simplesys.isc.System.Types.{void, HTMLString, AutoChild, CSSStyleName}
-import com.simplesys.isc.System.Types.PickListItemIconPlacement.PickListItemIconPlacement
+import com.simplesys.System.Types.PanelPlacement.PanelPlacement
+import com.simplesys.System.Types.{void, HTMLString, AutoChild, CSSStyleName}
+import com.simplesys.System.Types.PickListItemIconPlacement.PickListItemIconPlacement
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.isc.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types.OperatorId.OperatorId
 
 import scala.scalajs.js
 

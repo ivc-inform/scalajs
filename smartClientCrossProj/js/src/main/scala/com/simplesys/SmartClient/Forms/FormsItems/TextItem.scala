@@ -3,10 +3,10 @@ package com.simplesys.SmartClient.Forms.FormsItems
 import com.simplesys.SmartClient.DataBinding.{Criterion, DataSource}
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
-import com.simplesys.isc.System.Types.CharacterCasing.CharacterCasing
-import com.simplesys.isc.System.Types.CharacterCasing._
-import com.simplesys.isc.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
-import com.simplesys.isc.System.Types._
+import com.simplesys.System.Types.CharacterCasing.CharacterCasing
+import com.simplesys.System.Types.CharacterCasing._
+import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
+import com.simplesys.System.Types._
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

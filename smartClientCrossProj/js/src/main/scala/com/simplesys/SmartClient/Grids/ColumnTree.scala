@@ -9,8 +9,8 @@ import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
 import com.simplesys.SmartClient.Layout.{Layout, AbstractLayoutCompanion}
 import com.simplesys.SmartClient.System.Tree
 import com.simplesys.SmartClient.System.Types.Criteria
-import com.simplesys.isc.System.Types._
-import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types._
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

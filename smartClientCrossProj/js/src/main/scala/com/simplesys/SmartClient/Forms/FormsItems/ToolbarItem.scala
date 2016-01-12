@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Forms.FormsItems
 import com.simplesys.SmartClient.Control.Button
 import com.simplesys.SmartClient.Foundation.{Canvas, StatefulCanvas}
 import com.simplesys.SmartClient.System.Class
-import com.simplesys.isc.System.Types.CSSStyleName
+import com.simplesys.System.Types.CSSStyleName
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

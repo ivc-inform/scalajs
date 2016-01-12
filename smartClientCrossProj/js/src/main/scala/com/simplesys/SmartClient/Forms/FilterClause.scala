@@ -4,10 +4,10 @@ import com.simplesys.SmartClient.Control.ImgButton
 import com.simplesys.SmartClient.Forms.FormsItems.{SelectItem, FormItem, PickList}
 import com.simplesys.SmartClient.Layout.{AbstractLayoutCompanion, Layout}
 import com.simplesys.SmartClient.System.Types.Criteria
-import com.simplesys.isc.System.Types.{void, AutoChild}
-import com.simplesys.isc.System.Types.FieldType.FieldType
-import com.simplesys.isc.System.Types.OperatorId.OperatorId
-import com.simplesys.isc.System.Types.ValueItemType.ValueItemType
+import com.simplesys.System.Types.{void, AutoChild}
+import com.simplesys.System.Types.FieldType.FieldType
+import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types.ValueItemType.ValueItemType
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

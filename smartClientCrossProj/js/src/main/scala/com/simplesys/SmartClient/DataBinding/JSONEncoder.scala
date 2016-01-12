@@ -1,9 +1,9 @@
 package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.System.{Date, AbstractClassCompanion, Class}
-import com.simplesys.isc.System.Types.JSONCircularReferenceMode.JSONCircularReferenceMode
-import com.simplesys.isc.System.Types.JSONDateFormat.JSONDateFormat
-import com.simplesys.isc.System.Types.JSONInstanceSerializationMode.JSONInstanceSerializationMode
+import com.simplesys.System.Types.JSONCircularReferenceMode.JSONCircularReferenceMode
+import com.simplesys.System.Types.JSONDateFormat.JSONDateFormat
+import com.simplesys.System.Types.JSONInstanceSerializationMode.JSONInstanceSerializationMode
 
 import scala.scalajs.js
 import scala.scalajs.js.|

@@ -6,11 +6,11 @@ import com.simplesys.SmartClient.DataBinding.DataBoundComponent
 import com.simplesys.SmartClient.Foundation.{AbstractCanvasCompanion, Canvas}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{Object, Record}
-import com.simplesys.isc.System.Types.{void, AutoChild}
-import com.simplesys.isc.System.Types.DragDataAction.DragDataAction
-import com.simplesys.isc.System.Types.Orientation.Orientation
-import com.simplesys.isc.System.Types.Overflow.Overflow
-import com.simplesys.isc.System.Types.TileLayoutPolicy.TileLayoutPolicy
+import com.simplesys.System.Types.{void, AutoChild}
+import com.simplesys.System.Types.DragDataAction.DragDataAction
+import com.simplesys.System.Types.Orientation.Orientation
+import com.simplesys.System.Types.Overflow.Overflow
+import com.simplesys.System.Types.TileLayoutPolicy.TileLayoutPolicy
 
 import scala.scalajs.js
 import scala.scalajs.js.|

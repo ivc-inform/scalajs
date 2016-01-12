@@ -1,10 +1,10 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.System.Types._
-import com.simplesys.isc.System.Types.FireStyle._
-import com.simplesys.isc.System.Types.PageEvent.PageEvent
-import com.simplesys.isc.System.Types.PageOrientation._
-import com.simplesys.isc.System.Types._
+import com.simplesys.System.Types.FireStyle._
+import com.simplesys.System.Types.PageEvent.PageEvent
+import com.simplesys.System.Types.PageOrientation._
+import com.simplesys.System.Types._
 
 import scala.scalajs.js
 

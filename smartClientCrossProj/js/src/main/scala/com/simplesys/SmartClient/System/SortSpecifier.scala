@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.DataBinding.DataBoundComponent
-import com.simplesys.isc.System.Types.SortDirection.SortDirection
+import com.simplesys.System.Types.SortDirection.SortDirection
 
 import scala.scalajs.js
 import scala.scalajs.js.|

@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Control
 
 import com.simplesys.SmartClient.Foundation.{Label, Img}
 import com.simplesys.SmartClient.Layout.{Toolbar, Layout, AbstractWindowCompanion, Window}
-import com.simplesys.isc.System.Types._
+import com.simplesys.System.Types._
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

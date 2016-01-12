@@ -2,8 +2,8 @@ package com.simplesys.SmartClient.Layout.sectionStack
 
 import com.simplesys.SmartClient.Foundation.{Canvas, StretchImg}
 import com.simplesys.SmartClient.Layout.{SectionStack, Layout, AbstractHLayoutCompanion, HLayout}
-import com.simplesys.isc.System.Types._
-import com.simplesys.isc.System.Types.void
+import com.simplesys.System.Types._
+import com.simplesys.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.|

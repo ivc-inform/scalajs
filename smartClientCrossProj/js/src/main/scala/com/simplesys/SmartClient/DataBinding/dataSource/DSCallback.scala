@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.DataBinding.dataSource
 
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DSResponse}
 import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
-import com.simplesys.isc.System.Types.void
+import com.simplesys.System.Types.void
 
 import scala.scalajs.js
 

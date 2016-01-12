@@ -4,14 +4,14 @@ import com.simplesys.SmartClient.DataBinding.{DataSource, DSRequest}
 import com.simplesys.SmartClient.RPC.ServerObject
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{VelocityExpression, XPathExpression}
-import com.simplesys.isc.System.Types.DSDataFormat.DSDataFormat
-import com.simplesys.isc.System.Types.DSOperationType.DSOperationType
-import com.simplesys.isc.System.Types.DSProtocol.DSProtocol
-import com.simplesys.isc.System.Types.ExportFormat.ExportFormat
-import com.simplesys.isc.System.Types.RPCTransport.RPCTransport
-import com.simplesys.isc.System.Types.SQLPagingStrategy.SQLPagingStrategy
-import com.simplesys.isc.System.Types.SQLType.SQLType
-import com.simplesys.isc.System.Types.URL
+import com.simplesys.System.Types.DSDataFormat.DSDataFormat
+import com.simplesys.System.Types.DSOperationType.DSOperationType
+import com.simplesys.System.Types.DSProtocol.DSProtocol
+import com.simplesys.System.Types.ExportFormat.ExportFormat
+import com.simplesys.System.Types.RPCTransport.RPCTransport
+import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
+import com.simplesys.System.Types.SQLType.SQLType
+import com.simplesys.System.Types.URL
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

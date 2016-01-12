@@ -6,12 +6,12 @@ import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.treeGrid.{TreeNode, TreeGridField}
 import com.simplesys.SmartClient.System.{Types, Tree}
 import com.simplesys.SmartClient.System.Types._
-import com.simplesys.isc.System.Types.Alignment.Alignment
-import com.simplesys.isc.System.Types.AnimationAcceleration.AnimationAcceleration
-import com.simplesys.isc.System.Types.DisplayNodeType.DisplayNodeType
-import com.simplesys.isc.System.Types.PreserveOpenState.PreserveOpenState
-import com.simplesys.isc.System.Types.RecordDropAppearance.RecordDropAppearance
-import com.simplesys.isc.System.Types.{void, HTMLString, URL, SCImgURL}
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
+import com.simplesys.System.Types.DisplayNodeType.DisplayNodeType
+import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
+import com.simplesys.System.Types.RecordDropAppearance.RecordDropAppearance
+import com.simplesys.System.Types.{void, HTMLString, URL, SCImgURL}
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

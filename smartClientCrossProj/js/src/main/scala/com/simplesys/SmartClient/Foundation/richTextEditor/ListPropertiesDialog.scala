@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Foundation.richTextEditor
 
 import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.Layout.{AbstractWindowCompanion, Window}
-import com.simplesys.isc.System.Types.AutoChild
+import com.simplesys.System.Types.AutoChild
 
 import scala.scalajs.js
 import scala.scalajs.js.|

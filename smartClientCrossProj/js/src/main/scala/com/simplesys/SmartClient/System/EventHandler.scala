@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System._
-import com.simplesys.isc.System.Types.{void, SCImgURL, KeyName}
+import com.simplesys.System.Types.{void, SCImgURL, KeyName}
 import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js

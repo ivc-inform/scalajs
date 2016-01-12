@@ -4,10 +4,10 @@ import com.simplesys.SmartClient.DataBinding.{ShowSectionCallback, ExpandSection
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Layout.sectionStack.SectionHeader
 import com.simplesys.SmartClient.Layout.sectionStack.SectionStackSection.SectionStackSection
-import com.simplesys.isc.System.Types.{void, CSSStyleName}
-import com.simplesys.isc.System.Types.LocatorStrategy.LocatorStrategy
-import com.simplesys.isc.System.Types.LocatorTypeStrategy.LocatorTypeStrategy
-import com.simplesys.isc.System.Types.VisibilityMode.VisibilityMode
+import com.simplesys.System.Types.{void, CSSStyleName}
+import com.simplesys.System.Types.LocatorStrategy.LocatorStrategy
+import com.simplesys.System.Types.LocatorTypeStrategy.LocatorTypeStrategy
+import com.simplesys.System.Types.VisibilityMode.VisibilityMode
 
 import scala.scalajs.js
 import scala.scalajs.js.|

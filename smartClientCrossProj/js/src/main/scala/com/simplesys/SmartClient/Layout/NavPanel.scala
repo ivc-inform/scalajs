@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Grids.TreeGrid
 import com.simplesys.SmartClient.Layout.navPanel.NavItem
-import com.simplesys.isc.System.Types.{void, AutoChild, CSSStyleName}
+import com.simplesys.System.Types.{void, AutoChild, CSSStyleName}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

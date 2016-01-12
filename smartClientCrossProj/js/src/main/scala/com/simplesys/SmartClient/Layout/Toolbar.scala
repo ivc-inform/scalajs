@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Layout
 import com.simplesys.SmartClient.Control.Button
 import com.simplesys.SmartClient.System.{Types, Class}
 import com.simplesys.SmartClient.Foundation.{Canvas, AbstractCanvasCompanion}
-import com.simplesys.isc.System.Types.void
+import com.simplesys.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.|

@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Foundation.{Canvas, AbstractCanvasCompanion, StretchImg}
-import com.simplesys.isc.System.Types.Cursor.Cursor
-import com.simplesys.isc.System.Types.SCImgURL
+import com.simplesys.System.Types.Cursor.Cursor
+import com.simplesys.System.Types.SCImgURL
 
 import scala.scalajs.js
 import scala.scalajs.js.|

@@ -2,11 +2,11 @@ package com.simplesys.SmartClient.Grids.detailViewer
 
 import com.simplesys.SmartClient.DataBinding.DetailViewer
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.isc.System.Types.HiliteIconPosition.HiliteIconPosition
-import com.simplesys.isc.System.Types.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.isc.System.Types._
-import com.simplesys.isc.System.Types.void
-import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
+import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types._
+import com.simplesys.System.Types.void
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 
 import scala.scalajs.js
 import scala.scalajs.js.|

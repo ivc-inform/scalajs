@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems._
 import com.simplesys.SmartClient.Layout.{AbstractWindowCompanion, Window}
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.isc.System.Types.AutoChild
+import com.simplesys.System.Types.AutoChild
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

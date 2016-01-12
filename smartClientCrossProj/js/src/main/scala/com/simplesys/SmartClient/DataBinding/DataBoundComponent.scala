@@ -8,14 +8,14 @@ import com.simplesys.SmartClient.Layout.{Window}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{Callback, Criteria, Field, Record}
 import com.simplesys.SmartClient.System.Class
-import com.simplesys.isc.System.Types.Alignment.Alignment
-import com.simplesys.isc.System.Types.DragDataAction.DragDataAction
-import com.simplesys.isc.System.Types.FetchMode.FetchMode
-import com.simplesys.isc.System.Types.FieldNamingStrategy.FieldNamingStrategy
-import com.simplesys.isc.System.Types.HiliteIconPosition.HiliteIconPosition
-import com.simplesys.isc.System.Types.RecategorizeMode.RecategorizeMode
-import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.isc.System.Types.{void, CSSStyleName, DataPath, HTMLString}
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.DragDataAction.DragDataAction
+import com.simplesys.System.Types.FetchMode.FetchMode
+import com.simplesys.System.Types.FieldNamingStrategy.FieldNamingStrategy
+import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
+import com.simplesys.System.Types.RecategorizeMode.RecategorizeMode
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.{void, CSSStyleName, DataPath, HTMLString}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

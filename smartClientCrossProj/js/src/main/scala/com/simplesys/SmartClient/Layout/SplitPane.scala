@@ -3,11 +3,11 @@ package com.simplesys.SmartClient.Layout
 import com.simplesys.SmartClient.Control.Button
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
-import com.simplesys.isc.System.Types.DeviceMode.DeviceMode
-import com.simplesys.isc.System.Types.NavigationDirection.NavigationDirection
-import com.simplesys.isc.System.Types.PageOrientation.PageOrientation
-import com.simplesys.isc.System.Types.{void, HTMLString, AutoChild}
-import com.simplesys.isc.System.Types.CurrentPane.CurrentPane
+import com.simplesys.System.Types.DeviceMode.DeviceMode
+import com.simplesys.System.Types.NavigationDirection.NavigationDirection
+import com.simplesys.System.Types.PageOrientation.PageOrientation
+import com.simplesys.System.Types.{void, HTMLString, AutoChild}
+import com.simplesys.System.Types.CurrentPane.CurrentPane
 
 import scala.scalajs.js
 import scala.scalajs.js.|

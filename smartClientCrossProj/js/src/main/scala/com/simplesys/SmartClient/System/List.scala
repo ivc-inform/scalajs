@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.DataBinding.AdvancedCriteria
-import com.simplesys.isc.System.Types.void
+import com.simplesys.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.|

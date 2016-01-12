@@ -9,9 +9,9 @@ import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.Object
-import com.simplesys.isc.System.Types.MultipleAppearance.MultipleAppearance
-import com.simplesys.isc.System.Types.PanelPlacement.PanelPlacement
-import com.simplesys.isc.System.Types.{HTMLString, AutoChild, SCClassName}
+import com.simplesys.System.Types.MultipleAppearance.MultipleAppearance
+import com.simplesys.System.Types.PanelPlacement.PanelPlacement
+import com.simplesys.System.Types.{HTMLString, AutoChild, SCClassName}
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

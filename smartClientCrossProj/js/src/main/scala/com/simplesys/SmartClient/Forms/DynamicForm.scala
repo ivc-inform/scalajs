@@ -10,19 +10,19 @@ import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
 import com.simplesys.SmartClient.System.Types.{ValueMap, Criteria, Record}
 import com.simplesys.SmartClient.System.{KeyIdentifier, Types, AbstractClassCompanion}
 import com.simplesys.SmartClient.Workdlow.UserTask
-import com.simplesys.isc.System.Types.Alignment.Alignment
-import com.simplesys.isc.System.Types.AutoComplete.AutoComplete
-import com.simplesys.isc.System.Types.DSOperationType.DSOperationType
-import com.simplesys.isc.System.Types.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.isc.System.Types.Encoding.Encoding
-import com.simplesys.isc.System.Types.FormMethod.FormMethod
-import com.simplesys.isc.System.Types.OperatorId.OperatorId
-import com.simplesys.isc.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
-import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.isc.System.Types.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.isc.System.Types.TitleOrientation.TitleOrientation
-import com.simplesys.isc.System.Types.VisibilityMode.VisibilityMode
-import com.simplesys.isc.System.Types._
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.AutoComplete.AutoComplete
+import com.simplesys.System.Types.DSOperationType.DSOperationType
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.Encoding.Encoding
+import com.simplesys.System.Types.FormMethod.FormMethod
+import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types.TitleOrientation.TitleOrientation
+import com.simplesys.System.Types.VisibilityMode.VisibilityMode
+import com.simplesys.System.Types._
 
 import scala.scalajs.js
 import scala.scalajs.js.{Any, Array, |}

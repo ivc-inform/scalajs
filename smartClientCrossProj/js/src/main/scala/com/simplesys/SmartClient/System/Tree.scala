@@ -4,10 +4,10 @@ import com.simplesys.SmartClient.DataBinding.{AdvancedCriteria, DSRequest, DataS
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System._
-import com.simplesys.isc.System.Types.LoadState.LoadState
-import com.simplesys.isc.System.Types.TreeFilterMode.TreeFilterMode
-import com.simplesys.isc.System.Types.TreeModelType.TreeModelType
-import com.simplesys.isc.System.Types.void
+import com.simplesys.System.Types.LoadState.LoadState
+import com.simplesys.System.Types.TreeFilterMode.TreeFilterMode
+import com.simplesys.System.Types.TreeModelType.TreeModelType
+import com.simplesys.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.{ThisFunction0, |}

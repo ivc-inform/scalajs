@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Forms.{DynamicForm, FilterBuilder}
 import com.simplesys.SmartClient.Foundation.StatefulCanvas
 import com.simplesys.SmartClient.Layout.{AbstractVStackCompanion, VStack}
 import com.simplesys.SmartClient.System.Types.Callback
-import com.simplesys.isc.System.Types.{void, SCImgURL, AutoChild}
+import com.simplesys.System.Types.{void, SCImgURL, AutoChild}
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

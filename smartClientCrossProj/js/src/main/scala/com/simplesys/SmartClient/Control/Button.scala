@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.Control
 
 import com.simplesys.SmartClient.Foundation.{AbstractStatefulCanvasCompanion, AbstractCanvasCompanion, StatefulCanvas}
-import com.simplesys.isc.System.Types.Cursor.Cursor
-import com.simplesys.isc.System.Types.{void, HTMLString}
+import com.simplesys.System.Types.Cursor.Cursor
+import com.simplesys.System.Types.{void, HTMLString}
 
 import scala.scalajs.js
 

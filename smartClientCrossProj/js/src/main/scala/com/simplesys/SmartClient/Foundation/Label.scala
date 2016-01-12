@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Foundation
 import com.simplesys.SmartClient.Control.Button
 import com.simplesys.SmartClient.Foundation.props.LabelProps
 import com.simplesys.SmartClient.System.SCApply
-import com.simplesys.isc.System.Types.{CSSStyleName, URL}
+import com.simplesys.System.Types.{CSSStyleName, URL}
 import com.simplesys.macros.PropsToDictionary
 
 import scala.scalajs.js

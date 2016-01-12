@@ -4,9 +4,9 @@ import com.simplesys.SmartClient.DataBinding.Criterion
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.isc.System.Types.{void, HTMLString}
-import com.simplesys.isc.System.Types.Overflow.Overflow
-import com.simplesys.isc.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
+import com.simplesys.System.Types.{void, HTMLString}
+import com.simplesys.System.Types.Overflow.Overflow
+import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
 
 import scala.scalajs.js
 import scala.scalajs.js.|

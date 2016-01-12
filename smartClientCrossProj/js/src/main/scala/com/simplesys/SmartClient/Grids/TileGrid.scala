@@ -7,11 +7,11 @@ import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerField
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.tileGrid.{SimpleTile, TileRecord}
 import com.simplesys.SmartClient.System.Types.{Callback, ListGridFieldState, Criteria}
-import com.simplesys.isc.System.Types.DragAppearance.DragAppearance
-import com.simplesys.isc.System.Types.DragDataAction.DragDataAction
-import com.simplesys.isc.System.Types.SelectionType.SelectionType
-import com.simplesys.isc.System.Types._
-import com.simplesys.isc.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.DragAppearance.DragAppearance
+import com.simplesys.System.Types.DragDataAction.DragDataAction
+import com.simplesys.System.Types.SelectionType.SelectionType
+import com.simplesys.System.Types._
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

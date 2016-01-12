@@ -3,9 +3,9 @@ package com.simplesys.SmartClient.Forms
 import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.System.Class
 import com.simplesys.SmartClient.Layout.{AbstractWindowCompanion, Window}
-import com.simplesys.isc.System.Types.ColorPickerMode.ColorPickerMode
-import com.simplesys.isc.System.Types._
-import com.simplesys.isc.System.Types.void
+import com.simplesys.System.Types.ColorPickerMode.ColorPickerMode
+import com.simplesys.System.Types._
+import com.simplesys.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

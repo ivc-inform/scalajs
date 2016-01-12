@@ -1,9 +1,9 @@
 package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Foundation.{Label, Canvas, AbstractCanvasCompanion}
-import com.simplesys.isc.System.Types.Alignment.Alignment
-import com.simplesys.isc.System.Types.{void, SCClassName, AutoChild}
-import com.simplesys.isc.System.Types.VerticalAlignment.VerticalAlignment
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.{void, SCClassName, AutoChild}
+import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 
 import scala.scalajs.js
 import scala.scalajs.js.|

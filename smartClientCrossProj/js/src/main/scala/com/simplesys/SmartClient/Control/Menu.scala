@@ -7,9 +7,9 @@ import com.simplesys.SmartClient.Grids.{AbstractListGridCompanion, ListGrid}
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.System.{Types, Tree}
 import com.simplesys.SmartClient.System.Types.Criteria
-import com.simplesys.isc.System.Types.PanelPlacement.PanelPlacement
-import com.simplesys.isc.System.Types._
-import com.simplesys.isc.System.Types.MenuFieldID.MenuFieldID
+import com.simplesys.System.Types.PanelPlacement.PanelPlacement
+import com.simplesys.System.Types._
+import com.simplesys.System.Types.MenuFieldID.MenuFieldID
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

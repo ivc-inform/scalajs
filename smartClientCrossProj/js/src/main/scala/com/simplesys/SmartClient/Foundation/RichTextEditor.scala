@@ -4,8 +4,8 @@ import com.simplesys.SmartClient.Forms.FormsItems.SelectItem
 import com.simplesys.SmartClient.Foundation.richTextEditor.ListPropertiesDialog
 import com.simplesys.SmartClient.Layout.{Layout, AbstractVLayoutCompanion, VLayout}
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.isc.System.Types.ControlName.ControlName
-import com.simplesys.isc.System.Types.{MultiAutoChild, AutoChild, void}
+import com.simplesys.System.Types.ControlName.ControlName
+import com.simplesys.System.Types.{MultiAutoChild, AutoChild, void}
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}

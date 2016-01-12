@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Grids.listGrid
 import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.isc.System.Types._
+import com.simplesys.System.Types._
 
 import scala.scalajs.js
 import scala.scalajs.js.|

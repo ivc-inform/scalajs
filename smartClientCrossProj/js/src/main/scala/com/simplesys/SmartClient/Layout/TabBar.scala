@@ -4,7 +4,7 @@ package com.simplesys.SmartClient.Layout
 import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
 import com.simplesys.SmartClient.Layout.tabSet.Tab.Tab
 import com.simplesys.SmartClient.System.KeyIdentifier
-import com.simplesys.isc.System.Types.{void, SCClassName, SCImgURL}
+import com.simplesys.System.Types.{void, SCClassName, SCImgURL}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

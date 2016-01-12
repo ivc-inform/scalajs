@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Grids.treeGrid
 
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.isc.System.Types.{HTMLString, SCImgURL}
+import com.simplesys.System.Types.{HTMLString, SCImgURL}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

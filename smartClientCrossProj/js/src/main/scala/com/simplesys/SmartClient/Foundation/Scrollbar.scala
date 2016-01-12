@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Foundation
 
-import com.simplesys.isc.System.Types.{URL, void, SCImgURL}
+import com.simplesys.System.Types.{URL, void, SCImgURL}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.System
 import com.simplesys.SmartClient.Control.props.IButtonProps
 import com.simplesys.SmartClient.Control.{Dialog, IButton, LoginDialog}
 import com.simplesys.SmartClient.System.Types.Callback
-import com.simplesys.isc.System.Types.void
+import com.simplesys.System.Types.void
 
 import scala.scalajs.js
 import scala.scalajs.js.|
