@@ -10,7 +10,8 @@ import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.Layout.PrintWindow
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System._
-import com.simplesys.SmartClient.Tools.inst.{EditContext, EditNode}
+import com.simplesys.SmartClient.Tools.{EditNode, EditContext}
+import com.simplesys.SmartClient.Tools.inst.EditNode
 import com.simplesys.System.Types.Alignment._
 import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.System.Types.BackgroundRepeat._

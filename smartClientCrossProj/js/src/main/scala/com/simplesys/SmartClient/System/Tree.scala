@@ -94,5 +94,11 @@ trait Tree extends Class {
 abstract trait AbstractTreeCompanion extends AbstractClassCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object Tree extends AbstractTreeCompanion        
+   object Tree extends AbstractTreeCompanion
+}
+

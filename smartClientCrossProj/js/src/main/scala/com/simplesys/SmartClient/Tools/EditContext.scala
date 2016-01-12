@@ -1,9 +1,8 @@
-package com.simplesys.SmartClient.Tools.inst
-
-import scala.scalajs.js
-import scala.scalajs.js.|
+package com.simplesys.SmartClient.Tools
 
 import com.simplesys.SmartClient.System.Class
+
+import scala.scalajs.js
 
 @js.native
 trait EditContext extends Class {
