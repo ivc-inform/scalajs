@@ -27,10 +27,4 @@ package object Types {
     type DateInputFormat = String
     type void = Unit
     type ID = String
-
-
-    sealed abstract class DoubleAlignment[+A, +B]
-
-    case class AlignmentfromDoubleAlignment(a:Alignment)
-    case class VerticalAlignmentfromDoubleAlignment(a:VerticalAlignment)
 }
