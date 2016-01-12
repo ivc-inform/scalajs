@@ -36,30 +36,32 @@ object PropsToDictionary extends Logging {
 
                     Some(q"$arrEx")
                 case NoType =>
-                    val symb = typeOf[DoubleType[_, _]].typeSymbol
+                    def getTree4Symb(symb: Symbol): Option[Tree] = {
+                        typeDef.baseType(symb) match {
+                            case TypeRef(_, _, targs) =>
+                                val access = q"ei"
+                                val checkedTypes = targs.map(t => typeToConvertedValueInt(t, access))
+                                val type1 = checkedTypes.head.getOrElse(valueAccess)
+                                val type2 = checkedTypes.last.getOrElse(valueAccess)
 
+                                Some(
+                                    q"""$valueAccess match {
+                                            case Type1(item) => $type1
+                                            case Type2(item) => $type2
+                                        }""")
+                            case NoType =>
+                                if (typeDef.typeSymbol.owner == tsScEnumeration)
+                                    Some(q"item.toString")
+                                else
+                                    None
+                        }
+                    }
                     typeDef.baseType(tsScOption) match {
                         case TypeRef(_, _, _) =>
                             Some(q"$valueAccess")
                         case NoType =>
-                            typeDef.baseType(symb) match {
-                                case TypeRef(_, _, targs) =>
-                                    val access = q"ei"
-                                    val checkedTypes = targs.map(t => typeToConvertedValueInt(t, access))
-                                    val type1 = checkedTypes.head.getOrElse(valueAccess)
-                                    val type2 = checkedTypes.last.getOrElse(valueAccess)
-
-                                    Some(
-                                        q"""$valueAccess match {
-                                            case Type1(item) => $type1
-                                            case Type2(item) => $type2
-                                        }""")
-                                case NoType =>
-                                    if (typeDef.typeSymbol.owner == tsScEnumeration)
-                                        Some(q"item.toString")
-                                    else
-                                        None
-                            }
+                            val dblTypeSymb = typeOf[DoubleType[_, _]].typeSymbol
+                            getTree4Symb(dblTypeSymb)
                     }
             }
         }
