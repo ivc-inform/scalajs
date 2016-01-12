@@ -26,5 +26,11 @@ trait Img extends StatefulCanvas {
 abstract trait AbstractImgCompanion extends AbstractCanvasCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object Img extends AbstractImgCompanion        
+   object Img extends AbstractImgCompanion
+}
+

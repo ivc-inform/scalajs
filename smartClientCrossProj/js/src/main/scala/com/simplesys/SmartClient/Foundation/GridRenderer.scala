@@ -109,5 +109,11 @@ trait GridRenderer extends Canvas {
 abstract trait AbstractGridRendererCompanion extends AbstractCanvasCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object GridRenderer extends AbstractGridRendererCompanion        
+   object GridRenderer extends AbstractGridRendererCompanion
+}
+

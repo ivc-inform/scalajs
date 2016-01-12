@@ -15,5 +15,11 @@ trait SearchForm extends DynamicForm {
 abstract trait AbstractSearchFormCompanion extends AbstractDynamicFormCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object SearchForm extends AbstractSearchFormCompanion        
+   object SearchForm extends AbstractSearchFormCompanion
+}
+

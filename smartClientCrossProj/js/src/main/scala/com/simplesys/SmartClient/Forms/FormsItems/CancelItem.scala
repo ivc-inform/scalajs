@@ -11,5 +11,11 @@ trait CancelItem extends ButtonItem {
 abstract trait AbstractCancelItemCompanion extends AbstractButtonItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object CancelItem extends AbstractCancelItemCompanion        
+   object CancelItem extends AbstractCancelItemCompanion
+}
+

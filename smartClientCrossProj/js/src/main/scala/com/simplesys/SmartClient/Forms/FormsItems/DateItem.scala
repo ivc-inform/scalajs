@@ -60,5 +60,11 @@ trait DateItem extends FormItem {
 abstract trait AbstractDateItemCompanion extends AbstractFormItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object DateItem extends AbstractDateItemCompanion        
+   object DateItem extends AbstractDateItemCompanion
+}
+

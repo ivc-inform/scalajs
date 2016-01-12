@@ -18,5 +18,11 @@ trait SimpleTile extends StatefulCanvas {
 abstract trait AbstractSimpleTileCompanion extends AbstractCanvasCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object SimpleTile extends AbstractSimpleTileCompanion        
+   object SimpleTile extends AbstractSimpleTileCompanion
+}
+

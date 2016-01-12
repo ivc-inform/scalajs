@@ -11,5 +11,11 @@ trait RowSpacerItem extends SpacerItem {
 abstract trait AbstractRowSpacerItemCompanion extends AbstractSpacerItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object RowSpacerItem extends AbstractRowSpacerItemCompanion        
+   object RowSpacerItem extends AbstractRowSpacerItemCompanion
+}
+

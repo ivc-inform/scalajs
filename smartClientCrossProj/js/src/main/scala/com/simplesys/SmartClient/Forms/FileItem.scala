@@ -25,5 +25,11 @@ trait FileItem extends CanvasItem {
 abstract trait AbstractFileItemCompanion extends AbstractCanvasItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object FileItem extends AbstractFileItemCompanion        
+   object FileItem extends AbstractFileItemCompanion
+}
+

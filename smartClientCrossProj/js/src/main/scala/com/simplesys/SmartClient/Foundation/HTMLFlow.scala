@@ -37,5 +37,11 @@ trait HTMLFlow extends Canvas with DataBoundComponent {
 abstract trait AbstractHTMLFlowCompanion extends AbstractCanvasCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object HTMLFlow extends AbstractHTMLFlowCompanion        
+   object HTMLFlow extends AbstractHTMLFlowCompanion
+}
+

@@ -64,5 +64,11 @@ trait RichTextEditor extends VLayout {
 abstract trait AbstractRichTextEditorCompanion extends AbstractVLayoutCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object RichTextEditor extends AbstractRichTextEditorCompanion        
+   object RichTextEditor extends AbstractRichTextEditorCompanion
+}
+

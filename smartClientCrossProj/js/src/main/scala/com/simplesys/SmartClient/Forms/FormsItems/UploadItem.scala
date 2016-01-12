@@ -17,5 +17,11 @@ trait UploadItem extends TextItem {
 abstract trait AbstractUploadItemCompanion extends AbstractTextItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object UploadItem extends AbstractUploadItemCompanion        
+   object UploadItem extends AbstractUploadItemCompanion
+}
+

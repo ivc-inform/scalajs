@@ -11,5 +11,11 @@ trait FlowLayout extends TileLayout {
 abstract trait AbstractFlowLayoutCompanion extends AbstractTileLayoutCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object FlowLayout extends AbstractFlowLayoutCompanion        
+   object FlowLayout extends AbstractFlowLayoutCompanion
+}
+

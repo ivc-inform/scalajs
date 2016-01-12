@@ -27,5 +27,11 @@ trait PickTreeItem extends CanvasItem {
 abstract trait AbstractPickTreeItemCompanion extends AbstractCanvasItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object PickTreeItem extends AbstractPickTreeItemCompanion        
+   object PickTreeItem extends AbstractPickTreeItemCompanion
+}
+

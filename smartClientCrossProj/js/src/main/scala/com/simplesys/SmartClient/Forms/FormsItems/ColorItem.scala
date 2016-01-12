@@ -17,5 +17,11 @@ trait ColorItem extends TextItem {
 abstract trait AbstractColorItemCompanion extends AbstractTextItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object ColorItem extends AbstractColorItemCompanion        
+   object ColorItem extends AbstractColorItemCompanion
+}
+

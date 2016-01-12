@@ -12,5 +12,11 @@ trait IntegerItem extends TextItem {
 abstract trait AbstractIntegerItemCompanion extends AbstractTextItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object IntegerItem extends AbstractIntegerItemCompanion        
+   object IntegerItem extends AbstractIntegerItemCompanion
+}
+

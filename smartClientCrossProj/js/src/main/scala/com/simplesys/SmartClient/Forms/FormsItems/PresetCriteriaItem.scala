@@ -21,5 +21,11 @@ trait PresetCriteriaItem extends SelectItem {
 abstract trait AbstractPresetCriteriaItemCompanion extends AbstractSelectItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object PresetCriteriaItem extends AbstractPresetCriteriaItemCompanion        
+   object PresetCriteriaItem extends AbstractPresetCriteriaItemCompanion
+}
+

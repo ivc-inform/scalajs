@@ -24,5 +24,11 @@ trait DateRangeDialog extends Window {
 abstract trait AbstractDateRangeDialogCompanion extends AbstractWindowCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object DateRangeDialog extends AbstractDateRangeDialogCompanion        
+   object DateRangeDialog extends AbstractDateRangeDialogCompanion
+}
+

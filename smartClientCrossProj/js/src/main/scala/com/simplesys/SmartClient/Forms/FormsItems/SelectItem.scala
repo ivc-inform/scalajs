@@ -46,5 +46,11 @@ trait SelectItem extends FormItem with PickList {
 abstract trait AbstractSelectItemCompanion extends AbstractFormItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object SelectItem extends AbstractSelectItemCompanion        
+   object SelectItem extends AbstractSelectItemCompanion
+}
+

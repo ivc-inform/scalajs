@@ -12,5 +12,11 @@ trait FloatItem extends TextItem {
 abstract trait AbstractFloatItemCompanion extends AbstractTextItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object FloatItem extends AbstractFloatItemCompanion        
+   object FloatItem extends AbstractFloatItemCompanion
+}
+

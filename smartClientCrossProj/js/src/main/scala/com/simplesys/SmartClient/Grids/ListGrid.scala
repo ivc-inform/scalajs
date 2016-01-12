@@ -854,25 +854,4 @@ abstract trait AbstractListGridCompanion extends AbstractVLayoutCompanion {
 }
 
 @js.native
-object ListGrid extends AbstractListGridCompanion        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+object ListGrid extends AbstractListGridCompanion

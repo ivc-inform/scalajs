@@ -22,5 +22,11 @@ trait ListPropertiesDialog extends Window {
 abstract trait AbstractListPropertiesDialogCompanion extends AbstractWindowCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object ListPropertiesDialog extends AbstractListPropertiesDialogCompanion        
+   object ListPropertiesDialog extends AbstractListPropertiesDialogCompanion
+}
+

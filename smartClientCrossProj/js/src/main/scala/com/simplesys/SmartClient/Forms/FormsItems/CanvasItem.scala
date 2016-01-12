@@ -35,5 +35,11 @@ trait CanvasItem extends FormItem {
 abstract trait AbstractCanvasItemCompanion extends AbstractFormItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object CanvasItem extends AbstractCanvasItemCompanion        
+   object CanvasItem extends AbstractCanvasItemCompanion
+}
+

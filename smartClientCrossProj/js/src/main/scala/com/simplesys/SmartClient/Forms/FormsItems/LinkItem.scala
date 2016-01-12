@@ -16,5 +16,11 @@ trait LinkItem extends TextItem {
 abstract trait AbstractLinkItemCompanion extends AbstractTextItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object LinkItem extends AbstractLinkItemCompanion        
+   object LinkItem extends AbstractLinkItemCompanion
+}
+

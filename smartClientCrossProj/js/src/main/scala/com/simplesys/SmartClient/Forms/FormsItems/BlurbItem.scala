@@ -16,5 +16,11 @@ trait BlurbItem extends FormItem {
 abstract trait AbstractBlurbItemCompanion extends AbstractFormItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object BlurbItem extends AbstractBlurbItemCompanion        
+   object BlurbItem extends AbstractBlurbItemCompanion
+}
+

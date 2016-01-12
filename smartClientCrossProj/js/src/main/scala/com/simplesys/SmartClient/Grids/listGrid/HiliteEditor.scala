@@ -34,5 +34,11 @@ trait HiliteEditor extends VLayout {
 abstract trait AbstractHiliteEditorCompanion extends AbstractVLayoutCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object HiliteEditor extends AbstractHiliteEditorCompanion        
+   object HiliteEditor extends AbstractHiliteEditorCompanion
+}
+

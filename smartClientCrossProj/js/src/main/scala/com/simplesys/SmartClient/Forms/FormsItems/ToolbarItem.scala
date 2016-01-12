@@ -21,5 +21,11 @@ trait ToolbarItem extends CanvasItem {
 abstract trait AbstractToolbarItemCompanion extends AbstractCanvasItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object ToolbarItem extends AbstractToolbarItemCompanion        
+   object ToolbarItem extends AbstractToolbarItemCompanion
+}
+

@@ -22,5 +22,11 @@ trait RadioGroupItem extends FormItem {
 abstract trait AbstractRadioGroupItemCompanion extends AbstractFormItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object RadioGroupItem extends AbstractRadioGroupItemCompanion        
+   object RadioGroupItem extends AbstractRadioGroupItemCompanion
+}
+

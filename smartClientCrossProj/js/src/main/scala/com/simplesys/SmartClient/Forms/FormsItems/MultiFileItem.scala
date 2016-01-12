@@ -26,5 +26,11 @@ trait MultiFileItem extends RelationItem {
 abstract trait AbstractMultiFileItemCompanion extends AbstractRelationItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object MultiFileItem extends AbstractMultiFileItemCompanion        
+   object MultiFileItem extends AbstractMultiFileItemCompanion
+}
+

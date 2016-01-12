@@ -107,5 +107,11 @@ trait DateChooser extends VLayout {
 abstract trait AbstractDateChooserCompanion extends AbstractVLayoutCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object DateChooser extends AbstractDateChooserCompanion        
+   object DateChooser extends AbstractDateChooserCompanion
+}
+

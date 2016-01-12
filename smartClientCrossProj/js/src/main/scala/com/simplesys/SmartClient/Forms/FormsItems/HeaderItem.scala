@@ -11,5 +11,11 @@ trait HeaderItem extends FormItem {
 abstract trait AbstractHeaderItemCompanion extends AbstractFormItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object HeaderItem extends AbstractHeaderItemCompanion        
+   object HeaderItem extends AbstractHeaderItemCompanion
+}
+

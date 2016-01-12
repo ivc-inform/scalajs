@@ -61,5 +61,11 @@ trait ColumnTree extends Layout with DataBoundComponent {
 abstract trait AbstractColumnTreeCompanion extends AbstractLayoutCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object ColumnTree extends AbstractColumnTreeCompanion        
+   object ColumnTree extends AbstractColumnTreeCompanion
+}
+

@@ -470,6 +470,12 @@ abstract class AbstractCanvasCompanion extends AbstractClassCompanion {
     val TAB_INDEX_FLOOR: Int = js.native
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object Canvas extends AbstractCanvasCompanion {
+   object Canvas extends AbstractCanvasCompanion {
+   }
 }
+

@@ -40,5 +40,11 @@ trait FilterClause extends Layout {
 abstract trait AbstractFilterClauseCompanion extends AbstractLayoutCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object FilterClause extends AbstractFilterClauseCompanion        
+   object FilterClause extends AbstractFilterClauseCompanion
+}
+

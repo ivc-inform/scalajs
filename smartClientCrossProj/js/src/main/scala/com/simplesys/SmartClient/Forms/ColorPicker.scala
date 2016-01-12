@@ -78,5 +78,11 @@ trait ColorPicker extends Window {
 abstract trait AbstractColorPickerCompanion extends AbstractWindowCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object ColorPicker extends AbstractColorPickerCompanion        
+   object ColorPicker extends AbstractColorPickerCompanion
+}
+

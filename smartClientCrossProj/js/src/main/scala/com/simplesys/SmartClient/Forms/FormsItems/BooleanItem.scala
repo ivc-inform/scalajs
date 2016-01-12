@@ -11,5 +11,11 @@ trait BooleanItem extends CycleItem {
 abstract trait AbstractBooleanItemCompanion extends AbstractCycleItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object BooleanItem extends AbstractBooleanItemCompanion        
+   object BooleanItem extends AbstractBooleanItemCompanion
+}
+

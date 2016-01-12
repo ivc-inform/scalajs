@@ -11,5 +11,11 @@ trait ColorPickerItem extends ColorItem {
 abstract trait AbstractColorPickerItemCompanion extends AbstractColorItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object ColorPickerItem extends AbstractColorPickerItemCompanion        
+   object ColorPickerItem extends AbstractColorPickerItemCompanion
+}
+

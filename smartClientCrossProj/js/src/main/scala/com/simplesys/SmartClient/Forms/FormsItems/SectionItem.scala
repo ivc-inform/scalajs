@@ -21,5 +21,11 @@ trait SectionItem extends CanvasItem {
 abstract trait AbstractSectionItemCompanion extends AbstractCanvasItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object SectionItem extends AbstractSectionItemCompanion        
+   object SectionItem extends AbstractSectionItemCompanion
+}
+

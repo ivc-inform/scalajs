@@ -14,5 +14,11 @@ trait ScrollThumb extends StretchImg {
 abstract trait AbstractScrollThumbCompanion extends AbstractStretchImgCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object ScrollThumb extends AbstractScrollThumbCompanion        
+   object ScrollThumb extends AbstractScrollThumbCompanion
+}
+

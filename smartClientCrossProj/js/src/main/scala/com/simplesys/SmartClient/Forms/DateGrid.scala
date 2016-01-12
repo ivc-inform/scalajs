@@ -14,5 +14,11 @@ trait DateGrid extends ListGrid[ListGridField, ListGridRecord] {
 abstract trait AbstractDateGridCompanion extends AbstractListGridCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object DateGrid extends AbstractDateGridCompanion        
+   object DateGrid extends AbstractDateGridCompanion
+}
+

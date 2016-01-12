@@ -32,5 +32,11 @@ trait AdvancedHiliteEditor extends VStack {
 abstract trait AbstractAdvancedHiliteEditorCompanion extends AbstractVStackCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object AdvancedHiliteEditor extends AbstractAdvancedHiliteEditorCompanion        
+   object AdvancedHiliteEditor extends AbstractAdvancedHiliteEditorCompanion
+}
+

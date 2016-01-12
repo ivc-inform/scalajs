@@ -11,5 +11,11 @@ trait CycleItem extends FormItem {
 abstract trait AbstractCycleItemCompanion extends AbstractFormItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object CycleItem extends AbstractCycleItemCompanion        
+   object CycleItem extends AbstractCycleItemCompanion
+}
+

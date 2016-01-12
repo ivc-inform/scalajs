@@ -18,5 +18,11 @@ trait PickListMenu extends ScrollingMenu {
 abstract trait AbstractPickListMenuCompanion extends AbstractScrollingMenuCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object PickListMenu extends AbstractPickListMenuCompanion        
+   object PickListMenu extends AbstractPickListMenuCompanion
+}
+

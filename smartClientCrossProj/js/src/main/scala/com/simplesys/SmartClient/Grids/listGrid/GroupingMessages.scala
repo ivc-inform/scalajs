@@ -41,5 +41,11 @@ abstract trait AbstractGroupingMessagesCompanion extends AbstractClassCompanion 
     var weekNumberTitle:String  = js.native
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object GroupingMessages extends AbstractGroupingMessagesCompanion        
+   object GroupingMessages extends AbstractGroupingMessagesCompanion
+}
+

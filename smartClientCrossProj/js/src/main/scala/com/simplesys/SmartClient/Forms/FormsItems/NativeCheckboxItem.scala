@@ -12,5 +12,11 @@ trait NativeCheckboxItem extends FormItem {
 abstract trait AbstractNativeCheckboxItemCompanion extends AbstractFormItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object NativeCheckboxItem extends AbstractNativeCheckboxItemCompanion        
+   object NativeCheckboxItem extends AbstractNativeCheckboxItemCompanion
+}
+

@@ -52,5 +52,11 @@ trait BatchUploader extends VStack {
 abstract trait AbstractBatchUploaderCompanion extends AbstractVStackCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object BatchUploader extends AbstractBatchUploaderCompanion        
+   object BatchUploader extends AbstractBatchUploaderCompanion
+}
+
