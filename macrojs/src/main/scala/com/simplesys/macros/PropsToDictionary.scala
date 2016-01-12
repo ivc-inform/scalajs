@@ -1,7 +1,7 @@
 package com.simplesys.macros
 
 import com.simplesys.SmartClient.System.props.AbstractPropsClass
-import com.simplesys.SmartClient.option.{DoubleType, ScOption, ScSome}
+import com.simplesys.SmartClient.option.{IntString, DoubleType, ScOption, ScSome}
 import com.simplesys.common.Strings._
 import com.simplesys.log.Logging
 
@@ -60,12 +60,11 @@ object PropsToDictionary extends Logging {
                         case TypeRef(_, _, _) =>
                             Some(q"$valueAccess")
                         case NoType =>
-                            val dblTypeSymb = typeOf[DoubleType[_, _]].typeSymbol
-
-                            val dblTp1 = q"Type1"
-                            val dblTp2 = q"Type2"
-
-                            getTree4DoubleType(dblTypeSymb, dblTp1, dblTp2)
+                            getTree4DoubleType(typeOf[DoubleType[_, _]].typeSymbol, q"Type1", q"Type2") match {
+                                case None =>
+                                    getTree4DoubleType(typeOf[IntString[_, _]].typeSymbol, q"IntFRomIntString", q"StringFRomIntString")
+                                case some => some
+                            }
                     }
             }
         }
@@ -137,7 +136,7 @@ object PropsToDictionary extends Logging {
                  }
             }"""
         }
-        logger debug res.toString()
+        //logger debug res.toString()
         res
     }
 }
