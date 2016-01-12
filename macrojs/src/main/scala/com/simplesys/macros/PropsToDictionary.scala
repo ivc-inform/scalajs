@@ -36,7 +36,7 @@ object PropsToDictionary extends Logging {
 
                     Some(q"$arrEx")
                 case NoType =>
-                    def getTree4Symb(symb: Symbol): Option[Tree] = {
+                    def getTree4DoubleType(symb: Symbol, tp1: Tree, tp2: Tree): Option[Tree] = {
                         typeDef.baseType(symb) match {
                             case TypeRef(_, _, targs) =>
                                 val access = q"ei"
@@ -46,8 +46,8 @@ object PropsToDictionary extends Logging {
 
                                 Some(
                                     q"""$valueAccess match {
-                                            case Type1(item) => $type1
-                                            case Type2(item) => $type2
+                                            case $tp1(item) => $type1
+                                            case $tp2(item) => $type2
                                         }""")
                             case NoType =>
                                 if (typeDef.typeSymbol.owner == tsScEnumeration)
@@ -61,7 +61,11 @@ object PropsToDictionary extends Logging {
                             Some(q"$valueAccess")
                         case NoType =>
                             val dblTypeSymb = typeOf[DoubleType[_, _]].typeSymbol
-                            getTree4Symb(dblTypeSymb)
+
+                            val dblTp1 = q"Type1"
+                            val dblTp2 = q"Type2"
+
+                            getTree4DoubleType(dblTypeSymb, dblTp1, dblTp2)
                     }
             }
         }
@@ -133,7 +137,7 @@ object PropsToDictionary extends Logging {
                  }
             }"""
         }
-        //logger debug res.toString()
+        logger debug res.toString()
         res
     }
 }
