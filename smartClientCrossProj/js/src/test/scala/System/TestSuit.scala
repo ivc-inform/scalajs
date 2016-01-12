@@ -24,7 +24,6 @@ class TestSuit extends FunSuite {
         println(result match {
             case Type2(x) => "You passed me the Int: " + x + ", which I will increment. " + x + " + 1 = " + (x + 1)
             case Type1(x) => "You passed me the String: " + x
-            case StringFRomIntString(x) => "You passed me the String: " + x
         })
     }
 
