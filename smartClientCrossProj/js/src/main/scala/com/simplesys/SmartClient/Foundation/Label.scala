@@ -17,8 +17,6 @@ trait Label extends Button {
 abstract trait AbstractLabelCompanion extends AbstractCanvasCompanion {
 }
 
-object Label extends SCApply[Label, LabelProps]
-
 package companion {
     @js.native
     object Label extends AbstractLabelCompanion

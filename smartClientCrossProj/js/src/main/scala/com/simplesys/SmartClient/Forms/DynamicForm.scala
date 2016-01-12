@@ -207,9 +207,6 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     var wrapItemTitles: Boolean
 }
 
-
-object DynamicForm extends SCApply[DynamicForm, DynamicFormProps]
-
 @js.native
 abstract trait AbstractDynamicFormCompanion extends AbstractClassCompanion {
 }
