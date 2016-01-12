@@ -21,6 +21,7 @@ import com.simplesys.System.Types.{CSSStyleName, FormItemBaseStyle, HTMLString, 
 import com.simplesys.option.{IntString, ScNone, ScOption}
 
 import scala.scalajs.js
+import scala.scalajs.js._
 
 class DynamicFormProps extends CanvasProps {
     type callbackHandler <: DynamicForm
