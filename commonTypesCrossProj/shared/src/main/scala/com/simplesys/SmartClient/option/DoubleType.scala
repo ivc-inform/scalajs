@@ -36,16 +36,6 @@ sealed abstract class DoubleType[+A, +B] {
   def isRight: Boolean
 }
 
-final case class Type1[+A, +B](a: A) extends DoubleType[A, B] {
-  def isLeft = true
-  def isRight = false
-}
-
-final case class Type2[+A, +B](b: B) extends DoubleType[A, B] {
-  def isLeft = false
-  def isRight = true
-}
-
 object DoubleType {
 
   implicit class MergeableEither[A](private val x: DoubleType[A, A]) extends AnyVal {
@@ -164,9 +154,14 @@ object DoubleType {
     if (test) Type2(right) else Type1(left)
 }
 
-//class IntString extends DoubleType[Int, String] {
-//
-//  override def isLeft: Boolean = ???
-//  override def isRight: Boolean = ???
-//
-//}
+final case class Type1[+A, +B](a: A) extends DoubleType[A, B] {
+  def isLeft = true
+  def isRight = false
+}
+
+final case class Type2[+A, +B](b: B) extends DoubleType[A, B] {
+  def isLeft = false
+  def isRight = true
+}
+
+sealed abstract class IntString extends DoubleType[Int, String]
