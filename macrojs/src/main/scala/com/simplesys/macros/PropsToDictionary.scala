@@ -36,11 +36,13 @@ object PropsToDictionary extends Logging {
 
                     Some(q"$arrEx")
                 case NoType =>
+                    val symb = typeOf[DoubleType[_, _]].typeSymbol
+
                     typeDef.baseType(tsScOption) match {
                         case TypeRef(_, _, _) =>
                             Some(q"$valueAccess")
                         case NoType =>
-                            typeDef.baseType(typeOf[DoubleType[_, _]].typeSymbol) match {
+                            typeDef.baseType(symb) match {
                                 case TypeRef(_, _, targs) =>
                                     val access = q"ei"
                                     val checkedTypes = targs.map(t => typeToConvertedValueInt(t, access))
