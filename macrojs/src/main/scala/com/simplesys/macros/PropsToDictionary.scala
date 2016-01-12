@@ -1,7 +1,7 @@
 package com.simplesys.macros
 
 import com.simplesys.SmartClient.System.props.AbstractPropsClass
-import com.simplesys.SmartClient.option.{ScOption, ScSome}
+import com.simplesys.SmartClient.option.{DoubleType, ScOption, ScSome}
 import com.simplesys.common.Strings._
 import com.simplesys.log.Logging
 
@@ -40,7 +40,7 @@ object PropsToDictionary extends Logging {
                         case TypeRef(_, _, _) =>
                             Some(q"$valueAccess")
                         case NoType =>
-                            typeDef.baseType(typeOf[Either[_, _]].typeSymbol) match {
+                            typeDef.baseType(typeOf[DoubleType[_, _]].typeSymbol) match {
                                 case TypeRef(_, _, targs) =>
                                     val access = q"ei"
                                     val checkedTypes = targs.map(t => typeToConvertedValueInt(t, access))
@@ -49,8 +49,8 @@ object PropsToDictionary extends Logging {
 
                                     Some(
                                         q"""$valueAccess match {
-                                            case Left(item) => $leftType
-                                            case Right(item) => $rightType
+                                            case Type1(item) => $leftType
+                                            case Type2(item) => $rightType
                                         }""")
                                 case NoType =>
                                     if (typeDef.typeSymbol.owner == tsScEnumeration)
@@ -115,6 +115,7 @@ object PropsToDictionary extends Logging {
         val res = context.Expr[PropsToDictionary[P]] {
             q"""
                 import com.simplesys.SmartClient.System.props.AbstractPropsClass
+                import com.simplesys.SmartClient.option.{Type1, Type2, DoubleType}
                 import scala.scalajs.js
                 import scala.scalajs.js.JSConverters._
 
