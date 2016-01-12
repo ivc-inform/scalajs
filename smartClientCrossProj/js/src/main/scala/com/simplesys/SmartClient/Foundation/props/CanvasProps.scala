@@ -6,8 +6,8 @@ import com.simplesys.SmartClient.Forms.ValuesManager
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types._
+import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.SmartClient.Tools.EditNode
-import com.simplesys.props.ClassProps
 import com.simplesys.option._
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
