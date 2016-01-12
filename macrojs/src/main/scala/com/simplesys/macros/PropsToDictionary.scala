@@ -44,13 +44,13 @@ object PropsToDictionary extends Logging {
                                 case TypeRef(_, _, targs) =>
                                     val access = q"ei"
                                     val checkedTypes = targs.map(t => typeToConvertedValueInt(t, access))
-                                    val leftType = checkedTypes.head.getOrElse(valueAccess)
-                                    val rightType = checkedTypes.last.getOrElse(valueAccess)
+                                    val type1 = checkedTypes.head.getOrElse(valueAccess)
+                                    val type2 = checkedTypes.last.getOrElse(valueAccess)
 
                                     Some(
                                         q"""$valueAccess match {
-                                            case Type1(item) => $leftType
-                                            case Type2(item) => $rightType
+                                            case Type1(item) => $type1
+                                            case Type2(item) => $type2
                                         }""")
                                 case NoType =>
                                     if (typeDef.typeSymbol.owner == tsScEnumeration)
@@ -115,7 +115,7 @@ object PropsToDictionary extends Logging {
         val res = context.Expr[PropsToDictionary[P]] {
             q"""
                 import com.simplesys.SmartClient.System.props.AbstractPropsClass
-                import com.simplesys.SmartClient.option.{Type1, Type2, DoubleType}
+                import com.simplesys.SmartClient.option._
                 import scala.scalajs.js
                 import scala.scalajs.js.JSConverters._
 

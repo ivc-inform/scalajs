@@ -1,7 +1,7 @@
 package System
 
 import com.simplesys.SmartClient.Control.IButton
-import com.simplesys.SmartClient.option.{Type1, Type2, DoubleType}
+import com.simplesys.SmartClient.option._
 import org.scalatest.FunSuite
 
 import scala.io.StdIn
@@ -24,6 +24,7 @@ class TestSuit extends FunSuite {
         println(result match {
             case Type2(x) => "You passed me the Int: " + x + ", which I will increment. " + x + " + 1 = " + (x + 1)
             case Type1(x) => "You passed me the String: " + x
+            case StringFRomIntString(x) => "You passed me the String: " + x
         })
     }
 

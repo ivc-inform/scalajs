@@ -11,6 +11,6 @@ case class Type2[+A, +B](b: B) extends DoubleType[A, B]
 
 sealed abstract class IntString extends DoubleType[Int, String]
 
-//case class IntFRomIntString(a: Int) extends IntString
-//
-//case class StringFRomIntString(a: String) extends IntString
+case class IntFRomIntString(a: Int) extends IntString
+
+case class StringFRomIntString(a: String) extends IntString
