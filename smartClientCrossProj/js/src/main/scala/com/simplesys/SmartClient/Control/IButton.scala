@@ -19,9 +19,3 @@ package companion {
    @js.native
    object IButton extends AbstractIButtonCompanion
 }
-
-
-
-
-
-
