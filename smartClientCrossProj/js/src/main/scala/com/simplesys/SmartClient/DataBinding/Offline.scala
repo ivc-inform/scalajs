@@ -22,5 +22,11 @@ abstract trait AbstractOfflineCompanion extends AbstractClassCompanion {
     def useNativeOfflineDetection(): void = js.native
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object Offline extends AbstractOfflineCompanion        
+   object Offline extends AbstractOfflineCompanion
+}
+

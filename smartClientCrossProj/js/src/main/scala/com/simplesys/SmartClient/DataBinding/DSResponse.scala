@@ -27,5 +27,11 @@ trait DSResponse extends RPCResponse {
 abstract trait AbstractDSResponseCompanion extends AbstractRPCResponseCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object DSResponse extends AbstractDSResponseCompanion        
+   object DSResponse extends AbstractDSResponseCompanion
+}
+

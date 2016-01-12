@@ -15,5 +15,11 @@ trait DataView extends VLayout {
 abstract trait AbstractDataViewCompanion extends AbstractVLayoutCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object DataView extends AbstractDataViewCompanion        
+   object DataView extends AbstractDataViewCompanion
+}
+

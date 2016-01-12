@@ -14,5 +14,11 @@ trait FieldPickerField extends Class {
 abstract trait AbstractFieldPickerFieldCompanion extends AbstractClassCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object FieldPickerField extends AbstractFieldPickerFieldCompanion        
+   object FieldPickerField extends AbstractFieldPickerFieldCompanion
+}
+

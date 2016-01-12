@@ -35,5 +35,11 @@ trait StretchImgButton extends StretchImg {
 abstract trait AbstractStretchImgButtonCompanion extends AbstractStretchImgCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object StretchImgButton extends AbstractStretchImgButtonCompanion        
+   object StretchImgButton extends AbstractStretchImgButtonCompanion
+}
+

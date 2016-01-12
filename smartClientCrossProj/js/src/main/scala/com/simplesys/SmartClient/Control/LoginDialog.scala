@@ -44,5 +44,11 @@ abstract trait AbstractLoginDialogCompanion extends AbstractWindowCompanion {
     var USERNAME_TITLE: String = js.native
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object LoginDialog extends AbstractLoginDialogCompanion        
+   object LoginDialog extends AbstractLoginDialogCompanion
+}
+

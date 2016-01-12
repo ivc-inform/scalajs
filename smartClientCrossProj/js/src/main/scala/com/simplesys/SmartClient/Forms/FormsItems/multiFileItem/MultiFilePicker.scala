@@ -15,5 +15,11 @@ trait MultiFilePicker extends VStack {
 abstract trait AbstractMultiFilePickerCompanion extends AbstractVStackCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object MultiFilePicker extends AbstractMultiFilePickerCompanion        
+   object MultiFilePicker extends AbstractMultiFilePickerCompanion
+}
+

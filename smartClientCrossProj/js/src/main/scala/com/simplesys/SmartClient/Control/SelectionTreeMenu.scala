@@ -11,5 +11,11 @@ trait SelectionTreeMenu extends Menu {
 abstract trait AbstractSelectionTreeMenuCompanion extends AbstractMenuCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object SelectionTreeMenu extends AbstractSelectionTreeMenuCompanion        
+   object SelectionTreeMenu extends AbstractSelectionTreeMenuCompanion
+}
+

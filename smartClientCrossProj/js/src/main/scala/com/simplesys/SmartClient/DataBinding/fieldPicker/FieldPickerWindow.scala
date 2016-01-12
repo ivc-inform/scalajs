@@ -13,5 +13,11 @@ trait FieldPickerWindow extends Window {
 abstract trait AbstractFieldPickerWindowCompanion extends AbstractWindowCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object FieldPickerWindow extends AbstractFieldPickerWindowCompanion        
+   object FieldPickerWindow extends AbstractFieldPickerWindowCompanion
+}
+

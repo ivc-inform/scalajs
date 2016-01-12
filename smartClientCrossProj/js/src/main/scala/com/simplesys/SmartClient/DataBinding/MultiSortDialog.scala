@@ -50,5 +50,11 @@ abstract trait AbstractMultiSortDialogCompanion extends AbstractWindowCompanion 
     def askForSort(fieldSource: Array[Object] | DataSource | DataBoundComponent, initialSort: Array[SortSpecifier], callback: Callback): void = js.native
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object MultiSortDialog extends AbstractMultiSortDialogCompanion        
+   object MultiSortDialog extends AbstractMultiSortDialogCompanion
+}
+

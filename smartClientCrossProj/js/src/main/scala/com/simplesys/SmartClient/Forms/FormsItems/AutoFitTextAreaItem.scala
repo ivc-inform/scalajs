@@ -12,5 +12,11 @@ trait AutoFitTextAreaItem extends TextAreaItem {
 abstract trait AbstractAutoFitTextAreaItemCompanion extends AbstractTextAreaItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object AutoFitTextAreaItem extends AbstractAutoFitTextAreaItemCompanion        
+   object AutoFitTextAreaItem extends AbstractAutoFitTextAreaItemCompanion
+}
+

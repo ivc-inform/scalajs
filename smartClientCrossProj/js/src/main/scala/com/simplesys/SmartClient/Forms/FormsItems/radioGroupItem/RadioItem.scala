@@ -14,5 +14,11 @@ trait RadioItem extends NativeCheckboxItem {
 abstract trait AbstractRadioItemCompanion extends AbstractNativeCheckboxItemCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object RadioItem extends AbstractRadioItemCompanion        
+   object RadioItem extends AbstractRadioItemCompanion
+}
+

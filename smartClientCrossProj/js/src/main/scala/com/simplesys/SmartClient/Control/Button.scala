@@ -31,8 +31,13 @@ trait Button extends StatefulCanvas {
 abstract class AbstractButtonCompanion extends AbstractStatefulCanvasCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object Button extends AbstractButtonCompanion {
+   object Button extends AbstractButtonCompanion
 }
+
 
 

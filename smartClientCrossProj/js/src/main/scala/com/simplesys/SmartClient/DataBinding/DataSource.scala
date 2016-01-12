@@ -279,6 +279,11 @@ abstract trait AbstractDataSourceCompanion extends AbstractClassCompanion {
     def removeData(data: Record, fieldName: String = js.native, requestProperties: DSRequest = js.native): void = js.native
 }
 
+package companion {
+
+import scala.scalajs.js
 
 @js.native
-object DataSource extends AbstractDataSourceCompanion        
+   object DataSource extends AbstractDataSourceCompanion
+}
+

@@ -59,5 +59,11 @@ trait ResultSet extends Class with List {
 abstract trait AbstractResultSetCompanion extends AbstractClassCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object ResultSet extends AbstractResultSetCompanion        
+   object ResultSet extends AbstractResultSetCompanion
+}
+

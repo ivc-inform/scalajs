@@ -11,5 +11,11 @@ trait IMenuButton extends MenuButton {
 abstract trait AbstractIMenuButtonCompanion extends AbstractMenuButtonCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object IMenuButton extends AbstractIMenuButtonCompanion        
+   object IMenuButton extends AbstractIMenuButtonCompanion
+}
+

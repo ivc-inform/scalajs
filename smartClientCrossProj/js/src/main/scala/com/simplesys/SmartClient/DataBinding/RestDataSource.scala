@@ -26,5 +26,11 @@ trait RestDataSource extends DataSource {
 abstract trait AbstractRestDataSourceCompanion extends AbstractDataSourceCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object RestDataSource extends AbstractRestDataSourceCompanion        
+   object RestDataSource extends AbstractRestDataSourceCompanion
+}
+

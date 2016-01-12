@@ -15,5 +15,11 @@ abstract trait AbstractJSONCompanion extends AbstractClassCompanion {
     def encode(obj: Types.Object, settings: JSONEncoder = js.native): String = js.native
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object JSON extends AbstractJSONCompanion        
+   object JSON extends AbstractJSONCompanion
+}
+

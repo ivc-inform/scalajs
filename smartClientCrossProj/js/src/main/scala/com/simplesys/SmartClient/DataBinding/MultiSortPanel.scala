@@ -45,5 +45,11 @@ trait MultiSortPanel extends Layout {
 abstract trait AbstractMultiSortPanelCompanion extends AbstractLayoutCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object MultiSortPanel extends AbstractMultiSortPanelCompanion        
+   object MultiSortPanel extends AbstractMultiSortPanelCompanion
+}
+
