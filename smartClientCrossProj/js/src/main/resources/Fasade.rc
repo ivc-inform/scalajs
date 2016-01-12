@@ -1,4 +1,55 @@
-    var currentPane: Canvas
-    def hideCurrentPane(): void
-    var panes: js.Array[Canvas]
-    def setCurrentPane(pane: String | Canvas): void
+var addHistoryEntries: Boolean
+    val animateNavigationBarStateChanges: Boolean
+    val autoNavigate: Boolean
+    val backButton: NavigationButton with AutoChild
+    var currentPane: CurrentPane
+    var detailNavigationControl: Canvas
+    var detailPane: Canvas
+    var detailPaneTitleTemplate: HTMLString
+    var detailTitle: HTMLString
+    var detailToolButtons: js.Array[Canvas]
+    val detailToolStrip: NavigationBar with AutoChild
+    val deviceMode: DeviceMode
+    var downClick: js.ThisFunction0[callbackHandler, void]
+    val leftButton: NavigationButton with AutoChild
+    var listPane: Canvas
+    var listPaneTitleTemplate: HTMLString
+    var listTitle: HTMLString
+    val listToolStrip: NavigationButton with AutoChild
+    def navigateDetailPane(title: HTMLString = js.native): void
+    def navigateListPane(title: HTMLString = js.native): void
+    def navigatePane(target: CurrentPane = js.native, title: HTMLString = js.native, source: CurrentPane = js.native): void
+    val navigationBar: NavigationBar with AutoChild
+    var navigationClick: js.ThisFunction0[callbackHandler, void]
+    var navigationPane: Canvas
+    var navigationTitle: HTMLString
+    var pageOrientation: PageOrientation
+    var paneChanged: js.ThisFunction1[callbackHandler, CurrentPane, void]
+    def setAddHistoryEntries(addHistoryEntries: Boolean): void
+    def setCurrentPane(newPane: CurrentPane): void
+    def setDetailNavigationControl(control: Canvas): void
+    def setDetailPane(pane: Canvas): void
+    def setDetailPaneTitleTemplate(template: HTMLString): void
+    def setDetailTitle(title: HTMLString): void
+    def setDetailToolButtons(buttons: js.Array[Button]): void
+    def setLeftButtonTitle(newTitle: HTMLString): void
+    def setListPane(pane: Canvas): void
+    def setListPaneTitleTemplate(template: HTMLString): void
+    def setListTitle(title: HTMLString): void
+    def setNavigationPane(pane: Canvas): void
+    def setNavigationTitle(title: HTMLString): void
+    def setPageOrientation(newOrientation: PageOrientation): void
+    def setRightButtonTitle(newTitle: HTMLString): void
+    def setShowLeftButton(show: Boolean): void
+    def setShowRightButton(visible: Boolean): void
+    def showDetailPane(detailPaneTitle: HTMLString = js.native, backButtonTitle: HTMLString = js.native, direction: NavigationDirection = js.native): void
+    val showDetailToolStrip: Boolean
+    var showLeftButton: Boolean
+    def showListPane(listPaneTitle: HTMLString = js.native, backButtonTitle: HTMLString = js.native, direction: NavigationDirection = js.native): void
+    val showListToolStrip: Boolean
+    val showMiniNav: Boolean
+    val showNavigationBar: Boolean
+    def showNavigationPane(direction: NavigationDirection = js.native): void
+    val showResizeBars:Boolean
+    var showRightButton:Boolean
+    var upClick: js.ThisFunction0[callbackHandler, void]
