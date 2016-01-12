@@ -36,5 +36,11 @@ trait ImgSectionHeader extends HLayout {
 abstract trait AbstractImgSectionHeaderCompanion extends AbstractHLayoutCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object ImgSectionHeader extends AbstractImgSectionHeaderCompanion        
+   object ImgSectionHeader extends AbstractImgSectionHeaderCompanion
+}
+

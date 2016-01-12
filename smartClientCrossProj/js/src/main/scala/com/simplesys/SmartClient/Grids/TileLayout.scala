@@ -52,5 +52,11 @@ trait TileLayout extends Canvas {
 abstract trait AbstractTileLayoutCompanion extends AbstractCanvasCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object TileLayout extends AbstractTileLayoutCompanion        
+   object TileLayout extends AbstractTileLayoutCompanion
+}
+

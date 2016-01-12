@@ -39,5 +39,11 @@ trait ToolStripGroup extends VLayout {
 abstract trait AbstractToolStripGroupCompanion extends AbstractCanvasCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object ToolStripGroup extends AbstractToolStripGroupCompanion        
+   object ToolStripGroup extends AbstractToolStripGroupCompanion
+}
+

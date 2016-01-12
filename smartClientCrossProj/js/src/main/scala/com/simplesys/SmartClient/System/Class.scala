@@ -98,3 +98,8 @@ abstract trait AbstractClassCompanion extends Types.Object {
     def setProperties(arguments: js.Dictionary[Types.Object]): void = js.native
     def Super(methodName: String, args: js.Array[js.Any], nativeArgs: js.Array[js.Any] = js.native): js.Any = js.native
 }
+
+package companion {
+  @js.native
+  object Class extends AbstractClassCompanion
+}

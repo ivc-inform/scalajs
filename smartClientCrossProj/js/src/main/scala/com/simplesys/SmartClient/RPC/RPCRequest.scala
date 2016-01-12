@@ -53,6 +53,12 @@ abstract trait AbstractRPCRequestCompanion extends AbstractClassCompanion {
     var useCursorTracker: Boolean = js.native
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object RPCRequest extends AbstractRPCRequestCompanion
+   object RPCRequest extends AbstractRPCRequestCompanion
+}
+
 

@@ -11,5 +11,11 @@ trait Snapbar extends Splitbar {
 abstract trait AbstractSnapbarCompanion extends AbstractSplitbarCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object Snapbar extends AbstractSnapbarCompanion        
+   object Snapbar extends AbstractSnapbarCompanion
+}
+

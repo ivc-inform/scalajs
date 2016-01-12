@@ -65,5 +65,11 @@ trait PortalLayout extends Layout {
 abstract trait AbstractPortalLayoutCompanion extends AbstractCanvasCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object PortalLayout extends AbstractPortalLayoutCompanion        
+   object PortalLayout extends AbstractPortalLayoutCompanion
+}
+

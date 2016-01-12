@@ -32,5 +32,11 @@ trait Toolbar extends Layout {
 abstract trait AbstractToolbarCompanion extends AbstractCanvasCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object Toolbar extends AbstractToolbarCompanion
+   object Toolbar extends AbstractToolbarCompanion
+}
+

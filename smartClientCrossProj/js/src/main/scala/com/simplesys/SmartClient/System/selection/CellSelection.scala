@@ -26,5 +26,11 @@ trait CellSelection extends Class {
 abstract trait AbstractCellSelectionCompanion extends AbstractClassCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object CellSelection extends AbstractCellSelectionCompanion        
+   object CellSelection extends AbstractCellSelectionCompanion
+}
+

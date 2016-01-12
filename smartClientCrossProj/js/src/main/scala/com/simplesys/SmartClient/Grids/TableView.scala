@@ -32,5 +32,11 @@ trait TableView extends ListGrid[ListGridField, ListGridRecord] {
 abstract trait AbstractTableViewCompanion extends AbstractListGridCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object TableView extends AbstractTableViewCompanion        
+   object TableView extends AbstractTableViewCompanion
+}
+

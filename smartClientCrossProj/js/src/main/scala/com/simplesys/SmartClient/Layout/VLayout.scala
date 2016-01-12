@@ -13,5 +13,11 @@ trait VLayout extends Layout {
 abstract trait AbstractVLayoutCompanion extends AbstractCanvasCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object VLayout extends AbstractVLayoutCompanion        
+   object VLayout extends AbstractVLayoutCompanion
+}
+

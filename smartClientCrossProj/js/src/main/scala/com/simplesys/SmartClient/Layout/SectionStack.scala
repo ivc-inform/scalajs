@@ -56,5 +56,11 @@ trait SectionStack extends VLayout {
 abstract trait AbstractSectionStackCompanion extends AbstractVLayoutCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object SectionStack extends AbstractSectionStackCompanion        
+   object SectionStack extends AbstractSectionStackCompanion
+}
+

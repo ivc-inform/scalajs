@@ -13,5 +13,11 @@ trait TabSet extends Canvas {
 abstract trait AbstractTabSetCompanion extends AbstractCanvasCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object TabSet extends AbstractTabSetCompanion        
+   object TabSet extends AbstractTabSetCompanion
+}
+

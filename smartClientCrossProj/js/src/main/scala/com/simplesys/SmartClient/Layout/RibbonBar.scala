@@ -14,5 +14,11 @@ trait RibbonBar extends ToolStrip {
 abstract trait AbstractRibbonBarCompanion extends AbstractToolStripCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object RibbonBar extends AbstractRibbonBarCompanion        
+   object RibbonBar extends AbstractRibbonBarCompanion
+}
+

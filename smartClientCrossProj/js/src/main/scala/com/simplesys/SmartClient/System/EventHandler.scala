@@ -42,5 +42,11 @@ abstract trait AbstractEventHandlerCompanion extends AbstractClassCompanion {
     def targetIsMasked(target: Canvas): Boolean = js.native
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object EventHandler extends AbstractEventHandlerCompanion        
+   object EventHandler extends AbstractEventHandlerCompanion
+}
+

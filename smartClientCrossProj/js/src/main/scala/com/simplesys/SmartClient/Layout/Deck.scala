@@ -18,5 +18,11 @@ trait Deck extends Layout {
 abstract trait AbstractDeckCompanion extends AbstractLayoutCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object Deck extends AbstractDeckCompanion        
+   object Deck extends AbstractDeckCompanion
+}
+

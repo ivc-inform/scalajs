@@ -82,5 +82,11 @@ trait Layout extends Canvas {
 abstract trait AbstractLayoutCompanion extends AbstractClassCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object Layout extends AbstractLayoutCompanion        
+   object Layout extends AbstractLayoutCompanion
+}
+

@@ -16,5 +16,11 @@ trait ToolStripSeparator extends Img {
 abstract trait AbstractToolStripSeparatorCompanion extends AbstractCanvasCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object ToolStripSeparator extends AbstractToolStripSeparatorCompanion        
+   object ToolStripSeparator extends AbstractToolStripSeparatorCompanion
+}
+

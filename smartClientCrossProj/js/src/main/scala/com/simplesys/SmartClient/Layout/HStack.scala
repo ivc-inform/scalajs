@@ -13,5 +13,11 @@ trait HStack extends Layout {
 abstract trait AbstractHStackCompanion extends AbstractCanvasCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object HStack extends AbstractHStackCompanion        
+   object HStack extends AbstractHStackCompanion
+}
+

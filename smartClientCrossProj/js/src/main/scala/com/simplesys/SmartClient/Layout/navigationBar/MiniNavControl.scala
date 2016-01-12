@@ -18,5 +18,11 @@ trait MiniNavControl extends StretchImgButton {
 abstract trait AbstractMiniNavControlCompanion extends AbstractStretchImgButtonCompanion {
 }
 
+package companion {
+
+import scala.scalajs.js
+
 @js.native
-object MiniNavControl extends AbstractMiniNavControlCompanion        
+   object MiniNavControl extends AbstractMiniNavControlCompanion
+}
+
