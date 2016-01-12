@@ -21,8 +21,8 @@ case class StringFRomIntString(a: String) extends IntString[Int, String]
 //<editor-fold desc="DoubleAlignment">
 sealed abstract class DoubleAlignment[+A, +B]
 
-case class AlignmentfromDoubleAlignment(a: Alignment)
-case class VerticalAlignmentfromDoubleAlignment(a: VerticalAlignment)
+case class AlignmentfromDoubleAlignment(a: Alignment) extends DoubleAlignment[Alignment, VerticalAlignment]
+case class VerticalAlignmentfromDoubleAlignment(a: VerticalAlignment) extends DoubleAlignment[Alignment, VerticalAlignment]
 //</editor-fold>
 
 object DoubleType {

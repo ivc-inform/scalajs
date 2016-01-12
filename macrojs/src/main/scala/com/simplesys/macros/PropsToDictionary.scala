@@ -1,7 +1,7 @@
 package com.simplesys.macros
 
 import com.simplesys.props.AbstractPropsClass
-import com.simplesys.option.{IntString, DoubleType, ScOption, ScSome}
+import com.simplesys.option._
 import com.simplesys.common.Strings._
 import com.simplesys.log.Logging
 
@@ -62,7 +62,10 @@ object PropsToDictionary extends Logging {
                         case NoType =>
                             getTree4DoubleType(typeOf[DoubleType[_, _]].typeSymbol, q"Type1", q"Type2") match {
                                 case None =>
-                                    getTree4DoubleType(typeOf[IntString[_, _]].typeSymbol, q"IntFRomIntString", q"StringFRomIntString")
+                                    getTree4DoubleType(typeOf[IntString[_, _]].typeSymbol, q"IntFRomIntString", q"StringFRomIntString") match {
+                                        case None => getTree4DoubleType(typeOf[DoubleAlignment[_, _]].typeSymbol, q"AlignmentfromDoubleAlignment", q"VerticalAlignmentfromDoubleAlignment")
+                                        case some => some
+                                    }
                                 case some => some
                             }
                     }

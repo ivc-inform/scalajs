@@ -8,7 +8,7 @@ import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.props.ClassProps
 import com.simplesys.SmartClient.Tools.inst.EditNode
-import com.simplesys.option.{IntString, DoubleType, ScNone, ScOption}
+import com.simplesys.option._
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.System.Types.BackgroundRepeat._
@@ -167,7 +167,7 @@ class CanvasProps extends ClassProps {
     var keyDown: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var keyPress: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var keyUp: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
-    var layoutAlign: ScOption[DoubleType[Alignment, VerticalAlignment]] = ScNone
+    var layoutAlign: ScOption[DoubleAlignment[Alignment, VerticalAlignment]] = ScNone
     var leavePageSpace: ScOption[Int] = ScNone
     var left: ScOption[IntString[Int, String]] = ScNone
     var locateChildrenBy: ScOption[LocatorStrategy] = ScNone
