@@ -122,7 +122,7 @@ class CanvasProps extends ClassProps {
     var dropMove: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var dropOut: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var dropOver: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
-    var dropTypes: ScOption[DoubleType[js.Array[String], String]] = ScNone
+    var dropTypes: ScOption[String] = ScNone
     var dynamicContents: ScOption[Boolean] = ScNone
     var dynamicContentsVars: ScOption[ValueMap] = ScNone
     var edgeBackgroundColor: ScOption[Color] = ScNone
@@ -143,7 +143,7 @@ class CanvasProps extends ClassProps {
     var groupLabelBackgroundColor: ScOption[CSSColor] = ScNone
     var groupLabelStyleName: ScOption[CSSStyleName] = ScNone
     var groupTitle: ScOption[HTMLString] = ScNone
-    var height: ScOption[DoubleType[String, Int]] = ScNone
+    var height: ScOption[DoubleType[Int, String]] = ScNone
     var hideUsingDisplayNone: ScOption[Boolean] = ScNone
     var hover: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var hoverAlign: ScOption[Alignment] = ScNone
@@ -163,13 +163,13 @@ class CanvasProps extends ClassProps {
     var isGroup: ScOption[Boolean] = ScNone
     var isPrinting: ScOption[Boolean] = ScNone
     var isSnapAlignCandidate: ScOption[Boolean] = ScNone
-    var keepInParentRect: ScOption[DoubleType[Boolean, js.Array[Int]]] = ScNone
+    var keepInParentRect: ScOption[Boolean] = ScNone
     var keyDown: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var keyPress: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var keyUp: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var layoutAlign: ScOption[DoubleType[Alignment, VerticalAlignment]] = ScNone
     var leavePageSpace: ScOption[Int] = ScNone
-    var left: ScOption[DoubleType[String, Int]] = ScNone
+    var left: ScOption[DoubleType[Int, String]] = ScNone
     var locateChildrenBy: ScOption[LocatorStrategy] = ScNone
     var locateChildrenType: ScOption[LocatorTypeStrategy] = ScNone
     var locatePeersBy: ScOption[LocatorStrategy] = ScNone
