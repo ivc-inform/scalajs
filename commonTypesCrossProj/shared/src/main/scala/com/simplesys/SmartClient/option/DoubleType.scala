@@ -1,7 +1,5 @@
 package com.simplesys.SmartClient.option
 
-import javax.swing.GroupLayout.Alignment
-
 
 sealed abstract class DoubleType[+A, +B]
 
@@ -14,4 +12,10 @@ sealed abstract class IntString[+A, +B]
 case class IntFRomIntString(a: Int) extends IntString[Int, String]
 
 case class StringFRomIntString(a: String) extends IntString[Int, String]
+
+object DoubleType {
+    implicit def Int2IntString(x: Int) = ScSome(IntFRomIntString(x))
+    implicit def Stringt2IntString(x: String) = ScSome(StringFRomIntString(x))
+
+}
 
