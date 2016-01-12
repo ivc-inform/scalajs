@@ -1,4 +1,4 @@
-package com.simplesys.SmartClient.option
+package com.simplesys.option
 
 
 sealed abstract class DoubleType[+A, +B]

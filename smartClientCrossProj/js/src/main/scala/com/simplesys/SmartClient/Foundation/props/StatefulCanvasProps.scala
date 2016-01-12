@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Foundation.props
 
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.option.{ScNone, ScOption}
+import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.IconOrientation.IconOrientation
 import com.simplesys.System.Types.SelectionType.SelectionType

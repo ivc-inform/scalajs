@@ -1,7 +1,7 @@
 package com.simplesys.macros
 
 import com.simplesys.SmartClient.System.props.AbstractPropsClass
-import com.simplesys.SmartClient.option.{IntString, DoubleType, ScOption, ScSome}
+import com.simplesys.option.{IntString, DoubleType, ScOption, ScSome}
 import com.simplesys.common.Strings._
 import com.simplesys.log.Logging
 
@@ -122,7 +122,7 @@ object PropsToDictionary extends Logging {
         val res = context.Expr[PropsToDictionary[P]] {
             q"""
                 import com.simplesys.SmartClient.System.props.AbstractPropsClass
-                import com.simplesys.SmartClient.option._
+                import com.simplesys.option._
                 import scala.scalajs.js
                 import scala.scalajs.js.JSConverters._
 

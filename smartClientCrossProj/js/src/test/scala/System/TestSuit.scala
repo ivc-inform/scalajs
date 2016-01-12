@@ -1,7 +1,7 @@
 package System
 
 import com.simplesys.SmartClient.Control.IButton
-import com.simplesys.SmartClient.option._
+import com.simplesys.option._
 import org.scalatest.FunSuite
 
 import scala.io.StdIn

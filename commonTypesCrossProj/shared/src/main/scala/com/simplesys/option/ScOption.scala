@@ -1,4 +1,4 @@
-package com.simplesys.SmartClient.option
+package com.simplesys.option
 
 object ScOption {
     implicit def anyToScOpt[T](x: T): ScOption[T] = ScSome(x)
