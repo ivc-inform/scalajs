@@ -68,10 +68,10 @@ sealed abstract class ScOption[+A] extends Product with Serializable {
         if (isEmpty) List() else new ::(this.get, Nil)
 
     @inline final def toRight[X](left: => X) =
-        if (isEmpty) Left(left) else Right(this.get)
+        if (isEmpty) Type1(left) else Type2(this.get)
 
     @inline final def toLeft[X](right: => X) =
-        if (isEmpty) Right(right) else Left(this.get)
+        if (isEmpty) Type2(right) else Type1(this.get)
 }
 
 final case class ScSome[+A](x: A) extends ScOption[A] {

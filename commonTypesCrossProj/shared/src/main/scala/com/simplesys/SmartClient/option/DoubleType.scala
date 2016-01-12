@@ -1,32 +1,34 @@
 package com.simplesys.SmartClient.option
 
+import com.simplesys.SmartClient.option.DoubleType.{Type2Projection, Type1Projection}
+
 import scala.language.implicitConversions
 
 
-sealed abstract class Either[+A, +B] {
+sealed abstract class DoubleType[+A, +B] {
 
-  def left = Either.LeftProjection(this)
+  def left = Type1Projection(this)
 
-  def right = Either.RightProjection(this)
+  def right = Type2Projection(this)
 
   def fold[X](fa: A => X, fb: B => X) = this match {
-    case Left(a) => fa(a)
-    case Right(b) => fb(b)
+    case Type1(a) => fa(a)
+    case Type2(b) => fb(b)
   }
 
   def swap = this match {
-    case Left(a) => Right(a)
-    case Right(b) => Left(b)
+    case Type1(a) => Type2(a)
+    case Type2(b) => Type1(b)
   }
 
-  def joinRight[A1 >: A, B1 >: B, C](implicit ev: B1 <:< Either[A1, C]): Either[A1, C] = this match {
-    case Left(a)  => Left(a)
-    case Right(b) => b
+  def joinRight[A1 >: A, B1 >: B, C](implicit ev: B1 <:< DoubleType[A1, C]): DoubleType[A1, C] = this match {
+    case Type1(a)  => Type1(a)
+    case Type2(b) => b
   }
 
-  def joinLeft[A1 >: A, B1 >: B, C](implicit ev: A1 <:< Either[C, B1]): Either[C, B1] = this match {
-    case Left(a)  => a
-    case Right(b) => Right(b)
+  def joinLeft[A1 >: A, B1 >: B, C](implicit ev: A1 <:< DoubleType[C, B1]): DoubleType[C, B1] = this match {
+    case Type1(a)  => a
+    case Type2(b) => Type2(b)
   }
 
   def isLeft: Boolean
@@ -34,315 +36,137 @@ sealed abstract class Either[+A, +B] {
   def isRight: Boolean
 }
 
-final case class Left[+A, +B](a: A) extends Either[A, B] {
+final case class Type1[+A, +B](a: A) extends DoubleType[A, B] {
   def isLeft = true
   def isRight = false
 }
 
-final case class Right[+A, +B](b: B) extends Either[A, B] {
+final case class Type2[+A, +B](b: B) extends DoubleType[A, B] {
   def isLeft = false
   def isRight = true
 }
 
-object Either {
+object DoubleType {
 
-  implicit class MergeableEither[A](private val x: Either[A, A]) extends AnyVal {
+  implicit class MergeableEither[A](private val x: DoubleType[A, A]) extends AnyVal {
     def merge: A = x match {
-      case Left(a)  => a
-      case Right(a) => a
+      case Type1(a)  => a
+      case Type2(a) => a
     }
   }
 
-  final case class LeftProjection[+A, +B](e: Either[A, B]) {
-    /**
-     * Returns the value from this `Left` or throws `java.util.NoSuchElementException`
-     * if this is a `Right`.
-     *
-     * {{{
-     * Left(12).left.get // 12
-     * Right(12).left.get // NoSuchElementException
-     * }}}
-     *
-     * @throws java.util.NoSuchElementException if the projection is [[scala.util.Right]]
-     */
+  final case class Type1Projection[+A, +B](e: DoubleType[A, B]) {
     def get = e match {
-      case Left(a) => a
-      case Right(_) =>  throw new NoSuchElementException("Either.left.value on Right")
+      case Type1(a) => a
+      case Type2(_) =>  throw new NoSuchElementException("DoubleType.type1.value on Type2")
     }
 
-    /**
-     * Executes the given side-effecting function if this is a `Left`.
-     *
-     * {{{
-     * Left(12).left.foreach(x => println(x))  // prints "12"
-     * Right(12).left.foreach(x => println(x)) // doesn't print
-     * }}}
-     * @param f The side-effecting function to execute.
-     */
     def foreach[U](f: A => U) = e match {
-      case Left(a) => f(a)
-      case Right(_) => {}
+      case Type1(a) => f(a)
+      case Type2(_) => {}
     }
 
-    /**
-     * Returns the value from this `Left` or the given argument if this is a
-     * `Right`.
-     *
-     * {{{
-     * Left(12).left.getOrElse(17)  // 12
-     * Right(12).left.getOrElse(17) // 17
-     * }}}
-     *
-     */
     def getOrElse[AA >: A](or: => AA) = e match {
-      case Left(a) => a
-      case Right(_) => or
+      case Type1(a) => a
+      case Type2(_) => or
     }
 
-    /**
-     * Returns `true` if `Right` or returns the result of the application of
-     * the given function to the `Left` value.
-     *
-     * {{{
-     * Left(12).left.forall(_ > 10)  // true
-     * Left(7).left.forall(_ > 10)   // false
-     * Right(12).left.forall(_ > 10) // true
-     * }}}
-     *
-     */
     def forall(f: A => Boolean) = e match {
-      case Left(a) => f(a)
-      case Right(_) => true
+      case Type1(a) => f(a)
+      case Type2(_) => true
     }
 
-    /**
-     * Returns `false` if `Right` or returns the result of the application of
-     * the given function to the `Left` value.
-     *
-     * {{{
-     * Left(12).left.exists(_ > 10)  // true
-     * Left(7).left.exists(_ > 10)   // false
-     * Right(12).left.exists(_ > 10) // false
-     * }}}
-     *
-     */
     def exists(f: A => Boolean) = e match {
-      case Left(a) => f(a)
-      case Right(_) => false
+      case Type1(a) => f(a)
+      case Type2(_) => false
     }
 
-    /**
-     * Binds the given function across `Left`.
-     *
-     * {{{
-     * Left(12).left.flatMap(x => Left("scala")) // Left("scala")
-     * Right(12).left.flatMap(x => Left("scala") // Right(12)
-     * }}}
-     * @param f The function to bind across `Left`.
-     */
-    def flatMap[BB >: B, X](f: A => Either[X, BB]) = e match {
-      case Left(a) => f(a)
-      case Right(b) => Right(b)
+    def flatMap[BB >: B, X](f: A => DoubleType[X, BB]) = e match {
+      case Type1(a) => f(a)
+      case Type2(b) => Type2(b)
     }
 
-    /**
-     * Maps the function argument through `Left`.
-     *
-     * {{{
-     * Left(12).left.map(_ + 2) // Left(14)
-     * Right[Int, Int](12).left.map(_ + 2) // Right(12)
-     * }}}
-     */
     def map[X](f: A => X) = e match {
-      case Left(a) => Left(f(a))
-      case Right(b) => Right(b)
+      case Type1(a) => Type1(f(a))
+      case Type2(b) => Type2(b)
     }
 
-    /**
-     * Returns `None` if this is a `Right` or if the given predicate
-     * `p` does not hold for the left value, otherwise, returns a `Left`.
-     *
-     * {{{
-     * Left(12).left.filter(_ > 10)  // Some(Left(12))
-     * Left(7).left.filter(_ > 10)   // None
-     * Right(12).left.filter(_ > 10) // None
-     * }}}
-     */
-    def filter[Y](p: A => Boolean): Option[Either[A, Y]] = e match {
-      case Left(a) => if(p(a)) Some(Left(a)) else None
-      case Right(b) => None
+    def filter[Y](p: A => Boolean): Option[DoubleType[A, Y]] = e match {
+      case Type1(a) => if(p(a)) Some(Type1(a)) else None
+      case Type2(b) => None
     }
 
-    /**
-     * Returns a `Seq` containing the `Left` value if it exists or an empty
-     * `Seq` if this is a `Right`.
-     *
-     * {{{
-     * Left(12).left.toSeq // Seq(12)
-     * Right(12).left.toSeq // Seq()
-     * }}}
-     */
     def toSeq = e match {
-      case Left(a) => Seq(a)
-      case Right(_) => Seq.empty
+      case Type1(a) => Seq(a)
+      case Type2(_) => Seq.empty
     }
 
-    /**
-     * Returns a `Some` containing the `Left` value if it exists or a
-     * `None` if this is a `Right`.
-     *
-     * {{{
-     * Left(12).left.toOption // Some(12)
-     * Right(12).left.toOption // None
-     * }}}
-     */
     def toOption = e match {
-      case Left(a) => Some(a)
-      case Right(_) => None
+      case Type1(a) => Some(a)
+      case Type2(_) => None
     }
   }
 
-  final case class RightProjection[+A, +B](e: Either[A, B]) {
+  final case class Type2Projection[+A, +B](e: DoubleType[A, B]) {
 
-    /**
-     * Returns the value from this `Right` or throws
-     * `java.util.NoSuchElementException` if this is a `Left`.
-     *
-     * {{{
-     * Right(12).right.get // 12
-     * Left(12).right.get // NoSuchElementException
-     * }}}
-     *
-     * @throws java.util.NoSuchElementException if the projection is `Left`.
-     */
     def get = e match {
-      case Left(_) =>  throw new NoSuchElementException("Either.right.value on Left")
-      case Right(a) => a
+      case Type1(_) =>  throw new NoSuchElementException("DoubleType.type2.value on Type1")
+      case Type2(a) => a
     }
 
-    /**
-     * Executes the given side-effecting function if this is a `Right`.
-     *
-     * {{{
-     * Right(12).right.foreach(x => println(x)) // prints "12"
-     * Left(12).right.foreach(x => println(x))  // doesn't print
-     * }}}
-     * @param f The side-effecting function to execute.
-     */
     def foreach[U](f: B => U) = e match {
-      case Left(_) => {}
-      case Right(b) => f(b)
+      case Type1(_) => {}
+      case Type2(b) => f(b)
     }
 
-    /**
-     * Returns the value from this `Right` or the given argument if this is a
-     * `Left`.
-     *
-     * {{{
-     * Right(12).right.getOrElse(17) // 12
-     * Left(12).right.getOrElse(17)  // 17
-     * }}}
-     */
     def getOrElse[BB >: B](or: => BB) = e match {
-      case Left(_) => or
-      case Right(b) => b
+      case Type1(_) => or
+      case Type2(b) => b
     }
 
-    /**
-     * Returns `true` if `Left` or returns the result of the application of
-     * the given function to the `Right` value.
-     *
-     * {{{
-     * Right(12).right.forall(_ > 10) // true
-     * Right(7).right.forall(_ > 10)  // false
-     * Left(12).right.forall(_ > 10)  // true
-     * }}}
-     */
     def forall(f: B => Boolean) = e match {
-      case Left(_) => true
-      case Right(b) => f(b)
+      case Type1(_) => true
+      case Type2(b) => f(b)
     }
 
-    /**
-     * Returns `false` if `Left` or returns the result of the application of
-     * the given function to the `Right` value.
-     *
-     * {{{
-     * Right(12).right.exists(_ > 10)  // true
-     * Right(7).right.exists(_ > 10)   // false
-     * Left(12).right.exists(_ > 10)   // false
-     * }}}
-     */
     def exists(f: B => Boolean) = e match {
-      case Left(_) => false
-      case Right(b) => f(b)
+      case Type1(_) => false
+      case Type2(b) => f(b)
     }
 
-    /**
-     * Binds the given function across `Right`.
-     *
-     * @param f The function to bind across `Right`.
-     */
-    def flatMap[AA >: A, Y](f: B => Either[AA, Y]) = e match {
-      case Left(a) => Left(a)
-      case Right(b) => f(b)
+    def flatMap[AA >: A, Y](f: B => DoubleType[AA, Y]) = e match {
+      case Type1(a) => Type1(a)
+      case Type2(b) => f(b)
     }
 
-    /**
-     * The given function is applied if this is a `Right`.
-     *
-     * {{{
-     * Right(12).right.map(x => "flower") // Result: Right("flower")
-     * Left(12).right.map(x => "flower")  // Result: Left(12)
-     * }}}
-     */
     def map[Y](f: B => Y) = e match {
-      case Left(a) => Left(a)
-      case Right(b) => Right(f(b))
+      case Type1(a) => Type1(a)
+      case Type2(b) => Type2(f(b))
     }
 
-    /** Returns `None` if this is a `Left` or if the
-     *  given predicate `p` does not hold for the right value,
-     *  otherwise, returns a `Right`.
-     *
-     * {{{
-     * Right(12).right.filter(_ > 10) // Some(Right(12))
-     * Right(7).right.filter(_ > 10)  // None
-     * Left(12).right.filter(_ > 10)  // None
-     * }}}
-     */
-    def filter[X](p: B => Boolean): Option[Either[X, B]] = e match {
-      case Left(_) => None
-      case Right(b) => if(p(b)) Some(Right(b)) else None
+    def filter[X](p: B => Boolean): Option[DoubleType[X, B]] = e match {
+      case Type1(_) => None
+      case Type2(b) => if(p(b)) Some(Type2(b)) else None
     }
 
-    /** Returns a `Seq` containing the `Right` value if
-     *  it exists or an empty `Seq` if this is a `Left`.
-     *
-     * {{{
-     * Right(12).right.toSeq // Seq(12)
-     * Left(12).right.toSeq // Seq()
-     * }}}
-     */
     def toSeq = e match {
-      case Left(_) => Seq.empty
-      case Right(b) => Seq(b)
+      case Type1(_) => Seq.empty
+      case Type2(b) => Seq(b)
     }
 
-    /** Returns a `Some` containing the `Right` value
-     *  if it exists or a `None` if this is a `Left`.
-     *
-     * {{{
-     * Right(12).right.toOption // Some(12)
-     * Left(12).right.toOption // None
-     * }}}
-     */
     def toOption = e match {
-      case Left(_) => None
-      case Right(b) => Some(b)
+      case Type1(_) => None
+      case Type2(b) => Some(b)
     }
   }
 
-  def cond[A, B](test: Boolean, right: => B, left: => A): Either[A, B] =
-    if (test) Right(right) else Left(left)
+  def cond[A, B](test: Boolean, right: => B, left: => A): DoubleType[A, B] =
+    if (test) Type2(right) else Type1(left)
 }
+
+//class IntString extends DoubleType[Int, String] {
+//
+//  override def isLeft: Boolean = ???
+//  override def isRight: Boolean = ???
+//
+//}
