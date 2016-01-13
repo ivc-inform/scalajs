@@ -1,7 +1,6 @@
 package com.simplesys.SmartClient.Forms
 
-import com.simplesys.SmartClient.DataBinding.dataSource.DSCallback
-import com.simplesys.SmartClient.DataBinding.{AdvancedCriteria, DataSource, DSRequest}
+import com.simplesys.SmartClient.DataBinding.{DSCallback, AdvancedCriteria, DataSource, DSRequest}
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.ListGrid
