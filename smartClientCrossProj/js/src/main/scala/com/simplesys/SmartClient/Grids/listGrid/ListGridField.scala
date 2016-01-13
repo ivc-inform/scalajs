@@ -105,7 +105,7 @@ trait ListGridField extends Types.Object {
     def getFieldTitle(viewer: ListGrid[ListGridField, ListGridRecord], fieldNum: Int): String
     def getGridSummary(records: Array[ListGridRecord], field: ListGridField, groupSummaries: Array[Types.Object] = js.native): js.Any
     def getGroupSummary(records: Array[ListGridRecord], field: ListGridField, groupNode: Types.Object = js.native): js.Any
-    def getGroupTitle(groupValue: js.Any, groupNode: GroupNode, field: Types.Object, fieldName: String, grid: ListGrid[ListGridField, ListGridRecord]): js.Any
+    def getGroupTitle(groupValue: js.Any, groupNode: groupNode, field: Types.Object, fieldName: String, grid: ListGrid[ListGridField, ListGridRecord]): js.Any
     def getGroupValue(value: js.Any, record: ListGridRecord, field: Types.Object, fieldName: String, grid: ListGrid[ListGridField, ListGridRecord]): js.Any
     def getRecordSummary(record: ListGridRecord, field: ListGridField, grid: ListGrid[ListGridField, ListGridRecord]): js.Any
     def getSummaryTitle(viewer: ListGrid[ListGridField, ListGridRecord], field: ListGridField): void

@@ -7,7 +7,7 @@ import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
 
 @js.native
-trait GroupNode extends Types.Object {
+trait groupNode extends Types.Object {
     val groupMembers: Array[ListGridRecord]
     val groupTitle: HTMLString
     val groupValue: js.Any
