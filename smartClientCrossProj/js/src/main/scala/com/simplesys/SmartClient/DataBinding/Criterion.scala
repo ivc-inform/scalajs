@@ -7,10 +7,10 @@ import scala.scalajs.js
 
 @js.native
 trait Criterion extends Types.Object {
-    var criteria: js.Array[Criterion] = js.native
-    var end: js.Object = js.native
-    var fieldName:String = js.native
-    var operator: OperatorId = js.native
-    var start: Types.Object = js.native
-    var value: Types.Object = js.native
+    var criteria: js.Array[Criterion]
+    var end: js.Object
+    var fieldName: String
+    var operator: OperatorId
+    var start: Types.Object
+    var value: Types.Object
 }
