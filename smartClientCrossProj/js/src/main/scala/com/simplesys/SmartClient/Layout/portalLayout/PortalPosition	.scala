@@ -6,9 +6,8 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object PortalPosition extends Types.Object {
-    type PortalPosition = PortalPosition.type
-    var colNum: Int = js.native
-    var position: Int = js.native
-    var rowNum: Int = js.native
+trait PortalPosition extends Types.Object {
+    var colNum: Int
+    var position: Int
+    var rowNum: Int
 }

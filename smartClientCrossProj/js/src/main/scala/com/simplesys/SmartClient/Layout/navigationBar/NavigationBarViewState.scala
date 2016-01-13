@@ -9,10 +9,10 @@ import scala.scalajs.js.|
 
 @js.native
 trait NavigationBarViewState extends Types.Object {
-    var alwaysShowLeftButtonTitle: Boolean = js.native
-    var controls: js.Array[String] | js.Array[Canvas] = js.native
-    var leftButtonTitle: HTMLString = js.native
-    var shortLeftButtonTitle: HTMLString = js.native
+    var alwaysShowLeftButtonTitle: Boolean
+    var controls: js.Array[String] | js.Array[Canvas]
+    var leftButtonTitle: HTMLString
+    var shortLeftButtonTitle: HTMLString
     var showLeftButton: Boolean = js.native
-    var title: HTMLString = js.native
+    var title: HTMLString
 }
