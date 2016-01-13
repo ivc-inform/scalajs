@@ -11,7 +11,7 @@ import com.simplesys.option.{ScOption, ScNone}
 
 import scala.scalajs.js
 
-class SplitPaneProps extends LayoutProps {
+class SplitPanelProps extends LayoutProps {
     var addHistoryEntries: ScOption[Boolean] = ScNone
     var animateNavigationBarStateChanges: ScOption[Boolean] = ScNone
     var autoNavigate: ScOption[Boolean] = ScNone
