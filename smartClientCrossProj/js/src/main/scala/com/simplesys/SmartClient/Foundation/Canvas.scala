@@ -4,8 +4,6 @@ import com.simplesys.SmartClient.Control.Menu
 import com.simplesys.SmartClient.DataBinding.AnimationCallback
 import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
-import com.simplesys.SmartClient.Foundation.AnimateShowEffect.AnimateShowEffect
-import com.simplesys.SmartClient.Foundation.Point._
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.Layout.PrintWindow
 import com.simplesys.SmartClient.System.Types._

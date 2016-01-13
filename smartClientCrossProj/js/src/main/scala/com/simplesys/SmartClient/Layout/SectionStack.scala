@@ -2,8 +2,7 @@ package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.DataBinding.{ShowSectionCallback, ExpandSectionCallback, HideSectionCallback, CollapseSectionCallback}
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.Layout.sectionStack.SectionHeader
-import com.simplesys.SmartClient.Layout.sectionStack.SectionStackSection.SectionStackSection
+import com.simplesys.SmartClient.Layout.sectionStack.{SectionStackSection, SectionHeader}
 import com.simplesys.System.Types.{void, CSSStyleName}
 import com.simplesys.System.Types.LocatorStrategy.LocatorStrategy
 import com.simplesys.System.Types.LocatorTypeStrategy.LocatorTypeStrategy

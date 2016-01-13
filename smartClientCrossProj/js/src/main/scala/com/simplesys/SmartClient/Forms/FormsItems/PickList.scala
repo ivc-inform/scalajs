@@ -2,8 +2,7 @@ package com.simplesys.SmartClient.Forms.FormsItems
 
 import javax.security.auth.callback.Callback
 
-import com.simplesys.SmartClient.DataBinding.dataSource.DSCallback
-import com.simplesys.SmartClient.DataBinding.{DataSource, DSRequest, ResultSet}
+import com.simplesys.SmartClient.DataBinding.{DSCallback, DataSource, DSRequest, ResultSet}
 import com.simplesys.SmartClient.Grids.ListGrid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.System.AbstractClassCompanion

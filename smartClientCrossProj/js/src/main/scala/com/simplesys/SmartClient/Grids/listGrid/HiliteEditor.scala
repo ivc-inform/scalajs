@@ -2,7 +2,6 @@ package com.simplesys.SmartClient.Grids.listGrid
 
 import com.simplesys.SmartClient.Foundation.StatefulCanvas
 import com.simplesys.SmartClient.Grids.ListGrid
-import com.simplesys.SmartClient.Grids.listGrid.Hilite.Hilite
 import com.simplesys.SmartClient.Layout.{AbstractVLayoutCompanion, VLayout}
 import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.System.Types.{void, SCImgURL, AutoChild}

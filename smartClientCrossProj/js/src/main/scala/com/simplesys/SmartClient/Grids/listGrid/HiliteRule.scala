@@ -3,7 +3,6 @@ package com.simplesys.SmartClient.Grids.listGrid
 import com.simplesys.SmartClient.Control.ImgButton
 import com.simplesys.SmartClient.Forms.{DynamicForm, FilterClause}
 import com.simplesys.SmartClient.Foundation.Label
-import com.simplesys.SmartClient.Grids.listGrid.Hilite.Hilite
 import com.simplesys.SmartClient.Layout.{AbstractHLayoutCompanion, HLayout}
 import com.simplesys.System.Types.{void, AutoChild}
 

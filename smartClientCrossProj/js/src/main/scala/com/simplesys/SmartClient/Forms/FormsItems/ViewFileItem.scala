@@ -1,7 +1,5 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
-import com.simplesys.SmartClient.Forms.{AbstractFileItemCompanion, FileItem}
-
 import scala.scalajs.js
 import scala.scalajs.js.|
 

@@ -4,12 +4,10 @@ import com.simplesys.SmartClient.Charts.{FacetChart, Chart}
 import com.simplesys.SmartClient.Control.menu.MenuItem
 import com.simplesys.SmartClient.Control.{Button, IButton}
 import com.simplesys.SmartClient.DataBinding._
-import com.simplesys.SmartClient.DataBinding.dataSource.{RPCCallback, DSCallback}
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
-import com.simplesys.SmartClient.Foundation.canvas.ImgProperties.ImgProperties
+import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Foundation.{StatefulCanvas, HTMLFlow, GridRenderer, Canvas}
-import com.simplesys.SmartClient.Grids.listGrid.HeaderSpan.HeaderSpan
 import com.simplesys.SmartClient.Grids.listGrid._
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, AbstractVLayoutCompanion, VLayout}
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier

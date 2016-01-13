@@ -1,7 +1,6 @@
 package com.simplesys.SmartClient.Grids
 
-import com.simplesys.SmartClient.DataBinding.{DSRequest, DataBoundComponent}
-import com.simplesys.SmartClient.DataBinding.dataSource.DSCallback
+import com.simplesys.SmartClient.DataBinding.{DSCallback, DSRequest, DataBoundComponent}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerField
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord

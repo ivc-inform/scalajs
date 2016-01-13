@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.DataBinding.props
 
-import com.simplesys.SmartClient.System.props.ClassProps
+import com.simplesys.SmartClient.System.props.{ListProps, ClassProps}
 
 import scala.scalajs.js._
 
