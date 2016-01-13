@@ -1,6 +1,5 @@
 package com.simplesys.SmartClient.DataBinding
 
-import com.simplesys.SmartClient.DataBinding.dataSource.DSCallback
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
 import com.simplesys.SmartClient.RPC.{AbstractRPCRequestCompanion, RPCRequest}
 import com.simplesys.SmartClient.System.Types
