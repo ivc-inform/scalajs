@@ -7,7 +7,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait SelectOtherItem extends Types.Object {
+trait SelectOtherItem extends FormItem {
     var dialogWidth: Int
     var otherTitle: String
     var otherValue: String
