@@ -1,36 +1,16 @@
-def addItem(section: String | Int, item: Canvas, index: Int): void
-    def addSection(sections: SectionStackSection | js.Array[SectionStackSection], position: Int = js.native): void
-    var canCollapseAll: Boolean
-    val canReorderSections: Boolean
-    val canResizeSections: Boolean
-    val canTabToHeaders: Boolean
-    def collapseSection(sections: String | js.Array[Int] | js.Array[String], callback: CollapseSectionCallback = js.native): void
-    def expandSection(sections: String | js.Array[Int] | js.Array[String], callback: ExpandSectionCallback = js.native): void
-    def getExpandedSections(): js.Array[SectionStackSection]
-    def getSectionHeader(section: String | Int): SectionHeader
-    def getSectionNumber(sectionName: String): Int
-    def getSections(): js.Array[String]
-    def getVisibleSections(): js.Array[String]
-    val headerHeight: Int
-    def hideSection(sections: String | js.Array[Int] | js.Array[String], callback: HideSectionCallback = js.native): void
-    var itemEndIndent: Int
-    var itemIndent: Int
-    var itemStartIndent: Int
-    var locateSectionsBy: LocatorStrategy
-    var locateSectionsType: LocatorTypeStrategy
-    def moveSection(sections: Int | String | js.Array[Int] | js.Array[String], position: Int): void
-    def removeItem(sections: Int | String | js.Array[Int] | js.Array[String], position: Int): void
-    def removeSection(sections: Int | String | js.Array[Int] | js.Array[String]): void
-    def sectionForItem(item: Canvas): SectionStackSection
-    val sectionHeaderClass: String
-    var sectionHeaderClick: js.Function1[Canvas, void]
-    def sectionIsExpanded(section: String | Int): Boolean
-    def sectionIsVisible(section: String | Int): Boolean
-    val sections: js.Array[SectionStackSection]
-    def setSectionProperties(section: String | Int, properties: SectionStackSection): void
-    def setSectionTitle(section: String | Int, newTitle: String): void
-    def setVisibilityMode(newVisibilityMode: VisibilityMode): void
-    var showExpandControls: Boolean
-    def showSection(sections: String | js.Array[Int] | js.Array[String], callback: ShowSectionCallback = js.native): void
-    val useGlobalSectionIDs: Boolean
-    var visibilityMode: VisibilityMode
+ var action: js.ThisFunction0[buttonHandler, void]
+    val disabledIconCursor: Cursor
+    var hiliteAccessKey: Boolean
+    val iconAlign: String
+    var iconClick: js.ThisFunction0[buttonHandler, Boolean]
+    val iconCursor: Cursor
+    def setAlign(): void
+    def setSelected(): void
+    def setVAlign(): void
+    def setWrap(newWrap: Boolean): void
+    var showClippedTitleOnHover: Boolean
+    var showDisabledIcon: Boolean
+    var titleClipped: js.ThisFunction0[buttonHandler, Boolean]
+    var titleHover: js.ThisFunction0[buttonHandler, Boolean]
+    def titleHoverHTML(defaultHTML: HTMLString): HTMLString
+    var wrap: Boolean

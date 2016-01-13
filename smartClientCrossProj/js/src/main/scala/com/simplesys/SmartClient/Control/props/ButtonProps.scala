@@ -10,11 +10,11 @@ import scala.scalajs.js
 class ButtonProps extends StatefulCanvasProps {
     type buttonHandler <: this.type
     var action: ScOption[js.ThisFunction0[buttonHandler, void]] = ScNone
-    val disabledIconCursor: ScOption[Cursor] = ScNone
+    var disabledIconCursor: ScOption[Cursor] = ScNone
     var hiliteAccessKey: ScOption[Boolean] = ScNone
-    val iconAlign: ScOption[String] = ScNone
+    var iconAlign: ScOption[String] = ScNone
     var iconClick: ScOption[js.ThisFunction0[buttonHandler, Boolean]] = ScNone
-    val iconCursor: ScOption[Cursor] = ScNone
+    var iconCursor: ScOption[Cursor] = ScNone
     var showClippedTitleOnHover: ScOption[Boolean] = ScNone
     var showDisabledIcon: ScOption[Boolean] = ScNone
     var titleClipped: ScOption[js.ThisFunction0[buttonHandler, Boolean]] = ScNone
