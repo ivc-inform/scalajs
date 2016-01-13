@@ -23,7 +23,7 @@ class DateItemProps extends FormItemProps {
     var maskDateSeparator: ScOption[String] = ScNone
     var monthSelector: ScOption[SelectItem] = ScNone
     var monthSelectorProperties: ScOption[SelectItem] = ScNone
-    var pickerProperties: ScOption[DateChooser] = ScNone
+    //override var pickerProperties: ScOption[DateChooser] = ScNone
     var pickerTimeItemProperties: ScOption[TimeItem] = ScNone
     var selectorFormat: ScOption[DateItemSelectorFormat] = ScNone
     var showChooserFiscalYearPicker: ScOption[Boolean] = ScNone
