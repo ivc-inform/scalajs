@@ -1,2 +1,2 @@
-var externalStylesheet: ScOption[String] = ScNone
-var printButtonTitle: ScOption[String] = ScNone
+var newControlConstructor: ScOption[Class] = ScNone
+var newControlDefaults: ScOption[IconButton ] = ScNone

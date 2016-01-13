@@ -1,3 +1,3 @@
- val externalStylesheet: String
-    val printButtonTitle: String
-    def setPrintButtonTitle (printButtonTitle:String):void
+ def createControl(properties: Canvas, position: Int = js.native): void
+    val newControlConstructor: Class
+    val newControlDefaults: IconButton with AutoChild
