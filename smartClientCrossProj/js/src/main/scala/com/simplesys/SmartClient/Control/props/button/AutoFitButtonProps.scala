@@ -1,8 +1,6 @@
-package com.simplesys.SmartClient.Control.button.props
+package com.simplesys.SmartClient.Control.props.button
 
 import com.simplesys.SmartClient.Control.props.ButtonProps
-
-import scala.scalajs.js._
 
 class AutoFitButtonProps extends ButtonProps {
 }
