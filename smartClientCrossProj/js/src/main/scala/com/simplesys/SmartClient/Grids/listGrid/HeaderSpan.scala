@@ -9,17 +9,15 @@ import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
 
 @js.native
-object HeaderSpan extends Types.Object {
-    type HeaderSpan = HeaderSpan.type
-
-    val align: Alignment = js.native
-    val fields: Array[String] = js.native
-    var headerBaseStyle: SCClassName = js.native
-    val headerTitle: String = js.native
-    var headerTitleStyle: SCClassName = js.native
-    val height: Int = js.native
-    val name: String = js.native
-    val spans: Array[HeaderSpan] = js.native
-    val title: String = js.native
-    val valign: VerticalAlignment = js.native
+trait HeaderSpan extends Types.Object {
+    val align: Alignment
+    val fields: Array[String]
+    var headerBaseStyle: SCClassName
+    val headerTitle: String
+    var headerTitleStyle: SCClassName
+    val height: Int
+    val name: String
+    val spans: Array[HeaderSpan]
+    val title: String
+    val valign: VerticalAlignment
 }

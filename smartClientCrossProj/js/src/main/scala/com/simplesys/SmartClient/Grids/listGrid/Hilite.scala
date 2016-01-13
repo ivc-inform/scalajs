@@ -9,19 +9,18 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object Hilite extends Types.Object {
-    type Hilite = Hilite.type
-    var backgroundColor: String = js.native
-    val canEdit: Boolean = js.native
-    val criteria: Criteria | AdvancedCriteria = js.native
-    val cssText: String = js.native
-    var disabled: Boolean = js.native
-    var fieldName: String = js.native
-    var htmlAfter: HTMLString = js.native
-    var htmlBefore: HTMLString = js.native
-    val icon: SCImgURL = js.native
-    val id: String = js.native
-    val replacementValue: HTMLString = js.native
-    var textColor: String = js.native
-    var title:String = js.native
+trait Hilite extends Types.Object {
+    var backgroundColor: String
+    val canEdit: Boolean
+    val criteria: Criteria | AdvancedCriteria
+    val cssText: String
+    var disabled: Boolean
+    var fieldName: String
+    var htmlAfter: HTMLString
+    var htmlBefore: HTMLString
+    val icon: SCImgURL
+    val id: String
+    val replacementValue: HTMLString
+    var textColor: String
+    var title:String
 }
