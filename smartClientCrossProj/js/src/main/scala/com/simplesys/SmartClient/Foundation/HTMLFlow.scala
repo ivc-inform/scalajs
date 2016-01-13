@@ -1,7 +1,6 @@
 package com.simplesys.SmartClient.Foundation
 
-import com.simplesys.SmartClient.DataBinding.dataSource.DSCallback
-import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource, DataBoundComponent}
+import com.simplesys.SmartClient.DataBinding.{DSCallback, DSRequest, DataSource, DataBoundComponent}
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.RPC.{RPCResponse, RPCRequest}
 import com.simplesys.SmartClient.System.Types
