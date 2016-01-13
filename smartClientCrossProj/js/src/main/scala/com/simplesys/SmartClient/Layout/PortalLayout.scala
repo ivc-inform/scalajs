@@ -17,7 +17,7 @@ trait PortalLayout extends Layout {
     var canResizePortlets: Boolean
     var canShrinkColumnWidths: Boolean
     var canStretchColumnWidths: Boolean
-    var column: Layout | MultiAutoChild
+    var column: Layout with MultiAutoChild
     var columnBorder: String
     var columnOverflow: Overflow
     def getColumnWidth(colNumber: Int): Int

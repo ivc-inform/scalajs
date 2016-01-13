@@ -13,7 +13,7 @@ class PortalLayoutProps extends LayoutProps {
     var canResizePortlets: ScOption[Boolean] = ScNone
     var canShrinkColumnWidths: ScOption[Boolean] = ScNone
     var canStretchColumnWidths: ScOption[Boolean] = ScNone
-    var column: ScOption[Layout | MultiAutoChild] = ScNone
+    var column: ScOption[Layout with MultiAutoChild] = ScNone
     var columnBorder: ScOption[String] = ScNone
     var columnOverflow: ScOption[Overflow] = ScNone
     var numColumns: ScOption[Int] = ScNone

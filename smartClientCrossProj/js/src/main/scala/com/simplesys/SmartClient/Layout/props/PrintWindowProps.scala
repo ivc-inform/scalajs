@@ -1,5 +1,9 @@
 package com.simplesys.SmartClient.Layout.props
 
-class PrintWindowProps extends WindowProps{
+import com.simplesys.option.{ScNone, ScOption}
+
+class PrintWindowProps extends WindowProps {
+    var externalStylesheet: ScOption[String] = ScNone
+    var printButtonTitle: ScOption[String] = ScNone
 
 }
