@@ -25,6 +25,8 @@ case class AlignmentfromDoubleAlignment(a: Alignment) extends DoubleAlignment[Al
 case class VerticalAlignmentfromDoubleAlignment(a: VerticalAlignment) extends DoubleAlignment[Alignment, VerticalAlignment]
 //</editor-fold>
 
+
+
 object DoubleType {
     implicit def Int2IntString(x: Int) = ScSome(IntFRomIntString(x))
     implicit def Stringt2IntString(x: String) = ScSome(StringFRomIntString(x))

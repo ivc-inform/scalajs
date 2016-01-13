@@ -31,7 +31,7 @@ trait DataBoundComponentProps extends ClassProps {
     var dataFetchMode: ScOption[FetchMode] = ScNone
     var dataField: ScOption[String] = ScNone
     var dataPageSize: ScOption[Int] = ScNone
-    var dataSource: ScOption[DataSource | String] = ScNone
+    var dataSource: ScOption[DataSource] = ScNone
     var deepCloneOnEdit: ScOption[Boolean] = ScNone
     var descriptionField: ScOption[String] = ScNone
     var dragDataAction: ScOption[DragDataAction] = ScNone
