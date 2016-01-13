@@ -1,8 +1,12 @@
-var dataProperties: Tree
-    var emptyMenuMessage: HTMLString
-    var pathSeparatorString: HTMLString
-    var selectedBaseStyle: CSSStyleName
-    var showPath: Boolean
-    var treeMenu: Menu with AutoChild
-    val treeMenuConstructor: SCClassName
-    var unselectedTitle: HTMLString
+def compareCriteria(newCriterion: Criterion, oldCriterion: Criterion): Int
+    var condition: js.Function5[js.Any, Record, js.Any, Criterion, Operator, Boolean]
+    val editorType: FormItem
+    val fieldTypes: Array[FieldType]
+    def getCriterion(fieldName: String, item: FormItem): Criterion
+    val hidden: Boolean
+    val ID: OperatorId
+    val requiresServer:Boolean
+    val symbol:String
+    val title:String
+    val titleProperty:ID
+    val valueType:OperatorValueType
