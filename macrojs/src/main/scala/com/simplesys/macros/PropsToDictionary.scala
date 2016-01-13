@@ -1,6 +1,6 @@
 package com.simplesys.macros
 
-import com.simplesys.props.AbstractPropsClass
+import com.simplesys.props.AbstractClassProps
 import com.simplesys.option._
 import com.simplesys.common.Strings._
 import com.simplesys.log.Logging
@@ -9,12 +9,12 @@ import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context
 import scala.scalajs.js
 
-trait PropsToDictionary[P <: AbstractPropsClass] {
+trait PropsToDictionary[P <: AbstractClassProps] {
     def getDictionary(props: P): js.Dictionary[js.Any]
 }
 
 object PropsToDictionary extends Logging {
-    implicit def materializePropsMap[P <: AbstractPropsClass]: PropsToDictionary[P] = macro materializePropsMapImpl[P]
+    implicit def materializePropsMap[P <: AbstractClassProps]: PropsToDictionary[P] = macro materializePropsMapImpl[P]
 
     def typeToConvertedValue(context: Context)(typeDef: context.universe.Type, valueAccess: context.universe.Tree): context.universe.Tree = {
         import context.universe._
@@ -74,7 +74,7 @@ object PropsToDictionary extends Logging {
         typeToConvertedValueInt(typeDef, valueAccess).getOrElse(q"$valueAccess")
     }
 
-    def materializePropsMapImpl[P <: AbstractPropsClass : context.WeakTypeTag](context: Context): context.Expr[PropsToDictionary[P]] = {
+    def materializePropsMapImpl[P <: AbstractClassProps : context.WeakTypeTag](context: Context): context.Expr[PropsToDictionary[P]] = {
         import context.universe._
 
         val tpeAbstractPropsClass = weakTypeOf[P]
