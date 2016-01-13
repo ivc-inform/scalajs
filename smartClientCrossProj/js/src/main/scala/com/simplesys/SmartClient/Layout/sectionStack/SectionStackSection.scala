@@ -8,23 +8,21 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object SectionStackSection extends Types.Object {
-    type SectionStackSection = SectionStackSection.type
-
-    var canCollapse: Boolean = js.native
-    var canDropBefore: Boolean = js.native
-    var canReorder: Boolean = js.native
-    var canTabToHeader: Boolean = js.native
-    var clipTitle: Boolean = js.native
-    val controls: js.Array[Canvas] = js.native
-    var expanded: Boolean = js.native
-    var hidden: Boolean = js.native
-    var icon: SCImgURL = js.native
-    var ID: String = js.native
-    val items: js.Array[Canvas] = js.native
-    var name: String = js.native
-    var resizeable: Boolean = js.native
-    var showClippedTitleOnHover: Boolean = js.native
-    var showHeader: Boolean = js.native
-    var title: HTMLString = js.native
+trait SectionStackSection extends Types.Object {
+    var canCollapse: Boolean
+    var canDropBefore: Boolean
+    var canReorder: Boolean
+    var canTabToHeader: Boolean
+    var clipTitle: Boolean
+    val controls: js.Array[Canvas]
+    var expanded: Boolean
+    var hidden: Boolean
+    var icon: SCImgURL
+    var ID: String
+    val items: js.Array[Canvas]
+    var name: String
+    var resizeable: Boolean
+    var showClippedTitleOnHover: Boolean
+    var showHeader: Boolean
+    var title: HTMLString
 }

@@ -9,27 +9,25 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object Tab extends Types.Object {
-    type Tab = Tab.type
-
-    var canClose: Boolean = js.native
-    var canEditTitle: Boolean = js.native
-    var canReorder: Boolean = js.native
-    var closeIcon: SCImgURL = js.native
-    var closeIconSize: Int = js.native
-    var disabled: Boolean = js.native
-    var icon: SCImgURL = js.native
-    var iconHeight: Int = js.native
-    var iconSize: Int = js.native
-    var iconWidth: Int = js.native
-    var ID: String = js.native
-    var name: String = js.native
-    var pane: String | Canvas = js.native
-    var paneMargin: Int = js.native
-    var pickerTitle: HTMLString = js.native
-    var prompt: HTMLString = js.native
-    var tabDeselected: js.Function7[TabSet, Int, Canvas, String, Tab, Tab, String, Boolean] = js.native
-    var tabSelected: js.Function6[TabSet, Int, Canvas, String, Tab, String, void] = js.native
-    var title: HTMLString = js.native
-    var width: Int = js.native
+trait Tab extends Types.Object {
+    var canClose: Boolean
+    var canEditTitle: Boolean
+    var canReorder: Boolean
+    var closeIcon: SCImgURL
+    var closeIconSize: Int
+    var disabled: Boolean
+    var icon: SCImgURL
+    var iconHeight: Int
+    var iconSize: Int
+    var iconWidth: Int
+    var ID: String
+    var name: String
+    var pane: String | Canvas
+    var paneMargin: Int
+    var pickerTitle: HTMLString
+    var prompt: HTMLString
+    var tabDeselected: js.Function7[TabSet, Int, Canvas, String, Tab, Tab, String, Boolean]
+    var tabSelected: js.Function6[TabSet, Int, Canvas, String, Tab, String, void]
+    var title: HTMLString
+    var width: Int
 }
