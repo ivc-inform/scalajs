@@ -124,7 +124,7 @@ object PropsToDictionary extends Logging {
         logger trace context.enclosingPosition.toString
         val res = context.Expr[PropsToDictionary[P]] {
             q"""
-                import com.simplesys.props.AbstractPropsClass
+                import com.simplesys.props.AbstractClassProps
                 import com.simplesys.option._
                 import scala.scalajs.js
                 import scala.scalajs.js.JSConverters._
