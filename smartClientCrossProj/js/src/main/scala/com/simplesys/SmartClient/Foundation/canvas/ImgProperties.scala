@@ -7,13 +7,12 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object ImgProperties extends Types.Object {
-    type ImgProperties = ImgProperties.type
-
-    var extraStuff:String = js.native
-    var height:Int = js.native
-    var imgDir:URL = js.native
-    var name:String = js.native
-    var src:URL = js.native
-    var width:Int = js.native
+trait ImgProperties extends Types.Object {
+    var extraStuff:String
+    var height:Int
+    var imgDir:URL
+    var name:String
+    var src:URL
+    var width:Int
 }
+                                                                     `
