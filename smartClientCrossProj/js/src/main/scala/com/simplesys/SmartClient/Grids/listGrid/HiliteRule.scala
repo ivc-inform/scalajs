@@ -30,11 +30,6 @@ trait HiliteRule extends HLayout {
 abstract trait AbstractHiliteRuleCompanion extends AbstractHLayoutCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object HiliteRule extends AbstractHiliteRuleCompanion
-}
+object HiliteRule extends AbstractHiliteRuleCompanion
 

@@ -12,11 +12,6 @@ trait HiddenItem extends FormItem {
 abstract trait AbstractHiddenItemCompanion extends AbstractFormItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object HiddenItem extends AbstractHiddenItemCompanion
-}
+object HiddenItem extends AbstractHiddenItemCompanion
 

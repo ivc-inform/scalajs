@@ -317,11 +317,6 @@ abstract trait AbstractFormItemCompanion extends AbstractClassCompanion {
     def create(): void = js.native
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object FormItem extends AbstractFormItemCompanion
-}
+object FormItem extends AbstractFormItemCompanion
 

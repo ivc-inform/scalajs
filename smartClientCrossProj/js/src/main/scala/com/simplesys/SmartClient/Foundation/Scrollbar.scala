@@ -37,11 +37,6 @@ trait Scrollbar extends StretchImg {
 abstract trait AbstractScrollbarCompanion extends AbstractStretchImgCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object Scrollbar extends AbstractScrollbarCompanion
-}
+object Scrollbar extends AbstractScrollbarCompanion
 

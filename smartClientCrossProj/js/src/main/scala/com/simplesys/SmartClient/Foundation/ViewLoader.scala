@@ -25,11 +25,6 @@ trait ViewLoader extends Label {
 abstract trait AbstractViewLoaderCompanion extends AbstractLabelCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
    object ViewLoader extends AbstractViewLoaderCompanion
-}
 

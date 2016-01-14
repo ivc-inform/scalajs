@@ -28,11 +28,6 @@ trait TabBar extends Toolbar {
 abstract trait AbstractTabBarCompanion extends AbstractCanvasCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object TabBar extends AbstractTabBarCompanion
-}
+object TabBar extends AbstractTabBarCompanion
 

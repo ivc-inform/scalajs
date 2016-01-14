@@ -25,11 +25,6 @@ trait Portlet extends Window {
 abstract trait AbstractPortletCompanion extends AbstractCanvasCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object Portlet extends AbstractPortletCompanion
-}
+object Portlet extends AbstractPortletCompanion
 

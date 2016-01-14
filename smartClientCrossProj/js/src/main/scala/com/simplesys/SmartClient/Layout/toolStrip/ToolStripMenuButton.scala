@@ -14,11 +14,5 @@ trait ToolStripMenuButton extends MenuButton {
 abstract trait AbstractToolStripMenuButtonCompanion extends AbstractCanvasCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
    object ToolStripMenuButton extends AbstractToolStripMenuButtonCompanion
-
-}

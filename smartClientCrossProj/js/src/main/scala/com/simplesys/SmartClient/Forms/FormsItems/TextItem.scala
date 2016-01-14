@@ -47,11 +47,7 @@ trait TextItem extends FormItem {
 abstract trait AbstractTextItemCompanion extends AbstractFormItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object TextItem extends AbstractTextItemCompanion
-}
+object TextItem extends AbstractTextItemCompanion
+
 

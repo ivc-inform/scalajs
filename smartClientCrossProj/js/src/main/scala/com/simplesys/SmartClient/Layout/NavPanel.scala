@@ -24,11 +24,6 @@ trait NavPanel extends SplitPanel {
 abstract trait AbstractNavPanelCompanion extends AbstractSplitPaneCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object NavPanel extends AbstractNavPanelCompanion
-}
+object NavPanel extends AbstractNavPanelCompanion
 

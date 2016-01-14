@@ -107,11 +107,6 @@ trait Window extends Layout {
 abstract trait AbstractWindowCompanion extends AbstractCanvasCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
    object Window extends AbstractWindowCompanion
-}
 

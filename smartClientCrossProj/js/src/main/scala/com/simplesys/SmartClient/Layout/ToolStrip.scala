@@ -29,11 +29,7 @@ trait ToolStrip extends Layout {
 abstract trait AbstractToolStripCompanion extends AbstractCanvasCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object ToolStrip extends AbstractToolStripCompanion
-}
+object ToolStrip extends AbstractToolStripCompanion
+
 

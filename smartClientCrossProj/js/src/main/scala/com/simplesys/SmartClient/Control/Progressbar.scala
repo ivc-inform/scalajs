@@ -23,11 +23,6 @@ trait Progressbar extends StretchImg {
 abstract trait AbstractProgressbarCompanion extends AbstractStretchImgCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object Progressbar extends AbstractProgressbarCompanion
-}
+object Progressbar extends AbstractProgressbarCompanion
 

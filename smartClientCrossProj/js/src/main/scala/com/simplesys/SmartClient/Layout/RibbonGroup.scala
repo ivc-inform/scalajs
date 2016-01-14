@@ -18,11 +18,6 @@ trait RibbonGroup extends ToolStripGroup {
 abstract trait AbstractRibbonGroupCompanion extends AbstractToolStripGroupCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object RibbonGroup extends AbstractRibbonGroupCompanion
-}
+object RibbonGroup extends AbstractRibbonGroupCompanion
 

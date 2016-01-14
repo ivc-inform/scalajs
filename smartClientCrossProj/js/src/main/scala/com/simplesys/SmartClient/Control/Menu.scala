@@ -73,11 +73,6 @@ trait Menu extends ListGrid[ListGridField, MenuItem] {
 abstract trait AbstractMenuCompanion extends AbstractListGridCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object Menu extends AbstractMenuCompanion
-}
+object Menu extends AbstractMenuCompanion
 

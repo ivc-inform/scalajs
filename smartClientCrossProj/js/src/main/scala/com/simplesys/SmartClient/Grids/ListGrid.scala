@@ -851,11 +851,6 @@ trait ListGrid[T <: ListGridField, R <: ListGridRecord] extends VLayout with Dat
 abstract trait AbstractListGridCompanion extends AbstractVLayoutCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object ListGrid extends AbstractListGridCompanion
-}
+object ListGrid extends AbstractListGridCompanion
 

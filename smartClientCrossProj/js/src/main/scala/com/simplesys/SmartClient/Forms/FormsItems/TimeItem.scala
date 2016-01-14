@@ -83,11 +83,7 @@ trait TimeItem extends FormItem {
 abstract trait AbstractTimeItemCompanion extends AbstractFormItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object TimeItem extends AbstractTimeItemCompanion
-}
+object TimeItem extends AbstractTimeItemCompanion
+
 

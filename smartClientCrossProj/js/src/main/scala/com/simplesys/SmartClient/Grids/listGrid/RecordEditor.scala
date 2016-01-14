@@ -22,11 +22,6 @@ trait RecordEditor extends ListGrid[ListGridField, ListGridRecord] {
 abstract trait AbstractRecordEditorCompanion extends AbstractListGridCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object RecordEditor extends AbstractRecordEditorCompanion
-}
+object RecordEditor extends AbstractRecordEditorCompanion
 

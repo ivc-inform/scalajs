@@ -11,11 +11,6 @@ trait Task extends ProcessElement {
 abstract trait AbstractTaskCompanion extends AbstractProcessElementCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object Task extends AbstractTaskCompanion
-}
+object Task extends AbstractTaskCompanion
 

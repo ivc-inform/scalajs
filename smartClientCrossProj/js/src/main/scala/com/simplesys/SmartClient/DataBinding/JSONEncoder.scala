@@ -26,11 +26,6 @@ trait JSONEncoder extends Class {
 abstract trait AbstractJSONEncoderCompanion extends AbstractClassCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object JSONEncoder extends AbstractJSONEncoderCompanion
-}
+object JSONEncoder extends AbstractJSONEncoderCompanion
 

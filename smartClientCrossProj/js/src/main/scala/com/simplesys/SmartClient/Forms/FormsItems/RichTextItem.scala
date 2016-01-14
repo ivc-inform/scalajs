@@ -16,11 +16,6 @@ trait RichTextItem extends CanvasItem {
 abstract trait AbstractRichTextItemCompanion extends AbstractCanvasItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object RichTextItem extends AbstractRichTextItemCompanion
-}
+object RichTextItem extends AbstractRichTextItemCompanion
 

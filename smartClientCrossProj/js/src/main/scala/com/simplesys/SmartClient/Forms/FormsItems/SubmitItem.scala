@@ -11,11 +11,6 @@ trait SubmitItem extends ButtonItem {
 abstract trait AbstractSubmitItemCompanion extends AbstractButtonItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object SubmitItem extends AbstractSubmitItemCompanion
-}
+object SubmitItem extends AbstractSubmitItemCompanion
 

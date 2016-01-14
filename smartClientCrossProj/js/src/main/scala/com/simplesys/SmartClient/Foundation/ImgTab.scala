@@ -14,11 +14,6 @@ trait ImgTab extends StretchImgButton {
 abstract trait AbstractImgTabCompanion extends AbstractStretchImgButtonCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object ImgTab extends AbstractImgTabCompanion
-}
+object ImgTab extends AbstractImgTabCompanion
 

@@ -67,11 +67,6 @@ abstract trait AbstractRPCManagerCompanion extends AbstractClassCompanion {
     def xmlHttpRequestAvailable(): Boolean = js.native
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object RPCManager extends AbstractRPCManagerCompanion
-}
+object RPCManager extends AbstractRPCManagerCompanion
 

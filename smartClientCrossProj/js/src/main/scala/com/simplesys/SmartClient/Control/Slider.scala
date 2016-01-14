@@ -77,11 +77,6 @@ trait Slider extends Canvas {
 abstract trait AbstractSliderCompanion extends AbstractCanvasCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object Slider extends AbstractSliderCompanion
-}
+object Slider extends AbstractSliderCompanion
 

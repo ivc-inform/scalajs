@@ -13,11 +13,6 @@ trait VStack extends Layout {
 abstract trait AbstractVStackCompanion extends AbstractCanvasCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
    object VStack extends AbstractVStackCompanion
-}
 

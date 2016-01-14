@@ -15,11 +15,6 @@ trait PropertySheet extends DynamicForm {
 abstract trait AbstractPropertySheetCompanion extends AbstractDynamicFormCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object PropertySheet extends AbstractPropertySheetCompanion
-}
+object PropertySheet extends AbstractPropertySheetCompanion
 

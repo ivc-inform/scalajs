@@ -67,11 +67,6 @@ trait PickList extends Class {
 abstract trait AbstractPickListCompanion extends AbstractClassCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object PickList extends AbstractPickListCompanion
-}
+object PickList extends AbstractPickListCompanion
 

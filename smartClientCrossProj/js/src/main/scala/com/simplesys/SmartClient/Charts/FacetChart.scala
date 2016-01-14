@@ -13,8 +13,6 @@ trait FacetChart extends DrawPane with Chart{
 abstract trait AbstractFacetChartCompanion extends AbstractDrawPaneCompanion {
 }
 
-package companion {
-    @js.native
-    object FacetChart extends AbstractFacetChartCompanion
-}
+@js.native
+object FacetChart extends AbstractFacetChartCompanion
 

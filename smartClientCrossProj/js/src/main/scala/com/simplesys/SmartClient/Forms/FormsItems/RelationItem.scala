@@ -11,11 +11,6 @@ trait RelationItem extends CanvasItem {
 abstract trait AbstractRelationItemCompanion extends AbstractCanvasItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object RelationItem extends AbstractRelationItemCompanion
-}
+object RelationItem extends AbstractRelationItemCompanion
 

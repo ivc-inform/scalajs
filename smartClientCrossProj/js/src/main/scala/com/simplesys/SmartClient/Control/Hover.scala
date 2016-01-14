@@ -21,11 +21,6 @@ abstract trait AbstractHoverCompanion extends AbstractClassCompanion {
     var topOffset: Int = js.native
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object Hover extends AbstractHoverCompanion
-}
+object Hover extends AbstractHoverCompanion
 

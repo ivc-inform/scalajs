@@ -46,11 +46,6 @@ trait ResultTree extends Tree {
 abstract trait AbstractResultTreeCompanion extends AbstractTreeCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object ResultTree extends AbstractResultTreeCompanion
-}
+object ResultTree extends AbstractResultTreeCompanion
 

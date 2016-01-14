@@ -20,13 +20,8 @@ trait SelectOtherItem extends SelectItem {
 abstract trait AbstractSelectOtherItemCompanion extends AbstractFormItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object SelectOtherItem extends AbstractSelectItemCompanion
-}
+object SelectOtherItem extends AbstractSelectItemCompanion
 
 
 

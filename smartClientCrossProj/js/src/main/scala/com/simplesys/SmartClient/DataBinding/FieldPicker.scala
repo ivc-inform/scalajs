@@ -13,11 +13,6 @@ trait FieldPicker extends VLayout {
 abstract trait AbstractFieldPickerCompanion extends AbstractVLayoutCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object FieldPicker extends AbstractFieldPickerCompanion
-}
+object FieldPicker extends AbstractFieldPickerCompanion
 

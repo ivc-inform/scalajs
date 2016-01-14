@@ -11,11 +11,6 @@ trait ITreeMenuButton extends TreeMenuButton {
 abstract trait AbstractITreeMenuButtonCompanion extends AbstractTreeMenuButtonCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object ITreeMenuButton extends AbstractITreeMenuButtonCompanion
-}
+object ITreeMenuButton extends AbstractITreeMenuButtonCompanion
 

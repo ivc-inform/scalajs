@@ -29,11 +29,6 @@ trait SpinnerItem extends TextItem {
 abstract trait AbstractSpinnerItemCompanion extends AbstractTextItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object SpinnerItem extends AbstractSpinnerItemCompanion
-}
+object SpinnerItem extends AbstractSpinnerItemCompanion
 

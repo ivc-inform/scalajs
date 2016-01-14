@@ -77,11 +77,7 @@ trait TileGrid extends TileLayout with DataBoundComponent {
 abstract trait AbstractTileGridCompanion extends AbstractTileLayoutCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object TileGrid extends AbstractTileGridCompanion
-}
+object TileGrid extends AbstractTileGridCompanion
+
 

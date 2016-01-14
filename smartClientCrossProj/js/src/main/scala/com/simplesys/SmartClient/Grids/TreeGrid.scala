@@ -107,11 +107,6 @@ trait TreeGrid extends ListGrid[TreeGridField, ListGridRecord] {
 abstract trait AbstractTreeGridCompanion extends AbstractCanvasCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
    object TreeGrid extends AbstractTreeGridCompanion
-}
 

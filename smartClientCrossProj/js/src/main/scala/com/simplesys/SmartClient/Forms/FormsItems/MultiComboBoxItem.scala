@@ -33,11 +33,6 @@ trait MultiComboBoxItem extends CanvasItem {
 abstract trait AbstractMultiComboBoxItemCompanion extends AbstractCanvasItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object MultiComboBoxItem extends AbstractMultiComboBoxItemCompanion
-}
+object MultiComboBoxItem extends AbstractMultiComboBoxItemCompanion
 

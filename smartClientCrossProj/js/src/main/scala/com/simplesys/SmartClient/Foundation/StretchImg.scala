@@ -29,11 +29,6 @@ trait StretchImg extends StatefulCanvas {
 abstract trait AbstractStretchImgCompanion extends AbstractCanvasCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
    object StretchImg extends AbstractStretchImgCompanion
-}
 

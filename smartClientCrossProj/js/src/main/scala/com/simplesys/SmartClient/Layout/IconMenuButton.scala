@@ -15,11 +15,6 @@ trait IconMenuButton extends IconButton {
 @js.native
 abstract trait AbstractIconMenuButtonCompanion extends AbstractIconButtonCompanion {
 }
-package companion {
-
-import scala.scalajs.js
-
-   @js.native
-   object IconMenuButton extends AbstractIconMenuButtonCompanion
-}
+@js.native
+object IconMenuButton extends AbstractIconMenuButtonCompanion
 

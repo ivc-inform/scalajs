@@ -11,11 +11,6 @@ trait PresetDateRangeItem extends PresetCriteriaItem {
 abstract trait AbstractPresetDateRangeItemCompanion extends AbstractPresetCriteriaItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object PresetDateRangeItem extends AbstractPresetDateRangeItemCompanion
-}
+object PresetDateRangeItem extends AbstractPresetDateRangeItemCompanion
 

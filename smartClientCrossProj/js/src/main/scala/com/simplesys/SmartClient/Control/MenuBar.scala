@@ -13,11 +13,6 @@ trait MenuBar extends Toolbar {
 abstract trait AbstractMenuBarCompanion extends AbstractToolbarCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object MenuBar extends AbstractMenuBarCompanion
-}
+object MenuBar extends AbstractMenuBarCompanion
 

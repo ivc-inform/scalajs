@@ -11,11 +11,6 @@ trait HTMLPane extends HTMLFlow {
 abstract trait AbstractHTMLPaneCompanion extends AbstractHTMLFlowCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object HTMLPane extends AbstractHTMLPaneCompanion
-}
+object HTMLPane extends AbstractHTMLPaneCompanion
 

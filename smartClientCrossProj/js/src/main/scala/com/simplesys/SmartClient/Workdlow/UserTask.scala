@@ -11,11 +11,6 @@ trait UserTask extends Task {
 abstract trait AbstractUserTaskCompanion extends AbstractTaskCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
    object UserTask extends AbstractUserTaskCompanion
-}
 

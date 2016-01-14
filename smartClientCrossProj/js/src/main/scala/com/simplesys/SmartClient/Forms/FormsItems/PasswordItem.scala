@@ -11,11 +11,6 @@ trait PasswordItem extends FormItem {
 abstract trait AbstractPasswordItemCompanion extends AbstractFormItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object PasswordItem extends AbstractPasswordItemCompanion
-}
+object PasswordItem extends AbstractPasswordItemCompanion
 

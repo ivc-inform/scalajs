@@ -69,11 +69,6 @@ abstract trait AbstractRPCResponseCompanion extends AbstractClassCompanion {
     val STATUS_VALIDATION_ERROR: Int = js.native // -4
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object RPCResponse extends AbstractRPCResponseCompanion
-}
+object RPCResponse extends AbstractRPCResponseCompanion
 

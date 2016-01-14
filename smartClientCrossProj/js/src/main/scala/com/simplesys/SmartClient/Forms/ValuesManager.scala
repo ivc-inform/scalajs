@@ -88,11 +88,6 @@ abstract trait AbstractValuesManagerCompanion extends AbstractClassCompanion {
     def getById(ID: String): ValuesManager = js.native
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
    object ValuesManager extends AbstractValuesManagerCompanion
-}
 

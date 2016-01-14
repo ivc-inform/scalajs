@@ -14,11 +14,6 @@ trait ProcessElement extends Class {
 abstract trait AbstractProcessElementCompanion extends AbstractClassCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object ProcessElement extends AbstractProcessElementCompanion
-}
+object ProcessElement extends AbstractProcessElementCompanion
 

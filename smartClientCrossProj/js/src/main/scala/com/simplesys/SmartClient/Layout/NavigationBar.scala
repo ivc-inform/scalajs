@@ -50,11 +50,6 @@ trait NavigationBar extends HLayout {
 abstract trait AbstractNavigationBarCompanion extends AbstractHLayoutCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object NavigationBar extends AbstractNavigationBarCompanion
-}
+object NavigationBar extends AbstractNavigationBarCompanion
 

@@ -11,11 +11,6 @@ trait ResetItem extends ButtonItem {
 abstract trait AbstractResetItemCompanion extends AbstractButtonItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object ResetItem extends AbstractResetItemCompanion
-}
+object ResetItem extends AbstractResetItemCompanion
 

@@ -11,11 +11,6 @@ trait SpacerItem extends FormItem {
 abstract trait AbstractSpacerItemCompanion extends AbstractFormItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object SpacerItem extends AbstractSpacerItemCompanion
-}
+object SpacerItem extends AbstractSpacerItemCompanion
 

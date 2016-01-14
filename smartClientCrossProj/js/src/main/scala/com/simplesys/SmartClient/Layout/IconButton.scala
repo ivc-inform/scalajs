@@ -32,11 +32,6 @@ trait IconButton extends Button {
 abstract trait AbstractIconButtonCompanion extends AbstractCanvasCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object IconButton extends AbstractIconButtonCompanion
-}
+object IconButton extends AbstractIconButtonCompanion
 

@@ -11,11 +11,6 @@ trait ViewFileItem extends FileItem {
 abstract trait AbstractViewFileItemCompanion extends AbstractFileItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
    object ViewFileItem extends AbstractViewFileItemCompanion
-}
 

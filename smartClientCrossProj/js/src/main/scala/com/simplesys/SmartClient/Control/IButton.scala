@@ -9,7 +9,5 @@ trait IButton extends Button
 abstract class AbstractIButtonCompanion extends AbstractButtonCompanion {
 }
 
-package companion {
 @js.native
 object IButton extends AbstractIButtonCompanion
-}

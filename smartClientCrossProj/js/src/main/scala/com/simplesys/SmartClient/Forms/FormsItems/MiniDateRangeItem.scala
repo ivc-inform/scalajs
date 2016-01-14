@@ -33,11 +33,6 @@ trait MiniDateRangeItem extends StaticTextItem {
 abstract trait AbstractMiniDateRangeItemCompanion extends AbstractStaticTextItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object MiniDateRangeItem extends AbstractMiniDateRangeItemCompanion
-}
+object MiniDateRangeItem extends AbstractMiniDateRangeItemCompanion
 

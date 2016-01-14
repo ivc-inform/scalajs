@@ -54,11 +54,6 @@ trait RelativeDateItem extends CanvasItem {
 abstract trait AbstractRelativeDateItemCompanion extends AbstractCanvasItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object RelativeDateItem extends AbstractRelativeDateItemCompanion
-}
+object RelativeDateItem extends AbstractRelativeDateItemCompanion
 

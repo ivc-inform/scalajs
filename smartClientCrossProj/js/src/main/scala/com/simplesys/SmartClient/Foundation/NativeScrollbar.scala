@@ -14,11 +14,6 @@ trait NativeScrollbar extends Canvas {
 abstract trait AbstractNativeScrollbarCompanion extends AbstractCanvasCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object NativeScrollbar extends AbstractNativeScrollbarCompanion
-}
+object NativeScrollbar extends AbstractNativeScrollbarCompanion
 

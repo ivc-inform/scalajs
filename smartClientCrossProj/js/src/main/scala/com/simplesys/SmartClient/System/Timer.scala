@@ -15,11 +15,7 @@ abstract trait AbstractTimerCompanion extends AbstractClassCompanion {
     def setTimeout(action: js.Function0[void] | String, delay: Int): Types.Object = js.native
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object Timer extends AbstractTimerCompanion
-}
+object Timer extends AbstractTimerCompanion
+
 

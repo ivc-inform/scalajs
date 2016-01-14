@@ -95,11 +95,6 @@ trait FilterBuilder extends Layout {
 abstract trait AbstractFilterBuilderCompanion extends AbstractLayoutCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object FilterBuilder extends AbstractFilterBuilderCompanion
-}
+object FilterBuilder extends AbstractFilterBuilderCompanion
 

@@ -75,11 +75,6 @@ trait SplitPanel extends Layout {
 abstract trait AbstractSplitPaneCompanion extends AbstractLayoutCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object SplitPane extends AbstractSplitPaneCompanion
-}
+object SplitPane extends AbstractSplitPaneCompanion
 

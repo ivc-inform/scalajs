@@ -19,11 +19,6 @@ trait ImgSplitbar extends Img {
 abstract trait AbstractImgSplitbarCompanion extends AbstractCanvasCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object ImgSplitbar extends AbstractImgSplitbarCompanion
-}
+object ImgSplitbar extends AbstractImgSplitbarCompanion
 
