@@ -1,2 +1,4 @@
-var accept: ScOption[String] = ScNone
-var multiple: ScOption[Boolean] = ScNone
+var action: ScOption[js.Function5[Boolean, DataSourceField | FormItem, Validator, Record, DataBoundComponent, _]] = ScNone
+var condition: ScOption[js.Function4[DataSourceField | FormItem, Validator, js.Any, Types.Object, Boolean]] = ScNone
+var defaultErrorMessage: ScOption[String] = ScNone
+var requiresServer: ScOption[Boolean] = ScNone

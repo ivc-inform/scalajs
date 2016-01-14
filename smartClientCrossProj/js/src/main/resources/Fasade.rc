@@ -1,4 +1,5 @@
-val accept:String
-    val multiple:Boolean
-    def  setSelectionRange ():void
-    def  setValue ():void
+var action: js.Function5[Boolean, DataSourceField | FormItem, Validator, Record, DataBoundComponent, _]
+    var condition: js.Function4[DataSourceField | FormItem, Validator, js.Any, Types.Object, Boolean]
+    val defaultErrorMessage: String
+    val requiresServer: Boolean
+    val `type`: String
