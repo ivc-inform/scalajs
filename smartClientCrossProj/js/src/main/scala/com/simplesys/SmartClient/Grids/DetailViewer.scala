@@ -68,11 +68,6 @@ trait DetailViewer extends Canvas with DataBoundComponent {
 abstract trait AbstractDetailViewerCompanion extends AbstractCanvasCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
    object DetailViewer extends AbstractDetailViewerCompanion
-}
 

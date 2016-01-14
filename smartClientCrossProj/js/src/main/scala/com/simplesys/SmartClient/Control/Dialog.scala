@@ -40,11 +40,6 @@ trait Dialog extends Window {
 abstract trait AbstractDialogCompanion extends AbstractWindowCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
    object Dialog extends AbstractDialogCompanion
-}
 

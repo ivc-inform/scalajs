@@ -3,7 +3,6 @@ package com.simplesys.SmartClient.Forms.FormsItems
 import com.simplesys.System.Types.ColorPickerMode.ColorPickerMode
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 trait ColorItem extends TextItem {
@@ -17,11 +16,7 @@ trait ColorItem extends TextItem {
 abstract trait AbstractColorItemCompanion extends AbstractTextItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object ColorItem extends AbstractColorItemCompanion
-}
+object ColorItem extends AbstractColorItemCompanion
+
 

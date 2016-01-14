@@ -1,14 +1,13 @@
 package com.simplesys.SmartClient.Forms
 
 import com.simplesys.SmartClient.Control.IButton
-import com.simplesys.SmartClient.System.Class
 import com.simplesys.SmartClient.Layout.{AbstractWindowCompanion, Window}
+import com.simplesys.SmartClient.System.Class
 import com.simplesys.System.Types.ColorPickerMode.ColorPickerMode
-import com.simplesys.System.Types._
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types.{void, _}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.Array
 
 @js.native
 trait ColorPicker extends Window {
@@ -78,11 +77,7 @@ trait ColorPicker extends Window {
 abstract trait AbstractColorPickerCompanion extends AbstractWindowCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object ColorPicker extends AbstractColorPickerCompanion
-}
+object ColorPicker extends AbstractColorPickerCompanion
+
 

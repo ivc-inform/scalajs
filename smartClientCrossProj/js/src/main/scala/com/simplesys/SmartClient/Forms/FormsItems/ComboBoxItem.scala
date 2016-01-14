@@ -50,11 +50,6 @@ trait ComboBoxItem extends TextItem with PickList {
 abstract trait AbstractComboBoxItemCompanion extends AbstractTextItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
    object ComboBoxItem extends AbstractComboBoxItemCompanion
-}
 
