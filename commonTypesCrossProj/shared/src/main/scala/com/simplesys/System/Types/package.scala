@@ -2,6 +2,7 @@ package com.simplesys.System
 
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
+import com.simplesys.option.{ScSome, ScOption}
 import com.simplesys.xml.Elem
 
 import scala.language.implicitConversions
