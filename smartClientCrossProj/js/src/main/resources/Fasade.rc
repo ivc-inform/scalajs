@@ -1,2 +1,7 @@
- var hSrc: SCImgURL
-    var vSrc: SCImgURL
+val clientContext: Types.Object
+    val data: Types.Object
+    val httpHeaders: Types.Object
+    val httpResponseCode: Int
+    val httpResponseText: String
+    val status: Int
+    val transactionNum: Int

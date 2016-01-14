@@ -13,7 +13,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait SplitPane extends Layout {
+trait SplitPanel extends Layout {
     var addHistoryEntries: Boolean
     val animateNavigationBarStateChanges: Boolean
     val autoNavigate: Boolean

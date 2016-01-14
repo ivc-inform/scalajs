@@ -18,9 +18,10 @@ import com.simplesys.option.{ScNone, ScOption}
 import scala.scalajs.js
 import scala.scalajs.js._
 
-class DSRequestProps extends RPCRequestProps {
+class DSRequestProps extends RPCRequestProps[js.Dictionary[js.Any]] {
     var additionalOutputs: ScOption[String] = ScNone
     var componentId: ScOption[String] = ScNone
+    override val data: ScOption[js.Dictionary[js.Any]] = ScNone
     var dataProtocol: ScOption[DSProtocol] = ScNone
     var dataSource: ScOption[String] = ScNone
     var endRow: ScOption[Int] = ScNone

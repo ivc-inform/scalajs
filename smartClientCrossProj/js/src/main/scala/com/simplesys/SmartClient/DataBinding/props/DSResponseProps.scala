@@ -5,18 +5,18 @@ import com.simplesys.SmartClient.System.Types._
 import com.simplesys.System.Types.DSOperationType._
 import com.simplesys.option.{ScNone, ScOption}
 
-import scala.scalajs.js.Object
-import scala.scalajs.js._
+import scala.scalajs.js
+import scala.scalajs.js.{Object, _}
 
-class DSResponseProps extends RPCResponseProps {
-    var data: ScOption[Array[Record]] = ScNone
-        var dataSource: ScOption[String] = ScNone
-        var endRow: ScOption[Int] = ScNone
-        var errors: ScOption[Object] = ScNone
-        var fromOfflineCache: ScOption[Boolean] = ScNone
-        var offlineTimestamp: ScOption[Int] = ScNone
-        var operationType: ScOption[DSOperationType] = ScNone
-        var queueStatus: ScOption[Int] = ScNone
-        var startRow: ScOption[Int] = ScNone
-        var totalRows: ScOption[Int] = ScNone
+class DSResponseProps extends RPCResponseProps[js.Dictionary[js.Any]] {
+    override val data: ScOption[js.Dictionary[js.Any]] = ScNone
+    var dataSource: ScOption[String] = ScNone
+    var endRow: ScOption[Int] = ScNone
+    var errors: ScOption[Object] = ScNone
+    var fromOfflineCache: ScOption[Boolean] = ScNone
+    var offlineTimestamp: ScOption[Int] = ScNone
+    var operationType: ScOption[DSOperationType] = ScNone
+    var queueStatus: ScOption[Int] = ScNone
+    var startRow: ScOption[Int] = ScNone
+    var totalRows: ScOption[Int] = ScNone
 }

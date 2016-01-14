@@ -8,7 +8,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait NavPanel extends SplitPane {
+trait NavPanel extends SplitPanel {
     var currentItem: NavItem
     var currentItemId: String
     val headerStyle: CSSStyleName

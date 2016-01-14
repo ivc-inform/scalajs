@@ -1,5 +1,81 @@
 package com.simplesys.SmartClient.Layout.props
 
-class WindowProps extends LayoutProps{
+import com.simplesys.SmartClient.Control.ImgButton
+import com.simplesys.SmartClient.Foundation.{Label, Img, Canvas}
+import com.simplesys.SmartClient.Layout.HLayout
+import com.simplesys.SmartClient.System.Types
+import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
+import com.simplesys.System.Types.ContentLayoutPolicy.ContentLayoutPolicy
+import com.simplesys.System.Types.PanelPlacement.PanelPlacement
+import com.simplesys.System.Types.{CSSColor, SCImgURL, CSSStyleName, HTMLString}
+import com.simplesys.option.{ScOption, ScNone}
 
+import scala.scalajs.js
+
+class WindowProps extends LayoutProps {
+    var animateMinimize: ScOption[Boolean] = ScNone
+    var autoCenter: ScOption[Boolean] = ScNone
+    var autoSize: ScOption[Boolean] = ScNone
+    var body: ScOption[Canvas] = ScNone
+    var bodyColor: ScOption[CSSColor] = ScNone
+    var bodyConstructor: ScOption[String] = ScNone
+    var bodyDefaults: ScOption[Types.Object] = ScNone
+    var bodyStyle: ScOption[CSSStyleName] = ScNone
+    var bringToFrontOnMouseUp: ScOption[Boolean] = ScNone
+    var canFocusInHeaderButtons: ScOption[Boolean] = ScNone
+    var closeButton: ScOption[ImgButton] = ScNone
+    var closeClick: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
+    var contentLayout: ScOption[ContentLayoutPolicy] = ScNone
+    var contentsType: ScOption[String] = ScNone
+    var defaultMinimizeHeight: ScOption[Int] = ScNone
+    var dismissOnEscape: ScOption[Boolean] = ScNone
+    var dismissOnOutsideClick: ScOption[Boolean] = ScNone
+    var fillSpaceStyleName: ScOption[CSSStyleName] = ScNone
+    var footer: ScOption[HLayout] = ScNone
+    var footerControls: ScOption[js.Array[String]] = ScNone
+    var footerHeight: ScOption[Int] = ScNone
+    var header: ScOption[HLayout] = ScNone
+    var headerBackground: ScOption[Img] = ScNone
+    var headerControls: ScOption[js.Array[String]] = ScNone
+    var headerIcon: ScOption[Img] = ScNone
+    var headerIconDefaults: ScOption[Types.Object] = ScNone
+    var headerLabel: ScOption[Label] = ScNone
+    var headerLabelDefaults: ScOption[Types.Object] = ScNone
+    var headerSrc: ScOption[SCImgURL] = ScNone
+    var headerStyle: ScOption[CSSStyleName] = ScNone
+    var hiliteBodyColor: ScOption[CSSColor] = ScNone
+    var hiliteHeaderSrc: ScOption[SCImgURL] = ScNone
+    var hiliteHeaderStyle: ScOption[CSSStyleName] = ScNone
+    var isModal: ScOption[Boolean] = ScNone
+    var items: ScOption[js.Array[Canvas]] = ScNone
+    var maximizeButton: ScOption[ImgButton] = ScNone
+    var maximized: ScOption[Boolean] = ScNone
+    var minimizeAcceleration: ScOption[AnimationAcceleration] = ScNone
+    var minimizeButton: ScOption[ImgButton] = ScNone
+    var minimized: ScOption[Boolean] = ScNone
+    var minimizeHeight: ScOption[Int] = ScNone
+    var minimizeTime: ScOption[Int] = ScNone
+    var modalMask: ScOption[Canvas] = ScNone
+    var modalMaskOpacity: ScOption[Int] = ScNone
+    var modalMaskStyle: ScOption[String] = ScNone
+    var placement: ScOption[PanelPlacement] = ScNone
+    var printBodyStyle: ScOption[CSSStyleName] = ScNone
+    var printHeaderStyle: ScOption[CSSStyleName] = ScNone
+    var resizer: ScOption[ImgButton] = ScNone
+    var restoreButton: ScOption[ImgButton] = ScNone
+    var showBody: ScOption[Boolean] = ScNone
+    var showCloseButton: ScOption[Boolean] = ScNone
+    var showFooter: ScOption[Boolean] = ScNone
+    var showHeader: ScOption[Boolean] = ScNone
+    var showHeaderBackground: ScOption[Boolean] = ScNone
+    var showHeaderIcon: ScOption[Boolean] = ScNone
+    var showMinimizeButton: ScOption[Boolean] = ScNone
+    var showModalMask: ScOption[Boolean] = ScNone
+    var showResizer: ScOption[Boolean] = ScNone
+    var showStatusBar: ScOption[Boolean] = ScNone
+    var showTitle: ScOption[Boolean] = ScNone
+    var src: ScOption[String] = ScNone
+    var status: ScOption[String] = ScNone
+    var statusBar: ScOption[Canvas] = ScNone
+    var title: ScOption[HTMLString] = ScNone
 }
