@@ -8,10 +8,6 @@ import scala.scalajs.js.|
 
 @js.native
 trait PickListMenu extends ScrollingMenu {
-    var bodyStyleName: CSSStyleName
-    var dataProperties: ResultSet
-    var normalCellHeight: Int
-    var styleName: CSSStyleName
 }
 
 @js.native
