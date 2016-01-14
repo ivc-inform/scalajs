@@ -29,7 +29,6 @@ trait HTMLFlow extends Canvas with DataBoundComponent {
     var selectContentOnSelectAll: Boolean
     def setContentsURL(url: URL = js.native, params: Types.Object = js.native): void
     var transformHTML: js.Function1[HTMLElement, _]
-
 }
 
 @js.native
