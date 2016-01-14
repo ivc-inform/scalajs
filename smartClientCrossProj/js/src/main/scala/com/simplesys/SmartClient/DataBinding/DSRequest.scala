@@ -79,11 +79,6 @@ trait DSRequest extends RPCRequest {
 abstract trait AbstractDSRequestCompanion extends AbstractRPCRequestCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
    object DSRequest extends AbstractDSRequestCompanion
-}
 

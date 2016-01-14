@@ -12,11 +12,6 @@ trait DoubleItem extends FloatItem {
 abstract trait AbstractDoubleItemCompanion extends AbstractFloatItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
    object DoubleItem extends AbstractDoubleItemCompanion
-}
 

@@ -26,11 +26,6 @@ trait EdgedCanvas extends Canvas {
 abstract trait AbstractEdgedCanvasCompanion extends AbstractCanvasCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
    object EdgedCanvas extends AbstractEdgedCanvasCompanion
-}
 

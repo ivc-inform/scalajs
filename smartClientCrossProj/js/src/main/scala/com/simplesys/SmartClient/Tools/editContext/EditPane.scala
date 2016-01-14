@@ -13,7 +13,5 @@ trait EditPane extends Canvas {
 abstract trait AbstractEditPaneCompanion extends AbstractCanvasCompanion {
 }
 
-package companion {
-    @js.native
-    object EditPane extends AbstractEditPaneCompanion
-}
+@js.native
+object EditPane extends AbstractEditPaneCompanion

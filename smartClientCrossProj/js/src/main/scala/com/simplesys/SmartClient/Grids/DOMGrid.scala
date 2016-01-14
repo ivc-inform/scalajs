@@ -17,11 +17,6 @@ trait DOMGrid extends TreeGrid {
 abstract trait AbstractDOMGridCompanion extends AbstractTreeGridCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
    object DOMGrid extends AbstractDOMGridCompanion
-}
 
