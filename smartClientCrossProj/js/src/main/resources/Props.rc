@@ -1,4 +1,6 @@
-var action: ScOption[js.Function5[Boolean, DataSourceField | FormItem, Validator, Record, DataBoundComponent, _]] = ScNone
-var condition: ScOption[js.Function4[DataSourceField | FormItem, Validator, js.Any, Types.Object, Boolean]] = ScNone
-var defaultErrorMessage: ScOption[String] = ScNone
-var requiresServer: ScOption[Boolean] = ScNone
+var listProperties: ScOption[ListProperties] = ScNone
+var listPropertiesChanged: ScOption[js.Function1[ListProperties, _]] = ScNone
+var sampleTile: ScOption[Canvas with MultiAutoChild] = ScNone
+var sampleTileLayout: ScOption[TileLayout ] = ScNone
+var startNumberField: ScOption[SpinnerItem ] = ScNone
+var startNumberForm: ScOption[DynamicForm ] = ScNone
