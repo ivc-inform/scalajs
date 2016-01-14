@@ -10,7 +10,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 
 @js.native
-trait PageStatic extends Class
+trait Page extends Class
 
 @js.native
 abstract trait AbstractPageCompanion extends AbstractClassCompanion {

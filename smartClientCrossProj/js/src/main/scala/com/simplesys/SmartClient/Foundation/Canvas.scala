@@ -32,6 +32,7 @@ import org.scalajs.dom.html.Element
 import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js
+import scala.scalajs.js._
 import scala.scalajs.js.annotation.JSName
 
 @js.native
