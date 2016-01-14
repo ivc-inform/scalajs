@@ -9,7 +9,7 @@ import com.simplesys.SmartClient.Foundation.props._
 import com.simplesys.macros.PropsToDictionary
 
 package object System {
-//    object IButton extends SCApply[IButton, IButtonProps]
-//    object DynamicForm extends SCApply[DynamicForm, DynamicFormProps]
-//    object Label extends SCApply[Label, LabelProps]
+    object IButton extends SCApply[IButton, IButtonProps]
+    object DynamicForm extends SCApply[DynamicForm, DynamicFormProps]
+    object Label extends SCApply[Label, LabelProps]
 }

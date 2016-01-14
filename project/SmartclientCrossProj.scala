@@ -19,7 +19,8 @@ trait SmartClientCrossProj {
                   CommonSettings.cmnDependencies.uTest.value
               )
           },
-          testFrameworks += new TestFramework("utest.runner.Framework")
+          testFrameworks += new TestFramework("utest.runner.Framework"),
+          publishArtifact in(Compile, packageDoc) := false
       ).
       jvmSettings(
           libraryDependencies ++= {
