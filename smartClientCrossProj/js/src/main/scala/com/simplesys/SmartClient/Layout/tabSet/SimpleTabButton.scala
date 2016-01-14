@@ -10,10 +10,5 @@ import scala.scalajs.js.|
 trait SimpleTabButton extends Button {
 }
 
-@js.native
-abstract trait AbstractSimpleTabButtonCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-object SimpleTabButton extends AbstractSimpleTabButtonCompanion
 

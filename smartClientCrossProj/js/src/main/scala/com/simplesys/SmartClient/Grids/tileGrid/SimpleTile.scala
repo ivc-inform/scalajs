@@ -14,10 +14,4 @@ trait SimpleTile extends StatefulCanvas {
     val tileGrid: TileGrid
 }
 
-@js.native
-abstract trait AbstractSimpleTileCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-object SimpleTile extends AbstractSimpleTileCompanion
 

@@ -103,10 +103,5 @@ trait TreeGrid extends ListGrid[TreeGridField, ListGridRecord] {
     val treeRootValue:js.Any
 }
 
-@js.native
-abstract trait AbstractTreeGridCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-   object TreeGrid extends AbstractTreeGridCompanion
 

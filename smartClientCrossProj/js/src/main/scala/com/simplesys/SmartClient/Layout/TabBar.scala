@@ -24,10 +24,5 @@ trait TabBar extends Toolbar {
     val tabs: js.Array[Tab]
 }
 
-@js.native
-abstract trait AbstractTabBarCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-object TabBar extends AbstractTabBarCompanion
 

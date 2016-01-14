@@ -10,10 +10,5 @@ import scala.scalajs.js.|
 trait ToolStripButton extends Button {
 }
 
-@js.native
-abstract trait AbstractToolStripButtonCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-   object ToolStripButton extends AbstractToolStripButtonCompanion
 

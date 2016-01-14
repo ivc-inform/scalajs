@@ -12,10 +12,4 @@ trait ToolStripSeparator extends Img {
     var vSrc: SCImgURL
 }
 
-@js.native
-abstract trait AbstractToolStripSeparatorCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-   object ToolStripSeparator extends AbstractToolStripSeparatorCompanion
 

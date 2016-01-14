@@ -10,9 +10,3 @@ import scala.scalajs.js.|
 trait ToolStripMenuButton extends MenuButton {
 }
 
-@js.native
-abstract trait AbstractToolStripMenuButtonCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-   object ToolStripMenuButton extends AbstractToolStripMenuButtonCompanion

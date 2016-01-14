@@ -7,10 +7,4 @@ import scala.scalajs.js.|
 trait DrawPane extends Canvas {
 }
 
-@js.native
-abstract trait AbstractDrawPaneCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-   object DrawPane extends AbstractDrawPaneCompanion
 

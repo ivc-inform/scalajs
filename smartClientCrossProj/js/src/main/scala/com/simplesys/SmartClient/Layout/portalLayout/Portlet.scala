@@ -21,10 +21,4 @@ trait Portlet extends Window {
 }
 
 
-@js.native
-abstract trait AbstractPortletCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-object Portlet extends AbstractPortletCompanion
 

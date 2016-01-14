@@ -10,10 +10,5 @@ import scala.scalajs.js.|
 trait ScrollingMenu extends Menu {
 }
 
-@js.native
-abstract trait AbstractScrollingMenuCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-object ScrollingMenu extends AbstractScrollingMenuCompanion
 

@@ -61,10 +61,4 @@ trait PortalLayout extends Layout {
     var willRestorePortlet: js.ThisFunction1[callbackHandler, Portlet, Boolean]
 }
 
-@js.native
-abstract trait AbstractPortalLayoutCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-object PortalLayout extends AbstractPortalLayoutCompanion
 

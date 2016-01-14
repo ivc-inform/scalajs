@@ -9,9 +9,3 @@ import scala.scalajs.js.|
 trait EditPane extends Canvas {
 }
 
-@js.native
-abstract trait AbstractEditPaneCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-object EditPane extends AbstractEditPaneCompanion

@@ -15,10 +15,5 @@ trait ImgSplitbar extends Img {
     val vSrc:SCImgURL
 }
 
-@js.native
-abstract trait AbstractImgSplitbarCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-object ImgSplitbar extends AbstractImgSplitbarCompanion
 

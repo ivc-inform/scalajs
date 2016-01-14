@@ -2,13 +2,12 @@ package com.simplesys.SmartClient.Grids.listGrid
 
 import com.simplesys.SmartClient.Forms.{DynamicForm, FilterBuilder}
 import com.simplesys.SmartClient.Foundation.StatefulCanvas
-import com.simplesys.SmartClient.Layout.{AbstractVStackCompanion, VStack}
+import com.simplesys.SmartClient.Layout.VStack
 import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.System.Types.{AutoChild, SCImgURL, void}
 
 import scala.scalajs.js
 import scala.scalajs.js.Array
-import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait AdvancedHiliteEditor extends VStack {
@@ -29,12 +28,5 @@ trait AdvancedHiliteEditor extends VStack {
     val title: String
 }
 
-@js.native
-abstract trait AbstractAdvancedHiliteEditorCompanion extends AbstractVStackCompanion {
-}
-
-@js.native
-@JSName("AdvancedHiliteEditor")
-object AdvancedHiliteEditorStatic extends AbstractAdvancedHiliteEditorCompanion
 
 

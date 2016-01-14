@@ -64,10 +64,4 @@ trait DetailViewer extends Canvas with DataBoundComponent {
     var wrapValues: Boolean
 }
 
-@js.native
-abstract trait AbstractDetailViewerCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-   object DetailViewer extends AbstractDetailViewerCompanion
 

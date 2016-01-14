@@ -23,10 +23,5 @@ trait ImgButton extends Img {
     var titleHover: js.Function1[void, Boolean]
 }
 
-@js.native
-abstract trait AbstractImgButtonCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-object ImgButton extends AbstractImgButtonCompanion
 

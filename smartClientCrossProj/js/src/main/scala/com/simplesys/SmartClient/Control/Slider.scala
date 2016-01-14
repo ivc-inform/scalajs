@@ -73,10 +73,5 @@ trait Slider extends Canvas {
 }
 
 
-@js.native
-abstract trait AbstractSliderCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-object Slider extends AbstractSliderCompanion
 

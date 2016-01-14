@@ -35,9 +35,3 @@ trait ToolStripGroup extends VLayout {
 }
 
 
-@js.native
-abstract trait AbstractToolStripGroupCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-   object ToolStripGroup extends AbstractToolStripGroupCompanion

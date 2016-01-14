@@ -25,10 +25,4 @@ trait StretchImg extends StatefulCanvas {
     var vSrc:SCImgURL
 }
 
-@js.native
-abstract trait AbstractStretchImgCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-   object StretchImg extends AbstractStretchImgCompanion
 

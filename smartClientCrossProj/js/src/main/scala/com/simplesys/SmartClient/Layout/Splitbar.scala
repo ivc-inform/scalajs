@@ -20,10 +20,5 @@ trait Splitbar extends StretchImg {
     val vResizeCursor: Cursor
 }
 
-@js.native
-abstract trait AbstractSplitbarCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-object Splitbar extends AbstractSplitbarCompanion
 

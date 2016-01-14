@@ -51,10 +51,4 @@ trait SectionStack extends VLayout {
     var visibilityMode: VisibilityMode
 }
 
-@js.native
-abstract trait AbstractSectionStackCompanion extends AbstractVLayoutCompanion {
-}
-
-@js.native
-object SectionStack extends AbstractSectionStackCompanion
 

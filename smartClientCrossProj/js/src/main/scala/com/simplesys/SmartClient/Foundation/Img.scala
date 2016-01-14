@@ -22,10 +22,5 @@ trait Img extends StatefulCanvas {
     var usePNGFix: Boolean
 }
 
-@js.native
-abstract trait AbstractImgCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-object Img extends AbstractImgCompanion
 

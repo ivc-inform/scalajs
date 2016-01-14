@@ -9,10 +9,5 @@ import scala.scalajs.js.|
 trait TabSet extends Canvas {
 }
 
-@js.native
-abstract trait AbstractTabSetCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-object TabSet extends AbstractTabSetCompanion
 

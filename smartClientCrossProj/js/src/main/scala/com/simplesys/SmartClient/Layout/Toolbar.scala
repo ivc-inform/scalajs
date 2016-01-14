@@ -28,11 +28,5 @@ trait Toolbar extends Layout {
     def setCanResizeItems(canResizeItems: Boolean): void
 }
 
-@js.native
-abstract trait AbstractToolbarCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-object Toolbar extends AbstractToolbarCompanion
 
 

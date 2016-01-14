@@ -48,11 +48,6 @@ trait TileLayout extends Canvas {
     def transferDragData(): js.Array[Object]
 }
 
-@js.native
-abstract trait AbstractTileLayoutCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-object TileLayout extends AbstractTileLayoutCompanion
 
 

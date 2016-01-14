@@ -10,10 +10,5 @@ trait NativeScrollbar extends Canvas {
     def setScrollTarget(newTarget: Canvas = js.native): void
 }
 
-@js.native
-abstract trait AbstractNativeScrollbarCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-object NativeScrollbar extends AbstractNativeScrollbarCompanion
 

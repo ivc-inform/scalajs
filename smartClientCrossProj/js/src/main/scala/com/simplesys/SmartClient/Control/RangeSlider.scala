@@ -21,10 +21,5 @@ trait RangeSlider extends Canvas {
     val vertical: Boolean
 }
 
-@js.native
-abstract trait AbstractRangeSliderCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-object RangeSlider extends AbstractRangeSliderCompanion
 

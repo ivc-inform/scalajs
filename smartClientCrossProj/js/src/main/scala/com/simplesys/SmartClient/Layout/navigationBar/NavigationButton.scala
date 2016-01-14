@@ -15,9 +15,3 @@ trait NavigationButton extends Button {
     var forwardBaseStyle: CSSStyleName
 }
 
-@js.native
-abstract trait AbstractNavigationButtonCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-object NavigationButton extends AbstractNavigationButtonCompanion        

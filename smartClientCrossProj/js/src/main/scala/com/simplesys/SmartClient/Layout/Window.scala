@@ -103,10 +103,4 @@ trait Window extends Layout {
     var title: HTMLString
 }
 
-@js.native
-abstract trait AbstractWindowCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-   object Window extends AbstractWindowCompanion
 

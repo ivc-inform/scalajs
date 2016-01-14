@@ -10,12 +10,5 @@ import scala.scalajs.js.annotation.JSName
 trait AutoFitButton extends Button {
 }
 
-@js.native
-abstract trait AbstractAutoFitButtonCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-@JSName ("AutoFitButton")
-object AutoFitButtonStatic extends AbstractAutoFitButtonCompanion
 
 

@@ -63,10 +63,3 @@ trait StatefulCanvas extends Canvas {
     var valign: VerticalAlignment
 }
 
-@js.native
-abstract class AbstractStatefulCanvasCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-object StatefulCanvas extends AbstractStatefulCanvasCompanion
-

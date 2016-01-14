@@ -31,10 +31,4 @@ trait HTMLFlow extends Canvas with DataBoundComponent {
     var transformHTML: js.Function1[HTMLElement, _]
 }
 
-@js.native
-abstract trait AbstractHTMLFlowCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-object HTMLFlow extends AbstractHTMLFlowCompanion
 

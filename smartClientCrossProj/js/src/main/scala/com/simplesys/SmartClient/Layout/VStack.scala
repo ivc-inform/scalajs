@@ -9,10 +9,5 @@ import scala.scalajs.js.|
 trait VStack extends Layout {
 }
 
-@js.native
-abstract trait AbstractVStackCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-   object VStack extends AbstractVStackCompanion
 

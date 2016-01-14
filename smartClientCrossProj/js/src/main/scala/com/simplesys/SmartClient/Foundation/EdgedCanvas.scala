@@ -22,10 +22,4 @@ trait EdgedCanvas extends Canvas {
     var showCenter: Int
 }
 
-@js.native
-abstract trait AbstractEdgedCanvasCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-   object EdgedCanvas extends AbstractEdgedCanvasCompanion
 

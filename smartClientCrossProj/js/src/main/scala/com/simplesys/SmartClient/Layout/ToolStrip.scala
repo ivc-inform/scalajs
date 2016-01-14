@@ -25,11 +25,6 @@ trait ToolStrip extends Layout {
     val verticalStyleName: String
 }
 
-@js.native
-abstract trait AbstractToolStripCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-object ToolStrip extends AbstractToolStripCompanion
 
 

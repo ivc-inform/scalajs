@@ -8,10 +8,3 @@ import scala.scalajs.js
 trait Label extends Button {
 }
 
-@js.native
-abstract trait AbstractLabelCompanion extends AbstractCanvasCompanion {
-}
-
-
-@js.native
-object Label extends AbstractLabelCompanion

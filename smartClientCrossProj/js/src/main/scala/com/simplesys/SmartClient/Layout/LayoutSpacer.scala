@@ -9,10 +9,5 @@ import scala.scalajs.js.|
 trait LayoutSpacer extends Canvas {
 }
 
-@js.native
-abstract trait AbstractLayoutSpacerCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-object LayoutSpacer extends AbstractLayoutSpacerCompanion
 

@@ -15,9 +15,4 @@ trait SectionHeader extends Label {
     def getSectionStack(): SectionStack
 }
 
-@js.native
-abstract trait AbstractSectionHeaderCompanion extends AbstractCanvasCompanion {
-}
 
-@js.native
-object SectionHeader extends AbstractSectionHeaderCompanion        

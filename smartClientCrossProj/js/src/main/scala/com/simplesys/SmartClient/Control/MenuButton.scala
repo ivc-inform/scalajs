@@ -24,10 +24,4 @@ trait MenuButton extends Button {
     var showMenuOnRollOver: Boolean
 }
 
-@js.native
-abstract trait AbstractMenuButtonCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-object MenuButton extends AbstractMenuButtonCompanion
 

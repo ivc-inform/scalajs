@@ -28,10 +28,4 @@ trait IconButton extends Button {
     var showTitle: Boolean
 }
 
-@js.native
-abstract trait AbstractIconButtonCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-object IconButton extends AbstractIconButtonCompanion
 

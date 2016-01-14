@@ -105,10 +105,4 @@ trait GridRenderer extends Canvas {
     val wrapCells: Boolean
 }
 
-@js.native
-abstract trait AbstractGridRendererCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-object GridRenderer extends AbstractGridRendererCompanion
 
