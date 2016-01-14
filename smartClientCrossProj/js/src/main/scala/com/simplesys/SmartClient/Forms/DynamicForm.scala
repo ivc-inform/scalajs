@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.Forms
 
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Forms.FormsItems.props.FormItemProps
 import com.simplesys.SmartClient.Forms.dynamicForm.FormItemEventInfo
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.ListGrid
@@ -204,9 +205,3 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     var wrapItemTitles: Boolean
 }
 
-@js.native
-abstract trait AbstractDynamicFormCompanion extends AbstractClassCompanion {
-}
-
-@js.native
-object DynamicForm extends AbstractDynamicFormCompanion

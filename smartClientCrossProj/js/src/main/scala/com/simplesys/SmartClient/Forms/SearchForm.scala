@@ -11,10 +11,4 @@ trait SearchForm extends DynamicForm {
     var showFilterFieldsOnly:Boolean
 }
 
-@js.native
-abstract trait AbstractSearchFormCompanion extends AbstractDynamicFormCompanion {
-}
-
-@js.native
-object SearchForm extends AbstractSearchFormCompanion
 

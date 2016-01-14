@@ -11,10 +11,4 @@ trait PropertySheet extends DynamicForm {
     def  editRecord (record:Record)
 }
 
-@js.native
-abstract trait AbstractPropertySheetCompanion extends AbstractDynamicFormCompanion {
-}
-
-@js.native
-object PropertySheet extends AbstractPropertySheetCompanion
 
