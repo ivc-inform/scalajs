@@ -218,5 +218,5 @@ class FormItemProps extends ClassProps {
     var visible: ScOption[Boolean] = ScNone
     var width: ScOption[IntString[Int, String]] = ScNone
     var wrapTitle: ScOption[Boolean] = ScNone
-    var `type`: FormItemType
+    var `type`: ScOption[FormItemType] = ScNone
 }
