@@ -21,7 +21,7 @@ class MenuProps extends ListGridProps {
     var cascadeAutoDismiss: ScOption[Boolean] = ScNone
     var checkmarkDisabledImage: ScOption[Img] = ScNone
     var checkmarkImage: ScOption[Img] = ScNone
-    var data: ScOption[js.Array[MenuItem]] = ScNone
+    //override var data: ScOption[js.Array[MenuItem]] = ScNone
     var fillSpaceStyleName: ScOption[CSSStyleName] = ScNone
     var iconBodyStyleName: ScOption[CSSStyleName] = ScNone
     var iconFieldDefaults: ScOption[ListGridField] = ScNone

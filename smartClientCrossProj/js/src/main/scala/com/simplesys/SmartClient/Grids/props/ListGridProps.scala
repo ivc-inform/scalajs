@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Grids.props
 
+import com.simplesys.SmartClient.System.Class
 import com.simplesys.SmartClient.Control.{IButton, Button}
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.DataBinding.props.DataBoundComponentProps
@@ -50,6 +51,7 @@ import com.simplesys.System.Types._
 import com.simplesys.option.{ScOption, ScNone}
 
 import scala.scalajs.js
+import scala.scalajs.js.|
 
 class ListGridProps extends VLayoutProps with DataBoundComponentProps {
     var advancedFieldPickerThreshold: ScOption[Int] = ScNone
@@ -178,7 +180,7 @@ class ListGridProps extends VLayoutProps with DataBoundComponentProps {
     var confirmDiscardEdits: ScOption[Boolean] = ScNone
     var confirmDiscardEditsMessage: ScOption[String] = ScNone
     var createRecordComponent: ScOption[js.ThisFunction2[callbackHandler, ListGridRecord, Int, Canvas]] = ScNone
-    var data: ScOption[js.Array[ListGridRecord]] = ScNone
+    //var data: ScOption[js.Array[ListGridRecord]] = ScNone
     var dataArrived: ScOption[js.ThisFunction2[callbackHandler, Int, Int, void]] = ScNone
     var dataProperties: ScOption[ResultSet] = ScNone
     var dateFormatter: ScOption[DateDisplayFormat] = ScNone
