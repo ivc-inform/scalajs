@@ -2,8 +2,8 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
-import com.simplesys.SmartClient.Forms.{Validator, DynamicForm}
 import com.simplesys.SmartClient.Forms.FormsItems.{CanvasItem, FormItem}
+import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.RPC.RPCRequest
@@ -13,13 +13,13 @@ import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AutoComplete.AutoComplete
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.FormItemType.FormItemType
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
-import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.option.{IntString, ScOption, ScNone}
+import com.simplesys.option.{IntString, ScNone, ScOption}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -126,7 +126,7 @@ class FormItemProps extends ClassProps {
     var originalValueMessage: ScOption[HTMLString] = ScNone
     var parseEditorValue: ScOption[js.Function3[String, DynamicForm, FormItem, js.Any]] = ScNone
     var pendingStatusChanged: ScOption[js.Function5[DynamicForm, FormItem, Boolean, js.Any, js.Any, Boolean]] = ScNone
-    var picker: ScOption[Canvas ] = ScNone
+    var picker: ScOption[Canvas] = ScNone
     var pickerConstructor: ScOption[SCClassName] = ScNone
     var pickerIconClick: ScOption[js.Function3[DynamicForm, FormItem, FormItemIcon, _]] = ScNone
     var pickerIconDefaults: ScOption[FormItemIcon] = ScNone
@@ -182,7 +182,7 @@ class FormItemProps extends ClassProps {
     var tabIndex: ScOption[Int] = ScNone
     var textAlign: ScOption[Alignment] = ScNone
     var textBoxStyle: ScOption[FormItemBaseStyle] = ScNone
-//    var timeFormatter: ScOption[TimeDisplayFormat] = ScNone
+    //    var timeFormatter: ScOption[TimeDisplayFormat] = ScNone
     var title: ScOption[String] = ScNone
     var titleAlign: ScOption[Alignment] = ScNone
     var titleClassName: ScOption[CSSStyleName] = ScNone
@@ -218,4 +218,5 @@ class FormItemProps extends ClassProps {
     var visible: ScOption[Boolean] = ScNone
     var width: ScOption[IntString[Int, String]] = ScNone
     var wrapTitle: ScOption[Boolean] = ScNone
+    var `type`: FormItemType
 }
