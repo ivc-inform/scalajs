@@ -61,5 +61,4 @@ abstract trait AbstractPageCompanion extends AbstractClassCompanion {
 }
 
 @js.native
-@JSName("Page")
-object PageStatic extends AbstractPageCompanion
+object Page extends AbstractPageCompanion
