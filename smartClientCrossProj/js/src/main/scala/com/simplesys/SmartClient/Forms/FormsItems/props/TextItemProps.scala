@@ -9,25 +9,25 @@ import scala.scalajs.js
 import scala.scalajs.js._
 
 class TextItemProps extends FormItemProps {
-//    var browserAutoCapitalize: ScOption[Boolean] = ScNone
-//    var browserAutoCorrect: ScOption[Boolean] = ScNone
-//    var browserInputType: ScOption[String] = ScNone
-//    var changeOnKeypress: ScOption[js.ThisFunction0[FormItemIcon, Boolean]] = ScNone
-//    var characterCasing: ScOption[CharacterCasing] = ScNone
-//    var editProxyConstructor: ScOption[SCClassName] = ScNone
-//    var emptyStringValue: ScOption[js.Any] = ScNone
-//    var enforceLength: ScOption[Boolean] = ScNone
-//    var fetchMissingValues: ScOption[Boolean] = ScNone
-//    var formatOnBlur: ScOption[Boolean] = ScNone
-//    var formatOnFocusChange: ScOption[Boolean] = ScNone
-//    var keyPressFilter: ScOption[String] = ScNone
-//    var length: ScOption[Int] = ScNone
-//    var mask: ScOption[String] = ScNone
-//    var maskOverwriteMode: ScOption[Boolean] = ScNone
-//    var maskPadChar: ScOption[String] = ScNone
-//    var maskPromptChar: ScOption[String] = ScNone
-//    var maskSaveLiterals: ScOption[Boolean] = ScNone
-//    var printFullText: ScOption[Boolean] = ScNone
-//    var showHintInField: ScOption[Boolean] = ScNone
-//    var usePlaceholderForHint: ScOption[Boolean] = ScNone
+    var browserAutoCapitalize: ScOption[Boolean] = ScNone
+    var browserAutoCorrect: ScOption[Boolean] = ScNone
+    var browserInputType: ScOption[String] = ScNone
+    var changeOnKeypress: ScOption[js.ThisFunction0[FormItemIcon, Boolean]] = ScNone
+    var characterCasing: ScOption[CharacterCasing] = ScNone
+    var editProxyConstructor: ScOption[SCClassName] = ScNone
+    var emptyStringValue: ScOption[js.Any] = ScNone
+    var enforceLength: ScOption[Boolean] = ScNone
+    var fetchMissingValues: ScOption[Boolean] = ScNone
+    var formatOnBlur: ScOption[Boolean] = ScNone
+    var formatOnFocusChange: ScOption[Boolean] = ScNone
+    var keyPressFilter: ScOption[String] = ScNone
+    var length: ScOption[Int] = ScNone
+    var mask: ScOption[String] = ScNone
+    var maskOverwriteMode: ScOption[Boolean] = ScNone
+    var maskPadChar: ScOption[String] = ScNone
+    var maskPromptChar: ScOption[String] = ScNone
+    var maskSaveLiterals: ScOption[Boolean] = ScNone
+    var printFullText: ScOption[Boolean] = ScNone
+    var showHintInField: ScOption[Boolean] = ScNone
+    var usePlaceholderForHint: ScOption[Boolean] = ScNone
 }
