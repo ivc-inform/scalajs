@@ -9,16 +9,16 @@ import scala.scalajs.js.|
 @js.native
 trait TreeNode extends Types.Object {
 
-    var canAcceptDrop: Boolean = js.native
-    var canDrag: Boolean = js.native
-    var children: js.Array[TreeNode] = js.native
-    var enabled: Boolean = js.native
-    var icon: SCImgURL = js.native
-    var id: String | Int = js.native
-    var isFolder: Boolean = js.native
-    var name: String = js.native
-    var parentId: String | Int = js.native
-    var showDropIcon: Boolean = js.native
-    var showOpenIcon: Boolean = js.native
-    var title: HTMLString = js.native
+    var canAcceptDrop: Boolean
+    var canDrag: Boolean
+    var children: js.Array[TreeNode]
+    var enabled: Boolean
+    var icon: SCImgURL
+    var id: String
+    var isFolder: Boolean
+    var name: String
+    var parentId: String
+    var showDropIcon: Boolean
+    var showOpenIcon: Boolean
+    var title: HTMLString
 }

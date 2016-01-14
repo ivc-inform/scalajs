@@ -26,7 +26,6 @@ trait HiliteEditor extends VLayout {
     val saveButtonTitle: String
     def saveHilites(callback: Callback): void
     def setHilites(hilites: js.Array[Hilite]): void
-
 }
 
 @js.native
