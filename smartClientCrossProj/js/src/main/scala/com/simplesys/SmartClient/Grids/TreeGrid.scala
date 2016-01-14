@@ -36,7 +36,6 @@ trait TreeGrid extends ListGrid[TreeGridField, ListGridRecord] {
     var displayNodeType: DisplayNodeType
     val dropIconSuffix: String
     val extraIconGap: Int
-    var fields: Array[TreeGridField]
     var fileImage: SCImgURL
     var folderClick: js.Function3[TreeGrid, TreeNode, Int, void]
     var folderClosed: js.Function1[TreeNode, Boolean]

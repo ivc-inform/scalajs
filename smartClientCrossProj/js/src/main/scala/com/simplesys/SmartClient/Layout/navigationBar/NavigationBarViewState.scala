@@ -13,6 +13,6 @@ trait NavigationBarViewState extends Types.Object {
     var controls: js.Array[String] | js.Array[Canvas]
     var leftButtonTitle: HTMLString
     var shortLeftButtonTitle: HTMLString
-    var showLeftButton: Boolean = js.native
+    var showLeftButton: Boolean
     var title: HTMLString
 }

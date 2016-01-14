@@ -9,9 +9,9 @@ import scala.scalajs.js.|
 
 @js.native
 trait NavItem extends TreeNode {
-    val customStyle: CSSStyleName = js.native
-    val isHeader: Boolean = js.native
-    val isSeparator: Boolean = js.native
-    val items: js.Array[NavItem] = js.native
-    val pane: Canvas | String = js.native
+    val customStyle: CSSStyleName
+    val isHeader: Boolean
+    val isSeparator: Boolean
+    val items: js.Array[NavItem]
+    val pane: Canvas | String
 }
