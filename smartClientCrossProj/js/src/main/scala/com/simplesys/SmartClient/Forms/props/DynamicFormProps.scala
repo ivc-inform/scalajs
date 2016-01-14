@@ -73,7 +73,7 @@ class DynamicFormProps extends CanvasProps {
     var itemHoverWidth: ScOption[Int] = ScNone
     var itemKeyPress: ScOption[Function3[FormItem, String, Int, Boolean]] = ScNone
     var itemLayout: ScOption[String] = ScNone
-    var items: ScOption[Array[FormItem]] = ScNone
+    var items: ScOption[Array[_ <: FormItem]] = ScNone
     var longTextEditorThreshold: ScOption[Int] = ScNone
     var longTextEditorType: ScOption[String] = ScNone
     var method: ScOption[FormMethod] = ScNone

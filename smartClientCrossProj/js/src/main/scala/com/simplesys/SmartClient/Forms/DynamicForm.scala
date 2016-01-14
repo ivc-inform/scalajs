@@ -121,7 +121,7 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     var itemHoverWidth: Int
     var itemKeyPress: js.Function3[FormItem, String, Int, Boolean]
     var itemLayout: String
-    var items: Array[FormItem]
+    var items: Array[_ <: FormItem]
     var longTextEditorThreshold: Int
     var longTextEditorType: String
     var method: FormMethod
