@@ -2,14 +2,13 @@ package com.simplesys.SmartClient.Forms
 
 import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.Forms.FormsItems.TimeItem
-import com.simplesys.SmartClient.Layout.{HLayout, AbstractVLayoutCompanion, VLayout}
+import com.simplesys.SmartClient.Layout.{HLayout, VLayout}
 import com.simplesys.SmartClient.System.Date
 import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
-import com.simplesys.System.Types._
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types.{void, _}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.Array
 
 @js.native
 trait DateChooser extends VLayout {
@@ -103,10 +102,5 @@ trait DateChooser extends VLayout {
     val yearMenuStyle: CSSStyleName
 }
 
-@js.native
-abstract trait AbstractDateChooserCompanion extends AbstractVLayoutCompanion {
-}
 
-@js.native
-   object DateChooser extends AbstractDateChooserCompanion
 

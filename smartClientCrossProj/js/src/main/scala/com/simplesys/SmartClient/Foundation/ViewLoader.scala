@@ -1,11 +1,10 @@
 package com.simplesys.SmartClient.Foundation
 
-import com.simplesys.SmartClient.RPC.{RPCResponse, RPCRequest}
+import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types.{void, URL, HTMLString}
+import com.simplesys.System.Types.{HTMLString, URL, void}
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 trait ViewLoader extends Label {
@@ -21,10 +20,5 @@ trait ViewLoader extends Label {
     val viewURLParams: Types.Object
 }
 
-@js.native
-abstract trait AbstractViewLoaderCompanion extends AbstractLabelCompanion {
-}
 
-@js.native
-   object ViewLoader extends AbstractViewLoaderCompanion
 

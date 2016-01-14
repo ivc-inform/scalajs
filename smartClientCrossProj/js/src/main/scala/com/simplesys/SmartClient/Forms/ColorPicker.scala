@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms
 
 import com.simplesys.SmartClient.Control.IButton
-import com.simplesys.SmartClient.Layout.{AbstractWindowCompanion, Window}
+import com.simplesys.SmartClient.Layout.Window
 import com.simplesys.SmartClient.System.Class
 import com.simplesys.System.Types.ColorPickerMode.ColorPickerMode
 import com.simplesys.System.Types.{void, _}
@@ -73,11 +73,5 @@ trait ColorPicker extends Window {
     val swatchWidth: Int
 }
 
-@js.native
-abstract trait AbstractColorPickerCompanion extends AbstractWindowCompanion {
-}
-
-@js.native
-object ColorPicker extends AbstractColorPickerCompanion
 
 

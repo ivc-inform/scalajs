@@ -7,10 +7,5 @@ import scala.scalajs.js.|
 trait HTMLPane extends HTMLFlow {
 }
 
-@js.native
-abstract trait AbstractHTMLPaneCompanion extends AbstractHTMLFlowCompanion {
-}
 
-@js.native
-object HTMLPane extends AbstractHTMLPaneCompanion
 

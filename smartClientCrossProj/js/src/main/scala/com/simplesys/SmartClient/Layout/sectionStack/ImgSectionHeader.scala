@@ -1,12 +1,10 @@
 package com.simplesys.SmartClient.Layout.sectionStack
 
 import com.simplesys.SmartClient.Foundation.{Canvas, StretchImg}
-import com.simplesys.SmartClient.Layout.{SectionStack, Layout, AbstractHLayoutCompanion, HLayout}
-import com.simplesys.System.Types._
-import com.simplesys.System.Types.void
+import com.simplesys.SmartClient.Layout.{HLayout, Layout, SectionStack}
+import com.simplesys.System.Types.{void, _}
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 trait ImgSectionHeader extends HLayout {
@@ -32,10 +30,5 @@ trait ImgSectionHeader extends HLayout {
     def titleHoverHTML(defaultHTML: HTMLString): HTMLString
 }
 
-@js.native
-abstract trait AbstractImgSectionHeaderCompanion extends AbstractHLayoutCompanion {
-}
 
-@js.native
-object ImgSectionHeader extends AbstractImgSectionHeaderCompanion
 

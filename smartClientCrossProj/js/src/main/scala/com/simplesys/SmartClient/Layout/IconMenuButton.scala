@@ -12,9 +12,5 @@ trait IconMenuButton extends IconButton {
     var showMenu: js.ThisFunction0[callbackHandler, Boolean]
 }
 
-@js.native
-abstract trait AbstractIconMenuButtonCompanion extends AbstractIconButtonCompanion {
-}
-@js.native
-object IconMenuButton extends AbstractIconMenuButtonCompanion
+
 

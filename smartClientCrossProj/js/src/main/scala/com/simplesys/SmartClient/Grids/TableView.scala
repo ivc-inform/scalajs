@@ -28,10 +28,5 @@ trait TableView extends ListGrid[ListGridField, ListGridRecord] {
     var wholeRecordNavIcon: SCImgURL
 }
 
-@js.native
-abstract trait AbstractTableViewCompanion extends AbstractListGridCompanion {
-}
 
-@js.native
-object TableView extends AbstractTableViewCompanion
 

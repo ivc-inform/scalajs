@@ -73,11 +73,6 @@ trait TileGrid extends TileLayout with DataBoundComponent {
     val wrapValues: Boolean
 }
 
-@js.native
-abstract trait AbstractTileGridCompanion extends AbstractTileLayoutCompanion {
-}
 
-@js.native
-object TileGrid extends AbstractTileGridCompanion
 
 

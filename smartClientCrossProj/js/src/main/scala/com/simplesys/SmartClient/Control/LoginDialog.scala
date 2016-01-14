@@ -2,12 +2,13 @@ package com.simplesys.SmartClient.Control
 
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems._
-import com.simplesys.SmartClient.Layout.{AbstractWindowCompanion, Window}
+import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
+import com.simplesys.SmartClient.Layout.Window
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.AutoChild
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.Array
 
 @js.native
 trait LoginDialog extends Window {
@@ -36,7 +37,7 @@ trait LoginDialog extends Window {
 }
 
 @js.native
-abstract trait AbstractLoginDialogCompanion extends AbstractWindowCompanion {
+abstract trait AbstractLoginDialogCompanion extends AbstractCanvasCompanion {
     var LOGIN_BUTTON_TITLE: String = js.native
     var LOGIN_ERROR_MESSAGE: String = js.native
     var LOGIN_TITLE: String = js.native

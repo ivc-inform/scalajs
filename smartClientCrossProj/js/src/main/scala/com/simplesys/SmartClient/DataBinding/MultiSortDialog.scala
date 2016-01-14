@@ -1,15 +1,17 @@
 package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.Control.IButton
+import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
 import com.simplesys.SmartClient.Grids.ListGrid
-import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
-import com.simplesys.SmartClient.Layout.{AbstractWindowCompanion, Window}
-import com.simplesys.SmartClient.System.Types
+import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
+import com.simplesys.SmartClient.Layout.Window
 import com.simplesys.SmartClient.System.Types.{Callback, Object}
 import com.simplesys.System.Types._
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js._
+import scala.scalajs.js.Array
+import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait MultiSortDialog extends Window {
@@ -46,10 +48,11 @@ trait MultiSortDialog extends Window {
 }
 
 @js.native
-abstract trait AbstractMultiSortDialogCompanion extends AbstractWindowCompanion {
+abstract trait AbstractMultiSortDialogCompanion extends AbstractCanvasCompanion {
     def askForSort(fieldSource: Array[Object] | DataSource | DataBoundComponent, initialSort: Array[SortSpecifier], callback: Callback): void = js.native
 }
 
 @js.native
-object MultiSortDialog extends AbstractMultiSortDialogCompanion
+@JSName("MultiSortDialog")
+object MultiSortDialogStatic extends AbstractMultiSortDialogCompanion
 

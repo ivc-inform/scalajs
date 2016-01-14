@@ -46,10 +46,4 @@ trait NavigationBar extends HLayout {
     var upClick: js.ThisFunction0[callbackHandler, void]
 }
 
-@js.native
-abstract trait AbstractNavigationBarCompanion extends AbstractHLayoutCompanion {
-}
-
-@js.native
-object NavigationBar extends AbstractNavigationBarCompanion
 

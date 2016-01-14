@@ -7,10 +7,5 @@ import scala.scalajs.js.|
 trait SelectionTreeMenu extends Menu {
 }
 
-@js.native
-abstract trait AbstractSelectionTreeMenuCompanion extends AbstractMenuCompanion {
-}
 
-@js.native
-object SelectionTreeMenu extends AbstractSelectionTreeMenuCompanion
 

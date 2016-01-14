@@ -1,11 +1,9 @@
 package com.simplesys.SmartClient.Control
 
-import com.simplesys.SmartClient.Foundation.{AbstractStretchImgCompanion, StretchImg}
-import com.simplesys.System.Types.State.State
+import com.simplesys.SmartClient.Foundation.StretchImg
 import com.simplesys.System.Types._
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 trait StretchImgButton extends StretchImg {
@@ -31,10 +29,5 @@ trait StretchImgButton extends StretchImg {
     var wrap:Boolean
 }
 
-@js.native
-abstract trait AbstractStretchImgButtonCompanion extends AbstractStretchImgCompanion {
-}
 
-@js.native
-object StretchImgButton extends AbstractStretchImgButtonCompanion
 

@@ -2,17 +2,16 @@ package com.simplesys.SmartClient.Control
 
 import com.simplesys.SmartClient.Control.menu.MenuItem
 import com.simplesys.SmartClient.Foundation.{Canvas, Img}
-import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
-import com.simplesys.SmartClient.Grids.{AbstractListGridCompanion, ListGrid}
+import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.Layout.NavigationBar
-import com.simplesys.SmartClient.System.{Types, Tree}
-import com.simplesys.SmartClient.System.Types.Criteria
+import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
 import com.simplesys.System.Types._
-import com.simplesys.System.Types.MenuFieldID.MenuFieldID
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js._
+import scala.scalajs.js.Array
 
 @js.native
 trait Menu extends ListGrid[ListGridField, MenuItem] {
@@ -69,10 +68,4 @@ trait Menu extends ListGrid[ListGridField, MenuItem] {
     var useKeys: Boolean
 }
 
-@js.native
-abstract trait AbstractMenuCompanion extends AbstractListGridCompanion {
-}
-
-@js.native
-object Menu extends AbstractMenuCompanion
 

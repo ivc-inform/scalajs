@@ -9,7 +9,7 @@ import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Foundation.{StatefulCanvas, HTMLFlow, GridRenderer, Canvas}
 import com.simplesys.SmartClient.Grids.listGrid._
-import com.simplesys.SmartClient.Layout.{HLayout, Layout, AbstractVLayoutCompanion, VLayout}
+import com.simplesys.SmartClient.Layout.{HLayout, Layout, VLayout}
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
 import com.simplesys.SmartClient.System.{Selection, Tree, Types, Class}
 import com.simplesys.SmartClient.System.Types._
@@ -847,10 +847,5 @@ trait ListGrid[T <: ListGridField, R <: ListGridRecord] extends VLayout with Dat
     var wrapHeaderTitles: Boolean
 }
 
-@js.native
-abstract trait AbstractListGridCompanion extends AbstractVLayoutCompanion {
-}
 
-@js.native
-object ListGrid extends AbstractListGridCompanion
 

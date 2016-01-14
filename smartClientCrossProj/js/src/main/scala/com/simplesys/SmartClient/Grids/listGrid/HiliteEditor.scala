@@ -2,12 +2,11 @@ package com.simplesys.SmartClient.Grids.listGrid
 
 import com.simplesys.SmartClient.Foundation.StatefulCanvas
 import com.simplesys.SmartClient.Grids.ListGrid
-import com.simplesys.SmartClient.Layout.{AbstractVLayoutCompanion, VLayout}
+import com.simplesys.SmartClient.Layout.VLayout
 import com.simplesys.SmartClient.System.Types.Callback
-import com.simplesys.System.Types.{void, SCImgURL, AutoChild}
+import com.simplesys.System.Types.{AutoChild, SCImgURL, void}
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 trait HiliteEditor extends VLayout {
@@ -28,10 +27,4 @@ trait HiliteEditor extends VLayout {
     def setHilites(hilites: js.Array[Hilite]): void
 }
 
-@js.native
-abstract trait AbstractHiliteEditorCompanion extends AbstractVLayoutCompanion {
-}
-
-@js.native
-object HiliteEditor extends AbstractHiliteEditorCompanion
 

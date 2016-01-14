@@ -18,10 +18,4 @@ trait TreeMenuButton extends MenuButton {
     var unselectedTitle: HTMLString
 }
 
-@js.native
-abstract trait AbstractTreeMenuButtonCompanion extends AbstractMenuButtonCompanion {
-}
-
-@js.native
-   object TreeMenuButton extends AbstractTreeMenuButtonCompanion
 

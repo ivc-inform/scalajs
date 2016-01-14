@@ -33,10 +33,5 @@ trait Scrollbar extends StretchImg {
     val trackStartImg: StretchItem
 }
 
-@js.native
-abstract trait AbstractScrollbarCompanion extends AbstractStretchImgCompanion {
-}
 
-@js.native
-object Scrollbar extends AbstractScrollbarCompanion
 

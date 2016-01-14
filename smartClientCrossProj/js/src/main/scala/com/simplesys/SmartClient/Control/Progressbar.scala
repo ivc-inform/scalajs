@@ -1,10 +1,9 @@
 package com.simplesys.SmartClient.Control
 
-import com.simplesys.SmartClient.Foundation.{AbstractStretchImgCompanion, StretchImg}
-import com.simplesys.System.Types.{SCImgURL, void}
+import com.simplesys.SmartClient.Foundation.StretchImg
+import com.simplesys.System.Types.void
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 trait Progressbar extends StretchImg {
@@ -19,10 +18,4 @@ trait Progressbar extends StretchImg {
     def setPercentDone(newPercent: Int): void
 }
 
-@js.native
-abstract trait AbstractProgressbarCompanion extends AbstractStretchImgCompanion {
-}
-
-@js.native
-object Progressbar extends AbstractProgressbarCompanion
 

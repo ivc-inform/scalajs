@@ -7,10 +7,5 @@ import scala.scalajs.js.|
 trait ITreeMenuButton extends TreeMenuButton {
 }
 
-@js.native
-abstract trait AbstractITreeMenuButtonCompanion extends AbstractTreeMenuButtonCompanion {
-}
 
-@js.native
-object ITreeMenuButton extends AbstractITreeMenuButtonCompanion
 

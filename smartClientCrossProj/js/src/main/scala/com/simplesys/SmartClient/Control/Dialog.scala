@@ -1,11 +1,11 @@
 package com.simplesys.SmartClient.Control
 
-import com.simplesys.SmartClient.Foundation.{Label, Img}
-import com.simplesys.SmartClient.Layout.{Toolbar, Layout, AbstractWindowCompanion, Window}
+import com.simplesys.SmartClient.Foundation.{Img, Label}
+import com.simplesys.SmartClient.Layout.{Layout, Toolbar, Window}
 import com.simplesys.System.Types._
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.Array
 
 @js.native
 trait Dialog extends Window {
@@ -36,10 +36,5 @@ trait Dialog extends Window {
     var yesClick: js.Function1[void, _]
 }
 
-@js.native
-abstract trait AbstractDialogCompanion extends AbstractWindowCompanion {
-}
 
-@js.native
-   object Dialog extends AbstractDialogCompanion
 
