@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.Control.Button
 import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait AutoFitButton extends Button {
@@ -13,11 +14,8 @@ trait AutoFitButton extends Button {
 abstract trait AbstractAutoFitButtonCompanion extends AbstractCanvasCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-object AutoFitButton extends AbstractAutoFitButtonCompanion
-}
+@JSName ("AutoFitButton")
+object AutoFitButtonStatic extends AbstractAutoFitButtonCompanion
+
 

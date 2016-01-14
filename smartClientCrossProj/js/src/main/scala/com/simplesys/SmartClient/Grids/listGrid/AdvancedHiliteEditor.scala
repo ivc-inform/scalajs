@@ -4,10 +4,11 @@ import com.simplesys.SmartClient.Forms.{DynamicForm, FilterBuilder}
 import com.simplesys.SmartClient.Foundation.StatefulCanvas
 import com.simplesys.SmartClient.Layout.{AbstractVStackCompanion, VStack}
 import com.simplesys.SmartClient.System.Types.Callback
-import com.simplesys.System.Types.{void, SCImgURL, AutoChild}
+import com.simplesys.System.Types.{AutoChild, SCImgURL, void}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.Array
+import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait AdvancedHiliteEditor extends VStack {
@@ -32,11 +33,8 @@ trait AdvancedHiliteEditor extends VStack {
 abstract trait AbstractAdvancedHiliteEditorCompanion extends AbstractVStackCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object AdvancedHiliteEditor extends AbstractAdvancedHiliteEditorCompanion
-}
+@JSName("AdvancedHiliteEditor")
+object AdvancedHiliteEditorStatic extends AbstractAdvancedHiliteEditorCompanion
+
 

@@ -5,6 +5,7 @@ import com.simplesys.System.Types.void
 
 import scala.language.experimental.macros
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait Class extends Types.Object {
@@ -99,7 +100,7 @@ abstract trait AbstractClassCompanion extends Types.Object {
     def Super(methodName: String, args: js.Array[js.Any], nativeArgs: js.Array[js.Any] = js.native): js.Any = js.native
 }
 
-package companion {
-  @js.native
-  object Class extends AbstractClassCompanion
-}
+@js.native
+@JSName("Class")
+object ClassStatic extends AbstractClassCompanion
+

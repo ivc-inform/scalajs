@@ -4,12 +4,10 @@ import com.simplesys.SmartClient.Control.Menu
 import com.simplesys.SmartClient.DataBinding.AnimationCallback
 import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
-import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.Layout.PrintWindow
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System._
-import com.simplesys.SmartClient.Tools.{EditNode, EditContext}
-import com.simplesys.SmartClient.Tools.EditNode
+import com.simplesys.SmartClient.Tools.{EditContext, EditNode}
 import com.simplesys.System.Types.Alignment._
 import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.System.Types.BackgroundRepeat._
@@ -32,10 +30,9 @@ import com.simplesys.System.Types._
 import org.scalajs.dom.DocumentEvent
 import org.scalajs.dom.html.Element
 import org.scalajs.dom.raw.HTMLElement
-import com.simplesys.macros.PropsToDictionary
 
 import scala.scalajs.js
-import scala.scalajs.js.|
+import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait Canvas extends com.simplesys.SmartClient.System.Class {
@@ -396,7 +393,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def show(): void
     def showClickMask(clickAction: Callback, mode: ClickMaskMode, unmaskedTargets: Canvas | js.Array[Canvas]): String
     def showComponentMask(unmaskedChildren: js.Array[Canvas] = js.native): void
-    def showContextMenu ():Boolean
+    def showContextMenu(): Boolean
     val showCustomScrollbars: Boolean
     var showDragShadow: Boolean
     val showEdges: Boolean
@@ -469,12 +466,7 @@ abstract class AbstractCanvasCompanion extends AbstractClassCompanion {
     val TAB_INDEX_FLOOR: Int = js.native
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object Canvas extends AbstractCanvasCompanion {
-   }
-}
+@JSName("Canvas")
+object CanvasStatic extends AbstractCanvasCompanion
 

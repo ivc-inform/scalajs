@@ -4,12 +4,12 @@ import com.simplesys.SmartClient.DataBinding.Criterion
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types.{void, HTMLString}
 import com.simplesys.System.Types.Overflow.Overflow
 import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
+import com.simplesys.System.Types.void
 
 import scala.scalajs.js
-import scala.scalajs.js.|
+import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait CanvasItem extends FormItem {
@@ -35,11 +35,7 @@ trait CanvasItem extends FormItem {
 abstract trait AbstractCanvasItemCompanion extends AbstractFormItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object CanvasItem extends AbstractCanvasItemCompanion
-}
+@JSName("CanvasItem")
+object CanvasItemStatic extends AbstractCanvasItemCompanion
 

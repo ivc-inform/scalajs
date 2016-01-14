@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
 import scala.scalajs.js
-import scala.scalajs.js.|
+import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait CancelItem extends ButtonItem {
@@ -11,11 +11,7 @@ trait CancelItem extends ButtonItem {
 abstract trait AbstractCancelItemCompanion extends AbstractButtonItemCompanion {
 }
 
-package companion {
-
-import scala.scalajs.js
-
 @js.native
-   object CancelItem extends AbstractCancelItemCompanion
-}
+@JSName("CancelItem")
+object CancelItemStatic extends AbstractCancelItemCompanion
 
