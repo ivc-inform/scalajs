@@ -1,34 +1,4 @@
-val baseDate: Date
-    val calculatedDateField: BlurbItem with AutoChild
-    var centuryThreshold: Int
-    var daysAgoTitle: String
-    var daysFromNowTitle: String
-    val defaultQuantity: Int
-    val defaultValue: Date
-    var endDate: Date
-    def getCriterion(absolute: Boolean = js.native): Criterion
-    def getEnteredValue(): String
-    def getFiscalCalendar(): FiscalCalendar
-    def getInputFormat(): DateInputFormat
-    def getRelativeDate(): Types.Object
-    var hoursAgoTitle: String
-    var hoursFromNowTitle: String
-    var millisecondsAgoTitle: String
-    var millisecondsFromNowTitle: String
-    var minutesFromNowTitle: String
-    var monthsAgoTitle: String
-    var monthsFromNowTitle: String
-    var pickerIcon: FormItemIcon with AutoChild
-    val pickerTimeItemProperties: TimeItem
-    val presetOptions: Types.Object
-    val quantityField: SpinnerItem with AutoChild
-    var quartersAgoTitle: String
-    var quartersFromNowTitle: String
-    val rangePosition: RelativeDateRangePosition
-    val useSharedPicker: Boolean
-    val valueField: ComboBoxItem with AutoChild
-    val valueFieldWidth: Int | String
-    val weeksAgoTitle: String
-    val weeksFromNowTitle: String
-    val yearsAgoTitle: String
-    val yearsFromNowTitle: String
+val accept:String
+    val multiple:Boolean
+    def  setSelectionRange ():void
+    def  setValue ():void

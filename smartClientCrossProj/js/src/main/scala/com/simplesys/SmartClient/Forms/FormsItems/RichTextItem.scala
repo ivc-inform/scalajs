@@ -10,7 +10,6 @@ trait RichTextItem extends CanvasItem {
     var controlGroups: Array[String]
     var moveFocusOnTab:Boolean
     def  setMoveFocusOnTab (moveFocusOnTab:Boolean):void
-
 }
 
 @js.native
