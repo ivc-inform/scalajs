@@ -11,7 +11,7 @@ import scala.scalajs.js
 
 trait PropsToDictionary[P <: AbstractClassProps] {
     def getDictionary(props: P): js.Dictionary[js.Any]
-    def getMap(props: P): scala.collection.Map[String, scala.Any]
+    def getMap(props: P): scala.collection.Map[String, scala.Any] = getDictionary(props)
 }
 
 object PropsToDictionary extends Logging {
@@ -142,13 +142,6 @@ object PropsToDictionary extends Logging {
                         ..$abstractPropsClassFields
                         ..$simpleFields
                          res
-                    }
-
-                    def getMap(clazz: $tpeAbstractPropsClass): scala.collection.Map[String, scala.Any] = {
-                        val res = scala.collection.mutable.HashMap.empty[String, scala.Any]
-                       ..$abstractPropsClassFields
-                       ..$simpleFields
-                        res.toMap
                     }
                 }"""
         }
