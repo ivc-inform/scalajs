@@ -5,6 +5,11 @@ import com.simplesys.option.{ScOption, ScSome}
 import scala.scalajs.js
 
 package object function {
+
+    implicit class f01tf0_[+R](function0: Function0[R]) {
+        def toFunc = function0: js.Function0[R]
+    }
+
     implicit class f12tf0[-T1, +R](function1: Function1[T1, R]) {
         def toThisFunc = function1: js.ThisFunction0[T1, R]
     }

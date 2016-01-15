@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.System
 
+import com.simplesys.SmartClient.Control.props.DialogProps
 import com.simplesys.SmartClient.Control.{Dialog, LoginDialog}
 import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.System.Types.void
@@ -11,7 +12,7 @@ import scala.scalajs.js._
 object isc extends Types.Object {
     def addDefaults(destination: Types.Object, source: Types.Object): Types.Object = js.native
     def addProperties(destination: Types.Object, propsArray: js.Array[Types.Object]): Types.Object = js.native
-    def ask(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
+    def ask(message: String, callback: Callback = js.native, properties: DialogProps = js.native): void = js.native
     def askForValue(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
     def clearPrompt(): void = js.native
     def clone(obj: Types.Object): Types.Object = js.native
