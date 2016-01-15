@@ -1,10 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.System.Class
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.common.Strings._
-import com.simplesys.System.Types.FormItemType.FormItemType
+import com.simplesys.SmartClient.System.{Class, Types}
 import com.simplesys.System.Types.{CSSStyleName, SCImgURL}
 import com.simplesys.option._
 
