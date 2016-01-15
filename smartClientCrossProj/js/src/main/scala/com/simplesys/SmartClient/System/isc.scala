@@ -3,8 +3,10 @@ package com.simplesys.SmartClient.System
 import com.simplesys.SmartClient.Control.{Dialog, LoginDialog}
 import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.System.Types.void
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.ScalaJSDefined
 import scala.scalajs.js.|
 
 @js.native
@@ -37,7 +39,7 @@ object isc extends Types.Object {
     def makeReverseMap(valueMap: js.Dictionary[Types.Object]): js.Dictionary[Types.Object] = js.native
     def overwriteClass(): void = js.native
     def propertyDefined(obj: Types.Object, propertyName: String): Boolean = js.native
-    def say(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
+    def say(message: String, callback: Callback = js.native, properties: js.Dictionary[js.Any] = js.native): void = js.native
     def setAutoDraw(enable: Boolean = js.native): void = js.native
     def setScreenReaderMode(newState: Boolean): void = js.native
     def shallowClone(obj: Types.Object | js.Array[Types.Object]): Types.Object | js.Array[Types.Object] = js.native
