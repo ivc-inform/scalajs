@@ -284,7 +284,7 @@ trait FormItem extends Class {
     var titleVAlign: VerticalAlignment
     var top: Int
     var transformInput: js.Function4[DynamicForm, FormItem, js.Any, js.Any, js.Any]
-    var `type`: FormItemType
+    var `type`: FormItemType | String
     def updateState(): void
     var useDisabledHintStyleForReadOnly: Boolean
     def validate(): Boolean

@@ -1,9 +1,9 @@
 package com.simplesys.macros
 
-import com.simplesys.props.AbstractClassProps
-import com.simplesys.option._
 import com.simplesys.common.Strings._
 import com.simplesys.log.Logging
+import com.simplesys.option._
+import com.simplesys.props.AbstractClassProps
 
 import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context
@@ -63,7 +63,10 @@ object PropsToDictionary extends Logging {
                             getTree4DoubleType(typeOf[DoubleType[_, _]].typeSymbol, q"Type1", q"Type2") match {
                                 case None =>
                                     getTree4DoubleType(typeOf[IntString[_, _]].typeSymbol, q"IntFRomIntString", q"StringFRomIntString") match {
-                                        case None => getTree4DoubleType(typeOf[DoubleAlignment[_, _]].typeSymbol, q"AlignmentfromDoubleAlignment", q"VerticalAlignmentfromDoubleAlignment")
+                                        case None => getTree4DoubleType(typeOf[DoubleAlignment[_, _]].typeSymbol, q"AlignmentfromDoubleAlignment", q"VerticalAlignmentfromDoubleAlignment") match {
+                                            case None => getTree4DoubleType(typeOf[FormItemType_String[_, _]].typeSymbol, q"FormItemTypefromFormItemType_String", q"StringfromFormItemType_String")
+                                            case some => some
+                                        }
                                         case some => some
                                     }
                                 case some => some
@@ -109,10 +112,12 @@ object PropsToDictionary extends Logging {
             val name = field.name.toTermName
             val decoded = name.decodedName.toString
 
-            if (typeDef.typeSymbol.owner != tsScEnumeration)
-                q"""clazz.$name.foreach {item => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"item")})}"""
-            else
-                q"""clazz.$name.foreach {item => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"item.toString")})}"""
+            q"""clazz.$name.foreach {item => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"item")})}"""
+
+            //            if (typeDef.typeSymbol.owner != tsScEnumeration)
+            //                q"""clazz.$name.foreach {item => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"item")})}"""
+            //            else
+            //                q"""clazz.$name.foreach {item => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"item.toString")})}"""
         }
 
         val simpleFields = fSimple.map { case (field, typeDef, _) =>
