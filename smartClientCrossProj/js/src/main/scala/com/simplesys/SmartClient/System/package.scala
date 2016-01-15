@@ -13,6 +13,7 @@ import com.simplesys.macros.PropsToDictionary
 package object System {
     object IButton extends SCApply[IButton, IButtonProps]
     object FormItem extends SCApply[FormItem, FormItemProps]
+    object Dialog extends SCApply[Dialog, DialogProps]
     object ButtonItem extends SCApply[ButtonItem, ButtonItemProps]
     object DynamicForm extends SCApply[DynamicForm, DynamicFormProps]
     object Label extends SCApply[Label, LabelProps]
