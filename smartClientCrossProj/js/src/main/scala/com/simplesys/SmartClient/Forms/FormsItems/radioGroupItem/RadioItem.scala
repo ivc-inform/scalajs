@@ -10,10 +10,3 @@ trait RadioItem extends NativeCheckboxItem {
 
 }
 
-@js.native
-abstract trait AbstractRadioItemCompanion extends AbstractNativeCheckboxItemCompanion {
-}
-
-@js.native
-object RadioItem extends AbstractRadioItemCompanion
-

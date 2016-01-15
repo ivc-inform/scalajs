@@ -12,10 +12,4 @@ trait LinkItem extends TextItem {
     var target: String
 }
 
-@js.native
-abstract trait AbstractLinkItemCompanion extends AbstractTextItemCompanion {
-}
-
-@js.native
-object LinkItem extends AbstractLinkItemCompanion
 

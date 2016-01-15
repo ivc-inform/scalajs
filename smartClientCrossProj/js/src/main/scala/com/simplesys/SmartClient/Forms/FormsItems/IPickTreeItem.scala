@@ -7,10 +7,4 @@ import scala.scalajs.js.|
 trait IPickTreeItem extends PickTreeItem {
 }
 
-@js.native
-abstract trait AbstractIPickTreeItemCompanion extends AbstractPickTreeItemCompanion {
-}
-
-@js.native
-object IPickTreeItem extends AbstractIPickTreeItemCompanion
 

@@ -13,9 +13,3 @@ trait StaticTextItem extends FormItem {
     var wrap:Boolean
 }
 
-@js.native
-abstract trait AbstractStaticTextItemCompanion extends AbstractFormItemCompanion {
-}
-
-@js.native
-object StaticTextItem extends AbstractStaticTextItemCompanion        

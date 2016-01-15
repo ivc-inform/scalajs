@@ -13,10 +13,4 @@ trait UploadItem extends TextItem {
     def  setValue ():void
 }
 
-@js.native
-abstract trait AbstractUploadItemCompanion extends AbstractTextItemCompanion {
-}
-
-@js.native
-   object UploadItem extends AbstractUploadItemCompanion
 

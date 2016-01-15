@@ -29,10 +29,4 @@ trait MiniDateRangeItem extends StaticTextItem {
     val toDateOnlyPrefix: String
 }
 
-@js.native
-abstract trait AbstractMiniDateRangeItemCompanion extends AbstractStaticTextItemCompanion {
-}
-
-@js.native
-object MiniDateRangeItem extends AbstractMiniDateRangeItemCompanion
 

@@ -24,10 +24,4 @@ trait SliderItem extends CanvasItem {
     val vertical:Boolean
 }
 
-@js.native
-abstract trait AbstractSliderItemCompanion extends AbstractCanvasItemCompanion {
-}
-
-@js.native
-object SliderItem extends AbstractSliderItemCompanion
 

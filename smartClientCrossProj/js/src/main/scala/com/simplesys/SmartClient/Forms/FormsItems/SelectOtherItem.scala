@@ -16,12 +16,6 @@ trait SelectOtherItem extends SelectItem {
     var separatorValue: String
 }
 
-@js.native
-abstract trait AbstractSelectOtherItemCompanion extends AbstractFormItemCompanion {
-}
-
-@js.native
-object SelectOtherItem extends AbstractSelectItemCompanion
 
 
 

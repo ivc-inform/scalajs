@@ -17,10 +17,4 @@ trait PresetCriteriaItem extends SelectItem {
     val showCustomOption: Boolean
 }
 
-@js.native
-abstract trait AbstractPresetCriteriaItemCompanion extends AbstractSelectItemCompanion {
-}
-
-@js.native
-object PresetCriteriaItem extends AbstractPresetCriteriaItemCompanion
 

@@ -18,10 +18,4 @@ trait RadioGroupItem extends FormItem {
     var wrap:Boolean
 }
 
-@js.native
-abstract trait AbstractRadioGroupItemCompanion extends AbstractFormItemCompanion {
-}
-
-@js.native
-object RadioGroupItem extends AbstractRadioGroupItemCompanion
 

@@ -7,10 +7,4 @@ import scala.scalajs.js.|
 trait CycleItem extends FormItem {
 }
 
-@js.native
-abstract trait AbstractCycleItemCompanion extends AbstractFormItemCompanion {
-}
-
-@js.native
-   object CycleItem extends AbstractCycleItemCompanion
 

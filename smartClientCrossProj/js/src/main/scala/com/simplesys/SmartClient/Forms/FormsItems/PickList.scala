@@ -63,10 +63,4 @@ trait PickList extends Class {
     var valueIconField: String
 }
 
-@js.native
-abstract trait AbstractPickListCompanion extends AbstractClassCompanion {
-}
-
-@js.native
-object PickList extends AbstractPickListCompanion
 

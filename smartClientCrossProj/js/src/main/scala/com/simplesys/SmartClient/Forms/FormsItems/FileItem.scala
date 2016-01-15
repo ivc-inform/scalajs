@@ -18,9 +18,3 @@ trait FileItem extends CanvasItem {
     val viewIconSrc: SCImgURL
 }
 
-@js.native
-abstract trait AbstractFileItemCompanion extends AbstractCanvasItemCompanion {
-}
-
-@js.native
-object FileItem extends AbstractFileItemCompanion

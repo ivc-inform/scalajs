@@ -43,11 +43,5 @@ trait TextItem extends FormItem {
     var usePlaceholderForHint: Boolean
 }
 
-@js.native
-abstract trait AbstractTextItemCompanion extends AbstractFormItemCompanion {
-}
-
-@js.native
-object TextItem extends AbstractTextItemCompanion
 
 

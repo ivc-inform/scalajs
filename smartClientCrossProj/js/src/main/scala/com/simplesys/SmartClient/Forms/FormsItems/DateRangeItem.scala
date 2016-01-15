@@ -35,10 +35,3 @@ trait DateRangeItem extends CanvasItem {
     def validateRange(): Boolean
 }
 
-@js.native
-abstract trait AbstractDateRangeItemCompanion extends AbstractCanvasItemCompanion {
-}
-
-@js.native
-   object DateRangeItem extends AbstractDateRangeItemCompanion
-

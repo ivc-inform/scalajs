@@ -12,11 +12,5 @@ trait ColorItem extends TextItem {
     var supportsTransparency: Boolean
 }
 
-@js.native
-abstract trait AbstractColorItemCompanion extends AbstractTextItemCompanion {
-}
-
-@js.native
-object ColorItem extends AbstractColorItemCompanion
 
 

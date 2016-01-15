@@ -50,10 +50,4 @@ trait RelativeDateItem extends CanvasItem {
     val yearsFromNowTitle: String
 }
 
-@js.native
-abstract trait AbstractRelativeDateItemCompanion extends AbstractCanvasItemCompanion {
-}
-
-@js.native
-object RelativeDateItem extends AbstractRelativeDateItemCompanion
 

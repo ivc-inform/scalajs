@@ -8,10 +8,3 @@ trait FloatItem extends TextItem {
     def getValueAsFloat():Float
 }
 
-@js.native
-abstract trait AbstractFloatItemCompanion extends AbstractTextItemCompanion {
-}
-
-@js.native
-object FloatItem extends AbstractFloatItemCompanion
-

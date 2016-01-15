@@ -7,10 +7,4 @@ import scala.scalajs.js.|
 trait RowSpacerItem extends SpacerItem {
 }
 
-@js.native
-abstract trait AbstractRowSpacerItemCompanion extends AbstractSpacerItemCompanion {
-}
-
-@js.native
-object RowSpacerItem extends AbstractRowSpacerItemCompanion
 

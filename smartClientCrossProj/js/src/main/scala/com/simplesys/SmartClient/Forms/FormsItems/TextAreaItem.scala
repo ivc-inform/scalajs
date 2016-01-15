@@ -28,11 +28,5 @@ trait TextAreaItem extends FormItem {
     var wrap: TEXTAREA_WRAP
 }
 
-@js.native
-abstract trait AbstractTextAreaItemCompanion extends AbstractFormItemCompanion {
-}
-
-@js.native
-object TextAreaItem extends AbstractTextAreaItemCompanion
 
 

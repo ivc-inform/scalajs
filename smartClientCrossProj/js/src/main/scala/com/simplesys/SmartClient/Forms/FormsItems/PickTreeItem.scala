@@ -23,10 +23,3 @@ trait PickTreeItem extends CanvasItem {
     val valueTree: Tree
 }
 
-@js.native
-abstract trait AbstractPickTreeItemCompanion extends AbstractCanvasItemCompanion {
-}
-
-@js.native
-object PickTreeItem extends AbstractPickTreeItemCompanion
-

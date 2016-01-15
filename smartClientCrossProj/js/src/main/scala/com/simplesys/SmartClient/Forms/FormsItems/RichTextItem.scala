@@ -12,10 +12,4 @@ trait RichTextItem extends CanvasItem {
     def  setMoveFocusOnTab (moveFocusOnTab:Boolean):void
 }
 
-@js.native
-abstract trait AbstractRichTextItemCompanion extends AbstractCanvasItemCompanion {
-}
-
-@js.native
-object RichTextItem extends AbstractRichTextItemCompanion
 

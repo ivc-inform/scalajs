@@ -17,10 +17,4 @@ trait SectionItem extends CanvasItem {
     val sectionHeaderClass:String
 }
 
-@js.native
-abstract trait AbstractSectionItemCompanion extends AbstractCanvasItemCompanion {
-}
-
-@js.native
-object SectionItem extends AbstractSectionItemCompanion
 

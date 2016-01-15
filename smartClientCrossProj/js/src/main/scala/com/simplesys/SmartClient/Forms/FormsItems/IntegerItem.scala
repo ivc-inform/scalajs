@@ -8,10 +8,4 @@ trait IntegerItem extends TextItem {
     def getValueAsInteger ():Int
 }
 
-@js.native
-abstract trait AbstractIntegerItemCompanion extends AbstractTextItemCompanion {
-}
-
-@js.native
-object IntegerItem extends AbstractIntegerItemCompanion
 

@@ -31,11 +31,4 @@ trait CanvasItem extends FormItem {
     var showValue: js.Function3[js.Any, js.Any, DynamicForm, CanvasItem]
 }
 
-@js.native
-abstract trait AbstractCanvasItemCompanion extends AbstractFormItemCompanion {
-}
-
-@js.native
-@JSName("CanvasItem")
-object CanvasItemStatic extends AbstractCanvasItemCompanion
 

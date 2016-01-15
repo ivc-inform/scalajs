@@ -8,10 +8,4 @@ trait NativeCheckboxItem extends FormItem {
     var showLabel:Boolean
 }
 
-@js.native
-abstract trait AbstractNativeCheckboxItemCompanion extends AbstractFormItemCompanion {
-}
-
-@js.native
-object NativeCheckboxItem extends AbstractNativeCheckboxItemCompanion
 

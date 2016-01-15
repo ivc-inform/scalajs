@@ -12,14 +12,5 @@ trait BlurbItem extends FormItem {
     var wrap: Boolean
 }
 
-@js.native
-abstract trait AbstractBlurbItemCompanion extends AbstractFormItemCompanion {
-}
-
-import scala.scalajs.js
-
-@js.native
-@JSName("BlurbItem")
-object BlurbItemStatic extends AbstractBlurbItemCompanion
 
 

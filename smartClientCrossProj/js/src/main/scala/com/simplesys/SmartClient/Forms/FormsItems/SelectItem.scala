@@ -41,10 +41,3 @@ trait SelectItem extends FormItem with PickList {
 }
 
 
-@js.native
-abstract trait AbstractSelectItemCompanion extends AbstractFormItemCompanion {
-}
-
-@js.native
-object SelectItem extends AbstractSelectItemCompanion
-

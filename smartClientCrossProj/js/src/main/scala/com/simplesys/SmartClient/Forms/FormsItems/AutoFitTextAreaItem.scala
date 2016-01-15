@@ -8,12 +8,5 @@ trait AutoFitTextAreaItem extends TextAreaItem {
     var maxHeight: Int
 }
 
-@js.native
-abstract trait AbstractAutoFitTextAreaItemCompanion extends AbstractTextAreaItemCompanion {
-}
-
-@js.native
-@JSName("AutoFitTextAreaItem")
-object AutoFitTextAreaItemStatic extends AbstractAutoFitTextAreaItemCompanion
 
 

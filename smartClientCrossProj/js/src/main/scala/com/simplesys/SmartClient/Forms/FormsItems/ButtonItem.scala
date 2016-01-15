@@ -20,12 +20,5 @@ trait ButtonItem extends CanvasItem {
     var showFocusedAsOver: Boolean
 }
 
-@js.native
-abstract trait AbstractButtonItemCompanion extends AbstractCanvasItemCompanion {
-}
-
-@js.native
-@JSName("ButtonItem")
-object ButtonItemStatic extends AbstractButtonItemCompanion
 
 

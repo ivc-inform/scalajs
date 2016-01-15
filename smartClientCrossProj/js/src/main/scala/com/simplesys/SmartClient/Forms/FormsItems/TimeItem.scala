@@ -79,11 +79,5 @@ trait TimeItem extends FormItem {
     var useTextField:Boolean
 }
 
-@js.native
-abstract trait AbstractTimeItemCompanion extends AbstractFormItemCompanion {
-}
-
-@js.native
-object TimeItem extends AbstractTimeItemCompanion
 
 

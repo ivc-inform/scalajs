@@ -25,10 +25,4 @@ trait SpinnerItem extends TextItem {
     val writeStackedIcons: Boolean
 }
 
-@js.native
-abstract trait AbstractSpinnerItemCompanion extends AbstractTextItemCompanion {
-}
-
-@js.native
-object SpinnerItem extends AbstractSpinnerItemCompanion
 

@@ -7,10 +7,4 @@ import scala.scalajs.js.|
 trait PasswordItem extends FormItem {
 }
 
-@js.native
-abstract trait AbstractPasswordItemCompanion extends AbstractFormItemCompanion {
-}
-
-@js.native
-object PasswordItem extends AbstractPasswordItemCompanion
 

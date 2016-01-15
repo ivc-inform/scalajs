@@ -7,10 +7,4 @@ import scala.scalajs.js.|
 trait ViewFileItem extends FileItem {
 }
 
-@js.native
-abstract trait AbstractViewFileItemCompanion extends AbstractFileItemCompanion {
-}
-
-@js.native
-   object ViewFileItem extends AbstractViewFileItemCompanion
 

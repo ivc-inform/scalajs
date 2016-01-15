@@ -22,10 +22,4 @@ trait MultiFileItem extends RelationItem {
     val removeButtonPrompt:String
 }
 
-@js.native
-abstract trait AbstractMultiFileItemCompanion extends AbstractRelationItemCompanion {
-}
-
-@js.native
-object MultiFileItem extends AbstractMultiFileItemCompanion
 

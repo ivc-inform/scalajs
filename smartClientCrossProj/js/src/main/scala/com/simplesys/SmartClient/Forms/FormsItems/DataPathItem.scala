@@ -7,10 +7,4 @@ import scala.scalajs.js.|
 trait DataPathItem extends TextItem {
 }
 
-@js.native
-abstract trait AbstractDataPathItemCompanion extends AbstractTextItemCompanion {
-}
-
-@js.native
-   object DataPathItem extends AbstractDataPathItemCompanion
 

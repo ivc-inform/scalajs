@@ -7,10 +7,4 @@ import scala.scalajs.js.|
 trait RelationItem extends CanvasItem {
 }
 
-@js.native
-abstract trait AbstractRelationItemCompanion extends AbstractCanvasItemCompanion {
-}
-
-@js.native
-object RelationItem extends AbstractRelationItemCompanion
 

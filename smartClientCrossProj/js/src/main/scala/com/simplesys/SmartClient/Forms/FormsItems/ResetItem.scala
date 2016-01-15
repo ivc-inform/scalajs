@@ -7,10 +7,3 @@ import scala.scalajs.js.|
 trait ResetItem extends ButtonItem {
 }
 
-@js.native
-abstract trait AbstractResetItemCompanion extends AbstractButtonItemCompanion {
-}
-
-@js.native
-object ResetItem extends AbstractResetItemCompanion
-

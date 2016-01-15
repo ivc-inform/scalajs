@@ -8,10 +8,4 @@ trait HiddenItem extends FormItem {
     var fetchMissingValues:Boolean
 }
 
-@js.native
-abstract trait AbstractHiddenItemCompanion extends AbstractFormItemCompanion {
-}
-
-@js.native
-object HiddenItem extends AbstractHiddenItemCompanion
 

@@ -33,11 +33,4 @@ trait CheckboxItem extends FormItem {
     var unsetImage: SCImgURL
 }
 
-@js.native
-abstract trait AbstractCheckboxItemCompanion extends AbstractFormItemCompanion {
-}
-
-@js.native
-@JSName("CheckboxItem")
-object CheckboxItemStatic extends AbstractCheckboxItemCompanion
 

@@ -8,10 +8,4 @@ trait DoubleItem extends FloatItem {
     def getValueAsDouble():Double
 }
 
-@js.native
-abstract trait AbstractDoubleItemCompanion extends AbstractFloatItemCompanion {
-}
-
-@js.native
-   object DoubleItem extends AbstractDoubleItemCompanion
 

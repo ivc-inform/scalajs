@@ -312,11 +312,4 @@ trait FormItem extends Class {
     var wrapTitle: Boolean
 }
 
-@js.native
-abstract trait AbstractFormItemCompanion extends AbstractClassCompanion {
-    def create(): void = js.native
-}
-
-@js.native
-object FormItem extends AbstractFormItemCompanion
 

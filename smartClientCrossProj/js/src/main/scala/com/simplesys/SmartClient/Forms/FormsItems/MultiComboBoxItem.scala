@@ -29,10 +29,4 @@ trait MultiComboBoxItem extends CanvasItem {
     val valueLayout: Layout with MultiAutoChild
 }
 
-@js.native
-abstract trait AbstractMultiComboBoxItemCompanion extends AbstractCanvasItemCompanion {
-}
-
-@js.native
-object MultiComboBoxItem extends AbstractMultiComboBoxItemCompanion
 

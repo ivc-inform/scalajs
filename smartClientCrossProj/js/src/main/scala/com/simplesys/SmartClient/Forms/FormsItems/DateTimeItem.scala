@@ -7,10 +7,4 @@ import scala.scalajs.js.|
 trait DateTimeItem extends DateItem {
 }
 
-@js.native
-abstract trait AbstractDateTimeItemCompanion extends AbstractDateItemCompanion {
-}
-
-@js.native
-   object DateTimeItem extends AbstractDateTimeItemCompanion
 

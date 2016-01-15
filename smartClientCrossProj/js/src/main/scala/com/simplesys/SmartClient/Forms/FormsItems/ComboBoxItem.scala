@@ -46,10 +46,4 @@ trait ComboBoxItem extends TextItem with PickList {
     var showPickListOnKeypress:Boolean
 }
 
-@js.native
-abstract trait AbstractComboBoxItemCompanion extends AbstractTextItemCompanion {
-}
-
-@js.native
-   object ComboBoxItem extends AbstractComboBoxItemCompanion
 

@@ -17,11 +17,5 @@ trait ToolbarItem extends CanvasItem {
     var vertical:Boolean
 }
 
-@js.native
-abstract trait AbstractToolbarItemCompanion extends AbstractCanvasItemCompanion {
-}
-
-@js.native
-object ToolbarItem extends AbstractToolbarItemCompanion
 
 

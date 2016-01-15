@@ -56,10 +56,4 @@ trait DateItem extends FormItem {
     var yearSelectorProperties: SelectItem
 }
 
-@js.native
-abstract trait AbstractDateItemCompanion extends AbstractFormItemCompanion {
-}
-
-@js.native
-   object DateItem extends AbstractDateItemCompanion
 

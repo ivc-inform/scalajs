@@ -7,12 +7,5 @@ import scala.scalajs.js.annotation.JSName
 trait BooleanItem extends CycleItem {
 }
 
-@js.native
-abstract trait AbstractBooleanItemCompanion extends AbstractCycleItemCompanion {
-}
-
-@js.native
-@JSName("BooleanItem")
-object BooleanItemStatic extends AbstractBooleanItemCompanion
 
 
