@@ -12,7 +12,7 @@ trait Class extends Types.Object {
     type classHandler <: this.type
 
     def addAutoChild(childName: String, defaults: js.Dictionary[Types.Object]): Class
-    def addProperties(arguments: js.Dictionary[Types.Object]): Types.Object
+    def addProperties(arguments: js.Dictionary[js.Any]): Types.Object
     var addPropertiesOnCreate: Boolean
     def addPropertyList(list: js.Array[js.Dictionary[Types.Object]]): Types.Object
     def clearLogPriority(category: String): void

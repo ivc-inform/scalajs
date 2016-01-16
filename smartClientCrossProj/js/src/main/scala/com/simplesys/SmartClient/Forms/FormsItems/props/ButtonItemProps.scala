@@ -13,4 +13,5 @@ class ButtonItemProps extends CanvasItemProps {
     var buttonProperties: ScOption[Types.Object] = ScNone
     var icon: ScOption[SCImgURL] = ScNone
     var showFocusedAsOver: ScOption[Boolean] = ScNone
+    `type` = "ButtonItem"
 }
