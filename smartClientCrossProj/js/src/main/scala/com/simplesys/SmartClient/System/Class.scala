@@ -3,7 +3,6 @@ package com.simplesys.SmartClient.System
 import com.simplesys.System.Types.LogPriority.LogPriority
 import com.simplesys.System.Types.void
 
-import scala.language.experimental.macros
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 
@@ -103,4 +102,5 @@ abstract trait AbstractClassCompanion extends Types.Object {
 @js.native
 @JSName("Class")
 object ClassStatic extends AbstractClassCompanion
+
 
