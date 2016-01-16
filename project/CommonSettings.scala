@@ -20,7 +20,7 @@ object CommonSettings {
     object versions {
         val sprayVersion = "1.3.2"
         val uTestVersion = "0.3.1"
-        val scalaTestVersion = "2.2.5"
+        val scalaTestVersion = "3.0.0-M15"
         val ssysCoreVersion = "1.2-SNAPSHOT"
         val scalajsDOMVersion = "0.8.1"
     }
@@ -41,6 +41,7 @@ object CommonSettings {
 
     object jsDependencies {
         val scalajsDOM = Def.setting("org.scala-js" %%% "scalajs-dom" % versions.scalajsDOMVersion)
+        val scalaTest = Def.setting("org.scalatest" %%% "scalatest" %  versions.scalaTestVersion % "test")
     }
 
     object jvmDependencies {}
