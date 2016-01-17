@@ -14,7 +14,6 @@ trait JointJSProj {
           version := "1.0-SNAPSHOT",
 
           libraryDependencies ++= Seq(
-
           ),
 
           testFrameworks += new TestFramework("utest.runner.Framework"),
