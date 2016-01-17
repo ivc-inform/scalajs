@@ -10,7 +10,9 @@ MacroJSProject with
 MacroJVMProject with
 SmartClientCrossProj with
 CommonTypesProj with
-CommonDomainsProj {
+CommonDomainsProj with
+JointJSProj
+{
 
     override def settings: Seq[Def.Setting[_]] = super.settings ++ Seq(
         scalaVersion := CommonSettings.scalaVersion,
@@ -50,7 +52,9 @@ CommonDomainsProj {
       smartClientJS,
       smartClientJVM,
       commonDomainJS,
-      commonDomainJVM)
+      commonDomainJVM,
+      jointJSCrossJVM,
+      jointJSCrossJS)
 
 }
 
