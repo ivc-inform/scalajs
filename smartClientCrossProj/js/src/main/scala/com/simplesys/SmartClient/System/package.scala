@@ -51,23 +51,3 @@ package object System {
     //</editor-fold>
 }
 
-
-
-/*
-*
-* package object System {
-
-    //<editor-fold desc="Layout">
-//    object Deck extends SCApply[Deck, DeckProps]
-//    object HLayout extends SCApply[HLayout, HLayoutProps]
-//    object HStack extends SCApply[HStack, HStackProps]
-//    object IconButton extends SCApply[IconButton, IconButtonProps]
-//    object IconMenuButton extends SCApply[IconMenuButton, IconMenuButtonProps]
-//    object ImgSplitbar extends SCApply[ImgSplitbar, ImgSplitbarProps]
-//    object Layout extends SCApply[Layout, Layout]
-//    object VLayout extends SCApply[VLayout, VLayoutProps]
-//    object ToolStrip extends SCApply[ToolStrip, ToolStripProps]
-    //</editor-fold>
-}
-*
-* */
