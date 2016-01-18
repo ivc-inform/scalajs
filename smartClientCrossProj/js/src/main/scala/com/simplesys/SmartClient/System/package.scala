@@ -12,8 +12,8 @@ import com.simplesys.SmartClient.Foundation._
 import com.simplesys.SmartClient.Foundation.props._
 import com.simplesys.SmartClient.Layout._
 import com.simplesys.SmartClient.Layout.props._
-import com.simplesys.SmartClient.Layout.props.toolStrip.ToolStripMenuButtonProps
-import com.simplesys.SmartClient.Layout.toolStrip.ToolStripMenuButton
+import com.simplesys.SmartClient.Layout.props.toolStrip.{ToolStripButtonProps, ToolStripSeparatorProps, ToolStripMenuButtonProps}
+import com.simplesys.SmartClient.Layout.toolStrip.{ToolStripButton, ToolStripSeparator, ToolStripMenuButton}
 
 //import com.simplesys.macros.PropsToDictionary
 import com.simplesys.macros.PropsToDictionary
@@ -53,5 +53,7 @@ package object System {
     object VLayout extends SCApply[VLayout, VLayoutProps]
     object ToolStrip extends SCApply[ToolStrip, ToolStripProps]
     object ToolStripMenuButton extends SCApply[ToolStripMenuButton, ToolStripMenuButtonProps]
+    object ToolStripSeparator extends SCApply[ToolStripSeparator, ToolStripSeparatorProps]
+    object ToolStripButton extends SCApply[ToolStripButton, ToolStripButtonProps]
     //</editor-fold>
 }
