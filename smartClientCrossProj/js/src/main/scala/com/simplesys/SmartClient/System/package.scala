@@ -49,5 +49,6 @@ package object System {
     object ImgSplitbar extends SCApply[ImgSplitbar, ImgSplitbarProps]
     object Layout extends SCApply[Layout, LayoutProps]
     object VLayout extends SCApply[VLayout, VLayoutProps]
+    object ToolStrip extends SCApply[ToolStrip, ToolStripProps]
     //</editor-fold>
 }
