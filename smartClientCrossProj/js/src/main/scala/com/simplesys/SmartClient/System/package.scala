@@ -10,8 +10,11 @@ import com.simplesys.SmartClient.Forms._
 import com.simplesys.SmartClient.Forms.props._
 import com.simplesys.SmartClient.Foundation._
 import com.simplesys.SmartClient.Foundation.props._
+import com.simplesys.SmartClient.Layout._
+import com.simplesys.SmartClient.Layout.props._
 
 //import com.simplesys.macros.PropsToDictionary
+import com.simplesys.macros.PropsToDictionary
 
 package object System {
 
@@ -33,21 +36,16 @@ package object System {
     object ButtonItem extends SCApply[ButtonItem, ButtonItemProps]
     //</editor-fold>
 
-
     //<editor-fold desc="Foundation">
     object Label extends SCApply[Label, LabelProps]
     //</editor-fold>
 
     //<editor-fold desc="Layout">
-    //    object Deck extends SCApply[Deck, DeckProps]
-    //    object HLayout extends SCApply[HLayout, HLayoutProps]
-    //    object HStack extends SCApply[HStack, HStackProps]
-    //    object IconButton extends SCApply[IconButton, IconButtonProps]
-    //    object IconMenuButton extends SCApply[IconMenuButton, IconMenuButtonProps]
-    //    object ImgSplitbar extends SCApply[ImgSplitbar, ImgSplitbarProps]
-    //    object Layout extends SCApply[Layout, Layout]
-    //    object VLayout extends SCApply[VLayout, VLayoutProps]
-    //    object ToolStrip extends SCApply[ToolStrip, ToolStripProps]
+    object Deck extends SCApply[Deck, DeckProps]
+    object HLayout extends SCApply[HLayout, HLayoutProps]
+    object HStack extends SCApply[HStack, HStackProps]
+    object IconButton extends SCApply[IconButton, IconButtonProps]
+    object IconMenuButton extends SCApply[IconMenuButton, IconMenuButtonProps]
+
     //</editor-fold>
 }
-
