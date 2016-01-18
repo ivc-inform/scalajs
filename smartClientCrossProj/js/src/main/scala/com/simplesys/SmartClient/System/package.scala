@@ -48,5 +48,6 @@ package object System {
     object IconMenuButton extends SCApply[IconMenuButton, IconMenuButtonProps]
     object ImgSplitbar extends SCApply[ImgSplitbar, ImgSplitbarProps]
     object Layout extends SCApply[Layout, LayoutProps]
+    object VLayout extends SCApply[VLayout, VLayoutProps]
     //</editor-fold>
 }
