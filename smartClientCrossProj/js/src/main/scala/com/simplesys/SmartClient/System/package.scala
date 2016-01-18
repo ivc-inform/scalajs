@@ -46,6 +46,7 @@ package object System {
     object HStack extends SCApply[HStack, HStackProps]
     object IconButton extends SCApply[IconButton, IconButtonProps]
     object IconMenuButton extends SCApply[IconMenuButton, IconMenuButtonProps]
-
+    object ImgSplitbar extends SCApply[ImgSplitbar, ImgSplitbarProps]
+    object Layout extends SCApply[Layout, LayoutProps]
     //</editor-fold>
 }
