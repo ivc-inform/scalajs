@@ -6,7 +6,7 @@ import sbt.Keys._
 import sbt._
 
 trait JointJSProj {
-    self: Build  =>
+    self: Build  with MacroJSProject with MacroJVMProject with CommonTypesProj =>
 
     lazy val jointJSCrossProj = crossProject.
       settings(
@@ -14,6 +14,7 @@ trait JointJSProj {
           version := "1.0-SNAPSHOT",
 
           libraryDependencies ++= Seq(
+              CommonSettings.cmnDependencies.scalaTest.value
           ),
 
           testFrameworks += new TestFramework("utest.runner.Framework"),
@@ -22,7 +23,7 @@ trait JointJSProj {
       jvmSettings().
       jsSettings(
           libraryDependencies ++= Seq()
-      ).jsConfigure(x => x)
+      ).dependsOn().jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
 
     lazy val jointJSCrossJVM = jointJSCrossProj.jvm
     lazy val jointJSCrossJS = jointJSCrossProj.js
