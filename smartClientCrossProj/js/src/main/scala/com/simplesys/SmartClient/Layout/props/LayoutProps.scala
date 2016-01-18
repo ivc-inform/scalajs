@@ -34,7 +34,7 @@ class LayoutProps extends CanvasProps {
     var locateMembersType: ScOption[LocatorTypeStrategy] = ScNone
     var managePercentBreadth: ScOption[Boolean] = ScNone
     var memberOverlap: ScOption[Int] = ScNone
-    var members: ScOption[js.Array[_ <: Canvas]] = ScNone
+    var members: ScOption[js.Array[Canvas]] = ScNone
     var membersChanged: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone
     var membersMargin: ScOption[Int] = ScNone
     var minMemberSize: ScOption[Int] = ScNone
