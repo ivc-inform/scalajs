@@ -4,15 +4,14 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.AbstractClassCompanion
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.LayoutPolicy.LayoutPolicy
+import com.simplesys.System.Types.LayoutResizeBarPolicy.LayoutResizeBarPolicy
 import com.simplesys.System.Types.LocatorStrategy.LocatorStrategy
 import com.simplesys.System.Types.LocatorTypeStrategy.LocatorTypeStrategy
-import com.simplesys.System.Types.Overflow.Overflow
-import com.simplesys.System.Types.{void, MultiAutoChild, SCClassName, AutoChild}
-import com.simplesys.System.Types.LayoutResizeBarPolicy.LayoutResizeBarPolicy
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
+import com.simplesys.System.Types.{AutoChild, MultiAutoChild, void}
 
 import scala.scalajs.js
-import scala.scalajs.js.{ThisFunction0, |}
+import scala.scalajs.js.|
 
 @js.native
 trait Layout extends Canvas {
@@ -50,7 +49,7 @@ trait Layout extends Canvas {
     var locateMembersType: LocatorTypeStrategy
     val managePercentBreadth: Boolean
     val memberOverlap: Int
-    val members: js.Array[Canvas]
+    val members: js.Array[Canvas | String]
     var membersChanged: js.ThisFunction0[callbackHandler, void]
     var membersMargin: Int
     var minMemberSize: Int
@@ -83,5 +82,5 @@ abstract trait AbstractLayoutCompanion extends AbstractClassCompanion {
 }
 
 @js.native
-   object Layout extends AbstractLayoutCompanion
+object Layout extends AbstractLayoutCompanion
 
