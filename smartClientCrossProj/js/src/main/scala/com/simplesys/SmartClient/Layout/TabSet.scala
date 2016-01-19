@@ -11,7 +11,7 @@ import scala.scalajs.js.{Array, |}
 trait TabSet extends Canvas {
     def addTabs(tabs: Tab | Array[Tab], position: Int): void
     var animateTabScrolling: Boolean
-    var canAddTabs: Boolean
+    //var canAddTabs: Boolean Не работает
     var canCloseTabs: Boolean
     var canReorderTabs: Boolean
     var locateTabsBy: String

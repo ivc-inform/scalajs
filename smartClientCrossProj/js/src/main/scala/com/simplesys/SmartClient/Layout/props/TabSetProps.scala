@@ -10,7 +10,7 @@ import scala.scalajs.js
 
 class TabSetProps extends CanvasProps {
     var animateTabScrolling: ScOption[Boolean] = ScNone
-    var canAddTabs: ScOption[Boolean] = ScNone
+    //var canAddTabs: ScOption[Boolean] = ScNone  не работает
     var canCloseTabs: ScOption[Boolean] = ScNone
     var canReorderTabs: ScOption[Boolean] = ScNone
     var locateTabsBy: ScOption[String] = ScNone
