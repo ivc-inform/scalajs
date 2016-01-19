@@ -41,7 +41,7 @@ package object System {
     //<editor-fold desc="DataBinding">
     object DataView extends SCApply[DataView, DataViewProps]
     object DataSource extends SCApply[DataSource, DataSourceProps]
-    //object DataSourceField extends SCApply[DataSourceField, DataSourceFieldProps]
+    object DataSourceField extends SCApply[DataSourceField, DataSourceFieldProps]
     object RestDataSource extends SCApply[RestDataSource, RestDataSourceProps]
     //</editor-fold>
 
@@ -73,7 +73,7 @@ package object System {
     object Layout extends SCApply[Layout, LayoutProps]
     object VLayout extends SCApply[VLayout, VLayoutProps]
     object TabSet extends SCApply[TabSet, TabSetProps]
-    //object Tab extends SCApply[Tab, TabProps]
+    object Tab extends SCApply[Tab, TabProps]
     object Window extends SCApply[Window, WindowProps]
     object Portlet extends SCApply[Portlet, PortletProps]
     object PortalLayout	 extends SCApply[PortalLayout	, PortalLayoutProps]
