@@ -8,7 +8,7 @@ import sbt._
 trait JointJSProj {
     self: Build  with MacroJSProject with MacroJVMProject with CommonTypesProj =>
 
-    lazy val jointJSCrossProj = crossProject.
+    lazy val jointJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).
       settings(
           name := "joint-js",
           version := "1.0-SNAPSHOT",
