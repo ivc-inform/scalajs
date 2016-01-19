@@ -2,8 +2,10 @@ package com.simplesys.SmartClient
 
 import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.Control.props._
-import com.simplesys.SmartClient.DataBinding.DataView
-import com.simplesys.SmartClient.DataBinding.props.DataViewProps
+import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
+import com.simplesys.SmartClient.DataBinding.props.dataSource.DataSourceFieldProps
+import com.simplesys.SmartClient.DataBinding.{DataSource, DataView}
+import com.simplesys.SmartClient.DataBinding.props.{DataSourceProps, DataViewProps}
 import com.simplesys.SmartClient.Forms.FormsItems.props.{ButtonItemProps, FormItemProps}
 import com.simplesys.SmartClient.Forms.FormsItems.{ButtonItem, FormItem}
 import com.simplesys.SmartClient.Forms._
@@ -36,6 +38,8 @@ package object System {
 
     //<editor-fold desc="DataBinding">
     object DataView extends SCApply[DataView, DataViewProps]
+    object DataSource extends SCApply[DataSource, DataSourceProps]
+    object DataSourceField extends SCApply[DataSourceField, DataSourceFieldProps]
     //</editor-fold>
 
     //<editor-fold desc="Forms">
