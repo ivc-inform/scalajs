@@ -9,6 +9,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
+
 class Tab extends Types.Object {
     var canClose: Boolean = js.native
     var canEditTitle: Boolean = js.native

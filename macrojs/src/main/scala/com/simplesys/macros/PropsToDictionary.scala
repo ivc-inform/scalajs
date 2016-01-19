@@ -114,11 +114,6 @@ object PropsToDictionary extends Logging {
             val decoded = name.decodedName.toString
 
             q"""clazz.$name.foreach {item => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"item")})}"""
-
-            //            if (typeDef.typeSymbol.owner != tsScEnumeration)
-            //                q"""clazz.$name.foreach {item => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"item")})}"""
-            //            else
-            //                q"""clazz.$name.foreach {item => res.update($decoded, ${typeToConvertedValue(context)(typeDef, q"item.toString")})}"""
         }
 
         val simpleFields = fSimple.map { case (field, typeDef, _) =>
