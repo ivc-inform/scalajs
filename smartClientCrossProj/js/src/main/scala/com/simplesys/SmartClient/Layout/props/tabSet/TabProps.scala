@@ -3,8 +3,8 @@ package com.simplesys.SmartClient.Layout.props.tabSet
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Layout.TabSet
 import com.simplesys.SmartClient.Layout.tabSet.Tab
-import com.simplesys.System.Types.{SCImgURL, void, HTMLString}
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.System.Types._
+import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 
 import scala.scalajs.js
@@ -23,7 +23,7 @@ class TabProps extends AbstractClassProps {
     var iconWidth: ScOption[Int] = ScNone
     var ID: ScOption[String] = ScNone
     var name: ScOption[String] = ScNone
-    var pane: ScOption[String | Canvas] = ScNone
+    var pane: ScOption[Canvas] = ScNone
     var paneMargin: ScOption[Int] = ScNone
     var pickerTitle: ScOption[HTMLString] = ScNone
     var prompt: ScOption[HTMLString] = ScNone

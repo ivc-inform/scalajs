@@ -1,8 +1,7 @@
 package com.simplesys.SmartClient.Layout.props.tabSet
 
-import com.simplesys.SmartClient.Control.props.ButtonProps
+import com.simplesys.props.AbstractClassProps
 
-import scala.scalajs.js._
+class SimpleTabButtonProps extends AbstractClassProps {
 
-class SimpleTabButtonProps extends ButtonProps {
 }

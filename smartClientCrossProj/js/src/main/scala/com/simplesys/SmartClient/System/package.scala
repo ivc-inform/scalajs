@@ -2,8 +2,10 @@ package com.simplesys.SmartClient
 
 import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.Control.props._
-import com.simplesys.SmartClient.DataBinding.DataView
-import com.simplesys.SmartClient.DataBinding.props.DataViewProps
+import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
+import com.simplesys.SmartClient.DataBinding.props.dataSource.DataSourceFieldProps
+import com.simplesys.SmartClient.DataBinding.{RestDataSource, DataSource, DataView}
+import com.simplesys.SmartClient.DataBinding.props.{RestDataSourceProps, DataSourceProps, DataViewProps}
 import com.simplesys.SmartClient.Forms.FormsItems.props.{ButtonItemProps, FormItemProps}
 import com.simplesys.SmartClient.Forms.FormsItems.{ButtonItem, FormItem}
 import com.simplesys.SmartClient.Forms._
@@ -17,7 +19,9 @@ import com.simplesys.SmartClient.Layout._
 import com.simplesys.SmartClient.Layout.portalLayout.Portlet
 import com.simplesys.SmartClient.Layout.props._
 import com.simplesys.SmartClient.Layout.props.portalLayout.PortletProps
+import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
 import com.simplesys.SmartClient.Layout.props.toolStrip.{ToolStripResizerProps, ToolStripButtonProps, ToolStripSeparatorProps, ToolStripMenuButtonProps}
+import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.SmartClient.Layout.toolStrip.{ToolStripResizer, ToolStripButton, ToolStripSeparator, ToolStripMenuButton}
 
 //import com.simplesys.macros.PropsToDictionary
@@ -36,6 +40,9 @@ package object System {
 
     //<editor-fold desc="DataBinding">
     object DataView extends SCApply[DataView, DataViewProps]
+    object DataSource extends SCApply[DataSource, DataSourceProps]
+    object DataSourceField extends SCApply[DataSourceField, DataSourceFieldProps]
+    object RestDataSource extends SCApply[RestDataSource, RestDataSourceProps]
     //</editor-fold>
 
     //<editor-fold desc="Forms">
@@ -66,6 +73,7 @@ package object System {
     object Layout extends SCApply[Layout, LayoutProps]
     object VLayout extends SCApply[VLayout, VLayoutProps]
     object TabSet extends SCApply[TabSet, TabSetProps]
+    object Tab extends SCApply[Tab, TabProps]
     object Window extends SCApply[Window, WindowProps]
     object Portlet extends SCApply[Portlet, PortletProps]
     object PortalLayout	 extends SCApply[PortalLayout	, PortalLayoutProps]
