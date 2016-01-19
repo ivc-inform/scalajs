@@ -1,7 +1,5 @@
 package com.simplesys.joint.dia
 
-import com.simplesys.option.{ScNone, ScOption}
-
 import scala.scalajs.js
 
 @js.native
@@ -18,6 +16,6 @@ trait Area {
 }
 
 class ElementOption extends AbstractOption {
-    val restrictedArea: ScOption[Area] = ScNone
-    val parentRelative: ScOption[Boolean] = ScNone
+    val restrictedArea: Option[Area] = None
+    val parentRelative: Option[Boolean] = None
 }
