@@ -60,7 +60,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait ListGrid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBoundComponent {
+trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBoundComponent {
     def addData(newRecord: Record, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def addEmbeddedComponent(component: Canvas, record: Record, rowNum: Int = js.native, colNum: Int = js.native, position: Int = js.native): void
     def addSort(sortSpecifier: SortSpecifier): void
@@ -162,7 +162,7 @@ trait ListGrid[T <: ListGridField, R <: ListGridRecord] extends VLayout with Dat
     def canSelectRecord(record: R): Boolean
     var canSort: Boolean
     val canTabToHeader: Boolean
-    val cellChanged: js.Function5[R, js.Any, Int, Int, ListGrid[T, R], void]
+    val cellChanged: js.Function5[R, js.Any, Int, Int, Grid[T, R], void]
     val cellClick: js.Function3[R, Int, Int, Boolean]
     val cellContextClick: js.Function3[R, Int, Int, Boolean]
     val cellContextMenu: Layout with AutoChild
@@ -271,14 +271,14 @@ trait ListGrid[T <: ListGridField, R <: ListGridRecord] extends VLayout with Dat
     var expansionEditorSaveButtonTitle: String
     val expansionEditorSaveDialogPrompt: String
     val expansionEditorShowSaveDialog: Boolean
-    var expansionField: ListGrid[T, R] with AutoChild
+    var expansionField: Grid[T, R] with AutoChild
     var expansionFieldFalseImage: SCImgURL
     val expansionFieldImageHeight: Int
     val expansionFieldImageWidth: Int
     var expansionFieldTrueImage: SCImgURL
     val expansionLayout: VLayout with MultiAutoChild
     var expansionMode: ExpansionMode
-    val expansionRelated: ListGrid[T, R] with MultiAutoChild
+    val expansionRelated: Grid[T, R] with MultiAutoChild
     val exportAlternateRowBGColor: CSSColor
     def exportClientData(requestProperties: DSRequest = js.native, callback: RPCCallback): void
     val exportDefaultBGColor: CSSColor
@@ -579,13 +579,13 @@ trait ListGrid[T <: ListGridField, R <: ListGridRecord] extends VLayout with Dat
     var recordBaseStyleProperty: String
     var recordCanRemoveProperty: String
     var recordCanSelectProperty: String
-    var recordClick: js.ThisFunction7[callbackHandler, ListGrid[T, R], R, Int, T, Int, js.Any, js.Any, Boolean]
+    var recordClick: js.ThisFunction7[callbackHandler, Grid[T, R], R, Int, T, Int, js.Any, js.Any, Boolean]
     var recordComponentHeight: Int
     var recordComponentPoolingMode: RecordComponentPoolingMode
     var recordComponentPosition: EmbeddedPosition
     var recordCustomStyleProperty: String
     var recordDetailDSProperty: String
-    var recordDoubleClick: js.ThisFunction7[callbackHandler, ListGrid[T, R], R, Int, T, Int, js.Any, js.Any, Boolean]
+    var recordDoubleClick: js.ThisFunction7[callbackHandler, Grid[T, R], R, Int, T, Int, js.Any, js.Any, Boolean]
     def recordDrop(dropRecords: js.Array[R], targetRecord: R, index: Int, sourceWidget: Canvas): void
     var recordDropAppearance: RecordDropAppearance
     var recordEditProperty: String
@@ -799,7 +799,7 @@ trait ListGrid[T <: ListGridField, R <: ListGridRecord] extends VLayout with Dat
     def startEditingNew(newValues: Types.Object | R = js.native, suppressFocus: Boolean = js.native): void
     var stopHover: js.ThisFunction0[callbackHandler, void]
     var stopOnErrors: Boolean
-    val summaryRow: ListGrid[T, R] with AutoChild
+    val summaryRow: Grid[T, R] with AutoChild
     var summaryRowCriteria: Criteria
     val summaryRowDataSource: DataSource
     var summaryRowFetchRequestProperties: DSRequest
@@ -846,6 +846,9 @@ trait ListGrid[T <: ListGridField, R <: ListGridRecord] extends VLayout with Dat
     var wrapCells: Boolean
     var wrapHeaderTitles: Boolean
 }
+
+@js.native
+trait ListGrid extends Grid[ListGridField, ListGridRecord]
 
 
 

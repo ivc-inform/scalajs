@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
@@ -30,7 +30,7 @@ class SelectItemProps extends FormItemProps with PickListProps{
     var pickListPlacement: ScOption[PanelPlacement | Canvas | String] = ScNone
     var progressiveLoading: ScOption[Boolean] = ScNone
     var separateSpecialValues: ScOption[Boolean] = ScNone
-    var separateValuesList: ScOption[ListGrid[ListGridField, ListGridRecord]] = ScNone
+    var separateValuesList: ScOption[Grid[ListGridField, ListGridRecord]] = ScNone
     var showHintInField: ScOption[Boolean] = ScNone
     var showOver: ScOption[Boolean] = ScNone
 }

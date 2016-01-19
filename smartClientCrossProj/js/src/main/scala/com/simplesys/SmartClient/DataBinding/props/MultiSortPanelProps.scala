@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.DataBinding.props
 
 import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.DataBinding.SortSpecifier
-import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.props.LayoutProps
 import com.simplesys.System.Types.HTMLString
@@ -29,7 +29,7 @@ class MultiSortPanelProps extends LayoutProps {
     var levelUpButton: ScOption[IButton] = ScNone
     var levelUpButtonTitle: ScOption[String] = ScNone
     var maxLevels: ScOption[Int] = ScNone
-    var optionsGrid: ScOption[ListGrid[ListGridField, ListGridRecord]] = ScNone
+    var optionsGrid: ScOption[Grid[ListGridField, ListGridRecord]] = ScNone
     var otherSortLevelTitle: ScOption[String] = ScNone
     var propertyFieldTitle: ScOption[String] = ScNone
 }

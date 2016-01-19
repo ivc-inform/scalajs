@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Forms.FormsItems
 import javax.security.auth.callback.Callback
 
 import com.simplesys.SmartClient.DataBinding.{DSCallback, DataSource, DSRequest, ResultSet}
-import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.System.AbstractClassCompanion
 import com.simplesys.SmartClient.System.Class
@@ -49,7 +49,7 @@ trait PickList extends Class {
     var pickListHeaderHeight: Int
     var pickListHeight: Int
     var pickListMaxWidth: Int
-    var pickListProperties: ListGrid[ListGridField, ListGridRecord]
+    var pickListProperties: Grid[ListGridField, ListGridRecord]
     val pickListTallBaseStyle: CSSStyleName
     var pickListWidth: Int
     var separatorRows: Array[ListGridRecord]

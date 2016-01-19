@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Control
 
 import com.simplesys.SmartClient.Control.menu.MenuItem
 import com.simplesys.SmartClient.Foundation.{Canvas, Img}
-import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.System.Types
@@ -14,7 +14,7 @@ import scala.scalajs.js._
 import scala.scalajs.js.Array
 
 @js.native
-trait Menu extends ListGrid[ListGridField, MenuItem] {
+trait Menu extends Grid[ListGridField, MenuItem] {
     var autoDismiss: Boolean
     var autoDismissOnBlur: Boolean
     var cancelButtonTitle: HTMLString

@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.HTMLFlow
-import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.props.VStackProps
 import com.simplesys.SmartClient.System.Types
@@ -27,7 +27,7 @@ class BatchUploaderProps extends VStackProps {
     var defaultQuoteString: ScOption[String] = ScNone
     var discardedColumnsMessage: ScOption[String] = ScNone
     var displayDiscardedColumns: ScOption[Boolean] = ScNone
-    var grid: ScOption[ListGrid[ListGridField, ListGridRecord]] = ScNone
+    var grid: ScOption[Grid[ListGridField, ListGridRecord]] = ScNone
     var gridFields: ScOption[Array[ListGridField]] = ScNone
     var partialCommit: ScOption[PartialCommitOption] = ScNone
     var partialCommitConfirmationMessage: ScOption[String] = ScNone

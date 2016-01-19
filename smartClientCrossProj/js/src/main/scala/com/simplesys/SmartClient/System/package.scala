@@ -10,9 +10,9 @@ import com.simplesys.SmartClient.Forms._
 import com.simplesys.SmartClient.Forms.props._
 import com.simplesys.SmartClient.Foundation._
 import com.simplesys.SmartClient.Foundation.props._
-import com.simplesys.SmartClient.Grids.{TreeGrid, ListGrid}
+import com.simplesys.SmartClient.Grids.{ListGrid, TreeGrid, Grid}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
-import com.simplesys.SmartClient.Grids.props.{TreeGridProps, ListGridProps}
+import com.simplesys.SmartClient.Grids.props.{ListGridProps, TreeGridProps, GridProps}
 import com.simplesys.SmartClient.Layout._
 import com.simplesys.SmartClient.Layout.props._
 import com.simplesys.SmartClient.Layout.props.toolStrip.{ToolStripResizerProps, ToolStripButtonProps, ToolStripSeparatorProps, ToolStripMenuButtonProps}
@@ -50,7 +50,7 @@ package object System {
     //</editor-fold>
 
     //<editor-fold desc="Grids">
-    object ListGrid extends SCApply[ListGrid[ListGridField, ListGridRecord], ListGridProps[ListGridField, ListGridRecord]]
+    object ListGrid extends SCApply[ListGrid, ListGridProps]
     object TreeGrid extends SCApply[TreeGrid, TreeGridProps]
     //</editor-fold>
 

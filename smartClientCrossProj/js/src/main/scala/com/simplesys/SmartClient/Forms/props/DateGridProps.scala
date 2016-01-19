@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.Forms.props
 
-import com.simplesys.SmartClient.Grids.props.ListGridProps
+import com.simplesys.SmartClient.Grids.props.GridProps
 
 import scala.scalajs.js._
 
-class DateGridProps extends ListGridProps {
+class DateGridProps extends GridProps {
 }

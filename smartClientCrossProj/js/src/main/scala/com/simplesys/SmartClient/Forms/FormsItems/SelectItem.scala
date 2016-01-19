@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.SmartClient.DataBinding.DSRequest
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
@@ -35,7 +35,7 @@ trait SelectItem extends FormItem with PickList {
     val pickListPlacement :PanelPlacement | Canvas | String
     val progressiveLoading: Boolean
     val separateSpecialValues: Boolean
-    val separateValuesList:ListGrid[ListGridField, ListGridRecord]
+    val separateValuesList:Grid[ListGridField, ListGridRecord]
     var showHintInField:Boolean
     var showOver:Boolean
 }

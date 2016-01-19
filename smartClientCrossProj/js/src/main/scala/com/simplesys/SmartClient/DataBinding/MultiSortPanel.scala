@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.Control.IButton
-import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
 import com.simplesys.SmartClient.Layout.{AbstractLayoutCompanion, Layout}
 import com.simplesys.SmartClient.System.Types
@@ -34,7 +34,7 @@ trait MultiSortPanel extends Layout {
     val levelUpButton: IButton with AutoChild
     val levelUpButtonTitle: String
     val maxLevels: Int
-    val optionsGrid: ListGrid[ListGridField, ListGridRecord] with AutoChild
+    val optionsGrid: Grid[ListGridField, ListGridRecord] with AutoChild
     val otherSortLevelTitle: String
     val propertyFieldTitle: String
     def sortChanged (sortLevels: Array[SortSpecifier])

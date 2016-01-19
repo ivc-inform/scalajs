@@ -10,7 +10,7 @@ import com.simplesys.option.{ScOption, ScNone}
 import scala.scalajs.js
 import scala.scalajs.js._
 
-class TableViewProps extends ListGridProps {
+class TableViewProps extends GridProps {
     var formatRecord: ScOption[js.Function1[ListGridRecord, HTMLString]] = ScNone
     var imageClick: ScOption[js.Function1[ListGridRecord, HTMLString]] = ScNone
     var navIcon: ScOption[SCImgURL] = ScNone

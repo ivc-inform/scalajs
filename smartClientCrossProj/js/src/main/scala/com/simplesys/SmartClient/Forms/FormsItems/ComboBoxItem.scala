@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Forms.FormsItems
 import com.simplesys.SmartClient.DataBinding.Criterion
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
@@ -40,7 +40,7 @@ trait ComboBoxItem extends TextItem with PickList {
     var progressiveLoading:Boolean
     var searchStringTooShortMessage:String
     var separateSpecialValues:Boolean
-    var separateValuesList:ListGrid[ListGridField, ListGridRecord]
+    var separateValuesList:Grid[ListGridField, ListGridRecord]
     def setCriterion ():void
     def shouldGenerateExactMatchCriteria ():Boolean
     var showPickListOnKeypress:Boolean

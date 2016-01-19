@@ -17,7 +17,7 @@ import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
 
 @js.native
-trait TreeGrid extends ListGrid[TreeGridField, ListGridRecord] {
+trait TreeGrid extends Grid[TreeGridField, ListGridRecord] {
     var alwaysShowOpener: Boolean
     var autoPreserveOpenState: PreserveOpenState
     var canDropOnLeaves: Boolean

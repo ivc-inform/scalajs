@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Grids.props.listGrid
 
 import com.simplesys.SmartClient.Foundation.StatefulCanvas
-import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{HiliteRule, ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.props.VLayoutProps
 import com.simplesys.SmartClient.System.Types.Callback
@@ -17,7 +17,7 @@ class HiliteEditorProps extends VLayoutProps {
     var callback: ScOption[Callback] = ScNone
     var cancelButton: ScOption[StatefulCanvas] = ScNone
     var cancelButtonTitle: ScOption[String] = ScNone
-    var fieldList: ScOption[ListGrid[ListGridField, ListGridRecord]] = ScNone
+    var fieldList: ScOption[Grid[ListGridField, ListGridRecord]] = ScNone
     var hiliteIcons: ScOption[js.Array[SCImgURL]] = ScNone
     var hiliteRule: ScOption[HiliteRule] = ScNone
     var saveButton: ScOption[StatefulCanvas] = ScNone

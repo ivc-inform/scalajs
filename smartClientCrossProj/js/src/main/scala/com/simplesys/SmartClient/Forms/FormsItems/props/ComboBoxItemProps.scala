@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.TextItem
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
@@ -36,7 +36,7 @@ class ComboBoxItemProps extends TextItemProps with PickListProps{
     var progressiveLoading: ScOption[Boolean] = ScNone
     var searchStringTooShortMessage: ScOption[String] = ScNone
     var separateSpecialValues: ScOption[Boolean] = ScNone
-    var separateValuesList: ScOption[ListGrid[ListGridField, ListGridRecord]] = ScNone
+    var separateValuesList: ScOption[Grid[ListGridField, ListGridRecord]] = ScNone
     var showPickListOnKeypress: ScOption[Boolean] = ScNone
 
 }

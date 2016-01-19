@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource, ResultSet, SortSpecifier}
-import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.System.Types.{Criteria, ValueMap}
 import com.simplesys.SmartClient.System.props.ClassProps
@@ -34,7 +34,7 @@ trait PickListProps extends ClassProps {
     var pickListHeaderHeight: ScOption[Int] = ScNone
     var pickListHeight: ScOption[Int] = ScNone
     var pickListMaxWidth: ScOption[Int] = ScNone
-    var pickListProperties: ScOption[ListGrid[ListGridField, ListGridRecord]] = ScNone
+    var pickListProperties: ScOption[Grid[ListGridField, ListGridRecord]] = ScNone
     var pickListTallBaseStyle: ScOption[CSSStyleName] = ScNone
     var pickListWidth: ScOption[Int] = ScNone
     var separatorRows: ScOption[Array[ListGridRecord]] = ScNone

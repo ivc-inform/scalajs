@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.FormsItems.props.FormItemProps
 import com.simplesys.SmartClient.Forms.dynamicForm.FormItemEventInfo
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.System.Types.{Criteria, Record, ValueMap}
 import com.simplesys.SmartClient.System.{AbstractClassCompanion, KeyIdentifier, Types}
@@ -60,7 +60,7 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     var disableValidation: Boolean
     def editNewRecord(initialValues: Types.Object | Record = js.native): void
     def editRecord(record: Record): void
-    def editSelectedData(selectionComponent: ListGrid[ListGridField, ListGridRecord] | String): void
+    def editSelectedData(selectionComponent: Grid[ListGridField, ListGridRecord] | String): void
     var encoding: Encoding
     val errorItemCellStyle: String
     val errorItemProperties: Types.Object

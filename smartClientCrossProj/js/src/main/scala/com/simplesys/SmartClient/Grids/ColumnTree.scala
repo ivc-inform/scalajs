@@ -21,7 +21,7 @@ trait ColumnTree extends Layout with DataBoundComponent {
     var backButton: IButton with AutoChild
     var backButtonTitle: String
     var closedIconSuffix: String
-    val column: ListGrid[ListGridField, ListGridRecord] with MultiAutoChild
+    val column: Grid[ListGridField, ListGridRecord] with MultiAutoChild
     val columnProperties: js.Dictionary[js.Any]
     var customIconOpenProperty: String
     var customIconProperty: String
@@ -32,8 +32,8 @@ trait ColumnTree extends Layout with DataBoundComponent {
     def filterData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     val firstColumnTitle: String
     var folderIcon: SCImgURL
-    def getColumn(column: TreeNode): ListGrid[ListGridField, ListGridRecord]
-    def getColumnProperties(node: TreeNode, colNum: Int): ListGrid[ListGridField, ListGridRecord]
+    def getColumn(column: TreeNode): Grid[ListGridField, ListGridRecord]
+    def getColumnProperties(node: TreeNode, colNum: Int): Grid[ListGridField, ListGridRecord]
     def getColumnTitle(node: TreeNode, colNum: Int): void
     def getData(): Tree
     def getIcon(node: TreeNode): URL
@@ -43,7 +43,7 @@ trait ColumnTree extends Layout with DataBoundComponent {
     val loadDataOnDemand: Boolean
     def navigateBack(): void
     var nodeIcon: SCImgURL
-    var nodeSelected: js.Function2[ListGrid[ListGridField, ListGridRecord], TreeNode, Boolean]
+    var nodeSelected: js.Function2[Grid[ListGridField, ListGridRecord], TreeNode, Boolean]
     var openIconSuffix: String
     def selectRecord(record: ListGridRecord | Int, newState: Boolean = js.native, colNum: Int = js.native): void
     def selectRecords(records: js.Array[ListGridRecord] | js.Array[Int], newState: Boolean = js.native, colNum: Int = js.native): void

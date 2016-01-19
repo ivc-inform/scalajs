@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.DataBinding.DSRequest
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
-import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{UserFormula, UserSummary, ListGridRecord, ListGridField}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{ValueMap, Criteria}
@@ -54,7 +54,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var canSortClientOnly: ScOption[Boolean] = ScNone
     var canToggle: ScOption[Boolean] = ScNone
     var cellAlign: ScOption[Alignment] = ScNone
-    var cellChanged: ScOption[js.Function6[ListGridRecord, js.Any, js.Any, Int, Int, ListGrid[ListGridField, ListGridRecord], void]] = ScNone
+    var cellChanged: ScOption[js.Function6[ListGridRecord, js.Any, js.Any, Int, Int, Grid[ListGridField, ListGridRecord], void]] = ScNone
     var cellIcon: ScOption[SCImgURL] = ScNone
     var change: ScOption[js.Function4[DynamicForm, FormItem, js.Any, js.Any, Boolean]] = ScNone
     var changed: ScOption[js.Function3[DynamicForm, FormItem, js.Any, void]] = ScNone
@@ -69,8 +69,8 @@ class ListGridFieldProps extends AbstractClassProps {
     var defaultWidth: ScOption[Int] = ScNone
     var displayField: ScOption[String] = ScNone
     var displayValueFromRecord: ScOption[Boolean] = ScNone
-    var editorEnter: ScOption[js.Function5[ListGridRecord, js.Any, Int, Int, ListGrid[ListGridField, ListGridRecord], void]] = ScNone
-    var editorExit: ScOption[js.Function6[EditCompletionEvent, ListGridRecord, js.Any, Int, Int, ListGrid[ListGridField, ListGridRecord], void]] = ScNone
+    var editorEnter: ScOption[js.Function5[ListGridRecord, js.Any, Int, Int, Grid[ListGridField, ListGridRecord], void]] = ScNone
+    var editorExit: ScOption[js.Function6[EditCompletionEvent, ListGridRecord, js.Any, Int, Int, Grid[ListGridField, ListGridRecord], void]] = ScNone
     var editorIconHeight: ScOption[Int] = ScNone
     var editorIconWidth: ScOption[Int] = ScNone
     var editorImageURLPrefix: ScOption[String] = ScNone
@@ -114,7 +114,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var hiliteIconSize: ScOption[Int] = ScNone
     var hiliteIconWidth: ScOption[Int] = ScNone
     var hoverDelay: ScOption[Int] = ScNone
-    var hoverHTML: ScOption[js.Function5[ListGridRecord, js.Any, Int, Int, ListGrid[ListGridField, ListGridRecord], HTMLString]] = ScNone
+    var hoverHTML: ScOption[js.Function5[ListGridRecord, js.Any, Int, Int, Grid[ListGridField, ListGridRecord], HTMLString]] = ScNone
     var hoverWidth: ScOption[Int] = ScNone
     var hoverWrap: ScOption[Boolean] = ScNone
     var icon: ScOption[SCImgURL] = ScNone
@@ -151,8 +151,8 @@ class ListGridFieldProps extends AbstractClassProps {
     var optionTextMatchStyle: ScOption[TextMatchStyle] = ScNone
     var partialSummary: ScOption[Boolean] = ScNone
     var prompt: ScOption[HTMLString] = ScNone
-    var recordClick: ScOption[js.Function7[ListGrid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, Int, js.Any, js.Any, Boolean]] = ScNone
-    var recordDoubleClick: ScOption[js.Function7[ListGrid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, Int, js.Any, js.Any, Boolean]] = ScNone
+    var recordClick: ScOption[js.Function7[Grid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, Int, js.Any, js.Any, Boolean]] = ScNone
+    var recordDoubleClick: ScOption[js.Function7[Grid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, Int, js.Any, js.Any, Boolean]] = ScNone
     var recordSummaryFunction: ScOption[RecordSummaryFunction] = ScNone
     var required: ScOption[Boolean] = ScNone
     var shouldPrint: ScOption[Boolean] = ScNone
@@ -165,7 +165,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var showGridSummary: ScOption[Boolean] = ScNone
     var showGroupSummary: ScOption[Boolean] = ScNone
     var showHover: ScOption[Boolean] = ScNone
-    var showIf: ScOption[js.Function3[ListGrid[ListGridField, ListGridRecord], ListGridField, Int, Boolean]] = ScNone
+    var showIf: ScOption[js.Function3[Grid[ListGridField, ListGridRecord], ListGridField, Int, Boolean]] = ScNone
     var showRollOverIcon: ScOption[Boolean] = ScNone
     var showSelectedIcon: ScOption[Boolean] = ScNone
     var showTitle: ScOption[Boolean] = ScNone
@@ -186,7 +186,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var validateOnChange: ScOption[Boolean] = ScNone
     var validators: ScOption[Array[Validator]] = ScNone
     var valueField: ScOption[String] = ScNone
-    var valueIconClick: ScOption[js.Function6[ListGrid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, js.Any, FormItem, Boolean]] = ScNone
+    var valueIconClick: ScOption[js.Function6[Grid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, js.Any, FormItem, Boolean]] = ScNone
     var valueIconHeight: ScOption[Int] = ScNone
     var valueIconLeftPadding: ScOption[Int] = ScNone
     var valueIconOrientation: ScOption[String] = ScNone

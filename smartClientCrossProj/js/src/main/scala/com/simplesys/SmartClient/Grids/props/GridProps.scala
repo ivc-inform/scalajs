@@ -1,18 +1,17 @@
 package com.simplesys.SmartClient.Grids.props
 
-import com.simplesys.SmartClient.System.Class
-import com.simplesys.SmartClient.Control.{IButton, Button}
+import com.simplesys.SmartClient.Control.{Button, IButton}
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.DataBinding.props.DataBoundComponentProps
 import com.simplesys.SmartClient.Forms.DynamicForm
-import com.simplesys.SmartClient.Foundation.{GridRenderer, HTMLFlow, StatefulCanvas, Canvas}
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
-import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Foundation.{Canvas, GridRenderer, HTMLFlow, StatefulCanvas}
+import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid._
-import com.simplesys.SmartClient.Layout.{HLayout, VLayout, Layout}
 import com.simplesys.SmartClient.Layout.props.VLayoutProps
-import com.simplesys.SmartClient.System.{Tree, Selection, Types}
+import com.simplesys.SmartClient.Layout.{HLayout, Layout, VLayout}
 import com.simplesys.SmartClient.System.Types._
+import com.simplesys.SmartClient.System.{Class, Selection, Tree, Types}
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.System.Types.AutoComplete.AutoComplete
@@ -48,11 +47,11 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
 
-class ListGridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps with DataBoundComponentProps {
+class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps with DataBoundComponentProps {
     var advancedFieldPickerThreshold: ScOption[Int] = ScNone
     var allowFilterExpressions: ScOption[Boolean] = ScNone
     var allowRowSpanning: ScOption[Boolean] = ScNone
@@ -141,10 +140,10 @@ class ListGridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProp
     var canSelectGroups: ScOption[Boolean] = ScNone
     var canSort: ScOption[Boolean] = ScNone
     var canTabToHeader: ScOption[Boolean] = ScNone
-    var cellChanged: ScOption[js.Function5[R, js.Any, Int, Int, ListGrid[T, R], void]] = ScNone
+    var cellChanged: ScOption[js.Function5[R, js.Any, Int, Int, Grid[T, R], void]] = ScNone
     var cellClick: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var cellContextClick: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
-    var cellContextMenu: ScOption[Layout ] = ScNone
+    var cellContextMenu: ScOption[Layout] = ScNone
     var cellDoubleClick: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var cellErrorIconHover: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var cellHeight: ScOption[Int] = ScNone
@@ -160,7 +159,7 @@ class ListGridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProp
     var cellValueHoverHTML: ScOption[js.Function3[R, Int, Int, HTMLString]] = ScNone
     var chartConstructor: ScOption[String] = ScNone
     var chartType: ScOption[ChartType] = ScNone
-    var checkboxField: ScOption[T ] = ScNone
+    var checkboxField: ScOption[T] = ScNone
     var checkboxFieldFalseImage: ScOption[SCImgURL] = ScNone
     var checkboxFieldHSpace: ScOption[Int] = ScNone
     var checkboxFieldImageHeight: ScOption[Int] = ScNone
@@ -228,14 +227,14 @@ class ListGridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProp
     var expansionEditorSaveButtonTitle: ScOption[String] = ScNone
     var expansionEditorSaveDialogPrompt: ScOption[String] = ScNone
     var expansionEditorShowSaveDialog: ScOption[Boolean] = ScNone
-    var expansionField: ScOption[ListGrid[T, R] ] = ScNone
+    var expansionField: ScOption[Grid[T, R]] = ScNone
     var expansionFieldFalseImage: ScOption[SCImgURL] = ScNone
     var expansionFieldImageHeight: ScOption[Int] = ScNone
     var expansionFieldImageWidth: ScOption[Int] = ScNone
     var expansionFieldTrueImage: ScOption[SCImgURL] = ScNone
     var expansionLayout: ScOption[VLayout with MultiAutoChild] = ScNone
     var expansionMode: ScOption[ExpansionMode] = ScNone
-    var expansionRelated: ScOption[ListGrid[T, R] with MultiAutoChild] = ScNone
+    var expansionRelated: ScOption[Grid[T, R] with MultiAutoChild] = ScNone
     var exportAlternateRowBGColor: ScOption[CSSColor] = ScNone
     var exportDefaultBGColor: ScOption[CSSColor] = ScNone
     var exportFieldAlignments: ScOption[Boolean] = ScNone
@@ -255,7 +254,7 @@ class ListGridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProp
     var filterButtonPrompt: ScOption[String] = ScNone
     var filterButtonProperties: ScOption[js.Array[Button]] = ScNone
     var filterByCell: ScOption[Boolean] = ScNone
-    var filterEditor: ScOption[RecordEditor ] = ScNone
+    var filterEditor: ScOption[RecordEditor] = ScNone
     var filterEditorHeight: ScOption[Int] = ScNone
     var filterEditorProperties: ScOption[RecordEditor] = ScNone
     var filterEditorSubmit: ScOption[js.ThisFunction1[callbackHandler, Criteria, Boolean]] = ScNone
@@ -307,9 +306,9 @@ class ListGridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProp
     var groupTitleColumnDefaults: ScOption[T] = ScNone
     var groupTitleColumnProperties: ScOption[T] = ScNone
     var groupTitleField: ScOption[String] = ScNone
-    var groupTree: ScOption[Tree ] = ScNone
+    var groupTree: ScOption[Tree] = ScNone
     var handleGroupBy: ScOption[js.Function1[js.Array[String], Boolean]] = ScNone
-    var header: ScOption[Layout ] = ScNone
+    var header: ScOption[Layout] = ScNone
     var headerAutoFitEvent: ScOption[AutoFitEvent] = ScNone
     var headerBackgroundColor: ScOption[CSSColor] = ScNone
     var headerBarStyle: ScOption[CSSStyleName] = ScNone
@@ -318,7 +317,7 @@ class ListGridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProp
     var headerButtonDefaults: ScOption[Button] = ScNone
     var headerButtonProperties: ScOption[Button] = ScNone
     var headerClick: ScOption[js.Function1[Int, void]] = ScNone
-    var headerContextMenu: ScOption[Canvas ] = ScNone
+    var headerContextMenu: ScOption[Canvas] = ScNone
     var headerDoubleClick: ScOption[js.Function1[Int, void]] = ScNone
     var headerHeight: ScOption[Int] = ScNone
     var headerHover: ScOption[js.Function1[Int, void]] = ScNone
@@ -329,7 +328,7 @@ class ListGridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProp
     var headerHoverVAlign: ScOption[VerticalAlignment] = ScNone
     var headerHoverWidth: ScOption[Int] = ScNone
     var headerHoverWrap: ScOption[Boolean] = ScNone
-    var headerMenuButton: ScOption[StatefulCanvas ] = ScNone
+    var headerMenuButton: ScOption[StatefulCanvas] = ScNone
     var headerMenuButtonConstructor: ScOption[SCClassName] = ScNone
     var headerMenuButtonHeight: ScOption[String] = ScNone
     var headerMenuButtonIcon: ScOption[SCImgURL] = ScNone
@@ -398,13 +397,13 @@ class ListGridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProp
     var recordBaseStyleProperty: ScOption[String] = ScNone
     var recordCanRemoveProperty: ScOption[String] = ScNone
     var recordCanSelectProperty: ScOption[String] = ScNone
-    var recordClick: ScOption[js.ThisFunction7[callbackHandler, ListGrid[T, R], R, Int, T, Int, js.Any, js.Any, Boolean]] = ScNone
+    var recordClick: ScOption[js.ThisFunction7[callbackHandler, Grid[T, R], R, Int, T, Int, js.Any, js.Any, Boolean]] = ScNone
     var recordComponentHeight: ScOption[Int] = ScNone
     var recordComponentPoolingMode: ScOption[RecordComponentPoolingMode] = ScNone
     var recordComponentPosition: ScOption[EmbeddedPosition] = ScNone
     var recordCustomStyleProperty: ScOption[String] = ScNone
     var recordDetailDSProperty: ScOption[String] = ScNone
-    var recordDoubleClick: ScOption[js.ThisFunction7[callbackHandler, ListGrid[T, R], R, Int, T, Int, js.Any, js.Any, Boolean]] = ScNone
+    var recordDoubleClick: ScOption[js.ThisFunction7[callbackHandler, Grid[T, R], R, Int, T, Int, js.Any, js.Any, Boolean]] = ScNone
     var recordDropAppearance: ScOption[RecordDropAppearance] = ScNone
     var recordEditProperty: ScOption[String] = ScNone
     var recordEnabledProperty: ScOption[String] = ScNone
@@ -420,8 +419,8 @@ class ListGridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProp
     var reselectOnUpdateNotifications: ScOption[SelectionNotificationType] = ScNone
     var resizeFieldsInRealTime: ScOption[Boolean] = ScNone
     var reverseRTLAlign: ScOption[Boolean] = ScNone
-    var rollOverCanvas: ScOption[Canvas ] = ScNone
-    var rollUnderCanvas: ScOption[Canvas ] = ScNone
+    var rollOverCanvas: ScOption[Canvas] = ScNone
+    var rollUnderCanvas: ScOption[Canvas] = ScNone
     var rowClick: ScOption[js.Function4[R, Int, Int, Boolean, Boolean]] = ScNone
     var rowContextClick: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var rowDoubleClick: ScOption[js.Function4[R, Int, Int, Boolean, Boolean]] = ScNone
@@ -431,7 +430,7 @@ class ListGridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProp
     var rowHover: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var rowMouseDown: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var rowMouseUp: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
-    var rowNumberField: ScOption[T ] = ScNone
+    var rowNumberField: ScOption[T] = ScNone
     var rowNumberStart: ScOption[Int] = ScNone
     var rowNumberStyle: ScOption[CSSStyleName] = ScNone
     var rowOut: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
@@ -451,11 +450,11 @@ class ListGridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProp
     var selectHeaderOnSort: ScOption[Boolean] = ScNone
     var selection: ScOption[Selection] = ScNone
     var selectionAppearance: ScOption[SelectionAppearance] = ScNone
-    var selectionCanvas: ScOption[Canvas ] = ScNone
+    var selectionCanvas: ScOption[Canvas] = ScNone
     var selectionChanged: ScOption[js.Function2[R, Boolean, void]] = ScNone
     var selectionProperty: ScOption[String] = ScNone
     var selectionType: ScOption[SelectionStyle] = ScNone
-    var selectionUnderCanvas: ScOption[Canvas ] = ScNone
+    var selectionUnderCanvas: ScOption[Canvas] = ScNone
     var selectionUpdated: ScOption[js.Function2[R, js.Array[R], void]] = ScNone
     var selectOnEdit: ScOption[Boolean] = ScNone
     var showAllColumns: ScOption[Boolean] = ScNone
@@ -515,10 +514,10 @@ class ListGridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProp
     var sortFieldNum: ScOption[Int] = ScNone
     var sortNumeralStyle: ScOption[CSSStyleName] = ScNone
     var sortState: ScOption[ListGridSortState] = ScNone
-    var spanContextMenu: ScOption[Layout ] = ScNone
+    var spanContextMenu: ScOption[Layout] = ScNone
     var stopHover: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone
     var stopOnErrors: ScOption[Boolean] = ScNone
-    var summaryRow: ScOption[ListGrid[T, R] ] = ScNone
+    var summaryRow: ScOption[Grid[T, R]] = ScNone
     var summaryRowCriteria: ScOption[Criteria] = ScNone
     var summaryRowDataSource: ScOption[DataSource] = ScNone
     var summaryRowFetchRequestProperties: ScOption[DSRequest] = ScNone
@@ -555,3 +554,5 @@ class ListGridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProp
     var wrapCells: ScOption[Boolean] = ScNone
     var wrapHeaderTitles: ScOption[Boolean] = ScNone
 }
+
+class ListGridProps extends GridProps[ListGridField, ListGridRecord]
