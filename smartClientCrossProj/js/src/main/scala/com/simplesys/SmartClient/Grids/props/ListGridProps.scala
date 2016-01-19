@@ -51,7 +51,6 @@ import com.simplesys.System.Types._
 import com.simplesys.option.{ScOption, ScNone}
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 class ListGridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps with DataBoundComponentProps {
     var advancedFieldPickerThreshold: ScOption[Int] = ScNone
@@ -285,11 +284,11 @@ class ListGridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProp
     var getDragData: ScOption[js.Function1[DataBoundComponent, js.Array[R]]] = ScNone
     var getRowHeight: ScOption[js.Function2[Int, Int, Int]] = ScNone
     var getRowSpan: ScOption[js.Function3[R, Int, Int, Int]] = ScNone
-    var gridComponents: ScOption[js.Array[ListGridComponent] | js.Array[js.Any]] = ScNone
+    var gridComponents: ScOption[js.Array[ListGridComponent]] = ScNone
     var gridSummaryRecordProperty: ScOption[String] = ScNone
     var groupByAsyncThreshold: ScOption[Int] = ScNone
     var groupByComplete: ScOption[js.Function1[js.Array[String], void]] = ScNone
-    var groupByField: ScOption[js.Array[String] | String] = ScNone
+    var groupByField: ScOption[js.Array[String]] = ScNone
     var groupByFieldSummaries: ScOption[js.Array[String]] = ScNone
     var groupByMaxRecords: ScOption[Int] = ScNone
     var groupByText: ScOption[HTMLString] = ScNone
@@ -300,7 +299,7 @@ class ListGridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProp
     var groupNodeBaseStyle: ScOption[String] = ScNone
     var groupNodeStyle: ScOption[String] = ScNone
     var groupSortDirection: ScOption[SortDirection] = ScNone
-    var groupStartOpen: ScOption[js.Array[GroupStartOpen] | GroupStartOpen] = ScNone
+    var groupStartOpen: ScOption[js.Array[GroupStartOpen]] = ScNone
     var groupState: ScOption[ListGridGroupState] = ScNone
     var groupStateChanged: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone
     var groupSummaryRecordProperty: ScOption[String] = ScNone

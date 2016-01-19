@@ -10,6 +10,9 @@ import com.simplesys.SmartClient.Forms._
 import com.simplesys.SmartClient.Forms.props._
 import com.simplesys.SmartClient.Foundation._
 import com.simplesys.SmartClient.Foundation.props._
+import com.simplesys.SmartClient.Grids.{TreeGrid, ListGrid}
+import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
+import com.simplesys.SmartClient.Grids.props.{TreeGridProps, ListGridProps}
 import com.simplesys.SmartClient.Layout._
 import com.simplesys.SmartClient.Layout.props._
 import com.simplesys.SmartClient.Layout.props.toolStrip.{ToolStripResizerProps, ToolStripButtonProps, ToolStripSeparatorProps, ToolStripMenuButtonProps}
@@ -21,7 +24,7 @@ import com.simplesys.macros.PropsToDictionary
 package object System {
 
     implicit class StringOpts(x: String) {
-            def ellipsis = s"$x ..."
+            def ellipsis = s"$x..."
     }
 
     //<editor-fold desc="Control">
@@ -44,6 +47,11 @@ package object System {
 
     //<editor-fold desc="Foundation">
     object Label extends SCApply[Label, LabelProps]
+    //</editor-fold>
+
+    //<editor-fold desc="Grids">
+    object ListGrid extends SCApply[ListGrid[ListGridField, ListGridRecord], ListGridProps[ListGridField, ListGridRecord]]
+    object TreeGrid extends SCApply[TreeGrid, TreeGridProps]
     //</editor-fold>
 
     //<editor-fold desc="Layout">
