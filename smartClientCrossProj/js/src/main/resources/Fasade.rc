@@ -1,7 +1,14 @@
-val clientContext: Types.Object
-    val data: Types.Object
-    val httpHeaders: Types.Object
-    val httpResponseCode: Int
-    val httpResponseText: String
-    val status: Int
-    val transactionNum: Int
+def addTabs(tabs: Tab | Array[Tab], position: Int): void
+    var animateTabScrolling: Boolean
+    var canAddTabs: Boolean
+    var canCloseTabs: Boolean
+    var canReorderTabs: Boolean
+    var locateTabsBy: String
+    def removeTabs(tabs: Tab | ID | String | Int): void
+    def setCanCloseTabs(canCloseTabs: Boolean): void
+    var showTabScroller: Boolean
+    var tabs: js.Array[Tab]
+    var tabSelected: js.Function5[Int, Canvas, ID, Tab, String, _]
+    var tabsReordered: js.Function0[_]
+    var useIOSTabs: Boolean
+    var useSimpleTabs: Boolean

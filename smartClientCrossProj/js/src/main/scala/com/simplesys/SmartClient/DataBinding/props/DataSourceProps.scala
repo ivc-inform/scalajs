@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.DataBinding.props
 
 import com.simplesys.SmartClient.DataBinding.dataSource.{DataSourceField, OperationBinding}
+import com.simplesys.SmartClient.DataBinding.props.dataSource.DataSourceFieldProps
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DSResponse, DataSource, JSON}
 import com.simplesys.SmartClient.RPC.ServerObject
 import com.simplesys.SmartClient.System.Types
@@ -70,7 +71,7 @@ class DataSourceProps extends ClassProps {
     var enumConstantProperty: ScOption[String] = ScNone
     var enumOrdinalProperty: ScOption[String] = ScNone
     var enumTranslateStrategy: ScOption[EnumTranslateStrategy] = ScNone
-    var fields: ScOption[Array[DataSourceField]] = ScNone
+    var fields: ScOption[Array[DataSourceFieldProps]] = ScNone
     var fileContentsField: ScOption[String] = ScNone
     var fileFormatField: ScOption[String] = ScNone
     var fileLastModifiedField: ScOption[String] = ScNone
