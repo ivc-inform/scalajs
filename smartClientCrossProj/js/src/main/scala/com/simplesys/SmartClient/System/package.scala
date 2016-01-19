@@ -40,7 +40,7 @@ package object System {
 
     //<editor-fold desc="DataBinding">
     //object DataView extends SCApply[DataView, DataViewProps]
-    object DataSource extends SCApply[DataSource, DataSourceProps]
+    //object DataSource extends SCApply[DataSource, DataSourceProps]
     //object RestDataSource extends SCApply[RestDataSource, RestDataSourceProps]
     //</editor-fold>
 
