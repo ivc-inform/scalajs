@@ -20,7 +20,6 @@ import scala.scalajs.js._
 import scala.scalajs.js.annotation.JSName
 
 @js.native
-@JSName("DataSourceField")
 class DataSourceFieldProps extends Types.Object {
     var allowClientRequestedSummaries: Boolean = js.native
     var audit: Boolean = js.native
