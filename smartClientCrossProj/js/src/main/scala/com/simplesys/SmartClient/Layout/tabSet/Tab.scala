@@ -6,10 +6,11 @@ import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.{HTMLString, SCImgURL, void}
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.|
 
 @js.native
-
+@JSName("")
 class Tab extends Types.Object {
     var canClose: Boolean = js.native
     var canEditTitle: Boolean = js.native
