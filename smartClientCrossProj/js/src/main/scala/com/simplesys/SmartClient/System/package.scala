@@ -34,51 +34,51 @@ package object System {
     }
 
     //<editor-fold desc="Control">
-    object Dialog extends SCApply[Dialog, DialogProps]
-    object IButton extends SCApply[IButton, IButtonProps]
+//    object Dialog extends SCApply[Dialog, DialogProps]
+//    object IButton extends SCApply[IButton, IButtonProps]
     //</editor-fold>
 
     //<editor-fold desc="DataBinding">
-    object DataView extends SCApply[DataView, DataViewProps]
+    //object DataView extends SCApply[DataView, DataViewProps]
     object DataSource extends SCApply[DataSource, DataSourceProps]
-    object RestDataSource extends SCApply[RestDataSource, RestDataSourceProps]
+    //object RestDataSource extends SCApply[RestDataSource, RestDataSourceProps]
     //</editor-fold>
 
     //<editor-fold desc="Forms">
-    object DynamicForm extends SCApply[DynamicForm, DynamicFormProps]
+    //object DynamicForm extends SCApply[DynamicForm, DynamicFormProps]
     //</editor-fold>
 
     //<editor-fold desc="FormsItems">
-    object FormItem extends SCApply[FormItem, FormItemProps]
-    object ButtonItem extends SCApply[ButtonItem, ButtonItemProps]
+//    object FormItem extends SCApply[FormItem, FormItemProps]
+//    object ButtonItem extends SCApply[ButtonItem, ButtonItemProps]
     //</editor-fold>
 
     //<editor-fold desc="Foundation">
-    object Label extends SCApply[Label, LabelProps]
+//    object Label extends SCApply[Label, LabelProps]
     //</editor-fold>
 
     //<editor-fold desc="Grids">
-    object ListGrid extends SCApply[ListGrid, ListGridProps]
-    object TreeGrid extends SCApply[TreeGrid, TreeGridProps]
+//    object ListGrid extends SCApply[ListGrid, ListGridProps]
+//    object TreeGrid extends SCApply[TreeGrid, TreeGridProps]
     //</editor-fold>
 
     //<editor-fold desc="Layout">
-    object Deck extends SCApply[Deck, DeckProps]
-    object HLayout extends SCApply[HLayout, HLayoutProps]
-    object HStack extends SCApply[HStack, HStackProps]
-    object IconButton extends SCApply[IconButton, IconButtonProps]
-    object IconMenuButton extends SCApply[IconMenuButton, IconMenuButtonProps]
-    object ImgSplitbar extends SCApply[ImgSplitbar, ImgSplitbarProps]
-    object Layout extends SCApply[Layout, LayoutProps]
-    object VLayout extends SCApply[VLayout, VLayoutProps]
-    object TabSet extends SCApply[TabSet, TabSetProps]
-    object Window extends SCApply[Window, WindowProps]
-    object Portlet extends SCApply[Portlet, PortletProps]
-    object PortalLayout	 extends SCApply[PortalLayout	, PortalLayoutProps]
-    object ToolStrip extends SCApply[ToolStrip, ToolStripProps]
-    object ToolStripMenuButton extends SCApply[ToolStripMenuButton, ToolStripMenuButtonProps]
-    object ToolStripSeparator extends SCApply[ToolStripSeparator, ToolStripSeparatorProps]
-    object ToolStripButton extends SCApply[ToolStripButton, ToolStripButtonProps]
-    object ToolStripResizer extends SCApply[ToolStripResizer, ToolStripResizerProps]
+//    object Deck extends SCApply[Deck, DeckProps]
+//    object HLayout extends SCApply[HLayout, HLayoutProps]
+//    object HStack extends SCApply[HStack, HStackProps]
+//    object IconButton extends SCApply[IconButton, IconButtonProps]
+//    object IconMenuButton extends SCApply[IconMenuButton, IconMenuButtonProps]
+//    object ImgSplitbar extends SCApply[ImgSplitbar, ImgSplitbarProps]
+//    object Layout extends SCApply[Layout, LayoutProps]
+//    object VLayout extends SCApply[VLayout, VLayoutProps]
+//    object TabSet extends SCApply[TabSet, TabSetProps]
+//    object Window extends SCApply[Window, WindowProps]
+//    object Portlet extends SCApply[Portlet, PortletProps]
+//    object PortalLayout	 extends SCApply[PortalLayout	, PortalLayoutProps]
+//    object ToolStrip extends SCApply[ToolStrip, ToolStripProps]
+//    object ToolStripMenuButton extends SCApply[ToolStripMenuButton, ToolStripMenuButtonProps]
+//    object ToolStripSeparator extends SCApply[ToolStripSeparator, ToolStripSeparatorProps]
+//    object ToolStripButton extends SCApply[ToolStripButton, ToolStripButtonProps]
+//    object ToolStripResizer extends SCApply[ToolStripResizer, ToolStripResizerProps]
     //</editor-fold>
 }

@@ -5,6 +5,7 @@ import com.simplesys.log.Logging
 import com.simplesys.option._
 import com.simplesys.props.AbstractClassProps
 
+import scala.collection.GenTraversableOnce
 import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context
 import scala.scalajs.js
@@ -20,10 +21,10 @@ object PropsToDictionary extends Logging {
     def typeToConvertedValue(context: Context)(typeDef: context.universe.Type, valueAccess: context.universe.Tree): context.universe.Tree = {
         import context.universe._
 
-        def typeToConvertedValueInt(typeDef: context.universe.Type, valueAccess: context.universe.Tree): Option[context.universe.Tree] = {
+        val tsScOption = typeOf[ScOption[_]].typeSymbol
+        val tsScEnumeration = typeOf[Enumeration].typeSymbol
 
-            val tsScOption = typeOf[ScOption[_]].typeSymbol
-            val tsScEnumeration = typeOf[Enumeration].typeSymbol
+        def typeToConvertedValueInt(typeDef: context.universe.Type, valueAccess: context.universe.Tree): Option[context.universe.Tree] = {
 
             typeDef.baseType(typeOf[Option[_]].typeSymbol) match {
                 case TypeRef(_, _, targs) =>
@@ -36,7 +37,7 @@ object PropsToDictionary extends Logging {
                     } else valueAccess
                     Some(q"$optEx.orUndefined")
                 case NoType =>
-                    typeDef.baseType(typeOf[scala.collection.Seq[_]].typeSymbol) match {
+                    typeDef.baseType(typeOf[GenTraversableOnce[_]].typeSymbol) match {
                         case TypeRef(_, _, targs) =>
                             val arrEx = if (targs.size == 1) {
                                 val checkedType = typeToConvertedValueInt(targs.head, q"x")
@@ -152,7 +153,7 @@ object PropsToDictionary extends Logging {
                     }
                 }"""
         }
-        //logger debug res.toString()
+        logger debug res.toString()
         res
     }
 }
