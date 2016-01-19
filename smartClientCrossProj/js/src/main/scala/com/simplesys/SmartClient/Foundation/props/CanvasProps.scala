@@ -4,6 +4,8 @@ import com.simplesys.SmartClient.Control.Menu
 import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
 import com.simplesys.SmartClient.Foundation.Canvas
+import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System.props.ClassProps
@@ -30,6 +32,7 @@ import com.simplesys.System.Types._
 import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js
+import scala.scalajs.js.{Any, Function5}
 
 class CanvasProps extends ClassProps {
     type callbackHandler <: Canvas
@@ -139,6 +142,7 @@ class CanvasProps extends ClassProps {
     var editProxyConstructor: ScOption[SCClassName] = ScNone
     var extraSpace: ScOption[Int] = ScNone
     var focusChanged: ScOption[js.ThisFunction1[callbackHandler, Boolean, void]] = ScNone
+    var getHoverHTML: ScOption[Function0[HTMLString]] = ScNone
     var groupBorderCSS: ScOption[String] = ScNone
     var groupLabelBackgroundColor: ScOption[CSSColor] = ScNone
     var groupLabelStyleName: ScOption[CSSStyleName] = ScNone

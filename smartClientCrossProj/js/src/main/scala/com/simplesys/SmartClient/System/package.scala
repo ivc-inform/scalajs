@@ -20,6 +20,10 @@ import com.simplesys.macros.PropsToDictionary
 
 package object System {
 
+    implicit class StringOpts(x: String) {
+            def ellipsis = s"$x ..."
+    }
+
     //<editor-fold desc="Control">
     object Dialog extends SCApply[Dialog, DialogProps]
     object IButton extends SCApply[IButton, IButtonProps]
