@@ -18,7 +18,7 @@ final class QQ extends PropsToDictionary[com.simplesys.SmartClient.DataBinding.p
 
 object test extends App {
     val res = js.Dictionary.empty[js.Any];
-    val a = new QQ
+    //val a = new QQ
     //val b = a.getDictionary(new DataSourceProps)
 }
 
