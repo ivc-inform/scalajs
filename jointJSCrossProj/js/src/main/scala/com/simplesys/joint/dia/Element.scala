@@ -19,4 +19,5 @@ trait Area {
 
 class ElementOption extends AbstractOption {
     val restrictedArea: ScOption[Area] = ScNone
+    val parentRelative: ScOption[Boolean] = ScNone
 }
