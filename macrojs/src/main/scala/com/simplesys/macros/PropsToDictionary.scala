@@ -16,7 +16,7 @@ trait PropsToDictionary[P <: AbstractClassProps] {
 }
 
 object PropsToDictionary extends Logging {
-    implicit def materializePropsMap[P <: AbstractClassProps]: PropsToDictionary[P] = macro materializeImpl[P]
+    implicit def materialize[P <: AbstractClassProps]: PropsToDictionary[P] = macro materializeImpl[P]
 
     def typeToConvertedValue(context: Context)(typeDef: context.universe.Type, valueAccess: context.universe.Tree): context.universe.Tree = {
         import context.universe._
@@ -25,13 +25,12 @@ object PropsToDictionary extends Logging {
         val tsScEnumeration = typeOf[Enumeration].typeSymbol
 
         def typeToConvertedValueInt(typeDef: context.universe.Type, valueAccess: context.universe.Tree): Option[context.universe.Tree] = {
-
-            typeDef.baseType(typeOf[Option[_]].typeSymbol) match {
+            val res = typeDef.baseType(typeOf[Option[_]].typeSymbol) match {
                 case TypeRef(_, _, targs) =>
                     val optEx = if (targs.size == 1) {
                         val checkedType = typeToConvertedValueInt(targs.head, q"x")
                         checkedType match {
-                            case Some(ex) => q"$valueAccess.map(x => $ex)"
+                            case Some(ex) => q"$valueAccess.map(x => $ex: js.Any)"
                             case None => valueAccess
                         }
                     } else valueAccess
@@ -43,7 +42,7 @@ object PropsToDictionary extends Logging {
                                 val checkedType = typeToConvertedValueInt(targs.head, q"x")
                                 checkedType match {
                                     case Some(ex) =>
-                                        q"$valueAccess.map(x => $ex)"
+                                        q"$valueAccess.map(x => $ex: js.Any)"
 
                                     case None =>
                                         valueAccess
@@ -63,8 +62,8 @@ object PropsToDictionary extends Logging {
 
                                         Some(
                                             q"""$valueAccess match {
-                                            case $tp1(item) => $type1
-                                            case $tp2(item) => $type2
+                                            case $tp1(item) => $type1: js.Any
+                                            case $tp2(item) => $type2: js.Any
                                         }""")
                                     case NoType =>
                                         if (typeDef.typeSymbol.owner == tsScEnumeration)
@@ -91,6 +90,8 @@ object PropsToDictionary extends Logging {
                             }
                     }
             }
+
+            res
         }
         typeToConvertedValueInt(typeDef, valueAccess).getOrElse(q"$valueAccess")
     }
