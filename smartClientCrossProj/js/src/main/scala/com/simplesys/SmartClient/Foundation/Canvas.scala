@@ -455,6 +455,7 @@ abstract class AbstractCanvasCompanion extends AbstractClassCompanion {
     def getPrintPreview(components: js.Array[Canvas], printProperties: PrintProperties = js.native, previewProperties: Canvas = js.native, callback: Callback = js.native, separator: String = js.native): HTMLString = js.native
     def getSnapPosition(target: Canvas | js.Array[Int], snapTo: String, snapper: Canvas | js.Array[Int], snapEdge: String = js.native): Point = js.native
     def hiliteCharacter(string: String, character: Char, hilitePrefix: String = js.native, hiliteSuffix: String = js.native): String = js.native
+    def imgHTML(src: SCImgURL, width: Int = js.native, height: Int = js.native, name: String = js.native, extraStuff: String = js.native, imgDir: String = js.native): String = js.native
     var loadingImageSize: Int = js.native
     var loadingImageSrc: SCImgURL = js.native
     val neverUseFilters: Boolean = js.native
