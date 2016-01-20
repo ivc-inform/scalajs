@@ -152,7 +152,7 @@ object PropsToDictionary extends Logging {
                     }
                 }"""
         }
-        logger debug showCode(res.tree)
+        //logger debug showCode(res.tree)
         res
     }
 }
