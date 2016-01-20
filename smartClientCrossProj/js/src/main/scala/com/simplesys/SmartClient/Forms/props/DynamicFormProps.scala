@@ -42,7 +42,7 @@ class DynamicFormProps extends CanvasProps {
     var cellPadding: ScOption[Int] = ScNone
     var clipItemTitles: ScOption[Boolean] = ScNone
     var clipStaticValue: ScOption[Boolean] = ScNone
-    var colWidths: ScOption[Array[Any]] = ScNone
+    var colWidths: ScOption[Seq[Any]] = ScNone
     var dateFormatter: ScOption[DateDisplayFormat] = ScNone
     var datetimeFormatter: ScOption[DateDisplayFormat] = ScNone
     var defaultSearchOperator: ScOption[OperatorId] = ScNone
@@ -51,9 +51,9 @@ class DynamicFormProps extends CanvasProps {
     var errorItemCellStyle: ScOption[String] = ScNone
     var errorItemProperties: ScOption[Types.Object] = ScNone
     var errorOrientation: ScOption[Alignment] = ScNone
-    var errors: ScOption[Array[Types.Object]] = ScNone
+    var errors: ScOption[Seq[Types.Object]] = ScNone
     var errorsPreamble: ScOption[HTMLString] = ScNone
-    var fields: ScOption[Array[FormItem]] = ScNone
+    var fields: ScOption[Seq[FormItem]] = ScNone
     var fixedColWidths: ScOption[Boolean] = ScNone
     var formSubmitFailedWarning: ScOption[String] = ScNone
     var handleHiddenValidationErrors: ScOption[ThisFunction1[DynamicForm, Types.Object, Boolean]] = ScNone
@@ -73,7 +73,7 @@ class DynamicFormProps extends CanvasProps {
     var itemHoverWidth: ScOption[Int] = ScNone
     var itemKeyPress: ScOption[Function3[FormItem, String, Int, Boolean]] = ScNone
     var itemLayout: ScOption[String] = ScNone
-    var items: ScOption[Array[_ <: FormItem]] = ScNone
+    var items: ScOption[Seq[_ <: FormItem]] = ScNone
     var longTextEditorThreshold: ScOption[Int] = ScNone
     var longTextEditorType: ScOption[String] = ScNone
     var method: ScOption[FormMethod] = ScNone
