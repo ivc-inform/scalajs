@@ -16,6 +16,7 @@ package object Types {
     }
 
     type Properties = Object
+    type EdgeSizes = Object
     type Record = js.Dictionary[js.Any]
     type DataSourceRecord = js.Dictionary[js.Any]
     type CellRecord = Object
