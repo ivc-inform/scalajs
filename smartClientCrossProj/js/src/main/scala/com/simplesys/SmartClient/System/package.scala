@@ -55,6 +55,12 @@ package object System {
 
     //<editor-fold desc="Foundation">
     object Label extends SCApply[Label, LabelProps]
+    object Img extends SCApply[Img, ImgProps]
+    object ImgTab extends SCApply[ImgTab, ImgTabProps]
+    object RichTextEditor extends SCApply[RichTextEditor, RichTextEditorProps]
+    object ViewLoader extends SCApply[ViewLoader, ViewLoaderProps]
+    object HTMLFlow extends SCApply[HTMLFlow, HTMLFlowProps]
+    object HTMLPane extends SCApply[HTMLPane, HTMLPaneProps]
     //</editor-fold>
 
     //<editor-fold desc="Grids">
