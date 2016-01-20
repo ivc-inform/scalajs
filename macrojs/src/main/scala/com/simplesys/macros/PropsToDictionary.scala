@@ -16,7 +16,7 @@ trait PropsToDictionary[P <: AbstractClassProps] {
 }
 
 object PropsToDictionary extends Logging {
-    implicit def materializePropsMap[P <: AbstractClassProps]: PropsToDictionary[P] = macro materializePropsMapImpl[P]
+    implicit def materializePropsMap[P <: AbstractClassProps]: PropsToDictionary[P] = macro materializeImpl[P]
 
     def typeToConvertedValue(context: Context)(typeDef: context.universe.Type, valueAccess: context.universe.Tree): context.universe.Tree = {
         import context.universe._
@@ -95,7 +95,7 @@ object PropsToDictionary extends Logging {
         typeToConvertedValueInt(typeDef, valueAccess).getOrElse(q"$valueAccess")
     }
 
-    def materializePropsMapImpl[P <: AbstractClassProps : context.WeakTypeTag](context: Context): context.Expr[PropsToDictionary[P]] = {
+    def materializeImpl[P <: AbstractClassProps : context.WeakTypeTag](context: Context): context.Expr[PropsToDictionary[P]] = {
         import context.universe._
 
         val tpeAbstractPropsClass = weakTypeOf[P]
