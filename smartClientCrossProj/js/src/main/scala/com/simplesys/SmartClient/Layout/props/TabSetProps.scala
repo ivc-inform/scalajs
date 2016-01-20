@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.Layout.props
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
+import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
 import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.System.Types.ID
 import com.simplesys.option.{ScNone, ScOption}
@@ -15,7 +16,7 @@ class TabSetProps extends CanvasProps {
     var canReorderTabs: ScOption[Boolean] = ScNone
     var locateTabsBy: ScOption[String] = ScNone
     var showTabScroller: ScOption[Boolean] = ScNone
-    var tabs: ScOption[js.Array[TabProp]] = ScNone
+    var tabs: ScOption[js.Array[TabProps]] = ScNone
     var tabSelected: ScOption[js.Function5[Int, Canvas, ID, Tab, String, _]] = ScNone
     var tabsReordered: ScOption[js.Function0[_]] = ScNone
     var useIOSTabs: ScOption[Boolean] = ScNone
