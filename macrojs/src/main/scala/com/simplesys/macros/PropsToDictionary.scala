@@ -50,8 +50,8 @@ object PropsToDictionary extends Logging {
 
                                 Some(
                                     q"""$valueAccess match {
-                                            case $tp1(item) => $type1: js.Any
-                                            case $tp2(item) => $type2: js.Any
+                                            case $tp1(item) => $type1
+                                            case $tp2(item) => $type2
                                         }""")
                             case NoType =>
                                 if (typeDef.typeSymbol.owner == tsScEnumeration)
