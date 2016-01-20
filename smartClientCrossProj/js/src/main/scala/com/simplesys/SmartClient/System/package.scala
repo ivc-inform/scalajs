@@ -45,7 +45,7 @@ package object System {
     //</editor-fold>
 
     //<editor-fold desc="Forms">
-    //object DynamicForm extends SCApply[DynamicForm, DynamicFormProps]
+  //  object DynamicForm extends SCApply[DynamicForm, DynamicFormProps]
     //</editor-fold>
 
     //<editor-fold desc="FormsItems">
@@ -54,7 +54,7 @@ package object System {
     //</editor-fold>
 
     //<editor-fold desc="Foundation">
-//    object Label extends SCApply[Label, LabelProps]
+    object Label extends SCApply[Label, LabelProps]
     //</editor-fold>
 
     //<editor-fold desc="Grids">
