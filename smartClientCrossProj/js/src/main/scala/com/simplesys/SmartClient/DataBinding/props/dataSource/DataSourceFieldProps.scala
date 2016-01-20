@@ -5,6 +5,7 @@ import com.simplesys.SmartClient.Forms.Validator
 import com.simplesys.SmartClient.System.Types.{ValueMap, XPathExpression, VelocityExpression}
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.FieldImportStrategy.FieldImportStrategy
+import com.simplesys.System.Types.FieldType._
 import com.simplesys.System.Types.HashAlgorithm.HashAlgorithm
 import com.simplesys.System.Types.{HTMLString, FormatString, ID}
 import com.simplesys.System.Types.JoinType.JoinType
@@ -127,4 +128,5 @@ class DataSourceFieldProps extends AbstractClassProps {
     var viewRequiresAuthentication: ScOption[Boolean] = ScNone
     var viewRequiresRole: ScOption[String] = ScNone
     var xmlAttribute: ScOption[Boolean] = ScNone
+    val `type`: ScOption[FieldType] = ScNone
 }
