@@ -14,4 +14,8 @@ class SCApply[T <: Class, P <: AbstractClassProps](implicit classTag_T: ClassTag
     def jsonString(propsClass: P): String = propsToDictionary.getMap(propsClass).toMap.toJsonString()
 }
 
+class SCApply4Props[P <: AbstractClassProps](implicit propsToDictionary: PropsToDictionary[P]) {
+    def getDictionary(propsClass: P): js.Dictionary[js.Any] = propsToDictionary.getDictionary(propsClass)
+}
+
 

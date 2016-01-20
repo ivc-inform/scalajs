@@ -71,7 +71,7 @@ package object System {
 //    object ImgSplitbar extends SCApply[ImgSplitbar, ImgSplitbarProps]
 //    object Layout extends SCApply[Layout, LayoutProps]
 //    object VLayout extends SCApply[VLayout, VLayoutProps]
-//    object TabSet extends SCApply[TabSet, TabSetProps]
+    object TabSet extends SCApply[TabSet, TabSetProps]
 //    object Window extends SCApply[Window, WindowProps]
 //    object Portlet extends SCApply[Portlet, PortletProps]
 //    object PortalLayout	 extends SCApply[PortalLayout	, PortalLayoutProps]

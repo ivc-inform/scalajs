@@ -22,15 +22,19 @@ object PropsToDictionary extends Logging {
 
         val tsScOption = typeOf[ScOption[_]].typeSymbol
         val tsScEnumeration = typeOf[Enumeration].typeSymbol
+        val tsAbstractClassProps = typeOf[AbstractClassProps].typeSymbol
 
         def typeToConvertedValueInt(typeDef: context.universe.Type, valueAccess: context.universe.Tree): Option[context.universe.Tree] = {
             typeDef.baseType(typeOf[js.Array[_]].typeSymbol) match {
                 case TypeRef(_, _, targs) =>
                     val arrEx = if (targs.size == 1) {
-                        val checkedType = typeToConvertedValueInt(targs.head, q"x")
+                        val checkedType: Option[context.universe.Tree] = typeToConvertedValueInt(targs.head, q"x")
                         checkedType match {
                             case Some(ex) =>
-                                q"$valueAccess.map(x => $ex: js.Any)"
+                                if (targs.head.baseClasses.contains(tsAbstractClassProps))
+                                    q"$valueAccess.map(x => (new SCApply4Props[${targs.head}]).getDictionary($ex))"
+                                else
+                                    q"$valueAccess.map(x => $ex)"
 
                             case None =>
                                 valueAccess
@@ -52,7 +56,7 @@ object PropsToDictionary extends Logging {
                                     q"""$valueAccess match {
                                             case $tp1(item) => $type1
                                             case $tp2(item) => $type2
-                                        }""")
+                                    }""")
                             case NoType =>
                                 if (typeDef.typeSymbol.owner == tsScEnumeration)
                                     Some(q"item.toString")
@@ -60,20 +64,25 @@ object PropsToDictionary extends Logging {
                                     None
                         }
                     }
-                    typeDef.baseType(tsScOption) match {
+                    typeDef.baseType(tsAbstractClassProps) match {
                         case TypeRef(_, _, _) =>
                             Some(q"$valueAccess")
                         case NoType =>
-                            getTree4DoubleType(typeOf[DoubleType[_, _]].typeSymbol, q"Type1", q"Type2") match {
-                                case None =>
-                                    getTree4DoubleType(typeOf[IntString[_, _]].typeSymbol, q"IntFRomIntString", q"StringFRomIntString") match {
-                                        case None => getTree4DoubleType(typeOf[DoubleAlignment[_, _]].typeSymbol, q"AlignmentfromDoubleAlignment", q"VerticalAlignmentfromDoubleAlignment") match {
-                                            case None => getTree4DoubleType(typeOf[FormItemType_String[_, _]].typeSymbol, q"FormItemTypefromFormItemType_String", q"StringfromFormItemType_String")
-                                            case some => some
-                                        }
+                            typeDef.baseType(tsScOption) match {
+                                case TypeRef(_, _, _) =>
+                                    Some(q"$valueAccess")
+                                case NoType =>
+                                    getTree4DoubleType(typeOf[DoubleType[_, _]].typeSymbol, q"Type1", q"Type2") match {
+                                        case None =>
+                                            getTree4DoubleType(typeOf[IntString[_, _]].typeSymbol, q"IntFRomIntString", q"StringFRomIntString") match {
+                                                case None => getTree4DoubleType(typeOf[DoubleAlignment[_, _]].typeSymbol, q"AlignmentfromDoubleAlignment", q"VerticalAlignmentfromDoubleAlignment") match {
+                                                    case None => getTree4DoubleType(typeOf[FormItemType_String[_, _]].typeSymbol, q"FormItemTypefromFormItemType_String", q"StringfromFormItemType_String")
+                                                    case some => some
+                                                }
+                                                case some => some
+                                            }
                                         case some => some
                                     }
-                                case some => some
                             }
                     }
             }
