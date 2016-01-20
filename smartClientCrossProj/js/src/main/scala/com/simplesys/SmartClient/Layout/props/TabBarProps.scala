@@ -13,10 +13,10 @@ class TabBarProps extends ToolbarProps {
     var baseLineSrc: ScOption[SCImgURL] = ScNone
     var baseLineThickness: ScOption[Int] = ScNone
     var breadth: ScOption[Int] = ScNone
-    var closeTabKeys: ScOption[js.Array[KeyIdentifier]] = ScNone
+    var closeTabKeys: ScOption[Seq[KeyIdentifier]] = ScNone
     var defaultTabSize: ScOption[Int] = ScNone
     var moreTab: ScOption[Tab] = ScNone
     var moreTabCount: ScOption[Int] = ScNone
     var showMoreTab: ScOption[Boolean] = ScNone
-    var tabs: ScOption[js.Array[Tab]] = ScNone
+    var tabs: ScOption[Seq[Tab]] = ScNone
 }

@@ -15,27 +15,35 @@ trait PropsToDictionary[P <: AbstractClassProps] {
 }
 
 object PropsToDictionary extends Logging {
-    implicit def materializePropsMap[P <: AbstractClassProps]: PropsToDictionary[P] = macro materializePropsMapImpl[P]
+    implicit def materialize[P <: AbstractClassProps]: PropsToDictionary[P] = macro materializeImpl[P]
 
     def typeToConvertedValue(context: Context)(typeDef: context.universe.Type, valueAccess: context.universe.Tree): context.universe.Tree = {
         import context.universe._
 
+        val tsScOption = typeOf[ScOption[_]].typeSymbol
+        val tsScEnumeration = typeOf[Enumeration].typeSymbol
+        val tsAbstractClassProps = typeOf[AbstractClassProps].typeSymbol
+        val tsJSObject = typeOf[js.Object].typeSymbol
+
         def typeToConvertedValueInt(typeDef: context.universe.Type, valueAccess: context.universe.Tree): Option[context.universe.Tree] = {
-
-            val tsScOption = typeOf[ScOption[_]].typeSymbol
-            val tsScEnumeration = typeOf[Enumeration].typeSymbol
-
-            typeDef.baseType(typeOf[scala.collection.Seq[_]].typeSymbol) match {
+            typeDef.baseType(typeOf[Seq[_]].typeSymbol) match {
                 case TypeRef(_, _, targs) =>
                     val arrEx = if (targs.size == 1) {
-                        val checkedType = typeToConvertedValueInt(targs.head, q"x")
+                        val checkedType: Option[context.universe.Tree] = typeToConvertedValueInt(targs.head, q"x")
                         checkedType match {
-                            case Some(ex) => q"$valueAccess.map(x => $ex)"
-                            case None => valueAccess
+                            case Some(ex) =>
+                                if (targs.head.baseClasses.contains(tsAbstractClassProps))
+                                    q"$valueAccess.map(x => (new SCApply4Props[${targs.head}]).getDictionary($ex))"
+                                else
+                                    valueAccess
+
+                            case None =>
+                                valueAccess
                         }
                     } else valueAccess
 
-                    Some(q"$arrEx")
+                    Some(q"scala.scalajs.runtime.genTraversableOnce2jsArray($arrEx)")
+
                 case NoType =>
                     def getTree4DoubleType(symb: Symbol, tp1: Tree, tp2: Tree): Option[Tree] = {
                         typeDef.baseType(symb) match {
@@ -49,7 +57,7 @@ object PropsToDictionary extends Logging {
                                     q"""$valueAccess match {
                                             case $tp1(item) => $type1
                                             case $tp2(item) => $type2
-                                        }""")
+                                    }""")
                             case NoType =>
                                 if (typeDef.typeSymbol.owner == tsScEnumeration)
                                     Some(q"item.toString")
@@ -57,20 +65,30 @@ object PropsToDictionary extends Logging {
                                     None
                         }
                     }
-                    typeDef.baseType(tsScOption) match {
+                    typeDef.baseType(tsAbstractClassProps) match {
                         case TypeRef(_, _, _) =>
                             Some(q"$valueAccess")
                         case NoType =>
-                            getTree4DoubleType(typeOf[DoubleType[_, _]].typeSymbol, q"Type1", q"Type2") match {
-                                case None =>
-                                    getTree4DoubleType(typeOf[IntString[_, _]].typeSymbol, q"IntFRomIntString", q"StringFRomIntString") match {
-                                        case None => getTree4DoubleType(typeOf[DoubleAlignment[_, _]].typeSymbol, q"AlignmentfromDoubleAlignment", q"VerticalAlignmentfromDoubleAlignment") match {
-                                            case None => getTree4DoubleType(typeOf[FormItemType_String[_, _]].typeSymbol, q"FormItemTypefromFormItemType_String", q"StringfromFormItemType_String")
-                                            case some => some
-                                        }
-                                        case some => some
+                            typeDef.baseType(tsJSObject) match {
+                                case TypeRef(_, _, _) =>
+                                    Some(q"$valueAccess")
+                                case NoType =>
+                                    typeDef.baseType(tsScOption) match {
+                                        case TypeRef(_, _, _) =>
+                                            Some(q"$valueAccess")
+                                        case NoType =>
+                                            getTree4DoubleType(typeOf[DoubleType[_, _]].typeSymbol, q"Type1", q"Type2") match {
+                                                case None =>
+                                                    getTree4DoubleType(typeOf[IntString[_, _]].typeSymbol, q"IntFRomIntString", q"StringFRomIntString") match {
+                                                        case None => getTree4DoubleType(typeOf[DoubleAlignment[_, _]].typeSymbol, q"AlignmentfromDoubleAlignment", q"VerticalAlignmentfromDoubleAlignment") match {
+                                                            case None => getTree4DoubleType(typeOf[FormItemType_String[_, _]].typeSymbol, q"FormItemTypefromFormItemType_String", q"StringfromFormItemType_String")
+                                                            case some => some
+                                                        }
+                                                        case some => some
+                                                    }
+                                                case some => some
+                                            }
                                     }
-                                case some => some
                             }
                     }
             }
@@ -78,7 +96,7 @@ object PropsToDictionary extends Logging {
         typeToConvertedValueInt(typeDef, valueAccess).getOrElse(q"$valueAccess")
     }
 
-    def materializePropsMapImpl[P <: AbstractClassProps : context.WeakTypeTag](context: Context): context.Expr[PropsToDictionary[P]] = {
+    def materializeImpl[P <: AbstractClassProps : context.WeakTypeTag](context: Context): context.Expr[PropsToDictionary[P]] = {
         import context.universe._
 
         val tpeAbstractPropsClass = weakTypeOf[P]
@@ -140,7 +158,7 @@ object PropsToDictionary extends Logging {
                     }
                 }"""
         }
-        //logger debug res.toString()
+        //logger debug showCode(res.tree)
         res
     }
 }

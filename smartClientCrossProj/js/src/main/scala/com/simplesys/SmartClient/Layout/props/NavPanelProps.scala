@@ -15,6 +15,6 @@ class NavPanelProps extends SplitPanelProps {
     var isTree: ScOption[Boolean] = ScNone
     var navDeck: ScOption[Deck] = ScNone
     var navGrid: ScOption[TreeGrid] = ScNone
-    var navItems: ScOption[js.Array[NavItem]] = ScNone
+    var navItems: ScOption[Seq[NavItem]] = ScNone
 
 }

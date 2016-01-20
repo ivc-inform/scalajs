@@ -13,6 +13,6 @@ class NavItemProps extends TreeNodeProps {
     var customStyle: ScOption[CSSStyleName] = ScNone
     var isHeader: ScOption[Boolean] = ScNone
     var isSeparator: ScOption[Boolean] = ScNone
-    var items: ScOption[js.Array[NavItem]] = ScNone
+    var items: ScOption[Seq[NavItem]] = ScNone
     var pane: ScOption[Canvas | String] = ScNone
 }

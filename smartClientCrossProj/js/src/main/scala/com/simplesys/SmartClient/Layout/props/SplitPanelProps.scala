@@ -21,7 +21,7 @@ class SplitPanelProps extends LayoutProps {
     var detailPane: ScOption[Canvas] = ScNone
     var detailPaneTitleTemplate: ScOption[HTMLString] = ScNone
     var detailTitle: ScOption[HTMLString] = ScNone
-    var detailToolButtons: ScOption[js.Array[Canvas]] = ScNone
+    var detailToolButtons: ScOption[Seq[Canvas]] = ScNone
     var detailToolStrip: ScOption[NavigationBar] = ScNone
     var deviceMode: ScOption[DeviceMode] = ScNone
     var downClick: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone

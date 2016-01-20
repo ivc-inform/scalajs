@@ -19,7 +19,7 @@ import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
 import com.simplesys.System.Types.SequenceMode.SequenceMode
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.{ID, URL, URN}
-import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.option.{IntString, ScNone, ScOption}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -59,6 +59,7 @@ class DataSourceProps extends ClassProps {
     var dataProtocol: ScOption[DSProtocol] = ScNone
     var dataTransport: ScOption[RPCTransport] = ScNone
     var dataURL: ScOption[URL] = ScNone
+    var dbImportFileName: ScOption[String] = ScNone
     var dbName: ScOption[String] = ScNone
     var deepCloneOnEdit: ScOption[Boolean] = ScNone
     var defaultBooleanStorageStrategy: ScOption[String] = ScNone
@@ -71,7 +72,7 @@ class DataSourceProps extends ClassProps {
     var enumConstantProperty: ScOption[String] = ScNone
     var enumOrdinalProperty: ScOption[String] = ScNone
     var enumTranslateStrategy: ScOption[EnumTranslateStrategy] = ScNone
-    var fields: ScOption[Array[DataSourceField]] = ScNone
+    var fields: ScOption[Seq[DataSourceFieldProps]] = ScNone
     var fileContentsField: ScOption[String] = ScNone
     var fileFormatField: ScOption[String] = ScNone
     var fileLastModifiedField: ScOption[String] = ScNone
@@ -143,6 +144,7 @@ class DataSourceProps extends ClassProps {
     var tableCode: ScOption[String] = ScNone
     var tableName: ScOption[String] = ScNone
     var tagName: ScOption[String] = ScNone
+    var testFileName: ScOption[String] = ScNone
     var title: ScOption[String] = ScNone
     var titleField: ScOption[String] = ScNone
     var transformMultipleFields: ScOption[Boolean] = ScNone

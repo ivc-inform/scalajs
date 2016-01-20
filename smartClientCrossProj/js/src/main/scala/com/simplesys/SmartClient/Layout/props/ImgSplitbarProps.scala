@@ -11,5 +11,4 @@ class ImgSplitbarProps extends ImgProps {
     var target: ScOption[Canvas] = ScNone
     var vertical: ScOption[Boolean] = ScNone
     var vSrc: ScOption[SCImgURL] = ScNone
-
 }

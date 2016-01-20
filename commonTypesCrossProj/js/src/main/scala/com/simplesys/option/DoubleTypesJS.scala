@@ -1,7 +1,7 @@
 package com.simplesys.option
 
-import scala.scalajs.js
 import scala.language.existentials
+import scala.scalajs.js
 
 //<editor-fold desc="Function1CanvasClick_String">
 sealed abstract class Function1CanvasClick_String[+A, +B]
@@ -13,4 +13,17 @@ object Function1CanvasClick_String {
     implicit def Function1CanvasClick2Function1CanvasClick_String(x: js.ThisFunction0[_, _]) = ScSome(Function1CanvasClickfromFunction1CanvasClick_String(x))
     implicit def String2Function1CanvasClick_String(x: String) = ScSome(StringfromFunction1CanvasClick_String(x))
 }
+//</editor-fold>
+
+//<editor-fold desc="ArrayAny_DictAny">
+sealed abstract class ArrayAny_DictAny[+A, +B]
+
+case class ArrayAnyfromArrayAny_DictAny(a: js.Array[js.Any]) extends ArrayAny_DictAny[js.Array[js.Any], js.Dictionary[js.Any]]
+case class DictfromArrayAny_DictAny(a: js.Dictionary[js.Any]) extends ArrayAny_DictAny[js.Array[js.Any], js.Dictionary[js.Any]]
+
+object ArrayAny_DictAny {
+    implicit def ArrayAny2ArrayAny_DictAny(x: js.Array[js.Any]) = ScSome(ArrayAnyfromArrayAny_DictAny(x))
+    implicit def Dict2ArrayAny_DictAny(x: js.Dictionary[js.Any]) = ScSome(DictfromArrayAny_DictAny(x))
+}
+
 //</editor-fold>

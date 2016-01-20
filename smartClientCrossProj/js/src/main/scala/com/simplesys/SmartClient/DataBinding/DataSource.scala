@@ -6,8 +6,8 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerField
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.RPC.ServerObject
-import com.simplesys.SmartClient.System._
 import com.simplesys.SmartClient.System.Types._
+import com.simplesys.SmartClient.System._
 import com.simplesys.System.Types.CriteriaCombineOperator.CriteriaCombineOperator
 import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
 import com.simplesys.System.Types.DSDataFormat.DSDataFormat
@@ -82,6 +82,7 @@ trait DataSource extends Class {
     val defaultMultiUpdatePolicy: MultiUpdatePolicy
     val defaultTextMatchStyle: TextMatchStyle
     val descriptionField: String
+    val dbImportFileName: String
     def downloadFile(data: Record, fieldName: String = js.native, requestProperties: DSRequest = js.native): void
     val dropExtraFields: Boolean
     val dropUnknownCriteria: Boolean
@@ -218,6 +219,7 @@ trait DataSource extends Class {
     val tableCode: String
     val tableName: String
     val tagName: String
+    val testFileName: String
     val title: String
     val titleField: String
     val transformMultipleFields: Boolean
@@ -280,5 +282,5 @@ abstract trait AbstractDataSourceCompanion extends AbstractClassCompanion {
 }
 
 @js.native
-   object DataSource extends AbstractDataSourceCompanion
+object DataSource extends AbstractDataSourceCompanion
 

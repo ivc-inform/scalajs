@@ -7,7 +7,7 @@ import scala.scalajs.js
 import scala.scalajs.js._
 
 class PrintPropertiesProps extends AbstractClassProps {
-    var includeControls: ScOption[js.Array[String]] = ScNone
-    var omitControls: ScOption[js.Array[String]] = ScNone
+    var includeControls: ScOption[Seq[String]] = ScNone
+    var omitControls: ScOption[Seq[String]] = ScNone
     var printForExport: ScOption[Boolean] = ScNone
 }

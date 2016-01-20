@@ -11,7 +11,7 @@ import scala.scalajs.js
 class ImgSectionHeaderProps extends HLayoutProps {
     var background: ScOption[StretchImg] = ScNone
     var clipTitle: ScOption[Boolean] = ScNone
-    var controls: ScOption[js.Array[Canvas]] = ScNone
+    var controls: ScOption[Seq[Canvas]] = ScNone
     var controlsLayout: ScOption[Layout] = ScNone
     var icon: ScOption[SCImgURL] = ScNone
     var iconAlign: ScOption[String] = ScNone

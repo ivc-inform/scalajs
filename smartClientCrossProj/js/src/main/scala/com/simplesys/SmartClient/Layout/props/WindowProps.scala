@@ -32,11 +32,11 @@ class WindowProps extends LayoutProps {
     var dismissOnOutsideClick: ScOption[Boolean] = ScNone
     var fillSpaceStyleName: ScOption[CSSStyleName] = ScNone
     var footer: ScOption[HLayout] = ScNone
-    var footerControls: ScOption[js.Array[String]] = ScNone
+    var footerControls: ScOption[Seq[String]] = ScNone
     var footerHeight: ScOption[Int] = ScNone
     var header: ScOption[HLayout] = ScNone
     var headerBackground: ScOption[Img] = ScNone
-    var headerControls: ScOption[js.Array[String]] = ScNone
+    var headerControls: ScOption[Seq[String]] = ScNone
     var headerIcon: ScOption[Img] = ScNone
     var headerIconDefaults: ScOption[Types.Object] = ScNone
     var headerLabel: ScOption[Label] = ScNone
@@ -47,7 +47,7 @@ class WindowProps extends LayoutProps {
     var hiliteHeaderSrc: ScOption[SCImgURL] = ScNone
     var hiliteHeaderStyle: ScOption[CSSStyleName] = ScNone
     var isModal: ScOption[Boolean] = ScNone
-    var items: ScOption[js.Array[Canvas]] = ScNone
+    var items: ScOption[Seq[Canvas]] = ScNone
     var maximizeButton: ScOption[ImgButton] = ScNone
     var maximized: ScOption[Boolean] = ScNone
     var minimizeAcceleration: ScOption[AnimationAcceleration] = ScNone

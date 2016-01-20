@@ -18,7 +18,7 @@ class HiliteEditorProps extends VLayoutProps {
     var cancelButton: ScOption[StatefulCanvas] = ScNone
     var cancelButtonTitle: ScOption[String] = ScNone
     var fieldList: ScOption[Grid[ListGridField, ListGridRecord]] = ScNone
-    var hiliteIcons: ScOption[js.Array[SCImgURL]] = ScNone
+    var hiliteIcons: ScOption[Seq[SCImgURL]] = ScNone
     var hiliteRule: ScOption[HiliteRule] = ScNone
     var saveButton: ScOption[StatefulCanvas] = ScNone
     var saveButtonTitle: ScOption[String] = ScNone
