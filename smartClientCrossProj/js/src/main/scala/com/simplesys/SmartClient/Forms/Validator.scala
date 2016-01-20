@@ -18,6 +18,8 @@ trait Validator extends Class {
     val applyWhen: AdvancedCriteria
     val dependentFields: Array[String]
     val serverOnly: Boolean
+    val precision : js.Any
+    val min : js.Any
     val stopOnError: Boolean
     val validateOnChange: Boolean
     val caseSensitive: Boolean

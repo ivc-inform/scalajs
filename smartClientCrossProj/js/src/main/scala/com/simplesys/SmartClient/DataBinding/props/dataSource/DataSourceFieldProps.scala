@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.DataBinding.props.dataSource
 
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.Validator
+import com.simplesys.SmartClient.Forms.props.ValidatorProps
 import com.simplesys.SmartClient.System.Types.{ValueMap, XPathExpression, VelocityExpression}
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.FieldImportStrategy.FieldImportStrategy
@@ -118,8 +119,8 @@ class DataSourceFieldProps extends AbstractClassProps {
     var updateRequiresAuthentication: ScOption[Boolean] = ScNone
     var updateRequiresRole: ScOption[String] = ScNone
     var uploadFieldName: ScOption[String] = ScNone
-    var validators: ScOption[Array[Validator]] = ScNone
-    var validOperators: ScOption[Array[OperatorId]] = ScNone
+    var validators: ScOption[Seq[ValidatorProps]] = ScNone
+    var validOperators: ScOption[Seq[OperatorId]] = ScNone
     var valueMap: ScOption[ValueMap] = ScNone
     var valueMapEnum: ScOption[String] = ScNone
     var valueWriteXPath: ScOption[XPathExpression] = ScNone
