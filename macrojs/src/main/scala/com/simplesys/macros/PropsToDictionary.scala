@@ -35,14 +35,14 @@ object PropsToDictionary extends Logging {
                                 if (targs.head.baseClasses.contains(tsAbstractClassProps))
                                     q"$valueAccess.map(x => (new SCApply4Props[${targs.head}]).getDictionary($ex))"
                                 else
-                                    q"scala.scalajs.runtime.genTraversableOnce2jsArray($valueAccess)"
+                                    valueAccess
 
                             case None =>
-                                q"scala.scalajs.runtime.genTraversableOnce2jsArray($valueAccess)"
+                                valueAccess
                         }
-                    } else q"scala.scalajs.runtime.genTraversableOnce2jsArray($valueAccess)"
+                    } else valueAccess
 
-                    Some(q"$arrEx")
+                    Some(q"scala.scalajs.runtime.genTraversableOnce2jsArray($arrEx)")
 
                 case NoType =>
                     def getTree4DoubleType(symb: Symbol, tp1: Tree, tp2: Tree): Option[Tree] = {

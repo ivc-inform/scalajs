@@ -1,12 +1,10 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.Control.{Dialog, LoginDialog}
+import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.System.Types.void
-import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.ScalaJSDefined
 import scala.scalajs.js.|
 
 abstract trait Properties
@@ -54,7 +52,7 @@ object isc extends Types.Object {
     def warn(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
 
     val params: com.simplesys.SmartClient.System.params.type = js.native
-    val Log = com.simplesys.SmartClient.System.Log
+    val Log: AbstractLogCompanion = js.native
 }
 
 
