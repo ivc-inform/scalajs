@@ -34,14 +34,14 @@ package object System {
     }
 
     //<editor-fold desc="Control">
-    //object Dialog extends SCApply[Dialog, DialogProps]
-    //object IButton extends SCApply[IButton, IButtonProps]
+    object Dialog extends SCApply[Dialog, DialogProps]
+    object IButton extends SCApply[IButton, IButtonProps]
     //</editor-fold>
 
     //<editor-fold desc="DataBinding">
-    //object DataView extends SCApply[DataView, DataViewProps]
-    //object DataSource extends SCApply[DataSource, DataSourceProps]
-    //object RestDataSource extends SCApply[RestDataSource, RestDataSourceProps]
+    object DataView extends SCApply[DataView, DataViewProps]
+    object DataSource extends SCApply[DataSource, DataSourceProps]
+    object RestDataSource extends SCApply[RestDataSource, RestDataSourceProps]
     //</editor-fold>
 
     //<editor-fold desc="Forms">
