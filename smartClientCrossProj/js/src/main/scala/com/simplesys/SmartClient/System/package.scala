@@ -49,8 +49,8 @@ package object System {
     //</editor-fold>
 
     //<editor-fold desc="FormsItems">
-//    object FormItem extends SCApply[FormItem, FormItemProps]
-//    object ButtonItem extends SCApply[ButtonItem, ButtonItemProps]
+    object FormItem extends SCApply[FormItem, FormItemProps]
+    object ButtonItem extends SCApply[ButtonItem, ButtonItemProps]
     //</editor-fold>
 
     //<editor-fold desc="Foundation">
