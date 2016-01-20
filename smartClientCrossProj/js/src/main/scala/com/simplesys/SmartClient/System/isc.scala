@@ -54,7 +54,7 @@ object isc extends Types.Object {
     def warn(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
 
     val params: com.simplesys.SmartClient.System.params.type = js.native
-
+    val Log = LogStatic
 }
 
 
