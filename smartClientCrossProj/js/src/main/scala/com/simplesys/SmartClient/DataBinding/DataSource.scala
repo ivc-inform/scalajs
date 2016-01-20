@@ -82,6 +82,7 @@ trait DataSource extends Class {
     val defaultMultiUpdatePolicy: MultiUpdatePolicy
     val defaultTextMatchStyle: TextMatchStyle
     val descriptionField: String
+    val dbImportFileName: String
     def downloadFile(data: Record, fieldName: String = js.native, requestProperties: DSRequest = js.native): void
     val dropExtraFields: Boolean
     val dropUnknownCriteria: Boolean
@@ -218,6 +219,7 @@ trait DataSource extends Class {
     val tableCode: String
     val tableName: String
     val tagName: String
+    val testFileName: String
     val title: String
     val titleField: String
     val transformMultipleFields: Boolean

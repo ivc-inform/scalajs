@@ -59,6 +59,7 @@ class DataSourceProps extends ClassProps {
     var dataProtocol: ScOption[DSProtocol] = ScNone
     var dataTransport: ScOption[RPCTransport] = ScNone
     var dataURL: ScOption[URL] = ScNone
+    var dbImportFileName: ScOption[String] = ScNone
     var dbName: ScOption[String] = ScNone
     var deepCloneOnEdit: ScOption[Boolean] = ScNone
     var defaultBooleanStorageStrategy: ScOption[String] = ScNone
@@ -143,6 +144,7 @@ class DataSourceProps extends ClassProps {
     var tableCode: ScOption[String] = ScNone
     var tableName: ScOption[String] = ScNone
     var tagName: ScOption[String] = ScNone
+    var testFileName: ScOption[String] = ScNone
     var title: ScOption[String] = ScNone
     var titleField: ScOption[String] = ScNone
     var transformMultipleFields: ScOption[Boolean] = ScNone
