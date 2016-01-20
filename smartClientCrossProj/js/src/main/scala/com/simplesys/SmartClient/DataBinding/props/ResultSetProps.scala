@@ -11,7 +11,7 @@ import com.simplesys.option.{ScNone, ScOption}
 import scala.scalajs.js
 
 class ResultSetProps extends ClassProps with ListProps {
-    var allRows: ScOption[js.Array[Record]] = ScNone
+    var allRows: ScOption[Seq[Record]] = ScNone
     var alwaysRequestVisibleRows: ScOption[Boolean] = ScNone
     var criteria: ScOption[Criteria] = ScNone
     var criteriaPolicy: ScOption[CriteriaPolicy] = ScNone

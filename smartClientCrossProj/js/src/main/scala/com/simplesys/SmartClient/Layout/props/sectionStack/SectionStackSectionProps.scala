@@ -13,12 +13,12 @@ class SectionStackSectionProps extends AbstractClassProps {
     var canReorder: ScOption[Boolean] = ScNone
     var canTabToHeader: ScOption[Boolean] = ScNone
     var clipTitle: ScOption[Boolean] = ScNone
-    var controls: ScOption[js.Array[Canvas]] = ScNone
+    var controls: ScOption[Seq[Canvas]] = ScNone
     var expanded: ScOption[Boolean] = ScNone
     var hidden: ScOption[Boolean] = ScNone
     var icon: ScOption[SCImgURL] = ScNone
     var ID: ScOption[String] = ScNone
-    var items: ScOption[js.Array[Canvas]] = ScNone
+    var items: ScOption[Seq[Canvas]] = ScNone
     var name: ScOption[String] = ScNone
     var resizeable: ScOption[Boolean] = ScNone
     var showClippedTitleOnHover: ScOption[Boolean] = ScNone

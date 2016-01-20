@@ -11,7 +11,7 @@ import scala.scalajs.js._
 class TreeNodeProps extends AbstractClassProps {
     var canAcceptDrop: ScOption[Boolean] = ScNone
     var canDrag: ScOption[Boolean] = ScNone
-    var children: ScOption[js.Array[TreeNode]] = ScNone
+    var children: ScOption[Seq[TreeNode]] = ScNone
     var enabled: ScOption[Boolean] = ScNone
     var icon: ScOption[SCImgURL] = ScNone
     var id: ScOption[String] = ScNone

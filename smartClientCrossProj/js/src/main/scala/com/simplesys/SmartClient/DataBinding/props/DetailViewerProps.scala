@@ -65,7 +65,7 @@ class DetailViewerProps extends CanvasProps {
     var resultSet: ScOption[ResultSet] = ScNone
     var resultTree: ScOption[ResultTree] = ScNone
     var shouldUseCache: ScOption[Boolean] = ScNone
-    var sortBy: ScOption[js.Array[SortSpecifier]] = ScNone
+    var sortBy: ScOption[Seq[SortSpecifier]] = ScNone
     var startRow: ScOption[Int] = ScNone
     var streamResults: ScOption[Boolean] = ScNone
     var summaryFunctions: ScOption[Types.Object] = ScNone

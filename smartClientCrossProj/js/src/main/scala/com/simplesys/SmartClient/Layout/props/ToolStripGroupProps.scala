@@ -14,7 +14,7 @@ class ToolStripGroupProps extends VLayoutProps {
     var autoSizeToTitle: ScOption[Boolean] = ScNone
     var body: ScOption[HLayout] = ScNone
     var bodyConstructor: ScOption[String] = ScNone
-    var controls: ScOption[js.Array[Canvas]] = ScNone
+    var controls: ScOption[Seq[Canvas]] = ScNone
     var label: ScOption[HLayout] = ScNone
     var labelConstructor: ScOption[String] = ScNone
     var numRows: ScOption[Int] = ScNone

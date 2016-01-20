@@ -5,9 +5,9 @@ import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Grids.Grid
-import com.simplesys.SmartClient.Grids.listGrid.{UserFormula, UserSummary, ListGridRecord, ListGridField}
+import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord, UserFormula, UserSummary}
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.{ValueMap, Criteria}
+import com.simplesys.SmartClient.System.Types.{Criteria, ValueMap}
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AutoComplete.AutoComplete
 import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
@@ -18,12 +18,12 @@ import com.simplesys.System.Types.EscapeKeyEditAction.EscapeKeyEditAction
 import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.RecordSummaryFunction.RecordSummaryFunction
-import com.simplesys.System.Types._
 import com.simplesys.System.Types.SortDirection.SortDirection
 import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.System.Types._
+import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 
 import scala.scalajs.js
@@ -173,7 +173,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var sortByDisplayField: ScOption[Boolean] = ScNone
     var sortByMappedValue: ScOption[Boolean] = ScNone
     var sortDirection: ScOption[SortDirection] = ScNone
-    var summaryFunction: ScOption[SummaryFunction | js.Array[SummaryFunction]] = ScNone
+    var summaryFunction: ScOption[Seq[SummaryFunction]] = ScNone
     var summaryTitle: ScOption[String] = ScNone
     var summaryValue: ScOption[HTMLString] = ScNone
     var summaryValueTitle: ScOption[String] = ScNone
@@ -194,7 +194,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var valueIcons: ScOption[Types.Object] = ScNone
     var valueIconSize: ScOption[Int] = ScNone
     var valueIconWidth: ScOption[Int] = ScNone
-    var valueMap: ScOption[Types.Object | js.Array[String]] = ScNone
-    var width: ScOption[Int | String] = ScNone
+    var valueMap: ScOption[Seq[Types.Object]] = ScNone
+    var width: ScOption[Int] = ScNone
     var wrap: ScOption[Boolean] = ScNone
 }

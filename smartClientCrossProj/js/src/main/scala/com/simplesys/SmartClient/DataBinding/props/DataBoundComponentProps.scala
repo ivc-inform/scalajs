@@ -45,7 +45,7 @@ trait DataBoundComponentProps extends ClassProps {
     var editSummaryFieldText: ScOption[String] = ScNone
     var emptyExportMessage: ScOption[String] = ScNone
     var exportAll: ScOption[Boolean] = ScNone
-    var exportFields: ScOption[js.Array[String]] = ScNone
+    var exportFields: ScOption[Seq[String]] = ScNone
     var exportIncludeSummaries: ScOption[Boolean] = ScNone
     var fetchOperation: ScOption[String] = ScNone
     var fieldEditorWindow: ScOption[Window] = ScNone
@@ -56,11 +56,11 @@ trait DataBoundComponentProps extends ClassProps {
     var hiliteIconLeftPadding: ScOption[Int] = ScNone
     var hiliteIconPosition: ScOption[HiliteIconPosition] = ScNone
     var hiliteIconRightPadding: ScOption[Int] = ScNone
-    var hiliteIcons: ScOption[js.Array[String]] = ScNone
+    var hiliteIcons: ScOption[Seq[String]] = ScNone
     var hiliteIconSize: ScOption[Int] = ScNone
     var hiliteIconWidth: ScOption[Int] = ScNone
     var hiliteProperty: ScOption[String] = ScNone
-    var hilites: ScOption[js.Array[Hilite]] = ScNone
+    var hilites: ScOption[Seq[Hilite]] = ScNone
     var hiliteState: ScOption[String] = ScNone
     var iconField: ScOption[String] = ScNone
     var includeHilitesInSummaryFields: ScOption[Boolean] = ScNone

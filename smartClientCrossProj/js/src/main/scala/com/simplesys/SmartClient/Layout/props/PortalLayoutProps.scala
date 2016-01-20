@@ -17,8 +17,8 @@ class PortalLayoutProps extends LayoutProps {
     var columnBorder: ScOption[String] = ScNone
     var columnOverflow: ScOption[Overflow] = ScNone
     var numColumns: ScOption[Int] = ScNone
-    var portletDropTypes: ScOption[js.Array[String]] = ScNone
-    var portlets: ScOption[js.Array[Portlet]] = ScNone
+    var portletDropTypes: ScOption[Seq[String]] = ScNone
+    var portlets: ScOption[Seq[Portlet]] = ScNone
     var portletsChanged: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone
     var portletsResized: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone
     var preventColumnUnderflow: ScOption[Boolean] = ScNone

@@ -23,7 +23,7 @@ class SectionStackProps extends VLayoutProps {
     var locateSectionsType: ScOption[LocatorTypeStrategy] = ScNone
     var sectionHeaderClass: ScOption[String] = ScNone
     var sectionHeaderClick: ScOption[js.Function1[Canvas, void]] = ScNone
-    var sections: ScOption[js.Array[SectionStackSection]] = ScNone
+    var sections: ScOption[Seq[SectionStackSection]] = ScNone
     var showExpandControls: ScOption[Boolean] = ScNone
     var useGlobalSectionIDs: ScOption[Boolean] = ScNone
     var visibilityMode: ScOption[VisibilityMode] = ScNone

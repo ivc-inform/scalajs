@@ -25,7 +25,7 @@ class TileLayoutProps extends CanvasProps {
     var tileHeight: ScOption[Int] = ScNone
     var tileHMargin: ScOption[Int] = ScNone
     var tileMargin: ScOption[Int] = ScNone
-    var tiles: ScOption[js.Array[Canvas]] = ScNone
+    var tiles: ScOption[Seq[Canvas]] = ScNone
     var tileSize: ScOption[Int] = ScNone
     var tilesPerLine: ScOption[Int] = ScNone
     var tileVMargin: ScOption[Int] = ScNone

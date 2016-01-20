@@ -10,7 +10,7 @@ import scala.scalajs.js._
 
 class NavigationBarViewStateProps extends AbstractClassProps {
     var alwaysShowLeftButtonTitle: ScOption[Boolean] = ScNone
-    var controls: ScOption[js.Array[String] | js.Array[Canvas]] = ScNone
+    var controls: ScOption[Seq[Canvas]] = ScNone
     var leftButtonTitle: ScOption[HTMLString] = ScNone
     var shortLeftButtonTitle: ScOption[HTMLString] = ScNone
     var showLeftButton: ScOption[Boolean] = ScNone
