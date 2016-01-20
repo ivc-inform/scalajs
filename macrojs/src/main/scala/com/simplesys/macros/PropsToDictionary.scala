@@ -5,7 +5,6 @@ import com.simplesys.log.Logging
 import com.simplesys.option._
 import com.simplesys.props.AbstractClassProps
 
-import scala.collection.GenTraversableOnce
 import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context
 import scala.scalajs.js
@@ -25,73 +24,59 @@ object PropsToDictionary extends Logging {
         val tsScEnumeration = typeOf[Enumeration].typeSymbol
 
         def typeToConvertedValueInt(typeDef: context.universe.Type, valueAccess: context.universe.Tree): Option[context.universe.Tree] = {
-            val res = typeDef.baseType(typeOf[Option[_]].typeSymbol) match {
+            typeDef.baseType(typeOf[js.Array[_]].typeSymbol) match {
                 case TypeRef(_, _, targs) =>
-                    val optEx = if (targs.size == 1) {
+                    val arrEx = if (targs.size == 1) {
                         val checkedType = typeToConvertedValueInt(targs.head, q"x")
                         checkedType match {
-                            case Some(ex) => q"$valueAccess.map(x => $ex: js.Any)"
-                            case None => valueAccess
+                            case Some(ex) =>
+                                q"$valueAccess.map(x => $ex: js.Any)"
+
+                            case None =>
+                                valueAccess
                         }
                     } else valueAccess
-                    Some(q"$optEx.orUndefined")
+
+                    Some(q"$arrEx")
+
                 case NoType =>
-                    typeDef.baseType(typeOf[GenTraversableOnce[_]].typeSymbol) match {
-                        case TypeRef(_, _, targs) =>
-                            val arrEx = if (targs.size == 1) {
-                                val checkedType = typeToConvertedValueInt(targs.head, q"x")
-                                checkedType match {
-                                    case Some(ex) =>
-                                        q"$valueAccess.map(x => $ex: js.Any)"
+                    def getTree4DoubleType(symb: Symbol, tp1: Tree, tp2: Tree): Option[Tree] = {
+                        typeDef.baseType(symb) match {
+                            case TypeRef(_, _, targs) =>
+                                val access = q"ei"
+                                val checkedTypes = targs.map(t => typeToConvertedValueInt(t, access))
+                                val type1 = checkedTypes.head.getOrElse(valueAccess)
+                                val type2 = checkedTypes.last.getOrElse(valueAccess)
 
-                                    case None =>
-                                        valueAccess
-                                }
-                            } else valueAccess
-
-                            Some(q"$arrEx.toJSArray")
-
-                        case NoType =>
-                            def getTree4DoubleType(symb: Symbol, tp1: Tree, tp2: Tree): Option[Tree] = {
-                                typeDef.baseType(symb) match {
-                                    case TypeRef(_, _, targs) =>
-                                        val access = q"ei"
-                                        val checkedTypes = targs.map(t => typeToConvertedValueInt(t, access))
-                                        val type1 = checkedTypes.head.getOrElse(valueAccess)
-                                        val type2 = checkedTypes.last.getOrElse(valueAccess)
-
-                                        Some(
-                                            q"""$valueAccess match {
+                                Some(
+                                    q"""$valueAccess match {
                                             case $tp1(item) => $type1: js.Any
                                             case $tp2(item) => $type2: js.Any
                                         }""")
-                                    case NoType =>
-                                        if (typeDef.typeSymbol.owner == tsScEnumeration)
-                                            Some(q"item.toString")
-                                        else
-                                            None
-                                }
-                            }
-                            typeDef.baseType(tsScOption) match {
-                                case TypeRef(_, _, _) =>
-                                    Some(q"$valueAccess")
-                                case NoType =>
-                                    getTree4DoubleType(typeOf[DoubleType[_, _]].typeSymbol, q"Type1", q"Type2") match {
-                                        case None =>
-                                            getTree4DoubleType(typeOf[IntString[_, _]].typeSymbol, q"IntFRomIntString", q"StringFRomIntString") match {
-                                                case None => getTree4DoubleType(typeOf[DoubleAlignment[_, _]].typeSymbol, q"AlignmentfromDoubleAlignment", q"VerticalAlignmentfromDoubleAlignment") match {
-                                                    case None => getTree4DoubleType(typeOf[FormItemType_String[_, _]].typeSymbol, q"FormItemTypefromFormItemType_String", q"StringfromFormItemType_String")
-                                                    case some => some
-                                                }
-                                                case some => some
-                                            }
+                            case NoType =>
+                                if (typeDef.typeSymbol.owner == tsScEnumeration)
+                                    Some(q"item.toString")
+                                else
+                                    None
+                        }
+                    }
+                    typeDef.baseType(tsScOption) match {
+                        case TypeRef(_, _, _) =>
+                            Some(q"$valueAccess")
+                        case NoType =>
+                            getTree4DoubleType(typeOf[DoubleType[_, _]].typeSymbol, q"Type1", q"Type2") match {
+                                case None =>
+                                    getTree4DoubleType(typeOf[IntString[_, _]].typeSymbol, q"IntFRomIntString", q"StringFRomIntString") match {
+                                        case None => getTree4DoubleType(typeOf[DoubleAlignment[_, _]].typeSymbol, q"AlignmentfromDoubleAlignment", q"VerticalAlignmentfromDoubleAlignment") match {
+                                            case None => getTree4DoubleType(typeOf[FormItemType_String[_, _]].typeSymbol, q"FormItemTypefromFormItemType_String", q"StringfromFormItemType_String")
+                                            case some => some
+                                        }
                                         case some => some
                                     }
+                                case some => some
                             }
                     }
             }
-
-            res
         }
         typeToConvertedValueInt(typeDef, valueAccess).getOrElse(q"$valueAccess")
     }

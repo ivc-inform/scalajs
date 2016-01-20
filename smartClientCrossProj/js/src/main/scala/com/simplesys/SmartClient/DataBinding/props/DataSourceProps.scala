@@ -72,7 +72,7 @@ class DataSourceProps extends ClassProps {
 //    var enumOrdinalProperty: ScOption[String] = ScNone
 //    var enumTranslateStrategy: ScOption[EnumTranslateStrategy] = ScNone
 
-//    var fields: ScOption[Seq[DataSourceFieldProps]] = ScNone
+    var fields: ScOption[js.Array[DataSourceFieldProps]] = ScNone
 
 //    var fileContentsField: ScOption[String] = ScNone
 //    var fileFormatField: ScOption[String] = ScNone
