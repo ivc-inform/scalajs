@@ -33,5 +33,4 @@ abstract trait AbstractLogCompanion extends AbstractClassCompanion {
 }
 
 @js.native
-@JSName("Log")
-object LogStatic extends AbstractLogCompanion
+object Log extends AbstractLogCompanion
