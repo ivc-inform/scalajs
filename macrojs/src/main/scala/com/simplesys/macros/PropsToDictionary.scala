@@ -42,12 +42,16 @@ object PropsToDictionary extends Logging {
                             val arrEx = if (targs.size == 1) {
                                 val checkedType = typeToConvertedValueInt(targs.head, q"x")
                                 checkedType match {
-                                    case Some(ex) => q"$valueAccess.map(x => $ex)"
-                                    case None => valueAccess
+                                    case Some(ex) =>
+                                        q"$valueAccess.map(x => $ex)"
+
+                                    case None =>
+                                        valueAccess
                                 }
                             } else valueAccess
 
                             Some(q"$arrEx.toJSArray")
+
                         case NoType =>
                             def getTree4DoubleType(symb: Symbol, tp1: Tree, tp2: Tree): Option[Tree] = {
                                 typeDef.baseType(symb) match {
@@ -153,7 +157,7 @@ object PropsToDictionary extends Logging {
                     }
                 }"""
         }
-        logger debug res.toString()
+        logger debug showCode(res.tree)
         res
     }
 }

@@ -6,8 +6,8 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerField
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.RPC.ServerObject
-import com.simplesys.SmartClient.System._
 import com.simplesys.SmartClient.System.Types._
+import com.simplesys.SmartClient.System._
 import com.simplesys.System.Types.CriteriaCombineOperator.CriteriaCombineOperator
 import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
 import com.simplesys.System.Types.DSDataFormat.DSDataFormat
@@ -280,5 +280,5 @@ abstract trait AbstractDataSourceCompanion extends AbstractClassCompanion {
 }
 
 @js.native
-   object DataSource extends AbstractDataSourceCompanion
+object DataSource extends AbstractDataSourceCompanion
 
