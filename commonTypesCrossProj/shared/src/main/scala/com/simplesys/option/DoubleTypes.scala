@@ -4,7 +4,6 @@ import com.simplesys.System.Types.Alignment._
 import com.simplesys.System.Types.FormItemType.FormItemType
 import com.simplesys.System.Types.VerticalAlignment._
 import scala.language.existentials
-//import scala.scalajs.js
 
 sealed abstract class DoubleType[+A, +B]
 
@@ -47,6 +46,7 @@ object FormItemType_String {
     implicit def String2FormItemType_String(x: String) = ScSome(StringfromFormItemType_String(x))
 }
 //</editor-fold>
+
 
 
 

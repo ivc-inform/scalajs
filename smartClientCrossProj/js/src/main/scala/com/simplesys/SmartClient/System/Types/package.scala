@@ -31,7 +31,7 @@ package object Types {
     type DetailViewerViewState = Object
 
     type Callback = js.Function | js.ThisFunction | CallbackObject
-    type ValueMap = js.Dictionary[js.Any]
+    type ValueMap = js.Array[js.Any] //| js.Dictionary[js.Any]
     type XMLDocument = Object
     type XMLElement = Object
     type XMLNode = Object

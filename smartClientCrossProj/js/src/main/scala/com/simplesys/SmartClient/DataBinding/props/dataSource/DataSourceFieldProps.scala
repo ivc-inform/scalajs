@@ -128,5 +128,5 @@ class DataSourceFieldProps extends AbstractClassProps {
     var viewRequiresAuthentication: ScOption[Boolean] = ScNone
     var viewRequiresRole: ScOption[String] = ScNone
     var xmlAttribute: ScOption[Boolean] = ScNone
-    val `type`: ScOption[FieldType] = ScNone
+    var `type`: ScOption[FieldType] = ScNone
 }
