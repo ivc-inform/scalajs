@@ -23,9 +23,10 @@ object PropsToDictionary extends Logging {
         val tsScOption = typeOf[ScOption[_]].typeSymbol
         val tsScEnumeration = typeOf[Enumeration].typeSymbol
         val tsAbstractClassProps = typeOf[AbstractClassProps].typeSymbol
+        val tsJSObject = typeOf[js.Object].typeSymbol
 
         def typeToConvertedValueInt(typeDef: context.universe.Type, valueAccess: context.universe.Tree): Option[context.universe.Tree] = {
-            typeDef.baseType(typeOf[js.Array[_]].typeSymbol) match {
+            typeDef.baseType(typeOf[Seq[_]].typeSymbol) match {
                 case TypeRef(_, _, targs) =>
                     val arrEx = if (targs.size == 1) {
                         val checkedType: Option[context.universe.Tree] = typeToConvertedValueInt(targs.head, q"x")
@@ -34,12 +35,12 @@ object PropsToDictionary extends Logging {
                                 if (targs.head.baseClasses.contains(tsAbstractClassProps))
                                     q"$valueAccess.map(x => (new SCApply4Props[${targs.head}]).getDictionary($ex))"
                                 else
-                                    q"$valueAccess.map(x => $ex)"
+                                    q"scala.scalajs.runtime.genTraversableOnce2jsArray($valueAccess)"
 
                             case None =>
-                                valueAccess
+                                q"scala.scalajs.runtime.genTraversableOnce2jsArray($valueAccess)"
                         }
-                    } else valueAccess
+                    } else q"scala.scalajs.runtime.genTraversableOnce2jsArray($valueAccess)"
 
                     Some(q"$arrEx")
 
@@ -68,20 +69,25 @@ object PropsToDictionary extends Logging {
                         case TypeRef(_, _, _) =>
                             Some(q"$valueAccess")
                         case NoType =>
-                            typeDef.baseType(tsScOption) match {
+                            typeDef.baseType(tsJSObject) match {
                                 case TypeRef(_, _, _) =>
                                     Some(q"$valueAccess")
                                 case NoType =>
-                                    getTree4DoubleType(typeOf[DoubleType[_, _]].typeSymbol, q"Type1", q"Type2") match {
-                                        case None =>
-                                            getTree4DoubleType(typeOf[IntString[_, _]].typeSymbol, q"IntFRomIntString", q"StringFRomIntString") match {
-                                                case None => getTree4DoubleType(typeOf[DoubleAlignment[_, _]].typeSymbol, q"AlignmentfromDoubleAlignment", q"VerticalAlignmentfromDoubleAlignment") match {
-                                                    case None => getTree4DoubleType(typeOf[FormItemType_String[_, _]].typeSymbol, q"FormItemTypefromFormItemType_String", q"StringfromFormItemType_String")
-                                                    case some => some
-                                                }
+                                    typeDef.baseType(tsScOption) match {
+                                        case TypeRef(_, _, _) =>
+                                            Some(q"$valueAccess")
+                                        case NoType =>
+                                            getTree4DoubleType(typeOf[DoubleType[_, _]].typeSymbol, q"Type1", q"Type2") match {
+                                                case None =>
+                                                    getTree4DoubleType(typeOf[IntString[_, _]].typeSymbol, q"IntFRomIntString", q"StringFRomIntString") match {
+                                                        case None => getTree4DoubleType(typeOf[DoubleAlignment[_, _]].typeSymbol, q"AlignmentfromDoubleAlignment", q"VerticalAlignmentfromDoubleAlignment") match {
+                                                            case None => getTree4DoubleType(typeOf[FormItemType_String[_, _]].typeSymbol, q"FormItemTypefromFormItemType_String", q"StringfromFormItemType_String")
+                                                            case some => some
+                                                        }
+                                                        case some => some
+                                                    }
                                                 case some => some
                                             }
-                                        case some => some
                                     }
                             }
                     }
@@ -152,7 +158,7 @@ object PropsToDictionary extends Logging {
                     }
                 }"""
         }
-        //logger debug showCode(res.tree)
+        logger debug showCode(res.tree)
         res
     }
 }
