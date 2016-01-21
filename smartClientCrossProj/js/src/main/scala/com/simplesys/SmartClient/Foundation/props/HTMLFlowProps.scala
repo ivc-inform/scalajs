@@ -1,8 +1,9 @@
 package com.simplesys.SmartClient.Foundation.props
 
 import com.simplesys.SmartClient.DataBinding.props.DataBoundComponentProps
+import com.simplesys.SmartClient.Foundation.{HTMLFlow, Canvas}
 import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
-import com.simplesys.SmartClient.System.Types
+import com.simplesys.SmartClient.System.{HTMLFlow, Types}
 import com.simplesys.System.Types.ContentsType.ContentsType
 import com.simplesys.System.Types.{void, URL, HTMLString}
 import com.simplesys.System.Types.SendMethod.SendMethod
@@ -13,9 +14,11 @@ import scala.scalajs.js
 import scala.scalajs.js._
 
 class HTMLFlowProps extends CanvasProps with DataBoundComponentProps{
+    type callbackHandler <: HTMLFlow
+
     var allowCaching: ScOption[Boolean] = ScNone
     var captureSCComponents: ScOption[Boolean] = ScNone
-    var contentLoaded: ScOption[js.Function1[void, _]] = ScNone
+    var contentLoaded: ScOption[js.ThisFunction0[callbackHandler, _]] = ScNone
     var contentsType: ScOption[ContentsType] = ScNone
     var contentsURL: ScOption[URL] = ScNone
     var contentsURLParams: ScOption[Types.Object] = ScNone
