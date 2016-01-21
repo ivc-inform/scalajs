@@ -39,7 +39,9 @@ package com.simplesys {
                 def unembed(cell: Cell): Unit = js.native
                 def getEmbeddedCells(): js.Array[Cell] = js.native
                 @JSName("clone")
-                def cloneJS(opt: js.Any = ???): backbone.Model /*Cell?*/ = js.native
+                def cloneCell(opt: js.Any = ???): Cell = js.native
+                @JSName("clone")
+                def cloneModel(opt: js.Any = ???): backbone.Model = js.native
                 def attr(attrs: js.Any): Cell = js.native
             }
 
@@ -167,5 +169,7 @@ package com.simplesys {
                 def deepSupplement(objects: js.Array[js.Any], defaultIndicator: js.Any = ???): js.Dynamic = js.native
             }
         }
+
     }
+
 }
