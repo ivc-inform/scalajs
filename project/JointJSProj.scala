@@ -6,7 +6,7 @@ import sbt.Keys._
 import sbt._
 
 trait JointJSProj {
-    self: Build  with MacroJSProject with MacroJVMProject with CommonTypesProj =>
+    self: Build with MacroJSProject with MacroJVMProject with CommonTypesProj =>
 
     lazy val jointJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).
       settings(
@@ -22,7 +22,10 @@ trait JointJSProj {
       ).
       jvmSettings().
       jsSettings(
-          libraryDependencies ++= Seq()
+          libraryDependencies ++= Seq(
+              CommonSettings.jsDependencies.scalajsDOM.value,
+              CommonSettings.jsDependencies.scalajsJQuey.value
+          )
       ).dependsOn().jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
 
     lazy val jointJSCrossJVM = jointJSCrossProj.jvm
