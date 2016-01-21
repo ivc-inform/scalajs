@@ -11,4 +11,5 @@ class Rect extends Element {
     var position: js.Dictionary[js.Any] = js.native
     var size: js.Dictionary[js.Any] = js.native
     var attrs: js.Dictionary[js.Any] = js.native
+    override def clone(opt: js.Dictionary[js.Any] = js.native): Rect = js.native
 }

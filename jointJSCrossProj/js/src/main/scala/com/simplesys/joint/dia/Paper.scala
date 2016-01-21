@@ -2,7 +2,7 @@ package com.simplesys.joint.dia
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
-import org.querki.jquery._
+import org.scalajs.jquery._
 
 @js.native
 @JSName("joint.dia.Paper")
