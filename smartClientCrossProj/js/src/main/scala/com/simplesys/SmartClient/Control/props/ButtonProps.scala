@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Control.props
 
+import com.simplesys.SmartClient.Control.Button
 import com.simplesys.SmartClient.Foundation.props.StatefulCanvasProps
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.System.Types.Cursor.Cursor
@@ -8,7 +9,8 @@ import com.simplesys.System.Types.void
 import scala.scalajs.js
 
 class ButtonProps extends StatefulCanvasProps {
-    type buttonHandler <: this.type
+    type buttonHandler <: Button
+
     var action: ScOption[js.ThisFunction0[buttonHandler, void]] = ScNone
     var disabledIconCursor: ScOption[Cursor] = ScNone
     var hiliteAccessKey: ScOption[Boolean] = ScNone
