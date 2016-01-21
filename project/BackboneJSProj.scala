@@ -1,16 +1,16 @@
 package com.simplesys.build
 
-
+import com.simplesys.build.{CommonSettings, MacroJSProject, MacroJVMProject, CommonTypesProj}
 import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport._
 import sbt.Keys._
 import sbt._
 
-trait JointJSProj {
-    self: Build with MacroJSProject with MacroJVMProject with CommonTypesProj with  BackboneJSProj =>
+trait BackboneJSProj {
+    self: Build with MacroJSProject with MacroJVMProject with CommonTypesProj =>
 
-    lazy val jointJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).dependsOn(backboneJSCrossProj).
+    lazy val backboneJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).
       settings(
-          name := "joint-js",
+          name := "backbone-js",
           version := "1.0-SNAPSHOT",
 
           libraryDependencies ++= Seq(
@@ -28,6 +28,6 @@ trait JointJSProj {
           )
       ).dependsOn().jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
 
-    lazy val jointJSCrossJVM = jointJSCrossProj.jvm
-    lazy val jointJSCrossJS = jointJSCrossProj.js
+    lazy val backboneJSCrossJVM = backboneJSCrossProj.jvm
+    lazy val backboneJSCrossJS = backboneJSCrossProj.js
 }
