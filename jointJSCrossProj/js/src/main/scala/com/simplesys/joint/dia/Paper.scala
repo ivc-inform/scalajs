@@ -3,10 +3,10 @@ package com.simplesys.joint.dia
 import com.simplesys.joint.{Position, CSSSelector, LinkView}
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{JSExport, ScalaJSDefined}
+import scala.scalajs.js.annotation.{JSName, JSExport, ScalaJSDefined}
 
 @js.native
-@JSExport("joint.dia.Paper")
+@JSName("joint.dia.Paper")
 class Paper (props: js.Dictionary[js.Any]) extends js.Object {
     /*var sl: CSSSelector = js.native
     var width: Int = js.native

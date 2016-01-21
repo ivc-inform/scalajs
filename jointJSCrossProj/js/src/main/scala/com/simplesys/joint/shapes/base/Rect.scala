@@ -4,10 +4,10 @@ import com.simplesys.joint.dia.Element
 import com.simplesys.joint.{Size, Position}
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSExport
+import scala.scalajs.js.annotation.{JSName, JSExport}
 
 @js.native
-@JSExport("joint.shapes.basic.Rect")
+@JSName("joint.shapes.basic.Rect")
 class Rect (props: js.Dictionary[js.Any]) extends Element {
     override def clone(): Rect = js.native
 }

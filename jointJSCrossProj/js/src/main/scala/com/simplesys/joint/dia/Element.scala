@@ -1,10 +1,10 @@
 package com.simplesys.joint.dia
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSExport
+import scala.scalajs.js.annotation.{JSName, JSExport}
 
 @js.native
-@JSExport("joint.dia.Element")
+@JSName("joint.dia.Element")
 class Element extends Cell {
     def translate(tx: Int, ty: Int = js.native, opt: js.Dictionary[js.Any] = js.native): Unit = js.native
     def position(x: Int, y: Int = js.native, opt: js.Dictionary[js.Any] = js.native): Unit = js.native
