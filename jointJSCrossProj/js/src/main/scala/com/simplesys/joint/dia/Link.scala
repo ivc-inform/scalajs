@@ -5,6 +5,6 @@ import scala.scalajs.js.annotation.{JSName, JSExport}
 
 @js.native
 @JSName("joint.dia.Link")
-class Link(props:js.Dictionary[js.Any]) extends js.Object{
+class Link(props:js.Dictionary[js.Any]) extends Cell{
 
 }
