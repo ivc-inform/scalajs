@@ -1,7 +1,8 @@
 package com.simplesys.joint.dia
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{JSName, JSExport}
+import scala.scalajs.js.annotation.{ScalaJSDefined, JSName, JSExport}
+
 
 @js.native
 @JSName("joint.dia.Graph")
