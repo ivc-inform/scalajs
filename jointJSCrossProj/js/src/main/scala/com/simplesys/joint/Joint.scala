@@ -7,6 +7,8 @@ package com.simplesys {
 
         package dia {
 
+            import com.simplesys.backbone.Model
+
             @js.native
             trait IElementSize extends js.Object {
                 var width: Double = js.native
@@ -20,7 +22,7 @@ package com.simplesys {
                 def addCells(cells: js.Array[Cell]): Unit = js.native
                 def initialize(): Unit = js.native
                 def fromJSON(json: js.Any): Unit = js.native
-                def toJSON(): Object = js.native
+                def toJSON(): js.Object = js.native
                 def clear(): Unit = js.native
                 def getConnectedLinks(cell: Cell, opt: js.Any = ???): js.Array[Link] = js.native
                 def disconnectLinks(cell: Cell): Unit = js.native
@@ -31,7 +33,7 @@ package com.simplesys {
             @js.native
             @JSName("joint.dia.Cell")
             class Cell extends backbone.Model {
-                def toJSON(): Object = js.native
+                def toJSON(): js.Object = js.native
                 def remove(options: js.Any = ???): Unit = js.native
                 def toFront(): Unit = js.native
                 def toBack(): Unit = js.native
@@ -39,9 +41,7 @@ package com.simplesys {
                 def unembed(cell: Cell): Unit = js.native
                 def getEmbeddedCells(): js.Array[Cell] = js.native
                 @JSName("clone")
-                def cloneCell(opt: js.Any = ???): Cell = js.native
-                @JSName("clone")
-                def cloneModel(opt: js.Any = ???): backbone.Model = js.native
+                def cloneJS(opt: js.Any = ???): backbone.Model /*Cell?*/ = js.native
                 def attr(attrs: js.Any): Cell = js.native
             }
 
@@ -70,20 +70,21 @@ package com.simplesys {
                 def remove(): Unit = js.native
             }
 
-            @js.native
+            @ScalaJSDefined
             trait IOptions extends js.Object {
-                var width: Double = js.native
-                var height: Double = js.native
-                var gridSize: Double = js.native
-                var perpendicularLinks: Boolean = js.native
-                var elementView: ElementView = js.native
-                var linkView: LinkView = js.native
+                var width: Double
+                var height: Double
+                var gridSize: Double
+//                val perpendicularLinks: Boolean
+//                val elementView: ElementView
+//                val linkView: LinkView
+                var model : Model
             }
 
             @js.native
             @JSName("joint.dia.Paper")
             class Paper extends backbone.View[backbone.Model] {
-                var options: IOptions = js.native
+                var options: js.Dictionary[js.Any] = js.native
                 def setDimensions(width: Double, height: Double): Unit = js.native
                 def scale(sx: Double, sy: Double = ???, ox: Double = ???, oy: Double = ???): Paper = js.native
                 def rotate(deg: Double, ox: Double = ???, oy: Double = ???): Paper = js.native
@@ -130,27 +131,29 @@ package com.simplesys {
 
                 @js.native
                 @JSName("joint.shapes.basic.Generic")
-                class Generic extends joint.dia.Element {
+                class Generic[T] extends joint.dia.Element {
+                    @JSName("clone")
+                    def cloneSHP(opt: js.Any = ???): T = js.native
                 }
 
                 @js.native
                 @JSName("joint.shapes.basic.Rect")
-                class Rect extends Generic {
+                class Rect extends Generic[Rect] {
                 }
 
                 @js.native
                 @JSName("joint.shapes.basic.Text")
-                class Text extends Generic {
+                class Text extends Generic[Text] {
                 }
 
                 @js.native
                 @JSName("joint.shapes.basic.Circle")
-                class Circle extends Generic {
+                class Circle extends Generic[Circle] {
                 }
 
                 @js.native
                 @JSName("joint.shapes.basic.Image")
-                class Image extends Generic {
+                class Image extends Generic[Image] {
                 }
 
             }
