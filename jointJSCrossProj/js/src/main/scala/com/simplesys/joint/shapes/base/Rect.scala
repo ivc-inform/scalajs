@@ -7,7 +7,7 @@ import scala.scalajs.js.annotation.JSName
 
 @js.native
 @JSName("joint.shapes.basic.Rect")
-class Rect(props: js.Dictionary[js.Any]) extends Element {
+class Rect extends Element {
     var position: js.Dictionary[js.Any] = js.native
     var size: js.Dictionary[js.Any] = js.native
     var attrs: js.Dictionary[js.Any] = js.native

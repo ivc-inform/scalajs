@@ -6,5 +6,5 @@ import scala.scalajs.js.annotation.{JSName, JSExport}
 @js.native
 @JSName("joint.dia.Cell")
 class Cell extends js.Object {
-    def clone(opt: js.Dictionary[js.Any] = js.native): this.type = js.native
+    def clone(opt: js.Dictionary[js.Any] = js.native): Cell = js.native
 }
