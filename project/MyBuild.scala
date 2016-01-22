@@ -49,6 +49,7 @@ object MyBuild extends Build with
       commonTypesJS,
       commonTypesJVM,
       macroJS,
+      macroJVM,
       smartClientJS,
       smartClientJVM,
       commonDomainJS,
