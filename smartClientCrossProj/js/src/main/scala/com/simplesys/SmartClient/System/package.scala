@@ -23,6 +23,7 @@ import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
 import com.simplesys.SmartClient.Layout.props.toolStrip.{ToolStripResizerProps, ToolStripButtonProps, ToolStripSeparatorProps, ToolStripMenuButtonProps}
 import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.SmartClient.Layout.toolStrip.{ToolStripResizer, ToolStripButton, ToolStripSeparator, ToolStripMenuButton}
+import com.simplesys.SmartClient.System.props.TreeProps
 
 //import com.simplesys.macros.PropsToDictionary
 import com.simplesys.macros.PropsToDictionary
@@ -66,6 +67,7 @@ package object System {
     //<editor-fold desc="Grids">
     object ListGrid extends SCApply[ListGrid, ListGridProps]
     object TreeGrid extends SCApply[TreeGrid, TreeGridProps]
+    object Tree extends SCApply[Tree, TreeProps]
     //</editor-fold>
 
     //<editor-fold desc="Layout">

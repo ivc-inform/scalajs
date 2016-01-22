@@ -89,10 +89,3 @@ trait Tree extends Class {
     var titleProperty: String
 }
 
-@js.native
-abstract trait AbstractTreeCompanion extends AbstractClassCompanion {
-}
-
-@js.native
-   object Tree extends AbstractTreeCompanion
-
