@@ -38,6 +38,11 @@ package object System {
     //<editor-fold desc="Control">
     object Dialog extends SCApply[Dialog, DialogProps]
     object IButton extends SCApply[IButton, IButtonProps]
+    //object LoginDialog extends SCApply[LoginDialog, LoginDialogProps]
+    object Slider extends SCApply[Slider, SliderProps]
+    object RangeSlider extends SCApply[RangeSlider, RangeSliderProps]
+    object Hover extends SCApply[Hover, HoverProps]
+    object Menu extends SCApply[Menu, MenuProps]
     //</editor-fold>
 
     //<editor-fold desc="DataBinding">
