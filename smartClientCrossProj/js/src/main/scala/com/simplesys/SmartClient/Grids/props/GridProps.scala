@@ -179,7 +179,6 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var confirmDiscardEdits: ScOption[Boolean] = ScNone
     var confirmDiscardEditsMessage: ScOption[String] = ScNone
     var createRecordComponent: ScOption[js.ThisFunction2[callbackHandler, R, Int, Canvas]] = ScNone
-    var data: ScOption[Seq[R]] = ScNone
     var dataArrived: ScOption[js.ThisFunction2[callbackHandler, Int, Int, void]] = ScNone
     var dataProperties: ScOption[ResultSet] = ScNone
     var dateFormatter: ScOption[DateDisplayFormat] = ScNone
@@ -557,4 +556,5 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
 
 class ListGridProps extends GridProps[ListGridField, ListGridRecord] {
     var fields: ScOption[Seq[ListGridFieldProps]] = ScNone
+    var data: ScOption[Seq[ListGridRecord]] = ScNone
 }

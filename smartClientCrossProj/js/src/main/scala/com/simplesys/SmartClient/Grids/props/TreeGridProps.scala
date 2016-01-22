@@ -5,6 +5,7 @@ import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
 import com.simplesys.SmartClient.Grids.props.treeGrid.TreeGridFieldProps
 import com.simplesys.SmartClient.Grids.treeGrid.{TreeGridField, TreeNode}
+import com.simplesys.SmartClient.System.Tree
 import com.simplesys.System.Types.DisplayNodeType.DisplayNodeType
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
 import com.simplesys.System.Types.{void, SCImgURL}
@@ -27,6 +28,7 @@ class TreeGridProps extends GridProps[TreeGridField, ListGridRecord] {
     var customIconDropProperty: ScOption[String] = ScNone
     var customIconOpenProperty: ScOption[String] = ScNone
     var customIconProperty: ScOption[String] = ScNone
+    var data: ScOption[Tree] = ScNone
     var displayNodeType: ScOption[DisplayNodeType] = ScNone
     var dropIconSuffix: ScOption[String] = ScNone
     var extraIconGap: ScOption[Int] = ScNone
