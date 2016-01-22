@@ -38,11 +38,21 @@ package object System {
     //<editor-fold desc="Control">
     object Dialog extends SCApply[Dialog, DialogProps]
     object IButton extends SCApply[IButton, IButtonProps]
+    object Button extends SCApply[Button, ButtonProps]
     //object LoginDialog extends SCApply[LoginDialog, LoginDialogProps]
     object Slider extends SCApply[Slider, SliderProps]
     object RangeSlider extends SCApply[RangeSlider, RangeSliderProps]
     object Hover extends SCApply[Hover, HoverProps]
     object Menu extends SCApply[Menu, MenuProps]
+    object MenuButton extends SCApply[MenuButton, MenuButtonProps]
+    object IMenuButton extends SCApply[IMenuButton, IMenuButtonProps]
+    object Progressbar extends SCApply[Progressbar, ProgressbarProps]
+    object SelectionTreeMenu extends SCApply[SelectionTreeMenu, SelectionTreeMenuProps]
+    object TreeMenuButton extends SCApply[TreeMenuButton, TreeMenuButtonProps]
+    object ITreeMenuButton extends SCApply[ITreeMenuButton, ITreeMenuButtonProps]
+    object MenuBar extends SCApply[MenuBar, MenuBarProps]
+    object ImgButton extends SCApply[ImgButton, ImgButtonProps]
+    object StretchImgButton extends SCApply[StretchImgButton, StretchImgButtonProps]
     //</editor-fold>
 
     //<editor-fold desc="DataBinding">
