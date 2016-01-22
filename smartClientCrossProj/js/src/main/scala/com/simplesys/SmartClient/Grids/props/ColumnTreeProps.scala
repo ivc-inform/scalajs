@@ -4,9 +4,8 @@ import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.DataBinding.props.DataBoundComponentProps
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
-import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
+import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeNode}
 import com.simplesys.SmartClient.Layout.props.LayoutProps
-import com.simplesys.SmartClient.System.Tree
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.{MultiAutoChild, SCImgURL}
 import com.simplesys.option.{ScOption, ScNone}

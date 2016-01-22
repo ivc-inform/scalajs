@@ -9,10 +9,11 @@ import com.simplesys.SmartClient.Foundation.{Canvas, GridRenderer, HTMLFlow, Sta
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid._
 import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
+import com.simplesys.SmartClient.Grids.treeGrid.Tree
 import com.simplesys.SmartClient.Layout.props.VLayoutProps
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, VLayout}
 import com.simplesys.SmartClient.System.Types._
-import com.simplesys.SmartClient.System.{Class, Selection, Tree, Types}
+import com.simplesys.SmartClient.System.{Class, Selection, Types}
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.System.Types.AutoComplete.AutoComplete

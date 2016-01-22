@@ -1,8 +1,8 @@
-package com.simplesys.SmartClient.System
+package com.simplesys.SmartClient.Grids.treeGrid
 
 import com.simplesys.SmartClient.DataBinding._
-import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
 import com.simplesys.SmartClient.System.Types._
+import com.simplesys.SmartClient.System.{Class, Types}
 import com.simplesys.System.Types.LoadState.LoadState
 import com.simplesys.System.Types.TreeFilterMode.TreeFilterMode
 import com.simplesys.System.Types.TreeModelType.TreeModelType

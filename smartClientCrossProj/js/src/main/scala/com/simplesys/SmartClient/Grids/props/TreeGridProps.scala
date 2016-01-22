@@ -4,8 +4,7 @@ import com.simplesys.SmartClient.Grids.TreeGrid
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
 import com.simplesys.SmartClient.Grids.props.treeGrid.TreeGridFieldProps
-import com.simplesys.SmartClient.Grids.treeGrid.{TreeGridField, TreeNode}
-import com.simplesys.SmartClient.System.Tree
+import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeGridField, TreeNode}
 import com.simplesys.System.Types.DisplayNodeType.DisplayNodeType
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
 import com.simplesys.System.Types.{void, SCImgURL}

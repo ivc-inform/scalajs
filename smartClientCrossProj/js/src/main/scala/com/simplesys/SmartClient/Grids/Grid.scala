@@ -9,9 +9,10 @@ import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Foundation.{StatefulCanvas, HTMLFlow, GridRenderer, Canvas}
 import com.simplesys.SmartClient.Grids.listGrid._
+import com.simplesys.SmartClient.Grids.treeGrid.Tree
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, VLayout}
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
-import com.simplesys.SmartClient.System.{Selection, Tree, Types, Class}
+import com.simplesys.SmartClient.System.{Selection, Types, Class}
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System.selection.CellSelection
 import com.simplesys.System.Types.Alignment.Alignment

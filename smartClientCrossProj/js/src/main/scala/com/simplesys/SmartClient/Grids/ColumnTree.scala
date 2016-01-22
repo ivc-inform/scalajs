@@ -4,9 +4,8 @@ package com.simplesys.SmartClient.Grids
 import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.DataBinding.{DSCallback, DSRequest, DataBoundComponent}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
-import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
+import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeNode}
 import com.simplesys.SmartClient.Layout.{Layout, AbstractLayoutCompanion}
-import com.simplesys.SmartClient.System.Tree
 import com.simplesys.SmartClient.System.Types.Criteria
 import com.simplesys.System.Types._
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle

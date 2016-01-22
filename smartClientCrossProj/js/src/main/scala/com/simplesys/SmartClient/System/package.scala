@@ -12,6 +12,7 @@ import com.simplesys.SmartClient.Forms._
 import com.simplesys.SmartClient.Forms.props._
 import com.simplesys.SmartClient.Foundation._
 import com.simplesys.SmartClient.Foundation.props._
+import com.simplesys.SmartClient.Grids.treeGrid.Tree
 import com.simplesys.SmartClient.Grids.{ListGrid, TreeGrid, Grid}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
 import com.simplesys.SmartClient.Grids.props.{ListGridProps, TreeGridProps, GridProps}
