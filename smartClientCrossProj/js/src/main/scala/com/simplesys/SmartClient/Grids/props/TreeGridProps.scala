@@ -2,6 +2,8 @@ package com.simplesys.SmartClient.Grids.props
 
 import com.simplesys.SmartClient.Grids.TreeGrid
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
+import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
+import com.simplesys.SmartClient.Grids.props.treeGrid.TreeGridFieldProps
 import com.simplesys.SmartClient.Grids.treeGrid.{TreeGridField, TreeNode}
 import com.simplesys.System.Types.DisplayNodeType.DisplayNodeType
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
@@ -28,6 +30,7 @@ class TreeGridProps extends GridProps[TreeGridField, ListGridRecord] {
     var displayNodeType: ScOption[DisplayNodeType] = ScNone
     var dropIconSuffix: ScOption[String] = ScNone
     var extraIconGap: ScOption[Int] = ScNone
+    var fields: ScOption[Seq[TreeGridFieldProps]] = ScNone
     var fileImage: ScOption[SCImgURL] = ScNone
     var folderClick: ScOption[js.Function3[TreeGrid, TreeNode, Int, void]] = ScNone
     var folderClosed: ScOption[js.Function1[TreeNode, Boolean]] = ScNone

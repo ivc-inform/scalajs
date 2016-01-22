@@ -8,6 +8,7 @@ import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Foundation.{Canvas, GridRenderer, HTMLFlow, StatefulCanvas}
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid._
+import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
 import com.simplesys.SmartClient.Layout.props.VLayoutProps
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, VLayout}
 import com.simplesys.SmartClient.System.Types._
@@ -247,7 +248,6 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var fetchDelay: ScOption[Int] = ScNone
     var fieldPickerFieldProperties: ScOption[Seq[String]] = ScNone
     var fieldPickerShowSampleValues: ScOption[String] = ScNone
-    var fields: ScOption[Seq[T]] = ScNone
     var fieldState: ScOption[String] = ScNone
     var fieldStateChanged: ScOption[js.ThisFunction0[void, void]] = ScNone
     var fieldVisibilitySubmenuTitle: ScOption[String] = ScNone
