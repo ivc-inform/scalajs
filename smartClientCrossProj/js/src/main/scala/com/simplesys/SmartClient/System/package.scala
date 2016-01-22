@@ -39,7 +39,7 @@ package object System {
     object Dialog extends SCApply[Dialog, DialogProps]
     object IButton extends SCApply[IButton, IButtonProps]
     object Button extends SCApply[Button, ButtonProps]
-    //object LoginDialog extends SCApply[LoginDialog, LoginDialogProps]
+    object LoginDialog extends SCApply[LoginDialog, LoginDialogProps]
     object Slider extends SCApply[Slider, SliderProps]
     object RangeSlider extends SCApply[RangeSlider, RangeSliderProps]
     object Hover extends SCApply[Hover, HoverProps]

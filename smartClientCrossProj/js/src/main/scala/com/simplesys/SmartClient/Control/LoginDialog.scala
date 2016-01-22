@@ -9,6 +9,7 @@ import com.simplesys.System.Types.AutoChild
 
 import scala.scalajs.js
 import scala.scalajs.js.Array
+import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait LoginDialog extends Window {
@@ -16,7 +17,7 @@ trait LoginDialog extends Window {
     val dismissable: Boolean
     val errorMessage: String
     val errorStyle: String
-    val formFields: Array[FormItem]
+    val formFields: Seq[FormItem]
     val loginButton: IButton with AutoChild
     val loginButtonTitle: String
     val loginFailureItem: BlurbItem with AutoChild
@@ -46,5 +47,6 @@ abstract trait AbstractLoginDialogCompanion extends AbstractCanvasCompanion {
 }
 
 @js.native
-object LoginDialog extends AbstractLoginDialogCompanion
+@JSName("LoginDialog")
+object LoginDialogStatic extends AbstractLoginDialogCompanion
 
