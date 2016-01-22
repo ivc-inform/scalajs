@@ -6,9 +6,9 @@ import sbt.Keys._
 import sbt._
 
 trait JointJSProj {
-    self: Build with MacroJSProject with MacroJVMProject with CommonTypesProj with  BackboneJSProj =>
+    self: Build with  BackboneJSProj =>
 
-    lazy val jointJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).dependsOn(backboneJSCrossProj).
+    lazy val jointJSCrossProj = crossProject.dependsOn(backboneJSCrossProj).
       settings(
           name := "joint-js",
           version := "1.0-SNAPSHOT",
@@ -26,7 +26,7 @@ trait JointJSProj {
               CommonSettings.jsDependencies.scalajsDOM.value,
               CommonSettings.jsDependencies.scalajsJQuey.value
           )
-      ).dependsOn().jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
+      )//.dependsOn().jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
 
     lazy val jointJSCrossJVM = jointJSCrossProj.jvm
     lazy val jointJSCrossJS = jointJSCrossProj.js
