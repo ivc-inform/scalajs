@@ -39,7 +39,8 @@ abstract trait AbstractRPCManagerCompanion extends AbstractClassCompanion {
     def hasCurrentTransactionQueued(): Boolean = js.native
     val httpProxyURL: String = js.native
     def loadScreen(screenName: String, callback: Callback, globals: js.Array[String] = js.native, locale: String = js.native, requestProperties: RPCRequest = js.native): void = js.native
-    var loginRequired: js.Function3[Int, RPCRequest, RPCResponse, _] | js.Function0[_] = js.native
+    var loginRequired: js.Function3[Int, RPCRequest, RPCResponse, _]  = js.native
+    @JSName("loginRequired")
     var loginRequiredMarker: String = js.native
     var loginStatusCodeMarker: String = js.native
     var loginSuccessMarker: String = js.native

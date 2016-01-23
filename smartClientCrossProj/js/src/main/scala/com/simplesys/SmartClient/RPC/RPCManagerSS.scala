@@ -11,6 +11,9 @@ trait RPCManagerSS extends RPCManager {
 
 @js.native
 abstract trait AbstractRPCManagerSSCompanion extends AbstractRPCManagerCompanion {
+    def loginRequired (reload: Boolean, loginSuccessProcedure:js.Function2[Boolean, String, _]): void  = js.native
+    def loginRequired (loginSuccessProcedure:js.Function2[Boolean, String, _]): void  = js.native
+    def logoutRequired (): void  = js.native
 }
 
 @js.native
