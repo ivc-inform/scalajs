@@ -1,4 +1,22 @@
-def compareValues(value1: js.Any, value2: js.Any, field: DataSourceField | ListGridField | DetailViewerField)
+package com.simplesys.SmartClient.DataBinding
+
+import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
+import com.simplesys.SmartClient.Forms.{Validator, DynamicForm}
+import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Foundation.Canvas
+import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerField
+import com.simplesys.SmartClient.Grids.listGrid.ListGridField
+import com.simplesys.SmartClient.System.Types.{ValueMap, Record}
+import com.simplesys.SmartClient.System.{Types, Class, AbstractClassCompanion}
+import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types.{void, ID, FormatString}
+
+import scala.scalajs.js
+import scala.scalajs.js.|
+
+@js.native
+trait SimpleType extends Class {
+    def compareValues(value1: js.Any, value2: js.Any, field: DataSourceField | ListGridField | DetailViewerField)
     var defaultGroupingMode: String
     def editFormatter(value: js.Any, field: FormItem = js.native, form: DynamicForm = js.native, record: Record = js.native): String
     var editorType: FormItem
@@ -21,3 +39,11 @@ def compareValues(value1: js.Any, value2: js.Any, field: DataSourceField | ListG
     var validators: js.Array[Validator]
     var validOperators: js.Array[OperatorId]
     var valueMap: ValueMap
+}
+
+@js.native
+abstract trait AbstractSimpleTypeCompanion extends AbstractClassCompanion {
+}
+
+@js.native
+object SimpleType extends AbstractSimpleTypeCompanion
