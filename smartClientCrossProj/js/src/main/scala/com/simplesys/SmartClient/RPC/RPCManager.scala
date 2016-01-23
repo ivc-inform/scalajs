@@ -8,6 +8,7 @@ import com.simplesys.System.Types.RPCTransport.RPCTransport
 import com.simplesys.System.Types.{void, HTMLString, URL}
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.|
 
 @js.native
@@ -38,7 +39,7 @@ abstract trait AbstractRPCManagerCompanion extends AbstractClassCompanion {
     def hasCurrentTransactionQueued(): Boolean = js.native
     val httpProxyURL: String = js.native
     def loadScreen(screenName: String, callback: Callback, globals: js.Array[String] = js.native, locale: String = js.native, requestProperties: RPCRequest = js.native): void = js.native
-    def loginRequired(transactionNum: Int, rpcRequest: RPCRequest, rpcResponse: RPCResponse): void = js.native
+    var loginRequired: js.Function3[Int, RPCRequest, RPCResponse, _] | js.Function0[_] = js.native
     var loginRequiredMarker: String = js.native
     var loginStatusCodeMarker: String = js.native
     var loginSuccessMarker: String = js.native
