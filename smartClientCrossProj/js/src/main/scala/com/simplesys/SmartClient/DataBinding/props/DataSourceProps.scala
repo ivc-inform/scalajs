@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.DataBinding.props
 
 import com.simplesys.SmartClient.DataBinding.dataSource.{DataSourceField, OperationBinding}
-import com.simplesys.SmartClient.DataBinding.props.dataSource.DataSourceFieldProps
+import com.simplesys.SmartClient.DataBinding.props.dataSource.{OperationBindingProps, DataSourceFieldProps}
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DSResponse, DataSource, JSON}
 import com.simplesys.SmartClient.RPC.ServerObject
 import com.simplesys.SmartClient.System.Types
@@ -45,7 +45,7 @@ class DataSourceProps extends ClassProps {
     var cacheAcrossOperationIds: ScOption[Boolean] = ScNone
     var cacheAllData: ScOption[Boolean] = ScNone
     var cacheAllOperationId: ScOption[String] = ScNone
-    var cacheData: ScOption[Array[Record]] = ScNone
+    var cacheData: ScOption[Seq[Record]] = ScNone
     var cacheMaxAge: ScOption[Int] = ScNone
     var callbackParam: ScOption[String] = ScNone
     var canMultiSort: ScOption[Boolean] = ScNone
@@ -100,17 +100,17 @@ class DataSourceProps extends ClassProps {
     var nullIntegerValue: ScOption[Int] = ScNone
     var nullStringValue: ScOption[String] = ScNone
     var omitNullDefaultsOnAdd: ScOption[String] = ScNone
-    var operationBindings: ScOption[Array[OperationBinding]] = ScNone
+    var operationBindings: ScOption[Seq[OperationBindingProps]] = ScNone
     var ownerIdField: ScOption[String] = ScNone
     var patternEscapeChar: ScOption[String] = ScNone
-    var patternMultiWildcard: ScOption[Array[String]] = ScNone
-    var patternSingleWildcard: ScOption[Array[String]] = ScNone
+    var patternMultiWildcard: ScOption[Seq[String]] = ScNone
+    var patternSingleWildcard: ScOption[Seq[String]] = ScNone
     var pluralTitle: ScOption[String] = ScNone
     var preventHTTPCaching: ScOption[Boolean] = ScNone
     var progressiveLoading: ScOption[Boolean] = ScNone
     var progressiveLoadingThreshold: ScOption[Int] = ScNone
     var projectFileKey: ScOption[String] = ScNone
-    var projectFileLocations: ScOption[Array[String]] = ScNone
+    var projectFileLocations: ScOption[Seq[String]] = ScNone
     var qualifyColumnNames: ScOption[Boolean] = ScNone
     var quoteColumnNames: ScOption[Boolean] = ScNone
     var quoteTableName: ScOption[Boolean] = ScNone
