@@ -24,6 +24,6 @@ class SimpleTypeProps extends ClassProps {
     var name: ScOption[ID] = ScNone
     var readOnlyEditorType: ScOption[FormItem] = ScNone
     var validators: ScOption[js.Array[Validator]] = ScNone
-    var validOperators: ScOption[js.Array[OperatorId]] = ScNone
+    var validOperators: ScOption[Seq[OperatorId]] = ScNone
     var valueMap: ScOption[ValueMap] = ScNone
 }

@@ -60,6 +60,7 @@ package object System {
     object DataSource extends SCApply[DataSource, DataSourceProps]
     object RestDataSource extends SCApply[RestDataSource, RestDataSourceProps]
     object RestDataSourceSS extends SCApply[RestDataSourceSS, RestDataSourceSSProps]
+    object SimpleType extends SCApply[SimpleType, SimpleTypeProps]
     //</editor-fold>
 
     //<editor-fold desc="Forms">
