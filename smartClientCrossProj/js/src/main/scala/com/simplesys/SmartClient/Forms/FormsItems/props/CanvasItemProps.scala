@@ -6,6 +6,7 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.Overflow.Overflow
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 
@@ -21,5 +22,5 @@ class CanvasItemProps extends FormItemProps {
     var editCriteriaInInnerForm: ScOption[Boolean] = ScNone
     var multiple: ScOption[Boolean] = ScNone
     var overflow: ScOption[Overflow] = ScNone
-    var showValue: ScOption[js.Function3[js.Any, js.Any, DynamicForm, CanvasItem]] = ScNone
+    var showValue: ScOption[js.Function3[JSAny, JSAny, DynamicForm, CanvasItem]] = ScNone
 }

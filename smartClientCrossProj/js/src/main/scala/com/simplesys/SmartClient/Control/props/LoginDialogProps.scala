@@ -14,7 +14,7 @@ class LoginDialogProps extends WindowProps {
     var dismissable: ScOption[Boolean] = ScNone
     var errorMessage: ScOption[String] = ScNone
     var errorStyle: ScOption[String] = ScNone
-    var formFields: ScOption[Array[FormItem]] = ScNone
+    var formFields: ScOption[Seq[FormItem]] = ScNone
     var loginButton: ScOption[IButton] = ScNone
     var loginButtonTitle: ScOption[String] = ScNone
     var loginFailureItem: ScOption[BlurbItem] = ScNone

@@ -6,6 +6,7 @@ import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
 import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.void
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -46,7 +47,7 @@ trait ResultSet extends Class with List {
     def setCriteria(newCriteria: Criteria): Boolean
     def setSort(): void
     val sortSpecifiers: js.Array[SortSpecifier]
-    var transformData: js.Function2[js.Any, DSResponse, js.Array[Types.Object]]
+    var transformData: js.Function2[JSAny, DSResponse, js.Array[Types.Object]]
     val updateCacheFromRequest: Boolean
     val updatePartialCache: Boolean
     val useClientFiltering: Boolean

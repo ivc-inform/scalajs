@@ -1,12 +1,13 @@
-package com.simplesys.SmartClient.System
+package com.simplesys.SmartClient.Grids.treeGrid
 
 import com.simplesys.SmartClient.DataBinding._
-import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
 import com.simplesys.SmartClient.System.Types._
+import com.simplesys.SmartClient.System.{Class, Types}
 import com.simplesys.System.Types.LoadState.LoadState
 import com.simplesys.System.Types.TreeFilterMode.TreeFilterMode
 import com.simplesys.System.Types.TreeModelType.TreeModelType
 import com.simplesys.System.Types.void
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.{ThisFunction0, |}
@@ -26,7 +27,7 @@ trait Tree extends Class {
     val defaultIsFolder: Boolean
     var defaultNodeTitle: String
     val discardParentlessNodes: Boolean
-    def find(fieldNameOrPath: String, value: js.Any = js.native): Types.Object
+    def find(fieldNameOrPath: String, value: JSAny = js.native): Types.Object
     def findById(id: String): Types.Object
     def getAllNodes(node: TreeNode = js.native): js.Array[TreeNode]
     def getChildren(node: TreeNode): js.Array[TreeNode]
@@ -88,11 +89,4 @@ trait Tree extends Class {
     var sortFoldersBeforeLeaves: Boolean
     var titleProperty: String
 }
-
-@js.native
-abstract trait AbstractTreeCompanion extends AbstractClassCompanion {
-}
-
-@js.native
-   object Tree extends AbstractTreeCompanion
 

@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Control
 
-import com.simplesys.SmartClient.System.Tree
+import com.simplesys.SmartClient.Grids.treeGrid.Tree
 import com.simplesys.System.Types.{SCClassName, AutoChild, CSSStyleName, HTMLString}
 
 import scala.scalajs.js

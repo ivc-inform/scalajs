@@ -6,6 +6,7 @@ import com.simplesys.SmartClient.Layout.{Layout, VLayout}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.ControlName.ControlName
 import com.simplesys.System.Types.{AutoChild, MultiAutoChild, void}
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.Array
@@ -34,7 +35,7 @@ trait RichTextEditor extends VLayout {
     val fontSizeSelectorItem: SelectItem with AutoChild
     var fontSizeSelectorPrompt: String
     var formatControls: js.Array[ControlName]
-    def getValue(): js.Any
+    def getValue(): JSAny
     var indentPrompt: String
     var italicSelectionPrompt: String
     var justifyPrompt: String

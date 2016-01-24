@@ -22,10 +22,5 @@ trait RestDataSource extends DataSource {
     val xmlRecordXPath: String
 }
 
-@js.native
-abstract trait AbstractRestDataSourceCompanion extends AbstractDataSourceCompanion {
-}
 
-@js.native
-object RestDataSource extends AbstractRestDataSourceCompanion
 

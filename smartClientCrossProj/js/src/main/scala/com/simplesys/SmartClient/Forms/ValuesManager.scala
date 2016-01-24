@@ -11,6 +11,7 @@ import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.void
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -47,7 +48,7 @@ trait ValuesManager extends Class {
     def getOldValues(): Types.Object
     def getSaveOperationType(requestProperties: DSRequest = js.native): DSOperationType
     def getValidatedValues(): Types.Object
-    def getValue(fieldName: String, component: Canvas = js.native): js.Any
+    def getValue(fieldName: String, component: Canvas = js.native): JSAny
     def getValues(): Types.Object
     def getValuesAsAdvancedCriteria(textMatchStyle: TextMatchStyle = js.native): AdvancedCriteria
     def getValuesAsCriteria(advanced: Boolean, textMatchStyle: TextMatchStyle = js.native): Criteria | AdvancedCriteria
@@ -68,7 +69,7 @@ trait ValuesManager extends Class {
     def setErrors(errors: Object, showErrors: Boolean): void
     def setFieldErrors(fieldName: String, errors: Array[String], showErrors: Boolean): void
     def setMemberValues(ID: String, values: Types.Object): void
-    def setValue(fieldName: String, newValue: js.Any): void
+    def setValue(fieldName: String, newValue: JSAny): void
     def setValues(values: Types.Object): void
     def showErrors(): void
     def showFieldErrors(): void

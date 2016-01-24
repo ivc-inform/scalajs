@@ -8,6 +8,7 @@ import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
 import com.simplesys.System.Types._
+import com.simplesys.types.{JSDictionaryAny, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -46,7 +47,7 @@ trait Menu extends Grid[ListGridField, MenuItem] {
     def setItemChecked(item: MenuItem | Int, newState: Boolean = js.native): Boolean
     def setItemEnabled(item: MenuItem | Int, newState: Boolean = js.native): Boolean
     def setItemIcon(item: MenuItem | Int, newIcon: SCImgURL, newDisabledIcon: SCImgURL = js.native): Boolean
-    def setItemProperties(item: MenuItem | Int, properties: js.Dictionary[js.Any]): void
+    def setItemProperties(item: MenuItem | Int, properties: JSDictionaryAny): void
     def setItems(items: Array[MenuItem]): void
     def setItemTitle(item: MenuItem | Int, newTitle: String): Boolean
     def setShowIcons(showIcons: Boolean): void

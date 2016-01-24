@@ -11,6 +11,7 @@ import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types._
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -37,8 +38,8 @@ trait DetailViewer extends Canvas with DataBoundComponent {
     val fieldPickerWindow: FieldPickerWindow
     var fields: Array[DetailViewerField]
     var formatCellValue: js.Function3[String, DetailViewerRecord, DetailViewerField, void]
-    var getCellCSSText: js.Function4[js.Any, DetailViewerField, DetailViewerRecord, DetailViewer, CSSText]
-    var getCellStyle: js.Function4[js.Any, DetailViewerField, DetailViewerRecord, DetailViewer, CSSStyleName]
+    var getCellCSSText: js.Function4[JSAny, DetailViewerField, DetailViewerRecord, DetailViewer, CSSText]
+    var getCellStyle: js.Function4[JSAny, DetailViewerField, DetailViewerRecord, DetailViewer, CSSStyleName]
     def getRecordIndex(record: DetailViewerRecord): Int
     def getViewState(): DetailViewerViewState
     var headerStyle: CSSStyleName

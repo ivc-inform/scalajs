@@ -4,13 +4,14 @@ import com.simplesys.common.Strings._
 import com.simplesys.log.Logging
 import com.simplesys.option._
 import com.simplesys.props.AbstractClassProps
+import com.simplesys.types.{JSDictionaryAny, JSAny}
 
 import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context
 import scala.scalajs.js
 
 trait PropsToDictionary[P <: AbstractClassProps] {
-    def getDictionary(props: P): js.Dictionary[js.Any]
+    def getDictionary(props: P): JSDictionaryAny
     def getMap(props: P): scala.collection.Map[String, scala.Any] = getDictionary(props)
 }
 
@@ -147,11 +148,12 @@ object PropsToDictionary extends Logging {
                 import com.simplesys.option._
                 import scala.scalajs.js
                 import scala.scalajs.js.JSConverters._
+                import com.simplesys.types.{JSAny, JSDictionaryAny}
 
                 new PropsToDictionary[$tpeAbstractPropsClass] {
 
-                    def getDictionary(clazz: $tpeAbstractPropsClass): js.Dictionary[js.Any] = {
-                         val res = js.Dictionary.empty[js.Any]
+                    def getDictionary(clazz: $tpeAbstractPropsClass): JSDictionaryAny = {
+                         val res = js.Dictionary.empty[JSAny]
                         ..$abstractPropsClassFields
                         ..$simpleFields
                          res

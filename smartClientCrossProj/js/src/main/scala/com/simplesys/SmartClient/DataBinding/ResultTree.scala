@@ -1,16 +1,15 @@
 package com.simplesys.SmartClient.DataBinding
 
-import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
-import com.simplesys.SmartClient.System.Types.{TreeGridOpenState, Criteria}
-import com.simplesys.SmartClient.System.{AbstractTreeCompanion, Tree}
+import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeNode}
+import com.simplesys.SmartClient.System.Types.{Criteria, TreeGridOpenState}
 import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
 import com.simplesys.System.Types.TreeFilterMode.TreeFilterMode
-import com.simplesys.System.Types.TreeModelType.TreeModelType
 import com.simplesys.System.Types.void
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.Array
 
 @js.native
 trait ResultTree extends Tree {
@@ -33,7 +32,7 @@ trait ResultTree extends Tree {
     val loadDataOnDemand: Boolean
     val progressiveLoading: Boolean
     val resultSize: Int
-    val rootNode: js.Any
+    val rootNode: JSAny
     val serverFilterFields: Array[String]
     def setChildren(parent: TreeNode, newChildren: Array[TreeNode], totalChildren: Int = js.native): void
     def setCriteria(newCriteria: Criteria): void
@@ -42,10 +41,4 @@ trait ResultTree extends Tree {
     def willFetchData(newCriteria: Criteria): Boolean
 }
 
-@js.native
-abstract trait AbstractResultTreeCompanion extends AbstractTreeCompanion {
-}
-
-@js.native
-object ResultTree extends AbstractResultTreeCompanion
 

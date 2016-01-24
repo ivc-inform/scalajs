@@ -2,11 +2,14 @@ package com.simplesys.SmartClient.Grids.props
 
 import com.simplesys.SmartClient.Grids.TreeGrid
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
-import com.simplesys.SmartClient.Grids.treeGrid.{TreeGridField, TreeNode}
+import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
+import com.simplesys.SmartClient.Grids.props.treeGrid.TreeGridFieldProps
+import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeGridField, TreeNode}
 import com.simplesys.System.Types.DisplayNodeType.DisplayNodeType
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
 import com.simplesys.System.Types.{void, SCImgURL}
 import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -25,9 +28,11 @@ class TreeGridProps extends GridProps[TreeGridField, ListGridRecord] {
     var customIconDropProperty: ScOption[String] = ScNone
     var customIconOpenProperty: ScOption[String] = ScNone
     var customIconProperty: ScOption[String] = ScNone
+    var data: ScOption[Tree] = ScNone
     var displayNodeType: ScOption[DisplayNodeType] = ScNone
     var dropIconSuffix: ScOption[String] = ScNone
     var extraIconGap: ScOption[Int] = ScNone
+    var fields: ScOption[Seq[TreeGridFieldProps]] = ScNone
     var fileImage: ScOption[SCImgURL] = ScNone
     var folderClick: ScOption[js.Function3[TreeGrid, TreeNode, Int, void]] = ScNone
     var folderClosed: ScOption[js.Function1[TreeNode, Boolean]] = ScNone
@@ -69,5 +74,5 @@ class TreeGridProps extends GridProps[TreeGridField, ListGridRecord] {
     var showRoot: ScOption[Boolean] = ScNone
     var sortFoldersBeforeLeaves: ScOption[Boolean] = ScNone
     var treeFieldTitle: ScOption[String] = ScNone
-    var treeRootValue: ScOption[js.Any] = ScNone
+    var treeRootValue: ScOption[JSAny] = ScNone
 }

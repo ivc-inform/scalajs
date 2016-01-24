@@ -14,9 +14,10 @@ import scala.scalajs.js.|
 
 @js.native
 trait HTMLFlow extends Canvas with DataBoundComponent {
+
     val allowCaching: Boolean
     val captureSCComponents: Boolean
-    var contentLoaded: js.Function1[void, _]
+    var contentLoaded: js.ThisFunction0[callbackHandler , _]
     var contentsType: ContentsType
     var contentsURL: URL
     var contentsURLParams: Types.Object

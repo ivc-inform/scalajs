@@ -9,9 +9,10 @@ import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Foundation.{StatefulCanvas, HTMLFlow, GridRenderer, Canvas}
 import com.simplesys.SmartClient.Grids.listGrid._
+import com.simplesys.SmartClient.Grids.treeGrid.Tree
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, VLayout}
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
-import com.simplesys.SmartClient.System.{Selection, Tree, Types, Class}
+import com.simplesys.SmartClient.System.{Selection, Types, Class}
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System.selection.CellSelection
 import com.simplesys.System.Types.Alignment.Alignment
@@ -55,6 +56,7 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
+import com.simplesys.types.{JSDictionaryAny, JSAny, JSArrayAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -162,7 +164,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def canSelectRecord(record: R): Boolean
     var canSort: Boolean
     val canTabToHeader: Boolean
-    val cellChanged: js.Function5[R, js.Any, Int, Int, Grid[T, R], void]
+    val cellChanged: js.Function5[R, JSAny, Int, Int, Grid[T, R], void]
     val cellClick: js.Function3[R, Int, Int, Boolean]
     val cellContextClick: js.Function3[R, Int, Int, Boolean]
     val cellContextMenu: Layout with AutoChild
@@ -178,7 +180,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     val cellOut: js.Function3[R, Int, Int, Boolean]
     val cellOver: js.Function3[R, Int, Int, Boolean]
     var cellPadding: Int
-    val cellSelectionChanged: js.Function1[js.Array[js.Any], Boolean]
+    val cellSelectionChanged: js.Function1[JSArrayAny, Boolean]
     val cellValueHover: js.Function3[R, Int, Int, Boolean]
     val cellValueHoverHTML: js.Function3[R, Int, Int, HTMLString]
     def cellValueIsClipped(rowNum: Int, colNum: Int): Boolean
@@ -243,8 +245,8 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     var editFailedCSSText: String
     var editOnF2Keypress: Boolean
     var editOnFocus: Boolean
-    var editorEnter: js.ThisFunction4[callbackHandler, R, js.Any, Int, Int, void]
-    var editorExit: js.ThisFunction5[callbackHandler, EditCompletionEvent, R, js.Any, Int, Int, Boolean]
+    var editorEnter: js.ThisFunction4[callbackHandler, R, JSAny, Int, Int, void]
+    var editorExit: js.ThisFunction5[callbackHandler, EditCompletionEvent, R, JSAny, Int, Int, Boolean]
     val editPendingBaseStyle: CSSStyleName
     var editPendingCSSText: String
     var emptyCellValue: HTMLString
@@ -318,7 +320,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def focusInFilterEditor(fieldName: String): void
     def focusInRow(row: Int): void
     var formatCellValue: js.ThisFunction3[callbackHandler, R, Int, Int, HTMLString]
-    var formatEditorValue: js.ThisFunction3[callbackHandler, R, Int, Int, js.Any]
+    var formatEditorValue: js.ThisFunction3[callbackHandler, R, Int, Int, JSAny]
     var formulaBuilderSpanTitleSeparator: String
     def formulaUpdated(field: T, formula: UserFormula): void
     var freezeFieldText: HTMLString
@@ -357,7 +359,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def getDefaultFieldWidth(field: T): Int
     def getDefaultFormattedFieldValue(record: R, field: T, rowNum: Int = js.native, colNum: Int = js.native): String
     def getDefaultFormattedValue(record: R, rowNum: Int, colNum: Int): String
-    def getDisplayValue(fieldID: String | Int | T, valueFieldValue: js.Any): String
+    def getDisplayValue(fieldID: String | Int | T, valueFieldValue: JSAny): String
     var getDragData: js.Function1[DataBoundComponent, js.Array[R]]
     def getDragTrackerIcon(records: js.Array[R]): String
     def getDragTrackerTitle(record: R, rowNum: Int): String
@@ -366,7 +368,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def getDrawnRows(): js.Array[Int]
     def getDropIndex(recordNum: Int = js.native, reorderPosition: ReorderPosition = js.native): Int
     def getEditCol(): Int
-    def getEditedCell(record: R, field: Int | String): js.Any
+    def getEditedCell(record: R, field: Int | String): JSAny
     def getEditedRecord(valuesID: Int | Types.Object): Types.Object
     def getEditField(): Types.Object
     def getEditFormItem(field: String | Int): FormItem
@@ -375,7 +377,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def getEditorValueIcons(field: T, values: Types.Object): Types.Object
     def getEditorValueMap(field: T, values: Types.Object): ValueMap
     def getEditRow(): Int
-    def getEditValue(rowNum: Int, colNum: Int): js.Any
+    def getEditValue(rowNum: Int, colNum: Int): JSAny
     def getEditValues(valuesID: Types.Object | Int): Types.Object
     def getEventColumn(x: Int): Int
     def getEventRow(y: Int): Int
@@ -397,7 +399,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def getFilterEditorValueMap(field: T): ValueMap
     def getFocusRow(): Int
     def getFormulaFieldValue(field: T, record: R): Double | String
-    def getGridSummary(field: T): js.Any
+    def getGridSummary(field: T): JSAny
     def getGridSummaryData(): js.Array[R]
     def getGridSummaryFunction(field: T): SummaryFunction
     def getGroupByFields(): js.Array[String]
@@ -413,7 +415,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def getRecordComponent(rowNum: Int, colNum: Int = js.native): Canvas
     def getRecordDropPosition(): RecordDropPosition
     def getRecordIndex(record: R): Int
-    def getRecordSummary(record: R, field: T): js.Any
+    def getRecordSummary(record: R, field: T): JSAny
     def getRelatedDataSource(record: R): DataSource
     def getRequiredFieldMessage(field: T, record: R): String
     def getRollOverCanvas(rowNum: Int, colNum: Int): Canvas
@@ -439,12 +441,12 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def getSummaryTitle(field: T): String
     def getToggleFreezeText(field: T): HTMLString
     def getTotalRows(): Int
-    def getValueIcon(field: T, value: js.Any, record: R): SCImgURL
+    def getValueIcon(field: T, value: JSAny, record: R): SCImgURL
     def getViewState(): ListGridViewState
     def getVisibleRows(): js.Array[Int]
-    val gridComponents: js.Array[ListGridComponent] | js.Array[js.Any]
+    val gridComponents: js.Array[ListGridComponent] | JSArrayAny
     var gridSummaryRecordProperty: String
-    def groupBy(arguments: js.Dictionary[js.Any] = js.native): void
+    def groupBy(arguments: JSDictionaryAny = js.native): void
     var groupByAsyncThreshold: Int
     var groupByComplete: js.Function1[js.Array[String], void]
     val groupByField: js.Array[String] | String
@@ -559,7 +561,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def openGroup(record: R): Boolean
     var originalData: Types.Object
     var originBaseStyle: CSSStyleName
-    var parseEditorValue: js.Function4[js.Any, R, Int, Int, js.Any]
+    var parseEditorValue: js.Function4[JSAny, R, Int, Int, JSAny]
     var poolComponentsPerColumn: Boolean
     var printAutoFit: Boolean
     var printBaseStyle: CSSStyleName
@@ -579,13 +581,13 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     var recordBaseStyleProperty: String
     var recordCanRemoveProperty: String
     var recordCanSelectProperty: String
-    var recordClick: js.ThisFunction7[callbackHandler, Grid[T, R], R, Int, T, Int, js.Any, js.Any, Boolean]
+    var recordClick: js.ThisFunction7[callbackHandler, Grid[T, R], R, Int, T, Int, JSAny, JSAny, Boolean]
     var recordComponentHeight: Int
     var recordComponentPoolingMode: RecordComponentPoolingMode
     var recordComponentPosition: EmbeddedPosition
     var recordCustomStyleProperty: String
     var recordDetailDSProperty: String
-    var recordDoubleClick: js.ThisFunction7[callbackHandler, Grid[T, R], R, Int, T, Int, js.Any, js.Any, Boolean]
+    var recordDoubleClick: js.ThisFunction7[callbackHandler, Grid[T, R], R, Int, T, Int, JSAny, JSAny, Boolean]
     def recordDrop(dropRecords: js.Array[R], targetRecord: R, index: Int, sourceWidget: Canvas): void
     var recordDropAppearance: RecordDropAppearance
     var recordEditProperty: String
@@ -689,7 +691,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def setDataSource(dataSource: DataSource, fields: js.Array[T]): void
     def setDontAutoDestroyComponent(component: Canvas, dontAutoDestroy: Boolean): void
     def setEditorValueMap(fieldID: Types.Object | Int | String, map: Types.Object): void
-    def setEditValue(rowNum: Int, colNum: Int, value: js.Any): void
+    def setEditValue(rowNum: Int, colNum: Int, value: JSAny): void
     def setEditValues(rowNum: Int, values: Types.Object): void
     def setFastCellUpdates(fastCellUpdates: Boolean): void
     def setFieldButtonProperties(name: String, properties: Canvas): void
@@ -713,7 +715,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def setHeaderSpanTitle(name: String, newTitle: String): void
     def setHeaderSpanTitleStyle(name: String, newTitle: CSSStyleName): void
     def setRecordComponentHeight(height: Int): void
-    def setRowErrors(rowNum: Int, errors: js.Any): void
+    def setRowErrors(rowNum: Int, errors: JSAny): void
     def setSelectedState(selectedState: ListGridSelectedState): void
     def setSelectionAppearance(selectionAppearance: String): void
     def setSelectionType(selectionType: SelectionStyle): void

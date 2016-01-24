@@ -2,12 +2,13 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.System.Types.void
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 
 @js.native
 trait Array extends List {
-    def addAt(`object`: js.Any, pos: Int): this.type
+    def addAt(`object`: JSAny, pos: Int): this.type
     def and(start: Int, end: Int): Boolean
     def clearProperty(property: String): Boolean
     def containsProperty(property: String, value: Types.Object = js.native): Boolean

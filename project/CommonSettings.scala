@@ -23,6 +23,7 @@ object CommonSettings {
         val scalaTestVersion = "3.0.0-M15"
         val ssysCoreVersion = "1.2-SNAPSHOT"
         val scalajsDOMVersion = "0.8.1"
+        val scalajsJQueryVersion = "0.8.1"
     }
 
     object cmnDependencies {
@@ -41,6 +42,7 @@ object CommonSettings {
 
     object jsDependencies {
         val scalajsDOM = Def.setting("org.scala-js" %%% "scalajs-dom" % versions.scalajsDOMVersion)
+        val scalajsJQuey = Def.setting("be.doeraene" %%% "scalajs-jquery" % versions.scalajsJQueryVersion)
         val scalaTest = Def.setting("org.scalatest" %%% "scalatest" %  versions.scalaTestVersion % "test")
     }
 

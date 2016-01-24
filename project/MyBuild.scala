@@ -6,13 +6,13 @@ import sbt.Keys._
 import sbt._
 
 object MyBuild extends Build with
-MacroJSProject with
-MacroJVMProject with
-SmartClientCrossProj with
-CommonTypesProj with
-CommonDomainsProj with
-JointJSProj
-{
+  MacroJSProject with
+  MacroJVMProject with
+  SmartClientCrossProj with
+  CommonTypesProj with
+  CommonDomainsProj with
+  JointJSProj with
+  BackboneJSProj {
 
     override def settings: Seq[Def.Setting[_]] = super.settings ++ Seq(
         scalaVersion := CommonSettings.scalaVersion,
@@ -49,12 +49,15 @@ JointJSProj
       commonTypesJS,
       commonTypesJVM,
       macroJS,
+      macroJVM,
       smartClientJS,
       smartClientJVM,
       commonDomainJS,
       commonDomainJVM,
       jointJSCrossJVM,
-      jointJSCrossJS)
+      jointJSCrossJS,
+      backboneJSCrossJVM,
+      backboneJSCrossJS)
 
 }
 

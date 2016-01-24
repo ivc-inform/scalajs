@@ -14,6 +14,7 @@ import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.{ID, FormatString, void, HTMLString}
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -62,7 +63,7 @@ trait DataSourceField extends Types.Object {
     var foreignDisplayField: String
     val foreignKey: String
     var format: FormatString
-    def getFieldValue(record: Record | XMLElement, value: js.Any, field: DataSourceField, fieldName: String): void
+    def getFieldValue(record: Record | XMLElement, value: JSAny, field: DataSourceField, fieldName: String): void
     var group: String
     val hidden: Boolean
     val ignore: Boolean
@@ -94,14 +95,14 @@ trait DataSourceField extends Types.Object {
     val name: ID
     val nativeName: String
     val nillable: Boolean
-    val nullReplacementValue: js.Any
-    var precision: js.Any
+    val nullReplacementValue: JSAny
+    var precision: JSAny
     val primaryKey: Boolean
     val propertiesOnly: Boolean
     val readOnlyEditorType: FormItem
     val relatedTableAlias: String
     val required: Boolean
-    val rootValue: js.Any
+    val rootValue: JSAny
     val sequenceName: String
     val showFileInline: Boolean
     val sortByField: String

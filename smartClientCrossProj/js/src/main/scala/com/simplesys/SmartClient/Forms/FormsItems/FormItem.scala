@@ -20,6 +20,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -45,8 +46,8 @@ trait FormItem extends Class {
     var canSelectText: Boolean
     var cellHeight: Int
     var cellStyle: FormItemBaseStyle
-    var change: js.Function4[DynamicForm, FormItem, js.Any, js.Any, Boolean]
-    var changed: js.Function3[DynamicForm, FormItem, js.Any, _]
+    var change: js.Function4[DynamicForm, FormItem, JSAny, JSAny, Boolean]
+    var changed: js.Function3[DynamicForm, FormItem, JSAny, _]
     def clearErrors(): void
     def clearValue(): void
     var click: js.Function2[DynamicForm, FormItem, Boolean]
@@ -62,15 +63,15 @@ trait FormItem extends Class {
     var decimalPrecision: Int
     var defaultDynamicValue: js.Function3[FormItem, DynamicForm, Types.Object, _]
     var defaultIconSrc: SCImgURL
-    var defaultValue: js.Any
+    var defaultValue: JSAny
     def disable(): void
     var disabled: Boolean
     def disableIcon(icon: String): void
     var disableIconsOnReadOnly: Boolean
     var displayField: String
     var doubleClick: js.Function2[DynamicForm, FormItem, Boolean]
-    var editorEnter: js.Function3[DynamicForm, FormItem, js.Any, _]
-    var editorExit: js.Function3[DynamicForm, FormItem, js.Any, _]
+    var editorEnter: js.Function3[DynamicForm, FormItem, JSAny, _]
+    var editorExit: js.Function3[DynamicForm, FormItem, JSAny, _]
     var editorType: FormItem
     var editPendingCSSText: CSSText
     var emptyDisplayValue: String
@@ -90,8 +91,8 @@ trait FormItem extends Class {
     val foreignDisplayField: String
     val form: DynamicForm
     val format: FormatString
-    var formatEditorValue: js.Function4[js.Any, ListGridRecord, DynamicForm, FormItem, String]
-    var formatValue: js.Function4[js.Any, ListGridRecord, DynamicForm, FormItem, String]
+    var formatEditorValue: js.Function4[JSAny, ListGridRecord, DynamicForm, FormItem, String]
+    var formatValue: js.Function4[JSAny, ListGridRecord, DynamicForm, FormItem, String]
     def getCanEdit(): Boolean
     def getCanFocus(): Boolean
     def getCriterion(textMatchStyle: TextMatchStyle): Criterion
@@ -99,7 +100,7 @@ trait FormItem extends Class {
     def getCustomState(elementType: FormItemElementType, derivedState: String): String
     def getDataPath(): DataPath
     def getDisplayFieldName(): String
-    def getDisplayValue(value: js.Any): js.Any
+    def getDisplayValue(value: JSAny): JSAny
     def getErrorHTML(error: String | js.Array[String]): HTMLString
     def getErrors(): String | js.Array[String]
     def getFieldName(): String
@@ -116,16 +117,16 @@ trait FormItem extends Class {
     def getPageTop(): Int
     def getPixelHeight(): Int
     def getPixelWidth(): Int
-    def getPrintValueIcon(value: js.Any): SCImgURL
-    def getPrintValueIconStyle(value: js.Any): CSSClassName
+    def getPrintValueIcon(value: JSAny): SCImgURL
+    def getPrintValueIconStyle(value: JSAny): CSSClassName
     def getRect(): js.Array[Int]
     def getSelectedRecord(): ListGridRecord
     def getTitle(): HTMLString
     def getTop(): Int
-    def getValue(): js.Any
+    def getValue(): JSAny
     def getValueFieldName(): String
-    def getValueIcon(value: js.Any): SCImgURL
-    def getValueIconStyle(value: js.Any): CSSClassName
+    def getValueIcon(value: JSAny): SCImgURL
+    def getValueIconStyle(value: JSAny): CSSClassName
     def getVisibleHeight(): Int
     def getVisibleTitleWidth(labelOnly: Boolean): Int
     def getVisibleWidth(): Int
@@ -184,8 +185,8 @@ trait FormItem extends Class {
     var optionFilterContext: RPCRequest
     var optionOperationId: String
     var originalValueMessage: HTMLString
-    var parseEditorValue: js.Function3[String, DynamicForm, FormItem, js.Any]
-    var pendingStatusChanged: js.Function5[DynamicForm, FormItem, Boolean, js.Any, js.Any, Boolean]
+    var parseEditorValue: js.Function3[String, DynamicForm, FormItem, JSAny]
+    var pendingStatusChanged: js.Function5[DynamicForm, FormItem, Boolean, JSAny, JSAny, Boolean]
     var picker: Canvas with AutoChild
     var pickerConstructor: SCClassName
     var pickerIconClick: js.Function3[DynamicForm, FormItem, FormItemIcon, _]
@@ -228,11 +229,11 @@ trait FormItem extends Class {
     def setShowDisabled(showDisabled: Boolean): void
     def setTabIndex(): void
     def setTop(): void
-    def setValue(newValue: js.Any): void
+    def setValue(newValue: JSAny): void
     def setValueIcons(map: Types.Object): void
     def setValueMap(valueMap: Array[Types.Object]): void
     def shouldApplyHeightToTextBox(): Boolean
-    def shouldFetchMissingValue(newValue: js.Any): Boolean
+    def shouldFetchMissingValue(newValue: JSAny): Boolean
     def shouldSaveOnEnter(): Boolean
     var shouldSaveValue: Boolean
     var shouldStopKeyPressBubbling: js.Function2[String, Int, Boolean]
@@ -251,7 +252,7 @@ trait FormItem extends Class {
     var showHint: Boolean
     def showIcon(icon: String): void
     var showIcons: Boolean
-    var showIf: js.Function4[FormItem, js.Any, DynamicForm, Types.Object, Boolean]
+    var showIf: js.Function4[FormItem, JSAny, DynamicForm, Types.Object, Boolean]
     var showOldValueInHover: Boolean
     var showOverIcons: Boolean
     var showPending: Boolean
@@ -264,7 +265,7 @@ trait FormItem extends Class {
     var staticHeight: Int
     def stopHover(): void
     var stopOnError: Boolean
-    def storeValue(value: js.Any, showValue: Boolean = js.native): void
+    def storeValue(value: JSAny, showValue: Boolean = js.native): void
     var suppressValueIcon: Boolean
     var synchronousValidation: Boolean
     var tabIndex: Int
@@ -283,7 +284,7 @@ trait FormItem extends Class {
     var titleStyle: FormItemBaseStyle
     var titleVAlign: VerticalAlignment
     var top: Int
-    var transformInput: js.Function4[DynamicForm, FormItem, js.Any, js.Any, js.Any]
+    var transformInput: js.Function4[DynamicForm, FormItem, JSAny, JSAny, JSAny]
     var `type`: FormItemType | String
     def updateState(): void
     var useDisabledHintStyleForReadOnly: Boolean
@@ -293,13 +294,13 @@ trait FormItem extends Class {
     val validators: Array[Validator]
     val validOperators: Array[OperatorId]
     var vAlign: VerticalAlignment
-    val value: js.Any
+    val value: JSAny
     def valueClipped(): Boolean
     val valueDeselectedCSSText: CSSText
-    val valueField: js.Any
+    val valueField: JSAny
     var valueHover: js.Function2[FormItem, DynamicForm, _]
     var valueHoverHTML: js.Function2[FormItem, DynamicForm, HTMLString]
-    var valueIconClick: js.Function3[FormItem, DynamicForm, js.Any, Boolean]
+    var valueIconClick: js.Function3[FormItem, DynamicForm, JSAny, Boolean]
     var valueIconHeight: Int
     var valueIconLeftPadding: Int
     var valueIconRightPadding: Int

@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Layout.SectionStack
 import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
 import com.simplesys.System.Types.void
+import com.simplesys.types.{JSDictionaryAny, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.{ThisFunction2, ThisFunction0, ThisFunction1}
@@ -36,7 +37,7 @@ trait  GetFileVersionCallback extends ThisFunction2[DSResponse, String, DSReques
 trait  HasFileCallback extends ThisFunction2[DSResponse, String, DSRequest, void]
 
 @js.native
-trait DSCallback extends js.Function3[DSResponse,js.Dictionary[js.Any], DSRequest, void]
+trait DSCallback extends js.Function3[DSResponse,JSDictionaryAny, DSRequest, void]
 
 @js.native
-trait RPCCallback extends js.Function3[RPCResponse,js.Dictionary[js.Any], RPCRequest, void]
+trait RPCCallback extends js.Function3[RPCResponse,JSDictionaryAny, RPCRequest, void]

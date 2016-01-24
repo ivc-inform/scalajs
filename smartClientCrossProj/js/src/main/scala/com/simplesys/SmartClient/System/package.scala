@@ -4,14 +4,15 @@ import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.Control.props._
 import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
 import com.simplesys.SmartClient.DataBinding.props.dataSource.DataSourceFieldProps
-import com.simplesys.SmartClient.DataBinding.{RestDataSource, DataSource, DataView}
-import com.simplesys.SmartClient.DataBinding.props.{RestDataSourceProps, DataSourceProps, DataViewProps}
+import com.simplesys.SmartClient.DataBinding._
+import com.simplesys.SmartClient.DataBinding.props._
 import com.simplesys.SmartClient.Forms.FormsItems.props.{ButtonItemProps, FormItemProps}
 import com.simplesys.SmartClient.Forms.FormsItems.{ButtonItem, FormItem}
 import com.simplesys.SmartClient.Forms._
 import com.simplesys.SmartClient.Forms.props._
 import com.simplesys.SmartClient.Foundation._
 import com.simplesys.SmartClient.Foundation.props._
+import com.simplesys.SmartClient.Grids.treeGrid.Tree
 import com.simplesys.SmartClient.Grids.{ListGrid, TreeGrid, Grid}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
 import com.simplesys.SmartClient.Grids.props.{ListGridProps, TreeGridProps, GridProps}
@@ -23,6 +24,7 @@ import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
 import com.simplesys.SmartClient.Layout.props.toolStrip.{ToolStripResizerProps, ToolStripButtonProps, ToolStripSeparatorProps, ToolStripMenuButtonProps}
 import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.SmartClient.Layout.toolStrip.{ToolStripResizer, ToolStripButton, ToolStripSeparator, ToolStripMenuButton}
+import com.simplesys.SmartClient.System.props.TreeProps
 
 //import com.simplesys.macros.PropsToDictionary
 import com.simplesys.macros.PropsToDictionary
@@ -30,18 +32,36 @@ import com.simplesys.macros.PropsToDictionary
 package object System {
 
     implicit class StringOpts(x: String) {
-            def ellipsis = s"$x..."
+        def ellipsis = s"$x..."
+        def dblQuoted: String = "\"" + x + "\""
     }
 
     //<editor-fold desc="Control">
     object Dialog extends SCApply[Dialog, DialogProps]
     object IButton extends SCApply[IButton, IButtonProps]
+    object Button extends SCApply[Button, ButtonProps]
+    object LoginDialog extends SCApply[LoginDialog, LoginDialogProps]
+    object Slider extends SCApply[Slider, SliderProps]
+    object RangeSlider extends SCApply[RangeSlider, RangeSliderProps]
+    object Hover extends SCApply[Hover, HoverProps]
+    object Menu extends SCApply[Menu, MenuProps]
+    object MenuButton extends SCApply[MenuButton, MenuButtonProps]
+    object IMenuButton extends SCApply[IMenuButton, IMenuButtonProps]
+    object Progressbar extends SCApply[Progressbar, ProgressbarProps]
+    object SelectionTreeMenu extends SCApply[SelectionTreeMenu, SelectionTreeMenuProps]
+    object TreeMenuButton extends SCApply[TreeMenuButton, TreeMenuButtonProps]
+    object ITreeMenuButton extends SCApply[ITreeMenuButton, ITreeMenuButtonProps]
+    object MenuBar extends SCApply[MenuBar, MenuBarProps]
+    object ImgButton extends SCApply[ImgButton, ImgButtonProps]
+    object StretchImgButton extends SCApply[StretchImgButton, StretchImgButtonProps]
     //</editor-fold>
 
     //<editor-fold desc="DataBinding">
     object DataView extends SCApply[DataView, DataViewProps]
     object DataSource extends SCApply[DataSource, DataSourceProps]
     object RestDataSource extends SCApply[RestDataSource, RestDataSourceProps]
+    object RestDataSourceSS extends SCApply[RestDataSourceSS, RestDataSourceSSProps]
+    object SimpleType extends SCApply[SimpleType, SimpleTypeProps]
     //</editor-fold>
 
     //<editor-fold desc="Forms">
@@ -66,6 +86,7 @@ package object System {
     //<editor-fold desc="Grids">
     object ListGrid extends SCApply[ListGrid, ListGridProps]
     object TreeGrid extends SCApply[TreeGrid, TreeGridProps]
+    object Tree extends SCApply[Tree, TreeProps]
     //</editor-fold>
 
     //<editor-fold desc="Layout">
@@ -79,8 +100,10 @@ package object System {
     object VLayout extends SCApply[VLayout, VLayoutProps]
     object TabSet extends SCApply[TabSet, TabSetProps]
     object Window extends SCApply[Window, WindowProps]
+    object WindowSS extends SCApply[WindowSS, WindowSSProps]
+    object LoginWindow extends SCApply[LoginWindow, LoginWindowProps]
     object Portlet extends SCApply[Portlet, PortletProps]
-    object PortalLayout	 extends SCApply[PortalLayout	, PortalLayoutProps]
+    object PortalLayout extends SCApply[PortalLayout, PortalLayoutProps]
     object ToolStrip extends SCApply[ToolStrip, ToolStripProps]
     object ToolStripMenuButton extends SCApply[ToolStripMenuButton, ToolStripMenuButtonProps]
     object ToolStripSeparator extends SCApply[ToolStripSeparator, ToolStripSeparatorProps]
