@@ -32,7 +32,8 @@ import com.simplesys.macros.PropsToDictionary
 package object System {
 
     implicit class StringOpts(x: String) {
-            def ellipsis = s"$x..."
+        def ellipsis = s"$x..."
+        def dblQuoted: String = "\"" + x + "\""
     }
 
     //<editor-fold desc="Control">
@@ -102,7 +103,7 @@ package object System {
     object WindowSS extends SCApply[WindowSS, WindowSSProps]
     object LoginWindow extends SCApply[LoginWindow, LoginWindowProps]
     object Portlet extends SCApply[Portlet, PortletProps]
-    object PortalLayout	 extends SCApply[PortalLayout	, PortalLayoutProps]
+    object PortalLayout extends SCApply[PortalLayout, PortalLayoutProps]
     object ToolStrip extends SCApply[ToolStrip, ToolStripProps]
     object ToolStripMenuButton extends SCApply[ToolStripMenuButton, ToolStripMenuButtonProps]
     object ToolStripSeparator extends SCApply[ToolStripSeparator, ToolStripSeparatorProps]
