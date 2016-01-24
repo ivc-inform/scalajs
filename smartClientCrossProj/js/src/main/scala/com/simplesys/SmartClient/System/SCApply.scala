@@ -20,7 +20,7 @@ class SCApply4Props[P <: AbstractClassProps](implicit propsToDictionary: PropsTo
 }
 
 class isc[SuperClassType <: Class, NewClassType <: Class, PropsNewClassType <: AbstractClassProps](implicit classTag_OLD: ClassTag[SuperClassType], classTag_NEW: ClassTag[NewClassType], propsToDictionary: PropsToDictionary[PropsNewClassType]) {
-    def defineClass(propsClass: PropsNewClassType): Unit = js.Dynamic.global.isc.selectDynamic(classTag_OLD.runtimeClass.getSimpleName).defineClass(classTag_NEW.runtimeClass.getSimpleName.dblQuoted, s"isc.${classTag_OLD.runtimeClass.getSimpleName.dblQuoted}").addProperties(propsToDictionary.getDictionary(propsClass))
+    def defineClass(propsClass: PropsNewClassType): Unit = js.Dynamic.global.isc.defineClass(classTag_NEW.runtimeClass.getSimpleName.dblQuoted, s"isc.${classTag_OLD.runtimeClass.getSimpleName.dblQuoted}").addProperties(propsToDictionary.getDictionary(propsClass))
 }
 
 
