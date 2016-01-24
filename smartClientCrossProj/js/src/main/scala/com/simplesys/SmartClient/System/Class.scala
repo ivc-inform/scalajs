@@ -32,7 +32,7 @@ trait Class extends Types.Object {
     def getSuperClass(): String
     def ignore(`object`: Types.Object, methodName: String): Boolean
     var identifier: ID
-    var init: js.ThisFunction0[classHandler, void]
+    var init: js.ThisFunction1[classHandler, js.Array[js.Any], _]
     def isA(className: String): Boolean
     def isObserving(`object`: Types.Object, methodName: String): Boolean
     def logDebug(message: String, category: String = js.native): void

@@ -12,5 +12,5 @@ class ClassProps extends AbstractClassProps {
 
     var addPropertiesOnCreate: ScOption[Boolean] = ScNone
     var identifier: ScOption[ID] = ScNone
-    var init: ScOption[js.ThisFunction0[classHandler, void]] = ScNone
+    var init: ScOption[js.ThisFunction1[classHandler, js.Array[js.Any], _]] = ScNone
 }

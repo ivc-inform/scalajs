@@ -99,7 +99,7 @@ package object System {
     object Layout extends SCApply[Layout, LayoutProps]
     object VLayout extends SCApply[VLayout, VLayoutProps]
     object TabSet extends SCApply[TabSet, TabSetProps]
-    //object Window extends SCApply[Window, WindowProps]
+    object Window extends SCApply[Window, WindowProps]
     object WindowSS extends SCApply[WindowSS, WindowSSProps]
     object LoginWindow extends SCApply[LoginWindow, LoginWindowProps]
     object Portlet extends SCApply[Portlet, PortletProps]
