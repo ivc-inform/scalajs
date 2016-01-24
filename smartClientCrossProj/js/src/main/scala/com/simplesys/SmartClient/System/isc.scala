@@ -22,7 +22,6 @@ object iscStatic extends Types.Object {
     def clearPrompt(): void = js.native
     def clone(obj: Types.Object): Types.Object = js.native
     def confirm(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
-    /*def defineClass[S <: Class, T <: Class](implicit superClass: ClassTag[S], successorClass: ClassTag[T]): T = js.Dynamic.global.isc.defineClass(successorClass.runtimeClass.getSimpleName.dblQuoted, s"isc.${successorClass.runtimeClass.getSimpleName}").asInstanceOf[T]*/
     def dismissCurrentDialog(): void = js.native
     def echo(value: js.Any): String = js.native
     def echoAll(value: js.Any): String = js.native
