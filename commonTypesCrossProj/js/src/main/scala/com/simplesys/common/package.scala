@@ -2,6 +2,6 @@ package com.simplesys
 
 package object common {
     implicit class StringOpts(str: String) {
-        def dblQuoted: String = s"\"${str}\""
+        def dblQuoted: String = "\"" + str + "\""
     }
 }
