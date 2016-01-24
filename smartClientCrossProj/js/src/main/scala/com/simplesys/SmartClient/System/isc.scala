@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.System.Types.void
 import com.simplesys.common.Strings._
+import com.simplesys.types.JSArrayAny
 
 import scala.reflect.ClassTag
 import scala.scalajs.js
@@ -35,7 +36,7 @@ object iscStatic extends Types.Object {
     def getKeyForValue(value: Int, valueMap: js.Dictionary[Types.Object], defaultKey: js.Any): js.Any = js.native
     def getKeys(obj: Types.Object): js.Array[String] = js.native
     def getValueForKey(value: Int, valueMap: js.Dictionary[Types.Object], defaultKey: js.Any): js.Any = js.native
-    def getValues(obj: Types.Object): js.Array[js.Any] = js.native
+    def getValues(obj: Types.Object): JSArrayAny = js.native
     def logEcho(value: js.Any, message: String): void = js.native
     def logEchoAll(value: js.Any, message: String): void = js.native
     def logWarn(message: String, category: String = js.native): void = js.native

@@ -56,6 +56,7 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
+import com.simplesys.types.JSArrayAny
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -179,7 +180,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     val cellOut: js.Function3[R, Int, Int, Boolean]
     val cellOver: js.Function3[R, Int, Int, Boolean]
     var cellPadding: Int
-    val cellSelectionChanged: js.Function1[js.Array[js.Any], Boolean]
+    val cellSelectionChanged: js.Function1[JSArrayAny, Boolean]
     val cellValueHover: js.Function3[R, Int, Int, Boolean]
     val cellValueHoverHTML: js.Function3[R, Int, Int, HTMLString]
     def cellValueIsClipped(rowNum: Int, colNum: Int): Boolean
@@ -443,7 +444,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def getValueIcon(field: T, value: js.Any, record: R): SCImgURL
     def getViewState(): ListGridViewState
     def getVisibleRows(): js.Array[Int]
-    val gridComponents: js.Array[ListGridComponent] | js.Array[js.Any]
+    val gridComponents: js.Array[ListGridComponent] | JSArrayAny
     var gridSummaryRecordProperty: String
     def groupBy(arguments: js.Dictionary[js.Any] = js.native): void
     var groupByAsyncThreshold: Int

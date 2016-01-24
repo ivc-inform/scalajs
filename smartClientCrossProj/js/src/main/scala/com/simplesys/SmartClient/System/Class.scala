@@ -46,13 +46,13 @@ trait Class extends Types.Object {
     def logIsErrorEnabled(category: String = js.native): void
     def logIsWarnEnabled(category: String = js.native): void
     def logIsEnabledFor(priority: LogPriority, category: String): void
-    def map(methodName: String, items: js.Array[js.Any]): js.Array[js.Any]
+    def map(methodName: String, items: JSArrayAny): JSArrayAny
     def observe(`object`: Types.Object, methodName: String, action: String = js.native): Boolean
     def setDefaultLogPriority(category: String, priority: LogPriority): void
     def setLogPriority(category: String, priority: LogPriority): void
     def setProperties(arguments: js.Dictionary[Types.Object]): void
     def setProperty(propertyName: String, newValue: js.Any): void
-    def Super(methodName: String, args: js.Array[js.Any], nativeArgs: js.Array[js.Any] = js.native): js.Any
+    def Super(methodName: String, args: JSArrayAny, nativeArgs: JSArrayAny = js.native): js.Any
 }
 
 @js.native
@@ -88,7 +88,7 @@ abstract trait AbstractClassCompanion extends Types.Object {
     def logIsErrorEnabled(category: String = js.native): void = js.native
     def logIsWarnEnabled(category: String = js.native): void = js.native
     def logIsEnabledFor(priority: LogPriority, category: String): void = js.native
-    def map(methodName: String, items: js.Array[js.Any]): js.Array[js.Any] = js.native
+    def map(methodName: String, items: JSArrayAny): JSArrayAny = js.native
     def markAsFrameworkClass(): void = js.native
     def modifyFrameworkDone(): void = js.native
     def modifyFrameworkStart(): void = js.native
@@ -98,7 +98,7 @@ abstract trait AbstractClassCompanion extends Types.Object {
     def setInstanceProperty(property: String, value: js.Any): void = js.native
     def setLogPriority(category: String, priority: LogPriority): void = js.native
     def setProperties(arguments: js.Dictionary[Types.Object]): void = js.native
-    def Super(methodName: String, args: js.Array[js.Any], nativeArgs: js.Array[js.Any] = js.native): js.Any = js.native
+    def Super(methodName: String, args: JSArrayAny, nativeArgs: JSArrayAny = js.native): js.Any = js.native
 }
 
 @js.native

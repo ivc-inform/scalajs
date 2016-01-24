@@ -50,6 +50,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.types.JSArrayAny
 
 import scala.scalajs.js
 
@@ -156,7 +157,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var cellOut: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var cellOver: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var cellPadding: ScOption[Int] = ScNone
-    var cellSelectionChanged: ScOption[js.Function1[js.Array[js.Any], Boolean]] = ScNone
+    var cellSelectionChanged: ScOption[js.Function1[JSArrayAny, Boolean]] = ScNone
     var cellValueHover: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var cellValueHoverHTML: ScOption[js.Function3[R, Int, Int, HTMLString]] = ScNone
     var chartConstructor: ScOption[String] = ScNone

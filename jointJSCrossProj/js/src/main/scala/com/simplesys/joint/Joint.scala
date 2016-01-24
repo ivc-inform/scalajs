@@ -161,15 +161,18 @@ package com.simplesys {
         }
 
         package util {
+
+            import com.simplesys.types.JSArrayAny
+
             @js.native
             @JSName("joint.util")
             object Util extends js.Object {
                 def uuid(): String = js.native
                 def guid(obj: js.Any): String = js.native
-                def mixin(objects: js.Array[js.Any]): js.Dynamic = js.native
-                def supplement(objects: js.Array[js.Any]): js.Dynamic = js.native
-                def deepMixin(objects: js.Array[js.Any]): js.Dynamic = js.native
-                def deepSupplement(objects: js.Array[js.Any], defaultIndicator: js.Any = js.native): js.Dynamic = js.native
+                def mixin(objects: JSArrayAny): js.Dynamic = js.native
+                def supplement(objects: JSArrayAny): js.Dynamic = js.native
+                def deepMixin(objects: JSArrayAny): js.Dynamic = js.native
+                def deepSupplement(objects: JSArrayAny, defaultIndicator: js.Any = js.native): js.Dynamic = js.native
             }
         }
 

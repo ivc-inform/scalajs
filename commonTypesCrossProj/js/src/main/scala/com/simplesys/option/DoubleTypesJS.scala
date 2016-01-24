@@ -1,5 +1,7 @@
 package com.simplesys.option
 
+import com.simplesys.types.JSArrayAny
+
 import scala.language.existentials
 import scala.scalajs.js
 
@@ -18,11 +20,11 @@ object Function1CanvasClick_String {
 //<editor-fold desc="ArrayAny_DictAny">
 sealed abstract class ArrayAny_DictAny[+A, +B]
 
-case class ArrayAnyfromArrayAny_DictAny(a: js.Array[js.Any]) extends ArrayAny_DictAny[js.Array[js.Any], js.Dictionary[js.Any]]
-case class DictfromArrayAny_DictAny(a: js.Dictionary[js.Any]) extends ArrayAny_DictAny[js.Array[js.Any], js.Dictionary[js.Any]]
+case class ArrayAnyfromArrayAny_DictAny(a: JSArrayAny) extends ArrayAny_DictAny[JSArrayAny, js.Dictionary[js.Any]]
+case class DictfromArrayAny_DictAny(a: js.Dictionary[js.Any]) extends ArrayAny_DictAny[JSArrayAny, js.Dictionary[js.Any]]
 
 object ArrayAny_DictAny {
-    implicit def ArrayAny2ArrayAny_DictAny(x: js.Array[js.Any]) = ScSome(ArrayAnyfromArrayAny_DictAny(x))
+    implicit def ArrayAny2ArrayAny_DictAny(x: JSArrayAny) = ScSome(ArrayAnyfromArrayAny_DictAny(x))
     implicit def Dict2ArrayAny_DictAny(x: js.Dictionary[js.Any]) = ScSome(DictfromArrayAny_DictAny(x))
 }
 

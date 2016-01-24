@@ -5,9 +5,9 @@ import sbt.Keys._
 import sbt._
 
 trait BackboneJSProj {
-    self: Build =>
+    self: Build with CommonTypesProj =>
 
-    lazy val backboneJSCrossProj = crossProject.
+    lazy val backboneJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).
       settings(
           name := "backbone-js",
           version := "1.0-SNAPSHOT",

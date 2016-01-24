@@ -1,5 +1,7 @@
 package com.simplesys.SmartClient.System
 
+import com.simplesys.types.JSArrayAny
+
 import scala.scalajs.js
 import scala.scalajs.js.|
 
@@ -31,7 +33,7 @@ package object Types {
     type DetailViewerViewState = Object
 
     type Callback = js.Function | js.ThisFunction | CallbackObject
-    type ValueMap = js.Array[js.Any] //| js.Dictionary[js.Any]
+    type ValueMap = JSArrayAny //| js.Dictionary[js.Any]
     type XMLDocument = Object
     type XMLElement = Object
     type XMLNode = Object

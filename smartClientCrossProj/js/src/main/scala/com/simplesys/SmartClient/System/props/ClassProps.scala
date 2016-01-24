@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.System.Class
 import com.simplesys.System.Types.{ID, void}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
+import com.simplesys.types.JSArrayAny
 
 import scala.scalajs.js
 
@@ -12,5 +13,5 @@ class ClassProps extends AbstractClassProps {
 
     var addPropertiesOnCreate: ScOption[Boolean] = ScNone
     var identifier: ScOption[ID] = ScNone
-    var init: ScOption[js.ThisFunction1[classHandler, js.Array[js.Any], _]] = ScNone
+    var init: ScOption[js.ThisFunction1[classHandler, JSArrayAny, _]] = ScNone
 }

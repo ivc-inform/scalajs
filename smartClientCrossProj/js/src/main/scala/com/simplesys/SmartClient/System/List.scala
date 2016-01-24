@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.DataBinding.AdvancedCriteria
 import com.simplesys.System.Types.void
+import com.simplesys.types.JSArrayAny
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -24,10 +25,10 @@ trait List extends Class {
     def first(): Types.Object = js.native
     def last(): Types.Object = js.native
     def get(pos: Int): Types.Object = js.native
-    def getItems(itemList: js.Array[Int]): js.Array[js.Any] = js.native
+    def getItems(itemList: js.Array[Int]): JSArrayAny = js.native
     def getLength(): Int = js.native
-    def getProperty(property: String): js.Array[js.Any] = js.native
-    def getRange(start: Int, end: Int): js.Array[js.Any] = js.native
+    def getProperty(property: String): JSArrayAny = js.native
+    def getRange(start: Int, end: Int): JSArrayAny = js.native
     def getValueMap(idField: String, displayField: String): Types.Object = js.native
     def indexOf(obj: Types.Object, pos: Int = js.native, endPos: Int = js.native): Int = js.native
     def lastIndexOf(obj: Types.Object, pos: Int = js.native, endPos: Int = js.native): Int = js.native
