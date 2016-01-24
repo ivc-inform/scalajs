@@ -3,14 +3,18 @@ package com.simplesys.SmartClient.System
 import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.System.Types.void
+import com.simplesys.common.Strings._
 
+import scala.reflect.ClassTag
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.|
 
 abstract trait Properties
 
 @js.native
-object isc extends Types.Object {
+@JSName("isc")
+object iscStatic extends Types.Object {
     def addDefaults(destination: Types.Object, source: Types.Object): Types.Object = js.native
     def addProperties(destination: Types.Object, propsArray: js.Array[Types.Object]): Types.Object = js.native
     def ask(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
@@ -18,7 +22,7 @@ object isc extends Types.Object {
     def clearPrompt(): void = js.native
     def clone(obj: Types.Object): Types.Object = js.native
     def confirm(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
-    def defineClass(className: String, superClass: Class = js.native): Class = js.native
+    /*def defineClass[S <: Class, T <: Class](implicit superClass: ClassTag[S], successorClass: ClassTag[T]): T = js.Dynamic.global.isc.defineClass(successorClass.runtimeClass.getSimpleName.dblQuoted, s"isc.${successorClass.runtimeClass.getSimpleName}").asInstanceOf[T]*/
     def dismissCurrentDialog(): void = js.native
     def echo(value: js.Any): String = js.native
     def echoAll(value: js.Any): String = js.native

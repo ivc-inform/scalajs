@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.System.Types.LogPriority.LogPriority
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types.{ID, void}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
@@ -31,6 +31,7 @@ trait Class extends Types.Object {
     def getStackTrace(): String
     def getSuperClass(): String
     def ignore(`object`: Types.Object, methodName: String): Boolean
+    var identifier: ID
     var init: js.ThisFunction0[classHandler, void]
     def isA(className: String): Boolean
     def isObserving(`object`: Types.Object, methodName: String): Boolean
