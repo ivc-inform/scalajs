@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Layout.props
 
 import com.simplesys.SmartClient.Control.ImgButton
 import com.simplesys.SmartClient.Foundation.{Label, Img, Canvas}
-import com.simplesys.SmartClient.Layout.HLayout
+import com.simplesys.SmartClient.Layout.{Window, HLayout}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.System.Types.ContentLayoutPolicy.ContentLayoutPolicy
@@ -13,6 +13,8 @@ import com.simplesys.option.{ScOption, ScNone}
 import scala.scalajs.js
 
 class WindowProps extends LayoutProps {
+    type callbackHandler <: Window
+
     var animateMinimize: ScOption[Boolean] = ScNone
     var autoCenter: ScOption[Boolean] = ScNone
     var autoSize: ScOption[Boolean] = ScNone
