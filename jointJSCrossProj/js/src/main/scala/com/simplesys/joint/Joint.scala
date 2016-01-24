@@ -8,7 +8,7 @@ package com.simplesys {
         package dia {
 
             import com.simplesys.backbone.Model
-            import com.simplesys.types.JSAny
+            import com.simplesys.types.{JSDictionaryAny, JSAny}
 
             @js.native
             trait IElementSize extends js.Object {
@@ -85,7 +85,7 @@ package com.simplesys {
             @js.native
             @JSName("joint.dia.Paper")
             class Paper extends backbone.View[backbone.Model] {
-                var options: js.Dictionary[JSAny] = js.native
+                var options: JSDictionaryAny = js.native
                 def setDimensions(width: Double, height: Double): Unit = js.native
                 def scale(sx: Double, sy: Double = js.native, ox: Double = js.native, oy: Double = js.native): Paper = js.native
                 def rotate(deg: Double, ox: Double = js.native, oy: Double = js.native): Paper = js.native

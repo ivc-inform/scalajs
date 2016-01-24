@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.System.Types.LogPriority.LogPriority
 import com.simplesys.System.Types.{ID, void}
-import com.simplesys.types.{JSAny, JSArrayAny}
+import com.simplesys.types.{JSDictionaryAny, JSAny, JSArrayAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
@@ -12,7 +12,7 @@ trait Class extends Types.Object {
     type classHandler <: this.type
 
     def addAutoChild(childName: String, defaults: js.Dictionary[Types.Object]): Class
-    def addProperties(arguments: js.Dictionary[JSAny]): Types.Object
+    def addProperties(arguments: JSDictionaryAny): Types.Object
     var addPropertiesOnCreate: Boolean
     def addPropertyList(list: js.Array[js.Dictionary[Types.Object]]): Types.Object
     def clearLogPriority(category: String): void

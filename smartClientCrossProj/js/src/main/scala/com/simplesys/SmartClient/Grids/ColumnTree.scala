@@ -9,7 +9,7 @@ import com.simplesys.SmartClient.Layout.{Layout, AbstractLayoutCompanion}
 import com.simplesys.SmartClient.System.Types.Criteria
 import com.simplesys.System.Types._
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSDictionaryAny, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -22,7 +22,7 @@ trait ColumnTree extends Layout with DataBoundComponent {
     var backButtonTitle: String
     var closedIconSuffix: String
     val column: Grid[ListGridField, ListGridRecord] with MultiAutoChild
-    val columnProperties: js.Dictionary[JSAny]
+    val columnProperties: JSDictionaryAny
     var customIconOpenProperty: String
     var customIconProperty: String
     var data: Tree

@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.Layout.{HLayout, VLayout}
 import com.simplesys.SmartClient.System.Date
 import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
 import com.simplesys.System.Types.{void, _}
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSDictionaryAny, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.Array
@@ -85,7 +85,7 @@ trait DateChooser extends VLayout {
     var showWeekends: Boolean
     var startYear: Int
     val timeItem: TimeItem with AutoChild
-    val timeItemProperties: js.Dictionary[JSAny]
+    val timeItemProperties: JSDictionaryAny
     var timeItemTitle: String
     val todayButton: IButton with AutoChild
     var todayButtonHeight: Int

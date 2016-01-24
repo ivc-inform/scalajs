@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.System.Types.{FormItemBaseStyle, AutoChild}
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSDictionaryAny, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -10,11 +10,11 @@ import scala.scalajs.js.|
 @js.native
 trait SpinnerItem extends TextItem {
     val decreaseIcon: FormItemIcon with AutoChild
-    val decreaseIconProperties: js.Dictionary[JSAny]
+    val decreaseIconProperties: JSDictionaryAny
     var getNextValue: js.Function2[Int, Int, Int]
     var getPreviousValue: js.Function2[Int, Int, Int]
     val increaseIcon: FormItemIcon with AutoChild
-    val increaseIconProperties: js.Dictionary[JSAny]
+    val increaseIconProperties: JSDictionaryAny
     var max: Double
     var min: Double
     var step: Double

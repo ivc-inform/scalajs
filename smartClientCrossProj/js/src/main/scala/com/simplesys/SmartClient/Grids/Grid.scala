@@ -56,7 +56,7 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.types.{JSAny, JSArrayAny}
+import com.simplesys.types.{JSDictionaryAny, JSAny, JSArrayAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -446,7 +446,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def getVisibleRows(): js.Array[Int]
     val gridComponents: js.Array[ListGridComponent] | JSArrayAny
     var gridSummaryRecordProperty: String
-    def groupBy(arguments: js.Dictionary[JSAny] = js.native): void
+    def groupBy(arguments: JSDictionaryAny = js.native): void
     var groupByAsyncThreshold: Int
     var groupByComplete: js.Function1[js.Array[String], void]
     val groupByField: js.Array[String] | String
