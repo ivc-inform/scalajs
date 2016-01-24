@@ -33,6 +33,7 @@ class TreeGridProps extends GridProps[TreeGridField, ListGridRecord] {
     var dropIconSuffix: ScOption[String] = ScNone
     var extraIconGap: ScOption[Int] = ScNone
     var fields: ScOption[Seq[TreeGridFieldProps]] = ScNone
+    var defaultFields: ScOption[Seq[TreeGridFieldProps]] = ScNone
     var fileImage: ScOption[SCImgURL] = ScNone
     var folderClick: ScOption[js.Function3[TreeGrid, TreeNode, Int, void]] = ScNone
     var folderClosed: ScOption[js.Function1[TreeNode, Boolean]] = ScNone

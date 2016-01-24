@@ -5,7 +5,7 @@ import scala.scalajs.js.|
 
 @js.native
 trait WindowSS extends Window {
-    val headerIconPath: String
-    val autoPosition: Boolean
+    var headerIconPath: String
+    var autoPosition: Boolean
 }
 
