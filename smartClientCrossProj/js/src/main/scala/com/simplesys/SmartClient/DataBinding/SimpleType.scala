@@ -12,6 +12,7 @@ import com.simplesys.SmartClient.System.{Types, Class, AbstractClassCompanion}
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.{void, ID, FormatString}
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
@@ -19,26 +20,26 @@ import scala.scalajs.js.|
 
 @js.native
 trait SimpleType extends Class {
-    def compareValues(value1: js.Any, value2: js.Any, field: DataSourceField | ListGridField | DetailViewerField)
+    def compareValues(value1: JSAny, value2: JSAny, field: DataSourceField | ListGridField | DetailViewerField)
     var defaultGroupingMode: String
-    def editFormatter(value: js.Any, field: FormItem = js.native, form: DynamicForm = js.native, record: Record = js.native): String
+    def editFormatter(value: JSAny, field: FormItem = js.native, form: DynamicForm = js.native, record: Record = js.native): String
     var editorType: FormItem
     var exportFormat: FormatString
     var fieldProperties: DataSourceField
     var filterEditorType: FormItem
     var format: FormatString
-    def getAtomicValue(value: js.Any, reason: String): js.Any
+    def getAtomicValue(value: JSAny, reason: String): JSAny
     def getGroupingModes(): ValueMap
-    def getGroupTitle(value: js.Any, record: Record, field: Types.Object, fieldName: String, component: Canvas): String
-    def getGroupValue(value: js.Any, record: Record, field: Types.Object, fieldName: String, component: Canvas): js.Any
+    def getGroupTitle(value: JSAny, record: Record, field: Types.Object, fieldName: String, component: Canvas): String
+    def getGroupValue(value: JSAny, record: Record, field: Types.Object, fieldName: String, component: Canvas): JSAny
     var groupingModes: ValueMap
     val inheritsFrom: ID
     val name: ID
-    def normalDisplayFormatter(value: js.Any, field: FormItem | DetailViewerField = js.native, component: DataBoundComponent = js.native, record: Types.Object = js.native): void
-    def parseInput(value: js.Any, field: FormItem = js.native, form: DynamicForm = js.native, record: Record = js.native): void
+    def normalDisplayFormatter(value: JSAny, field: FormItem | DetailViewerField = js.native, component: DataBoundComponent = js.native, record: Types.Object = js.native): void
+    def parseInput(value: JSAny, field: FormItem = js.native, form: DynamicForm = js.native, record: Record = js.native): void
     var readOnlyEditorType: FormItem
-    def shortDisplayFormatter(value: js.Any, field: FormItem | DetailViewerField = js.native, component: DataBoundComponent = js.native, record: Types.Object = js.native): void
-    def updateAtomicValue(atomicValue: js.Any, currentValue: js.Any, reason: String): js.Any
+    def shortDisplayFormatter(value: JSAny, field: FormItem | DetailViewerField = js.native, component: DataBoundComponent = js.native, record: Types.Object = js.native): void
+    def updateAtomicValue(atomicValue: JSAny, currentValue: JSAny, reason: String): JSAny
     var validators: js.Array[Validator]
     var validOperators: js.Array[OperatorId]
     var valueMap: ValueMap
@@ -46,7 +47,7 @@ trait SimpleType extends Class {
 
 @js.native
 abstract trait AbstractSimpleTypeCompanion extends AbstractClassCompanion {
-    def applySummaryFunction(records: js.Array[Types.Object], field: DataSourceField, summaryFunction: SummaryFunction, summaryConfig: SummaryConfiguration): js.Any = js.native
+    def applySummaryFunction(records: js.Array[Types.Object], field: DataSourceField, summaryFunction: SummaryFunction, summaryConfig: SummaryConfiguration): JSAny = js.native
     def getDefaultSummaryFunction(typeName: String): SummaryFunction = js.native
     def getType(typeName: String): SimpleType = js.native
     def registerSummaryFunction(functionName: String, method: js.Array[Record] | DataSourceField | SummaryConfiguration): void = js.native

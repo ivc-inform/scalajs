@@ -7,6 +7,7 @@ import com.simplesys.System.Types.CharacterCasing.CharacterCasing
 import com.simplesys.System.Types.CharacterCasing._
 import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
 import com.simplesys.System.Types._
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -20,7 +21,7 @@ trait TextItem extends FormItem {
     var characterCasing: CharacterCasing
     def deselectValue(start: Boolean): void
     val editProxyConstructor: SCClassName
-    var emptyStringValue: js.Any
+    var emptyStringValue: JSAny
     var enforceLength: Boolean
     var fetchMissingValues: Boolean
     var formatOnBlur: Boolean

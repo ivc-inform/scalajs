@@ -8,6 +8,7 @@ package com.simplesys {
         package dia {
 
             import com.simplesys.backbone.Model
+            import com.simplesys.types.JSAny
 
             @js.native
             trait IElementSize extends js.Object {
@@ -21,28 +22,28 @@ package com.simplesys {
                 def addCell(cell: Cell): Unit = js.native
                 def addCells(cells: js.Array[Cell]): Unit = js.native
                 def initialize(): Unit = js.native
-                def fromJSON(json: js.Any): Unit = js.native
+                def fromJSON(json: JSAny): Unit = js.native
                 def toJSON(): js.Object = js.native
                 def clear(): Unit = js.native
-                def getConnectedLinks(cell: Cell, opt: js.Any = js.native): js.Array[Link] = js.native
+                def getConnectedLinks(cell: Cell, opt: JSAny = js.native): js.Array[Link] = js.native
                 def disconnectLinks(cell: Cell): Unit = js.native
                 def removeLinks(cell: Cell): Unit = js.native
-                def findModelsFromPoint(point: js.Any): js.Array[Element] = js.native
+                def findModelsFromPoint(point: JSAny): js.Array[Element] = js.native
             }
 
             @js.native
             @JSName("joint.dia.Cell")
             class Cell extends backbone.Model {
                 def toJSON(): js.Object = js.native
-                def remove(options: js.Any = js.native): Unit = js.native
+                def remove(options: JSAny = js.native): Unit = js.native
                 def toFront(): Unit = js.native
                 def toBack(): Unit = js.native
                 def embed(cell: Cell): Unit = js.native
                 def unembed(cell: Cell): Unit = js.native
                 def getEmbeddedCells(): js.Array[Cell] = js.native
                 @JSName("clone")
-                def cloneJS(opt: js.Any = js.native): backbone.Model /*Cell?*/ = js.native
-                def attr(attrs: js.Any): Cell = js.native
+                def cloneJS(opt: JSAny = js.native): backbone.Model /*Cell?*/ = js.native
+                def attr(attrs: JSAny): Cell = js.native
             }
 
             @js.native
@@ -51,7 +52,7 @@ package com.simplesys {
                 def position(x: Double, y: Double): Element = js.native
                 def translate(tx: Double, ty: Double = js.native): Element = js.native
                 def resize(width: Double, height: Double): Element = js.native
-                def rotate(angle: Double, options: js.Any): Element = js.native
+                def rotate(angle: Double, options: JSAny): Element = js.native
                 def remove(): Unit = js.native
             }
 
@@ -66,7 +67,7 @@ package com.simplesys {
                 @JSName("defaults")
                 def diaDefaults(): IDefaults = js.native
                 def disconnect(): Link = js.native
-                def label(idx: Double = js.native, value: js.Any = js.native): js.Dynamic = js.native
+                def label(idx: Double = js.native, value: JSAny = js.native): js.Dynamic = js.native
                 def remove(): Unit = js.native
             }
 
@@ -84,15 +85,15 @@ package com.simplesys {
             @js.native
             @JSName("joint.dia.Paper")
             class Paper extends backbone.View[backbone.Model] {
-                var options: js.Dictionary[js.Any] = js.native
+                var options: js.Dictionary[JSAny] = js.native
                 def setDimensions(width: Double, height: Double): Unit = js.native
                 def scale(sx: Double, sy: Double = js.native, ox: Double = js.native, oy: Double = js.native): Paper = js.native
                 def rotate(deg: Double, ox: Double = js.native, oy: Double = js.native): Paper = js.native
-                def findView(el: js.Any): CellView = js.native
-                def findViewByModel(modelOrId: js.Any): CellView = js.native
-                def findViewsFromPoint(p: js.Any): js.Array[CellView] = js.native
-                def findViewsInArea(r: js.Any): js.Array[CellView] = js.native
-                def fitToContent(opt: js.Any = js.native): Unit = js.native
+                def findView(el: JSAny): CellView = js.native
+                def findViewByModel(modelOrId: JSAny): CellView = js.native
+                def findViewsFromPoint(p: JSAny): js.Array[CellView] = js.native
+                def findViewsInArea(r: JSAny): js.Array[CellView] = js.native
+                def fitToContent(opt: JSAny = js.native): Unit = js.native
             }
 
             @js.native
@@ -104,23 +105,23 @@ package com.simplesys {
             @js.native
             @JSName("joint.dia.CellView")
             class CellView extends backbone.View[Cell] {
-                def getBBox(): js.Any = js.native
-                def highlight(el: js.Any = js.native): Unit = js.native
-                def unhighlight(el: js.Any = js.native): Unit = js.native
-                def findMagnet(el: js.Any): Unit = js.native
-                def getSelector(el: js.Any): Unit = js.native
-                def pointerdblclick(evt: js.Any, x: Double, y: Double): Unit = js.native
-                def pointerclick(evt: js.Any, x: Double, y: Double): Unit = js.native
-                def pointerdown(evt: js.Any, x: Double, y: Double): Unit = js.native
-                def pointermove(evt: js.Any, x: Double, y: Double): Unit = js.native
-                def pointerup(evt: js.Any, x: Double, y: Double): Unit = js.native
+                def getBBox(): JSAny = js.native
+                def highlight(el: JSAny = js.native): Unit = js.native
+                def unhighlight(el: JSAny = js.native): Unit = js.native
+                def findMagnet(el: JSAny): Unit = js.native
+                def getSelector(el: JSAny): Unit = js.native
+                def pointerdblclick(evt: JSAny, x: Double, y: Double): Unit = js.native
+                def pointerclick(evt: JSAny, x: Double, y: Double): Unit = js.native
+                def pointerdown(evt: JSAny, x: Double, y: Double): Unit = js.native
+                def pointermove(evt: JSAny, x: Double, y: Double): Unit = js.native
+                def pointerup(evt: JSAny, x: Double, y: Double): Unit = js.native
             }
 
             @js.native
             @JSName("joint.dia.LinkView")
             class LinkView extends CellView {
                 def getConnectionLength(): Double = js.native
-                def getPointAtLength(length: Double): js.Any = js.native
+                def getPointAtLength(length: Double): JSAny = js.native
             }
 
         }
@@ -129,11 +130,13 @@ package com.simplesys {
 
             package basic {
 
+                import com.simplesys.types.JSAny
+
                 @js.native
                 @JSName("joint.shapes.basic.Generic")
                 class Generic[T] extends joint.dia.Element {
                     @JSName("clone")
-                    def cloneSHP(opt: js.Any = js.native): T = js.native
+                    def cloneSHP(opt: JSAny = js.native): T = js.native
                 }
 
                 @js.native
@@ -162,17 +165,17 @@ package com.simplesys {
 
         package util {
 
-            import com.simplesys.types.JSArrayAny
+            import com.simplesys.types.{JSAny, JSArrayAny}
 
             @js.native
             @JSName("joint.util")
             object Util extends js.Object {
                 def uuid(): String = js.native
-                def guid(obj: js.Any): String = js.native
+                def guid(obj: JSAny): String = js.native
                 def mixin(objects: JSArrayAny): js.Dynamic = js.native
                 def supplement(objects: JSArrayAny): js.Dynamic = js.native
                 def deepMixin(objects: JSArrayAny): js.Dynamic = js.native
-                def deepSupplement(objects: JSArrayAny, defaultIndicator: js.Any = js.native): js.Dynamic = js.native
+                def deepSupplement(objects: JSArrayAny, defaultIndicator: JSAny = js.native): js.Dynamic = js.native
             }
         }
 

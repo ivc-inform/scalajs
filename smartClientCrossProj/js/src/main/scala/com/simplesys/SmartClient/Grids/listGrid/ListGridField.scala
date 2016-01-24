@@ -24,6 +24,7 @@ import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types._
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -54,24 +55,24 @@ trait ListGridField extends Types.Object {
     var canSortClientOnly: Boolean
     var canToggle: Boolean
     var cellAlign: Alignment
-    var cellChanged: js.Function6[ListGridRecord, js.Any, js.Any, Int, Int, Grid[ListGridField, ListGridRecord], void]
+    var cellChanged: js.Function6[ListGridRecord, JSAny, JSAny, Int, Int, Grid[ListGridField, ListGridRecord], void]
     var cellIcon: SCImgURL
-    var change: js.Function4[DynamicForm, FormItem, js.Any, js.Any, Boolean]
-    var changed: js.Function3[DynamicForm, FormItem, js.Any, void]
+    var change: js.Function4[DynamicForm, FormItem, JSAny, JSAny, Boolean]
+    var changed: js.Function3[DynamicForm, FormItem, JSAny, void]
     var dataPath: String
     var dateFormatter: DateDisplayFormat
     var decimalPad: Int
     var decimalPrecision: Int
     def defaultDynamicValue(item: FormItem, form: DynamicForm, values: Types.Object): void
-    var defaultFilterValue: js.Any
+    var defaultFilterValue: JSAny
     val defaultGroupingMode: String
     val defaultIconSrc: String
-    var defaultValue: js.Any
+    var defaultValue: JSAny
     var defaultWidth: Int
     var displayField: String
     var displayValueFromRecord: Boolean
-    var editorEnter: js.Function5[ListGridRecord, js.Any, Int, Int, Grid[ListGridField, ListGridRecord], void]
-    var editorExit: js.Function6[EditCompletionEvent, ListGridRecord, js.Any, Int, Int, Grid[ListGridField, ListGridRecord], void]
+    var editorEnter: js.Function5[ListGridRecord, JSAny, Int, Int, Grid[ListGridField, ListGridRecord], void]
+    var editorExit: js.Function6[EditCompletionEvent, ListGridRecord, JSAny, Int, Int, Grid[ListGridField, ListGridRecord], void]
     val editorIconHeight: Int
     val editorIconWidth: Int
     var editorImageURLPrefix: String
@@ -95,19 +96,19 @@ trait ListGridField extends Types.Object {
     var filterOnKeypress: Boolean
     var filterOperator: OperatorId
     val format: FormatString
-    def formatCellValue(value: js.Any, record: ListGridRecord, rowNum: Int, colNum: Int, grid: Grid[ListGridField, ListGridRecord]): HTMLString
-    def formatEditorValue(value: js.Any, record: ListGridRecord, rowNum: Int, colNum: Int, grid: Grid[ListGridField, ListGridRecord]): js.Any
+    def formatCellValue(value: JSAny, record: ListGridRecord, rowNum: Int, colNum: Int, grid: Grid[ListGridField, ListGridRecord]): HTMLString
+    def formatEditorValue(value: JSAny, record: ListGridRecord, rowNum: Int, colNum: Int, grid: Grid[ListGridField, ListGridRecord]): JSAny
     var formatGridSummary: String
     var formatGroupSummary: String
     var frozen: Boolean
     def getAutoFreezePosition(): Int
     def getEditorValueMap(values: Types.Object, field: ListGridField, grid: Grid[ListGridField, ListGridRecord]): ValueMap
     def getFieldTitle(viewer: Grid[ListGridField, ListGridRecord], fieldNum: Int): String
-    def getGridSummary(records: Array[ListGridRecord], field: ListGridField, groupSummaries: Array[Types.Object] = js.native): js.Any
-    def getGroupSummary(records: Array[ListGridRecord], field: ListGridField, groupNode: Types.Object = js.native): js.Any
-    def getGroupTitle(groupValue: js.Any, groupNode: groupNode, field: Types.Object, fieldName: String, grid: Grid[ListGridField, ListGridRecord]): js.Any
-    def getGroupValue(value: js.Any, record: ListGridRecord, field: Types.Object, fieldName: String, grid: Grid[ListGridField, ListGridRecord]): js.Any
-    def getRecordSummary(record: ListGridRecord, field: ListGridField, grid: Grid[ListGridField, ListGridRecord]): js.Any
+    def getGridSummary(records: Array[ListGridRecord], field: ListGridField, groupSummaries: Array[Types.Object] = js.native): JSAny
+    def getGroupSummary(records: Array[ListGridRecord], field: ListGridField, groupNode: Types.Object = js.native): JSAny
+    def getGroupTitle(groupValue: JSAny, groupNode: groupNode, field: Types.Object, fieldName: String, grid: Grid[ListGridField, ListGridRecord]): JSAny
+    def getGroupValue(value: JSAny, record: ListGridRecord, field: Types.Object, fieldName: String, grid: Grid[ListGridField, ListGridRecord]): JSAny
+    def getRecordSummary(record: ListGridRecord, field: ListGridField, grid: Grid[ListGridField, ListGridRecord]): JSAny
     def getSummaryTitle(viewer: Grid[ListGridField, ListGridRecord], field: ListGridField): void
     val groupGranularity: Int
     val groupingMode: String
@@ -126,7 +127,7 @@ trait ListGridField extends Types.Object {
     var hiliteIconSize: Int
     var hiliteIconWidth: Int
     var hoverDelay: Int
-    var hoverHTML: js.Function5[ListGridRecord, js.Any, Int, Int, Grid[ListGridField, ListGridRecord], HTMLString]
+    var hoverHTML: js.Function5[ListGridRecord, JSAny, Int, Int, Grid[ListGridField, ListGridRecord], HTMLString]
     var hoverWidth: Int
     var hoverWrap: Boolean
     var icon: SCImgURL
@@ -146,7 +147,7 @@ trait ListGridField extends Types.Object {
     var includeFrom: String
     var includeInRecordSummary: Boolean
     val includeInRecordSummaryFields: Array[String]
-    val initialValue: js.Any
+    val initialValue: JSAny
     var inputFormat: DateInputFormat
     val isRemoveField: Boolean
     val leaveHeaderMenuButtonSpace: Boolean
@@ -161,11 +162,11 @@ trait ListGridField extends Types.Object {
     var optionFilterContext: DSRequest
     var optionOperationId: String
     var optionTextMatchStyle: TextMatchStyle
-    def parseEditorValue(value: js.Any, record: Types.Object, rowNum: Int, colNum: Int, grid: Grid[ListGridField, ListGridRecord]): js.Any
+    def parseEditorValue(value: JSAny, record: Types.Object, rowNum: Int, colNum: Int, grid: Grid[ListGridField, ListGridRecord]): JSAny
     var partialSummary: Boolean
     var prompt: HTMLString
-    var recordClick: js.Function7[Grid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, Int, js.Any, js.Any, Boolean]
-    var recordDoubleClick: js.Function7[Grid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, Int, js.Any, js.Any, Boolean]
+    var recordClick: js.Function7[Grid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, Int, JSAny, JSAny, Boolean]
+    var recordDoubleClick: js.Function7[Grid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, Int, JSAny, JSAny, Boolean]
     var recordSummaryFunction: RecordSummaryFunction
     var required: Boolean
     var shouldPrint: Boolean
@@ -186,7 +187,7 @@ trait ListGridField extends Types.Object {
     var sortByDisplayField: Boolean
     var sortByMappedValue: Boolean
     var sortDirection: SortDirection
-    def sortNormalizer(recordObject: Types.Object, fieldName: String, context: Grid[ListGridField, ListGridRecord]): js.Any
+    def sortNormalizer(recordObject: Types.Object, fieldName: String, context: Grid[ListGridField, ListGridRecord]): JSAny
     var summaryFunction: SummaryFunction | js.Array[SummaryFunction]
     var summaryTitle: String
     var summaryValue: HTMLString
@@ -201,7 +202,7 @@ trait ListGridField extends Types.Object {
     var validateOnChange: Boolean
     var validators: Array[Validator]
     var valueField: String
-    var valueIconClick: js.Function6[Grid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, js.Any, FormItem, Boolean]
+    var valueIconClick: js.Function6[Grid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, JSAny, FormItem, Boolean]
     var valueIconHeight: Int
     var valueIconLeftPadding: Int
     var valueIconOrientation: String

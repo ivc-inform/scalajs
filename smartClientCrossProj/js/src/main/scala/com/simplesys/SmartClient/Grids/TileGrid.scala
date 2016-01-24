@@ -11,6 +11,7 @@ import com.simplesys.System.Types.DragDataAction.DragDataAction
 import com.simplesys.System.Types.SelectionType.SelectionType
 import com.simplesys.System.Types._
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -27,7 +28,7 @@ trait TileGrid extends TileLayout with DataBoundComponent {
     var data: Array[TileRecord]
     var dataArrived: js.Function2[Int, Int, void]
     val detailViewer: DetailViewer
-    val detailViewerProperties: js.Dictionary[js.Any]
+    val detailViewerProperties: js.Dictionary[JSAny]
     var drawAllMaxTiles: Int
     var emptyMessage: HTMLString
     var emptyMessageStyle: CSSStyleName

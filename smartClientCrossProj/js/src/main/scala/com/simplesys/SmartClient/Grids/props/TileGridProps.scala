@@ -11,6 +11,7 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
 import com.simplesys.System.Types.DragAppearance.DragAppearance
 import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -23,7 +24,7 @@ class TileGridProps extends TileLayoutProps with DataBoundComponentProps{
     var data: ScOption[Array[TileRecord]] = ScNone
     var dataArrived: ScOption[js.Function2[Int, Int, void]] = ScNone
     var detailViewer: ScOption[DetailViewer] = ScNone
-    var detailViewerProperties: ScOption[js.Dictionary[js.Any]] = ScNone
+    var detailViewerProperties: ScOption[js.Dictionary[JSAny]] = ScNone
     var drawAllMaxTiles: ScOption[Int] = ScNone
     var emptyMessage: ScOption[HTMLString] = ScNone
     var emptyMessageStyle: ScOption[CSSStyleName] = ScNone

@@ -23,6 +23,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VisibilityMode.VisibilityMode
 import com.simplesys.System.Types._
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -94,7 +95,7 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     def getTitleAlign(item: FormItem): Alignment
     def getTitleOrientation(item: FormItem = js.native): TitleOrientation
     def getValidatedValues(): Types.Object
-    def getValue(fieldName: String): js.Any
+    def getValue(fieldName: String): JSAny
     def getValues(): Types.Object
     def getValuesAsAdvancedCriteria(textMatchStyle: TextMatchStyle = js.native): AdvancedCriteria
     def getValuesAsCriteria(advanced: Boolean, textMatchStyle: TextMatchStyle = js.native): Criteria | AdvancedCriteria
@@ -109,8 +110,8 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     var implicitSaveOnBlur: Boolean
     def isNewRecord(): Boolean
     def isPendingAsyncValidation(): Boolean
-    var itemChange: js.Function3[FormItem, js.Any, js.Any, Boolean]
-    var itemChanged: js.Function2[FormItem, js.Any, _]
+    var itemChange: js.Function3[FormItem, JSAny, JSAny, Boolean]
+    var itemChanged: js.Function2[FormItem, JSAny, _]
     var itemHoverAlign: Alignment
     var itemHoverDelay: Int
     var itemHoverHeight: Int
@@ -161,7 +162,7 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     def setSaveOperationType(operationType: DSOperationType): void
     def setTarget(target: String): void
     def setTitleOrientation(titleOrientation: TitleOrientation): void
-    def setValue(fieldName: String, value: js.Any): void
+    def setValue(fieldName: String, value: JSAny): void
     def setValueMap(itemName: String, valueMap: ValueMap): void
     def setValues(newData: Types.Object = js.native): void
     def setValuesAsCriteria(criteria: Criterion): void

@@ -9,7 +9,7 @@ package com.simplesys {
 
     package backbone {
 
-        import com.simplesys.types.JSArrayAny
+        import com.simplesys.types.{JSAny, JSArrayAny}
 
         @js.native
         trait Silenceable extends js.Object {
@@ -34,7 +34,7 @@ package com.simplesys {
 
         @js.native
         trait RouterOptions extends js.Object {
-            var routes: js.Any = js.native
+            var routes: JSAny = js.native
         }
 
         @js.native
@@ -50,15 +50,15 @@ package com.simplesys {
 
         @js.native
         trait Parseable extends js.Object {
-            var parse: js.Any = js.native
+            var parse: JSAny = js.native
         }
 
         @js.native
         trait PersistenceOptions extends js.Object {
             var url: String = js.native
             var beforeSend: js.Function1[JQueryXHR, Unit] = js.native
-            var success: js.Function3[js.Any, js.Any, js.Any, Unit] = js.native
-            var error: js.Function3[js.Any, JQueryXHR, js.Any, Unit] = js.native
+            var success: js.Function3[JSAny, JSAny, JSAny, Unit] = js.native
+            var error: js.Function3[JSAny, JQueryXHR, JSAny, Unit] = js.native
         }
 
         @js.native
@@ -86,24 +86,24 @@ package com.simplesys {
         @js.native
         @JSName("Backbone.Events")
         class Events extends js.Object {
-            def on(eventName: String, callback: js.Function = js.native, context: js.Any = js.native): js.Dynamic = js.native
-            def off(eventName: String = js.native, callback: js.Function = js.native, context: js.Any = js.native): js.Dynamic = js.native
-            def trigger(eventName: String, args: js.Any*): js.Dynamic = js.native
-            def bind(eventName: String, callback: js.Function, context: js.Any = js.native): js.Dynamic = js.native
-            def unbind(eventName: String = js.native, callback: js.Function = js.native, context: js.Any = js.native): js.Dynamic = js.native
-            def once(events: String, callback: js.Function, context: js.Any = js.native): js.Dynamic = js.native
-            def listenTo(`object`: js.Any, events: String, callback: js.Function): js.Dynamic = js.native
-            def listenToOnce(`object`: js.Any, events: String, callback: js.Function): js.Dynamic = js.native
-            def stopListening(`object`: js.Any = js.native, events: String = js.native, callback: js.Function = js.native): js.Dynamic = js.native
+            def on(eventName: String, callback: js.Function = js.native, context: JSAny = js.native): js.Dynamic = js.native
+            def off(eventName: String = js.native, callback: js.Function = js.native, context: JSAny = js.native): js.Dynamic = js.native
+            def trigger(eventName: String, args: JSAny*): js.Dynamic = js.native
+            def bind(eventName: String, callback: js.Function, context: JSAny = js.native): js.Dynamic = js.native
+            def unbind(eventName: String = js.native, callback: js.Function = js.native, context: JSAny = js.native): js.Dynamic = js.native
+            def once(events: String, callback: js.Function, context: JSAny = js.native): js.Dynamic = js.native
+            def listenTo(`object`: JSAny, events: String, callback: js.Function): js.Dynamic = js.native
+            def listenToOnce(`object`: JSAny, events: String, callback: js.Function): js.Dynamic = js.native
+            def stopListening(`object`: JSAny = js.native, events: String = js.native, callback: js.Function = js.native): js.Dynamic = js.native
         }
 
         @js.native
         @JSName("Backbone.ModelBase")
         class ModelBase extends Events {
-            var url: js.Any = js.native
-            def parse(response: js.Any, options: js.Any = js.native): js.Dynamic = js.native
-            def toJSON(options: js.Any = js.native): js.Dynamic = js.native
-            def sync(arg: js.Any*): JQueryXHR = js.native
+            var url: JSAny = js.native
+            def parse(response: JSAny, options: JSAny = js.native): js.Dynamic = js.native
+            def toJSON(options: JSAny = js.native): js.Dynamic = js.native
+            def sync(arg: JSAny*): JQueryXHR = js.native
         }
 
         @js.native
@@ -116,24 +116,24 @@ package com.simplesys {
             //        private static extend(properties: any, classProperties?: any): any;
 
 
-            def this(attributes: js.Any = js.native, options: js.Any = js.native) = this()
-            var attributes: js.Any = js.native
+            def this(attributes: JSAny = js.native, options: JSAny = js.native) = this()
+            var attributes: JSAny = js.native
             var changed: JSArrayAny = js.native
             var cid: String = js.native
-            var collection: backbone.Collection[_ <: Model /*js.Any*/ ] = js.native
+            var collection: backbone.Collection[_ <: Model /*JSAny*/ ] = js.native
             def defaults(): js.Dynamic = js.native
-            var id: js.Any = js.native
+            var id: JSAny = js.native
             var idAttribute: String = js.native
-            var validationError: js.Any = js.native
-            var urlRoot: js.Any = js.native
-            def initialize(attributes: js.Any = js.native, options: js.Any = js.native): Unit = js.native
+            var validationError: JSAny = js.native
+            var urlRoot: JSAny = js.native
+            def initialize(attributes: JSAny = js.native, options: JSAny = js.native): Unit = js.native
             def fetch(options: ModelFetchOptions = js.native): JQueryXHR = js.native
             def get(attributeName: String): js.Dynamic = js.native
             @JSName("set")
-            def setAttribute(attributeName: String, value: js.Any, options: ModelSetOptions = js.native): Model = js.native
-            def set(obj: js.Any, options: ModelSetOptions = js.native): Model = js.native
+            def setAttribute(attributeName: String, value: JSAny, options: ModelSetOptions = js.native): Model = js.native
+            def set(obj: JSAny, options: ModelSetOptions = js.native): Model = js.native
             def change(): js.Dynamic = js.native
-            def changedAttributes(attributes: js.Any = js.native): JSArrayAny = js.native
+            def changedAttributes(attributes: JSAny = js.native): JSArrayAny = js.native
             def clear(options: Silenceable = js.native): js.Dynamic = js.native
             @JSName("clone")
             def cloneJS(): Model = js.native
@@ -142,12 +142,12 @@ package com.simplesys {
             def has(attribute: String): Boolean = js.native
             def hasChanged(attribute: String = js.native): Boolean = js.native
             def isNew(): Boolean = js.native
-            def isValid(options: js.Any = js.native): Boolean = js.native
+            def isValid(options: JSAny = js.native): Boolean = js.native
             def previous(attribute: String): js.Dynamic = js.native
             def previousAttributes(): JSArrayAny = js.native
-            def save(attributes: js.Any = js.native, options: ModelSaveOptions = js.native): js.Dynamic = js.native
+            def save(attributes: JSAny = js.native, options: ModelSaveOptions = js.native): js.Dynamic = js.native
             def unset(attribute: String, options: Silenceable = js.native): Model = js.native
-            def validate(attributes: js.Any, options: js.Any = js.native): js.Dynamic = js.native
+            def validate(attributes: JSAny, options: JSAny = js.native): js.Dynamic = js.native
 
             //        private _validate(attrs: any, options: any): boolean;
 
@@ -166,10 +166,10 @@ package com.simplesys {
             //        * Do not use, prefer TypeScript's extend functionality.
             //        **/
             //        private static extend(properties: any, classProperties?: any): any;
-            def this(models: js.Array[TModel] = js.native, options: js.Any = js.native) = this()
+            def this(models: js.Array[TModel] = js.native, options: JSAny = js.native) = this()
             var models: js.Array[TModel] = js.native
             var length: Double = js.native
-            def initialize(models: js.Array[TModel] = js.native, options: js.Any = js.native): Unit = js.native
+            def initialize(models: js.Array[TModel] = js.native, options: JSAny = js.native): Unit = js.native
             def fetch(options: CollectionFetchOptions = js.native): JQueryXHR = js.native
             def comparator(element: TModel): Double = js.native
             def comparator(compare: TModel, to: TModel = js.native): Double = js.native
@@ -178,7 +178,7 @@ package com.simplesys {
             def addModels(models: js.Array[TModel], options: AddOptions = js.native): Collection[TModel] = js.native
             def at(index: Double): TModel = js.native
             def get(id: Double): TModel = js.native
-            def create(attributes: js.Any, options: ModelSaveOptions = js.native): TModel = js.native
+            def create(attributes: JSAny, options: ModelSaveOptions = js.native): TModel = js.native
             def pluck(attribute: String): JSArrayAny = js.native
             def push(model: TModel, options: AddOptions = js.native): TModel = js.native
             def pop(options: Silenceable = js.native): TModel = js.native
@@ -190,64 +190,64 @@ package com.simplesys {
             def shift(options: Silenceable = js.native): TModel = js.native
             def sort(options: Silenceable = js.native): Collection[TModel] = js.native
             def unshift(model: TModel, options: AddOptions = js.native): TModel = js.native
-            def where(properies: js.Any): js.Array[TModel] = js.native
-            def findWhere(properties: js.Any): TModel = js.native
+            def where(properies: JSAny): js.Array[TModel] = js.native
+            def findWhere(properties: JSAny): TModel = js.native
 
             //        private _prepareModel(attrs?: any, options?: any): any;
             //        private _removeReference(model: TModel): void;
             //        private _onModelEvent(event: string, model: TModel, collection: Collection<TModel>, options: any): void;
 
-            def all(iterator: js.Function2[TModel, Double, Boolean], context: js.Any = js.native): Boolean = js.native
-            def any(iterator: js.Function2[TModel, Double, Boolean], context: js.Any = js.native): Boolean = js.native
-            def collect(iterator: js.Function3[TModel, Double, js.Any, js.Array[js.Any]], context: js.Any = js.native): JSArrayAny = js.native
+            def all(iterator: js.Function2[TModel, Double, Boolean], context: JSAny = js.native): Boolean = js.native
+            def any(iterator: js.Function2[TModel, Double, Boolean], context: JSAny = js.native): Boolean = js.native
+            def collect(iterator: js.Function3[TModel, Double, JSAny, js.Array[JSAny]], context: JSAny = js.native): JSArrayAny = js.native
             def chain(): js.Dynamic = js.native
-            def contains(value: js.Any): Boolean = js.native
+            def contains(value: JSAny): Boolean = js.native
             def countBy(iterator: js.Function2[TModel, Double, Any]): js.Dictionary[Double] = js.native
             def countBy(attribute: String): js.Dictionary[Double] = js.native
-            def detect(iterator: js.Function1[js.Any, Boolean], context: js.Any = js.native): js.Dynamic = js.native
+            def detect(iterator: js.Function1[JSAny, Boolean], context: JSAny = js.native): js.Dynamic = js.native
             def drop(): TModel = js.native
             def drop(n: Double): js.Array[TModel] = js.native
-            def each(iterator: js.Function3[TModel, Double, js.Any, Unit], context: js.Any = js.native): js.Dynamic = js.native
-            def every(iterator: js.Function2[TModel, Double, Boolean], context: js.Any = js.native): Boolean = js.native
-            def filter(iterator: js.Function2[TModel, Double, Boolean], context: js.Any = js.native): js.Array[TModel] = js.native
-            def find(iterator: js.Function2[TModel, Double, Boolean], context: js.Any = js.native): TModel = js.native
+            def each(iterator: js.Function3[TModel, Double, JSAny, Unit], context: JSAny = js.native): js.Dynamic = js.native
+            def every(iterator: js.Function2[TModel, Double, Boolean], context: JSAny = js.native): Boolean = js.native
+            def filter(iterator: js.Function2[TModel, Double, Boolean], context: JSAny = js.native): js.Array[TModel] = js.native
+            def find(iterator: js.Function2[TModel, Double, Boolean], context: JSAny = js.native): TModel = js.native
             def first(): TModel = js.native
             def first(n: Double): js.Array[TModel] = js.native
-            def foldl(iterator: js.Function3[js.Any, TModel, Double, Any], initialMemo: js.Any, context: js.Any = js.native): js.Dynamic = js.native
-            def forEach(iterator: js.Function3[TModel, Double, js.Any, Unit], context: js.Any = js.native): js.Dynamic = js.native
-            def groupBy(iterator: js.Function2[TModel, Double, String], context: js.Any = js.native): js.Dictionary[js.Array[TModel]] = js.native
+            def foldl(iterator: js.Function3[JSAny, TModel, Double, Any], initialMemo: JSAny, context: JSAny = js.native): js.Dynamic = js.native
+            def forEach(iterator: js.Function3[TModel, Double, JSAny, Unit], context: JSAny = js.native): js.Dynamic = js.native
+            def groupBy(iterator: js.Function2[TModel, Double, String], context: JSAny = js.native): js.Dictionary[js.Array[TModel]] = js.native
             @JSName("groupBy")
-            def groupByAttribute(attribute: String, context: js.Any = js.native): js.Dictionary[js.Array[TModel]] = js.native
-            def include(value: js.Any): Boolean = js.native
+            def groupByAttribute(attribute: String, context: JSAny = js.native): js.Dictionary[js.Array[TModel]] = js.native
+            def include(value: JSAny): Boolean = js.native
             def indexOf(element: TModel, isSorted: Boolean = js.native): Double = js.native
             def initial(): TModel = js.native
             def initial(n: Double): js.Array[TModel] = js.native
-            def inject(iterator: js.Function3[js.Any, TModel, Double, Any], initialMemo: js.Any, context: js.Any = js.native): js.Dynamic = js.native
-            def isEmpty(`object`: js.Any): Boolean = js.native
+            def inject(iterator: js.Function3[JSAny, TModel, Double, Any], initialMemo: JSAny, context: JSAny = js.native): js.Dynamic = js.native
+            def isEmpty(`object`: JSAny): Boolean = js.native
             def invoke(methodName: String, args: JSArrayAny = js.native): js.Dynamic = js.native
             def last(): TModel = js.native
             def last(n: Double): js.Array[TModel] = js.native
             def lastIndexOf(element: TModel, fromIndex: Double = js.native): Double = js.native
-            def map(iterator: js.Function3[TModel, Double, js.Any, Any], context: js.Any = js.native): JSArrayAny = js.native
-            def max(iterator: js.Function2[TModel, Double, Any] = js.native, context: js.Any = js.native): TModel = js.native
-            def min(iterator: js.Function2[TModel, Double, Any] = js.native, context: js.Any = js.native): TModel = js.native
-            def reduce(iterator: js.Function3[js.Any, TModel, Double, Any], initialMemo: js.Any, context: js.Any = js.native): js.Dynamic = js.native
-            def select(iterator: js.Any, context: js.Any = js.native): JSArrayAny = js.native
+            def map(iterator: js.Function3[TModel, Double, JSAny, Any], context: JSAny = js.native): JSArrayAny = js.native
+            def max(iterator: js.Function2[TModel, Double, Any] = js.native, context: JSAny = js.native): TModel = js.native
+            def min(iterator: js.Function2[TModel, Double, Any] = js.native, context: JSAny = js.native): TModel = js.native
+            def reduce(iterator: js.Function3[JSAny, TModel, Double, Any], initialMemo: JSAny, context: JSAny = js.native): js.Dynamic = js.native
+            def select(iterator: JSAny, context: JSAny = js.native): JSArrayAny = js.native
             def size(): Double = js.native
             def shuffle(): JSArrayAny = js.native
-            def some(iterator: js.Function2[TModel, Double, Boolean], context: js.Any = js.native): Boolean = js.native
-            def sortBy(iterator: js.Function2[TModel, Double, Double], context: js.Any = js.native): js.Array[TModel] = js.native
+            def some(iterator: js.Function2[TModel, Double, Boolean], context: JSAny = js.native): Boolean = js.native
+            def sortBy(iterator: js.Function2[TModel, Double, Double], context: JSAny = js.native): js.Array[TModel] = js.native
             @JSName("sortBy")
-            def sortByAttribute(attribute: String, context: js.Any = js.native): js.Array[TModel] = js.native
+            def sortByAttribute(attribute: String, context: JSAny = js.native): js.Array[TModel] = js.native
             def sortedIndex(element: TModel, iterator: js.Function2[TModel, Double, Double] = js.native): Double = js.native
-            def reduceRight(iterator: js.Function3[js.Any, TModel, Double, Any], initialMemo: js.Any, context: js.Any = js.native): JSArrayAny = js.native
-            def reject(iterator: js.Function2[TModel, Double, Boolean], context: js.Any = js.native): js.Array[TModel] = js.native
+            def reduceRight(iterator: js.Function3[JSAny, TModel, Double, Any], initialMemo: JSAny, context: JSAny = js.native): JSArrayAny = js.native
+            def reject(iterator: js.Function2[TModel, Double, Boolean], context: JSAny = js.native): js.Array[TModel] = js.native
             def rest(): TModel = js.native
             def rest(n: Double): js.Array[TModel] = js.native
             def tail(): TModel = js.native
             def tail(n: Double): js.Array[TModel] = js.native
             def toArray(): JSArrayAny = js.native
-            def without(values: js.Any*): js.Array[TModel] = js.native
+            def without(values: JSAny*): js.Array[TModel] = js.native
         }
 
         @js.native
@@ -259,7 +259,7 @@ package com.simplesys {
             //        private static extend(properties: any, classProperties?: any): any;
 
             def this(options: RouterOptions = js.native) = this()
-            var routes: js.Any = js.native
+            var routes: JSAny = js.native
             def initialize(options: RouterOptions = js.native): Unit = js.native
             def route(route: String, name: String, callback: js.Function = js.native): Router = js.native
             def navigate(fragment: String, options: NavigateOptions = js.native): Router = js.native
@@ -281,11 +281,11 @@ package com.simplesys {
             def getFragment(fragment: String = js.native, forcePushState: Boolean = js.native): String = js.native
             def stop(): Unit = js.native
             def route(route: String, callback: js.Function): Double = js.native
-            def checkUrl(e: js.Any = js.native): Unit = js.native
+            def checkUrl(e: JSAny = js.native): Unit = js.native
             def loadUrl(fragmentOverride: String): Boolean = js.native
-            def navigate(fragment: String, options: js.Any = js.native): Boolean = js.native
+            def navigate(fragment: String, options: JSAny = js.native): Boolean = js.native
             var started: Boolean = js.native
-            var options: js.Any = js.native
+            var options: JSAny = js.native
 
             //        private _updateHash(location: Location, fragment: string, replace: boolean): void;
         }
@@ -294,11 +294,11 @@ package com.simplesys {
         trait ViewOptions[TModel <: Model] extends js.Object {
             var model: TModel = js.native
             var collection: backbone.Collection[TModel] = js.native
-            var el: js.Any = js.native
+            var el: JSAny = js.native
             var id: String = js.native
             var className: String = js.native
             var tagName: String = js.native
-            var attributes: js.Any = js.native
+            var attributes: JSAny = js.native
         }
 
         @js.native
@@ -321,15 +321,15 @@ package com.simplesys {
             var cid: String = js.native
             var className: String = js.native
             var tagName: String = js.native
-            var el: js.Any = js.native
+            var el: JSAny = js.native
             @JSName("$el")
             var `$el`: JQuery = js.native
-            def setElement(element: js.Any): View[TModel] = js.native
-            var attributes: js.Any = js.native
+            def setElement(element: JSAny): View[TModel] = js.native
+            var attributes: JSAny = js.native
             def render(): View[TModel] = js.native
             def remove(): View[TModel] = js.native
-            def make(tagName: js.Any, attributes: js.Any = js.native, content: js.Any = js.native): js.Dynamic = js.native
-            def delegateEvents(events: js.Any = js.native): js.Dynamic = js.native
+            def make(tagName: JSAny, attributes: JSAny = js.native, content: JSAny = js.native): js.Dynamic = js.native
+            def delegateEvents(events: JSAny = js.native): js.Dynamic = js.native
             def undelegateEvents(): js.Dynamic = js.native
             def _ensureElement(): Unit = js.native
         }

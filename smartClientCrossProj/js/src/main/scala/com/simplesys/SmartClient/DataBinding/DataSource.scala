@@ -25,6 +25,7 @@ import com.simplesys.System.Types.SequenceMode.SequenceMode
 import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -95,8 +96,8 @@ trait DataSource extends Class {
     def exportClientData(data: Array[Record], requestProperties: DSRequest, callback: DSCallback): void
     def exportData(criteria: Criteria = js.native, requestProperties: DSRequest = js.native, callback: DSCallback = js.native): void
     def fetchData(criteria: Criteria = js.native, requestProperties: DSRequest = js.native, callback: DSCallback = js.native): void
-    def fetchRecord(pkValue: js.Any, requestProperties: DSRequest = js.native, callback: DSCallback = js.native): void
-    def fieldMatchesFilter(fieldValue: js.Any, filterValue: js.Any, requestProperties: DSRequest = js.native): Boolean
+    def fetchRecord(pkValue: JSAny, requestProperties: DSRequest = js.native, callback: DSCallback = js.native): void
+    def fieldMatchesFilter(fieldValue: JSAny, filterValue: JSAny, requestProperties: DSRequest = js.native): Boolean
     val fields: Array[DataSourceField]
     val fileContentsField: String
     val fileFormatField: String
@@ -110,7 +111,7 @@ trait DataSource extends Class {
     def getClientOnlyDataSource(criteria: Criteria, callback: ClientOnlyDataSourceCallback, requestProperties: DSRequest = js.native, dataSourceProperties: DataSource = js.native): void
     def getClientOnlyResponse(request: DSRequest, serverData: Array[Record]): DSResponse
     def getDataProtocol(dsRequest: DSRequest): DSProtocol
-    def getDisplayValue(fieldName: String, value: js.Any): js.Any
+    def getDisplayValue(fieldName: String, value: JSAny): JSAny
     def getFetchDataURL(criteria: Criteria, requestProperties: DSRequest = js.native): String
     def getField(fieldName: String): DataSourceField
     def getFieldCriterion(criterion: Criteria, fieldName: String): Criteria
@@ -223,7 +224,7 @@ trait DataSource extends Class {
     val title: String
     val titleField: String
     val transformMultipleFields: Boolean
-    var transformReques: js.Function1[DSRequest, js.Any]
+    var transformReques: js.Function1[DSRequest, JSAny]
     var transformResponse: js.Function3[DSResponse, DSRequest, XMLDocument | JSON, DSResponse]
     val translatePatternOperators: Boolean
     val trimMilliseconds: Boolean
@@ -244,13 +245,13 @@ trait DataSource extends Class {
     val validateRelatedRecords: Boolean
     def viewFile(data: Record, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     val xmlNamespaces: Types.Object
-    def xmlSerialize(data: js.Any, flags: SerializationContext)
+    def xmlSerialize(data: JSAny, flags: SerializationContext)
 }
 
 @js.native
 abstract trait AbstractDataSourceCompanion extends AbstractClassCompanion {
     def addSearchOperator(operator: Operator): void = js.native
-    def applyRecordSummaryFunction(summaryFunction: SummaryFunction, record: DataSourceRecord, fields: Array[DataSourceField], summaryField: DataSourceField): js.Any = js.native
+    def applyRecordSummaryFunction(summaryFunction: SummaryFunction, record: DataSourceRecord, fields: Array[DataSourceField], summaryField: DataSourceField): JSAny = js.native
     def canFlattenCriteria(criteria: AdvancedCriteria): Boolean = js.native
     def combineCriteria(criteria1: Criteria, criteria2: Criteria, outerOperator: CriteriaCombineOperator = js.native, textMatchStyle: TextMatchStyle = js.native): Criteria = js.native
     def convertCriteria(criteria: Criteria, textMatchStyle: TextMatchStyle = js.native): AdvancedCriteria = js.native
@@ -262,7 +263,7 @@ abstract trait AbstractDataSourceCompanion extends AbstractClassCompanion {
     def getAdvancedCriteriaDescription(criteria: AdvancedCriteria | Criterion, dataSource: DataSource): String = js.native
     def getAutoTitle(identifier: ID): String = js.native
     def getDataSource(id: ID): DataSource = js.native
-    def getFieldValue(field: DataSourceField | ListGridField | DetailViewerField | FormItem, record: Record | DataPath | Canvas | String): js.Any = js.native
+    def getFieldValue(field: DataSourceField | ListGridField | DetailViewerField | FormItem, record: Record | DataPath | Canvas | String): JSAny = js.native
     def getLoaderURL(): String = js.native
     def getSimpleErrors(dsResponse: DSResponse): Types.Object = js.native
     def getSortBy(sortSpecifiers: Array[SortSpecifier]): Array[String] = js.native
@@ -274,7 +275,7 @@ abstract trait AbstractDataSourceCompanion extends AbstractClassCompanion {
     var maxFileSizeExceededMessage: String = js.native
     var offlineMessage: String = js.native
     def registerRecordSummaryFunction(methodName: String, summaryFunction: SummaryFunction): void = js.native
-    def saveValueViaDataPath(field: DataSourceField | ListGridField | DetailViewerField | FormItem, dataPath: DataPath, value: js.Any, values: Record, reason: String): void = js.native
+    def saveValueViaDataPath(field: DataSourceField | ListGridField | DetailViewerField | FormItem, dataPath: DataPath, value: JSAny, values: Record, reason: String): void = js.native
     var serializeTimeAsDatetime: Boolean = js.native
     def setLoaderURL(url: URL): void = js.native
     def setTypeOperators(typeName: String | FieldType, operators: Array[OperatorId]): void = js.native

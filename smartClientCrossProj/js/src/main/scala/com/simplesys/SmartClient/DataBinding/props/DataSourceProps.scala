@@ -20,6 +20,7 @@ import com.simplesys.System.Types.SequenceMode.SequenceMode
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.{ID, URL, URN}
 import com.simplesys.option.{IntString, ScNone, ScOption}
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -148,7 +149,7 @@ class DataSourceProps extends ClassProps {
     var title: ScOption[String] = ScNone
     var titleField: ScOption[String] = ScNone
     var transformMultipleFields: ScOption[Boolean] = ScNone
-    var transformReques: ScOption[js.Function1[DSRequest, js.Any]] = ScNone
+    var transformReques: ScOption[js.Function1[DSRequest, JSAny]] = ScNone
     var transformResponse: ScOption[js.Function3[DSResponse, DSRequest, JSON, DSResponse]] = ScNone
     var translatePatternOperators: ScOption[Boolean] = ScNone
     var trimMilliseconds: ScOption[Boolean] = ScNone

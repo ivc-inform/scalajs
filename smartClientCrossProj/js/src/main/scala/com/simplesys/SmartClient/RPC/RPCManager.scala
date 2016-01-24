@@ -6,6 +6,7 @@ import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
 import com.simplesys.System.Types.PromptStyle.PromptStyle
 import com.simplesys.System.Types.RPCTransport.RPCTransport
 import com.simplesys.System.Types.{void, HTMLString, URL}
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
@@ -54,7 +55,7 @@ abstract trait AbstractRPCManagerCompanion extends AbstractClassCompanion {
     def resendTransaction(transactionNum: Int): void = js.native
     var saveDataPrompt: HTMLString = js.native
     var screenLoaderURL: URL = js.native
-    def send(data: js.Any, callback: Callback, requestParams: RPCRequest): void = js.native
+    def send(data: JSAny, callback: Callback, requestParams: RPCRequest): void = js.native
     def sendProxied(request: RPCRequest): void = js.native
     def sendQueue(callback: Callback): void = js.native
     def sendRequest(rpcRequest: RPCRequest): void = js.native

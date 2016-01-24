@@ -7,11 +7,12 @@ import com.simplesys.System.Types.PromptStyle.PromptStyle
 import com.simplesys.System.Types.RPCTransport.RPCTransport
 import com.simplesys.System.Types.URL
 import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js._
 
-class RPCRequestProps[D <: js.Any] extends ClassProps {
+class RPCRequestProps[D <: JSAny] extends ClassProps {
     var actionURL: ScOption[URL] = ScNone
     var allowIE9Leak: ScOption[Boolean] = ScNone
     var bypassCache: ScOption[Boolean] = ScNone

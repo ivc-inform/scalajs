@@ -16,6 +16,7 @@ import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.option.{IntString, ScOption, ScNone}
 import com.simplesys.props.AbstractClassProps
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -92,14 +93,14 @@ class DataSourceFieldProps extends AbstractClassProps {
     var name: ScOption[ID] = ScNone
     var nativeName: ScOption[String] = ScNone
     var nillable: ScOption[Boolean] = ScNone
-    var nullReplacementValue: ScOption[js.Any] = ScNone
-    var precision: ScOption[js.Any] = ScNone
+    var nullReplacementValue: ScOption[JSAny] = ScNone
+    var precision: ScOption[JSAny] = ScNone
     var primaryKey: ScOption[Boolean] = ScNone
     var propertiesOnly: ScOption[Boolean] = ScNone
     var readOnlyEditorType: ScOption[FormItem] = ScNone
     var relatedTableAlias: ScOption[String] = ScNone
     var required: ScOption[Boolean] = ScNone
-    var rootValue: ScOption[js.Any] = ScNone
+    var rootValue: ScOption[JSAny] = ScNone
     var sequenceName: ScOption[String] = ScNone
     var showFileInline: ScOption[Boolean] = ScNone
     var sortByField: ScOption[String] = ScNone

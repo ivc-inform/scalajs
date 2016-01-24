@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.System.Types.CharacterCasing.CharacterCasing
 import com.simplesys.System.Types.SCClassName
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -15,7 +16,7 @@ class TextItemProps extends FormItemProps {
     var changeOnKeypress: ScOption[js.ThisFunction0[FormItemIcon, Boolean]] = ScNone
     var characterCasing: ScOption[CharacterCasing] = ScNone
     var editProxyConstructor: ScOption[SCClassName] = ScNone
-    var emptyStringValue: ScOption[js.Any] = ScNone
+    var emptyStringValue: ScOption[JSAny] = ScNone
     var enforceLength: ScOption[Boolean] = ScNone
     var fetchMissingValues: ScOption[Boolean] = ScNone
     var formatOnBlur: ScOption[Boolean] = ScNone

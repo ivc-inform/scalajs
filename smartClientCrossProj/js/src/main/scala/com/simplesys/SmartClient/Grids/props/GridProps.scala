@@ -50,7 +50,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.types.JSArrayAny
+import com.simplesys.types.{JSAny, JSArrayAny}
 
 import scala.scalajs.js
 
@@ -143,7 +143,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var canSelectGroups: ScOption[Boolean] = ScNone
     var canSort: ScOption[Boolean] = ScNone
     var canTabToHeader: ScOption[Boolean] = ScNone
-    var cellChanged: ScOption[js.Function5[R, js.Any, Int, Int, Grid[T, R], void]] = ScNone
+    var cellChanged: ScOption[js.Function5[R, JSAny, Int, Int, Grid[T, R], void]] = ScNone
     var cellClick: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var cellContextClick: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var cellContextMenu: ScOption[Layout] = ScNone
@@ -204,8 +204,8 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var editFailedCSSText: ScOption[String] = ScNone
     var editOnF2Keypress: ScOption[Boolean] = ScNone
     var editOnFocus: ScOption[Boolean] = ScNone
-    var editorEnter: ScOption[js.ThisFunction4[callbackHandler, R, js.Any, Int, Int, void]] = ScNone
-    var editorExit: ScOption[js.ThisFunction5[callbackHandler, EditCompletionEvent, R, js.Any, Int, Int, Boolean]] = ScNone
+    var editorEnter: ScOption[js.ThisFunction4[callbackHandler, R, JSAny, Int, Int, void]] = ScNone
+    var editorExit: ScOption[js.ThisFunction5[callbackHandler, EditCompletionEvent, R, JSAny, Int, Int, Boolean]] = ScNone
     var editPendingBaseStyle: ScOption[CSSStyleName] = ScNone
     var editPendingCSSText: ScOption[String] = ScNone
     var emptyCellValue: ScOption[HTMLString] = ScNone
@@ -264,7 +264,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var fixedFieldWidths: ScOption[Boolean] = ScNone
     var fixedRecordHeights: ScOption[Boolean] = ScNone
     var formatCellValue: ScOption[js.ThisFunction3[callbackHandler, R, Int, Int, HTMLString]] = ScNone
-    var formatEditorValue: ScOption[js.ThisFunction3[callbackHandler, R, Int, Int, js.Any]] = ScNone
+    var formatEditorValue: ScOption[js.ThisFunction3[callbackHandler, R, Int, Int, JSAny]] = ScNone
     var formulaBuilderSpanTitleSeparator: ScOption[String] = ScNone
     var freezeFieldText: ScOption[HTMLString] = ScNone
     var freezeOnLeftText: ScOption[String] = ScNone
@@ -380,7 +380,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var offlineMessageStyle: ScOption[CSSStyleName] = ScNone
     var originalData: ScOption[Types.Object] = ScNone
     var originBaseStyle: ScOption[CSSStyleName] = ScNone
-    var parseEditorValue: ScOption[js.Function4[js.Any, R, Int, Int, js.Any]] = ScNone
+    var parseEditorValue: ScOption[js.Function4[JSAny, R, Int, Int, JSAny]] = ScNone
     var poolComponentsPerColumn: ScOption[Boolean] = ScNone
     var printAutoFit: ScOption[Boolean] = ScNone
     var printBaseStyle: ScOption[CSSStyleName] = ScNone
@@ -398,13 +398,13 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var recordBaseStyleProperty: ScOption[String] = ScNone
     var recordCanRemoveProperty: ScOption[String] = ScNone
     var recordCanSelectProperty: ScOption[String] = ScNone
-    var recordClick: ScOption[js.ThisFunction7[callbackHandler, Grid[T, R], R, Int, T, Int, js.Any, js.Any, Boolean]] = ScNone
+    var recordClick: ScOption[js.ThisFunction7[callbackHandler, Grid[T, R], R, Int, T, Int, JSAny, JSAny, Boolean]] = ScNone
     var recordComponentHeight: ScOption[Int] = ScNone
     var recordComponentPoolingMode: ScOption[RecordComponentPoolingMode] = ScNone
     var recordComponentPosition: ScOption[EmbeddedPosition] = ScNone
     var recordCustomStyleProperty: ScOption[String] = ScNone
     var recordDetailDSProperty: ScOption[String] = ScNone
-    var recordDoubleClick: ScOption[js.ThisFunction7[callbackHandler, Grid[T, R], R, Int, T, Int, js.Any, js.Any, Boolean]] = ScNone
+    var recordDoubleClick: ScOption[js.ThisFunction7[callbackHandler, Grid[T, R], R, Int, T, Int, JSAny, JSAny, Boolean]] = ScNone
     var recordDropAppearance: ScOption[RecordDropAppearance] = ScNone
     var recordEditProperty: ScOption[String] = ScNone
     var recordEnabledProperty: ScOption[String] = ScNone

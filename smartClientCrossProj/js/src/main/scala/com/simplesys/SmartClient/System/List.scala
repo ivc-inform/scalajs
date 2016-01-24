@@ -2,18 +2,18 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.DataBinding.AdvancedCriteria
 import com.simplesys.System.Types.void
-import com.simplesys.types.JSArrayAny
+import com.simplesys.types.{JSAny, JSArrayAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
 trait List extends Class {
-    def add(`object`: js.Any): this.type = js.native
-    def addPos(`object`: js.Any, pos: Int): this.type = js.native
+    def add(`object`: JSAny): this.type = js.native
+    def addPos(`object`: JSAny, pos: Int): this.type = js.native
     def addList(list: this.type, listStartRow: Int = js.native, listEndRow: Int = js.native): this.type = js.native
     def addListAt(list: this.type, pos: Int = js.native): this.type = js.native
-    def contains(obj: js.Any, pos: Int = js.native): Boolean = js.native
+    def contains(obj: JSAny, pos: Int = js.native): Boolean = js.native
     def containsAll(list: this.type): Boolean = js.native
     var dataChanged: Function0[void] = js.native
     def duplicate(): this.type = js.native

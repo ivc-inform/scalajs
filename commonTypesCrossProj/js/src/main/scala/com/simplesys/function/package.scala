@@ -1,6 +1,7 @@
 package com.simplesys
 
 import com.simplesys.option.{ScOption, ScSome}
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 
@@ -34,6 +35,6 @@ package object function {
         def toFunc = function3: js.Function3[T1, T2, T3, R]
     }
 
-    implicit def str2Any(x: String): ScOption[js.Any] = ScSome(js.use(x).as[js.Any])
+    implicit def str2Any(x: String): ScOption[JSAny] = ScSome(js.use(x).as[JSAny])
 
 }

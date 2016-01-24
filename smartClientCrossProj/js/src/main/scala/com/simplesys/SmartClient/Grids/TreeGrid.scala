@@ -12,6 +12,7 @@ import com.simplesys.System.Types.DisplayNodeType.DisplayNodeType
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
 import com.simplesys.System.Types.RecordDropAppearance.RecordDropAppearance
 import com.simplesys.System.Types.{void, HTMLString, URL, SCImgURL}
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -100,7 +101,7 @@ trait TreeGrid extends Grid[TreeGridField, ListGridRecord] {
     def toggleFolder(node: TreeNode): void
     def transferNodes(nodes: Array[TreeNode], folder: TreeNode, index: Int, sourceWidget: Canvas, callback: Callback = js.native): void
     val treeFieldTitle:String
-    val treeRootValue:js.Any
+    val treeRootValue:JSAny
 }
 
 

@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.types.JSArrayAny
+import com.simplesys.types.{JSAny, JSArrayAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -19,8 +19,8 @@ package object Types {
 
     type Properties = Object
     type EdgeSizes = Object
-    type Record = js.Dictionary[js.Any]
-    type DataSourceRecord = js.Dictionary[js.Any]
+    type Record = js.Dictionary[JSAny]
+    type DataSourceRecord = js.Dictionary[JSAny]
     type CellRecord = Object
     type ListGridSelectedState = Object
     type ListGridSortState = Object
@@ -33,7 +33,7 @@ package object Types {
     type DetailViewerViewState = Object
 
     type Callback = js.Function | js.ThisFunction | CallbackObject
-    type ValueMap = JSArrayAny //| js.Dictionary[js.Any]
+    type ValueMap = JSArrayAny //| js.Dictionary[JSAny]
     type XMLDocument = Object
     type XMLElement = Object
     type XMLNode = Object

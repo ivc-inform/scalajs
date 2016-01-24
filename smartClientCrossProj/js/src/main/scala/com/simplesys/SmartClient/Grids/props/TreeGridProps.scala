@@ -9,6 +9,7 @@ import com.simplesys.System.Types.DisplayNodeType.DisplayNodeType
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
 import com.simplesys.System.Types.{void, SCImgURL}
 import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -73,5 +74,5 @@ class TreeGridProps extends GridProps[TreeGridField, ListGridRecord] {
     var showRoot: ScOption[Boolean] = ScNone
     var sortFoldersBeforeLeaves: ScOption[Boolean] = ScNone
     var treeFieldTitle: ScOption[String] = ScNone
-    var treeRootValue: ScOption[js.Any] = ScNone
+    var treeRootValue: ScOption[JSAny] = ScNone
 }
