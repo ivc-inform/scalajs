@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.System.Types.LogPriority.LogPriority
 import com.simplesys.System.Types.{ID, void}
+import com.simplesys.types.JSArrayAny
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
@@ -32,7 +33,7 @@ trait Class extends Types.Object {
     def getSuperClass(): String
     def ignore(`object`: Types.Object, methodName: String): Boolean
     var identifier: ID
-    var init: js.ThisFunction1[classHandler, js.Array[js.Any], _]
+    var init: js.ThisFunction1[classHandler, JSArrayAny , _]
     def isA(className: String): Boolean
     def isObserving(`object`: Types.Object, methodName: String): Boolean
     def logDebug(message: String, category: String = js.native): void
