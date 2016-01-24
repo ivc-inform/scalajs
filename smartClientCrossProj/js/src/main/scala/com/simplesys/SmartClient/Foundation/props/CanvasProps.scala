@@ -29,6 +29,7 @@ import com.simplesys.System.Types.ProportionalResizeMode.ProportionalResizeMode
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types.Visibility.Visibility
 import com.simplesys.System.Types._
+import com.simplesys.types.JSArrayAny
 import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js
@@ -163,7 +164,7 @@ class CanvasProps extends ClassProps {
     var htmlElement: ScOption[HTMLElement] = ScNone
     var htmlPosition: ScOption[DrawPosition] = ScNone
     var ID: ScOption[String] = ScNone
-    var initWidget: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone
+    var initWidget: ScOption[js.ThisFunction1[callbackHandler, JSArrayAny, _]] = ScNone
     var isGroup: ScOption[Boolean] = ScNone
     var isPrinting: ScOption[Boolean] = ScNone
     var isSnapAlignCandidate: ScOption[Boolean] = ScNone
