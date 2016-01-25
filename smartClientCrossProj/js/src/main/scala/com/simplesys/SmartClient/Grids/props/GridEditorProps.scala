@@ -1,8 +1,7 @@
 package com.simplesys.SmartClient.Grids.props
 
 import com.simplesys.SmartClient.Control.Menu
-import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
-import com.simplesys.SmartClient.Grids.props.listGrid.{ListGridRecordProps, ListGridFieldProps}
+import com.simplesys.SmartClient.Grids.props.listGrid.{ListGridFieldProps, ListGridRecordProps}
 import com.simplesys.SmartClient.Layout.props.VLayoutSSProps
 import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
 import com.simplesys.System.Types.DragTrackerMode.DragTrackerMode
@@ -47,4 +46,6 @@ class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends
 }
 
 class ListGridEditorProps extends GridEditorProps[ListGridFieldProps, ListGridRecordProps] {
+    var fields: ScOption[Seq[ListGridFieldProps]] = ScNone
+    var defaultFields: ScOption[Seq[ListGridFieldProps]] = ScNone
 }
