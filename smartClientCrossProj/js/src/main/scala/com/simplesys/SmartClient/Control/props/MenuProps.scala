@@ -31,7 +31,7 @@ class MenuProps extends GridProps[ListGridField, MenuItem] {
     var iconHeight: ScOption[Int] = ScNone
     var iconWidth: ScOption[Int] = ScNone
     var itemClick: ScOption[js.Function2[Types.Object, Int, Boolean]] = ScNone
-    var items: ScOption[Array[MenuItem]] = ScNone
+    var items: ScOption[Seq[MenuItemProps]] = ScNone
     var keyFieldDefaults: ScOption[ListGridField] = ScNone
     var keyFieldProperties: ScOption[ListGridField] = ScNone
     var menuButtonWidth: ScOption[Int] = ScNone
