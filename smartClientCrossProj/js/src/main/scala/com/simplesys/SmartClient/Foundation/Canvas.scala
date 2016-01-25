@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Foundation
 
-import com.simplesys.SmartClient.Control.Menu
+import com.simplesys.SmartClient.Control.{MenuSS, Menu}
 import com.simplesys.SmartClient.DataBinding.AnimationCallback
 import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
@@ -110,7 +110,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def containsFocus(): Boolean
     def containsPoint(x: Int, y: Int, withinViewport: Boolean = js.native): Boolean
     var contents: HTMLString
-    var contextMenu: Menu
+    var contextMenu : MenuSS
     val cursor: Cursor
     val customEdges: js.Array[String]
     val dataPath: DataPath

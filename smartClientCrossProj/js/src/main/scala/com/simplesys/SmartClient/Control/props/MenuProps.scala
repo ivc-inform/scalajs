@@ -53,3 +53,4 @@ class MenuProps extends GridProps[ListGridField, MenuItem] {
     var titleFieldProperties: ScOption[ListGridField] = ScNone
     var useKeys: ScOption[Boolean] = ScNone
 }
+

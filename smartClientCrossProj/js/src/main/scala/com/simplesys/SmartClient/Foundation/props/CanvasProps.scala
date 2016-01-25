@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Foundation.props
 
-import com.simplesys.SmartClient.Control.Menu
+import com.simplesys.SmartClient.Control.{MenuSS, Menu}
 import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
 import com.simplesys.SmartClient.Foundation.Canvas
@@ -89,7 +89,7 @@ class CanvasProps extends ClassProps {
     var componentMask: ScOption[Canvas] = ScNone
     var componentMaskDefaults: ScOption[Canvas] = ScNone
     var contents: ScOption[HTMLString] = ScNone
-    var contextMenu: ScOption[Menu] = ScNone
+    var contextMenu: ScOption[MenuSS] = ScNone
     var cursor: ScOption[Cursor] = ScNone
     var customEdges: ScOption[Seq[String]] = ScNone
     var dataPath: ScOption[DataPath] = ScNone
