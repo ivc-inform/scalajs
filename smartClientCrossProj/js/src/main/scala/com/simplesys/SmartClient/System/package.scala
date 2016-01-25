@@ -46,8 +46,6 @@ package object System {
     object Hover extends SCApply[Hover, HoverProps]
     object Menu extends SCApply[Menu, MenuProps]
     object MenuSS extends SCApply[MenuSS, MenuSSProps]
-    object ListGridContextMenu extends SCApply[ListGridContextMenu, ListGridContextMenuProps]
-    object TreeGridContextMenu extends SCApply[TreeGridContextMenu, TreeGridContextMenuProps]
     object MenuButton extends SCApply[MenuButton, MenuButtonProps]
     object IMenuButton extends SCApply[IMenuButton, IMenuButtonProps]
     object Progressbar extends SCApply[Progressbar, ProgressbarProps]
