@@ -97,6 +97,7 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     def deselectAllRecords(): void
     def getRowNum(record: R): Int
     var funcMenu: Menu
+    var dataSource: DataSource
 }
 
 @js.native

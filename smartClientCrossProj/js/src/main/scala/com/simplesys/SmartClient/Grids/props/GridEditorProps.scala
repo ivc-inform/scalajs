@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.Grids.props
 
 import com.simplesys.SmartClient.Control.Menu
+import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Grids.props.listGrid.{ListGridFieldProps, ListGridRecordProps}
 import com.simplesys.SmartClient.Layout.props.VLayoutSSProps
 import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
@@ -43,6 +44,7 @@ class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends
     var showFilterEditor: ScOption[Boolean] = ScNone
     var dataPageSize: ScOption[Int] = ScNone
     var funcMenu: ScOption[Menu] = ScNone
+    var dataSource: ScOption[DataSource] = ScNone
 }
 
 class ListGridEditorProps extends GridEditorProps[ListGridFieldProps, ListGridRecordProps] {
