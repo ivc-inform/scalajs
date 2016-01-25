@@ -17,5 +17,7 @@ trait MenuSS extends Menu {
     def filter4Visiblity(items: Seq[MenuItem]): void
     def replaceItems(oldItems: Seq[MenuItem], newItems: Seq[MenuItem]): void
     def setData(data: JSAny):void
+    val owner: Menu
+    def setOwner(owner: Menu): void
 }
 
