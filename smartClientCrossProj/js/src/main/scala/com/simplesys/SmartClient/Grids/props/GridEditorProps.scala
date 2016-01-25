@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Grids.props
 
+import com.simplesys.SmartClient.Control.Menu
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Grids.props.listGrid.{ListGridRecordProps, ListGridFieldProps}
 import com.simplesys.SmartClient.Layout.props.VLayoutSSProps
@@ -42,6 +43,7 @@ class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends
     var canSelectTextExpandedField: ScOption[Boolean] = ScNone
     var showFilterEditor: ScOption[Boolean] = ScNone
     var dataPageSize: ScOption[Int] = ScNone
+    var funcMenu: ScOption[Menu] = ScNone
 }
 
 class ListGridEditorProps extends GridEditorProps[ListGridFieldProps, ListGridRecordProps] {

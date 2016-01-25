@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Grids
 
+import com.simplesys.SmartClient.Control.Menu
 import com.simplesys.SmartClient.DataBinding.{DSCallback, DSRequest, DataSource}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.VLayoutSS
@@ -95,6 +96,7 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     def deselectRecords(records: js.Array[R]): void
     def deselectAllRecords(): void
     def getRowNum(record: R): Int
+    var funcMenu: Menu
 }
 
 @js.native
