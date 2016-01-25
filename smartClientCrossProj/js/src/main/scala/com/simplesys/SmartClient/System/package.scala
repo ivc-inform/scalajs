@@ -45,6 +45,7 @@ package object System {
     object RangeSlider extends SCApply[RangeSlider, RangeSliderProps]
     object Hover extends SCApply[Hover, HoverProps]
     object Menu extends SCApply[Menu, MenuProps]
+    object MenuSS extends SCApply[MenuSS, MenuSSProps]
     object MenuButton extends SCApply[MenuButton, MenuButtonProps]
     object IMenuButton extends SCApply[IMenuButton, IMenuButtonProps]
     object Progressbar extends SCApply[Progressbar, ProgressbarProps]
