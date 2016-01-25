@@ -1,11 +1,12 @@
 package com.simplesys.SmartClient.Control.props
 
-import com.simplesys.SmartClient.Control.Menu
+import com.simplesys.SmartClient.Control.{MenuButton, Menu}
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.SCImgURL
 import com.simplesys.option.{ScNone, ScOption}
 
 class MenuButtonProps extends ButtonProps {
+    type buttonHandler <: MenuButton
     var autoDestroyMenu: ScOption[Boolean] = ScNone
     var menu: ScOption[Menu] = ScNone
     var menuAlign: ScOption[Alignment] = ScNone
