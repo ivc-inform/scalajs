@@ -1,9 +1,7 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.Control.MenuSS
-import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.Grids.TreeGridEditor
 import com.simplesys.System.Types.void
 
 import scala.scalajs.js
