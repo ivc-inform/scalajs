@@ -10,7 +10,7 @@ import scala.scalajs.js.|
 @js.native
 trait MenuButton extends Button {
     var autoDestroyMenu: Boolean
-    var menu: Menu
+    var menu: MenuSSItem
     val menuAlign: Alignment
     var menuAnimationEffect: String
     val menuButtonImage: SCImgURL

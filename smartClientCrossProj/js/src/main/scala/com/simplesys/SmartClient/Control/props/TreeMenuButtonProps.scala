@@ -11,7 +11,7 @@ class TreeMenuButtonProps extends MenuButtonProps {
     var pathSeparatorString: ScOption[HTMLString] = ScNone
     var selectedBaseStyle: ScOption[CSSStyleName] = ScNone
     var showPath: ScOption[Boolean] = ScNone
-    var treeMenu: ScOption[Menu] = ScNone
+    var treeMenu: ScOption[MenuSSItem] = ScNone
     var treeMenuConstructor: ScOption[SCClassName] = ScNone
     var unselectedTitle: ScOption[HTMLString] = ScNone
 }

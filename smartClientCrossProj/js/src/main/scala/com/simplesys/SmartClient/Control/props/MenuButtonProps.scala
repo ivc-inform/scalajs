@@ -8,7 +8,7 @@ import com.simplesys.option.{ScNone, ScOption}
 class MenuButtonProps extends ButtonProps {
     type buttonHandler <: MenuButton
     var autoDestroyMenu: ScOption[Boolean] = ScNone
-    var menu: ScOption[Menu] = ScNone
+    var menu: ScOption[MenuSSItem] = ScNone
     var menuAlign: ScOption[Alignment] = ScNone
     var menuAnimationEffect: ScOption[String] = ScNone
     var menuButtonImage: ScOption[SCImgURL] = ScNone

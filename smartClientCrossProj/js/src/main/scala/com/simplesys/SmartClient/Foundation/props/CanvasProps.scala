@@ -1,16 +1,13 @@
 package com.simplesys.SmartClient.Foundation.props
 
-import com.simplesys.SmartClient.Control.{MenuSS, Menu}
+import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.Grids.Grid
-import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.SmartClient.Tools.EditNode
-import com.simplesys.option._
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.System.Types.BackgroundRepeat._
@@ -29,11 +26,11 @@ import com.simplesys.System.Types.ProportionalResizeMode.ProportionalResizeMode
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types.Visibility.Visibility
 import com.simplesys.System.Types._
+import com.simplesys.option._
 import com.simplesys.types.JSArrayAny
 import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js
-import scala.scalajs.js.{Any, Function5}
 
 class CanvasProps extends ClassProps {
     type callbackHandler <: Canvas

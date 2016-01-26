@@ -13,7 +13,7 @@ trait TreeMenuButton extends MenuButton {
     var pathSeparatorString: HTMLString
     var selectedBaseStyle: CSSStyleName
     var showPath: Boolean
-    var treeMenu: Menu with AutoChild
+    var treeMenu: MenuSSItem with AutoChild
     val treeMenuConstructor: SCClassName
     var unselectedTitle: HTMLString
 }

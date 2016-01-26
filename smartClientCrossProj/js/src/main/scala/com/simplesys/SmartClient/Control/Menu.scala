@@ -28,7 +28,7 @@ trait Menu extends Grid[ListGridField, MenuItem] {
     def getItem(item: Int): MenuItem
     def getItemNum(item: MenuItem): Int
     def getItems(): Array[MenuItem]
-    def getSubmenu(item: MenuItem | Int): Menu
+    def getSubmenu(item: MenuItem | Int): MenuSSItem
     var iconBodyStyleName: CSSStyleName
     val iconFieldDefaults: ListGridField
     val iconFieldProperties: ListGridField
