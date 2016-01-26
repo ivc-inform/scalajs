@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.Layout.props
 
-import scala.scalajs.js._
+import com.simplesys.SmartClient.Layout.LayoutSS
 
 class LayoutSSProps extends LayoutProps {
+    type callbackHandler <: LayoutSS
 }
