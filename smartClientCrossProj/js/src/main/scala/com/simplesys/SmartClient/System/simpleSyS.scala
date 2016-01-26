@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Foundation.Canvas
 
 import scala.scalajs.js
 
-@js.Any
+@js.native
 trait Config extends Types.Object {
     val confirmDeleting: String
 }
