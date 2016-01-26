@@ -100,7 +100,9 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     var funcMenu: MenuSS
     var dataSource: DataSource
     def setContextMenu(menu: MenuSS): void
+    def getContextMenu():MenuSS
     def setFuncMenu(menu: MenuSS): void
+    def getFuncMenu(): MenuSS
 }
 
 @js.native
