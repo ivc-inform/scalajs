@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Control.props
 
+import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Control.{MenuButton, Menu}
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.SCImgURL

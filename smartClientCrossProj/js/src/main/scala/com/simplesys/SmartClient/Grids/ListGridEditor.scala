@@ -98,6 +98,8 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     def getRowNum(record: R): Int
     var funcMenu: MenuSS
     var dataSource: DataSource
+    def setContextMenu(menu: MenuSS): void
+    def setFuncMenu(menu: MenuSS): void
 }
 
 @js.native

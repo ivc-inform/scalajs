@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Control
 
+import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.{void, SCImgURL}
