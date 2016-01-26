@@ -18,8 +18,8 @@ abstract trait Properties
 object iscStatic extends Types.Object {
     def addDefaults(destination: Types.Object, source: Types.Object): Types.Object = js.native
     def addProperties(destination: Types.Object, propsArray: js.Array[Types.Object]): Types.Object = js.native
-    def ask(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
-    def askForValue(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
+    def ask(message: String, callback: js.Function1[Boolean, _] = js.native, properties: Dialog = js.native): void = js.native
+    def askForValue(message: String, callback: js.Function1[JSAny, _] = js.native, properties: Dialog = js.native): void = js.native
     def clearPrompt(): void = js.native
     def clone(obj: Types.Object): Types.Object = js.native
     def confirm(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native

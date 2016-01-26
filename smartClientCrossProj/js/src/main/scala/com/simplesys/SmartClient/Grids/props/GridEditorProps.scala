@@ -13,7 +13,7 @@ import com.simplesys.option.{ScNone, ScOption}
 
 class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends VLayoutSSProps {
     var canDragSelectText: ScOption[Boolean] = ScNone
-    var var canAcceptDroppedRecords: ScOption[Boolean] = ScNone
+    var canAcceptDroppedRecords: ScOption[Boolean] = ScNone
     var autoFitFieldWidth: ScOption[Boolean] = ScNone
     var canResizeFields: ScOption[Boolean] = ScNone
     var showAllRecords: ScOption[Boolean] = ScNone
