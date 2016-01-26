@@ -4,7 +4,13 @@ import com.simplesys.SmartClient.Foundation.Canvas
 
 import scala.scalajs.js
 
+@js.Any
+trait Config extends Types.Object {
+    val confirmDeleting: String
+}
+
 @js.native
 object simpleSyS extends Types.Object {
     def checkOwner(canvas: Canvas): Canvas = js.native
+    var config: Config = js.native
 }
