@@ -1,10 +1,12 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.DataBinding._
+import com.simplesys.System.Types.LogPriority._
 import com.simplesys.System.Types.void
-import com.simplesys.types.{JSArrayAny, JSArray, JSAny}
+import com.simplesys.types._
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait Array extends List {
@@ -24,3 +26,13 @@ trait Array extends List {
     def sum(start: Int = js.native, end: Int = js.native): Int
     def unsort(): Boolean
 }
+
+@js.native
+abstract trait AbstractArrayCompanion extends Types.Object {
+  var compareAscending: js.Function2[JSAny, JSAny, Int] = js.native
+  var compareDescending: js.Function2[JSAny, JSAny, Int] = js.native
+}
+
+@js.native
+@JSName("Array")
+object ClassArray extends AbstractArrayCompanion

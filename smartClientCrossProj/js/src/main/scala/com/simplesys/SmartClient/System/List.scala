@@ -35,7 +35,7 @@ trait List extends Class {
     def intersect(lists: this.type): this.type = js.native
     def removeList(lists: this.type): this.type = js.native
     def isEmpty(): Boolean = js.native
-    def remove(obj: Types.Object): Boolean = js.native
+    def remove(obj: Types.Object, pos:Int = js.native, endPos: Int = js.native, comparator : js.Function2[JSAny, JSAny, Boolean] = js.native): Boolean = js.native
     def removeAt(pos: Int): Types.Object = js.native
     def set(pos: Int, obj: Types.Object): Types.Object = js.native
     def setLength(length: Int): void = js.native
