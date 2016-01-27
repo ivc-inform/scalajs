@@ -14,15 +14,15 @@ import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.ValidationMode.ValidationMode
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSDictionaryAny, JSDictionary, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._
 
-class DSRequestProps extends RPCRequestProps[js.Dictionary[JSAny]] {
+class DSRequestProps extends RPCRequestProps[JSDictionaryAny] {
     var additionalOutputs: ScOption[String] = ScNone
     var componentId: ScOption[String] = ScNone
-    override val data: ScOption[js.Dictionary[JSAny]] = ScNone
+    override val data: ScOption[JSDictionaryAny] = ScNone
     var dataProtocol: ScOption[DSProtocol] = ScNone
     var dataSource: ScOption[String] = ScNone
     var endRow: ScOption[Int] = ScNone

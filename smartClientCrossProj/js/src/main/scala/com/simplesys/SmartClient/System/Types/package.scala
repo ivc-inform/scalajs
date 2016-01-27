@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.types.{JSDictionaryAny, JSAny, JSArrayAny}
+import com.simplesys.types.{JSDictionary, JSDictionaryAny, JSAny, JSArrayAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -10,7 +10,7 @@ package object Types {
 
     type Field = Object
 
-    type Criteria = js.Dictionary[Object]
+    type Criteria = JSDictionary[Object]
 
     trait CallbackObject {
         val target: Object

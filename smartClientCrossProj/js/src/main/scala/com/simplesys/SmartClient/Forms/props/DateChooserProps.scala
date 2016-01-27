@@ -7,7 +7,7 @@ import com.simplesys.SmartClient.Layout.HLayout
 import com.simplesys.SmartClient.Layout.props.VLayoutProps
 import com.simplesys.System.Types.{CSSStyleName, SCClassName, SCImgURL}
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSDictionaryAny, JSDictionary, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -79,7 +79,7 @@ class DateChooserProps extends VLayoutProps {
     var showWeekends: ScOption[Boolean] = ScNone
     var startYear: ScOption[Int] = ScNone
     var timeItem: ScOption[TimeItem] = ScNone
-    var timeItemProperties: ScOption[js.Dictionary[JSAny]] = ScNone
+    var timeItemProperties: ScOption[JSDictionaryAny] = ScNone
     var timeItemTitle: ScOption[String] = ScNone
     var todayButton: ScOption[IButton] = ScNone
     var todayButtonHeight: ScOption[Int] = ScNone

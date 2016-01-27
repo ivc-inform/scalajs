@@ -9,7 +9,7 @@ package com.simplesys {
 
     package backbone {
 
-        import com.simplesys.types.{JSAny, JSArrayAny}
+        import com.simplesys.types.{JSDictionary, JSAny, JSArrayAny}
 
         @js.native
         trait Silenceable extends js.Object {
@@ -202,8 +202,8 @@ package com.simplesys {
             def collect(iterator: js.Function3[TModel, Double, JSAny, js.Array[JSAny]], context: JSAny = js.native): JSArrayAny = js.native
             def chain(): js.Dynamic = js.native
             def contains(value: JSAny): Boolean = js.native
-            def countBy(iterator: js.Function2[TModel, Double, Any]): js.Dictionary[Double] = js.native
-            def countBy(attribute: String): js.Dictionary[Double] = js.native
+            def countBy(iterator: js.Function2[TModel, Double, Any]): JSDictionary[Double] = js.native
+            def countBy(attribute: String): JSDictionary[Double] = js.native
             def detect(iterator: js.Function1[JSAny, Boolean], context: JSAny = js.native): js.Dynamic = js.native
             def drop(): TModel = js.native
             def drop(n: Double): js.Array[TModel] = js.native
@@ -215,9 +215,9 @@ package com.simplesys {
             def first(n: Double): js.Array[TModel] = js.native
             def foldl(iterator: js.Function3[JSAny, TModel, Double, Any], initialMemo: JSAny, context: JSAny = js.native): js.Dynamic = js.native
             def forEach(iterator: js.Function3[TModel, Double, JSAny, Unit], context: JSAny = js.native): js.Dynamic = js.native
-            def groupBy(iterator: js.Function2[TModel, Double, String], context: JSAny = js.native): js.Dictionary[js.Array[TModel]] = js.native
+            def groupBy(iterator: js.Function2[TModel, Double, String], context: JSAny = js.native): JSDictionary[js.Array[TModel]] = js.native
             @JSName("groupBy")
-            def groupByAttribute(attribute: String, context: JSAny = js.native): js.Dictionary[js.Array[TModel]] = js.native
+            def groupByAttribute(attribute: String, context: JSAny = js.native): JSDictionary[js.Array[TModel]] = js.native
             def include(value: JSAny): Boolean = js.native
             def indexOf(element: TModel, isSorted: Boolean = js.native): Double = js.native
             def initial(): TModel = js.native
