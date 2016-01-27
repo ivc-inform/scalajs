@@ -9,7 +9,7 @@ import com.simplesys.SmartClient.Layout.{Layout, AbstractLayoutCompanion}
 import com.simplesys.SmartClient.System.Types.Criteria
 import com.simplesys.System.Types._
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.types.{JSDictionaryAny, JSAny}
+import com.simplesys.types.{JSArray, JSDictionaryAny, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -46,7 +46,7 @@ trait ColumnTree extends Layout with DataBoundComponent {
     var nodeSelected: js.Function2[Grid[ListGridField, ListGridRecord], TreeNode, Boolean]
     var openIconSuffix: String
     def selectRecord(record: ListGridRecord | Int, newState: Boolean = js.native, colNum: Int = js.native): void
-    def selectRecords(records: js.Array[ListGridRecord] | js.Array[Int], newState: Boolean = js.native, colNum: Int = js.native): void
+    def selectRecords(records: JSArray[ListGridRecord] | JSArray[Int], newState: Boolean = js.native, colNum: Int = js.native): void
     def setData(newData: Tree): void
     def shouldShowHeader(node: TreeNode, colNum: Int): void
     var showCustomIconOpen:Boolean

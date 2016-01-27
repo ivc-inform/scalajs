@@ -7,7 +7,7 @@ import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.System.Types.{AutoChild, SCImgURL, void}
 
 import scala.scalajs.js
-import scala.scalajs.js.Array
+
 
 @js.native
 trait AdvancedHiliteEditor extends VStack {

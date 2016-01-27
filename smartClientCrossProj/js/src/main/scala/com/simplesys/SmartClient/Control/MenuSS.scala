@@ -35,7 +35,7 @@ trait MenuSS extends Grid[ListGridField, MenuSSItem] {
     var cascadeAutoDismiss: Boolean
     var checkmarkDisabledImage: Img
     var checkmarkImage: Img
-    var data: js.Array[MenuSSItem]
+    var data: JSArray[MenuSSItem]
     var fillSpaceStyleName: CSSStyleName
     def getItem(item: Int): MenuSSItem
     def getItemNum(item: MenuSSItem): Int

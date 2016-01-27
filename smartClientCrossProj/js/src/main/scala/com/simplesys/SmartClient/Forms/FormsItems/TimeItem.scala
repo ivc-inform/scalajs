@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.Forms.FormsItems
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TimeUnit.TimeUnit
 import com.simplesys.System.Types.{void, HTMLString, AutoChild}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -28,7 +29,7 @@ trait TimeItem extends FormItem {
     var hourItemTitle: HTMLString
     var hourMaxValue: Int
     var hourMinValue: Int
-    var hourValues: js.Array[Int]
+    var hourValues: JSArray[Int]
     var invalidTimeStringMessage: HTMLString
     var millisecondIncrement: Int
     var millisecondItem: SelectItem with AutoChild
@@ -37,7 +38,7 @@ trait TimeItem extends FormItem {
     var millisecondItemTitle: HTMLString
     var millisecondMaxValue: Int
     var millisecondMinValue: Int
-    var millisecondValues: js.Array[Int]
+    var millisecondValues: JSArray[Int]
     var minuteIncrement: Int
     var minuteItem: SelectItem with AutoChild
     var minuteItemPrompt: HTMLString
@@ -45,7 +46,7 @@ trait TimeItem extends FormItem {
     var minuteItemTitle: HTMLString
     var minuteMaxValue: Int
     var minuteMinValue: Int
-    var minuteValues: js.Array[Int]
+    var minuteValues: JSArray[Int]
     var secondIncrement: Int
     var secondItem: SelectItem with AutoChild
     var secondItemPrompt: HTMLString
@@ -53,7 +54,7 @@ trait TimeItem extends FormItem {
     var secondItemTitle: HTMLString
     var secondMaxValue: Int
     var secondMinValue: Int
-    var secondValues: js.Array[Int]
+    var secondValues: JSArray[Int]
     def selectValue(): void
     def setHours(hours: Int): void
     def setHourValues(values: Array[Int]): void

@@ -9,7 +9,7 @@ import com.simplesys.System.Types.void
 import com.simplesys.types.JSAny
 
 import scala.scalajs.js
-import scala.scalajs.js.Array
+
 
 @js.native
 trait ResultTree extends Tree {

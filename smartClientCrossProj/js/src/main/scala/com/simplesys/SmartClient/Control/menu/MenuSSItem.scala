@@ -7,7 +7,7 @@ import com.simplesys.SmartClient.System.KeyIdentifier
 import com.simplesys.System.Types._
 
 import scala.scalajs.js
-import scala.scalajs.js.Array
+
 
 @js.native
 trait MenuSSItem extends ListGridRecord {

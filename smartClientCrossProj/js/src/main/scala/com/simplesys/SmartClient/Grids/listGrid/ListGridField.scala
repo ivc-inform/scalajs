@@ -24,7 +24,7 @@ import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types._
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -188,7 +188,7 @@ trait ListGridField extends Types.Object {
     var sortByMappedValue: Boolean
     var sortDirection: SortDirection
     def sortNormalizer(recordObject: Types.Object, fieldName: String, context: Grid[ListGridField, ListGridRecord]): JSAny
-    var summaryFunction: SummaryFunction | js.Array[SummaryFunction]
+    var summaryFunction: SummaryFunction | JSArray[SummaryFunction]
     var summaryTitle: String
     var summaryValue: HTMLString
     val summaryValueTitle: String
@@ -210,7 +210,7 @@ trait ListGridField extends Types.Object {
     var valueIcons: Types.Object
     var valueIconSize: Int
     var valueIconWidth: Int
-    var valueMap: Types.Object | js.Array[String]
+    var valueMap: Types.Object | JSArray[String]
     var width: Int | String
     var wrap: Boolean
 }

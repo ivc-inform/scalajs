@@ -25,7 +25,7 @@ import com.simplesys.System.Types.SequenceMode.SequenceMode
 import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -269,9 +269,9 @@ abstract trait AbstractDataSourceCompanion extends AbstractClassCompanion {
     def getSortBy(sortSpecifiers: Array[SortSpecifier]): Array[String] = js.native
     def getSortSpecifiers(sortBy: Array[String]): Array[String] = js.native
     def isFlatCriteria(criteria: AdvancedCriteria): Boolean = js.native
-    def load(dsID: ID | js.Array[ID], callback: Callback, forceReload: Boolean = js.native): void = js.native
+    def load(dsID: ID | JSArray[ID], callback: Callback, forceReload: Boolean = js.native): void = js.native
     var loaderURL: URL = js.native
-    def loadWithParents(dsID: ID | js.Array[ID], callback: Callback, forceReload: Boolean = js.native): void = js.native
+    def loadWithParents(dsID: ID | JSArray[ID], callback: Callback, forceReload: Boolean = js.native): void = js.native
     var maxFileSizeExceededMessage: String = js.native
     var offlineMessage: String = js.native
     def registerRecordSummaryFunction(methodName: String, summaryFunction: SummaryFunction): void = js.native

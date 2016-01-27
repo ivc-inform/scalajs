@@ -13,7 +13,7 @@ import com.simplesys.System.Types.ImportFormat.ImportFormat
 import com.simplesys.System.Types.PartialCommitOption.PartialCommitOption
 
 import scala.scalajs.js
-import scala.scalajs.js.Array
+
 
 @js.native
 trait BatchUploader extends VStack {

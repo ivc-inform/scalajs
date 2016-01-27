@@ -8,7 +8,7 @@ import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.AutoChild
 
 import scala.scalajs.js
-import scala.scalajs.js.Array
+
 import scala.scalajs.js.annotation.JSName
 
 @js.native

@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Layout.{Layout, Toolbar, Window}
 import com.simplesys.System.Types._
 
 import scala.scalajs.js
-import scala.scalajs.js.Array
+
 
 @js.native
 trait Dialog extends Window {

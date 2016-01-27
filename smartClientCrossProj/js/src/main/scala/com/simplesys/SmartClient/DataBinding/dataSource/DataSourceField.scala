@@ -18,7 +18,7 @@ import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.|
-import scala.scalajs.js.Array
+
 
 @js.native
 trait DataSourceField extends Types.Object {

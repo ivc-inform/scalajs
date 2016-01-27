@@ -9,7 +9,7 @@ import com.simplesys.System.Types.{void, _}
 import com.simplesys.types.{JSDictionaryAny, JSAny}
 
 import scala.scalajs.js
-import scala.scalajs.js.Array
+
 
 @js.native
 trait DateChooser extends VLayout {

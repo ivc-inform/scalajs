@@ -12,6 +12,7 @@ import com.simplesys.System.Types.ExportImageFormat.ExportImageFormat
 import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.ValidationMode.ValidationMode
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -64,7 +65,7 @@ trait DSRequest extends RPCRequest {
     val resultSet: ResultSet
     val resultTree: ResultTree
     val shouldUseCache: Boolean
-    val sortBy: String | js.Array[String] | js.Array[SortSpecifier]
+    val sortBy: String | JSArray[String] | JSArray[SortSpecifier]
     val startRow: Int
     val streamResults: Boolean
     val summaryFunctions: Types.Object

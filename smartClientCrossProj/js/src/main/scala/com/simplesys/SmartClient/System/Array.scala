@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.System.Types.void
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
 
@@ -12,9 +12,9 @@ trait Array extends List {
     def and(start: Int, end: Int): Boolean
     def clearProperty(property: String): Boolean
     def containsProperty(property: String, value: Types.Object = js.native): Boolean
-    def getUniqueItems(): js.Array[Types.Object]
+    def getUniqueItems(): JSArray[Types.Object]
     def makeIndex(property: String, alwaysMakeArray: Boolean): Types.Object
-    def map(method: js.ThisFunction0[_, _], arguments: Types.Object*): js.Array[Types.Object]
+    def map(method: js.ThisFunction0[_, _], arguments: Types.Object*): JSArray[Types.Object]
     def max(start: Int = js.native, end: Int = js.native): Int
     def min(start: Int = js.native, end: Int = js.native): Int
     def or(start: Int = js.native, end: Int = js.native): Boolean

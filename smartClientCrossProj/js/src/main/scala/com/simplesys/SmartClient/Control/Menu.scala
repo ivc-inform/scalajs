@@ -8,11 +8,10 @@ import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
 import com.simplesys.System.Types._
-import com.simplesys.types.{JSDictionaryAny, JSAny}
+import com.simplesys.types.{JSArray, JSDictionaryAny, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._
-import scala.scalajs.js.Array
 
 @js.native
 trait Menu extends Grid[ListGridField, MenuItem] {
@@ -23,7 +22,7 @@ trait Menu extends Grid[ListGridField, MenuItem] {
     var cascadeAutoDismiss: Boolean
     var checkmarkDisabledImage: Img
     var checkmarkImage: Img
-    var data: js.Array[MenuItem]
+    var data: JSArray[MenuItem]
     var fillSpaceStyleName: CSSStyleName
     def getItem(item: Int): MenuItem
     def getItemNum(item: MenuItem): Int

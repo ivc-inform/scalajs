@@ -5,6 +5,7 @@ import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
 import com.simplesys.System.Types.PromptStyle.PromptStyle
 import com.simplesys.System.Types.RPCTransport.RPCTransport
 import com.simplesys.System.Types.{void, URL}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -19,7 +20,7 @@ trait RPCRequest extends Class {
     var clientContext: Types.Object
     var containsCredentials: Boolean
     var contentType: String
-    var data:Types.Object| js.Array[Types.Object]
+    var data:Types.Object| JSArray[Types.Object]
     var downloadResult: Boolean
     var downloadToNewWindow: Boolean
     var evalResult: Boolean

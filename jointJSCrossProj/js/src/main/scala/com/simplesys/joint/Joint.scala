@@ -8,7 +8,7 @@ package com.simplesys {
         package dia {
 
             import com.simplesys.backbone.Model
-            import com.simplesys.types.{JSDictionaryAny, JSAny}
+            import com.simplesys.types.{JSArray, JSDictionaryAny, JSAny}
 
             @js.native
             trait IElementSize extends js.Object {
@@ -20,15 +20,15 @@ package com.simplesys {
             @JSName("joint.dia.Graph")
             class Graph extends backbone.Model {
                 def addCell(cell: Cell): Unit = js.native
-                def addCells(cells: js.Array[Cell]): Unit = js.native
+                def addCells(cells: JSArray[Cell]): Unit = js.native
                 def initialize(): Unit = js.native
                 def fromJSON(json: JSAny): Unit = js.native
                 def toJSON(): js.Object = js.native
                 def clear(): Unit = js.native
-                def getConnectedLinks(cell: Cell, opt: JSAny = js.native): js.Array[Link] = js.native
+                def getConnectedLinks(cell: Cell, opt: JSAny = js.native): JSArray[Link] = js.native
                 def disconnectLinks(cell: Cell): Unit = js.native
                 def removeLinks(cell: Cell): Unit = js.native
-                def findModelsFromPoint(point: JSAny): js.Array[Element] = js.native
+                def findModelsFromPoint(point: JSAny): JSArray[Element] = js.native
             }
 
             @js.native
@@ -40,7 +40,7 @@ package com.simplesys {
                 def toBack(): Unit = js.native
                 def embed(cell: Cell): Unit = js.native
                 def unembed(cell: Cell): Unit = js.native
-                def getEmbeddedCells(): js.Array[Cell] = js.native
+                def getEmbeddedCells(): JSArray[Cell] = js.native
                 @JSName("clone")
                 def cloneJS(opt: JSAny = js.native): backbone.Model /*Cell?*/ = js.native
                 def attr(attrs: JSAny): Cell = js.native
@@ -91,8 +91,8 @@ package com.simplesys {
                 def rotate(deg: Double, ox: Double = js.native, oy: Double = js.native): Paper = js.native
                 def findView(el: JSAny): CellView = js.native
                 def findViewByModel(modelOrId: JSAny): CellView = js.native
-                def findViewsFromPoint(p: JSAny): js.Array[CellView] = js.native
-                def findViewsInArea(r: JSAny): js.Array[CellView] = js.native
+                def findViewsFromPoint(p: JSAny): JSArray[CellView] = js.native
+                def findViewsInArea(r: JSAny): JSArray[CellView] = js.native
                 def fitToContent(opt: JSAny = js.native): Unit = js.native
             }
 

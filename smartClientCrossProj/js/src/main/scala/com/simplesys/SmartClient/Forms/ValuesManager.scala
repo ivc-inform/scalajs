@@ -11,7 +11,7 @@ import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.void
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.{Array, |}
@@ -20,7 +20,7 @@ import scala.scalajs.js.{Array, |}
 trait ValuesManager extends Class {
     def addFieldErrors(fieldName: String, errors: Array[String], showErrors: Boolean): void
     def addMember(member: DynamicForm | String): void
-    def addMembers(members: js.Array[DynamicForm] | js.Array[String]): void
+    def addMembers(members: JSArray[DynamicForm] | JSArray[String]): void
     var addOperation: String
     var autoSynchronize: Boolean
     def cancel(requestProperties: DSRequest = js.native): void
@@ -60,7 +60,7 @@ trait ValuesManager extends Class {
     val operator: OperatorId
     def rememberValues(): Types.Object
     def removeMember(member: DynamicForm | String): void
-    def removeMembers(members: js.Array[DynamicForm] | js.Array[String]): void
+    def removeMembers(members: JSArray[DynamicForm] | JSArray[String]): void
     var removeOperation: String
     def resetValues(): void
     def saveData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void

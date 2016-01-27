@@ -7,7 +7,7 @@ import com.simplesys.System.Types.ColorPickerMode.ColorPickerMode
 import com.simplesys.System.Types.{void, _}
 
 import scala.scalajs.js
-import scala.scalajs.js.Array
+
 
 @js.native
 trait ColorPicker extends Window {

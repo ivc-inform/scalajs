@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.System.Types.LogPriority.LogPriority
 import com.simplesys.System.Types.{ID, void}
-import com.simplesys.types.{JSDictionary, JSDictionaryAny, JSAny, JSArrayAny}
+import com.simplesys.types._
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
@@ -14,16 +14,16 @@ trait Class extends Types.Object {
     def addAutoChild(childName: String, defaults: JSDictionary[Types.Object]): Class
     def addProperties(arguments: JSDictionaryAny): Types.Object
     var addPropertiesOnCreate: Boolean
-    def addPropertyList(list: js.Array[JSDictionary[Types.Object]]): Types.Object
+    def addPropertyList(list: JSArray[JSDictionary[Types.Object]]): Types.Object
     def clearLogPriority(category: String): void
     def createAutoChild(childName: String, defaults: JSDictionary[Types.Object]): this.type
     def destroy(): void
-    def delayCall(methodName: String, arrayArgs: js.Array[Any] = js.native, time: Int = js.native): String
+    def delayCall(methodName: String, arrayArgs: JSArray[Any] = js.native, time: Int = js.native): String
     def echo(obj: JSAny): String
     def echoAll(obj: JSAny): String
     def echoLeaf(obj: JSAny): String
     def evaluate(expression: String, evalArgs: JSDictionary[Types.Object]): Types.Object
-    def fireCallback(callback: Types.Callback, argNames: String = js.native, args: js.Array[Types.Object] = js.native): JSAny
+    def fireCallback(callback: Types.Callback, argNames: String = js.native, args: JSArray[Types.Object] = js.native): JSAny
     def getCallTrace(args: Types.Object = js.native): void
     def GetClass(): this.type
     def getClassName(): String
@@ -61,15 +61,15 @@ abstract trait AbstractClassCompanion extends Types.Object {
     def addClassProperties(arguments: JSDictionary[Types.Object]): Types.Object = js.native
     def addMethods(arguments: JSDictionary[Types.Object]): Types.Object = js.native
     def addProperties(arguments: JSDictionary[Types.Object]): Types.Object = js.native
-    def addPropertyList(list: js.Array[JSDictionary[Types.Object]]): Types.Object = js.native
+    def addPropertyList(list: JSArray[JSDictionary[Types.Object]]): Types.Object = js.native
     def changeDefaults(defaultsName: String, newDefaults: Types.Object): void = js.native
     def clearLogPriority(category: String): void = js.native
-    def delayCall(methodName: String, arrayArgs: js.Array[Any] = js.native, time: Int = js.native, target: Types.Object = js.native): String = js.native
+    def delayCall(methodName: String, arrayArgs: JSArray[Any] = js.native, time: Int = js.native, target: Types.Object = js.native): String = js.native
     def echo(obj: JSAny): String = js.native
     def echoAll(obj: JSAny): String = js.native
     def echoLeaf(obj: JSAny): String = js.native
     def evaluate(expression: String, evalArgs: JSDictionary[Types.Object]): Types.Object = js.native
-    def fireCallback(callback: Types.Callback, argNames: String = js.native, args: js.Array[Types.Object] = js.native, target: Types.Object = js.native): JSAny = js.native
+    def fireCallback(callback: Types.Callback, argNames: String = js.native, args: JSArray[Types.Object] = js.native, target: Types.Object = js.native): JSAny = js.native
     def getCallTrace(args: Types.Object = js.native): void = js.native
     def getClassName(): String = js.native
     def getDefaultLogPriority(): LogPriority = js.native
@@ -93,7 +93,7 @@ abstract trait AbstractClassCompanion extends Types.Object {
     def markAsFrameworkClass(): void = js.native
     def modifyFrameworkDone(): void = js.native
     def modifyFrameworkStart(): void = js.native
-    def markUnsupportedMethods(messageTemplate: String = js.native, methodNames: js.Array[String] = js.native): void = js.native
+    def markUnsupportedMethods(messageTemplate: String = js.native, methodNames: JSArray[String] = js.native): void = js.native
     def egisterStringMethods(methodName: String, argumentString: String): void = js.native
     def setDefaultLogPriority(category: String, priority: LogPriority): void = js.native
     def setInstanceProperty(property: String, value: JSAny): void = js.native

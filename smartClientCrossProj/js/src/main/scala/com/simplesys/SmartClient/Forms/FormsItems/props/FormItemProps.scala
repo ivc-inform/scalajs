@@ -20,7 +20,7 @@ import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
 import com.simplesys.option.{FormItemType_String, IntString, ScNone, ScOption}
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -100,7 +100,7 @@ class FormItemProps extends ClassProps {
     var iconHSpace: ScOption[Int] = ScNone
     var iconKeyPress: ScOption[js.Function5[String, Char, DynamicForm, FormItem, FormItemIcon, _]] = ScNone
     var iconPrompt: ScOption[HTMLString] = ScNone
-    var icons: ScOption[js.Array[FormItemIcon]] = ScNone
+    var icons: ScOption[JSArray[FormItemIcon]] = ScNone
     var iconVAlign: ScOption[VerticalAlignment] = ScNone
     var iconWidth: ScOption[Int] = ScNone
     var ID: ScOption[String] = ScNone
