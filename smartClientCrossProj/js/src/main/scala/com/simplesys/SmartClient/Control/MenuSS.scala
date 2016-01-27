@@ -24,8 +24,8 @@ trait MenuSS extends Grid[ListGridField, MenuSSItem] {
     def replaceItems(oldItems: JSArray[MenuSSItem| ID], newItems: JSArray[MenuSSItem]): void
     def setData(data: JSAny): void
     val owner: Canvas
-    def setOwner(owner: Canvas): void
-    def setTabSet(tabSet: TabSet): void
+    def setOwner(owner: Canvas): MenuSS
+    def setTabSet(tabSet: TabSet): MenuSS
 
     //From Menu
     var autoDismiss: Boolean
