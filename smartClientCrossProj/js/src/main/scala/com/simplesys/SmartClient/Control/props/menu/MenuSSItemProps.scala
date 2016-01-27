@@ -12,6 +12,8 @@ import scala.scalajs.js
 import scala.scalajs.js._
 
 class MenuSSItemProps extends ListGridRecordProps {
+    var identifier: ScOption[ID] = ScNone
+    var owner: ScOption[Canvas] = ScNone
     var item: ScOption[Canvas] = ScNone
     var action: ScOption[js.Function1[void, _]] = ScNone
     var canSelectParent: ScOption[Boolean] = ScNone

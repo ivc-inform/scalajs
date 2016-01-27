@@ -12,6 +12,7 @@ import scala.scalajs.js.Array
 @js.native
 trait MenuSSItem extends ListGridRecord {
     var owner: Canvas
+    var identifier: ID
     var action: js.Function1[void, _]
     var canSelectParent: Boolean
     var checked: Boolean
