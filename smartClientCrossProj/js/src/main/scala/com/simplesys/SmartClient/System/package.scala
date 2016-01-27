@@ -67,6 +67,7 @@ package object System {
 
     //<editor-fold desc="Forms">
     object DynamicForm extends SCApply[DynamicForm, DynamicFormProps]
+    object DynamicFormSS extends SCApply[DynamicFormSS, DynamicFormSSProps]
     //</editor-fold>
 
     //<editor-fold desc="FormsItems">
