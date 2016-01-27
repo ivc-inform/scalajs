@@ -16,12 +16,12 @@ import scala.scalajs.js.{Array, |}
 @js.native
 trait MenuSS extends Grid[ListGridField, MenuSSItem] {
     def addItem(item: MenuSSItem, pos: Int): void
-    def addItems(items: Seq[MenuSSItem], pos: Int): void
+    def addItems(items: JSArray[MenuSSItem], pos: Int): void
     def addItemProperties(identifier: ID, properties: MenuSS): void
     def removeItem(item: MenuSSItem | ID): void
-    def removeItems(items: Seq[MenuSSItem | ID]): void
-    def filter4Visiblity(items: Seq[MenuSSItem]): void
-    def replaceItems(oldItems: Seq[MenuSSItem], newItems: Seq[MenuSSItem]): void
+    def removeItems(items: JSArray[MenuSSItem | ID]): void
+    def filter4Visiblity(items: JSArray[MenuSSItem]): void
+    def replaceItems(oldItems: JSArray[MenuSSItem| ID], newItems: JSArray[MenuSSItem]): void
     def setData(data: JSAny): void
     val owner: Canvas
     def setOwner(owner: Canvas): void
