@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.Grids
 
-import com.simplesys.SmartClient.Control.{MenuSS, Menu}
+import com.simplesys.SmartClient.Control.MenuSS
+import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.DataBinding.{DSCallback, DSRequest, DataSource}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.VLayoutSS
@@ -12,13 +13,13 @@ import com.simplesys.System.Types.ListGridEditEvent._
 import com.simplesys.System.Types.SelectionAppearance._
 import com.simplesys.System.Types.TextMatchStyle._
 import com.simplesys.System.Types.{ID, void}
-import com.simplesys.types.{JSArray, JSAny}
+import com.simplesys.types.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedState]  extends VLayoutSS {
+trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedState] extends VLayoutSS {
     var canDragSelectText: Boolean
     var canAcceptDroppedRecords: Boolean
     var autoFitFieldWidth: Boolean
@@ -100,9 +101,10 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     var funcMenu: MenuSS
     var dataSource: DataSource
     def setContextMenu(menu: MenuSS): void
-    def getContextMenu():MenuSS
+    def getContextMenu(): MenuSS
     def setFuncMenu(menu: MenuSS): void
     def getFuncMenu(): MenuSS
+    var saveItems: JSArray[String | MenuSSItem]
 }
 
 @js.native

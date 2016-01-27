@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.Grids.props
 
 import com.simplesys.SmartClient.Control.MenuSS
+import com.simplesys.SmartClient.Control.props.menu.MenuSSItemProps
 import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Grids.props.listGrid.{ListGridFieldProps, ListGridRecordProps}
 import com.simplesys.SmartClient.Layout.props.VLayoutSSProps
@@ -10,6 +11,7 @@ import com.simplesys.System.Types.ListGridEditEvent.ListGridEditEvent
 import com.simplesys.System.Types.SelectionAppearance.SelectionAppearance
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.types._
 
 class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends VLayoutSSProps {
     var canDragSelectText: ScOption[Boolean] = ScNone
@@ -46,6 +48,7 @@ class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends
     var dataPageSize: ScOption[Int] = ScNone
     var funcMenu: ScOption[MenuSS] = ScNone
     var dataSource: ScOption[DataSource] = ScNone
+    var saveItems: ScOption[Seq[MenuSSItemProps]] = ScNone
 }
 
 class ListGridEditorProps extends GridEditorProps[ListGridFieldProps, ListGridRecordProps] {
