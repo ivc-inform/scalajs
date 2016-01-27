@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Foundation
 
-import com.simplesys.SmartClient.Control.Menu
+import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.DataBinding.AnimationCallback
 import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
@@ -27,6 +27,7 @@ import com.simplesys.System.Types.ProportionalResizeMode._
 import com.simplesys.System.Types.VerticalAlignment._
 import com.simplesys.System.Types.Visibility._
 import com.simplesys.System.Types._
+import com.simplesys.types.JSArrayAny
 import org.scalajs.dom.DocumentEvent
 import org.scalajs.dom.html.Element
 import org.scalajs.dom.raw.HTMLElement
@@ -109,7 +110,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def containsFocus(): Boolean
     def containsPoint(x: Int, y: Int, withinViewport: Boolean = js.native): Boolean
     var contents: HTMLString
-    var contextMenu: Menu
+    var contextMenu : MenuSS
     val cursor: Cursor
     val customEdges: js.Array[String]
     val dataPath: DataPath
@@ -249,7 +250,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val htmlPosition: DrawPosition
     val ID: String
     def imgHTML(src: SCImgURL, width: Int = js.native, height: Int = js.native, name: String = js.native, extraStuff: String = js.native, imgDir: String = js.native): String
-    var initWidget: js.ThisFunction0[callbackHandler, void]
+    var initWidget: js.ThisFunction1[callbackHandler, JSArrayAny, _]
     def intersects(other: Canvas): Boolean
     def intersectsRect(left: Int | js.Array[Int], top: Int, width: Int, height: Int): Boolean
     def isDirty(): Boolean

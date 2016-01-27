@@ -29,6 +29,7 @@ trait Class extends Types.Object {
     def getClassName(): String
     def getDefaultLogPriority(): LogPriority
     def getID(): String
+    def getIdentifier(): String
     def getStackTrace(): String
     def getSuperClass(): String
     def ignore(`object`: Types.Object, methodName: String): Boolean

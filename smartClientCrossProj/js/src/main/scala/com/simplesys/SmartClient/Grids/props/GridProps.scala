@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Grids.props
 
 import com.simplesys.SmartClient.Control.{Button, IButton}
 import com.simplesys.SmartClient.DataBinding._
-import com.simplesys.SmartClient.DataBinding.props.DataBoundComponentProps
+import com.simplesys.SmartClient.DataBinding.props.{SortSpecifierProps, DataBoundComponentProps}
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Foundation.{Canvas, GridRenderer, HTMLFlow, StatefulCanvas}
@@ -186,7 +186,6 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var dateFormatter: ScOption[DateDisplayFormat] = ScNone
     var dateInputFormat: ScOption[DateInputFormat] = ScNone
     var datetimeFormatter: ScOption[DateDisplayFormat] = ScNone
-    var defaultFields: ScOption[Seq[T]] = ScNone
     var deferRemoval: ScOption[Boolean] = ScNone
     var detailDS: ScOption[String] = ScNone
     var detailField: ScOption[String] = ScNone
@@ -353,7 +352,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var iconPadding: ScOption[Int] = ScNone
     var imageSize: ScOption[Int] = ScNone
     var includeInSummaryProperty: ScOption[String] = ScNone
-    var initialSort: ScOption[Seq[SortSpecifier]] = ScNone
+    var initialSort: ScOption[Seq[SortSpecifierProps]] = ScNone
     var instantScrollTrackRedraw: ScOption[Boolean] = ScNone
     var invalidSummaryValue: ScOption[String] = ScNone
     var isGrouped: ScOption[Boolean] = ScNone
@@ -558,5 +557,6 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
 
 class ListGridProps extends GridProps[ListGridField, ListGridRecord] {
     var fields: ScOption[Seq[ListGridFieldProps]] = ScNone
+    var defaultFields: ScOption[Seq[ListGridFieldProps]] = ScNone
     var data: ScOption[Seq[ListGridRecord]] = ScNone
 }

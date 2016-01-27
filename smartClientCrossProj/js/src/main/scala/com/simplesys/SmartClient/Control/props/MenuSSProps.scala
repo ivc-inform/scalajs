@@ -1,20 +1,20 @@
 package com.simplesys.SmartClient.Control.props
 
-import com.simplesys.SmartClient.Control.menu.MenuItem
-import com.simplesys.SmartClient.Control.props.menu.MenuItemProps
+import com.simplesys.SmartClient.Control.menu.MenuSSItem
+import com.simplesys.SmartClient.Control.props.menu.{MenuSSItemProps, MenuItemProps}
 import com.simplesys.SmartClient.Foundation.{Canvas, Img}
-import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
+import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.Grids.props.GridProps
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types.PanelPlacement.PanelPlacement
-import com.simplesys.System.Types.{CSSStyleName, HTMLString, SCClassName}
+import com.simplesys.System.Types.PanelPlacement._
+import com.simplesys.System.Types._
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
-class MenuProps extends GridProps[ListGridField, MenuItem] {
+class MenuSSProps extends GridProps[ListGridField, MenuSSItem] {
+    var owner: ScOption[Canvas] = ScNone
     var autoDismiss: ScOption[Boolean] = ScNone
     var autoDismissOnBlur: ScOption[Boolean] = ScNone
     var cancelButtonTitle: ScOption[HTMLString] = ScNone
@@ -31,7 +31,7 @@ class MenuProps extends GridProps[ListGridField, MenuItem] {
     var iconHeight: ScOption[Int] = ScNone
     var iconWidth: ScOption[Int] = ScNone
     var itemClick: ScOption[js.Function2[Types.Object, Int, Boolean]] = ScNone
-    var items: ScOption[Seq[MenuItemProps]] = ScNone
+    var items: ScOption[Seq[MenuSSItemProps]] = ScNone
     var keyFieldDefaults: ScOption[ListGridField] = ScNone
     var keyFieldProperties: ScOption[ListGridField] = ScNone
     var menuButtonWidth: ScOption[Int] = ScNone
@@ -53,4 +53,3 @@ class MenuProps extends GridProps[ListGridField, MenuItem] {
     var titleFieldProperties: ScOption[ListGridField] = ScNone
     var useKeys: ScOption[Boolean] = ScNone
 }
-

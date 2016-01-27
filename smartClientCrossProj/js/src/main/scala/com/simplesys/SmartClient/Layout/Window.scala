@@ -13,8 +13,8 @@ import scala.scalajs.js.|
 
 @js.native
 trait Window extends Layout {
-    def addItem(item: Canvas): js.Array[Canvas]
-    def addItems(items: js.Array[Canvas]): js.Array[Canvas]
+    def addItem(item: Canvas | String): js.Array[Canvas]
+    def addItems(items: js.Array[Canvas | String]): js.Array[Canvas]
     var animateMinimize: Boolean
     var autoCenter: Boolean
     var autoSize: Boolean
@@ -52,7 +52,7 @@ trait Window extends Layout {
     var hiliteHeaderSrc: SCImgURL
     var hiliteHeaderStyle: CSSStyleName
     var isModal: Boolean
-    val items: js.Array[Canvas]
+    val items: js.Array[Canvas | String]
     def maximize(): void
     val maximizeButton: ImgButton with AutoChild
     var maximized: Boolean

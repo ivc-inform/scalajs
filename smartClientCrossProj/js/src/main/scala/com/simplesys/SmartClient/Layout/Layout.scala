@@ -15,8 +15,8 @@ import scala.scalajs.js.|
 
 @js.native
 trait Layout extends Canvas {
-    def addMember(newMember: Canvas, position: Int = js.native): void
-    def addMembers(newMembers: Canvas | js.Array[Canvas], position: Int = js.native): void
+    def addMember(newMember: Canvas | String, position: Int = js.native): void
+    def addMembers(newMembers: js.Array[Canvas | String], position: Int = js.native): void
     var align: VerticalAlignment | Alignment
     var animateMembers: Boolean
     var animateMemberTime: Int

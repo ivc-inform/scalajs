@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.Grids
 
 
+import com.simplesys.SmartClient.Control.{Menu, MenuSS}
 import com.simplesys.SmartClient.Foundation.{Canvas, AbstractCanvasCompanion}
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeNode, TreeGridField}
@@ -56,6 +57,7 @@ trait TreeGrid extends Grid[TreeGridField, ListGridRecord] {
     var iconSize: Int
     var indentRecordComponents: Boolean
     var indentSize: Int
+    var funcMenu : MenuSS | Menu
     val initialData: Array[TreeNode]
     def isOverExtraIcon(): Boolean
     def isOverOpenArea(): Boolean

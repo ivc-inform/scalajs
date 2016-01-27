@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Control
 
+import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Grids.treeGrid.Tree
 import com.simplesys.System.Types.{SCClassName, AutoChild, CSSStyleName, HTMLString}
 
@@ -13,7 +14,7 @@ trait TreeMenuButton extends MenuButton {
     var pathSeparatorString: HTMLString
     var selectedBaseStyle: CSSStyleName
     var showPath: Boolean
-    var treeMenu: Menu with AutoChild
+    var treeMenu: MenuSSItem with AutoChild
     val treeMenuConstructor: SCClassName
     var unselectedTitle: HTMLString
 }

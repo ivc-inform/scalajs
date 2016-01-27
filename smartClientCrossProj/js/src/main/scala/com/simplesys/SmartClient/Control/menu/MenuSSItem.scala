@@ -4,31 +4,31 @@ import com.simplesys.SmartClient.Control.{MenuSS, Menu}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.System.KeyIdentifier
-import com.simplesys.System.Types.{HTMLString, SCImgURL, void}
+import com.simplesys.System.Types._
 
 import scala.scalajs.js
 import scala.scalajs.js.Array
 
 @js.native
-trait MenuItem extends ListGridRecord {
+trait MenuSSItem extends ListGridRecord {
+    var owner: Canvas
+    var identifier: ID
     var action: js.Function1[void, _]
     var canSelectParent: Boolean
     var checked: Boolean
-    var checkIf: js.Function3[Canvas, Menu, MenuItem, Boolean]
-    var click: js.Function4[Canvas, MenuItem, Menu, Int, _]
+    var checkIf: js.Function3[Canvas, MenuSS, MenuSSItem, Boolean]
+    var click: js.Function4[Canvas, MenuSSItem, MenuSS, Int, _]
     var disabledIcon: String
-    var dynamicIcon: js.Function3[Canvas, Menu, MenuItem, SCImgURL]
-    var dynamicTitle: js.Function3[Canvas, Menu, MenuItem, String]
-    var enableIf: js.Function3[Canvas, Menu, MenuItem, Boolean]
+    var dynamicIcon: js.Function3[Canvas, MenuSS, MenuSSItem, SCImgURL]
+    var dynamicTitle: js.Function3[Canvas, MenuSS, MenuSSItem, String]
+    var enableIf: js.Function3[Canvas, MenuSS, MenuSSItem, Boolean]
     var fetchSubmenus: Boolean
     val icon: String
     val iconHeight: Int
     val iconWidth: Int
     val keys: Array[KeyIdentifier]
     val keyTitle: String
-    val submenu: Menu
+    val submenu: MenuSS
     val title: HTMLString
 }
-
-
 

@@ -13,9 +13,9 @@ import com.simplesys.SmartClient.Forms.props._
 import com.simplesys.SmartClient.Foundation._
 import com.simplesys.SmartClient.Foundation.props._
 import com.simplesys.SmartClient.Grids.treeGrid.Tree
-import com.simplesys.SmartClient.Grids.{ListGrid, TreeGrid, Grid}
+import com.simplesys.SmartClient.Grids._
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
-import com.simplesys.SmartClient.Grids.props.{ListGridProps, TreeGridProps, GridProps}
+import com.simplesys.SmartClient.Grids.props._
 import com.simplesys.SmartClient.Layout._
 import com.simplesys.SmartClient.Layout.portalLayout.Portlet
 import com.simplesys.SmartClient.Layout.props._
@@ -45,6 +45,7 @@ package object System {
     object RangeSlider extends SCApply[RangeSlider, RangeSliderProps]
     object Hover extends SCApply[Hover, HoverProps]
     object Menu extends SCApply[Menu, MenuProps]
+    object MenuSS extends SCApply[MenuSS, MenuSSProps]
     object MenuButton extends SCApply[MenuButton, MenuButtonProps]
     object IMenuButton extends SCApply[IMenuButton, IMenuButtonProps]
     object Progressbar extends SCApply[Progressbar, ProgressbarProps]
@@ -85,19 +86,25 @@ package object System {
 
     //<editor-fold desc="Grids">
     object ListGrid extends SCApply[ListGrid, ListGridProps]
+    object ListGridEditor extends SCApply[ListGridEditor, ListGridEditorProps]
     object TreeGrid extends SCApply[TreeGrid, TreeGridProps]
+    object TreeGridEditor extends SCApply[TreeGridEditor, TreeGridEditorProps]
     object Tree extends SCApply[Tree, TreeProps]
     //</editor-fold>
 
     //<editor-fold desc="Layout">
     object Deck extends SCApply[Deck, DeckProps]
     object HLayout extends SCApply[HLayout, HLayoutProps]
+    object HLayoutSS extends SCApply[HLayoutSS, HLayoutSSProps]
     object HStack extends SCApply[HStack, HStackProps]
     object IconButton extends SCApply[IconButton, IconButtonProps]
     object IconMenuButton extends SCApply[IconMenuButton, IconMenuButtonProps]
     object ImgSplitbar extends SCApply[ImgSplitbar, ImgSplitbarProps]
     object Layout extends SCApply[Layout, LayoutProps]
+    object LayoutSS extends SCApply[LayoutSS, LayoutSSProps]
     object VLayout extends SCApply[VLayout, VLayoutProps]
+    object VLayoutSS extends SCApply[VLayoutSS, VLayoutSSProps]
+    object ChainMasterDetail extends SCApply[ChainMasterDetail, ChainMasterDetailProps]
     object TabSet extends SCApply[TabSet, TabSetProps]
     object Window extends SCApply[Window, WindowProps]
     object WindowSS extends SCApply[WindowSS, WindowSSProps]
