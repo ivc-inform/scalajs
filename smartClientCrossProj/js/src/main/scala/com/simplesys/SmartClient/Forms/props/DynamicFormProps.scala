@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.Forms.props
 
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Forms.FormsItems.props.FormItemProps
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.System.{KeyIdentifier, Types}
 import com.simplesys.SmartClient.Workdlow.UserTask
@@ -53,7 +54,7 @@ class DynamicFormProps extends CanvasProps {
     var errorOrientation: ScOption[Alignment] = ScNone
     var errors: ScOption[Seq[Types.Object]] = ScNone
     var errorsPreamble: ScOption[HTMLString] = ScNone
-    var fields: ScOption[Seq[FormItem]] = ScNone
+    var fields: ScOption[Seq[FormItemProps]] = ScNone
     var fixedColWidths: ScOption[Boolean] = ScNone
     var formSubmitFailedWarning: ScOption[String] = ScNone
     var handleHiddenValidationErrors: ScOption[ThisFunction1[DynamicForm, Types.Object, Boolean]] = ScNone
@@ -73,7 +74,7 @@ class DynamicFormProps extends CanvasProps {
     var itemHoverWidth: ScOption[Int] = ScNone
     var itemKeyPress: ScOption[Function3[FormItem, String, Int, Boolean]] = ScNone
     var itemLayout: ScOption[String] = ScNone
-    var items: ScOption[Seq[FormItem]] = ScNone
+    var items: ScOption[Seq[FormItemProps]] = ScNone
     var longTextEditorThreshold: ScOption[Int] = ScNone
     var longTextEditorType: ScOption[String] = ScNone
     var method: ScOption[FormMethod] = ScNone

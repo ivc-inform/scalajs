@@ -7,7 +7,7 @@ import scala.scalajs.js.|
 
 @js.native
 trait ChainMasterDetail extends LayoutSS {
-    def setViewState():void
-    def getViewState():void
+    def setViewState(): ChainMasterDetail
+    def getViewState(): ChainMasterDetail
 }
 
