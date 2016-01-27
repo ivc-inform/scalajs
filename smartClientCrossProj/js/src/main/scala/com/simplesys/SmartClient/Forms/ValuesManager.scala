@@ -14,11 +14,11 @@ import com.simplesys.System.Types.void
 import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait ValuesManager extends Class {
-    def addFieldErrors(fieldName: String, errors: Array[String], showErrors: Boolean): void
+    def addFieldErrors(fieldName: String, errors: JSArray[String], showErrors: Boolean): void
     def addMember(member: DynamicForm | String): void
     def addMembers(members: JSArray[DynamicForm] | JSArray[String]): void
     var addOperation: String
@@ -39,11 +39,11 @@ trait ValuesManager extends Class {
     def getChangedValues(): Types.Object
     def getDataSource(): DataSource
     def getErrors(): Types.Object
-    def getFieldErrors(fieldName: String): Array[String]
+    def getFieldErrors(fieldName: String): JSArray[String]
     def getItem(itemID: String, retrieveAll: Boolean = js.native): FormItem
     def getMember(ID: String): Canvas
     def getMemberForField(fieldName: String): Canvas
-    def getMembers(): Array[Canvas]
+    def getMembers(): JSArray[Canvas]
     def getMemberValues(ID: String): Types.Object
     def getOldValues(): Types.Object
     def getSaveOperationType(requestProperties: DSRequest = js.native): DSOperationType
@@ -56,7 +56,7 @@ trait ValuesManager extends Class {
     def hasErrors(): Boolean
     def hasFieldErrors(fieldName: String): Boolean
     def isNewRecord(): Boolean
-    var members: Array[DynamicForm]
+    var members: JSArray[DynamicForm]
     val operator: OperatorId
     def rememberValues(): Types.Object
     def removeMember(member: DynamicForm | String): void
@@ -67,7 +67,7 @@ trait ValuesManager extends Class {
     var saveOperationType: DSOperationType
     def setDataSource(dataSource: DataSource): void
     def setErrors(errors: Object, showErrors: Boolean): void
-    def setFieldErrors(fieldName: String, errors: Array[String], showErrors: Boolean): void
+    def setFieldErrors(fieldName: String, errors: JSArray[String], showErrors: Boolean): void
     def setMemberValues(ID: String, values: Types.Object): void
     def setValue(fieldName: String, newValue: JSAny): void
     def setValues(values: Types.Object): void

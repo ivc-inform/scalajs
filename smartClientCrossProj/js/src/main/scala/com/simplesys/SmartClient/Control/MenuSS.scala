@@ -11,7 +11,7 @@ import com.simplesys.System.Types._
 import com.simplesys.types._
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait MenuSS extends Grid[ListGridField, MenuSSItem] {
@@ -39,7 +39,7 @@ trait MenuSS extends Grid[ListGridField, MenuSSItem] {
     var fillSpaceStyleName: CSSStyleName
     def getItem(item: Int): MenuSSItem
     def getItemNum(item: MenuSSItem): Int
-    def getItems(): Array[MenuSSItem]
+    def getItems(): JSArray[MenuSSItem]
     def getSubmenu(item: MenuSSItem | Int): MenuSS
     var iconBodyStyleName: CSSStyleName
     val iconFieldDefaults: ListGridField
@@ -48,19 +48,19 @@ trait MenuSS extends Grid[ListGridField, MenuSSItem] {
     val iconHeight: Int
     val iconWidth: Int
     var itemClick: js.Function2[Types.Object, Int, Boolean]
-    var items: Array[MenuSSItem]
+    var items: JSArray[MenuSSItem]
     val keyFieldDefaults: ListGridField
     val keyFieldProperties: ListGridField
     val menuButtonWidth: Int
     val navigationBar: NavigationBar with AutoChild
     val navStack: Canvas with AutoChild
     val placement: PanelPlacement
-    def setData(items: Array[MenuSSItem]): void
+    def setData(items: JSArray[MenuSSItem]): void
     def setItemChecked(item: MenuSSItem | Int, newState: Boolean = js.native): Boolean
     def setItemEnabled(item: MenuSSItem | Int, newState: Boolean = js.native): Boolean
     def setItemIcon(item: MenuSSItem | Int, newIcon: SCImgURL, newDisabledIcon: SCImgURL = js.native): Boolean
     def setItemProperties(item: MenuSSItem | Int, properties: JSDictionaryAny): void
-    def setItems(items: Array[MenuSSItem]): void
+    def setItems(items: JSArray[MenuSSItem]): void
     def setItemTitle(item: MenuSSItem | Int, newTitle: String): Boolean
     def setShowIcons(showIcons: Boolean): void
     def setShowSubmenus(showSubmenus: Boolean): void

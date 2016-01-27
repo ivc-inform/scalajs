@@ -6,7 +6,7 @@ import com.simplesys.System.Types.{void, HTMLString, AutoChild}
 import com.simplesys.types.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait TimeItem extends FormItem {
@@ -17,11 +17,11 @@ trait TimeItem extends FormItem {
     def deselectValue(start: Boolean = js.native): void
     def getDuration(timeUnit: TimeUnit = js.native): Int
     def getEnteredValue(): String
-    def getHourValues(): Array[Int]
-    def getMillisecondValues(): Array[Int]
-    def getMinuteValues(): Array[Int]
-    def getSecondValues(): Array[Int]
-    def getSelectionRange(): Array[Int]
+    def getHourValues(): JSArray[Int]
+    def getMillisecondValues(): JSArray[Int]
+    def getMinuteValues(): JSArray[Int]
+    def getSecondValues(): JSArray[Int]
+    def getSelectionRange(): JSArray[Int]
     var hourIncrement: Int
     var hourItem: SelectItem with AutoChild
     var hourItemPrompt: HTMLString
@@ -57,13 +57,13 @@ trait TimeItem extends FormItem {
     var secondValues: JSArray[Int]
     def selectValue(): void
     def setHours(hours: Int): void
-    def setHourValues(values: Array[Int]): void
+    def setHourValues(values: JSArray[Int]): void
     def setMilliseconds(milliseconds: Int): void
-    def setMillisecondValues(values: Array[Int]): void
+    def setMillisecondValues(values: JSArray[Int]): void
     def setsetMinutes(milliseconds: Int): void
-    def setsetMinutesValues(values: Array[Int]): void
+    def setsetMinutesValues(values: JSArray[Int]): void
     def setSeconds(milliseconds: Int): void
-    def setSecondValues(values: Array[Int]): void
+    def setSecondValues(values: JSArray[Int]): void
     def setSelectionRange(start: Int, end: Int): void
     var showHintInField:Boolean
     var showHourItem:Boolean

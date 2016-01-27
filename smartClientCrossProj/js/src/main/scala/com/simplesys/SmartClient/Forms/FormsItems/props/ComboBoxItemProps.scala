@@ -10,6 +10,7 @@ import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
 import com.simplesys.System.Types.{CSSStyleName, HTMLString}
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
 import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js._
 
@@ -19,7 +20,7 @@ class ComboBoxItemProps extends TextItemProps with PickListProps{
     var autoFetchData: ScOption[Boolean] = ScNone
     var completeOnTab: ScOption[Boolean] = ScNone
     var defaultToFirstOption: ScOption[Boolean] = ScNone
-    var filterFields: ScOption[Array[String]] = ScNone
+    var filterFields: ScOption[JSArray[String]] = ScNone
     var filterWithValue: ScOption[Boolean] = ScNone
     var generateExactMatchCriteria: ScOption[Boolean] = ScNone
     var minimumSearchLength: ScOption[Int] = ScNone

@@ -4,7 +4,7 @@ import scala.scalajs.js
 
 @js.native
 object isA extends Types.Object {
-    def Array(`object`: Types.Object): Boolean = js.native
+    def JSArray(`object`: Types.Object): Boolean = js.native
     def Boolean(`object`: Types.Object): Boolean = js.native
     def ClassObject(`object`: Types.Object): Boolean = js.native
     def Date(`object`: Types.Object): Boolean = js.native

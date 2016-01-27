@@ -7,10 +7,10 @@ import com.simplesys.System.Types.CharacterCasing.CharacterCasing
 import com.simplesys.System.Types.CharacterCasing._
 import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
 import com.simplesys.System.Types._
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait TextItem extends FormItem {
@@ -28,7 +28,7 @@ trait TextItem extends FormItem {
     var formatOnFocusChange: Boolean
     def getEnteredValue(): String
     def getHint(): HTMLString
-    def getSelectionRange(): Array[Int]
+    def getSelectionRange(): JSArray[Int]
     var keyPressFilter: String
     var length: Int
     var mask: String

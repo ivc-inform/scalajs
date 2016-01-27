@@ -15,7 +15,7 @@ import com.simplesys.System.Types.ValidationMode.ValidationMode
 import com.simplesys.types.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait DSRequest extends RPCRequest {
@@ -26,11 +26,11 @@ trait DSRequest extends RPCRequest {
     val endRow: Int
     val exportAs: ExportFormat
     val exportCSS: String
-    val exportData: Array[Record]
+    val exportData: JSArray[Record]
     val exportDatesAsFormattedString: Boolean
     val exportDelimiter: String
     val exportDisplay: ExportDisplay
-    val exportFields: Array[String]
+    val exportFields: JSArray[String]
     val exportFilename: String
     val exportFooter: String
     val exportHeader: String
@@ -50,7 +50,7 @@ trait DSRequest extends RPCRequest {
     val exportValueFields: Boolean
     val fieldValueExpressions: Types.Object
     val generateRelatedUpdates: Boolean
-    val groupBy: Array[String]
+    val groupBy: JSArray[String]
     val headerData: Types.Object
     val keepParentsOnFilter: Boolean
     val lineBreakStyle: String

@@ -12,9 +12,10 @@ import com.simplesys.System.Types.ValueItemType.ValueItemType
 import com.simplesys.System.Types.{void, MultiAutoChild, SCClassName, AutoChild}
 import com.simplesys.System.Types.LogicalOperator.LogicalOperator
 import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait FilterBuilder extends Layout {
@@ -34,12 +35,12 @@ trait FilterBuilder extends Layout {
     val fieldPickerProperties: FormItem
     val fieldPickerTitle: String
     var filterChanged: js.Function1[void, _]
-    def getChildFilters(): Array[FilterBuilder]
+    def getChildFilters(): JSArray[FilterBuilder]
     def getCriteria(includeEmptyValues: Boolean = js.native): AdvancedCriteria
     def getEditorType(field: DataSourceField, operatorId: OperatorId): SCClassName
-    def getFieldOperators(fieldName: String): Array[OperatorId]
+    def getFieldOperators(fieldName: String): JSArray[OperatorId]
     def getFilterDescription(): String
-    def getSelectedClauses(): Array[FilterClause]
+    def getSelectedClauses(): JSArray[FilterClause]
     var getValueFieldProperties: js.Function4[FieldType, String, OperatorId, ValueItemType, FormItem]
     val inlineAndNotTitle: String
     val inlineAndTitle: String
@@ -84,7 +85,7 @@ trait FilterBuilder extends Layout {
     val topOperatorForm: DynamicForm with AutoChild
     val topOperatorItem: SelectItem with AutoChild
     val topOperatorItemWidth: String | Int
-    val topOperatorOptions: Array[OperatorId]
+    val topOperatorOptions: JSArray[OperatorId]
     val topOperatorTitle: String
     def validate(): Boolean
     val validateOnChange: Boolean

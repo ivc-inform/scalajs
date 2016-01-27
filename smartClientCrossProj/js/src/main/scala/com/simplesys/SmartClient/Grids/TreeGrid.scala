@@ -13,10 +13,10 @@ import com.simplesys.System.Types.DisplayNodeType.DisplayNodeType
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
 import com.simplesys.System.Types.RecordDropAppearance.RecordDropAppearance
 import com.simplesys.System.Types.{void, HTMLString, URL, SCImgURL}
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait TreeGrid extends Grid[TreeGridField, ListGridRecord] {
@@ -42,7 +42,7 @@ trait TreeGrid extends Grid[TreeGridField, ListGridRecord] {
     var folderClick: js.Function3[TreeGrid, TreeNode, Int, void]
     var folderClosed: js.Function1[TreeNode, Boolean]
     var folderContextClick: js.Function3[TreeGrid, TreeNode, Int, Boolean]
-    def folderDrop(nodes: Array[TreeNode], folder: TreeNode, index: Int, sourceWidget: Canvas, callback: Callback): void
+    def folderDrop(nodes: JSArray[TreeNode], folder: TreeNode, index: Int, sourceWidget: Canvas, callback: Callback): void
     var folderIcon: SCImgURL
     var folderOpened: js.Function1[TreeNode, Boolean]
     def getAnimateFolderMaxRows(): Int
@@ -58,7 +58,7 @@ trait TreeGrid extends Grid[TreeGridField, ListGridRecord] {
     var indentRecordComponents: Boolean
     var indentSize: Int
     var funcMenu : MenuSS | Menu
-    val initialData: Array[TreeNode]
+    val initialData: JSArray[TreeNode]
     def isOverExtraIcon(): Boolean
     def isOverOpenArea(): Boolean
     val keepParentsOnFilter: Boolean
@@ -82,7 +82,7 @@ trait TreeGrid extends Grid[TreeGridField, ListGridRecord] {
     val parentAlreadyContainsChildMessage: String
     def recordDrop(): void
     val separateFolders: Boolean
-    val serverFilterFields: Array[String]
+    val serverFilterFields: JSArray[String]
     def setData(newData: Tree): void
     def setNodeIcon(node: TreeNode, icon: SCImgURL): void
     def setOpenState(openState: TreeGridOpenState): void
@@ -101,7 +101,7 @@ trait TreeGrid extends Grid[TreeGridField, ListGridRecord] {
     var showRoot: Boolean
     var sortFoldersBeforeLeaves: Boolean
     def toggleFolder(node: TreeNode): void
-    def transferNodes(nodes: Array[TreeNode], folder: TreeNode, index: Int, sourceWidget: Canvas, callback: Callback = js.native): void
+    def transferNodes(nodes: JSArray[TreeNode], folder: TreeNode, index: Int, sourceWidget: Canvas, callback: Callback = js.native): void
     val treeFieldTitle:String
     val treeRootValue:JSAny
 }

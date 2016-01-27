@@ -25,7 +25,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types._
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -121,7 +121,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var icon: ScOption[SCImgURL] = ScNone
     var iconHeight: ScOption[Int] = ScNone
     var iconOrientation: ScOption[String] = ScNone
-    var icons: ScOption[Array[FormItemIcon]] = ScNone
+    var icons: ScOption[JSArray[FormItemIcon]] = ScNone
     var iconSize: ScOption[Int] = ScNone
     var iconSpacing: ScOption[Int] = ScNone
     var iconVAlign: ScOption[String] = ScNone
@@ -134,7 +134,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var imageWidth: ScOption[Int] = ScNone
     var includeFrom: ScOption[String] = ScNone
     var includeInRecordSummary: ScOption[Boolean] = ScNone
-    var includeInRecordSummaryFields: ScOption[Array[String]] = ScNone
+    var includeInRecordSummaryFields: ScOption[JSArray[String]] = ScNone
     var initialValue: ScOption[JSAny] = ScNone
     var inputFormat: ScOption[DateInputFormat] = ScNone
     var isRemoveField: ScOption[Boolean] = ScNone
@@ -185,7 +185,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var userFormula: ScOption[UserFormula] = ScNone
     var userSummary: ScOption[UserSummary] = ScNone
     var validateOnChange: ScOption[Boolean] = ScNone
-    var validators: ScOption[Array[Validator]] = ScNone
+    var validators: ScOption[JSArray[Validator]] = ScNone
     var valueField: ScOption[String] = ScNone
     var valueIconClick: ScOption[js.Function6[Grid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, JSAny, FormItem, Boolean]] = ScNone
     var valueIconHeight: ScOption[Int] = ScNone

@@ -5,6 +5,7 @@ import com.simplesys.SmartClient.Foundation.StatefulCanvas
 import com.simplesys.SmartClient.Layout.VStack
 import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.System.Types.{AutoChild, SCImgURL, void}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 
@@ -19,7 +20,7 @@ trait AdvancedHiliteEditor extends VStack {
     val filterBuilder: FilterBuilder
     val filterGroupTitle: String
     val hiliteForm: DynamicForm with AutoChild
-    val hiliteIcons: Array[SCImgURL]
+    val hiliteIcons: JSArray[SCImgURL]
     val invalidHilitePrompt: String
     val saveButton: StatefulCanvas with AutoChild
     val saveButtonTitle: String

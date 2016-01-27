@@ -26,7 +26,7 @@ trait Menu extends Grid[ListGridField, MenuItem] {
     var fillSpaceStyleName: CSSStyleName
     def getItem(item: Int): MenuItem
     def getItemNum(item: MenuItem): Int
-    def getItems(): Array[MenuItem]
+    def getItems(): JSArray[MenuItem]
     def getSubmenu(item: MenuItem | Int): MenuItem
     var iconBodyStyleName: CSSStyleName
     val iconFieldDefaults: ListGridField
@@ -35,19 +35,19 @@ trait Menu extends Grid[ListGridField, MenuItem] {
     val iconHeight: Int
     val iconWidth: Int
     var itemClick: js.Function2[Types.Object, Int, Boolean]
-    var items: Array[MenuItem]
+    var items: JSArray[MenuItem]
     val keyFieldDefaults: ListGridField
     val keyFieldProperties: ListGridField
     val menuButtonWidth: Int
     val navigationBar: NavigationBar with AutoChild
     val navStack: Canvas with AutoChild
     val placement: PanelPlacement
-    def setData(items: Array[MenuItem]): void
+    def setData(items: JSArray[MenuItem]): void
     def setItemChecked(item: MenuItem | Int, newState: Boolean = js.native): Boolean
     def setItemEnabled(item: MenuItem | Int, newState: Boolean = js.native): Boolean
     def setItemIcon(item: MenuItem | Int, newIcon: SCImgURL, newDisabledIcon: SCImgURL = js.native): Boolean
     def setItemProperties(item: MenuItem | Int, properties: JSDictionaryAny): void
-    def setItems(items: Array[MenuItem]): void
+    def setItems(items: JSArray[MenuItem]): void
     def setItemTitle(item: MenuItem | Int, newTitle: String): Boolean
     def setShowIcons(showIcons: Boolean): void
     def setShowSubmenus(showSubmenus: Boolean): void

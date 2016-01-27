@@ -7,6 +7,7 @@ import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.props.WindowProps
 import com.simplesys.System.Types.HTMLString
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js._
 
@@ -24,9 +25,9 @@ class MultiSortDialogProps extends WindowProps {
     var deleteLevelButtonTitle: ScOption[String] = ScNone
     var descendingTitle: ScOption[String] = ScNone
     var directionFieldTitle: ScOption[String] = ScNone
-    var fields: ScOption[Array[Object]] = ScNone
+    var fields: ScOption[JSArray[Object]] = ScNone
     var firstSortLevelTitle: ScOption[String] = ScNone
-    var initialSort: ScOption[Array[SortSpecifier]] = ScNone
+    var initialSort: ScOption[JSArray[SortSpecifier]] = ScNone
     var invalidListPrompt: ScOption[HTMLString] = ScNone
     var levelDownButton: ScOption[IButton] = ScNone
     var levelDownButtonTitle: ScOption[String] = ScNone

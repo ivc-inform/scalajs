@@ -28,16 +28,16 @@ import com.simplesys.System.Types._
 import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait DataSource extends Class {
     def addData(newRecord: Record, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     val addGlobalId: Boolean
-    def addSearchOperator(operator: Operator, types: Array[FieldType]): void
+    def addSearchOperator(operator: Operator, types: JSArray[FieldType]): void
     var allowAdvancedCriteria: Boolean
     var allowClientRequestedSummaries: Boolean
-    def applyFilter(data: Array[Record], criteria: Criteria, requestProperties: DSRequest = js.native): Array[Record]
+    def applyFilter(data: JSArray[Record], criteria: Criteria, requestProperties: DSRequest = js.native): JSArray[Record]
     val audit: Boolean
     val auditDataSourceID: String
     val auditDSConstructor: String
@@ -55,7 +55,7 @@ trait DataSource extends Class {
     val cacheAcrossOperationIds: Boolean
     val cacheAllData: Boolean
     val cacheAllOperationId: String
-    val cacheData: Array[Record]
+    val cacheData: JSArray[Record]
     val cacheMaxAge: Int
     val callbackParam: String
     val canMultiSort: Boolean
@@ -69,7 +69,7 @@ trait DataSource extends Class {
     def convertDataSourceCriteria(criteria: Criteria, textMatchStyle: TextMatchStyle = js.native): AdvancedCriteria
     def convertRelativeDates(criteria: Criteria, timezoneOffset: String = js.native, firstDayOfWeek: Int = js.native, baseDate: Date = js.native): Criteria
     def copyRecord(record: Record): Record
-    def copyRecords(records: Array[Record]): Array[Record]
+    def copyRecords(records: JSArray[Record]): JSArray[Record]
     val creatorOverrides: Boolean
     val criteriaPolicy: CriteriaPolicy
     val dataField: String
@@ -93,12 +93,12 @@ trait DataSource extends Class {
     val enumTranslateStrategy: EnumTranslateStrategy
     def evaluateCriterion(record: Record, criterion: Criterion): Boolean
     def execute(dsRequest: DSRequest): void
-    def exportClientData(data: Array[Record], requestProperties: DSRequest, callback: DSCallback): void
+    def exportClientData(data: JSArray[Record], requestProperties: DSRequest, callback: DSCallback): void
     def exportData(criteria: Criteria = js.native, requestProperties: DSRequest = js.native, callback: DSCallback = js.native): void
     def fetchData(criteria: Criteria = js.native, requestProperties: DSRequest = js.native, callback: DSCallback = js.native): void
     def fetchRecord(pkValue: JSAny, requestProperties: DSRequest = js.native, callback: DSCallback = js.native): void
     def fieldMatchesFilter(fieldValue: JSAny, filterValue: JSAny, requestProperties: DSRequest = js.native): Boolean
-    val fields: Array[DataSourceField]
+    val fields: JSArray[DataSourceField]
     val fileContentsField: String
     val fileFormatField: String
     val fileLastModifiedField: String
@@ -107,30 +107,30 @@ trait DataSource extends Class {
     val fileVersionField: String
     def filterData(criteria: Criteria = js.native, requestProperties: DSRequest = js.native, callback: DSCallback = js.native): void
     def getAutoTitle(identifier: ID): String
-    def getCacheData(): Array[Record]
+    def getCacheData(): JSArray[Record]
     def getClientOnlyDataSource(criteria: Criteria, callback: ClientOnlyDataSourceCallback, requestProperties: DSRequest = js.native, dataSourceProperties: DataSource = js.native): void
-    def getClientOnlyResponse(request: DSRequest, serverData: Array[Record]): DSResponse
+    def getClientOnlyResponse(request: DSRequest, serverData: JSArray[Record]): DSResponse
     def getDataProtocol(dsRequest: DSRequest): DSProtocol
     def getDisplayValue(fieldName: String, value: JSAny): JSAny
     def getFetchDataURL(criteria: Criteria, requestProperties: DSRequest = js.native): String
     def getField(fieldName: String): DataSourceField
     def getFieldCriterion(criterion: Criteria, fieldName: String): Criteria
     def getFieldForDataPath(dataPath: DataPath): DataSourceField
-    def getFieldNames(excludeHidden: Boolean): Array[String]
+    def getFieldNames(excludeHidden: Boolean): JSArray[String]
     def getFieldOperatorMap(field: String | DataSourceField, includeHidden: Boolean = js.native, valueType: OperatorValueType = js.native, omitValueType: Boolean = js.native): ValueMap
-    def getFieldOperators(field: String | DataSourceField): Array[OperatorId]
+    def getFieldOperators(field: String | DataSourceField): JSArray[OperatorId]
     def getFile(fileSpec: FileSpec | String, callback: GetFileCallback)
     def getFileURL(data: Record, fieldName: String = js.native, requestProperties: DSRequest = js.native): String
     def getFileVersion(fileSpec: FileSpec | String, version: Date, callback: GetFileVersionCallback): void
     def getLegalChildTags(): void
     def getPrimaryKeyField(): DataSourceField
     def getPrimaryKeyFieldName(): String
-    def getPrimaryKeyFieldNames(): Array[String]
+    def getPrimaryKeyFieldNames(): JSArray[String]
     def getPrimaryKeyFields(): Record
     def getSearchOperator(operatorId: OperatorId): Operator
     def getTypeOperatorMap(`type`: FieldType, includeHidden: Boolean, valueType: OperatorValueType, omitValueType: Boolean): ValueMap
-    def getTypeOperators(typeName: FieldType | String): Array[OperatorId]
-    def getUpdatedData(dsRequest: DSRequest, dsResponse: DSResponse, useDataFromRequest: Boolean): Array[DataSourceRecord]
+    def getTypeOperators(typeName: FieldType | String): JSArray[OperatorId]
+    def getUpdatedData(dsRequest: DSRequest, dsResponse: DSResponse, useDataFromRequest: Boolean): JSArray[DataSourceRecord]
     def getXMLRequestBody(dsRequest: DSRequest): String
     var globalNamespaces: Types.Object
     val guestUserId: String
@@ -159,11 +159,11 @@ trait DataSource extends Class {
     val nullIntegerValue: Int
     val nullStringValue: String
     val omitNullDefaultsOnAdd: String
-    val operationBindings: Array[OperationBinding]
+    val operationBindings: JSArray[OperationBinding]
     val ownerIdField: String
     val patternEscapeChar: String
-    val patternMultiWildcard: String | Array[String]
-    val patternSingleWildcard: String | Array[String]
+    val patternMultiWildcard: String | JSArray[String]
+    val patternSingleWildcard: String | JSArray[String]
     def performCustomOperation(operationId: String, data: Record = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     val pluralTitle: String
     val preventHTTPCaching: Boolean
@@ -171,15 +171,15 @@ trait DataSource extends Class {
     val progressiveLoading: Boolean
     val progressiveLoadingThreshold: Int
     val projectFileKey: String
-    val projectFileLocations: Array[String]
+    val projectFileLocations: JSArray[String]
     val qualifyColumnNames: Boolean
     val quoteColumnNames: Boolean
     val quoteTableName: Boolean
     val recordName: String
     def recordsAreEqual(record1: Record, record2: Record): Boolean
-    def recordsAsText(records: Array[Record], settings: TextExportSettings = js.native): String
-    def recordsFromText(text: String, settings: TextExportSettings = js.native): Array[Record]
-    def recordsFromXML(elements: Array[XMLElement], callback: Callback): Array[Record]
+    def recordsAsText(records: JSArray[Record], settings: TextExportSettings = js.native): String
+    def recordsFromText(text: String, settings: TextExportSettings = js.native): JSArray[Record]
+    def recordsFromXML(elements: JSArray[XMLElement], callback: Callback): JSArray[Record]
     val recordXPath: XPathExpression
     def removeFile(fileSpec: FileSpec | String, callback: DSCallback = js.native): void
     def removeFileVersion(fileSpec: FileSpec | String, version: Date, callback: DSCallback = js.native): void
@@ -205,13 +205,13 @@ trait DataSource extends Class {
     val serverType: DSServerType
     val serviceNamespace: URN
     def setCacheAllData(shouldCache: Boolean): void
-    def setCacheData(data: Array[Record]): void
+    def setCacheData(data: JSArray[Record]): void
     def setClientOnly()
-    def setTypeOperators(typeName: FieldType | String, operators: Array[OperatorId]): void
+    def setTypeOperators(typeName: FieldType | String, operators: JSArray[OperatorId]): void
     val showLocalFieldsOnly: Boolean
     val showPrompt: Boolean
     val sparseUpdates: Boolean
-    def splitCriteria(criteria: Criteria, fields: Array[String]): Criteria
+    def splitCriteria(criteria: Criteria, fields: JSArray[String]): Criteria
     val sqlPaging: SQLPagingStrategy
     val sqlUsePagingHint: Boolean
     val strictSQLFiltering: Boolean
@@ -251,13 +251,13 @@ trait DataSource extends Class {
 @js.native
 abstract trait AbstractDataSourceCompanion extends AbstractClassCompanion {
     def addSearchOperator(operator: Operator): void = js.native
-    def applyRecordSummaryFunction(summaryFunction: SummaryFunction, record: DataSourceRecord, fields: Array[DataSourceField], summaryField: DataSourceField): JSAny = js.native
+    def applyRecordSummaryFunction(summaryFunction: SummaryFunction, record: DataSourceRecord, fields: JSArray[DataSourceField], summaryField: DataSourceField): JSAny = js.native
     def canFlattenCriteria(criteria: AdvancedCriteria): Boolean = js.native
     def combineCriteria(criteria1: Criteria, criteria2: Criteria, outerOperator: CriteriaCombineOperator = js.native, textMatchStyle: TextMatchStyle = js.native): Criteria = js.native
     def convertCriteria(criteria: Criteria, textMatchStyle: TextMatchStyle = js.native): AdvancedCriteria = js.native
     def copyCriteria(criteria: Criteria): Criteria = js.native
     var deepCloneOnEdit: Boolean = js.native
-    def exportClientData(data: Array[Record], requestProperties: DSRequest, callback: DSCallback): void = js.native
+    def exportClientData(data: JSArray[Record], requestProperties: DSRequest, callback: DSCallback): void = js.native
     def flattenCriteria(criteria: AdvancedCriteria): AdvancedCriteria = js.native
     def get(id: ID): DataSource = js.native
     def getAdvancedCriteriaDescription(criteria: AdvancedCriteria | Criterion, dataSource: DataSource): String = js.native
@@ -266,8 +266,8 @@ abstract trait AbstractDataSourceCompanion extends AbstractClassCompanion {
     def getFieldValue(field: DataSourceField | ListGridField | DetailViewerField | FormItem, record: Record | DataPath | Canvas | String): JSAny = js.native
     def getLoaderURL(): String = js.native
     def getSimpleErrors(dsResponse: DSResponse): Types.Object = js.native
-    def getSortBy(sortSpecifiers: Array[SortSpecifier]): Array[String] = js.native
-    def getSortSpecifiers(sortBy: Array[String]): Array[String] = js.native
+    def getSortBy(sortSpecifiers: JSArray[SortSpecifier]): JSArray[String] = js.native
+    def getSortSpecifiers(sortBy: JSArray[String]): JSArray[String] = js.native
     def isFlatCriteria(criteria: AdvancedCriteria): Boolean = js.native
     def load(dsID: ID | JSArray[ID], callback: Callback, forceReload: Boolean = js.native): void = js.native
     var loaderURL: URL = js.native
@@ -278,7 +278,7 @@ abstract trait AbstractDataSourceCompanion extends AbstractClassCompanion {
     def saveValueViaDataPath(field: DataSourceField | ListGridField | DetailViewerField | FormItem, dataPath: DataPath, value: JSAny, values: Record, reason: String): void = js.native
     var serializeTimeAsDatetime: Boolean = js.native
     def setLoaderURL(url: URL): void = js.native
-    def setTypeOperators(typeName: String | FieldType, operators: Array[OperatorId]): void = js.native
+    def setTypeOperators(typeName: String | FieldType, operators: JSArray[OperatorId]): void = js.native
     def removeData(data: Record, fieldName: String = js.native, requestProperties: DSRequest = js.native): void = js.native
 }
 

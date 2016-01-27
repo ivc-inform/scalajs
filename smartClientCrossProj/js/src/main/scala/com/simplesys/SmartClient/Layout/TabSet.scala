@@ -16,11 +16,11 @@ import com.simplesys.System.Types._
 import com.simplesys.types.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait TabSet extends Canvas {
-    def addTabs(tabs: Tab | Array[Tab], position: Int): void
+    def addTabs(tabs: Tab | JSArray[Tab], position: Int): void
     var addTabButton: ImgButton with AutoChild
     var animateTabScrolling: Boolean
     var addTabButtonIcon: SCImgURL

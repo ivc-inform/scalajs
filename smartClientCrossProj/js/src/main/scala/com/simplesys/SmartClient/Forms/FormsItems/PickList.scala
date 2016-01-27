@@ -15,7 +15,7 @@ import com.simplesys.System.Types.PickListItemIconPlacement.PickListItemIconPlac
 import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait PickList extends Class {
@@ -29,16 +29,16 @@ trait PickList extends Class {
     def fetchData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     var fetchDelay: Int
     var fetchDisplayedFieldsOnly: Boolean
-    def filterClientPickListData(): Array[ListGridRecord]
+    def filterClientPickListData(): JSArray[ListGridRecord]
     var filterLocally: Boolean
-    def getClientPickListData(): Array[ListGridRecord]
+    def getClientPickListData(): JSArray[ListGridRecord]
     def getDisplayFieldName(): String
     def getOptionDataSource(): DataSource
     def getPickListFilterCriteria(): Criteria
     def getValueFieldName(): String
     var hideEmptyPickList: Boolean
     val iconPlacement: PickListItemIconPlacement
-    val initialSort: Array[SortSpecifier]
+    val initialSort: JSArray[SortSpecifier]
     val optionDataSource: String| DataSource
     val optionFilterContext: DSRequest
     var pickListApplyRowNumberStyle: Boolean
@@ -46,14 +46,14 @@ trait PickList extends Class {
     var pickListCellHeight: Int
     val pickListConstructor: SCClassName
     var pickListCriteria: Criteria
-    val pickListFields: Array[ListGridField]
+    val pickListFields: JSArray[ListGridField]
     var pickListHeaderHeight: Int
     var pickListHeight: Int
     var pickListMaxWidth: Int
     var pickListProperties: Grid[ListGridField, ListGridRecord]
     val pickListTallBaseStyle: CSSStyleName
     var pickListWidth: Int
-    var separatorRows: Array[ListGridRecord]
+    var separatorRows: JSArray[ListGridRecord]
     val showAllOptions: Boolean
     var showOptionsFromDataSource: Boolean
     val sortField: String | JSArray[String] | Int

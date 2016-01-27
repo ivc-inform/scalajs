@@ -52,7 +52,7 @@ trait RichTextEditor extends VLayout {
     def setMoveFocusOnTab(moveFocusOnTab: Boolean): void
     def setValue(value: String): void
     var strikethroughSelectionPrompt: String
-    val styleControls: Array[ControlName]
+    val styleControls: JSArray[ControlName]
     val toolArea: Layout with AutoChild
     val toolbar: Layout with MultiAutoChild
     val toolbarBackgroundColor: String

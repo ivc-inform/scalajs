@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.System.Types.void
-import com.simplesys.types.{JSArray, JSAny}
+import com.simplesys.types.{JSArrayAny, JSArray, JSAny}
 
 import scala.scalajs.js
 
@@ -18,7 +18,7 @@ trait Array extends List {
     def max(start: Int = js.native, end: Int = js.native): Int
     def min(start: Int = js.native, end: Int = js.native): Int
     def or(start: Int = js.native, end: Int = js.native): Boolean
-    def setSort(sortSpecifiers: SortSpecifier): Array
+    def setSort(sortSpecifiers: SortSpecifier): JSArrayAny
     def slide(start: Int, destination: Int): void
     def slideRange(start: Int, end: Int, destination: Int): void
     def sum(start: Int = js.native, end: Int = js.native): Int

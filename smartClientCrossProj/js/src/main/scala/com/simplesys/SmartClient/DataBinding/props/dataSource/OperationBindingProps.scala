@@ -15,6 +15,7 @@ import com.simplesys.System.Types.SQLType.SQLType
 import com.simplesys.System.Types.URL
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.props.AbstractClassProps
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js._
 
@@ -26,24 +27,24 @@ class OperationBindingProps extends AbstractClassProps {
     var callbackParam: ScOption[String] = ScNone
     var canSyncCache: ScOption[Boolean] = ScNone
     var creatorOverrides: ScOption[Boolean] = ScNone
-    var criteria: ScOption[Array[DSRequestModifier]] = ScNone
-    var customCriteriaFields: ScOption[Array[String]] = ScNone
-    var customFields: ScOption[Array[String]] = ScNone
+    var criteria: ScOption[JSArray[DSRequestModifier]] = ScNone
+    var customCriteriaFields: ScOption[JSArray[String]] = ScNone
+    var customFields: ScOption[JSArray[String]] = ScNone
     var customHQL: ScOption[String] = ScNone
     var customJQL: ScOption[String] = ScNone
     var customSQL: ScOption[String] = ScNone
-    var customValueFields: ScOption[Array[String]] = ScNone
+    var customValueFields: ScOption[JSArray[String]] = ScNone
     var dataFormat: ScOption[DSDataFormat] = ScNone
     var dataProtocol: ScOption[DSProtocol] = ScNone
     var dataTransport: ScOption[RPCTransport] = ScNone
     var dataURL: ScOption[URL] = ScNone
     var defaultParams: ScOption[Types.Object] = ScNone
-    var excludeCriteriaFields: ScOption[Array[String]] = ScNone
+    var excludeCriteriaFields: ScOption[JSArray[String]] = ScNone
     var exportAs: ScOption[ExportFormat] = ScNone
-    var exportFields: ScOption[Array[String]] = ScNone
+    var exportFields: ScOption[JSArray[String]] = ScNone
     var exportFilename: ScOption[String] = ScNone
     var exportResults: ScOption[Boolean] = ScNone
-    var groupBy: ScOption[Array[String]] = ScNone
+    var groupBy: ScOption[JSArray[String]] = ScNone
     var groupClause: ScOption[String] = ScNone
     var guestUserId: ScOption[String] = ScNone
     var invalidateCache: ScOption[Boolean] = ScNone
@@ -85,7 +86,7 @@ class OperationBindingProps extends AbstractClassProps {
     var useHttpProxy: ScOption[Boolean] = ScNone
     var useSpringTransaction: ScOption[Boolean] = ScNone
     var useSubselectForRowCount: ScOption[Boolean] = ScNone
-    var values: ScOption[Array[DSRequestModifier]] = ScNone
+    var values: ScOption[JSArray[DSRequestModifier]] = ScNone
     var valuesClause: ScOption[String] = ScNone
     var whereClause: ScOption[String] = ScNone
     var wsOperation: ScOption[String] = ScNone

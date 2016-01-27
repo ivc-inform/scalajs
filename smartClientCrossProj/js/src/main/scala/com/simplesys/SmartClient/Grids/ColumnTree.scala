@@ -12,7 +12,7 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.types.{JSArray, JSDictionaryAny, JSAny}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait ColumnTree extends Layout with DataBoundComponent {
@@ -28,7 +28,7 @@ trait ColumnTree extends Layout with DataBoundComponent {
     var data: Tree
     var dataProperties: Tree
     def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    var fields: Array[ListGridField]
+    var fields: JSArray[ListGridField]
     def filterData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     val firstColumnTitle: String
     var folderIcon: SCImgURL

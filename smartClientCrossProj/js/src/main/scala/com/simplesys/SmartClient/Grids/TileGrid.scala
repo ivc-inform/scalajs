@@ -14,7 +14,7 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.types.{JSArray, JSDictionaryAny, JSAny}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait TileGrid extends TileLayout with DataBoundComponent {
@@ -25,7 +25,7 @@ trait TileGrid extends TileLayout with DataBoundComponent {
     var canDragTilesOut: Boolean
     var canReorderTiles: Boolean
     def createTile(record: TileRecord, tileIndex: Int): Canvas
-    var data: Array[TileRecord]
+    var data: JSArray[TileRecord]
     var dataArrived: js.Function2[Int, Int, void]
     val detailViewer: DetailViewer
     val detailViewerProperties: JSDictionaryAny
@@ -33,13 +33,13 @@ trait TileGrid extends TileLayout with DataBoundComponent {
     var emptyMessage: HTMLString
     var emptyMessageStyle: CSSStyleName
     def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    val fields: Array[DetailViewerField]
+    val fields: JSArray[DetailViewerField]
     def filterData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def getCurrentTile(): SimpleTile
     def getDragTrackerTitle(record: ListGridRecord, rowNum: Int): String
     def getFieldState(): ListGridFieldState
     def getSelectedRecord(): TileRecord
-    def getSelection(excludePartialSelections: Boolean = js.native): Array[ListGridRecord]
+    def getSelection(excludePartialSelections: Boolean = js.native): JSArray[ListGridRecord]
     def getTile(tile: TileRecord | Int): Canvas
     def getTileHTML(tileRecord: TileRecord): HTMLString
     def getTileIndex(tile: Canvas): Int

@@ -200,8 +200,8 @@ class FormItemProps extends ClassProps {
     var useDisabledHintStyleForReadOnly: ScOption[Boolean] = ScNone
     var validateOnChange: ScOption[Boolean] = ScNone
     var validateOnExit: ScOption[Boolean] = ScNone
-    var validators: ScOption[Array[Validator]] = ScNone
-    var validOperators: ScOption[Array[OperatorId]] = ScNone
+    var validators: ScOption[JSArray[Validator]] = ScNone
+    var validOperators: ScOption[JSArray[OperatorId]] = ScNone
     var vAlign: ScOption[VerticalAlignment] = ScNone
     var value: ScOption[JSAny] = ScNone
     var valueDeselectedCSSText: ScOption[CSSText] = ScNone
@@ -215,7 +215,7 @@ class FormItemProps extends ClassProps {
     var valueIcons: ScOption[Types.Object] = ScNone
     var valueIconSize: ScOption[Int] = ScNone
     var valueIconWidth: ScOption[Int] = ScNone
-    var valueMap: ScOption[Array[Types.Object]] = ScNone
+    var valueMap: ScOption[JSArray[Types.Object]] = ScNone
     var visible: ScOption[Boolean] = ScNone
     var width: ScOption[IntString[Int, String]] = ScNone
     var wrapTitle: ScOption[Boolean] = ScNone

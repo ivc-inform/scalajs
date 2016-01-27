@@ -23,7 +23,7 @@ import com.simplesys.System.Types._
 import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait FormItem extends Class {
@@ -217,7 +217,7 @@ trait FormItem extends Class {
     def setCellStyle(newCellStyle: FormItemBaseStyle): void
     def setCriterion(criterion: Criterion): void
     def setDisabled(disabled: Boolean): void
-    def setErrors(errors: Array[String] | String): void
+    def setErrors(errors: JSArray[String] | String): void
     def setHint(newHint: HTMLString): void
     def setHintStyle(hintStyle: CSSStyleName): void
     def setIconDisabled(icon: String, disabled: Boolean): void
@@ -231,7 +231,7 @@ trait FormItem extends Class {
     def setTop(): void
     def setValue(newValue: JSAny): void
     def setValueIcons(map: Types.Object): void
-    def setValueMap(valueMap: Array[Types.Object]): void
+    def setValueMap(valueMap: JSArray[Types.Object]): void
     def shouldApplyHeightToTextBox(): Boolean
     def shouldFetchMissingValue(newValue: JSAny): Boolean
     def shouldSaveOnEnter(): Boolean
@@ -291,8 +291,8 @@ trait FormItem extends Class {
     def validate(): Boolean
     var validateOnChange: Boolean
     var validateOnExit: Boolean
-    val validators: Array[Validator]
-    val validOperators: Array[OperatorId]
+    val validators: JSArray[Validator]
+    val validOperators: JSArray[OperatorId]
     var vAlign: VerticalAlignment
     val value: JSAny
     def valueClipped(): Boolean
@@ -307,7 +307,7 @@ trait FormItem extends Class {
     var valueIcons: Types.Object
     var valueIconSize: Int
     var valueIconWidth: Int
-    var valueMap: Array[Types.Object]
+    var valueMap: JSArray[Types.Object]
     var visible: Boolean
     var width: String | Int
     var wrapTitle: Boolean

@@ -7,7 +7,7 @@ import com.simplesys.System.Types.ChartType.ChartType
 import com.simplesys.types.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait Chart extends Types.Object {
@@ -19,7 +19,7 @@ trait Chart extends Types.Object {
 
 @js.native
 abstract trait AbstractChartCompanion extends Types.Object {
-    val allChartTypes: Array[ChartType] = js.native
+    val allChartTypes: JSArray[ChartType] = js.native
 }
 
 @js.native

@@ -3,13 +3,13 @@ package com.simplesys.SmartClient.Forms.FormsItems
 import com.simplesys.SmartClient.Forms.DateChooser
 import com.simplesys.SmartClient.System.Date
 import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
-import com.simplesys.System.Types.Alignment.Alignment
-import com.simplesys.System.Types.DateItemSelectorFormat.DateItemSelectorFormat
-import com.simplesys.System.Types.{void, DateInputFormat, SCClassName, AutoChild}
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.DateItemSelectorFormat.DateItemSelectorFormat
+import com.simplesys.System.Types.{AutoChild, DateInputFormat, SCClassName, void}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait DateItem extends FormItem {
@@ -27,7 +27,7 @@ trait DateItem extends FormItem {
     def getEnteredValue(): String
     def getFiscalCalendar(): FiscalCalendar
     def getInputFormat(): DateInputFormat
-    def getSelectionRange(): Array[Date]
+    def getSelectionRange(): JSArray[Date]
     var invalidDateStringMessage: String
     var maskDateSeparator: String
     var monthSelector: SelectItem with AutoChild

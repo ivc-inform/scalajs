@@ -6,6 +6,7 @@ import com.simplesys.SmartClient.Layout.{Layout, Toolbar}
 import com.simplesys.SmartClient.Layout.props.WindowProps
 import com.simplesys.System.Types.{HTMLString, CSSStyleName, void, SCImgURL}
 import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -14,7 +15,7 @@ class DialogProps extends WindowProps {
     var askIcon: ScOption[SCImgURL] = ScNone
     var autoFocus: ScOption[Boolean] = ScNone
     var buttonClick: ScOption[js.Function2[Button, Int, _]] = ScNone
-    var buttons: ScOption[Array[Button]] = ScNone
+    var buttons: ScOption[JSArray[Button]] = ScNone
     var cancelClick: ScOption[js.Function1[void, _]] = ScNone
     var confirmIcon: ScOption[SCImgURL] = ScNone
     var doneClick: ScOption[js.Function1[void, _]] = ScNone
@@ -30,7 +31,7 @@ class DialogProps extends WindowProps {
     var sayIcon: ScOption[SCImgURL] = ScNone
     var showToolbar: ScOption[Boolean] = ScNone
     var toolbar: ScOption[Toolbar] = ScNone
-    var toolbarButtons: ScOption[Array[Button]] = ScNone
+    var toolbarButtons: ScOption[JSArray[Button]] = ScNone
     var warnIcon: ScOption[SCImgURL] = ScNone
     var yesClick: ScOption[js.Function1[void, _]] = ScNone
 }
