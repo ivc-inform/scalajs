@@ -90,6 +90,7 @@ package object System {
     object ListGridEditor extends SCApply[ListGridEditor, ListGridEditorProps]
     object TreeGrid extends SCApply[TreeGrid, TreeGridProps]
     object TreeGridEditor extends SCApply[TreeGridEditor, TreeGridEditorProps]
+    object TreeListGridEditor extends SCApply[TreeListGridEditor, TreeListGridEditorProps]
     object Tree extends SCApply[Tree, TreeProps]
     //</editor-fold>
 
