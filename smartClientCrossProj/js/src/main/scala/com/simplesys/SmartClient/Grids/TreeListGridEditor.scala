@@ -9,7 +9,7 @@ import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.System.Types.SelectionStyle._
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types.{SCImgURL, void}
 import com.simplesys.types.{JSAny, JSArray}
 
 import scala.scalajs.js
@@ -106,5 +106,14 @@ trait TreeListGridEditor extends HLayoutSS {
     def getTreeCriteria(): Criteria
     var listGrid : ListGridEditor
     var treeGrid : TreeGridEditor
+    var folderDropImageTree: SCImgURL
+    var folderIconTree: SCImgURL
+    var canSelectCellsList: Boolean
+    var autoSaveListEdits: Boolean
+    var autoSaveTreeEdits: Boolean
+    var dataSourceList: DataSource
+    var dataSourceTree: DataSource
+    var wrapListCells: Boolean
+    var wrapTreeCells: Boolean
 }
 

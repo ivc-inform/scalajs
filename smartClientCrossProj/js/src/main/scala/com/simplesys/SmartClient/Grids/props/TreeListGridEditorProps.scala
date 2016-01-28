@@ -1,13 +1,13 @@
 package com.simplesys.SmartClient.Grids.props
 
+import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Layout.props.HLayoutSSProps
 import com.simplesys.System.Types.SelectionStyle.SelectionStyle
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.option.{IntString, ScOption, ScNone}
+import com.simplesys.System.Types._
+import com.simplesys.option.{IntString, ScNone, ScOption}
 import com.simplesys.types.JSArray
-
-import scala.scalajs.js._
 
 class TreeListGridEditorProps extends HLayoutSSProps {
     var widthTree: ScOption[IntString[Int, String]] = ScNone
@@ -56,4 +56,13 @@ class TreeListGridEditorProps extends HLayoutSSProps {
     var autoFetchTextMatchStyleList: ScOption[TextMatchStyle] = ScNone
     var canEditTree: ScOption[Boolean] = ScNone
     var canEditList: ScOption[Boolean] = ScNone
+    var folderDropImageTree: ScOption[SCImgURL] = ScNone
+    var folderIconTree: ScOption[SCImgURL] = ScNone
+    var wrapTreeCells: ScOption[Boolean] = ScNone
+    var canSelectCellsList: ScOption[Boolean] = ScNone
+    var autoSaveListEdits: ScOption[Boolean] = ScNone
+    var autoSaveTreeEdits: ScOption[Boolean] = ScNone
+    var dataSourceList: ScOption[DataSource] = ScNone
+    var dataSourceTree: ScOption[DataSource] = ScNone
+    var wrapListCells: ScOption[Boolean] = ScNone
 }
