@@ -108,6 +108,7 @@ trait TreeListGridEditor extends HLayoutSS {
     var treeGrid : TreeGridEditor
     var folderDropImageTree: SCImgURL
     var folderIconTree: SCImgURL
+    var nodeIconTree: SCImgURL
     var canSelectCellsList: Boolean
     var autoSaveListEdits: Boolean
     var autoSaveTreeEdits: Boolean

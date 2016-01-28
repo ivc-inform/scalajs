@@ -58,6 +58,7 @@ class TreeListGridEditorProps extends HLayoutSSProps {
     var canEditList: ScOption[Boolean] = ScNone
     var folderDropImageTree: ScOption[SCImgURL] = ScNone
     var folderIconTree: ScOption[SCImgURL] = ScNone
+    var nodeIconTree: ScOption[SCImgURL] = ScNone
     var wrapTreeCells: ScOption[Boolean] = ScNone
     var canSelectCellsList: ScOption[Boolean] = ScNone
     var autoSaveListEdits: ScOption[Boolean] = ScNone
