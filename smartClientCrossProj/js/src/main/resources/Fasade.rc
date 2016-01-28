@@ -1,77 +1,87 @@
-var canDragSelectText: Boolean
-    var autoFitFieldWidth: Boolean
-    var canResizeFields: Boolean
-    def findByKey(keyValue: JSAny): R
-    def removeData(removeRecord: R, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    def saveAllEdits(): void
-    def selectAllRecords(visibleNodesOnly: Boolean): void
-    val showAllRecords: Boolean
-    def selectSingleRecordByKey(keyValue: JSAny, newStyle: Boolean): R
-    def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    def hasChanges(): Boolean
-    def getDataLength(): Int
-    var showRecordComponentsByCel: Boolean
-    var showRecordComponents: Boolean
-    var filterOnKeypress: Boolean
-    var drawAheadRatio: Double
-    var autoSaveEdits: Boolean
-    var canEdit: Boolean
-    var showRollOve: Boolean
+def getTreeSelectedRecord(): ListGridRecord
+    def getListSelectedRecord(): ListGridRecord
+    def findByKeyList(keyValue: JSAny): ListGridRecord
+    def findByKeyTree(keyValue: JSAny): ListGridRecord
+    def discardListAllEdits(): void
+    def discardTreeAllEdits(): void
+    def updateListData(updatedRecord: ListGridRecord, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
+    def updateTreeData(updatedRecord: ListGridRecord, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
+    def removeListSelectedData(): void
+    def removeTreeSelectedData(): void
+    var widthTree: Int | String
+    var widthList: Int | String
+    def fetchTreeData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
+    def fetchListData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
+    var fetchTreeDelay: Int
+    var fetchListDelay: Int
+    var showTreeRecordComponents: Boolean
+    var showListRecordComponents: Boolean
+    def selectListSingleRecordByKey(keyValue: JSAny, newStyle: Boolean): ListGridRecord
+    def selectTreeSingleRecordByKey(keyValue: JSAny, newStyle: Boolean): ListGridRecord
+    var editByCellTree: Boolean
+    var editByCellList: Boolean
+    var enableChangeSelectionTree: Boolean
+    var showAllChild: Boolean
+    var selectionTypeTree: SelectionStyle
+    var selectionTypeList: SelectionStyle
+    def getTreeSelection: JSArray[ListGridRecord]
+    var showTreeFilterEditor: Boolean
+    def cancelTreeEditing(): void
+    def cancelListEditing(): void
+    var canAcceptDroppedRecordsTree: Boolean
+    var canAcceptDroppedRecordsList: Boolean
     var autoFetchData: Boolean
-    var showRowNumbers: Boolean
-    var autoSaveConfig: Boolean
-    var showAdvancedFilter: Boolean
-    def selectSingleRecord(record: R): void
-    def selectFirstRecord(): void
-    def hasErrors(): Boolean
-    def getFieldByName(name: String): T
-    def removeSelectedData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    def restoreViewState(callback: Callback): void
-    def getCriteria(): Criteria
-    def setValueMap(fieldID: ID, map: ValueMap): void
-    def setDataSource(dataSource: DataSource): void
-    def setSelectedState(selectedState: S): void
-    def cancelEditing(): void
-    var emptyMessage: String
-    def updateData(updatedRecord: R, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    var wrapCells: Boolean
-    val autoFetchTextMatchStyle: TextMatchStyle
-    def getSelection(excludePartialSelections: Boolean = js.native): JSArray[R]
-    var fixedRecordHeights: Boolean
-    val dragTrackerMode: DragTrackerMode
-    def setData(newData: JSArray[R]): void
-    var autoFitWidthApproach: AutoFitWidthApproach
-    def startEditing(rowNum: Int = js.native, colNum: Int = js.native, suppressFocus: Boolean = js.native): Boolean
-    def addData(newRecord: Record, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    var modalEditing: Boolean
-    var canSelectCells: Boolean
-    var useClientFilteringSorting: Boolean
-    var selectionAppearance: SelectionAppearance
-    def selectRecords(records: JSArray[R], newState: Boolean = js.native): void
-    def setFields(newFields: JSArray[T] = js.native): void
-    def selectRecord(record: R, newState: Boolean = js.native): void
-    def selectRecordByKey(keyValue: JSAny, newState: Boolean = js.native): void
-    def fullRefresh(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    def invalidateCache(): void
-    def saveViewState(callback: Callback): void
-    def getViewState(): ListGridViewState
-    var cancelEditingConfirmationMessage: String
-    def getAllRows(): JSArray[R]
-    var fetchDelay: Int
-    def startEditingNew(newValues: Types.Object | R = js.native, suppressFocus: Boolean = js.native): void
-    var editEvent: ListGridEditEvent
-    def getEditRecord(): R
-    def getSelectedRecord(): R
-    def getSelectedRecords(excludePartialSelections: Boolean = js.native): JSArray[R]
-    def isSelected(): Boolean
-    var canSelectTextExpandedField: Boolean
-    var showFilterEditor: Boolean
-    def discardAllEdits(): void
-    def getSelectedState(): S
-    def getRecord(data: JSAny): R
-    var dataPageSize: Int
-    def getEditorType(field: T, values: Types.Object): String
-    def deselectRecord(record: R | Int): void
-    def deselectRecords(records: JSArray[R]): void
-    def deselectAllRecords(): void
-    def getRowNum(record: R): Int
+    def startListEditing(): void
+    def startTreeEditing(): void
+    def setTreeFields(fields: JSArray[TreeGridField])
+    def setListFields(fields: JSArray[ListGridField])
+    var showTreeAdvancedFilter: Boolean
+    def startTreeEditingNew(): void
+    def saveListAllEdits(): void
+    def saveTreeAllEdits(): void
+    var cancelEditingConfirmationMessageList: String
+    var cancelEditingConfirmationMessageTree: String
+    var showListAdvancedFilte: Boolean
+    var canAcceptDropTree: Boolean
+    var drawAheadRatioList: Double
+    def setListSelectedState(selectedState: ListGridSelectedState): void
+    def getListSelectedState(): ListGridSelectedState
+    var drawAheadRatioTree: Double
+    def startListEditingNew
+    def startListEditingNew(newValues: Types.Object | ListGridRecord = js.native, suppressFocus: Boolean = js.native): void
+    def setFuncMenu(menu: MenuSS): void
+    def getFuncMenu(): MenuSS
+    var showResizeBarList: Boolean
+    def fullTreeRefresh(): void
+    def fullListRefresh(): void
+    def getListEditRecord(): ListGridRecord
+    var heightTree: Int | String
+    var heightList: Int | String
+    def setTreeSelectedState(selectedState: TreeGridSelectedState): void
+    def getTreeSelectedState(): TreeGridSelectedState
+    var canSelectCellsLis: Boolean
+    var showTreeRecordComponentsByCell: Boolean
+    var showListRecordComponentsByCell: Boolean
+    var canSelectCellsTree: Boolean
+    var emptyMessageTree: String
+    var emptyMessageList: String
+    var showResizeBarTree: Boolean
+    var canReparentNodesTree: Boolean
+    var showListFilterEditor: Boolean
+    var filterTreeOnKeypress: Boolean
+    var filterListOnKeypress: Boolean
+    var showOpenIconsTree: Boolean
+    var loadDataOnDemandTree: Boolean
+    def setTreeDataSource(dataSource: DataSource):void
+    def setListDataSource(dataSource: DataSource):void
+    var dataPageSizeTree: Int
+    var dataPageSizeList: Int
+    var autoFetchTextMatchStyleTree: TextMatchStyle
+    var autoFetchTextMatchStyleList: TextMatchStyle
+    var canEditTree: Boolean
+    var canEditList: Boolean
+    def setContextMenuTreeGridEditor(menu: MenuSS): void
+    def setContextMenuListGridEditor(menu: MenuSS): void
+    def setTreeCanReparentNodes(value: Boolean): void
+    def getListCriteria(): Criteria
+    def getTreeCriteria(): Criteria
