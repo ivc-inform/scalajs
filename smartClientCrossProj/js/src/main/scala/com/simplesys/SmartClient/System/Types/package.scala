@@ -29,6 +29,7 @@ package object Types {
 
     type TreeGridOpenState = Object
     type TreeGridViewState = Object
+    type TreeGridSelectedState = Object
 
     type DetailViewerViewState = Object
 
