@@ -17,6 +17,7 @@ trait TreeGridEditor extends VLayoutSS with GridEditor[TreeGridField, ListGridRe
     var canReparentNodes: Boolean
     def startEditingNew(): void
     def startEditing(): void
+    var showOpenIcons: Boolean
 }
 
 

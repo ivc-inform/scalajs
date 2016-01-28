@@ -104,5 +104,7 @@ trait TreeListGridEditor extends HLayoutSS {
     def setTreeCanReparentNodes(value: Boolean): void
     def getListCriteria(): Criteria
     def getTreeCriteria(): Criteria
+    var listGrid : ListGridEditor
+    var treeGrid : TreeGridEditor
 }
 
