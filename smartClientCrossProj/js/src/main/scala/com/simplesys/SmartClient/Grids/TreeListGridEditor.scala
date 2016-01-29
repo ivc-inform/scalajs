@@ -104,8 +104,6 @@ trait TreeListGridEditor extends HLayoutSS {
     def setTreeCanReparentNodes(value: Boolean): void
     def getListCriteria(): Criteria
     def getTreeCriteria(): Criteria
-    var listGrid : ListGridEditor
-    var treeGrid : TreeGridEditor
     var folderDropImageTree: SCImgURL
     var folderIconTree: SCImgURL
     var nodeIconTree: SCImgURL
@@ -116,5 +114,7 @@ trait TreeListGridEditor extends HLayoutSS {
     var dataSourceTree: DataSource
     var wrapListCells: Boolean
     var wrapTreeCells: Boolean
+    def getListGrid(): ListGridEditor
+    def getTreeGrid(): TreeGridEditor
 }
 
