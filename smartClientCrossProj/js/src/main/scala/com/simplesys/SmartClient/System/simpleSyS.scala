@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.Control.MenuSS
+import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.System.Types.void
