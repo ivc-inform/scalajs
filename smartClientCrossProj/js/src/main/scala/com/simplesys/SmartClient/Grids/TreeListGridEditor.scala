@@ -116,5 +116,7 @@ trait TreeListGridEditor extends HLayoutSS {
     var wrapTreeCells: Boolean
     def getListGrid(): ListGridEditor
     def getTreeGrid(): TreeGridEditor
+    var fieldsTree : JSArray[TreeGridField]
+    var fieldsList : JSArray[ListGridField]
 }
 

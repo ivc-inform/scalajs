@@ -1,7 +1,10 @@
 package com.simplesys.SmartClient.Grids.props
 
 import com.simplesys.SmartClient.DataBinding.DataSource
-import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
+import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
+import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
+import com.simplesys.SmartClient.Grids.props.treeGrid.TreeGridFieldProps
+import com.simplesys.SmartClient.Grids.treeGrid.TreeGridField
 import com.simplesys.SmartClient.Layout.props.HLayoutSSProps
 import com.simplesys.System.Types.SelectionStyle.SelectionStyle
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
@@ -66,4 +69,6 @@ class TreeListGridEditorProps extends HLayoutSSProps {
     var dataSourceList: ScOption[DataSource] = ScNone
     var dataSourceTree: ScOption[DataSource] = ScNone
     var wrapListCells: ScOption[Boolean] = ScNone
+    var fieldsTree: ScOption[Seq[TreeGridFieldProps]] = ScNone
+    var fieldsList: ScOption[Seq[ListGridFieldProps]] = ScNone
 }
