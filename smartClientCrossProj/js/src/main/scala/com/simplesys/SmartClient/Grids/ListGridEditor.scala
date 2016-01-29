@@ -11,8 +11,10 @@ import com.simplesys.System.Types.AutoFitWidthApproach._
 import com.simplesys.System.Types.DragTrackerMode._
 import com.simplesys.System.Types.ListGridEditEvent._
 import com.simplesys.System.Types.SelectionAppearance._
+import com.simplesys.System.Types.SelectionStyle._
 import com.simplesys.System.Types.TextMatchStyle._
 import com.simplesys.System.Types.{ID, void}
+import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.types.{JSAny, JSArray}
 
 import scala.scalajs.js
@@ -38,6 +40,7 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     var filterOnKeypress: Boolean
     var drawAheadRatio: Double
     var autoSaveEdits: Boolean
+    var selectionType: SelectionStyle
     var canEdit: Boolean
     var showRollOve: Boolean
     var autoFetchData: Boolean

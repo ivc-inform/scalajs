@@ -9,6 +9,7 @@ import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
 import com.simplesys.System.Types.DragTrackerMode.DragTrackerMode
 import com.simplesys.System.Types.ListGridEditEvent.ListGridEditEvent
 import com.simplesys.System.Types.SelectionAppearance.SelectionAppearance
+import com.simplesys.System.Types.SelectionStyle._
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.types._
@@ -49,6 +50,7 @@ class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends
     var funcMenu: ScOption[MenuSS] = ScNone
     var dataSource: ScOption[DataSource] = ScNone
     var saveItems: ScOption[Seq[MenuSSItemProps]] = ScNone
+    var selectionType: ScOption[SelectionStyle] = ScNone
 }
 
 class ListGridEditorProps extends GridEditorProps[ListGridFieldProps, ListGridRecordProps] {
