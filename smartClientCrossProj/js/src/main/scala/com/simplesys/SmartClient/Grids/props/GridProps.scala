@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.DataBinding.props.{SortSpecifierProps, DataBoun
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Foundation.{Canvas, GridRenderer, HTMLFlow, StatefulCanvas}
-import com.simplesys.SmartClient.Grids.Grid
+import com.simplesys.SmartClient.Grids.{ListGrid, Grid}
 import com.simplesys.SmartClient.Grids.listGrid._
 import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
 import com.simplesys.SmartClient.Grids.treeGrid.Tree
@@ -53,6 +53,7 @@ import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.types.{JSArray, JSAny, JSArrayAny}
 
 import scala.scalajs.js
+import scala.scalajs.js.ThisFunction0
 
 class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps with DataBoundComponentProps {
     var advancedFieldPickerThreshold: ScOption[Int] = ScNone
@@ -553,9 +554,14 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var warnOnUnmappedValueFieldChange: ScOption[Boolean] = ScNone
     var wrapCells: ScOption[Boolean] = ScNone
     var wrapHeaderTitles: ScOption[Boolean] = ScNone
+    var setSelectionChanged: ScOption[ThisFunction0[callbackHandler, _]] = ScNone
+    var setSelectionUpdated: ScOption[ThisFunction0[callbackHandler, _]] = ScNone
+    var unSetSelectionChanged: ScOption[ThisFunction0[callbackHandler, _]] = ScNone
+    var unSetSelectionUpdated: ScOption[ThisFunction0[callbackHandler, _]] = ScNone
 }
 
 class ListGridProps extends GridProps[ListGridField, ListGridRecord] {
+    type callbackHandler <: ListGrid
     var fields: ScOption[Seq[ListGridFieldProps]] = ScNone
     var defaultFields: ScOption[Seq[ListGridFieldProps]] = ScNone
     var data: ScOption[Seq[ListGridRecord]] = ScNone
