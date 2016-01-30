@@ -133,4 +133,7 @@ trait DataSourceField extends Types.Object {
     val viewRequiresAuthentication: Boolean
     val viewRequiresRole: String
     val xmlAttribute: Boolean
+    val foreignField: String
+    var lookup: Boolean
+    var captionClassLookup: String
 }
