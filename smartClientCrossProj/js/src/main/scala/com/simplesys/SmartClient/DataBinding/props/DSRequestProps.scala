@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.DataBinding.props
 
-import com.simplesys.SmartClient.DataBinding.{ResultSet, ResultTree, SortSpecifier}
+import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
-import com.simplesys.SmartClient.RPC.props.RPCRequestProps
+import com.simplesys.SmartClient.RPC.props.{RequestCommon, RPCRequestProps}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.Record
 import com.simplesys.System.Types.DSOperationType.DSOperationType
@@ -19,12 +19,12 @@ import com.simplesys.types.{JSArray, JSDictionaryAny, JSDictionary, JSAny}
 import scala.scalajs.js
 import scala.scalajs.js._
 
-class DSRequestProps extends RPCRequestProps {
+class DSRequestProps extends RequestCommon[DSCallback] {
     var additionalOutputs: ScOption[String] = ScNone
     var componentId: ScOption[String] = ScNone
-    override val data: ScOption[JSDictionaryAny] = ScNone
     var dataProtocol: ScOption[DSProtocol] = ScNone
     var dataSource: ScOption[String] = ScNone
+    val data: ScOption[JSDictionaryAny] = ScNone
     var endRow: ScOption[Int] = ScNone
     var exportAs: ScOption[ExportFormat] = ScNone
     var exportCSS: ScOption[String] = ScNone

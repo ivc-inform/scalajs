@@ -89,7 +89,7 @@ package object System {
     //</editor-fold>
 
     //<editor-fold desc="RPC">
-    //object RPCRequest extends SCApply[RPCRequest, RPCRequestProps]
+    object RPCRequest extends SCApply[RPCRequest, RPCRequestProps]
     //object RPCResponse extends SCApply[RPCResponse, RPCResponseProps]
     //</editor-fold>
 
