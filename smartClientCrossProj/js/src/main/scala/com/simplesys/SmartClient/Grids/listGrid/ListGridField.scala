@@ -78,7 +78,7 @@ trait ListGridField extends Types.Object {
     var editorImageURLPrefix: String
     var editorImageURLSuffix: String
     var editorProperties: FormItem
-    var editorType: FormItem
+    var editorType: FormItemClassName
     var editorValueIconHeight: Int
     var editorValueIcons: Types.Object
     var editorValueIconWidth: Int
@@ -91,7 +91,7 @@ trait ListGridField extends Types.Object {
     var exportFormat: FormatString
     val exportRawValues: Boolean
     var filterEditorProperties: FormItem
-    var filterEditorType: FormItem
+    var filterEditorType: FormItemClassName
     var filterEditorValueMap: Types.Object
     var filterOnKeypress: Boolean
     var filterOperator: OperatorId

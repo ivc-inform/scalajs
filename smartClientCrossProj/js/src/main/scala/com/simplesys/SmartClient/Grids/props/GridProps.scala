@@ -281,7 +281,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var getCellRecord: ScOption[js.ThisFunction1[callbackHandler, Int, R]] = ScNone
     var getCellStyle: ScOption[js.ThisFunction3[callbackHandler, R, Int, Int, CSSStyleName]] = ScNone
     var getCellValue: ScOption[js.ThisFunction3[callbackHandler, R, Int, Int, String]] = ScNone
-    var getEditorProperties: ScOption[js.Function1[T, Object]] = ScNone
+    var getEditorProperties: ScOption[js.Function3[T, R, Int, Types.Object]] = ScNone
     var getDragData: ScOption[js.Function1[DataBoundComponent, JSArray[R]]] = ScNone
     var getRowHeight: ScOption[js.Function2[Int, Int, Int]] = ScNone
     var getRowSpan: ScOption[js.Function3[R, Int, Int, Int]] = ScNone

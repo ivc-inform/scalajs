@@ -77,7 +77,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var editorImageURLPrefix: ScOption[String] = ScNone
     var editorImageURLSuffix: ScOption[String] = ScNone
     var editorProperties: ScOption[FormItem] = ScNone
-    var editorType: ScOption[FormItem] = ScNone
+    var editorType: ScOption[FormItemClassName] = ScNone
     var editorValueIconHeight: ScOption[Int] = ScNone
     var editorValueIcons: ScOption[Types.Object] = ScNone
     var editorValueIconWidth: ScOption[Int] = ScNone
@@ -90,7 +90,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var exportFormat: ScOption[FormatString] = ScNone
     var exportRawValues: ScOption[Boolean] = ScNone
     var filterEditorProperties: ScOption[FormItem] = ScNone
-    var filterEditorType: ScOption[FormItem] = ScNone
+    var filterEditorType: ScOption[FormItemClassName] = ScNone
     var filterEditorValueMap: ScOption[Types.Object] = ScNone
     var filterOnKeypress: ScOption[Boolean] = ScNone
     var filterOperator: ScOption[OperatorId] = ScNone

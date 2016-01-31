@@ -7,6 +7,8 @@ import scala.scalajs.js.annotation.JSName
 trait AutoFitTextAreaItem extends TextAreaItem {
     var maxHeight: Int
 }
+@js.native
+object AutoFitTextAreaItem extends FormItemCompanion
 
 
 

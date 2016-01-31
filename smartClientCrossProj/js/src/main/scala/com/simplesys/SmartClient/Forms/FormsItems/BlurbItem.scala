@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
+import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.SCClassName
 
 import scala.scalajs.js
@@ -11,6 +12,9 @@ trait BlurbItem extends FormItem {
     var editProxyConstructor: SCClassName
     var wrap: Boolean
 }
+
+@js.native
+object BlurbItem extends FormItemCompanion
 
 
 
