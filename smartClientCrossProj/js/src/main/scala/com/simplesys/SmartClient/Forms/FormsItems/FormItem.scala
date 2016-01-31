@@ -20,7 +20,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.types.{JSArray, JSAny}
+import com.simplesys.types.{JSDictionary, JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -304,10 +304,10 @@ trait FormItem extends Class {
     var valueIconHeight: Int
     var valueIconLeftPadding: Int
     var valueIconRightPadding: Int
-    var valueIcons: Types.Object
     var valueIconSize: Int
     var valueIconWidth: Int
-    var valueMap: JSArray[Types.Object]
+    var valueMap: JSDictionary[JSAny]
+    var valueIcons: JSDictionary[String]
     var visible: Boolean
     var width: String | Int
     var wrapTitle: Boolean

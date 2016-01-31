@@ -193,10 +193,10 @@ class ListGridFieldProps extends AbstractClassProps {
     var valueIconLeftPadding: ScOption[Int] = ScNone
     var valueIconOrientation: ScOption[String] = ScNone
     var valueIconRightPadding: ScOption[Int] = ScNone
-    var valueIcons: ScOption[Types.Object] = ScNone
+    var valueIcons: ScOption[Map[String, Any]] = ScNone
     var valueIconSize: ScOption[Int] = ScNone
     var valueIconWidth: ScOption[Int] = ScNone
-    var valueMap: ScOption[Seq[Types.Object]] = ScNone
+    var valueMap: ScOption[Map[String, Any]] = ScNone
     var width: ScOption[Int] = ScNone
     var wrap: ScOption[Boolean] = ScNone
 }

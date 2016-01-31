@@ -212,10 +212,10 @@ class FormItemProps extends ClassProps {
     var valueIconHeight: ScOption[Int] = ScNone
     var valueIconLeftPadding: ScOption[Int] = ScNone
     var valueIconRightPadding: ScOption[Int] = ScNone
-    var valueIcons: ScOption[Types.Object] = ScNone
+    var valueIcons: ScOption[Map[String, String]] = ScNone
     var valueIconSize: ScOption[Int] = ScNone
     var valueIconWidth: ScOption[Int] = ScNone
-    var valueMap: ScOption[JSArray[Types.Object]] = ScNone
+    var valueMap: ScOption[Map[String, Any]] = ScNone
     var visible: ScOption[Boolean] = ScNone
     var width: ScOption[IntString[Int, String]] = ScNone
     var wrapTitle: ScOption[Boolean] = ScNone
