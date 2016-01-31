@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.DataBinding.props
 
 import com.simplesys.SmartClient.DataBinding.dataSource.{DataSourceField, OperationBinding}
-import com.simplesys.SmartClient.DataBinding.props.dataSource.{OperationBindingProps, DataSourceFieldProps}
+import com.simplesys.SmartClient.DataBinding.props.dataSource.{WildRecordColumnProps, OperationBindingProps, DataSourceFieldProps}
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DSResponse, DataSource, JSON}
 import com.simplesys.SmartClient.RPC.ServerObject
 import com.simplesys.SmartClient.System.Types
@@ -165,4 +165,5 @@ class DataSourceProps extends ClassProps {
     var useTestDataFetch: ScOption[Boolean] = ScNone
     var validateRelatedRecords: ScOption[Boolean] = ScNone
     var xmlNamespaces: ScOption[Types.Object] = ScNone
+    var wildRecord: ScOption[Seq[WildRecordColumnProps]] = ScNone
 }
