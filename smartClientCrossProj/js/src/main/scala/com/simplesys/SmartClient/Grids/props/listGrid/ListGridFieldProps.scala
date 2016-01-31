@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.Grids.props.listGrid
 
 import com.simplesys.SmartClient.DataBinding.DSRequest
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Forms.FormsItems.FormItems.FormItems
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Grids.Grid
@@ -77,7 +78,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var editorImageURLPrefix: ScOption[String] = ScNone
     var editorImageURLSuffix: ScOption[String] = ScNone
     var editorProperties: ScOption[FormItem] = ScNone
-    var editorType: ScOption[FormItemClassName] = ScNone
+    var editorType: ScOption[FormItems] = ScNone
     var editorValueIconHeight: ScOption[Int] = ScNone
     var editorValueIcons: ScOption[Types.Object] = ScNone
     var editorValueIconWidth: ScOption[Int] = ScNone
