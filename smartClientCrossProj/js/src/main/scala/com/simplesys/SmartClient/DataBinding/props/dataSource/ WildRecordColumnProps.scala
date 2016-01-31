@@ -7,5 +7,5 @@ import scala.scalajs.js._
 
 class WildRecordColumnProps extends AbstractClassProps {
     var name: ScOption[String] = ScNone
-    var value: ScOption[String] = ScNone
+    var value: ScOption[Any] = ScNone
 }
