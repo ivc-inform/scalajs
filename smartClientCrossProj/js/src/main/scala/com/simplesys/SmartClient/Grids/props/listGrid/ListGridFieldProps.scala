@@ -26,7 +26,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types._
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.types.{JSArray, JSAny}
+import com.simplesys.types.{JSDictionary, JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -193,10 +193,10 @@ class ListGridFieldProps extends AbstractClassProps {
     var valueIconLeftPadding: ScOption[Int] = ScNone
     var valueIconOrientation: ScOption[String] = ScNone
     var valueIconRightPadding: ScOption[Int] = ScNone
-    var valueIcons: ScOption[Map[String, Any]] = ScNone
+    var valueIcons: ScOption[JSDictionary[String]] = ScNone
     var valueIconSize: ScOption[Int] = ScNone
     var valueIconWidth: ScOption[Int] = ScNone
-    var valueMap: ScOption[Map[String, Any]] = ScNone
+    var valueMap: ScOption[JSDictionary[Any]] = ScNone
     var width: ScOption[Int] = ScNone
     var wrap: ScOption[Boolean] = ScNone
 }
