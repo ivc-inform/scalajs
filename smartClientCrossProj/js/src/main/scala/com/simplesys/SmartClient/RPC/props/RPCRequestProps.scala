@@ -12,7 +12,7 @@ import com.simplesys.types.JSAny
 import scala.scalajs.js
 import scala.scalajs.js._
 
-class RPCRequestProps[D <: JSAny] extends ClassProps {
+class RPCRequestProps extends ClassProps {
     var actionURL: ScOption[URL] = ScNone
     var allowIE9Leak: ScOption[Boolean] = ScNone
     var bypassCache: ScOption[Boolean] = ScNone
@@ -21,7 +21,7 @@ class RPCRequestProps[D <: JSAny] extends ClassProps {
     var clientContext: ScOption[Types.Object] = ScNone
     var containsCredentials: ScOption[Boolean] = ScNone
     var contentType: ScOption[String] = ScNone
-    val data: ScOption[D] = ScNone
+    val data: ScOption[JSAny] = ScNone
     var downloadResult: ScOption[Boolean] = ScNone
     var downloadToNewWindow: ScOption[Boolean] = ScNone
     var evalResult: ScOption[Boolean] = ScNone

@@ -19,7 +19,7 @@ import com.simplesys.types.{JSArray, JSDictionaryAny, JSDictionary, JSAny}
 import scala.scalajs.js
 import scala.scalajs.js._
 
-class DSRequestProps extends RPCRequestProps[JSDictionaryAny] {
+class DSRequestProps extends RPCRequestProps {
     var additionalOutputs: ScOption[String] = ScNone
     var componentId: ScOption[String] = ScNone
     override val data: ScOption[JSDictionaryAny] = ScNone

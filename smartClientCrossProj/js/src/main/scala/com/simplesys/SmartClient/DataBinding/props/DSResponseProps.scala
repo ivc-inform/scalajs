@@ -9,7 +9,7 @@ import com.simplesys.types.{JSDictionaryAny, JSDictionary, JSAny}
 import scala.scalajs.js
 import scala.scalajs.js.{Object, _}
 
-class DSResponseProps extends RPCResponseProps[JSDictionaryAny] {
+class DSResponseProps extends RPCResponseProps {
     override val data: ScOption[JSDictionaryAny] = ScNone
     var dataSource: ScOption[String] = ScNone
     var endRow: ScOption[Int] = ScNone
