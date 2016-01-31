@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.DataBinding.props
 
-import com.simplesys.SmartClient.RPC.props.RPCResponseProps
+import com.simplesys.SmartClient.RPC.props.{ResponseCommon, RPCResponseProps}
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.System.Types.DSOperationType._
 import com.simplesys.option.{ScNone, ScOption}
@@ -9,8 +9,7 @@ import com.simplesys.types.{JSDictionaryAny, JSDictionary, JSAny}
 import scala.scalajs.js
 import scala.scalajs.js.{Object, _}
 
-class DSResponseProps extends RPCResponseProps {
-    override val data: ScOption[JSDictionaryAny] = ScNone
+class DSResponseProps extends ResponseCommon[JSDictionaryAny] {
     var dataSource: ScOption[String] = ScNone
     var endRow: ScOption[Int] = ScNone
     var errors: ScOption[Object] = ScNone

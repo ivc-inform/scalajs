@@ -8,12 +8,15 @@ import com.simplesys.types.JSAny
 import scala.scalajs.js._
 import scala.scalajs.js
 
-class RPCResponseProps extends ClassProps {
+class ResponseCommon[D <: JSAny] extends ClassProps {
+    val data: ScOption[D] = ScNone
     var clientContext: ScOption[Types.Object] = ScNone
-    val data: ScOption[JSAny] = ScNone
     var httpHeaders: ScOption[Types.Object] = ScNone
     var httpResponseCode: ScOption[Int] = ScNone
     var httpResponseText: ScOption[String] = ScNone
     var status: ScOption[Int] = ScNone
     var transactionNum: ScOption[Int] = ScNone
+}
+
+class RPCResponseProps extends ResponseCommon[JSAny] {
 }
