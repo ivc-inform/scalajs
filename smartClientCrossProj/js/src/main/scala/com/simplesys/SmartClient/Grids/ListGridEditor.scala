@@ -108,6 +108,11 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     def setFuncMenu(menu: MenuSS): void
     def getFuncMenu(): MenuSS
     var saveItems: JSArray[String | MenuSSItem]
+    def setSelectionChanged(func: js.ThisFunction0[callbackHandler, _]): void
+    def setSelectionUpdated(func: js.ThisFunction0[callbackHandler, _]): void
+    def unSetSelectionChanged(func: js.ThisFunction0[callbackHandler, _]): void
+    def unSetSelectionUpdated(func: js.ThisFunction0[callbackHandler, _]): void
+    def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeListGridEditor): void
 }
 
 @js.native
