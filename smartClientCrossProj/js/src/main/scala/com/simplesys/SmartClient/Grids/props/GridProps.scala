@@ -554,10 +554,6 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var warnOnUnmappedValueFieldChange: ScOption[Boolean] = ScNone
     var wrapCells: ScOption[Boolean] = ScNone
     var wrapHeaderTitles: ScOption[Boolean] = ScNone
-    var setSelectionChanged: ScOption[ThisFunction0[callbackHandler, _]] = ScNone
-    var setSelectionUpdated: ScOption[ThisFunction0[callbackHandler, _]] = ScNone
-    var unSetSelectionChanged: ScOption[ThisFunction0[callbackHandler, _]] = ScNone
-    var unSetSelectionUpdated: ScOption[ThisFunction0[callbackHandler, _]] = ScNone
 }
 
 class ListGridProps extends GridProps[ListGridField, ListGridRecord] {
