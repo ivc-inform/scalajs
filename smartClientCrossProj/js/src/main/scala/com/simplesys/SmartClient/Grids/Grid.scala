@@ -372,7 +372,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def getEditedRecord(valuesID: Int | Types.Object): Types.Object
     def getEditField(): Types.Object
     def getEditFormItem(field: String | Int): FormItem
-    def getEditorProperties(field: T): Types.Object
+    var getEditorProperties: js.Function1[T,Types.Object]
     def getEditorType(field: T, values: Types.Object): String
     def getEditorValueIcons(field: T, values: Types.Object): Types.Object
     def getEditorValueMap(field: T, values: Types.Object): ValueMap
