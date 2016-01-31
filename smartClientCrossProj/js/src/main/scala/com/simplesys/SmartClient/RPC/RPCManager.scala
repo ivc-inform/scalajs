@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.RPC
 
 import com.simplesys.SmartClient.Foundation.Canvas
+import com.simplesys.SmartClient.RPC.props.RPCRequestProps
 import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
 import com.simplesys.System.Types.PromptStyle.PromptStyle

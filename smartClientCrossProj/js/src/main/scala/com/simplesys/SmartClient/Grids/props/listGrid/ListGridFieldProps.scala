@@ -196,7 +196,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var valueIcons: ScOption[JSDictionary[String]] = ScNone
     var valueIconSize: ScOption[Int] = ScNone
     var valueIconWidth: ScOption[Int] = ScNone
-    var valueMap: ScOption[JSDictionary[Any]] = ScNone
+    var valueMap: ScOption[ValueMap] = ScNone
     var width: ScOption[Int] = ScNone
     var wrap: ScOption[Boolean] = ScNone
 }

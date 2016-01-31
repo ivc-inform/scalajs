@@ -8,6 +8,7 @@ import com.simplesys.System.Types.{void, URL}
 import com.simplesys.types.JSArray
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.|
 
 @js.native
@@ -55,6 +56,7 @@ abstract trait AbstractRPCRequestCompanion extends AbstractClassCompanion {
 }
 
 @js.native
-object RPCRequest extends AbstractRPCRequestCompanion
+@JSName("RPCRequest")
+object RPCRequestStatic extends AbstractRPCRequestCompanion
 
 

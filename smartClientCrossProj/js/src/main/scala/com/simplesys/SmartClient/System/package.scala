@@ -24,6 +24,8 @@ import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
 import com.simplesys.SmartClient.Layout.props.toolStrip.{ToolStripResizerProps, ToolStripButtonProps, ToolStripSeparatorProps, ToolStripMenuButtonProps}
 import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.SmartClient.Layout.toolStrip.{ToolStripResizer, ToolStripButton, ToolStripSeparator, ToolStripMenuButton}
+import com.simplesys.SmartClient.RPC.{RPCResponse, RPCRequest}
+import com.simplesys.SmartClient.RPC.props.{RPCResponseProps, RPCRequestProps}
 import com.simplesys.SmartClient.System.props.TreeProps
 
 //import com.simplesys.macros.PropsToDictionary
@@ -83,6 +85,11 @@ package object System {
     object ViewLoader extends SCApply[ViewLoader, ViewLoaderProps]
     object HTMLFlow extends SCApply[HTMLFlow, HTMLFlowProps]
     object HTMLPane extends SCApply[HTMLPane, HTMLPaneProps]
+    //</editor-fold>
+
+    //<editor-fold desc="RPC">
+    object RPCRequest extends SCApply[RPCRequest, RPCRequestProps]
+    object RPCResponse extends SCApply[RPCResponse, RPCResponseProps]
     //</editor-fold>
 
     //<editor-fold desc="Grids">
