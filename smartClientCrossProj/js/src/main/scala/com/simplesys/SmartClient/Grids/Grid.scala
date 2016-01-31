@@ -854,6 +854,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def unSetSelectionUpdated(func: js.ThisFunction0[callbackHandler, _]): void
     def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor): void
     def selectRecordsByKey(keyValues: Types.Object, newState: Boolean): R
+    var masterGrid: ListGrid
 }
 
 @js.native
