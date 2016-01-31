@@ -4,7 +4,8 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 
 @js.native
-trait CancelItem extends ButtonItem {
-}
+trait CancelItem extends ButtonItem
+
+
 
 

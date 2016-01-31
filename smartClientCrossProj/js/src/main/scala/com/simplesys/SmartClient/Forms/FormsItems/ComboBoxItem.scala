@@ -38,13 +38,15 @@ trait ComboBoxItem extends TextItem with PickList {
     var pickerSearchFieldHint: HTMLString
     var pickerSearchForm: DynamicForm with AutoChild
     var pickListPlacement: PanelPlacement | Canvas | String
-    var progressiveLoading:Boolean
-    var searchStringTooShortMessage:String
-    var separateSpecialValues:Boolean
-    var separateValuesList:Grid[ListGridField, ListGridRecord]
-    def setCriterion ():void
-    def shouldGenerateExactMatchCriteria ():Boolean
-    var showPickListOnKeypress:Boolean
+    var progressiveLoading: Boolean
+    var searchStringTooShortMessage: String
+    var separateSpecialValues: Boolean
+    var separateValuesList: Grid[ListGridField, ListGridRecord]
+    def setCriterion(): void
+    def shouldGenerateExactMatchCriteria(): Boolean
+    var showPickListOnKeypress: Boolean
 }
+
+
 
 

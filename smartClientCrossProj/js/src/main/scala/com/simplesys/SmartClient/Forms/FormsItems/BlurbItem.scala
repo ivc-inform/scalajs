@@ -13,8 +13,6 @@ trait BlurbItem extends FormItem {
     var wrap: Boolean
 }
 
-@js.native
-object BlurbItem extends FormItemCompanion
 
 
 
