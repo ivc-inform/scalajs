@@ -112,7 +112,7 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     def setSelectionUpdated(func: js.ThisFunction0[callbackHandler, _]): void
     def unSetSelectionChanged(func: js.ThisFunction0[callbackHandler, _]): void
     def unSetSelectionUpdated(func: js.ThisFunction0[callbackHandler, _]): void
-    def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeListGridEditor): void
+    def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor): void
 }
 
 @js.native
