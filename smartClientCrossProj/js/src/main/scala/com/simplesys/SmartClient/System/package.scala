@@ -90,8 +90,8 @@ package object System {
 
     //<editor-fold desc="RPC">
     object RPCRequest extends SCApply[RPCRequest, RPCRequestProps]
-    object DSRequest extends SCApply[DSRequest, DSRequestProps]
     object RPCResponse extends SCApply[RPCResponse, RPCResponseProps]
+    object DSRequest extends SCApply[DSRequest, DSRequestProps]
     object DSResponse extends SCApply[DSResponse, DSResponseProps]
     //</editor-fold>
 
