@@ -1,18 +1,15 @@
 package com.simplesys.SmartClient.RPC.props
 
-import com.simplesys.SmartClient.DataBinding.RPCCallback
-import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
+import com.simplesys.SmartClient.DataBinding.Callbacks.RPCCallback
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.PromptStyle.PromptStyle
 import com.simplesys.System.Types.RPCTransport.RPCTransport
 import com.simplesys.System.Types._
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.types._
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
 class RequestCommon[C <: js.Function] extends ClassProps {
     var callback: ScOption[C] = ScNone
@@ -51,6 +48,6 @@ class RequestCommon[C <: js.Function] extends ClassProps {
     var withCredentials: ScOption[Boolean] = ScNone
 }
 
-class RPCRequestProps extends RequestCommon[js.Function3[RPCResponse,JSDictionaryAny, RPCRequest, _]] {
+class RPCRequestProps extends RequestCommon[RPCCallback] {
     var data: ScOption[JSAny] = ScNone
 }

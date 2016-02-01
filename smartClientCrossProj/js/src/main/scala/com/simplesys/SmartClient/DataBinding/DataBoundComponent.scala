@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.DataBinding
 
+import com.simplesys.SmartClient.DataBinding.Callbacks.DSCallback
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.{Hilite, HiliteEditor, ListGridField}
 import com.simplesys.SmartClient.Layout.{Window}

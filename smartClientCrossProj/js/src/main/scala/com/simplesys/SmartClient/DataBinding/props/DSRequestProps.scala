@@ -1,8 +1,9 @@
 package com.simplesys.SmartClient.DataBinding.props
 
+import com.simplesys.SmartClient.DataBinding.Callbacks.DSCallback
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
-import com.simplesys.SmartClient.RPC.props.{RequestCommon, RPCRequestProps}
+import com.simplesys.SmartClient.RPC.props.RequestCommon
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.Record
 import com.simplesys.System.Types.DSOperationType.DSOperationType
@@ -13,14 +14,10 @@ import com.simplesys.System.Types.ExportImageFormat.ExportImageFormat
 import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.ValidationMode.ValidationMode
-import com.simplesys.System.Types._
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.types.{JSArray, JSDictionaryAny, JSDictionary, JSAny}
+import com.simplesys.types.{JSArray, JSDictionaryAny}
 
-import scala.scalajs.js
-import scala.scalajs.js._
-
-class DSRequestProps extends RequestCommon[js.Function3[DSResponse,JSDictionaryAny, DSRequest, _]] {
+class DSRequestProps extends RequestCommon[DSCallback] {
     var additionalOutputs: ScOption[String] = ScNone
     var componentId: ScOption[String] = ScNone
     var dataProtocol: ScOption[DSProtocol] = ScNone
