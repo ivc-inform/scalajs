@@ -14,7 +14,6 @@ import com.simplesys.System.Types.SelectionAppearance._
 import com.simplesys.System.Types.SelectionStyle._
 import com.simplesys.System.Types.TextMatchStyle._
 import com.simplesys.System.Types.{ID, void}
-import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.types.{JSAny, JSArray}
 
 import scala.scalajs.js
@@ -108,14 +107,14 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     def setFuncMenu(menu: MenuSS): void
     def getFuncMenu(): MenuSS
     var saveItems: JSArray[String | MenuSSItem]
-    def setSelectionChanged(func: js.ThisFunction0[callbackHandler, _]): void
-    def setSelectionUpdated(func: js.ThisFunction0[callbackHandler, _]): void
-    def unSetSelectionChanged(func: js.ThisFunction0[callbackHandler, _]): void
-    def unSetSelectionUpdated(func: js.ThisFunction0[callbackHandler, _]): void
+    def setSelectionChanged(func: js.Function2[R, Boolean, _]): void
+    def setSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
+    def unSetSelectionChanged(func: js.Function2[R, Boolean, _]): void
+    def unSetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
     def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor): void
 }
 
 @js.native
-trait ListGridEditor extends VLayoutSS with GridEditor[ListGridField, ListGridRecord, ListGridSelectedState]{
+trait ListGridEditor extends VLayoutSS with GridEditor[ListGridField, ListGridRecord, ListGridSelectedState] {
     var grid: ListGrid
 }

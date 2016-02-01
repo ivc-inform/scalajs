@@ -660,11 +660,11 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     val selection: Selection
     var selectionAppearance: SelectionAppearance
     var selectionCanvas: Canvas with AutoChild
-    var selectionChanged: js.Function2[R, Boolean, void]
+    var selectionChanged: js.Function2[R, Boolean, _]
     val selectionProperty: String
     var selectionType: SelectionStyle
     val selectionUnderCanvas: Canvas with AutoChild
-    var selectionUpdated: js.Function2[R, JSArray[R], void]
+    var selectionUpdated: js.Function2[R, JSArray[R], _]
     var selectOnEdit: Boolean
     def selectRecord(record: R, newState: Boolean = js.native): void
     def selectRecords(records: JSArray[R], newState: Boolean = js.native): void
@@ -848,10 +848,10 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     var wrapCells: Boolean
     var wrapHeaderTitles: Boolean
     def getRowNumSelectedGridRecord(): Int
-    def setSelectionChanged(func: js.ThisFunction0[callbackHandler, _]): void
-    def setSelectionUpdated(func: js.ThisFunction0[callbackHandler, _]): void
-    def unSetSelectionChanged(func: js.ThisFunction0[callbackHandler, _]): void
-    def unSetSelectionUpdated(func: js.ThisFunction0[callbackHandler, _]): void
+    def setSelectionChanged(func: js.Function2[R, Boolean, _]): void
+    def setSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
+    def unSetSelectionChanged(func: js.Function2[R, Boolean, _]): void
+    def unSetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
     def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor): void
     def selectRecordsByKey(keyValues: Types.Object, newState: Boolean): R
     var masterGrid: ListGrid

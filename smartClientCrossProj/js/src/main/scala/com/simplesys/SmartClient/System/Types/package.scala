@@ -19,8 +19,8 @@ package object Types {
 
     type Properties = Object
     type EdgeSizes = Object
-    type Record = JSDictionaryAny
-    type DataSourceRecord = JSDictionaryAny
+    type Record = Object
+    type DataSourceRecord = Object
     type CellRecord = Object
     type ListGridSelectedState = Object
     type ListGridSortState = Object
