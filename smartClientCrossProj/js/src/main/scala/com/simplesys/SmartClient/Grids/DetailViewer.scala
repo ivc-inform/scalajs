@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Grids
 
-import com.simplesys.SmartClient.DataBinding.Callbacks.RPCCallback
+import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.DataBinding.fieldPicker.FieldPickerWindow
 import com.simplesys.SmartClient.Foundation.Canvas
