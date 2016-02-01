@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Control.IButton
+import com.simplesys.SmartClient.Foundation.Canvas
 
 import scala.scalajs.js
 
@@ -10,6 +11,8 @@ trait OkCancelPanel extends HPanelSS {
     var cancelFunction: js.Function1[callbackHandler, _]
     var okBtn: IButton
     var cancelButton: IButton
+    def setDisabledOk (value: Boolean): this.type
+    def setOwner (owner: Canvas): this.type
 }
 
 
