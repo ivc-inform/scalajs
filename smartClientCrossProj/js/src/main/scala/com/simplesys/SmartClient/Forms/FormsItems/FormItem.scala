@@ -48,6 +48,7 @@ trait FormItem extends Class {
     var cellStyle: FormItemBaseStyle
     var change: js.Function4[DynamicForm, FormItem, JSAny, JSAny, Boolean]
     var changed: js.Function3[DynamicForm, FormItem, JSAny, _]
+    var changeOnKeypress: Boolean
     def clearErrors(): void
     def clearValue(): void
     var click: js.Function2[DynamicForm, FormItem, Boolean]

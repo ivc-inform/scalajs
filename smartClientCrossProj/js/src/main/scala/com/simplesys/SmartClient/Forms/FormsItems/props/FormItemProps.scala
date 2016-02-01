@@ -46,6 +46,7 @@ class FormItemProps extends ClassProps {
     var cellStyle: ScOption[FormItemBaseStyle] = ScNone
     var change: ScOption[js.Function4[DynamicForm, FormItem, JSAny, JSAny, Boolean]] = ScNone
     var changed: ScOption[js.Function3[DynamicForm, FormItem, JSAny, _]] = ScNone
+    var changeOnKeypress: ScOption[Boolean] = ScNone
     var click: ScOption[js.Function2[DynamicForm, FormItem, Boolean]] = ScNone
     var clipStaticValue: ScOption[Boolean] = ScNone
     var clipTitle: ScOption[Boolean] = ScNone
