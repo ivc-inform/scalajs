@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.Grids
 import com.simplesys.SmartClient.Charts.{FacetChart, Chart}
 import com.simplesys.SmartClient.Control.menu.MenuItem
 import com.simplesys.SmartClient.Control.{Button, IButton}
+import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem

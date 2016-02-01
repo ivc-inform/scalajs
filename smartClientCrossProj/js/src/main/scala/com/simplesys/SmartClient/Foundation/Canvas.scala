@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Foundation
 
 import com.simplesys.SmartClient.Control.MenuSS
-import com.simplesys.SmartClient.DataBinding.AnimationCallback
+import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
 import com.simplesys.SmartClient.Layout.PrintWindow

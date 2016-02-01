@@ -1,17 +1,18 @@
 package com.simplesys.SmartClient.Forms
 
-import com.simplesys.SmartClient.DataBinding.{DSCallback, AdvancedCriteria, DataSource, DSRequest}
+import com.simplesys.SmartClient.DataBinding.Callbacks.DSCallback
+import com.simplesys.SmartClient.DataBinding.{AdvancedCriteria, DSRequest, DataSource}
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.Grid
-import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
+import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.System.Types.{Criteria, Record}
-import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
+import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class, Types}
 import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.void
-import com.simplesys.types.{JSArray, JSAny}
+import com.simplesys.types.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

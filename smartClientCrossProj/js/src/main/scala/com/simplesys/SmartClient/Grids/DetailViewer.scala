@@ -1,17 +1,17 @@
 package com.simplesys.SmartClient.Grids
 
-import com.simplesys.SmartClient.DataBinding.fieldPicker.FieldPickerWindow
+import com.simplesys.SmartClient.DataBinding.Callbacks.RPCCallback
 import com.simplesys.SmartClient.DataBinding._
-import com.simplesys.SmartClient.Foundation.{AbstractCanvasCompanion, Canvas}
-import com.simplesys.SmartClient.Grids.detailViewer.{DetailViewerRecord, DetailViewerField}
+import com.simplesys.SmartClient.DataBinding.fieldPicker.FieldPickerWindow
+import com.simplesys.SmartClient.Foundation.Canvas
+import com.simplesys.SmartClient.Grids.detailViewer.{DetailViewerField, DetailViewerRecord}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
-import com.simplesys.SmartClient.System.Types.{Object, DetailViewerViewState}
-import com.simplesys.System.Types.void
+import com.simplesys.SmartClient.System.Types.{DetailViewerViewState, Object}
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.System.Types._
-import com.simplesys.types.{JSArray, JSAny}
+import com.simplesys.System.Types.{void, _}
+import com.simplesys.types.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

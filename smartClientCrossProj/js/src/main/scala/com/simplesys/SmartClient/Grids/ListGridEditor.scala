@@ -2,7 +2,8 @@ package com.simplesys.SmartClient.Grids
 
 import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
-import com.simplesys.SmartClient.DataBinding.{DSCallback, DSRequest, DataSource}
+import com.simplesys.SmartClient.DataBinding.Callbacks._
+import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.VLayoutSS
 import com.simplesys.SmartClient.System.Types

@@ -1,17 +1,17 @@
 package com.simplesys.SmartClient.Grids
 
-import com.simplesys.SmartClient.DataBinding.{DSCallback, DSRequest, DataBoundComponent}
+import com.simplesys.SmartClient.DataBinding.Callbacks._
+import com.simplesys.SmartClient.DataBinding.{DSRequest, DataBoundComponent}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerField
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.tileGrid.{SimpleTile, TileRecord}
-import com.simplesys.SmartClient.System.Types.{Callback, ListGridFieldState, Criteria}
+import com.simplesys.SmartClient.System.Types.{Criteria, ListGridFieldState}
 import com.simplesys.System.Types.DragAppearance.DragAppearance
-import com.simplesys.System.Types.DragDataAction.DragDataAction
 import com.simplesys.System.Types.SelectionType.SelectionType
-import com.simplesys.System.Types._
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.types.{JSArray, JSDictionaryAny, JSAny}
+import com.simplesys.System.Types._
+import com.simplesys.types.{JSArray, JSDictionaryAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

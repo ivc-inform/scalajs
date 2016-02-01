@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Forms
 
+import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.FormsItems.props.FormItemProps
