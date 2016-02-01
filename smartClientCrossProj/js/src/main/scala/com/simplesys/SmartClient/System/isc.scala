@@ -1,8 +1,9 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.Control._
+import com.simplesys.SmartClient.Grids.ListGrid
 import com.simplesys.SmartClient.System.Types.Callback
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types.{ID, void}
 import com.simplesys.common.Strings._
 import com.simplesys.types.{JSArray, JSDictionary, JSAny, JSArrayAny}
 
@@ -57,6 +58,12 @@ object iscStatic extends Types.Object {
 
     val params: com.simplesys.SmartClient.System.params.type = js.native
     val Log: AbstractLogCompanion = js.native
+
+    def error(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
+    def info(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
+    def ok(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
+    def infos(grid: ListGrid, identifier: ID = js.native, callback: Callback = js.native): void = js.native
+    def errors(grid: ListGrid, identifier: ID = js.native, callback: Callback = js.native): void = js.native
 }
 
 
