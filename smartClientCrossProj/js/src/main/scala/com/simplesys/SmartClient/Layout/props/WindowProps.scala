@@ -80,4 +80,5 @@ class WindowProps extends LayoutProps {
     var status: ScOption[String] = ScNone
     var statusBar: ScOption[Canvas] = ScNone
     var title: ScOption[HTMLString] = ScNone
+    var showMaximizeButton: ScOption[Boolean] = ScNone
 }
