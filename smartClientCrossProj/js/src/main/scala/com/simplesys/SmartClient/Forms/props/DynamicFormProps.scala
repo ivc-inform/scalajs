@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Forms.props
 
+import com.simplesys.SmartClient.DataBinding.props.DataBoundComponentProps
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.FormsItems.props.FormItemProps
@@ -24,7 +25,7 @@ import com.simplesys.option.{IntString, ScNone, ScOption}
 import scala.scalajs.js
 import scala.scalajs.js._
 
-class DynamicFormProps extends CanvasProps {
+class DynamicFormProps extends CanvasProps with DataBoundComponentProps{
     type callbackHandler <: DynamicForm
 
     var action: ScOption[URL] = ScNone
