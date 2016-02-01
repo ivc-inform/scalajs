@@ -114,6 +114,8 @@ package object System {
     object ImgSplitbar extends SCApply[ImgSplitbar, ImgSplitbarProps]
     object Layout extends SCApply[Layout, LayoutProps]
     object LayoutSS extends SCApply[LayoutSS, LayoutSSProps]
+    object HPanelSS extends SCApply[HPanelSS, HPanelSSProps]
+    object OkCancelPanel extends SCApply[OkCancelPanel, OkCancelPanelProps]
     object VLayout extends SCApply[VLayout, VLayoutProps]
     object VLayoutSS extends SCApply[VLayoutSS, VLayoutSSProps]
     object ChainMasterDetail extends SCApply[ChainMasterDetail, ChainMasterDetailProps]
