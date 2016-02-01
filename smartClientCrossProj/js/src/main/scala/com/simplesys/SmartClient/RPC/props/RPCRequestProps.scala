@@ -51,5 +51,5 @@ class RequestCommon[C <: js.Function] extends ClassProps {
 }
 
 class RPCRequestProps extends RequestCommon[RPCCallback] {
-    val data: ScOption[JSAny] = ScNone
+    var data: ScOption[JSAny] = ScNone
 }

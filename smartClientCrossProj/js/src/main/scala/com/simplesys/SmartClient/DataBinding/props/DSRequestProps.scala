@@ -24,7 +24,7 @@ class DSRequestProps extends RequestCommon[DSCallback] {
     var componentId: ScOption[String] = ScNone
     var dataProtocol: ScOption[DSProtocol] = ScNone
     var dataSource: ScOption[String] = ScNone
-    val data: ScOption[JSDictionaryAny] = ScNone
+    var data: ScOption[JSDictionaryAny] = ScNone
     var endRow: ScOption[Int] = ScNone
     var exportAs: ScOption[ExportFormat] = ScNone
     var exportCSS: ScOption[String] = ScNone
