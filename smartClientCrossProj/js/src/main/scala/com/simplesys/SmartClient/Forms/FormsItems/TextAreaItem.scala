@@ -10,7 +10,6 @@ import scala.scalajs.js
 trait TextAreaItem extends FormItem {
     var browserAutoCapitalize: Boolean
     var browserAutoCorrect: Boolean
-    var changeOnKeypress: Boolean
     def deselectValue(start: Boolean = js.native): void
     var editProxyConstructor: SCClassName
     var emptyStringValue: Any

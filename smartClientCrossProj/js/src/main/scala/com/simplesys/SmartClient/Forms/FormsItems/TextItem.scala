@@ -17,7 +17,6 @@ trait TextItem extends FormItem {
     val browserAutoCapitalize: Boolean
     val browserAutoCorrect: Boolean
     val browserInputType: String
-    var changeOnKeypress: js.ThisFunction0[FormItemIcon, Boolean]
     var characterCasing: CharacterCasing
     def deselectValue(start: Boolean): void
     val editProxyConstructor: SCClassName
