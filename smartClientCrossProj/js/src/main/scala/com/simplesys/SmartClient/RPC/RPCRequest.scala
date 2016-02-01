@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
 import com.simplesys.System.Types.PromptStyle.PromptStyle
 import com.simplesys.System.Types.RPCTransport.RPCTransport
 import com.simplesys.System.Types.{void, URL}
-import com.simplesys.types.JSArray
+import com.simplesys.types._
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
@@ -16,7 +16,7 @@ trait RPCRequest extends Class {
     var actionURL: URL
     val allowIE9Leak: Boolean
     var bypassCache: Boolean
-    var callback: Callback
+    var callback: js.Function3[RPCResponse,JSDictionaryAny, RPCRequest, void]
     var callbackParam: String
     var clientContext: Types.Object
     var containsCredentials: Boolean

@@ -13,13 +13,14 @@ import com.simplesys.System.Types.ExportImageFormat.ExportImageFormat
 import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.ValidationMode.ValidationMode
+import com.simplesys.System.Types._
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.types.{JSArray, JSDictionaryAny, JSDictionary, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._
 
-class DSRequestProps extends RequestCommon[DSCallback] {
+class DSRequestProps extends RequestCommon[js.Function3[DSResponse,JSDictionaryAny, DSRequest, _]] {
     var additionalOutputs: ScOption[String] = ScNone
     var componentId: ScOption[String] = ScNone
     var dataProtocol: ScOption[DSProtocol] = ScNone
