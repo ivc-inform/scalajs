@@ -230,6 +230,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def handleHover(): void
     val height: String | Int
     def hide(): void
+    def hide1(): Canvas
     def hideClickMask(ID: String = js.native): void
     def hideComponentMask(): void
     def hideContextMenu(): void
