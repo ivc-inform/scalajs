@@ -374,6 +374,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def setRect(left: Int = js.native, top: Int = js.native, width: Int = js.native, height: Int = js.native): void
     def setRight(right: Int): void
     def setShowResizeBar(show: Boolean): void
+    def setShowResizeBar1(show: Boolean): Canvas
     def setShowShadow(showShadow: Boolean): void
     def setShowSnapGrid(show: Boolean): void
     def setSnapEdge(snapEdge: String): void
