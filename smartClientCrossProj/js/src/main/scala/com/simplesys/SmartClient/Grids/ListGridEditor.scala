@@ -113,6 +113,7 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     def unSetSelectionChanged(func: js.Function2[R, Boolean, _]): void
     def unSetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
     def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor): void
+    def setForignFieldFields(grid: ListGrid, masterGrid: ListGrid): void
 }
 
 @js.native
