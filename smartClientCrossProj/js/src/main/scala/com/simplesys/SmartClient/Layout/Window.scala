@@ -93,6 +93,7 @@ trait Window extends Layout {
     val showHeader: Boolean
     val showHeaderBackground: Boolean
     var showHeaderIcon: Boolean
+    var showMaximizeButton: Boolean
     var showMinimizeButton: Boolean
     val showModalMask: Boolean
     var showResizer: Boolean
@@ -102,7 +103,6 @@ trait Window extends Layout {
     var status: String
     val statusBar: Canvas with AutoChild
     var title: HTMLString
-    var showMaximizeButton: Boolean
 }
 
 

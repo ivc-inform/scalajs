@@ -71,6 +71,7 @@ class WindowProps extends LayoutProps {
     var showHeader: ScOption[Boolean] = ScNone
     var showHeaderBackground: ScOption[Boolean] = ScNone
     var showHeaderIcon: ScOption[Boolean] = ScNone
+    var showMaximizeButton: ScOption[Boolean] = ScNone
     var showMinimizeButton: ScOption[Boolean] = ScNone
     var showModalMask: ScOption[Boolean] = ScNone
     var showResizer: ScOption[Boolean] = ScNone
@@ -80,5 +81,4 @@ class WindowProps extends LayoutProps {
     var status: ScOption[String] = ScNone
     var statusBar: ScOption[Canvas] = ScNone
     var title: ScOption[HTMLString] = ScNone
-    var showMaximizeButton: ScOption[Boolean] = ScNone
 }
