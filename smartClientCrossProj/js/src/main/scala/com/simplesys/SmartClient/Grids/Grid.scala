@@ -850,9 +850,9 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     var wrapHeaderTitles: Boolean
     def getRowNumSelectedGridRecord(): Int
     def setSelectionChanged(func: js.Function2[R, Boolean, _]): void
-    def setSelectionUpdated(func: js.Function2[R, Boolean, _]): void
+    def setSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
     def unSetSelectionChanged(func: js.Function2[R, Boolean, _]): void
-    def unSetSelectionUpdated(func: js.Function2[R, Boolean, _]): void
+    def unSetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
     def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor): void
     def selectRecordsByKey(keyValues: Types.Object, newState: Boolean): R
     var masterGrid: ListGrid
