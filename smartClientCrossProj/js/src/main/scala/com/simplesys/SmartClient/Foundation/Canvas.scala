@@ -110,7 +110,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def containsFocus(): Boolean
     def containsPoint(x: Int, y: Int, withinViewport: Boolean = js.native): Boolean
     var contents: HTMLString
-    var contextMenu : MenuSS
+    var contextMenu: MenuSS
     val cursor: Cursor
     val customEdges: JSArray[String]
     val dataPath: DataPath
@@ -358,7 +358,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def setEditMode(editingOn: Boolean, editContext: EditContext = js.native, editNode: EditNode = js.native): void
     def setGroupLabelBackgroundColor(groupLabelBackgroundColor: CSSColor): void
     def setGroupTitle(newTitle: HTMLString): void
-    def setHeight(height: Int): void
+    def setHeight(height: Int | String): void
     def setHtmlElement(element: DocumentEvent): void
     def setHtmlPosition(element: DrawPosition): void
     def setImage(identifier: String, URL: SCImgURL = js.native, imgDir: String = js.native): void
@@ -385,7 +385,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def setTabIndex(tabIndex: Int): void
     def setTop(top: Int): void
     def setValuesManager(dataPath: DataPath): void
-    def setWidth(width: Int): void
+    def setWidth(width: Int | String): void
     val shadowDepth: Int
     val shadowImage: Int
     var shadowOffset: Int
