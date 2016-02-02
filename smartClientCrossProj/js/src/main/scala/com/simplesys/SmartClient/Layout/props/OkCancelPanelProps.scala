@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Layout.props
 
+import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Layout.OkCancelPanel
 import com.simplesys.option.{ScNone, ScOption}
 
@@ -14,4 +15,5 @@ class OkCancelPanelProps extends HPanelSSProps {
     var ownerDestroy: ScOption[Boolean] = ScNone
     var ownerHide: ScOption[Boolean] = ScNone
     var timeoutClose: ScOption[Int] = ScNone
+    var owner: ScOption[Canvas] = ScNone
 }

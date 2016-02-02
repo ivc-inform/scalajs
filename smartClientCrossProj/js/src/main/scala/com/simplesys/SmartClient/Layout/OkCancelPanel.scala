@@ -11,13 +11,14 @@ trait OkCancelPanel extends HPanelSS {
     var cancelFunction: js.Function1[callbackHandler, _]
     var okBtn: IButton
     var cancelButton: IButton
-    def setDisabledOk (value: Boolean): this.type
-    def setOwner (owner: Canvas): this.type
+    def setDisabledOk(value: Boolean): this.type
+    def setOwner(owner: Canvas): this.type
     var okCaption: String
     var cancelCaption: String
     var ownerDestroy: Boolean
     var ownerHide: Boolean
     var timeoutClose: Int
+    var owner: Canvas
 }
 
 
