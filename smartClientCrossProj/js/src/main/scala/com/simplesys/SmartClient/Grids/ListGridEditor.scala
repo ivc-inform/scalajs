@@ -109,9 +109,9 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     def getFuncMenu(): MenuSS
     var saveItems: JSArray[String | MenuSSItem]
     def setSelectionChanged(func: js.Function2[R, Boolean, _]): void
-    def setSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
+    def setSelectionUpdated(func: js.Function2[R, Boolean, _]): void
     def unSetSelectionChanged(func: js.Function2[R, Boolean, _]): void
-    def unSetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
+    def unSetSelectionUpdated(func: js.Function2[R, Boolean, _]): void
     def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor): void
     def setForignFieldFields(grid: ListGrid, masterGrid: ListGrid): void
 }
