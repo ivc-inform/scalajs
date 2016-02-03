@@ -115,9 +115,9 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor): void
     def setForignFieldFields(grid: ListGrid, masterGrid: ListGrid): void
     var masterGrid: ListGrid | ListGridEditor | TreeGridEditor
-    var grid: ListGrid
 }
 
 @js.native
 trait ListGridEditor extends VLayoutSS with GridEditor[ListGridField, ListGridRecord, ListGridSelectedState] {
+    var grid: ListGrid
 }
