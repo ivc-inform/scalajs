@@ -32,7 +32,7 @@ trait PortalLayout extends Layout {
     def portletMaximized(portlet: Portlet): void
     def portletMinimized(portlet: Portlet): void
     def portletRestored(portlet: Portlet): void
-    val portlets: JSArray[Portlet]
+    val portlets: JSArray[Portlet] | Portlet
     var portletsChanged: js.ThisFunction0[callbackHandler, void]
     var portletsResized: js.ThisFunction0[callbackHandler, void]
     var preventColumnUnderflow: Boolean
