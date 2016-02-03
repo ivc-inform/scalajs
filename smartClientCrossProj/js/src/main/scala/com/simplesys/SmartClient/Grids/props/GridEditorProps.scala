@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.Grids.props
 import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Control.props.menu.MenuSSItemProps
 import com.simplesys.SmartClient.DataBinding.DataSource
+import com.simplesys.SmartClient.Grids.{TreeGridEditor, ListGrid}
 import com.simplesys.SmartClient.Grids.props.listGrid.{ListGridFieldProps, ListGridRecordProps}
 import com.simplesys.SmartClient.Layout.props.VLayoutSSProps
 import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
@@ -13,6 +14,8 @@ import com.simplesys.System.Types.SelectionStyle._
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.types._
+
+import scala.scalajs.js.|
 
 class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends VLayoutSSProps {
     var canDragSelectText: ScOption[Boolean] = ScNone
@@ -51,6 +54,7 @@ class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends
     var dataSource: ScOption[DataSource] = ScNone
     var saveItems: ScOption[Seq[MenuSSItemProps]] = ScNone
     var selectionType: ScOption[SelectionStyle] = ScNone
+    var masterGrid: ScOption[ListGrid] = ScNone
 }
 
 class ListGridEditorProps extends GridEditorProps[ListGridFieldProps, ListGridRecordProps] {
