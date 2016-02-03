@@ -4,7 +4,6 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait HeaderItem extends FormItem {
-}
+trait HeaderItem extends FormItem
 
 

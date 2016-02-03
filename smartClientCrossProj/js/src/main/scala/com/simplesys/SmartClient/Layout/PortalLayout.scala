@@ -5,6 +5,7 @@ import com.simplesys.SmartClient.Layout.portalLayout.PortalPosition
 import com.simplesys.SmartClient.Layout.portalLayout.Portlet
 import com.simplesys.System.Types.{void, MultiAutoChild}
 import com.simplesys.System.Types.Overflow.Overflow
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -24,14 +25,14 @@ trait PortalLayout extends Layout {
     def getDropPortlet(dragTarget: Canvas, colNum: Int, rowNum: Int, dropPosition: Int = js.native): Canvas
     def getNumColumns(): Int
     def getPortalPosition(portlet: Portlet): PortalPosition
-    def getPortletArray(): js.Array[js.Array[js.Array[Portlet]]]
-    def getPortlets(): js.Array[Portlet]
+    def getPortletArray(): JSArray[JSArray[JSArray[Portlet]]]
+    def getPortlets(): JSArray[Portlet]
     val numColumns: Int
-    var portletDropTypes: js.Array[String]
+    var portletDropTypes: JSArray[String]
     def portletMaximized(portlet: Portlet): void
     def portletMinimized(portlet: Portlet): void
     def portletRestored(portlet: Portlet): void
-    val portlets: js.Array[Portlet]
+    val portlets: JSArray[Portlet]
     var portletsChanged: js.ThisFunction0[callbackHandler, void]
     var portletsResized: js.ThisFunction0[callbackHandler, void]
     var preventColumnUnderflow: Boolean
@@ -48,7 +49,7 @@ trait PortalLayout extends Layout {
     def setColumnBorder(columnBorder: String): void
     def setColumnOverflow(overflow: Overflow): void
     def setColumnWidth(colNumber: Int, width: String | Int): void
-    def setPortletDropTypes(portletDropTypes: js.Array[String]): void
+    def setPortletDropTypes(portletDropTypes: JSArray[String]): void
     def setPreventRowUnderflow(preventRowUnderflow: Boolean): void
     def setPreventUnderflow(preventUnderflow: Boolean): void
     def setShowColumnMenus(showMenus: Boolean): void

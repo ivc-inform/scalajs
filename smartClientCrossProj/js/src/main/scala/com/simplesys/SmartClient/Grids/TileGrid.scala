@@ -1,19 +1,20 @@
 package com.simplesys.SmartClient.Grids
 
-import com.simplesys.SmartClient.DataBinding.{DSCallback, DSRequest, DataBoundComponent}
+import com.simplesys.SmartClient.DataBinding.Callbacks._
+import com.simplesys.SmartClient.DataBinding.{DSRequest, DataBoundComponent}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerField
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.tileGrid.{SimpleTile, TileRecord}
-import com.simplesys.SmartClient.System.Types.{Callback, ListGridFieldState, Criteria}
+import com.simplesys.SmartClient.System.Types.{Criteria, ListGridFieldState}
 import com.simplesys.System.Types.DragAppearance.DragAppearance
-import com.simplesys.System.Types.DragDataAction.DragDataAction
 import com.simplesys.System.Types.SelectionType.SelectionType
-import com.simplesys.System.Types._
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types._
+import com.simplesys.types.{JSArray, JSDictionaryAny}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait TileGrid extends TileLayout with DataBoundComponent {
@@ -24,21 +25,21 @@ trait TileGrid extends TileLayout with DataBoundComponent {
     var canDragTilesOut: Boolean
     var canReorderTiles: Boolean
     def createTile(record: TileRecord, tileIndex: Int): Canvas
-    var data: Array[TileRecord]
+    var data: JSArray[TileRecord]
     var dataArrived: js.Function2[Int, Int, void]
     val detailViewer: DetailViewer
-    val detailViewerProperties: js.Dictionary[js.Any]
+    val detailViewerProperties: JSDictionaryAny
     var drawAllMaxTiles: Int
     var emptyMessage: HTMLString
     var emptyMessageStyle: CSSStyleName
     def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    val fields: Array[DetailViewerField]
+    val fields: JSArray[DetailViewerField]
     def filterData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def getCurrentTile(): SimpleTile
     def getDragTrackerTitle(record: ListGridRecord, rowNum: Int): String
     def getFieldState(): ListGridFieldState
     def getSelectedRecord(): TileRecord
-    def getSelection(excludePartialSelections: Boolean = js.native): Array[ListGridRecord]
+    def getSelection(excludePartialSelections: Boolean = js.native): JSArray[ListGridRecord]
     def getTile(tile: TileRecord | Int): Canvas
     def getTileHTML(tileRecord: TileRecord): HTMLString
     def getTileIndex(tile: Canvas): Int
@@ -56,7 +57,7 @@ trait TileGrid extends TileLayout with DataBoundComponent {
     var selectionChanged: js.Function2[TileRecord, Boolean, void]
     var selectionType: SelectionType
     def selectRecord(record: TileRecord | Int, newState: Boolean = js.native): void
-    def selectRecords(record: js.Array[TileRecord] | js.Array[Int], newState: Boolean = js.native): void
+    def selectRecords(record: JSArray[TileRecord] | JSArray[Int], newState: Boolean = js.native): void
     def setCanAcceptDroppedRecords(): void
     def setCanDragTilesOut(): void
     def setCanReorderTiles(): void

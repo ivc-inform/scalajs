@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Forms
 
+import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.FormsItems.props.FormItemProps
@@ -23,6 +24,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VisibilityMode.VisibilityMode
 import com.simplesys.System.Types._
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -30,7 +32,7 @@ import scala.scalajs.js._
 @js.native
 trait DynamicForm extends Canvas with DataBoundComponent {
     var action: URL
-    def addFieldErrors(fieldName: String, errors: Array[String], show: Boolean): void
+    def addFieldErrors(fieldName: String, errors: JSArray[String], show: Boolean): void
     var allowExpressions: Boolean
     var autoComplete: AutoComplete
     val autoFetchTextMatchStyle: TextMatchStyle
@@ -52,7 +54,7 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     def clearValues(): void
     var clipItemTitles: Boolean
     var clipStaticValue: Boolean
-    var colWidths: Array[Any]
+    var colWidths: JSArray[Any]
     def completeEditing(): void
     var dateFormatter: DateDisplayFormat
     var datetimeFormatter: DateDisplayFormat
@@ -65,12 +67,12 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     val errorItemCellStyle: String
     val errorItemProperties: Types.Object
     var errorOrientation: Alignment
-    var errors: Array[Types.Object]
+    var errors: JSArray[Types.Object]
     val errorsPreamble: HTMLString
     def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def fetchRelatedData(record: ListGridRecord, schema: Canvas | DataSource | String, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def fieldIsEditable(field: FormItem | Int | String): Boolean
-    var fields: Array[FormItem]
+    var fields: JSArray[FormItem]
     def filterData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     var fixedColWidths: Boolean
     def focusInItem(itemName: String): void
@@ -83,18 +85,18 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     def getEventItem(): FormItem
     def getEventItemInfo(): FormItemEventInfo
     def getField(itemName: String): FormItem
-    def getFieldErrors(fieldName: String): Array[String]
-    def getFields(): Array[FormItem]
+    def getFieldErrors(fieldName: String): JSArray[String]
+    def getFields(): JSArray[FormItem]
     def getFocusItem(): FormItem
     def getItem(itemName: String): FormItem
-    def getItemErrorHTML(item: FormItem, error: Array[String]): void
-    def getItems(): Array[FormItem]
+    def getItemErrorHTML(item: FormItem, error: JSArray[String]): void
+    def getItems(): JSArray[FormItem]
     def getOldValues(): Types.Object
     def getSaveOperationType(requestProperties: DSRequest = js.native): DSOperationType
     def getTitleAlign(item: FormItem): Alignment
     def getTitleOrientation(item: FormItem = js.native): TitleOrientation
     def getValidatedValues(): Types.Object
-    def getValue(fieldName: String): js.Any
+    def getValue(fieldName: String): JSAny
     def getValues(): Types.Object
     def getValuesAsAdvancedCriteria(textMatchStyle: TextMatchStyle = js.native): AdvancedCriteria
     def getValuesAsCriteria(advanced: Boolean, textMatchStyle: TextMatchStyle = js.native): Criteria | AdvancedCriteria
@@ -109,8 +111,8 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     var implicitSaveOnBlur: Boolean
     def isNewRecord(): Boolean
     def isPendingAsyncValidation(): Boolean
-    var itemChange: js.Function3[FormItem, js.Any, js.Any, Boolean]
-    var itemChanged: js.Function2[FormItem, js.Any, _]
+    var itemChange: js.Function3[FormItem, JSAny, JSAny, Boolean]
+    var itemChanged: js.Function2[FormItem, JSAny, _]
     var itemHoverAlign: Alignment
     var itemHoverDelay: Int
     var itemHoverHeight: Int
@@ -121,7 +123,7 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     var itemHoverWidth: Int
     var itemKeyPress: js.Function3[FormItem, String, Int, Boolean]
     var itemLayout: String
-    var items: Array[FormItem]
+    var items: JSArray[FormItem]
     var longTextEditorThreshold: Int
     var longTextEditorType: String
     var method: FormMethod
@@ -153,15 +155,15 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     def setAction(action: URL): void
     def setCanEdit(canEdit: Boolean): void
     def setErrors(errors: Types.Object, showErrors: Boolean): void
-    def setFieldErrors(fieldName: String, errors: Array[String], show: Boolean): void
-    def setFields(itemList: Array[FormItem]): void
-    def setItems(itemList: Array[FormItem]): void
+    def setFieldErrors(fieldName: String, errors: JSArray[String], show: Boolean): void
+    def setFields(itemList: JSArray[FormItem]): void
+    def setItems(itemList: JSArray[FormItem]): void
     def setMethod(method: FormMethod): void
     def setReadOnlyDisplay(appearance: ReadOnlyDisplayAppearance): void
     def setSaveOperationType(operationType: DSOperationType): void
     def setTarget(target: String): void
     def setTitleOrientation(titleOrientation: TitleOrientation): void
-    def setValue(fieldName: String, value: js.Any): void
+    def setValue(fieldName: String, value: JSAny): void
     def setValueMap(itemName: String, valueMap: ValueMap): void
     def setValues(newData: Types.Object = js.native): void
     def setValuesAsCriteria(criteria: Criterion): void

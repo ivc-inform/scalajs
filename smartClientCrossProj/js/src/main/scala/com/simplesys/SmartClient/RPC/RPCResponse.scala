@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
 import com.simplesys.System.Types.void
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.|
 
 @js.native
@@ -70,5 +71,6 @@ abstract trait AbstractRPCResponseCompanion extends AbstractClassCompanion {
 }
 
 @js.native
-object RPCResponse extends AbstractRPCResponseCompanion
+@JSName("RPCResponse")
+object RPCResponseStatic extends AbstractRPCResponseCompanion
 

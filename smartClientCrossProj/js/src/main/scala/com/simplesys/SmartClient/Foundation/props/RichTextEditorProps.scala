@@ -9,6 +9,7 @@ import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.ControlName.ControlName
 import com.simplesys.System.Types.MultiAutoChild
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -48,7 +49,7 @@ class RichTextEditorProps extends VLayoutProps {
     var outdentPrompt: ScOption[String] = ScNone
     var pasteSelectionPrompt: ScOption[String] = ScNone
     var strikethroughSelectionPrompt: ScOption[String] = ScNone
-    var styleControls: ScOption[Array[ControlName]] = ScNone
+    var styleControls: ScOption[JSArray[ControlName]] = ScNone
     var toolArea: ScOption[Layout] = ScNone
     var toolbar: ScOption[Layout with MultiAutoChild] = ScNone
     var toolbarBackgroundColor: ScOption[String] = ScNone

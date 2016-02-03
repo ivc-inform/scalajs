@@ -2,9 +2,10 @@ package com.simplesys.SmartClient.Foundation
 
 import com.simplesys.System.Types.ImageStyle.ImageStyle
 import com.simplesys.System.Types.{URL, void, CSSStyleName, SCImgURL}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait StretchImg extends StatefulCanvas {
@@ -12,8 +13,8 @@ trait StretchImg extends StatefulCanvas {
     var hSrc: SCImgURL
     val imageType: ImageStyle
     var itemBaseStyle: CSSStyleName
-    val items: Array[StretchItem]
-    def setItems (items: Array[StretchItem]):void
+    val items: JSArray[StretchItem]
+    def setItems (items: JSArray[StretchItem]):void
     def setSrc (src:URL):void
     def setState (newState:String, whichPart:String = js.native):void
     var showDownGrip:Boolean

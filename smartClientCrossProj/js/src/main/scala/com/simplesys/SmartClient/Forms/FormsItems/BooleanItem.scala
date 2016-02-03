@@ -4,8 +4,9 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 
 @js.native
-trait BooleanItem extends CycleItem {
-}
+trait BooleanItem extends CycleItem
+
+
 
 
 

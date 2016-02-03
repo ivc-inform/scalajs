@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Control
 
+import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.{void, SCImgURL}
@@ -10,7 +11,7 @@ import scala.scalajs.js.|
 @js.native
 trait MenuButton extends Button {
     var autoDestroyMenu: Boolean
-    var menu: Menu
+    var menu: MenuSSItem
     val menuAlign: Alignment
     var menuAnimationEffect: String
     val menuButtonImage: SCImgURL

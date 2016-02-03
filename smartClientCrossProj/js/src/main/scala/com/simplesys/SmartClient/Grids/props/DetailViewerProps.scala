@@ -10,6 +10,7 @@ import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types._
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
 
@@ -19,19 +20,19 @@ class DetailViewerProps extends CanvasProps with DataBoundComponentProps {
     var canPickFields: ScOption[Boolean] = ScNone
     var cellStyle: ScOption[CSSStyleName] = ScNone
     var configureFieldsText: ScOption[String] = ScNone
-    var data: ScOption[Array[DetailViewerRecord]] = ScNone
+    var data: ScOption[JSArray[DetailViewerRecord]] = ScNone
     var dateFormatter: ScOption[DateDisplayFormat] = ScNone
     var datetimeFormatter: ScOption[DateDisplayFormat] = ScNone
     var emptyCellValue: ScOption[HTMLString] = ScNone
     var emptyMessage: ScOption[HTMLString] = ScNone
     var emptyMessageStyle: ScOption[CSSStyleName] = ScNone
     var fieldIdProperty: ScOption[String] = ScNone
-    var fieldPickerFieldProperties: ScOption[Array[String]] = ScNone
+    var fieldPickerFieldProperties: ScOption[JSArray[String]] = ScNone
     var fieldPickerWindow: ScOption[FieldPickerWindow] = ScNone
-    var fields: ScOption[Array[DetailViewerField]] = ScNone
+    var fields: ScOption[JSArray[DetailViewerField]] = ScNone
     var formatCellValue: ScOption[js.Function3[String, DetailViewerRecord, DetailViewerField, void]] = ScNone
-    var getCellCSSText: ScOption[js.Function4[js.Any, DetailViewerField, DetailViewerRecord, DetailViewer, CSSText]] = ScNone
-    var getCellStyle: ScOption[js.Function4[js.Any, DetailViewerField, DetailViewerRecord, DetailViewer, CSSStyleName]] = ScNone
+    var getCellCSSText: ScOption[js.Function4[JSAny, DetailViewerField, DetailViewerRecord, DetailViewer, CSSText]] = ScNone
+    var getCellStyle: ScOption[js.Function4[JSAny, DetailViewerField, DetailViewerRecord, DetailViewer, CSSStyleName]] = ScNone
     var headerStyle: ScOption[CSSStyleName] = ScNone
     var labelPrefix: ScOption[HTMLString] = ScNone
     var labelStyle: ScOption[CSSStyleName] = ScNone

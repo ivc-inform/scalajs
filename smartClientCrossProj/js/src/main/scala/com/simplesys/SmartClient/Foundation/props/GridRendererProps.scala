@@ -5,6 +5,7 @@ import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.State.State
 import com.simplesys.System.Types.{CSSStyleName, HTMLString}
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 
@@ -28,7 +29,7 @@ class GridRendererProps extends CanvasProps {
     var cellOut: ScOption[js.Function3[ListGridRecord, Int, Int, Boolean]] = ScNone
     var cellOver: ScOption[js.Function3[ListGridRecord, Int, Int, Boolean]] = ScNone
     var cellPadding: ScOption[Int] = ScNone
-    var cellSelectionChanged: ScOption[js.Function1[js.Array[Types.Object], Boolean]] = ScNone
+    var cellSelectionChanged: ScOption[js.Function1[JSArray[Types.Object], Boolean]] = ScNone
     var cellValueHover: ScOption[js.Function3[ListGridRecord, Int, Int, Boolean]] = ScNone
     var cellValueHoverHTML: ScOption[js.Function3[ListGridRecord, Int, Int, HTMLString]] = ScNone
     var cellValueIsClipped: ScOption[js.Function2[Int, Int, Boolean]] = ScNone

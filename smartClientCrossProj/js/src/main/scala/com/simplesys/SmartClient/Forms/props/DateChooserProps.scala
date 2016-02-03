@@ -7,6 +7,7 @@ import com.simplesys.SmartClient.Layout.HLayout
 import com.simplesys.SmartClient.Layout.props.VLayoutProps
 import com.simplesys.System.Types.{CSSStyleName, SCClassName, SCImgURL}
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.types.{JSArray, JSDictionaryAny, JSDictionary, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -32,7 +33,7 @@ class DateChooserProps extends VLayoutProps {
     var dataChanged: ScOption[js.ThisFunction0[DateChooser, _]] = ScNone
     var dateGrid: ScOption[DateGrid] = ScNone
     var dayNameLength: ScOption[Int] = ScNone
-    var disabledDates: ScOption[Array[Date]] = ScNone
+    var disabledDates: ScOption[JSArray[Date]] = ScNone
     var disabledWeekdayStyle: ScOption[CSSStyleName] = ScNone
     var disabledWeekendStyle: ScOption[CSSStyleName] = ScNone
     var disableWeekends: ScOption[Boolean] = ScNone
@@ -78,7 +79,7 @@ class DateChooserProps extends VLayoutProps {
     var showWeekends: ScOption[Boolean] = ScNone
     var startYear: ScOption[Int] = ScNone
     var timeItem: ScOption[TimeItem] = ScNone
-    var timeItemProperties: ScOption[js.Dictionary[js.Any]] = ScNone
+    var timeItemProperties: ScOption[JSDictionaryAny] = ScNone
     var timeItemTitle: ScOption[String] = ScNone
     var todayButton: ScOption[IButton] = ScNone
     var todayButtonHeight: ScOption[Int] = ScNone
@@ -87,7 +88,7 @@ class DateChooserProps extends VLayoutProps {
     var use24HourTime: ScOption[Boolean] = ScNone
     var useFirstDayOfFiscalWeek: ScOption[Boolean] = ScNone
     var weekChooserButton: ScOption[IButton] = ScNone
-    var weekendDays: ScOption[Array[Int]] = ScNone
+    var weekendDays: ScOption[JSArray[Int]] = ScNone
     var weekendHeaderStyle: ScOption[String] = ScNone
     var weekFieldTitle: ScOption[String] = ScNone
     var weekHeaderStyle: ScOption[CSSStyleName] = ScNone

@@ -9,7 +9,6 @@ import scala.scalajs.js._
 class TextAreaItemProps extends FormItemProps {
     var browserAutoCapitalize: ScOption[Boolean] = ScNone
     var browserAutoCorrect: ScOption[Boolean] = ScNone
-    var changeOnKeypress: ScOption[Boolean] = ScNone
     var editProxyConstructor: ScOption[SCClassName] = ScNone
     var emptyStringValue: ScOption[Any] = ScNone
     var enforceLength: ScOption[Boolean] = ScNone

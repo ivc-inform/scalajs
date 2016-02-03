@@ -28,7 +28,8 @@ trait SmartClientCrossProj {
           }).
       jsSettings(
           libraryDependencies ++= Seq(
-              CommonSettings.jsDependencies.scalajsDOM.value
+              CommonSettings.jsDependencies.scalajsDOM.value,
+              CommonSettings.jsDependencies.scalajsJQuey.value
           )
       ).dependsOn().jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
 

@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.System.Types.XMLDocument
 import com.simplesys.System.Types.void
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait RestDataSource extends DataSource {
@@ -22,10 +22,5 @@ trait RestDataSource extends DataSource {
     val xmlRecordXPath: String
 }
 
-@js.native
-abstract trait AbstractRestDataSourceCompanion extends AbstractDataSourceCompanion {
-}
 
-@js.native
-object RestDataSource extends AbstractRestDataSourceCompanion
 

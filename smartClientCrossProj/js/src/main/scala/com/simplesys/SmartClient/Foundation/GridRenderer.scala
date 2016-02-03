@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.State.State
 import com.simplesys.System.Types.{void, HTMLString, CSSStyleName}
+import com.simplesys.types.JSArray
 import org.scalajs.dom
 import org.scalajs.dom.Element
 import org.scalajs.dom.html.Document
@@ -32,7 +33,7 @@ trait GridRenderer extends Canvas {
     var cellOut: js.Function3[ListGridRecord, Int, Int, Boolean]
     var cellOver: js.Function3[ListGridRecord, Int, Int, Boolean]
     var cellPadding: Int
-    var cellSelectionChanged: js.Function1[js.Array[Types.Object], Boolean]
+    var cellSelectionChanged: js.Function1[JSArray[Types.Object], Boolean]
     var cellValueHover: js.Function3[ListGridRecord, Int, Int, Boolean]
     var cellValueHoverHTML: js.Function3[ListGridRecord, Int, Int, HTMLString]
     var cellValueIsClipped: js.Function2[Int, Int, Boolean]
@@ -49,9 +50,9 @@ trait GridRenderer extends Canvas {
     var fixedRowHeights: Boolean
     var getBaseStyle: js.Function3[ListGridRecord, Int, Int, Boolean]
     var getCellCSSText: js.Function3[ListGridRecord, Int, Int, Boolean]
-    def getCellFromDomElement(element: dom.Element): js.Array[Int]
+    def getCellFromDomElement(element: dom.Element): JSArray[Int]
     var getCellHoverComponent: js.Function3[ListGridRecord, Int, Int, Boolean]
-    def getCellPageRect(rowNum: Int, colNum: Int): js.Array[Int]
+    def getCellPageRect(rowNum: Int, colNum: Int): JSArray[Int]
     var getCellRecord: js.Function2[Int, Int, Types.Object]
     def getCellRowSpan(rowNum: Int, colNum: Int): Int
     def getCellStartRow(rowNum: Int, colNum: Int): Int
@@ -60,7 +61,7 @@ trait GridRenderer extends Canvas {
     def getColumnLeft(colNum: Int): Int
     def getColumnPageLeft(colNum: Int): Int
     def getColumnWidth(colNum: Int): Int
-    def getDrawnRows(): js.Array[Int]
+    def getDrawnRows(): JSArray[Int]
     def getEventColumn(x: Int = js.native): Int
     def getEventRow(y: Int = js.native): Int
     def getNearestColToEvent(): Int
@@ -91,7 +92,7 @@ trait GridRenderer extends Canvas {
     var scrollWheelRedrawDelay: Int
     var selectionChanged: js.Function2[ListGridRecord, State, _]
     def setColumnWidth(colNum: Int, newWidth: Int): void
-    def setColumnWidths(newWidths: js.Array[Int]): void
+    def setColumnWidths(newWidths: JSArray[Int]): void
     def setFastCellUpdates(fastCellUpdates: Boolean): void
     val showAllColumns: Boolean
     val showAllRows: Boolean

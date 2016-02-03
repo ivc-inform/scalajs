@@ -8,18 +8,19 @@ import com.simplesys.SmartClient.RPC.ServerObject
 import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
 import com.simplesys.System.Types.ValidatorType.ValidatorType
 import com.simplesys.System.Types.void
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait Validator extends Class {
-    def condition(item: DataSourceField | FormItem, validator: Validator, value: js.Any, record: Types.Object): Boolean
+    def condition(item: DataSourceField | FormItem, validator: Validator, value: JSAny, record: Types.Object): Boolean
     val applyWhen: AdvancedCriteria
-    val dependentFields: Array[String]
+    val dependentFields: JSArray[String]
     val serverOnly: Boolean
-    val precision : js.Any
-    val min : js.Any
+    val precision : JSAny
+    val min : JSAny
     val stopOnError: Boolean
     val validateOnChange: Boolean
     val caseSensitive: Boolean

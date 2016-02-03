@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Layout.props
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
-import com.simplesys.SmartClient.Layout.Splitbar
+import com.simplesys.SmartClient.Layout.{Layout, Splitbar}
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.LayoutPolicy.LayoutPolicy
 import com.simplesys.System.Types.LayoutResizeBarPolicy.LayoutResizeBarPolicy
@@ -15,6 +15,8 @@ import com.simplesys.option.{DoubleAlignment, ScNone, ScOption}
 import scala.scalajs.js
 
 class LayoutProps extends CanvasProps {
+    type callbackHandler <: Layout
+
     var align: ScOption[DoubleAlignment[Alignment, VerticalAlignment]] = ScNone
     var animateMembers: ScOption[Boolean] = ScNone
     var animateMemberTime: ScOption[Int] = ScNone

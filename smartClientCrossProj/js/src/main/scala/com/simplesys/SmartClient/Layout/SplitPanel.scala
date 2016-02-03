@@ -8,6 +8,7 @@ import com.simplesys.System.Types.NavigationDirection.NavigationDirection
 import com.simplesys.System.Types.PageOrientation.PageOrientation
 import com.simplesys.System.Types.{void, HTMLString, AutoChild}
 import com.simplesys.System.Types.CurrentPane.CurrentPane
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -23,7 +24,7 @@ trait SplitPanel extends Layout {
     var detailPane: Canvas
     var detailPaneTitleTemplate: HTMLString
     var detailTitle: HTMLString
-    var detailToolButtons: js.Array[Canvas]
+    var detailToolButtons: JSArray[Canvas]
     val detailToolStrip: NavigationBar with AutoChild
     val deviceMode: DeviceMode
     var downClick: js.ThisFunction0[callbackHandler, void]
@@ -47,7 +48,7 @@ trait SplitPanel extends Layout {
     def setDetailPane(pane: Canvas): void
     def setDetailPaneTitleTemplate(template: HTMLString): void
     def setDetailTitle(title: HTMLString): void
-    def setDetailToolButtons(buttons: js.Array[Button]): void
+    def setDetailToolButtons(buttons: JSArray[Button]): void
     def setLeftButtonTitle(newTitle: HTMLString): void
     def setListPane(pane: Canvas): void
     def setListPaneTitleTemplate(template: HTMLString): void

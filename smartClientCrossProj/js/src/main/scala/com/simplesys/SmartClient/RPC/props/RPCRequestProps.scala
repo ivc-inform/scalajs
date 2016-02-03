@@ -1,26 +1,26 @@
 package com.simplesys.SmartClient.RPC.props
 
+import com.simplesys.SmartClient.DataBinding.Callbacks.RPCCallback
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.PromptStyle.PromptStyle
 import com.simplesys.System.Types.RPCTransport.RPCTransport
-import com.simplesys.System.Types.URL
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.System.Types._
+import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.types._
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
-class RPCRequestProps[D <: js.Any] extends ClassProps {
+class RequestCommon[C <: js.Function] extends ClassProps {
+    var callback: ScOption[C] = ScNone
+
     var actionURL: ScOption[URL] = ScNone
     var allowIE9Leak: ScOption[Boolean] = ScNone
     var bypassCache: ScOption[Boolean] = ScNone
-    var callback: ScOption[Callback] = ScNone
     var callbackParam: ScOption[String] = ScNone
     var clientContext: ScOption[Types.Object] = ScNone
     var containsCredentials: ScOption[Boolean] = ScNone
     var contentType: ScOption[String] = ScNone
-    val data: ScOption[D] = ScNone
     var downloadResult: ScOption[Boolean] = ScNone
     var downloadToNewWindow: ScOption[Boolean] = ScNone
     var evalResult: ScOption[Boolean] = ScNone
@@ -46,4 +46,8 @@ class RPCRequestProps[D <: js.Any] extends ClassProps {
     var useXmlHttpRequest: ScOption[Boolean] = ScNone
     var willHandleError: ScOption[Boolean] = ScNone
     var withCredentials: ScOption[Boolean] = ScNone
+}
+
+class RPCRequestProps extends RequestCommon[RPCCallback] {
+    var data: ScOption[JSAny] = ScNone
 }

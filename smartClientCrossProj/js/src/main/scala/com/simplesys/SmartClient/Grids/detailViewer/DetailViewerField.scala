@@ -7,6 +7,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types._
 import com.simplesys.System.Types.void
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -46,7 +47,7 @@ trait DetailViewerField extends Types.Object {
     var name: String
     var printCellStyle: CSSClassName
     val showFileInline: Boolean
-    var showIf: js.Function2[DetailViewer, js.Array[DetailViewerRecord], Boolean]
+    var showIf: js.Function2[DetailViewer, JSArray[DetailViewerRecord], Boolean]
     var target: String
     var timeFormatter: TimeDisplayFormat
     var title: HTMLString

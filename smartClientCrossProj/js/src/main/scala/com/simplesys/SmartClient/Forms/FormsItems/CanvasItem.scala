@@ -7,6 +7,7 @@ import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.Overflow.Overflow
 import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
 import com.simplesys.System.Types.void
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
@@ -28,7 +29,7 @@ trait CanvasItem extends FormItem {
     def readOnlyDisplayChanged(appearance: ReadOnlyDisplayAppearance): Boolean
     def setCanvas(canvas: Canvas): void
     def shouldDisableCanvas(): void
-    var showValue: js.Function3[js.Any, js.Any, DynamicForm, CanvasItem]
+    var showValue: js.Function3[JSAny, JSAny, DynamicForm, CanvasItem]
 }
 
 

@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.date.FiscalYear.FiscalYear
 import com.simplesys.System.Types.FiscalYearMode
 import com.simplesys.System.Types.FiscalYearMode.FiscalYearMode
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 
@@ -14,5 +15,5 @@ object FiscalCalendar extends Types.Object {
     var defaultDate: Int = js.native
     var defaultMonth: Int = js.native
     var defaultYearMode:FiscalYearMode = js.native
-    var fiscalYears:js.Array[FiscalYear] = js.native
+    var fiscalYears:JSArray[FiscalYear] = js.native
 }

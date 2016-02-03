@@ -1,8 +1,9 @@
 package com.simplesys.SmartClient.Foundation
 
-import com.simplesys.SmartClient.DataBinding.{DSCallback, DSRequest, DataSource, DataBoundComponent}
+import com.simplesys.SmartClient.DataBinding.Callbacks.DSCallback
+import com.simplesys.SmartClient.DataBinding.{DSRequest, DataBoundComponent, DataSource}
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
-import com.simplesys.SmartClient.RPC.{RPCResponse, RPCRequest}
+import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.ContentsType.ContentsType
 import com.simplesys.System.Types.SendMethod.SendMethod
@@ -14,9 +15,10 @@ import scala.scalajs.js.|
 
 @js.native
 trait HTMLFlow extends Canvas with DataBoundComponent {
+
     val allowCaching: Boolean
     val captureSCComponents: Boolean
-    var contentLoaded: js.Function1[void, _]
+    var contentLoaded: js.ThisFunction0[callbackHandler , _]
     var contentsType: ContentsType
     var contentsURL: URL
     var contentsURLParams: Types.Object

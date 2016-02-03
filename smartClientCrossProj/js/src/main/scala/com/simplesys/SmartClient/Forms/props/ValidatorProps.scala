@@ -6,13 +6,14 @@ import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.ValidatorType._
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._
 
 class ValidatorProps extends ClassProps {
     var applyWhen: ScOption[AdvancedCriteria] = ScNone
-    var dependentFields: ScOption[Array[String]] = ScNone
+    var dependentFields: ScOption[JSArray[String]] = ScNone
     var serverOnly: ScOption[Boolean] = ScNone
     var stopOnError: ScOption[Boolean] = ScNone
     var validateOnChange: ScOption[Boolean] = ScNone

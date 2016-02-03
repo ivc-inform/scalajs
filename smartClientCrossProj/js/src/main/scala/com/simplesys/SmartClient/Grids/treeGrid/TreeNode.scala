@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.Grids.treeGrid
 
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.{HTMLString, SCImgURL}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -11,7 +12,7 @@ trait TreeNode extends Types.Object {
 
     var canAcceptDrop: Boolean
     var canDrag: Boolean
-    var children: js.Array[TreeNode]
+    var children: JSArray[TreeNode]
     var enabled: Boolean
     var icon: SCImgURL
     var id: String

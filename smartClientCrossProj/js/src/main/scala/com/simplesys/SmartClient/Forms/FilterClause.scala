@@ -8,9 +8,10 @@ import com.simplesys.System.Types.{void, AutoChild}
 import com.simplesys.System.Types.FieldType.FieldType
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.ValueItemType.ValueItemType
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait FilterClause extends Layout {
@@ -20,7 +21,7 @@ trait FilterClause extends Layout {
     val fieldPickerProperties: FormItem
     val fieldPickerTitle: String
     def getCriterion(): Criteria
-    def getFieldOperators(fieldName: String): Array[OperatorId]
+    def getFieldOperators(fieldName: String): JSArray[OperatorId]
     def getFilterBuilder(): FilterBuilder
     def getValueFieldProperties(`type`: FieldType, fieldName: String, operatorId: OperatorId, itemType: ValueItemType): FormItem
     val operatorPicker: SelectItem with AutoChild

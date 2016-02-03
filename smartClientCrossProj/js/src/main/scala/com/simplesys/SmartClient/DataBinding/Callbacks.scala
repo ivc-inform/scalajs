@@ -3,40 +3,33 @@ package com.simplesys.SmartClient.DataBinding
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Layout.SectionStack
 import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
-import com.simplesys.System.Types.void
+import com.simplesys.types.JSDictionaryAny
 
 import scala.scalajs.js
-import scala.scalajs.js.{ThisFunction2, ThisFunction0, ThisFunction1}
+import scala.scalajs.js.{ThisFunction0, ThisFunction1, ThisFunction2}
 
-@js.native
-trait AnimationCallback extends ThisFunction1[Canvas#callbackHandler, Boolean, void]
+object Callbacks{
+    type AnimationCallback = ThisFunction1[Canvas#callbackHandler, Boolean, _]
+    
+    type CollapseSectionCallback = ThisFunction0[SectionStack#callbackHandler, _]
+    
+    type ExpandSectionCallback = ThisFunction0[SectionStack#callbackHandler, _]
+    
+    type HideSectionCallback = ThisFunction0[SectionStack#callbackHandler, _]
+    
+    type ShowSectionCallback = ThisFunction0[SectionStack#callbackHandler, _]
+    
+    type ClientOnlyDataSourceCallback = ThisFunction0[DataSource, _]
+    
+    type  GetFileCallback = ThisFunction2[DSResponse, String, DSRequest, _]
+    
+    type  GetFileVersionCallback = ThisFunction2[DSResponse, String, DSRequest, _]
+    
+    type  HasFileCallback = ThisFunction2[DSResponse, String, DSRequest, _]
+    
+    type DSCallback = js.Function3[DSResponse,JSDictionaryAny, DSRequest, _]
+    
+    type RPCCallback = js.Function3[RPCResponse,JSDictionaryAny, RPCRequest, _]
+}
 
-@js.native
-trait CollapseSectionCallback extends ThisFunction0[SectionStack#callbackHandler, void]
 
-@js.native
-trait ExpandSectionCallback extends ThisFunction0[SectionStack#callbackHandler, void]
-
-@js.native
-trait HideSectionCallback extends ThisFunction0[SectionStack#callbackHandler, void]
-
-@js.native
-trait ShowSectionCallback extends ThisFunction0[SectionStack#callbackHandler, void]
-
-@js.native
-trait ClientOnlyDataSourceCallback extends ThisFunction0[DataSource, void]
-
-@js.native
-trait  GetFileCallback extends ThisFunction2[DSResponse, String, DSRequest, void]
-
-@js.native
-trait  GetFileVersionCallback extends ThisFunction2[DSResponse, String, DSRequest, void]
-
-@js.native
-trait  HasFileCallback extends ThisFunction2[DSResponse, String, DSRequest, void]
-
-@js.native
-trait DSCallback extends js.Function3[DSResponse,js.Dictionary[js.Any], DSRequest, void]
-
-@js.native
-trait RPCCallback extends js.Function3[RPCResponse,js.Dictionary[js.Any], RPCRequest, void]

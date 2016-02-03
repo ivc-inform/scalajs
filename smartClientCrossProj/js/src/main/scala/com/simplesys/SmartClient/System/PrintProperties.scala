@@ -1,10 +1,12 @@
 package com.simplesys.SmartClient.System
 
+import com.simplesys.types.JSArray
+
 import scala.scalajs.js
 
 @js.native
 trait PrintProperties extends Types.Object {
-    val includeControls: js.Array[String]
-    val omitControls: js.Array[String]
+    val includeControls: JSArray[String]
+    val omitControls: JSArray[String]
     val printForExport: Boolean
 }

@@ -1,25 +1,27 @@
 package com.simplesys.SmartClient.Forms
 
-import com.simplesys.SmartClient.DataBinding.{DSCallback, AdvancedCriteria, DataSource, DSRequest}
+import com.simplesys.SmartClient.DataBinding.Callbacks.DSCallback
+import com.simplesys.SmartClient.DataBinding.{AdvancedCriteria, DSRequest, DataSource}
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.Grid
-import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
+import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.System.Types.{Criteria, Record}
-import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
+import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class, Types}
 import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.void
+import com.simplesys.types.{JSAny, JSArray}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait ValuesManager extends Class {
-    def addFieldErrors(fieldName: String, errors: Array[String], showErrors: Boolean): void
+    def addFieldErrors(fieldName: String, errors: JSArray[String], showErrors: Boolean): void
     def addMember(member: DynamicForm | String): void
-    def addMembers(members: js.Array[DynamicForm] | js.Array[String]): void
+    def addMembers(members: JSArray[DynamicForm] | JSArray[String]): void
     var addOperation: String
     var autoSynchronize: Boolean
     def cancel(requestProperties: DSRequest = js.native): void
@@ -38,16 +40,16 @@ trait ValuesManager extends Class {
     def getChangedValues(): Types.Object
     def getDataSource(): DataSource
     def getErrors(): Types.Object
-    def getFieldErrors(fieldName: String): Array[String]
+    def getFieldErrors(fieldName: String): JSArray[String]
     def getItem(itemID: String, retrieveAll: Boolean = js.native): FormItem
     def getMember(ID: String): Canvas
     def getMemberForField(fieldName: String): Canvas
-    def getMembers(): Array[Canvas]
+    def getMembers(): JSArray[Canvas]
     def getMemberValues(ID: String): Types.Object
     def getOldValues(): Types.Object
     def getSaveOperationType(requestProperties: DSRequest = js.native): DSOperationType
     def getValidatedValues(): Types.Object
-    def getValue(fieldName: String, component: Canvas = js.native): js.Any
+    def getValue(fieldName: String, component: Canvas = js.native): JSAny
     def getValues(): Types.Object
     def getValuesAsAdvancedCriteria(textMatchStyle: TextMatchStyle = js.native): AdvancedCriteria
     def getValuesAsCriteria(advanced: Boolean, textMatchStyle: TextMatchStyle = js.native): Criteria | AdvancedCriteria
@@ -55,20 +57,20 @@ trait ValuesManager extends Class {
     def hasErrors(): Boolean
     def hasFieldErrors(fieldName: String): Boolean
     def isNewRecord(): Boolean
-    var members: Array[DynamicForm]
+    var members: JSArray[DynamicForm]
     val operator: OperatorId
     def rememberValues(): Types.Object
     def removeMember(member: DynamicForm | String): void
-    def removeMembers(members: js.Array[DynamicForm] | js.Array[String]): void
+    def removeMembers(members: JSArray[DynamicForm] | JSArray[String]): void
     var removeOperation: String
     def resetValues(): void
     def saveData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     var saveOperationType: DSOperationType
     def setDataSource(dataSource: DataSource): void
     def setErrors(errors: Object, showErrors: Boolean): void
-    def setFieldErrors(fieldName: String, errors: Array[String], showErrors: Boolean): void
+    def setFieldErrors(fieldName: String, errors: JSArray[String], showErrors: Boolean): void
     def setMemberValues(ID: String, values: Types.Object): void
-    def setValue(fieldName: String, newValue: js.Any): void
+    def setValue(fieldName: String, newValue: JSAny): void
     def setValues(values: Types.Object): void
     def showErrors(): void
     def showFieldErrors(): void

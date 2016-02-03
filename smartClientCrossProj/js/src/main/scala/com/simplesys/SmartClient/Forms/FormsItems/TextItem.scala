@@ -7,27 +7,27 @@ import com.simplesys.System.Types.CharacterCasing.CharacterCasing
 import com.simplesys.System.Types.CharacterCasing._
 import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
 import com.simplesys.System.Types._
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait TextItem extends FormItem {
     val browserAutoCapitalize: Boolean
     val browserAutoCorrect: Boolean
     val browserInputType: String
-    var changeOnKeypress: js.ThisFunction0[FormItemIcon, Boolean]
     var characterCasing: CharacterCasing
     def deselectValue(start: Boolean): void
     val editProxyConstructor: SCClassName
-    var emptyStringValue: js.Any
+    var emptyStringValue: JSAny
     var enforceLength: Boolean
     var fetchMissingValues: Boolean
     var formatOnBlur: Boolean
     var formatOnFocusChange: Boolean
     def getEnteredValue(): String
     def getHint(): HTMLString
-    def getSelectionRange(): Array[Int]
+    def getSelectionRange(): JSArray[Int]
     var keyPressFilter: String
     var length: Int
     var mask: String

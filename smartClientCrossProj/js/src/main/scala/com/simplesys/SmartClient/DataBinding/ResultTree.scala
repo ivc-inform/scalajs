@@ -1,16 +1,15 @@
 package com.simplesys.SmartClient.DataBinding
 
-import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
-import com.simplesys.SmartClient.System.Types.{TreeGridOpenState, Criteria}
-import com.simplesys.SmartClient.System.{AbstractTreeCompanion, Tree}
+import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeNode}
+import com.simplesys.SmartClient.System.Types.{Criteria, TreeGridOpenState}
 import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
 import com.simplesys.System.Types.TreeFilterMode.TreeFilterMode
-import com.simplesys.System.Types.TreeModelType.TreeModelType
 import com.simplesys.System.Types.void
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+
 
 @js.native
 trait ResultTree extends Tree {
@@ -27,25 +26,19 @@ trait ResultTree extends Tree {
     val fetchMode: FetchMode
     def get(pos: Int): TreeNode
     def getOpenState(): TreeGridOpenState
-    def getRange(start: Int, end: Int): Array[TreeNode]
+    def getRange(start: Int, end: Int): JSArray[TreeNode]
     def invalidateCache(): void
     val keepParentsOnFilter: Boolean
     val loadDataOnDemand: Boolean
     val progressiveLoading: Boolean
     val resultSize: Int
-    val rootNode: js.Any
-    val serverFilterFields: Array[String]
-    def setChildren(parent: TreeNode, newChildren: Array[TreeNode], totalChildren: Int = js.native): void
+    val rootNode: JSAny
+    val serverFilterFields: JSArray[String]
+    def setChildren(parent: TreeNode, newChildren: JSArray[TreeNode], totalChildren: Int = js.native): void
     def setCriteria(newCriteria: Criteria): void
     def setOpenState(openState: TreeGridOpenState): void
     val updateCacheFromRequest: Boolean
     def willFetchData(newCriteria: Criteria): Boolean
 }
 
-@js.native
-abstract trait AbstractResultTreeCompanion extends AbstractTreeCompanion {
-}
-
-@js.native
-object ResultTree extends AbstractResultTreeCompanion
 

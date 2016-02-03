@@ -6,6 +6,7 @@ import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
 import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.void
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -13,10 +14,10 @@ import scala.scalajs.js.|
 @js.native
 trait ResultSet extends Class with List {
     def allMatchingRowsCached(): Boolean
-    val allRows: js.Array[Record]
+    val allRows: JSArray[Record]
     def allRowsCached(): Boolean
     val alwaysRequestVisibleRows: Boolean
-    def applyFilter(data: js.Array[Record], criteria: Criteria, requestProperties: DSRequest = js.native): js.Array[Record]
+    def applyFilter(data: JSArray[Record], criteria: Criteria, requestProperties: DSRequest = js.native): JSArray[Record]
     def compareCriteria(newCriteria: Criteria, oldCriteria: Criteria, requestProperties: DSRequest = js.native, policy: String = js.native): Int
     val criteria: Criteria
     val criteriaPolicy: CriteriaPolicy
@@ -29,11 +30,11 @@ trait ResultSet extends Class with List {
     val fetchOperation: String
     def filterLocalData(): void
     def findByKey(keyValue: Types.Object): Record
-    def getAllCachedRows(): js.Array[Record]
-    def getAllVisibleRows(): js.Array[Record]
+    def getAllCachedRows(): JSArray[Record]
+    def getAllVisibleRows(): JSArray[Record]
     def getCriteria(): Criteria
-    def getSort(): js.Array[SortSpecifier]
-    val initialData: js.Array[Record]
+    def getSort(): JSArray[SortSpecifier]
+    val initialData: JSArray[Record]
     val initialLength: Int
     def invalidateCache(): void
     def lengthIsKnown(): Boolean
@@ -45,8 +46,8 @@ trait ResultSet extends Class with List {
     def rowIsLoaded(rowNum: Int): Boolean
     def setCriteria(newCriteria: Criteria): Boolean
     def setSort(): void
-    val sortSpecifiers: js.Array[SortSpecifier]
-    var transformData: js.Function2[js.Any, DSResponse, js.Array[Types.Object]]
+    val sortSpecifiers: JSArray[SortSpecifier]
+    var transformData: js.Function2[JSAny, DSResponse, JSArray[Types.Object]]
     val updateCacheFromRequest: Boolean
     val updatePartialCache: Boolean
     val useClientFiltering: Boolean

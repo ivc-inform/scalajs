@@ -11,9 +11,10 @@ import com.simplesys.SmartClient.System.Types.Object
 import com.simplesys.System.Types.MultipleAppearance.MultipleAppearance
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
 import com.simplesys.System.Types.{HTMLString, AutoChild, SCClassName}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait SelectItem extends FormItem with PickList {
@@ -23,7 +24,7 @@ trait SelectItem extends FormItem with PickList {
     var defaultToFirstOption: Boolean
     var editProxyConstructor: SCClassName
     var escapeHTML: Boolean
-    def getSelectedRecords(): Array[ListGridRecord]
+    def getSelectedRecords(): JSArray[ListGridRecord]
     var hiliteColor: String
     val multiple:Boolean
     val multipleAppearance : MultipleAppearance

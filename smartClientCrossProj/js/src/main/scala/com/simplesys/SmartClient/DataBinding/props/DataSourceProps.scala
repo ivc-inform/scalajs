@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.DataBinding.props
 
 import com.simplesys.SmartClient.DataBinding.dataSource.{DataSourceField, OperationBinding}
-import com.simplesys.SmartClient.DataBinding.props.dataSource.DataSourceFieldProps
+import com.simplesys.SmartClient.DataBinding.props.dataSource.{WildRecordColumnProps, OperationBindingProps, DataSourceFieldProps}
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DSResponse, DataSource, JSON}
 import com.simplesys.SmartClient.RPC.ServerObject
 import com.simplesys.SmartClient.System.Types
@@ -20,6 +20,7 @@ import com.simplesys.System.Types.SequenceMode.SequenceMode
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.{ID, URL, URN}
 import com.simplesys.option.{IntString, ScNone, ScOption}
+import com.simplesys.types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -45,7 +46,7 @@ class DataSourceProps extends ClassProps {
     var cacheAcrossOperationIds: ScOption[Boolean] = ScNone
     var cacheAllData: ScOption[Boolean] = ScNone
     var cacheAllOperationId: ScOption[String] = ScNone
-    var cacheData: ScOption[Array[Record]] = ScNone
+    var cacheData: ScOption[Seq[Record]] = ScNone
     var cacheMaxAge: ScOption[Int] = ScNone
     var callbackParam: ScOption[String] = ScNone
     var canMultiSort: ScOption[Boolean] = ScNone
@@ -100,17 +101,17 @@ class DataSourceProps extends ClassProps {
     var nullIntegerValue: ScOption[Int] = ScNone
     var nullStringValue: ScOption[String] = ScNone
     var omitNullDefaultsOnAdd: ScOption[String] = ScNone
-    var operationBindings: ScOption[Array[OperationBinding]] = ScNone
+    var operationBindings: ScOption[Seq[OperationBindingProps]] = ScNone
     var ownerIdField: ScOption[String] = ScNone
     var patternEscapeChar: ScOption[String] = ScNone
-    var patternMultiWildcard: ScOption[Array[String]] = ScNone
-    var patternSingleWildcard: ScOption[Array[String]] = ScNone
+    var patternMultiWildcard: ScOption[Seq[String]] = ScNone
+    var patternSingleWildcard: ScOption[Seq[String]] = ScNone
     var pluralTitle: ScOption[String] = ScNone
     var preventHTTPCaching: ScOption[Boolean] = ScNone
     var progressiveLoading: ScOption[Boolean] = ScNone
     var progressiveLoadingThreshold: ScOption[Int] = ScNone
     var projectFileKey: ScOption[String] = ScNone
-    var projectFileLocations: ScOption[Array[String]] = ScNone
+    var projectFileLocations: ScOption[Seq[String]] = ScNone
     var qualifyColumnNames: ScOption[Boolean] = ScNone
     var quoteColumnNames: ScOption[Boolean] = ScNone
     var quoteTableName: ScOption[Boolean] = ScNone
@@ -148,7 +149,7 @@ class DataSourceProps extends ClassProps {
     var title: ScOption[String] = ScNone
     var titleField: ScOption[String] = ScNone
     var transformMultipleFields: ScOption[Boolean] = ScNone
-    var transformReques: ScOption[js.Function1[DSRequest, js.Any]] = ScNone
+    var transformReques: ScOption[js.Function1[DSRequest, JSAny]] = ScNone
     var transformResponse: ScOption[js.Function3[DSResponse, DSRequest, JSON, DSResponse]] = ScNone
     var translatePatternOperators: ScOption[Boolean] = ScNone
     var trimMilliseconds: ScOption[Boolean] = ScNone
@@ -164,4 +165,5 @@ class DataSourceProps extends ClassProps {
     var useTestDataFetch: ScOption[Boolean] = ScNone
     var validateRelatedRecords: ScOption[Boolean] = ScNone
     var xmlNamespaces: ScOption[Types.Object] = ScNone
+    var wildRecord: ScOption[Seq[WildRecordColumnProps]] = ScNone
 }

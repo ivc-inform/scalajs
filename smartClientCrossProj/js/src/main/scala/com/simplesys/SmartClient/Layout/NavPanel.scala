@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.Layout
 import com.simplesys.SmartClient.Grids.TreeGrid
 import com.simplesys.SmartClient.Layout.navPanel.NavItem
 import com.simplesys.System.Types.{void, AutoChild, CSSStyleName}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -15,7 +16,7 @@ trait NavPanel extends SplitPanel {
     val isTree: Boolean
     val navDeck: Deck with AutoChild
     val navGrid: TreeGrid with AutoChild
-    var navItems: js.Array[NavItem]
+    var navItems: JSArray[NavItem]
     def setCurrentItem(newCurrentItem: NavItem = js.native): void
     def setCurrentItemId(newCurrentItemId: String = js.native): void
 }
