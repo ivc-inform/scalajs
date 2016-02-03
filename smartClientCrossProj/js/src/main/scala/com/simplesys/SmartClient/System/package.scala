@@ -17,9 +17,9 @@ import com.simplesys.SmartClient.Grids._
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
 import com.simplesys.SmartClient.Grids.props._
 import com.simplesys.SmartClient.Layout._
-import com.simplesys.SmartClient.Layout.portalLayout.Portlet
+import com.simplesys.SmartClient.Layout.portalLayout.{PortletSS, Portlet}
 import com.simplesys.SmartClient.Layout.props._
-import com.simplesys.SmartClient.Layout.props.portalLayout.PortletProps
+import com.simplesys.SmartClient.Layout.props.portalLayout.{PortletSSProps, PortletProps}
 import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
 import com.simplesys.SmartClient.Layout.props.toolStrip.{ToolStripResizerProps, ToolStripButtonProps, ToolStripSeparatorProps, ToolStripMenuButtonProps}
 import com.simplesys.SmartClient.Layout.tabSet.Tab
@@ -124,7 +124,9 @@ package object System {
     object WindowSS extends SCApply[WindowSS, WindowSSProps]
     object LoginWindow extends SCApply[LoginWindow, LoginWindowProps]
     object Portlet extends SCApply[Portlet, PortletProps]
+    object PortletSS extends SCApply[PortletSS, PortletSSProps]
     object PortalLayout extends SCApply[PortalLayout, PortalLayoutProps]
+    object PortalLayoutSS extends SCApply[PortalLayoutSS, PortalLayoutSSProps]
     object ToolStrip extends SCApply[ToolStrip, ToolStripProps]
     object ToolStripMenuButton extends SCApply[ToolStripMenuButton, ToolStripMenuButtonProps]
     object ToolStripSeparator extends SCApply[ToolStripSeparator, ToolStripSeparatorProps]
