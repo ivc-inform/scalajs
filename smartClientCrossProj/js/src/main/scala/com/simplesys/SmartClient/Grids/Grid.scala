@@ -218,7 +218,6 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     var confirmDiscardEdits: Boolean
     var confirmDiscardEditsMessage: String
     var createRecordComponent: js.ThisFunction2[callbackHandler, R, Int, Canvas]
-    var data: JSArray[R]
     var dataArrived: js.ThisFunction2[callbackHandler, Int, Int, void]
     var dataProperties: ResultSet
     var dateFormatter: DateDisplayFormat
@@ -859,7 +858,9 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
 }
 
 @js.native
-trait ListGrid extends Grid[ListGridField, ListGridRecord]
+trait ListGrid extends Grid[ListGridField, ListGridRecord] {
+    var data: JSArray[ListGridRecord]
+}
 
 
 

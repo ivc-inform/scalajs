@@ -104,6 +104,7 @@ trait TreeGrid extends Grid[TreeGridField, ListGridRecord] {
     def transferNodes(nodes: JSArray[TreeNode], folder: TreeNode, index: Int, sourceWidget: Canvas, callback: Callback = js.native): void
     val treeFieldTitle:String
     val treeRootValue:JSAny
+    var data: Tree
 }
 
 

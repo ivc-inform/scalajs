@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Control.props.menu.MenuSSItemProps
 import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.props.listGrid.{ListGridFieldProps, ListGridRecordProps}
 import com.simplesys.SmartClient.Layout.props.VLayoutSSProps
 import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
@@ -61,4 +62,5 @@ class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends
 class ListGridEditorProps extends GridEditorProps[ListGridFieldProps, ListGridRecordProps] {
     var fields: ScOption[Seq[ListGridFieldProps]] = ScNone
     var defaultFields: ScOption[Seq[ListGridFieldProps]] = ScNone
+    var data: ScOption[Seq[ListGridRecord]] = ScNone
 }
