@@ -9,6 +9,7 @@ import com.simplesys.SmartClient.Layout.VLayoutSS
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.System.Types.AutoFitWidthApproach._
+import com.simplesys.System.Types.DragDataAction._
 import com.simplesys.System.Types.DragTrackerMode._
 import com.simplesys.System.Types.ListGridEditEvent._
 import com.simplesys.System.Types.SelectionAppearance._
@@ -115,6 +116,9 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor): void
     def setForignFieldFields(grid: ListGrid, masterGrid: ListGrid): void
     var masterGrid: ListGrid | ListGridEditor | TreeGridEditor
+    var canDragRecordsOut: Boolean
+    var canReorderRecords: Boolean
+    var dragDataAction: DragDataAction
 }
 
 @js.native
