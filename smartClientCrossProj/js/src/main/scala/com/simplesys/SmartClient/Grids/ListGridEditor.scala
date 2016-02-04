@@ -16,7 +16,7 @@ import com.simplesys.System.Types.SelectionAppearance._
 import com.simplesys.System.Types.SelectionStyle._
 import com.simplesys.System.Types.TextMatchStyle._
 import com.simplesys.System.Types.{ID, void}
-import com.simplesys.types.{JSAny, JSArray}
+import com.simplesys.types.{JSDictionary, JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -113,7 +113,7 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     def setSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
     def unSetSelectionChanged(func: js.Function2[R, Boolean, _]): void
     def unSetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
-    def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor): void
+    def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor, pkFieldNames: JSArray[JSDictionary[String]] = js.native): void
     def setForignFieldFields(grid: ListGrid, masterGrid: ListGrid): void
     var masterGrid: ListGrid | ListGridEditor | TreeGridEditor
     var canDragRecordsOut: Boolean

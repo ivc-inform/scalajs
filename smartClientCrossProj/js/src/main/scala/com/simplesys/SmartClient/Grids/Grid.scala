@@ -57,7 +57,7 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.types.{JSArray, JSDictionaryAny, JSAny, JSArrayAny}
+import com.simplesys.types._
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -852,7 +852,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def setSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
     def unSetSelectionChanged(func: js.Function2[R, Boolean, _]): void
     def unSetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
-    def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor): void
+    def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor, pkFieldNames: JSArray[JSDictionary[String]] = js.native): void
     def selectRecordsByKey(keyValues: Types.Object, newState: Boolean): R
     var masterGrid: ListGrid
 }
