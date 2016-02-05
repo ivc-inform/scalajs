@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
-import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
+import com.simplesys.SmartClient.Grids.listGrid.{PKForignMapping, ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.VLayoutSS
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types._
@@ -113,7 +113,7 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     def setSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
     def unSetSelectionChanged(func: js.Function2[R, Boolean, _]): void
     def unSetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
-    def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor, pkFieldNames: JSArray[JSDictionary[String]] = js.native): void
+    def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor, pkFieldNames: JSArray[PKForignMapping] | PKForignMapping = js.native): void
     def setForignFieldFields(grid: ListGrid, masterGrid: ListGrid): void
     var masterGrid: ListGrid | ListGridEditor | TreeGridEditor
     var canDragRecordsOut: Boolean
