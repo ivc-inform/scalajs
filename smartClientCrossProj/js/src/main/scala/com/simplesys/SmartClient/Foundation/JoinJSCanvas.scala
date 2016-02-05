@@ -7,6 +7,7 @@ import scala.scalajs.js.|
 trait JoinJSCanvas extends Canvas {
     var suffix: String
     var joinJSFunc: js.Function1[String, _] | String
+    def setJoinJSFunc(func: js.Function1[String, _]): JoinJSCanvas
 }
 
 
