@@ -1,77 +1,74 @@
-var canDragSelectText: Boolean
-    var autoFitFieldWidth: Boolean
-    var canResizeFields: Boolean
-    def findByKey(keyValue: JSAny): R
-    def removeData(removeRecord: R, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    def saveAllEdits(): void
-    def selectAllRecords(visibleNodesOnly: Boolean): void
-    val showAllRecords: Boolean
-    def selectSingleRecordByKey(keyValue: JSAny, newStyle: Boolean): R
-    def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    def hasChanges(): Boolean
-    def getDataLength(): Int
-    var showRecordComponentsByCel: Boolean
-    var showRecordComponents: Boolean
-    var filterOnKeypress: Boolean
-    var drawAheadRatio: Double
-    var autoSaveEdits: Boolean
-    var canEdit: Boolean
-    var showRollOve: Boolean
-    var autoFetchData: Boolean
-    var showRowNumbers: Boolean
-    var autoSaveConfig: Boolean
-    var showAdvancedFilter: Boolean
-    def selectSingleRecord(record: R): void
-    def selectFirstRecord(): void
-    def hasErrors(): Boolean
-    def getFieldByName(name: String): T
-    def removeSelectedData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    def restoreViewState(callback: Callback): void
-    def getCriteria(): Criteria
-    def setValueMap(fieldID: ID, map: ValueMap): void
-    def setDataSource(dataSource: DataSource): void
-    def setSelectedState(selectedState: S): void
-    def cancelEditing(): void
-    var emptyMessage: String
-    def updateData(updatedRecord: R, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    var wrapCells: Boolean
-    val autoFetchTextMatchStyle: TextMatchStyle
-    def getSelection(excludePartialSelections: Boolean = js.native): js.Array[R]
-    var fixedRecordHeights: Boolean
-    val dragTrackerMode: DragTrackerMode
-    def setData(newData: js.Array[R]): void
-    var autoFitWidthApproach: AutoFitWidthApproach
-    def startEditing(rowNum: Int = js.native, colNum: Int = js.native, suppressFocus: Boolean = js.native): Boolean
-    def addData(newRecord: Record, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    var modalEditing: Boolean
-    var canSelectCells: Boolean
-    var useClientFilteringSorting: Boolean
-    var selectionAppearance: SelectionAppearance
-    def selectRecords(records: js.Array[R], newState: Boolean = js.native): void
-    def setFields(newFields: js.Array[T] = js.native): void
-    def selectRecord(record: R, newState: Boolean = js.native): void
-    def selectRecordByKey(keyValue: JSAny, newState: Boolean = js.native): void
-    def fullRefresh(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    def invalidateCache(): void
-    def saveViewState(callback: Callback): void
-    def getViewState(): ListGridViewState
-    var cancelEditingConfirmationMessage: String
-    def getAllRows(): js.Array[R]
-    var fetchDelay: Int
-    def startEditingNew(newValues: Types.Object | R = js.native, suppressFocus: Boolean = js.native): void
-    var editEvent: ListGridEditEvent
-    def getEditRecord(): R
-    def getSelectedRecord(): R
-    def getSelectedRecords(excludePartialSelections: Boolean = js.native): js.Array[R]
-    def isSelected(): Boolean
-    var canSelectTextExpandedField: Boolean
-    var showFilterEditor: Boolean
-    def discardAllEdits(): void
-    def getSelectedState(): S
-    def getRecord(data: JSAny): R
-    var dataPageSize: Int
-    def getEditorType(field: T, values: Types.Object): String
-    def deselectRecord(record: R | Int): void
-    def deselectRecords(records: js.Array[R]): void
-    def deselectAllRecords(): void
-    def getRowNum(record: R): Int
+def add(node: TreeNode, parent: TreeNode, position: Int = js.native): TreeNode
+    def addList(node: JSArray[TreeNode], parent: TreeNode, position: Int = js.native): JSArray[TreeNode]
+    def allChildrenLoaded(node: TreeNode): Boolean
+    var autoOpenRoot: Boolean
+    var childrenProperty: String
+    def closeAll(node: TreeNode = js.native): void
+    def closeFolder(node: TreeNode): void
+    def closeFolders(nodeList: JSArray[TreeNode]): void
+    val data: JSArray[TreeNode]
+    var dataChanged: ThisFunction0[void, void]
+    val defaultIsFolder: Boolean
+    var defaultNodeTitle: String
+    val discardParentlessNodes: Boolean
+    def find(fieldNameOrPath: String, value: JSAny = js.native): Types.Object
+    def findById(id: String): Types.Object
+    def getAllNodes(node: TreeNode = js.native): JSArray[TreeNode]
+    def getChildren(node: TreeNode): JSArray[TreeNode]
+    def getChildrenResultSet(node: TreeNode): ResultSet
+    def getDescendantFolders(node: TreeNode = js.native): JSArray[TreeNode]
+    def getDescendantLeaves(node: TreeNode = js.native): JSArray[TreeNode]
+    def getDescendants(node: TreeNode = js.native): JSArray[TreeNode]
+    def getFilteredTree(criteria: Criteria | AdvancedCriteria, filterMode: TreeFilterMode = js.native, dataSource: DataSource = js.native, requestProperties: DSRequest = js.native): Tree
+    def getFolders(node: TreeNode): JSArray[TreeNode]
+    def getLeaves(node: TreeNode): JSArray[TreeNode]
+    def getLength(): Int
+    def getLevel(node: TreeNode): Int
+    def getLoadState(node: TreeNode): LoadState
+    def getName(node: TreeNode): String
+    def getOpenList(node: TreeNode = js.native): JSArray[TreeNode]
+    def getParent(node: TreeNode): TreeNode
+    def getParentPath(node: TreeNode): String
+    def getParents(node: TreeNode): JSArray[TreeNode]
+    def getPath(node: TreeNode): String
+    def getRoot(): TreeNode
+    def getTitle(node: TreeNode): String
+    def hasChildren(node: TreeNode): Boolean
+    def hasFolders(node: TreeNode): Boolean
+    def hasLeaves(node: TreeNode): Boolean
+    val idField: String
+    def indexOf(obj: Types.Object, pos: Int = js.native, endPos: Int = js.native): Int
+    def isDescendantOf(child: TreeNode, parent: TreeNode): Boolean
+    def isFolder(node: TreeNode): Boolean
+    var isFolderProperty: String
+    def isLeaf(node: TreeNode): Boolean
+    def isLoaded(node: TreeNode): Boolean
+    def isOpen(node: TreeNode): Boolean
+    def isRoot(node: TreeNode): Boolean
+    def lastIndexOf(obj: Types.Object, pos: Int = js.native, endPos: Int = js.native): Int
+    def linkNodes(nodes: JSArray[TreeNode]): void
+    def loadChildren(node: TreeNode, callback: Callback = js.native): void
+    var modelType: TreeModelType
+    def move(node: TreeNode, newParent: TreeNode, position: Int = js.native): void
+    var nameProperty: String
+    def openAll(node: TreeNode): void
+    def openFolders(nodeList: JSArray[TreeNode]): void
+    var openProperty: String
+    val parentIdField: String
+    var pathDelim: String
+    def reloadChildren(node: TreeNode): void
+    def remove(node: TreeNode): Boolean
+    def removeChildren(node: TreeNode): void
+    def removeList(nodeList: JSArray[TreeNode]): Boolean
+    val reportCollisions: Boolean
+    var root: TreeNode
+    val rootValue: String | Int
+    var separateFolders: Boolean
+    def setChildren(parent: TreeNode, newChildren: JSArray[TreeNode]): void
+    def setRoot(newRoot: TreeNode, autoOpen: Boolean): void
+    def setSeparateFolders(separateFolders: Boolean): void
+    def setShowRoot(showRoot: Boolean): void
+    def setSortFoldersBeforeLeaves(sortFoldersBeforeLeaves: Boolean): void
+    var showRoot: Boolean
+    var sortFoldersBeforeLeaves: Boolean
+    var titleProperty: String

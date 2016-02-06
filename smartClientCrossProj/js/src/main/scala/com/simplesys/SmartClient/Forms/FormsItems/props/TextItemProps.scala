@@ -13,7 +13,6 @@ class TextItemProps extends FormItemProps {
     var browserAutoCapitalize: ScOption[Boolean] = ScNone
     var browserAutoCorrect: ScOption[Boolean] = ScNone
     var browserInputType: ScOption[String] = ScNone
-    var changeOnKeypress: ScOption[js.ThisFunction0[FormItemIcon, Boolean]] = ScNone
     var characterCasing: ScOption[CharacterCasing] = ScNone
     var editProxyConstructor: ScOption[SCClassName] = ScNone
     var emptyStringValue: ScOption[JSAny] = ScNone

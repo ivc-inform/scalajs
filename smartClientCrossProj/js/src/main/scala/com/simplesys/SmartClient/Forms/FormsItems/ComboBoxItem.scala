@@ -10,9 +10,10 @@ import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
 import com.simplesys.System.Types.{void, HTMLString, AutoChild, CSSStyleName}
 import com.simplesys.System.Types.PickListItemIconPlacement.PickListItemIconPlacement
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait ComboBoxItem extends TextItem with PickList {
@@ -22,7 +23,7 @@ trait ComboBoxItem extends TextItem with PickList {
     def canEditCriterion(): void
     var completeOnTab: Boolean
     var defaultToFirstOption: Boolean
-    val filterFields: Array[String]
+    val filterFields: JSArray[String]
     var filterWithValue: Boolean
     var generateExactMatchCriteria: Boolean
     def getCriterion(): Criterion
@@ -37,13 +38,15 @@ trait ComboBoxItem extends TextItem with PickList {
     var pickerSearchFieldHint: HTMLString
     var pickerSearchForm: DynamicForm with AutoChild
     var pickListPlacement: PanelPlacement | Canvas | String
-    var progressiveLoading:Boolean
-    var searchStringTooShortMessage:String
-    var separateSpecialValues:Boolean
-    var separateValuesList:Grid[ListGridField, ListGridRecord]
-    def setCriterion ():void
-    def shouldGenerateExactMatchCriteria ():Boolean
-    var showPickListOnKeypress:Boolean
+    var progressiveLoading: Boolean
+    var searchStringTooShortMessage: String
+    var separateSpecialValues: Boolean
+    var separateValuesList: Grid[ListGridField, ListGridRecord]
+    def setCriterion(): void
+    def shouldGenerateExactMatchCriteria(): Boolean
+    var showPickListOnKeypress: Boolean
 }
+
+
 
 

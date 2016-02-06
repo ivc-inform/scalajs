@@ -131,4 +131,7 @@ class DataSourceFieldProps extends AbstractClassProps {
     var viewRequiresRole: ScOption[String] = ScNone
     var xmlAttribute: ScOption[Boolean] = ScNone
     var `type`: ScOption[FieldType] = ScNone
+    var foreignField: ScOption[String] = ScNone
+    var lookup: ScOption[Boolean] = ScNone
+    var captionClassLookup: ScOption[String] = ScNone
 }

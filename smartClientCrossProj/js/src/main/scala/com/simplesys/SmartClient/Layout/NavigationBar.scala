@@ -6,6 +6,7 @@ import com.simplesys.SmartClient.Layout.navigationBar.{MiniNavControl, Navigatio
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.NavigationDirection.NavigationDirection
 import com.simplesys.System.Types.{void, AutoChild, HTMLString, SCImgURL}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -27,7 +28,7 @@ trait NavigationBar extends HLayout {
     var rightButtonIcon: SCImgURL
     var rightButtonTitle: HTMLString
     def setAlwaysShowLeftButtonTitle(newAlwaysShowLeftButtonTitle: Boolean): void
-    def setCustomNavControl(controls: js.Array[String] | js.Array[Canvas]): void
+    def setCustomNavControl(controls: JSArray[String] | JSArray[Canvas]): void
     def setLeftButtonIcon(newIcon: SCImgURL): void
     def setRightButtonIcon(newIcon: SCImgURL): void
     def setLeftButtonTitle(newTitle: HTMLString): void

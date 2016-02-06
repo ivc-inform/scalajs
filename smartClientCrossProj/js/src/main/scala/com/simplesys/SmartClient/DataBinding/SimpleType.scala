@@ -12,7 +12,7 @@ import com.simplesys.SmartClient.System.{Types, Class, AbstractClassCompanion}
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.{void, ID, FormatString}
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
@@ -40,17 +40,17 @@ trait SimpleType extends Class {
     var readOnlyEditorType: FormItem
     def shortDisplayFormatter(value: JSAny, field: FormItem | DetailViewerField = js.native, component: DataBoundComponent = js.native, record: Types.Object = js.native): void
     def updateAtomicValue(atomicValue: JSAny, currentValue: JSAny, reason: String): JSAny
-    var validators: js.Array[Validator]
-    var validOperators: js.Array[OperatorId]
+    var validators: JSArray[Validator]
+    var validOperators: JSArray[OperatorId]
     var valueMap: ValueMap
 }
 
 @js.native
 abstract trait AbstractSimpleTypeCompanion extends AbstractClassCompanion {
-    def applySummaryFunction(records: js.Array[Types.Object], field: DataSourceField, summaryFunction: SummaryFunction, summaryConfig: SummaryConfiguration): JSAny = js.native
+    def applySummaryFunction(records: JSArray[Types.Object], field: DataSourceField, summaryFunction: SummaryFunction, summaryConfig: SummaryConfiguration): JSAny = js.native
     def getDefaultSummaryFunction(typeName: String): SummaryFunction = js.native
     def getType(typeName: String): SimpleType = js.native
-    def registerSummaryFunction(functionName: String, method: js.Array[Record] | DataSourceField | SummaryConfiguration): void = js.native
+    def registerSummaryFunction(functionName: String, method: JSArray[Record] | DataSourceField | SummaryConfiguration): void = js.native
     def setDefaultSummaryFunction(typeName: String, summaryFunction: SummaryFunction): void = js.native
 }
 

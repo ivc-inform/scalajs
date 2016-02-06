@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.DataBinding.DataSource
+import com.simplesys.SmartClient.Forms.FormsItems.FormItems._
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.FormsItems.{CanvasItem, FormItem}
 import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
@@ -8,7 +9,7 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.RPC.RPCRequest
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.Criteria
+import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AutoComplete.AutoComplete
@@ -20,7 +21,7 @@ import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
 import com.simplesys.option.{FormItemType_String, IntString, ScNone, ScOption}
-import com.simplesys.types.JSAny
+import com.simplesys.types._
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -45,6 +46,7 @@ class FormItemProps extends ClassProps {
     var cellStyle: ScOption[FormItemBaseStyle] = ScNone
     var change: ScOption[js.Function4[DynamicForm, FormItem, JSAny, JSAny, Boolean]] = ScNone
     var changed: ScOption[js.Function3[DynamicForm, FormItem, JSAny, _]] = ScNone
+    var changeOnKeypress: ScOption[Boolean] = ScNone
     var click: ScOption[js.Function2[DynamicForm, FormItem, Boolean]] = ScNone
     var clipStaticValue: ScOption[Boolean] = ScNone
     var clipTitle: ScOption[Boolean] = ScNone
@@ -65,7 +67,7 @@ class FormItemProps extends ClassProps {
     var doubleClick: ScOption[js.Function2[DynamicForm, FormItem, Boolean]] = ScNone
     var editorEnter: ScOption[js.Function3[DynamicForm, FormItem, JSAny, _]] = ScNone
     var editorExit: ScOption[js.Function3[DynamicForm, FormItem, JSAny, _]] = ScNone
-    var editorType: ScOption[FormItem] = ScNone
+    var editorType: ScOption[FormItems] = ScNone
     var editPendingCSSText: ScOption[CSSText] = ScNone
     var emptyDisplayValue: ScOption[String] = ScNone
     var emptyValueIcon: ScOption[String] = ScNone
@@ -100,7 +102,7 @@ class FormItemProps extends ClassProps {
     var iconHSpace: ScOption[Int] = ScNone
     var iconKeyPress: ScOption[js.Function5[String, Char, DynamicForm, FormItem, FormItemIcon, _]] = ScNone
     var iconPrompt: ScOption[HTMLString] = ScNone
-    var icons: ScOption[js.Array[FormItemIcon]] = ScNone
+    var icons: ScOption[JSArray[FormItemIcon]] = ScNone
     var iconVAlign: ScOption[VerticalAlignment] = ScNone
     var iconWidth: ScOption[Int] = ScNone
     var ID: ScOption[String] = ScNone
@@ -200,8 +202,8 @@ class FormItemProps extends ClassProps {
     var useDisabledHintStyleForReadOnly: ScOption[Boolean] = ScNone
     var validateOnChange: ScOption[Boolean] = ScNone
     var validateOnExit: ScOption[Boolean] = ScNone
-    var validators: ScOption[Array[Validator]] = ScNone
-    var validOperators: ScOption[Array[OperatorId]] = ScNone
+    var validators: ScOption[JSArray[Validator]] = ScNone
+    var validOperators: ScOption[JSArray[OperatorId]] = ScNone
     var vAlign: ScOption[VerticalAlignment] = ScNone
     var value: ScOption[JSAny] = ScNone
     var valueDeselectedCSSText: ScOption[CSSText] = ScNone
@@ -212,10 +214,10 @@ class FormItemProps extends ClassProps {
     var valueIconHeight: ScOption[Int] = ScNone
     var valueIconLeftPadding: ScOption[Int] = ScNone
     var valueIconRightPadding: ScOption[Int] = ScNone
-    var valueIcons: ScOption[Types.Object] = ScNone
     var valueIconSize: ScOption[Int] = ScNone
     var valueIconWidth: ScOption[Int] = ScNone
-    var valueMap: ScOption[Array[Types.Object]] = ScNone
+    var valueIcons: ScOption[JSDictionary[String]] = ScNone
+    var valueMap: ScOption[ValueMap] = ScNone
     var visible: ScOption[Boolean] = ScNone
     var width: ScOption[IntString[Int, String]] = ScNone
     var wrapTitle: ScOption[Boolean] = ScNone

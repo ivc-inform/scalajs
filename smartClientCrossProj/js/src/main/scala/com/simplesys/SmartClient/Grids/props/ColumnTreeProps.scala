@@ -9,7 +9,7 @@ import com.simplesys.SmartClient.Layout.props.LayoutProps
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.{MultiAutoChild, SCImgURL}
 import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSArray, JSDictionaryAny, JSDictionary, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -20,12 +20,12 @@ class ColumnTreeProps extends LayoutProps with DataBoundComponentProps{
     var backButtonTitle: ScOption[String] = ScNone
     var closedIconSuffix: ScOption[String] = ScNone
     var column: ScOption[Grid[ListGridField, ListGridRecord] with MultiAutoChild] = ScNone
-    var columnProperties: ScOption[js.Dictionary[JSAny]] = ScNone
+    var columnProperties: ScOption[JSDictionaryAny] = ScNone
     var customIconOpenProperty: ScOption[String] = ScNone
     var customIconProperty: ScOption[String] = ScNone
     var data: ScOption[Tree] = ScNone
     var dataProperties: ScOption[Tree] = ScNone
-    var fields: ScOption[Array[ListGridField]] = ScNone
+    var fields: ScOption[JSArray[ListGridField]] = ScNone
     var firstColumnTitle: ScOption[String] = ScNone
     var folderIcon: ScOption[SCImgURL] = ScNone
     var loadDataOnDemand: ScOption[Boolean] = ScNone

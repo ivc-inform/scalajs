@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.Grids.props.listGrid
 
 import com.simplesys.SmartClient.DataBinding.DSRequest
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Forms.FormsItems.FormItems.FormItems
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Grids.Grid
@@ -25,7 +26,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types._
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSDictionary, JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -77,7 +78,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var editorImageURLPrefix: ScOption[String] = ScNone
     var editorImageURLSuffix: ScOption[String] = ScNone
     var editorProperties: ScOption[FormItem] = ScNone
-    var editorType: ScOption[FormItem] = ScNone
+    var editorType: ScOption[FormItems] = ScNone
     var editorValueIconHeight: ScOption[Int] = ScNone
     var editorValueIcons: ScOption[Types.Object] = ScNone
     var editorValueIconWidth: ScOption[Int] = ScNone
@@ -90,7 +91,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var exportFormat: ScOption[FormatString] = ScNone
     var exportRawValues: ScOption[Boolean] = ScNone
     var filterEditorProperties: ScOption[FormItem] = ScNone
-    var filterEditorType: ScOption[FormItem] = ScNone
+    var filterEditorType: ScOption[FormItems] = ScNone
     var filterEditorValueMap: ScOption[Types.Object] = ScNone
     var filterOnKeypress: ScOption[Boolean] = ScNone
     var filterOperator: ScOption[OperatorId] = ScNone
@@ -121,7 +122,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var icon: ScOption[SCImgURL] = ScNone
     var iconHeight: ScOption[Int] = ScNone
     var iconOrientation: ScOption[String] = ScNone
-    var icons: ScOption[Array[FormItemIcon]] = ScNone
+    var icons: ScOption[JSArray[FormItemIcon]] = ScNone
     var iconSize: ScOption[Int] = ScNone
     var iconSpacing: ScOption[Int] = ScNone
     var iconVAlign: ScOption[String] = ScNone
@@ -134,7 +135,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var imageWidth: ScOption[Int] = ScNone
     var includeFrom: ScOption[String] = ScNone
     var includeInRecordSummary: ScOption[Boolean] = ScNone
-    var includeInRecordSummaryFields: ScOption[Array[String]] = ScNone
+    var includeInRecordSummaryFields: ScOption[JSArray[String]] = ScNone
     var initialValue: ScOption[JSAny] = ScNone
     var inputFormat: ScOption[DateInputFormat] = ScNone
     var isRemoveField: ScOption[Boolean] = ScNone
@@ -185,17 +186,17 @@ class ListGridFieldProps extends AbstractClassProps {
     var userFormula: ScOption[UserFormula] = ScNone
     var userSummary: ScOption[UserSummary] = ScNone
     var validateOnChange: ScOption[Boolean] = ScNone
-    var validators: ScOption[Array[Validator]] = ScNone
+    var validators: ScOption[JSArray[Validator]] = ScNone
     var valueField: ScOption[String] = ScNone
     var valueIconClick: ScOption[js.Function6[Grid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, JSAny, FormItem, Boolean]] = ScNone
     var valueIconHeight: ScOption[Int] = ScNone
     var valueIconLeftPadding: ScOption[Int] = ScNone
     var valueIconOrientation: ScOption[String] = ScNone
     var valueIconRightPadding: ScOption[Int] = ScNone
-    var valueIcons: ScOption[Types.Object] = ScNone
     var valueIconSize: ScOption[Int] = ScNone
     var valueIconWidth: ScOption[Int] = ScNone
-    var valueMap: ScOption[Seq[Types.Object]] = ScNone
+    var valueIcons: ScOption[JSDictionary[String]] = ScNone
+    var valueMap: ScOption[ValueMap] = ScNone
     var width: ScOption[Int] = ScNone
     var wrap: ScOption[Boolean] = ScNone
 }

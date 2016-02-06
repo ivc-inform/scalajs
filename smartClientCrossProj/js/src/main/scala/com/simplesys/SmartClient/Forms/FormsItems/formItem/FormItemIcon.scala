@@ -10,7 +10,7 @@ import com.simplesys.System.Types._
 import com.simplesys.System.Types.void
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait FormItemIcon extends Types.Object {

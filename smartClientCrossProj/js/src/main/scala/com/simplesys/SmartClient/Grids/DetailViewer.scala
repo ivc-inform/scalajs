@@ -1,20 +1,20 @@
 package com.simplesys.SmartClient.Grids
 
-import com.simplesys.SmartClient.DataBinding.fieldPicker.FieldPickerWindow
+import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.DataBinding._
-import com.simplesys.SmartClient.Foundation.{AbstractCanvasCompanion, Canvas}
-import com.simplesys.SmartClient.Grids.detailViewer.{DetailViewerRecord, DetailViewerField}
+import com.simplesys.SmartClient.DataBinding.fieldPicker.FieldPickerWindow
+import com.simplesys.SmartClient.Foundation.Canvas
+import com.simplesys.SmartClient.Grids.detailViewer.{DetailViewerField, DetailViewerRecord}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
-import com.simplesys.SmartClient.System.Types.{Object, DetailViewerViewState}
-import com.simplesys.System.Types.void
+import com.simplesys.SmartClient.System.Types.{DetailViewerViewState, Object}
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.System.Types._
-import com.simplesys.types.JSAny
+import com.simplesys.System.Types.{void, _}
+import com.simplesys.types.{JSAny, JSArray}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait DetailViewer extends Canvas with DataBoundComponent {
@@ -23,7 +23,7 @@ trait DetailViewer extends Canvas with DataBoundComponent {
     val canPickFields: Boolean
     val cellStyle: CSSStyleName
     val configureFieldsText: String
-    var data: Array[DetailViewerRecord]
+    var data: JSArray[DetailViewerRecord]
     var dateFormatter: DateDisplayFormat
     var datetimeFormatter: DateDisplayFormat
     var emptyCellValue: HTMLString
@@ -34,9 +34,9 @@ trait DetailViewer extends Canvas with DataBoundComponent {
     def fetchRelatedData(record: ListGridRecord, schema: Canvas | DataSource | String, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     var fieldIdProperty: String
     def fieldIsVisible(field: String | DetailViewerField): Boolean
-    val fieldPickerFieldProperties: Array[String]
+    val fieldPickerFieldProperties: JSArray[String]
     val fieldPickerWindow: FieldPickerWindow
-    var fields: Array[DetailViewerField]
+    var fields: JSArray[DetailViewerField]
     var formatCellValue: js.Function3[String, DetailViewerRecord, DetailViewerField, void]
     var getCellCSSText: js.Function4[JSAny, DetailViewerField, DetailViewerRecord, DetailViewer, CSSText]
     var getCellStyle: js.Function4[JSAny, DetailViewerField, DetailViewerRecord, DetailViewer, CSSStyleName]
@@ -54,7 +54,7 @@ trait DetailViewer extends Canvas with DataBoundComponent {
     var printLabelStyle: CSSStyleName
     var recordsPerBlock: Int
     var separatorStyle: SCClassName
-    def setData(newData: Array[Object]): void
+    def setData(newData: JSArray[Object]): void
     def setViewState(viewState: DetailViewerViewState): void
     val showEmptyField: Boolean
     val showEmptyMessage: Boolean

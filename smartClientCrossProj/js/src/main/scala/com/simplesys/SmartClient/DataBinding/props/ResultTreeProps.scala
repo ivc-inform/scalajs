@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.System.props.TreeProps
 import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
 import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -26,7 +26,7 @@ class ResultTreeProps extends TreeProps {
     var progressiveLoading: ScOption[Boolean] = ScNone
     var resultSize: ScOption[Int] = ScNone
     var rootNode: ScOption[JSAny] = ScNone
-    var serverFilterFields: ScOption[Array[String]] = ScNone
+    var serverFilterFields: ScOption[JSArray[String]] = ScNone
     var updateCacheFromRequest: ScOption[Boolean] = ScNone
 
 }

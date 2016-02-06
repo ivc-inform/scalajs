@@ -1,13 +1,18 @@
 package com.simplesys.SmartClient.Grids.props
 
 import com.simplesys.SmartClient.Control.MenuSS
+import com.simplesys.SmartClient.Control.props.menu.MenuSSItemProps
 import com.simplesys.SmartClient.DataBinding.DataSource
+import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.props.listGrid.{ListGridFieldProps, ListGridRecordProps}
 import com.simplesys.SmartClient.Layout.props.VLayoutSSProps
 import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
+import com.simplesys.System.Types.DragDataAction._
 import com.simplesys.System.Types.DragTrackerMode.DragTrackerMode
 import com.simplesys.System.Types.ListGridEditEvent.ListGridEditEvent
 import com.simplesys.System.Types.SelectionAppearance.SelectionAppearance
+import com.simplesys.System.Types.SelectionStyle._
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.option.{ScNone, ScOption}
 
@@ -46,9 +51,16 @@ class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends
     var dataPageSize: ScOption[Int] = ScNone
     var funcMenu: ScOption[MenuSS] = ScNone
     var dataSource: ScOption[DataSource] = ScNone
+    var saveItems: ScOption[Seq[MenuSSItemProps]] = ScNone
+    var selectionType: ScOption[SelectionStyle] = ScNone
+    var masterGrid: ScOption[ListGrid] = ScNone
+    var canDragRecordsOut: ScOption[Boolean] = ScNone
+    var canReorderRecords: ScOption[Boolean] = ScNone
+    var dragDataAction: ScOption[DragDataAction] = ScNone
 }
 
 class ListGridEditorProps extends GridEditorProps[ListGridFieldProps, ListGridRecordProps] {
     var fields: ScOption[Seq[ListGridFieldProps]] = ScNone
     var defaultFields: ScOption[Seq[ListGridFieldProps]] = ScNone
+    var data: ScOption[Seq[ListGridRecord]] = ScNone
 }

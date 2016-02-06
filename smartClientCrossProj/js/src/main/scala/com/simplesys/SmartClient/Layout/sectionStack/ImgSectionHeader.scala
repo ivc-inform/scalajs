@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.Layout.sectionStack
 import com.simplesys.SmartClient.Foundation.{Canvas, StretchImg}
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, SectionStack}
 import com.simplesys.System.Types.{void, _}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 
@@ -10,7 +11,7 @@ import scala.scalajs.js
 trait ImgSectionHeader extends HLayout {
     var background: StretchImg with AutoChild
     var clipTitle: Boolean
-    var controls: js.Array[Canvas]
+    var controls: JSArray[Canvas]
     val controlsLayout: Layout with AutoChild
     def getSectionStack(): SectionStack
     var icon: SCImgURL

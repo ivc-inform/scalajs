@@ -9,6 +9,7 @@ import com.simplesys.System.Types.{FormatString, CSSClassName, HTMLString}
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.props.AbstractClassProps
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -45,7 +46,7 @@ class DetailViewerFieldProps extends AbstractClassProps {
     var name: ScOption[String] = ScNone
     var printCellStyle: ScOption[CSSClassName] = ScNone
     var showFileInline: ScOption[Boolean] = ScNone
-    var showIf: ScOption[js.Function2[DetailViewer, js.Array[DetailViewerRecord], Boolean]] = ScNone
+    var showIf: ScOption[js.Function2[DetailViewer, JSArray[DetailViewerRecord], Boolean]] = ScNone
     var target: ScOption[String] = ScNone
     var timeFormatter: ScOption[TimeDisplayFormat] = ScNone
     var title: ScOption[HTMLString] = ScNone

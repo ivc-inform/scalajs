@@ -4,7 +4,5 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait CycleItem extends FormItem {
-}
-
+trait CycleItem extends FormItem
 

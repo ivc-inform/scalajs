@@ -17,14 +17,17 @@ import com.simplesys.SmartClient.Grids._
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
 import com.simplesys.SmartClient.Grids.props._
 import com.simplesys.SmartClient.Layout._
-import com.simplesys.SmartClient.Layout.portalLayout.Portlet
+import com.simplesys.SmartClient.Layout.portalLayout.{PortletSS, Portlet}
 import com.simplesys.SmartClient.Layout.props._
-import com.simplesys.SmartClient.Layout.props.portalLayout.PortletProps
+import com.simplesys.SmartClient.Layout.props.portalLayout.{PortletSSProps, PortletProps}
 import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
 import com.simplesys.SmartClient.Layout.props.toolStrip.{ToolStripResizerProps, ToolStripButtonProps, ToolStripSeparatorProps, ToolStripMenuButtonProps}
 import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.SmartClient.Layout.toolStrip.{ToolStripResizer, ToolStripButton, ToolStripSeparator, ToolStripMenuButton}
+import com.simplesys.SmartClient.RPC.{RPCResponse, RPCRequest}
+import com.simplesys.SmartClient.RPC.props.{RPCResponseProps, RPCRequestProps}
 import com.simplesys.SmartClient.System.props.TreeProps
+import com.simplesys.types.JSAny
 
 //import com.simplesys.macros.PropsToDictionary
 import com.simplesys.macros.PropsToDictionary
@@ -67,6 +70,7 @@ package object System {
 
     //<editor-fold desc="Forms">
     object DynamicForm extends SCApply[DynamicForm, DynamicFormProps]
+    object DynamicFormSS extends SCApply[DynamicFormSS, DynamicFormSSProps]
     //</editor-fold>
 
     //<editor-fold desc="FormsItems">
@@ -75,6 +79,8 @@ package object System {
     //</editor-fold>
 
     //<editor-fold desc="Foundation">
+    object Canvas extends SCApply[Canvas, CanvasProps]
+    object JoinJSCanvas extends SCApply[JoinJSCanvas, JoinJSCanvasProps]
     object Label extends SCApply[Label, LabelProps]
     object Img extends SCApply[Img, ImgProps]
     object ImgTab extends SCApply[ImgTab, ImgTabProps]
@@ -84,12 +90,21 @@ package object System {
     object HTMLPane extends SCApply[HTMLPane, HTMLPaneProps]
     //</editor-fold>
 
+    //<editor-fold desc="RPC">
+    object RPCRequest extends SCApply[RPCRequest, RPCRequestProps]
+    object RPCResponse extends SCApply[RPCResponse, RPCResponseProps]
+    object DSRequest extends SCApply[DSRequest, DSRequestProps]
+    object DSResponse extends SCApply[DSResponse, DSResponseProps]
+    //</editor-fold>
+
     //<editor-fold desc="Grids">
     object ListGrid extends SCApply[ListGrid, ListGridProps]
     object ListGridEditor extends SCApply[ListGridEditor, ListGridEditorProps]
     object TreeGrid extends SCApply[TreeGrid, TreeGridProps]
     object TreeGridEditor extends SCApply[TreeGridEditor, TreeGridEditorProps]
+    object TreeListGridEditor extends SCApply[TreeListGridEditor, TreeListGridEditorProps]
     object Tree extends SCApply[Tree, TreeProps]
+    object ResultTree extends SCApply[ResultTree, ResultTreeProps]
     //</editor-fold>
 
     //<editor-fold desc="Layout">
@@ -102,6 +117,8 @@ package object System {
     object ImgSplitbar extends SCApply[ImgSplitbar, ImgSplitbarProps]
     object Layout extends SCApply[Layout, LayoutProps]
     object LayoutSS extends SCApply[LayoutSS, LayoutSSProps]
+    object HPanelSS extends SCApply[HPanelSS, HPanelSSProps]
+    object OkCancelPanel extends SCApply[OkCancelPanel, OkCancelPanelProps]
     object VLayout extends SCApply[VLayout, VLayoutProps]
     object VLayoutSS extends SCApply[VLayoutSS, VLayoutSSProps]
     object ChainMasterDetail extends SCApply[ChainMasterDetail, ChainMasterDetailProps]
@@ -110,7 +127,9 @@ package object System {
     object WindowSS extends SCApply[WindowSS, WindowSSProps]
     object LoginWindow extends SCApply[LoginWindow, LoginWindowProps]
     object Portlet extends SCApply[Portlet, PortletProps]
+    object PortletSS extends SCApply[PortletSS, PortletSSProps]
     object PortalLayout extends SCApply[PortalLayout, PortalLayoutProps]
+    object PortalLayoutSS extends SCApply[PortalLayoutSS, PortalLayoutSSProps]
     object ToolStrip extends SCApply[ToolStrip, ToolStripProps]
     object ToolStripMenuButton extends SCApply[ToolStripMenuButton, ToolStripMenuButtonProps]
     object ToolStripSeparator extends SCApply[ToolStripSeparator, ToolStripSeparatorProps]

@@ -5,13 +5,14 @@ import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{Object, Record}
 import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.void
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait DSResponse extends RPCResponse {
-    val data: Array[Record]
+    val data: JSArray[Record]
     val dataSource: String
     val endRow: Int
     val errors: Object

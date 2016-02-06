@@ -3,18 +3,18 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.System.Types.FormItemBaseStyle
 import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSDictionaryAny, JSDictionary, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._
 
 class SpinnerItemProps extends TextItemProps {
     var decreaseIcon: ScOption[FormItemIcon ] = ScNone
-    var decreaseIconProperties: ScOption[js.Dictionary[JSAny]] = ScNone
+    var decreaseIconProperties: ScOption[JSDictionaryAny] = ScNone
     var getNextValue: ScOption[js.Function2[Int, Int, Int]] = ScNone
     var getPreviousValue: ScOption[js.Function2[Int, Int, Int]] = ScNone
     var increaseIcon: ScOption[FormItemIcon ] = ScNone
-    var increaseIconProperties: ScOption[js.Dictionary[JSAny]] = ScNone
+    var increaseIconProperties: ScOption[JSDictionaryAny] = ScNone
     var max: ScOption[Double] = ScNone
     var min: ScOption[Double] = ScNone
     var step: ScOption[Double] = ScNone

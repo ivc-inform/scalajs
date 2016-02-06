@@ -6,10 +6,10 @@ import com.simplesys.SmartClient.Layout.{Layout, VLayout}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.ControlName.ControlName
 import com.simplesys.System.Types.{AutoChild, MultiAutoChild, void}
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
-import scala.scalajs.js.Array
+
 
 @js.native
 trait RichTextEditor extends VLayout {
@@ -18,23 +18,23 @@ trait RichTextEditor extends VLayout {
     var alignRightPrompt: String
     var backgroundColorPrompt: String
     var boldSelectionPrompt: String
-    val bulletControls: js.Array[ControlName]
-    val colorControls: js.Array[ControlName]
+    val bulletControls: JSArray[ControlName]
+    val colorControls: JSArray[ControlName]
     var colorPrompt: String
-    var controlGroups: js.Array[ControlName]
+    var controlGroups: JSArray[ControlName]
     var copySelectionPrompt: String
     var cutSelectionPrompt: String
     def doWarn(): void
     val editArea: Canvas with AutoChild
     val editAreaBackgroundColor: String
-    var fontControls: js.Array[ControlName]
+    var fontControls: JSArray[ControlName]
     var fontNames: Types.Object
     val fontSelectorItem: SelectItem with AutoChild
     var fontSelectorPrompt: String
     val fontSizes: Types.Object
     val fontSizeSelectorItem: SelectItem with AutoChild
     var fontSizeSelectorPrompt: String
-    var formatControls: js.Array[ControlName]
+    var formatControls: JSArray[ControlName]
     def getValue(): JSAny
     var indentPrompt: String
     var italicSelectionPrompt: String
@@ -52,7 +52,7 @@ trait RichTextEditor extends VLayout {
     def setMoveFocusOnTab(moveFocusOnTab: Boolean): void
     def setValue(value: String): void
     var strikethroughSelectionPrompt: String
-    val styleControls: Array[ControlName]
+    val styleControls: JSArray[ControlName]
     val toolArea: Layout with AutoChild
     val toolbar: Layout with MultiAutoChild
     val toolbarBackgroundColor: String

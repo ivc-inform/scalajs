@@ -20,10 +20,10 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSDictionary, JSArray, JSAny}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait FormItem extends Class {
@@ -48,6 +48,7 @@ trait FormItem extends Class {
     var cellStyle: FormItemBaseStyle
     var change: js.Function4[DynamicForm, FormItem, JSAny, JSAny, Boolean]
     var changed: js.Function3[DynamicForm, FormItem, JSAny, _]
+    var changeOnKeypress: Boolean
     def clearErrors(): void
     def clearValue(): void
     var click: js.Function2[DynamicForm, FormItem, Boolean]
@@ -101,8 +102,8 @@ trait FormItem extends Class {
     def getDataPath(): DataPath
     def getDisplayFieldName(): String
     def getDisplayValue(value: JSAny): JSAny
-    def getErrorHTML(error: String | js.Array[String]): HTMLString
-    def getErrors(): String | js.Array[String]
+    def getErrorHTML(error: String | JSArray[String]): HTMLString
+    def getErrors(): String | JSArray[String]
     def getFieldName(): String
     def getFullDataPath(): DataPath
     def getGridColNum(): Int
@@ -113,13 +114,13 @@ trait FormItem extends Class {
     def getLeft(): Int
     def getOptionDataSource(): DataSource
     def getPageLeft(): Int
-    def getPageRect(): js.Array[Int]
+    def getPageRect(): JSArray[Int]
     def getPageTop(): Int
     def getPixelHeight(): Int
     def getPixelWidth(): Int
     def getPrintValueIcon(value: JSAny): SCImgURL
     def getPrintValueIconStyle(value: JSAny): CSSClassName
-    def getRect(): js.Array[Int]
+    def getRect(): JSArray[Int]
     def getSelectedRecord(): ListGridRecord
     def getTitle(): HTMLString
     def getTop(): Int
@@ -152,7 +153,7 @@ trait FormItem extends Class {
     var iconHSpace: Int
     var iconKeyPress: js.Function5[String, Char, DynamicForm, FormItem, FormItemIcon, _]
     var iconPrompt: HTMLString
-    var icons: js.Array[FormItemIcon]
+    var icons: JSArray[FormItemIcon]
     var iconVAlign: VerticalAlignment
     var iconWidth: Int
     var ID: String
@@ -217,7 +218,7 @@ trait FormItem extends Class {
     def setCellStyle(newCellStyle: FormItemBaseStyle): void
     def setCriterion(criterion: Criterion): void
     def setDisabled(disabled: Boolean): void
-    def setErrors(errors: Array[String] | String): void
+    def setErrors(errors: JSArray[String] | String): void
     def setHint(newHint: HTMLString): void
     def setHintStyle(hintStyle: CSSStyleName): void
     def setIconDisabled(icon: String, disabled: Boolean): void
@@ -231,7 +232,7 @@ trait FormItem extends Class {
     def setTop(): void
     def setValue(newValue: JSAny): void
     def setValueIcons(map: Types.Object): void
-    def setValueMap(valueMap: Array[Types.Object]): void
+    def setValueMap(valueMap: JSArray[Types.Object]): void
     def shouldApplyHeightToTextBox(): Boolean
     def shouldFetchMissingValue(newValue: JSAny): Boolean
     def shouldSaveOnEnter(): Boolean
@@ -291,8 +292,8 @@ trait FormItem extends Class {
     def validate(): Boolean
     var validateOnChange: Boolean
     var validateOnExit: Boolean
-    val validators: Array[Validator]
-    val validOperators: Array[OperatorId]
+    val validators: JSArray[Validator]
+    val validOperators: JSArray[OperatorId]
     var vAlign: VerticalAlignment
     val value: JSAny
     def valueClipped(): Boolean
@@ -304,10 +305,10 @@ trait FormItem extends Class {
     var valueIconHeight: Int
     var valueIconLeftPadding: Int
     var valueIconRightPadding: Int
-    var valueIcons: Types.Object
     var valueIconSize: Int
     var valueIconWidth: Int
-    var valueMap: Array[Types.Object]
+    var valueMap: JSDictionary[JSAny]
+    var valueIcons: JSDictionary[String]
     var visible: Boolean
     var width: String | Int
     var wrapTitle: Boolean

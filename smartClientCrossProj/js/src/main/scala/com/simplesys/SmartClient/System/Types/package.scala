@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.types.{JSDictionaryAny, JSAny, JSArrayAny}
+import com.simplesys.types.{JSDictionary, JSDictionaryAny, JSAny, JSArrayAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -10,7 +10,7 @@ package object Types {
 
     type Field = Object
 
-    type Criteria = js.Dictionary[Object]
+    type Criteria = JSDictionary[Object]
 
     trait CallbackObject {
         val target: Object
@@ -19,8 +19,8 @@ package object Types {
 
     type Properties = Object
     type EdgeSizes = Object
-    type Record = JSDictionaryAny
-    type DataSourceRecord = JSDictionaryAny
+    type Record = Object
+    type DataSourceRecord = Object
     type CellRecord = Object
     type ListGridSelectedState = Object
     type ListGridSortState = Object
@@ -29,11 +29,12 @@ package object Types {
 
     type TreeGridOpenState = Object
     type TreeGridViewState = Object
+    type TreeGridSelectedState = Object
 
     type DetailViewerViewState = Object
 
     type Callback = js.Function | js.ThisFunction | CallbackObject
-    type ValueMap = JSArrayAny //| JSDictionaryAny
+    type ValueMap = JSDictionaryAny
     type XMLDocument = Object
     type XMLElement = Object
     type XMLNode = Object

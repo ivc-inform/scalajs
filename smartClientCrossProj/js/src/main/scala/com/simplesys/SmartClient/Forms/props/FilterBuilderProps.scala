@@ -14,6 +14,7 @@ import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.TopOperatorAppearance.TopOperatorAppearance
 import com.simplesys.System.Types.ValueItemType.ValueItemType
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -72,7 +73,7 @@ class FilterBuilderProps extends LayoutProps {
     var topOperatorForm: ScOption[DynamicForm] = ScNone
     var topOperatorItem: ScOption[SelectItem] = ScNone
     var topOperatorItemWidth: ScOption[String | Int] = ScNone
-    var topOperatorOptions: ScOption[Array[OperatorId]] = ScNone
+    var topOperatorOptions: ScOption[JSArray[OperatorId]] = ScNone
     var topOperatorTitle: ScOption[String] = ScNone
     var validateOnChange: ScOption[Boolean] = ScNone
     var valueItemWidth: ScOption[Int | String] = ScNone

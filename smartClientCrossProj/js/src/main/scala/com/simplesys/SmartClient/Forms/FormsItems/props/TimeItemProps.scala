@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.Forms.FormsItems.{SelectItem, TextItem}
 import com.simplesys.System.Types.HTMLString
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -20,7 +21,7 @@ class TimeItemProps extends FormItemProps {
     var hourItemTitle: ScOption[HTMLString] = ScNone
     var hourMaxValue: ScOption[Int] = ScNone
     var hourMinValue: ScOption[Int] = ScNone
-    var hourValues: ScOption[js.Array[Int]] = ScNone
+    var hourValues: ScOption[JSArray[Int]] = ScNone
     var invalidTimeStringMessage: ScOption[HTMLString] = ScNone
     var millisecondIncrement: ScOption[Int] = ScNone
     var millisecondItem: ScOption[SelectItem ] = ScNone
@@ -29,7 +30,7 @@ class TimeItemProps extends FormItemProps {
     var millisecondItemTitle: ScOption[HTMLString] = ScNone
     var millisecondMaxValue: ScOption[Int] = ScNone
     var millisecondMinValue: ScOption[Int] = ScNone
-    var millisecondValues: ScOption[js.Array[Int]] = ScNone
+    var millisecondValues: ScOption[JSArray[Int]] = ScNone
     var minuteIncrement: ScOption[Int] = ScNone
     var minuteItem: ScOption[SelectItem ] = ScNone
     var minuteItemPrompt: ScOption[HTMLString] = ScNone
@@ -37,7 +38,7 @@ class TimeItemProps extends FormItemProps {
     var minuteItemTitle: ScOption[HTMLString] = ScNone
     var minuteMaxValue: ScOption[Int] = ScNone
     var minuteMinValue: ScOption[Int] = ScNone
-    var minuteValues: ScOption[js.Array[Int]] = ScNone
+    var minuteValues: ScOption[JSArray[Int]] = ScNone
     var secondIncrement: ScOption[Int] = ScNone
     var secondItem: ScOption[SelectItem ] = ScNone
     var secondItemPrompt: ScOption[HTMLString] = ScNone
@@ -45,7 +46,7 @@ class TimeItemProps extends FormItemProps {
     var secondItemTitle: ScOption[HTMLString] = ScNone
     var secondMaxValue: ScOption[Int] = ScNone
     var secondMinValue: ScOption[Int] = ScNone
-    var secondValues: ScOption[js.Array[Int]] = ScNone
+    var secondValues: ScOption[JSArray[Int]] = ScNone
     var showHintInField: ScOption[Boolean] = ScNone
     var showHourItem: ScOption[Boolean] = ScNone
     var showMillisecondItem: ScOption[Boolean] = ScNone

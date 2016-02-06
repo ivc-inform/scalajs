@@ -7,14 +7,15 @@ import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.System.Types.ContentLayoutPolicy.ContentLayoutPolicy
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
 import com.simplesys.System.Types._
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
 trait Window extends Layout {
-    def addItem(item: Canvas | String): js.Array[Canvas]
-    def addItems(items: js.Array[Canvas | String]): js.Array[Canvas]
+    def addItem(item: Canvas | String): JSArray[Canvas]
+    def addItems(items: JSArray[Canvas | String]): JSArray[Canvas]
     var animateMinimize: Boolean
     var autoCenter: Boolean
     var autoSize: Boolean
@@ -37,11 +38,11 @@ trait Window extends Layout {
     val fillSpaceStyleName: CSSStyleName
     def flash(): void
     val footer: HLayout with AutoChild
-    val footerControls: js.Array[String]
+    val footerControls: JSArray[String]
     val footerHeight: Int
     val header: HLayout with AutoChild
     val headerBackground: Img with AutoChild
-    val headerControls: js.Array[String]
+    val headerControls: JSArray[String]
     val headerIcon: Img with AutoChild
     var headerIconDefaults: Types.Object
     val headerLabel: Label with AutoChild
@@ -52,7 +53,7 @@ trait Window extends Layout {
     var hiliteHeaderSrc: SCImgURL
     var hiliteHeaderStyle: CSSStyleName
     var isModal: Boolean
-    val items: js.Array[Canvas | String]
+    val items: JSArray[Canvas | String]
     def maximize(): void
     val maximizeButton: ImgButton with AutoChild
     var maximized: Boolean
@@ -68,8 +69,8 @@ trait Window extends Layout {
     val placement: PanelPlacement
     val printBodyStyle: CSSStyleName
     val printHeaderStyle: CSSStyleName
-    def removeItem(item: Canvas): js.Array[Canvas]
-    def removeItems(items: js.Array[Canvas]): js.Array[Canvas]
+    def removeItem(item: Canvas): JSArray[Canvas]
+    def removeItems(items: JSArray[Canvas]): JSArray[Canvas]
     val resizer: ImgButton with AutoChild
     def restore(): void
     val restoreButton: ImgButton with AutoChild
@@ -92,6 +93,7 @@ trait Window extends Layout {
     val showHeader: Boolean
     val showHeaderBackground: Boolean
     var showHeaderIcon: Boolean
+    var showMaximizeButton: Boolean
     var showMinimizeButton: Boolean
     val showModalMask: Boolean
     var showResizer: Boolean

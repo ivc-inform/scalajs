@@ -1,8 +1,9 @@
 package com.simplesys.SmartClient.DataBinding.props
 
-import com.simplesys.SmartClient.DataBinding.{ResultSet, ResultTree, SortSpecifier}
+import com.simplesys.SmartClient.DataBinding.Callbacks.DSCallback
+import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
-import com.simplesys.SmartClient.RPC.props.RPCRequestProps
+import com.simplesys.SmartClient.RPC.props.RequestCommon
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.Record
 import com.simplesys.System.Types.DSOperationType.DSOperationType
@@ -14,25 +15,22 @@ import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.ValidationMode.ValidationMode
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSArray, JSDictionaryAny}
 
-import scala.scalajs.js
-import scala.scalajs.js._
-
-class DSRequestProps extends RPCRequestProps[js.Dictionary[JSAny]] {
+class DSRequestProps extends RequestCommon[DSCallback] {
     var additionalOutputs: ScOption[String] = ScNone
     var componentId: ScOption[String] = ScNone
-    override val data: ScOption[js.Dictionary[JSAny]] = ScNone
     var dataProtocol: ScOption[DSProtocol] = ScNone
     var dataSource: ScOption[String] = ScNone
+    var data: ScOption[JSDictionaryAny] = ScNone
     var endRow: ScOption[Int] = ScNone
     var exportAs: ScOption[ExportFormat] = ScNone
     var exportCSS: ScOption[String] = ScNone
-    var exportData: ScOption[Array[Record]] = ScNone
+    var exportData: ScOption[JSArray[Record]] = ScNone
     var exportDatesAsFormattedString: ScOption[Boolean] = ScNone
     var exportDelimiter: ScOption[String] = ScNone
     var exportDisplay: ScOption[ExportDisplay] = ScNone
-    var exportFields: ScOption[Array[String]] = ScNone
+    var exportFields: ScOption[JSArray[String]] = ScNone
     var exportFilename: ScOption[String] = ScNone
     var exportFooter: ScOption[String] = ScNone
     var exportHeader: ScOption[String] = ScNone
@@ -52,7 +50,7 @@ class DSRequestProps extends RPCRequestProps[js.Dictionary[JSAny]] {
     var exportValueFields: ScOption[Boolean] = ScNone
     var fieldValueExpressions: ScOption[Types.Object] = ScNone
     var generateRelatedUpdates: ScOption[Boolean] = ScNone
-    var groupBy: ScOption[Array[String]] = ScNone
+    var groupBy: ScOption[JSArray[String]] = ScNone
     var headerData: ScOption[Types.Object] = ScNone
     var keepParentsOnFilter: ScOption[Boolean] = ScNone
     var lineBreakStyle: ScOption[String] = ScNone

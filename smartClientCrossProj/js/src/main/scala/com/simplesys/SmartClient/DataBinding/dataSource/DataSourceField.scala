@@ -14,11 +14,11 @@ import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.{ID, FormatString, void, HTMLString}
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
-import scala.scalajs.js.Array
+
 
 @js.native
 trait DataSourceField extends Types.Object {
@@ -123,8 +123,8 @@ trait DataSourceField extends Types.Object {
     val updateRequiresAuthentication: Boolean
     val updateRequiresRole: String
     val uploadFieldName: String
-    val validators: Array[Validator]
-    val validOperators: Array[OperatorId]
+    val validators: JSArray[Validator]
+    val validOperators: JSArray[OperatorId]
     val valueMap: ValueMap
     val valueMapEnum: String
     val valueWriteXPath: XPathExpression
@@ -133,4 +133,7 @@ trait DataSourceField extends Types.Object {
     val viewRequiresAuthentication: Boolean
     val viewRequiresRole: String
     val xmlAttribute: Boolean
+    val foreignField: String
+    var lookup: Boolean
+    var captionClassLookup: String
 }

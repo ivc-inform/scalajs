@@ -5,9 +5,10 @@ import com.simplesys.SmartClient.Layout.Window
 import com.simplesys.SmartClient.System.Class
 import com.simplesys.System.Types.ColorPickerMode.ColorPickerMode
 import com.simplesys.System.Types.{void, _}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.Array
+
 
 @js.native
 trait ColorPicker extends Window {
@@ -20,7 +21,7 @@ trait ColorPicker extends Window {
     val cancelButton: IButton with AutoChild
     var cancelButtonConstructor: Class
     var cancelButtonTitle: HTMLString
-    val colorArray: Array[String]
+    val colorArray: JSArray[String]
     val colorButtonBaseStyle: CSSStyleName
     var colorButtonSize: Int
     var colorChanged: js.Function1[void, _]

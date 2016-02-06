@@ -7,6 +7,7 @@ import com.simplesys.SmartClient.Grids.props.listGrid.ListGridRecordProps
 import com.simplesys.SmartClient.System.KeyIdentifier
 import com.simplesys.System.Types._
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -28,7 +29,7 @@ class MenuSSItemProps extends ListGridRecordProps {
     var icon: ScOption[String] = ScNone
     var iconHeight: ScOption[Int] = ScNone
     var iconWidth: ScOption[Int] = ScNone
-    var keys: ScOption[Array[KeyIdentifier]] = ScNone
+    var keys: ScOption[JSArray[KeyIdentifier]] = ScNone
     var keyTitle: ScOption[String] = ScNone
     var submenu: ScOption[MenuSS] = ScNone
     var title: ScOption[HTMLString] = ScNone

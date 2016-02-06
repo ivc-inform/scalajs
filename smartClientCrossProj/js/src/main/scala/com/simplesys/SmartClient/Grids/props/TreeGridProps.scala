@@ -5,16 +5,19 @@ import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
 import com.simplesys.SmartClient.Grids.props.treeGrid.TreeGridFieldProps
 import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeGridField, TreeNode}
+import com.simplesys.SmartClient.Layout.Layout
 import com.simplesys.System.Types.DisplayNodeType.DisplayNodeType
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
 import com.simplesys.System.Types.{void, SCImgURL}
 import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._
 
 class TreeGridProps extends GridProps[TreeGridField, ListGridRecord] {
+    type callbackHandler <: TreeGrid
+
     var alwaysShowOpener: ScOption[Boolean] = ScNone
     var autoPreserveOpenState: ScOption[PreserveOpenState] = ScNone
     var canDropOnLeaves: ScOption[Boolean] = ScNone
@@ -43,7 +46,7 @@ class TreeGridProps extends GridProps[TreeGridField, ListGridRecord] {
     var iconSize: ScOption[Int] = ScNone
     var indentRecordComponents: ScOption[Boolean] = ScNone
     var indentSize: ScOption[Int] = ScNone
-    var initialData: ScOption[Array[TreeNode]] = ScNone
+    var initialData: ScOption[JSArray[TreeNode]] = ScNone
     var keepParentsOnFilter: ScOption[Boolean] = ScNone
     var leafClick: ScOption[js.Function3[TreeGrid, TreeNode, Int, void]] = ScNone
     var leafContextClick: ScOption[js.Function3[TreeGrid, TreeNode, Int, Boolean]] = ScNone
@@ -62,7 +65,7 @@ class TreeGridProps extends GridProps[TreeGridField, ListGridRecord] {
     var openIconSuffix: ScOption[String] = ScNone
     var parentAlreadyContainsChildMessage: ScOption[String] = ScNone
     var separateFolders: ScOption[Boolean] = ScNone
-    var serverFilterFields: ScOption[Array[String]] = ScNone
+    var serverFilterFields: ScOption[JSArray[String]] = ScNone
     var showConnectors: ScOption[Boolean] = ScNone
     var showCustomIconDrop: ScOption[Boolean] = ScNone
     var showCustomIconOpen: ScOption[Boolean] = ScNone

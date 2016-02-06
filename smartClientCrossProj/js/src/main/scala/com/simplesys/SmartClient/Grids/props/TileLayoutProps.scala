@@ -8,6 +8,7 @@ import com.simplesys.System.Types.DragDataAction.DragDataAction
 import com.simplesys.System.Types.Orientation.Orientation
 import com.simplesys.System.Types.TileLayoutPolicy.TileLayoutPolicy
 import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -17,7 +18,7 @@ class TileLayoutProps extends CanvasProps {
     var autoWrapLines: ScOption[Boolean] = ScNone
     var dragLine: ScOption[Canvas ] = ScNone
     var expandMargins: ScOption[Boolean] = ScNone
-    var getDragData: ScOption[js.Function1[DataBoundComponent, js.Array[Record]]] = ScNone
+    var getDragData: ScOption[js.Function1[DataBoundComponent, JSArray[Record]]] = ScNone
     var layoutMargin: ScOption[Int] = ScNone
     var layoutPolicy: ScOption[TileLayoutPolicy] = ScNone
     var orientation: ScOption[Orientation] = ScNone

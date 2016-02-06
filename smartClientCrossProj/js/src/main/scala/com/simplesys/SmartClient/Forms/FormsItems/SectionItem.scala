@@ -1,9 +1,10 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.System.Types.void
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait SectionItem extends CanvasItem {
@@ -12,7 +13,7 @@ trait SectionItem extends CanvasItem {
     def collapseSection ():void
     def expandSection ():void
     def isExpanded():Boolean
-    val itemIds: Array[String]
+    val itemIds: JSArray[String]
     val sectionExpanded:Boolean
     val sectionHeaderClass:String
 }

@@ -17,6 +17,7 @@ import com.simplesys.System.Types.Side.Side
 import com.simplesys.System.Types.TabTitleEditEvent.TabTitleEditEvent
 import com.simplesys.System.Types.{CSSClassName, ID, SCImgURL, void}
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
 
@@ -24,7 +25,7 @@ class TabSetProps extends CanvasProps {
     var addTabButton: ScOption[ImgButton] = ScNone
     var animateTabScrolling: ScOption[Boolean] = ScNone
     var addTabButtonIcon: ScOption[SCImgURL] = ScNone
-    var addTabs: ScOption[js.Function2[js.Array[Tab], Int, _]] = ScNone
+    var addTabs: ScOption[js.Function2[JSArray[Tab], Int, _]] = ScNone
     var ariaCloseableSuffix: ScOption[String] = ScNone
     var bottomEdgeOffsets: ScOption[EdgeSizes] = ScNone
     var bottomEdgeSizes: ScOption[EdgeSizes] = ScNone
@@ -44,7 +45,7 @@ class TabSetProps extends CanvasProps {
     var defaultTabHeight: ScOption[Int] = ScNone
     var defaultTabWidth: ScOption[Int] = ScNone
     var destroyPanes: ScOption[Boolean] = ScNone
-    var getPaneContainerEdges: ScOption[js.Function1[void, js.Array[Types.Object]]] = ScNone
+    var getPaneContainerEdges: ScOption[js.Function1[void, JSArray[Types.Object]]] = ScNone
     var leftEdgeOffsets: ScOption[EdgeSizes] = ScNone
     var leftEdgeSizes: ScOption[EdgeSizes] = ScNone
     var moreTab: ScOption[Tab] = ScNone
@@ -85,7 +86,7 @@ class TabSetProps extends CanvasProps {
     var symmetricScroller: ScOption[Boolean] = ScNone
     var tabBar: ScOption[TabBar] = ScNone
     var tabBarAlign: ScOption[Alignment] = ScNone
-    var tabBarControls: ScOption[js.Array[Types.Object]] = ScNone
+    var tabBarControls: ScOption[JSArray[Types.Object]] = ScNone
     var tabBarPosition: ScOption[Side] = ScNone
     var tabBarProperties: ScOption[TabBar] = ScNone
     var tabBarThickness: ScOption[Int] = ScNone

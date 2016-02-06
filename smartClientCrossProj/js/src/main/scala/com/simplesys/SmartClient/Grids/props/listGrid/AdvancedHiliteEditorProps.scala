@@ -6,6 +6,7 @@ import com.simplesys.SmartClient.Layout.props.VStackProps
 import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.System.Types.SCImgURL
 import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js._
 
@@ -17,7 +18,7 @@ class AdvancedHiliteEditorProps extends VStackProps {
     var filterBuilder: ScOption[FilterBuilder] = ScNone
     var filterGroupTitle: ScOption[String] = ScNone
     var hiliteForm: ScOption[DynamicForm ] = ScNone
-    var hiliteIcons: ScOption[Array[SCImgURL]] = ScNone
+    var hiliteIcons: ScOption[JSArray[SCImgURL]] = ScNone
     var invalidHilitePrompt: ScOption[String] = ScNone
     var saveButton: ScOption[StatefulCanvas ] = ScNone
     var saveButtonTitle: ScOption[String] = ScNone

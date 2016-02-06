@@ -11,7 +11,7 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
 import com.simplesys.System.Types.DragAppearance.DragAppearance
 import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.types.JSAny
+import com.simplesys.types.{JSArray, JSDictionaryAny, JSDictionary, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -21,14 +21,14 @@ class TileGridProps extends TileLayoutProps with DataBoundComponentProps{
     var canAcceptDroppedRecords: ScOption[Boolean] = ScNone
     var canDragTilesOut: ScOption[Boolean] = ScNone
     var canReorderTiles: ScOption[Boolean] = ScNone
-    var data: ScOption[Array[TileRecord]] = ScNone
+    var data: ScOption[JSArray[TileRecord]] = ScNone
     var dataArrived: ScOption[js.Function2[Int, Int, void]] = ScNone
     var detailViewer: ScOption[DetailViewer] = ScNone
-    var detailViewerProperties: ScOption[js.Dictionary[JSAny]] = ScNone
+    var detailViewerProperties: ScOption[JSDictionaryAny] = ScNone
     var drawAllMaxTiles: ScOption[Int] = ScNone
     var emptyMessage: ScOption[HTMLString] = ScNone
     var emptyMessageStyle: ScOption[CSSStyleName] = ScNone
-    var fields: ScOption[Array[DetailViewerField]] = ScNone
+    var fields: ScOption[JSArray[DetailViewerField]] = ScNone
     var loadingMessage: ScOption[HTMLString] = ScNone
     var printTilesPerLine: ScOption[Int] = ScNone
     var recordClick: ScOption[js.Function3[TileGrid, Canvas, TileRecord, void]] = ScNone

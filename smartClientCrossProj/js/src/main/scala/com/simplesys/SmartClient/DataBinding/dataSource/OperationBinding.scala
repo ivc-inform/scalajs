@@ -12,9 +12,10 @@ import com.simplesys.System.Types.RPCTransport.RPCTransport
 import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
 import com.simplesys.System.Types.SQLType.SQLType
 import com.simplesys.System.Types.URL
+import com.simplesys.types.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.{Array, |}
+import scala.scalajs.js.|
 
 @js.native
 trait OperationBinding extends Types.Object {
@@ -25,24 +26,24 @@ trait OperationBinding extends Types.Object {
     val callbackParam: String
     val canSyncCache: Boolean
     val creatorOverrides: Boolean
-    val criteria: Array[DSRequestModifier]
-    val customCriteriaFields: Array[String]
-    val customFields: Array[String]
+    val criteria: JSArray[DSRequestModifier]
+    val customCriteriaFields: JSArray[String]
+    val customFields: JSArray[String]
     val customHQL: String
     val customJQL: String
     val customSQL: String
-    val customValueFields: Array[String]
+    val customValueFields: JSArray[String]
     val dataFormat: DSDataFormat
     val dataProtocol: DSProtocol
     val dataTransport: RPCTransport
     val dataURL: URL
     val defaultParams: Types.Object
-    val excludeCriteriaFields: Array[String]
+    val excludeCriteriaFields: JSArray[String]
     val exportAs: ExportFormat
-    val exportFields: Array[String]
+    val exportFields: JSArray[String]
     val exportFilename: String
     val exportResults: Boolean
-    val groupBy: Array[String]
+    val groupBy: JSArray[String]
     val groupClause: String
     val guestUserId: String
     val invalidateCache: Boolean
@@ -84,7 +85,7 @@ trait OperationBinding extends Types.Object {
     val useHttpProxy: Boolean
     val useSpringTransaction: Boolean
     val useSubselectForRowCount: Boolean
-    val values: Array[DSRequestModifier]
+    val values: JSArray[DSRequestModifier]
     val valuesClause: String
     val whereClause: String
     val wsOperation: String
