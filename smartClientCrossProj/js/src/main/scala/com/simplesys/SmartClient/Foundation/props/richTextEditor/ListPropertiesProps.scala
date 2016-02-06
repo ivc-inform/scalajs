@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Foundation.props.richTextEditor
 
 import com.simplesys.SmartClient.Foundation.richTextEditor.ListProperties
-import com.simplesys.System.Types.SCImgURL
+import com.simplesys.System.Types2.SCImgURL
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 

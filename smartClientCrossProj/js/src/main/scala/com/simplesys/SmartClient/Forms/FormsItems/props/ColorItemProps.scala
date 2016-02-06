@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
-import com.simplesys.System.Types.ColorPickerMode.ColorPickerMode
+import com.simplesys.System.Types2.ColorPickerMode.ColorPickerMode
 import com.simplesys.option.{ScOption, ScNone}
 
 import scala.scalajs.js

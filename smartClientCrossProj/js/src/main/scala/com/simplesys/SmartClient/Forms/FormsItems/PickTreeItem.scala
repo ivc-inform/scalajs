@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Forms.FormsItems
 import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.treeGrid.Tree
-import com.simplesys.System.Types.{void, CSSStyleName, HTMLString, AutoChild}
+import com.simplesys.System.Types2.{void, CSSStyleName, HTMLString, AutoChild}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

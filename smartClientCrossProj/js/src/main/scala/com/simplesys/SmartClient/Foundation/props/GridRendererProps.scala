@@ -2,8 +2,8 @@ package com.simplesys.SmartClient.Foundation.props
 
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types.State.State
-import com.simplesys.System.Types.{CSSStyleName, HTMLString}
+import com.simplesys.System.Types2.State.State
+import com.simplesys.System.Types2.{CSSStyleName, HTMLString}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.Types1.JSArray
 

@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.DataBinding.dataSource
 
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.VelocityExpression
-import com.simplesys.System.Types.URL
+import com.simplesys.System.Types2.URL
 
 import scala.scalajs.js
 import scala.scalajs.js.|

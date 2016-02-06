@@ -7,18 +7,18 @@ import com.simplesys.SmartClient.RPC.ServerObject
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{Record, VelocityExpression, XPathExpression}
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
-import com.simplesys.System.Types.DSDataFormat.DSDataFormat
-import com.simplesys.System.Types.DSInheritanceMode.DSInheritanceMode
-import com.simplesys.System.Types.DSProtocol.DSProtocol
-import com.simplesys.System.Types.DSServerType.DSServerType
-import com.simplesys.System.Types.EnumTranslateStrategy.EnumTranslateStrategy
-import com.simplesys.System.Types.MultiUpdatePolicy.MultiUpdatePolicy
-import com.simplesys.System.Types.RPCTransport.RPCTransport
-import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
-import com.simplesys.System.Types.SequenceMode.SequenceMode
-import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types.{ID, URL, URN}
+import com.simplesys.System.Types2.CriteriaPolicy.CriteriaPolicy
+import com.simplesys.System.Types2.DSDataFormat.DSDataFormat
+import com.simplesys.System.Types2.DSInheritanceMode.DSInheritanceMode
+import com.simplesys.System.Types2.DSProtocol.DSProtocol
+import com.simplesys.System.Types2.DSServerType.DSServerType
+import com.simplesys.System.Types2.EnumTranslateStrategy.EnumTranslateStrategy
+import com.simplesys.System.Types2.MultiUpdatePolicy.MultiUpdatePolicy
+import com.simplesys.System.Types2.RPCTransport.RPCTransport
+import com.simplesys.System.Types2.SQLPagingStrategy.SQLPagingStrategy
+import com.simplesys.System.Types2.SequenceMode.SequenceMode
+import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types2.{ID, URL, URN}
 import com.simplesys.option.{IntString, ScNone, ScOption}
 import com.simplesys.Types1.JSAny
 

@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Control
 
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Grids.treeGrid.Tree
-import com.simplesys.System.Types.{SCClassName, AutoChild, CSSStyleName, HTMLString}
+import com.simplesys.System.Types2.{SCClassName, AutoChild, CSSStyleName, HTMLString}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

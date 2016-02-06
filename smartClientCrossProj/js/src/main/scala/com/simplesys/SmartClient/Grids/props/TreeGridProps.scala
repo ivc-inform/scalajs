@@ -6,9 +6,9 @@ import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
 import com.simplesys.SmartClient.Grids.props.treeGrid.TreeGridFieldProps
 import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeGridField, TreeNode}
 import com.simplesys.SmartClient.Layout.Layout
-import com.simplesys.System.Types.DisplayNodeType.DisplayNodeType
-import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
-import com.simplesys.System.Types.{void, SCImgURL}
+import com.simplesys.System.Types2.DisplayNodeType.DisplayNodeType
+import com.simplesys.System.Types2.PreserveOpenState.PreserveOpenState
+import com.simplesys.System.Types2.{void, SCImgURL}
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.Types1.{JSArray, JSAny}
 

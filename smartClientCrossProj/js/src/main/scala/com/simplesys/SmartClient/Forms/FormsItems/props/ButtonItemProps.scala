@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.{Class, Types}
-import com.simplesys.System.Types.{CSSStyleName, SCImgURL}
+import com.simplesys.System.Types2.{CSSStyleName, SCImgURL}
 import com.simplesys.option._
 
 class ButtonItemProps extends CanvasItemProps {

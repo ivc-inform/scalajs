@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Foundation.props.canvas
 
-import com.simplesys.System.Types.URL
+import com.simplesys.System.Types2.URL
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 

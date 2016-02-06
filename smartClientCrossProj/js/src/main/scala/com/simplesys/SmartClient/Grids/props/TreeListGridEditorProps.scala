@@ -6,9 +6,9 @@ import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
 import com.simplesys.SmartClient.Grids.props.treeGrid.TreeGridFieldProps
 import com.simplesys.SmartClient.Grids.treeGrid.TreeGridField
 import com.simplesys.SmartClient.Layout.props.HLayoutSSProps
-import com.simplesys.System.Types.SelectionStyle.SelectionStyle
-import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types._
+import com.simplesys.System.Types2.SelectionStyle.SelectionStyle
+import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types2._
 import com.simplesys.option.{IntString, ScNone, ScOption}
 import com.simplesys.Types1.JSArray
 

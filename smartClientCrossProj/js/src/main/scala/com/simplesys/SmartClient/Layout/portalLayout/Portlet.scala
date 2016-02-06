@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Layout.portalLayout
 import com.simplesys.SmartClient.Control.Dialog
 import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
 import com.simplesys.SmartClient.Layout.{PortalLayout, Window}
-import com.simplesys.System.Types.{void, SCClassName}
+import com.simplesys.System.Types2.{void, SCClassName}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

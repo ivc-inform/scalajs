@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Control.{MenuSS, Menu}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.System.KeyIdentifier
-import com.simplesys.System.Types._
+import com.simplesys.System.Types2._
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js

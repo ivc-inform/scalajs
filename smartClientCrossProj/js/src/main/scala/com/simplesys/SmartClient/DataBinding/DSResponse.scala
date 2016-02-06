@@ -3,8 +3,8 @@ package com.simplesys.SmartClient.DataBinding
 import com.simplesys.SmartClient.RPC.{AbstractRPCResponseCompanion, RPCResponse}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{Object, Record}
-import com.simplesys.System.Types.DSOperationType.DSOperationType
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types2.DSOperationType.DSOperationType
+import com.simplesys.System.Types2.void
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js

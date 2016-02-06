@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.System.props
 
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
-import com.simplesys.System.Types.TreeModelType.TreeModelType
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types2.TreeModelType.TreeModelType
+import com.simplesys.System.Types2.void
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.Types1.{JSAny, JSArray}
 

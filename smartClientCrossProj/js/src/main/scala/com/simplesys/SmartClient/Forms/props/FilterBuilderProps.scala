@@ -7,12 +7,12 @@ import com.simplesys.SmartClient.Forms.FormsItems.{PickList, FormItem, SelectIte
 import com.simplesys.SmartClient.Foundation.{Canvas, Label}
 import com.simplesys.SmartClient.Layout.{VStack, HLayout}
 import com.simplesys.SmartClient.Layout.props.LayoutProps
-import com.simplesys.System.Types.FieldType.FieldType
-import com.simplesys.System.Types.LogicalOperator.LogicalOperator
-import com.simplesys.System.Types.{void, MultiAutoChild}
-import com.simplesys.System.Types.OperatorId.OperatorId
-import com.simplesys.System.Types.TopOperatorAppearance.TopOperatorAppearance
-import com.simplesys.System.Types.ValueItemType.ValueItemType
+import com.simplesys.System.Types2.FieldType.FieldType
+import com.simplesys.System.Types2.LogicalOperator.LogicalOperator
+import com.simplesys.System.Types2.{void, MultiAutoChild}
+import com.simplesys.System.Types2.OperatorId.OperatorId
+import com.simplesys.System.Types2.TopOperatorAppearance.TopOperatorAppearance
+import com.simplesys.System.Types2.ValueItemType.ValueItemType
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.Types1.JSArray
 

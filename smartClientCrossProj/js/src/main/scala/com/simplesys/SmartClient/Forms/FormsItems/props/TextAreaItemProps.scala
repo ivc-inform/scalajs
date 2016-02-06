@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
-import com.simplesys.System.Types.SCClassName
-import com.simplesys.System.Types.TEXTAREA_WRAP.TEXTAREA_WRAP
+import com.simplesys.System.Types2.SCClassName
+import com.simplesys.System.Types2.TEXTAREA_WRAP.TEXTAREA_WRAP
 import com.simplesys.option.{ScOption, ScNone}
 
 import scala.scalajs.js._

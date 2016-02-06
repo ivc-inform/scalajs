@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.DataBinding.SortSpecifier
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.props.WindowProps
-import com.simplesys.System.Types.HTMLString
+import com.simplesys.System.Types2.HTMLString
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.Types1.JSArray
 

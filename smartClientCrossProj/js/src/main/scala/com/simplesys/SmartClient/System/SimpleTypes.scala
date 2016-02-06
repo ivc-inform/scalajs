@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.DataBinding.props.SimpleTypeProps
-import com.simplesys.System.Types.OperatorId
+import com.simplesys.System.Types2.OperatorId
 
 object SimpleTypes {
     SimpleType.create(new SimpleTypeProps {

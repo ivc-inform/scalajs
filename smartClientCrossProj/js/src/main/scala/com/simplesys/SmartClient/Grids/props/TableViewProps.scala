@@ -1,10 +1,10 @@
 package com.simplesys.SmartClient.Grids.props
 
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
-import com.simplesys.System.Types.NavigationMode.NavigationMode
-import com.simplesys.System.Types.RecordLayout.RecordLayout
-import com.simplesys.System.Types.{HTMLString, CSSStyleName, SCImgURL}
-import com.simplesys.System.Types.TableMode.TableMode
+import com.simplesys.System.Types2.NavigationMode.NavigationMode
+import com.simplesys.System.Types2.RecordLayout.RecordLayout
+import com.simplesys.System.Types2.{HTMLString, CSSStyleName, SCImgURL}
+import com.simplesys.System.Types2.TableMode.TableMode
 import com.simplesys.option.{ScOption, ScNone}
 
 import scala.scalajs.js

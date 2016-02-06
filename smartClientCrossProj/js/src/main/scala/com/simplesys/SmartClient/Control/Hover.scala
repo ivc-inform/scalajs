@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Control
 
 import com.simplesys.SmartClient.Foundation.{Label, Canvas}
 import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
-import com.simplesys.System.Types.{void, HTMLString}
+import com.simplesys.System.Types2.{void, HTMLString}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

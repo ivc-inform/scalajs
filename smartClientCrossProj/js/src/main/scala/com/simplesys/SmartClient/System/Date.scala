@@ -2,8 +2,8 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
 import com.simplesys.SmartClient.System.date.FiscalYear.FiscalYear
-import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types2.void
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js

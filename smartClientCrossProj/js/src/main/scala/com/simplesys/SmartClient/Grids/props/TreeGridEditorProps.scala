@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Grids.props
 import com.simplesys.SmartClient.Grids.props.listGrid.ListGridRecordProps
 import com.simplesys.SmartClient.Grids.props.treeGrid.TreeGridFieldProps
 import com.simplesys.SmartClient.Grids.treeGrid.Tree
-import com.simplesys.System.Types._
+import com.simplesys.System.Types2._
 import com.simplesys.option.{ScNone, ScOption}
 
 class TreeGridEditorProps extends GridEditorProps[TreeGridFieldProps, ListGridRecordProps] {

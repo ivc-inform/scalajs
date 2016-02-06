@@ -7,8 +7,8 @@ import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.Grids.props.GridProps
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types.PanelPlacement._
-import com.simplesys.System.Types._
+import com.simplesys.System.Types2.PanelPlacement._
+import com.simplesys.System.Types2._
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

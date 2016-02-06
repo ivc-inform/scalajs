@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.DataBinding.props.dataSource
 
 import com.simplesys.SmartClient.System.Types.VelocityExpression
-import com.simplesys.System.Types.URL
+import com.simplesys.System.Types2.URL
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.props.AbstractClassProps
 

@@ -7,10 +7,10 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.detailViewer.{DetailViewerField, DetailViewerRecord}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.System.Types.{DetailViewerViewState, Object}
-import com.simplesys.System.Types.Alignment.Alignment
-import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.System.Types.{void, _}
+import com.simplesys.System.Types2.Alignment.Alignment
+import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types2.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types2.{void, _}
 import com.simplesys.Types1.{JSAny, JSArray}
 
 import scala.scalajs.js

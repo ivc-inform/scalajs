@@ -4,9 +4,9 @@ import com.simplesys.SmartClient.DataBinding.props.DataBoundComponentProps
 import com.simplesys.SmartClient.Foundation.{HTMLFlow, Canvas}
 import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
 import com.simplesys.SmartClient.System.{HTMLFlow, Types}
-import com.simplesys.System.Types.ContentsType.ContentsType
-import com.simplesys.System.Types.{void, URL, HTMLString}
-import com.simplesys.System.Types.SendMethod.SendMethod
+import com.simplesys.System.Types2.ContentsType.ContentsType
+import com.simplesys.System.Types2.{void, URL, HTMLString}
+import com.simplesys.System.Types2.SendMethod.SendMethod
 import com.simplesys.option.{ScOption, ScNone}
 import org.scalajs.dom.raw.HTMLElement
 

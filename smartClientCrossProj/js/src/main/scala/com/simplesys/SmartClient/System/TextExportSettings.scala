@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types.ForceTextApproach.ForceTextApproach
-import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types2.ForceTextApproach.ForceTextApproach
+import com.simplesys.System.Types2.TimeDisplayFormat.TimeDisplayFormat
 
 import scala.scalajs.js
 

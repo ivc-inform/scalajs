@@ -4,16 +4,16 @@ import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.Validator
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types._
-import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types.FieldImportStrategy.FieldImportStrategy
-import com.simplesys.System.Types.FieldType.FieldType
-import com.simplesys.System.Types.HashAlgorithm.HashAlgorithm
-import com.simplesys.System.Types.JoinType.JoinType
-import com.simplesys.System.Types.MultipleFieldStorage.MultipleFieldStorage
-import com.simplesys.System.Types.OperatorId.OperatorId
-import com.simplesys.System.Types.SummaryFunction.SummaryFunction
-import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.System.Types.{ID, FormatString, void, HTMLString}
+import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types2.FieldImportStrategy.FieldImportStrategy
+import com.simplesys.System.Types2.FieldType.FieldType
+import com.simplesys.System.Types2.HashAlgorithm.HashAlgorithm
+import com.simplesys.System.Types2.JoinType.JoinType
+import com.simplesys.System.Types2.MultipleFieldStorage.MultipleFieldStorage
+import com.simplesys.System.Types2.OperatorId.OperatorId
+import com.simplesys.System.Types2.SummaryFunction.SummaryFunction
+import com.simplesys.System.Types2.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types2.{ID, FormatString, void, HTMLString}
 import com.simplesys.Types1.{JSArray, JSAny}
 
 import scala.scalajs.js

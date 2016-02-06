@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.Class
-import com.simplesys.System.Types.{void, AutoChild}
+import com.simplesys.System.Types2.{void, AutoChild}
 import com.simplesys.Types1.{JSDictionaryAny, JSAny}
 
 import scala.scalajs.js

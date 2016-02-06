@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.FormsItems.{SelectItem, TextItem}
-import com.simplesys.System.Types.HTMLString
-import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types2.HTMLString
+import com.simplesys.System.Types2.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.Types1.JSArray
 

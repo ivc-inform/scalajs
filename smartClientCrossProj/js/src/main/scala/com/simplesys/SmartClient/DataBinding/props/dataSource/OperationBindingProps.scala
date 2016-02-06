@@ -5,14 +5,14 @@ import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
 import com.simplesys.SmartClient.RPC.ServerObject
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{XPathExpression, VelocityExpression}
-import com.simplesys.System.Types.DSDataFormat.DSDataFormat
-import com.simplesys.System.Types.DSOperationType.DSOperationType
-import com.simplesys.System.Types.DSProtocol.DSProtocol
-import com.simplesys.System.Types.ExportFormat.ExportFormat
-import com.simplesys.System.Types.RPCTransport.RPCTransport
-import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
-import com.simplesys.System.Types.SQLType.SQLType
-import com.simplesys.System.Types.URL
+import com.simplesys.System.Types2.DSDataFormat.DSDataFormat
+import com.simplesys.System.Types2.DSOperationType.DSOperationType
+import com.simplesys.System.Types2.DSProtocol.DSProtocol
+import com.simplesys.System.Types2.ExportFormat.ExportFormat
+import com.simplesys.System.Types2.RPCTransport.RPCTransport
+import com.simplesys.System.Types2.SQLPagingStrategy.SQLPagingStrategy
+import com.simplesys.System.Types2.SQLType.SQLType
+import com.simplesys.System.Types2.URL
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.props.AbstractClassProps
 import com.simplesys.Types1.JSArray

@@ -3,9 +3,9 @@ package com.simplesys.SmartClient.Forms.FormsItems
 import com.simplesys.SmartClient.Forms.DateChooser
 import com.simplesys.SmartClient.System.Date
 import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
-import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types.DateItemSelectorFormat.DateItemSelectorFormat
-import com.simplesys.System.Types.{AutoChild, DateInputFormat, SCClassName, void}
+import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types2.DateItemSelectorFormat.DateItemSelectorFormat
+import com.simplesys.System.Types2.{AutoChild, DateInputFormat, SCClassName, void}
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js

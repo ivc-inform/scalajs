@@ -1,9 +1,9 @@
 package com.simplesys.SmartClient.DataBinding.props
 
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.System.Types.JSONCircularReferenceMode.JSONCircularReferenceMode
-import com.simplesys.System.Types.JSONDateFormat.JSONDateFormat
-import com.simplesys.System.Types.JSONInstanceSerializationMode.JSONInstanceSerializationMode
+import com.simplesys.System.Types2.JSONCircularReferenceMode.JSONCircularReferenceMode
+import com.simplesys.System.Types2.JSONDateFormat.JSONDateFormat
+import com.simplesys.System.Types2.JSONInstanceSerializationMode.JSONInstanceSerializationMode
 import com.simplesys.option.{ScNone, ScOption}
 
 class JSONEncoderProps extends ClassProps {

@@ -3,10 +3,10 @@ package com.simplesys.SmartClient.Grids.treeGrid
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System.{Class, Types}
-import com.simplesys.System.Types.LoadState.LoadState
-import com.simplesys.System.Types.TreeFilterMode.TreeFilterMode
-import com.simplesys.System.Types.TreeModelType.TreeModelType
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types2.LoadState.LoadState
+import com.simplesys.System.Types2.TreeFilterMode.TreeFilterMode
+import com.simplesys.System.Types2.TreeModelType.TreeModelType
+import com.simplesys.System.Types2.void
 import com.simplesys.Types1.{JSArray, JSAny}
 
 import scala.scalajs.js

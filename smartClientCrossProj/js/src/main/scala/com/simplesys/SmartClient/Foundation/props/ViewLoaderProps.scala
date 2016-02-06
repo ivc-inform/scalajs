@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Foundation.props
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.RPC.{RPCResponse, RPCRequest}
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types.{HTMLString, URL}
+import com.simplesys.System.Types2.{HTMLString, URL}
 import com.simplesys.option.{ScOption, ScNone}
 
 import scala.scalajs.js

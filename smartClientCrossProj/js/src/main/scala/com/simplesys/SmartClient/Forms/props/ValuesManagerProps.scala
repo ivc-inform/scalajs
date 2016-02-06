@@ -4,8 +4,8 @@ import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Forms.{DynamicForm, ValuesManager}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.System.Types.DSOperationType.DSOperationType
-import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types2.DSOperationType.DSOperationType
+import com.simplesys.System.Types2.OperatorId.OperatorId
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.Types1.JSArray
 

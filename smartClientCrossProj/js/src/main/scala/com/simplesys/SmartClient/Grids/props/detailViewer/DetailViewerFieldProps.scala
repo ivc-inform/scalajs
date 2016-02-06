@@ -3,10 +3,10 @@ package com.simplesys.SmartClient.Grids.props.detailViewer
 import com.simplesys.SmartClient.DataBinding.DetailViewer
 import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerRecord
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
-import com.simplesys.System.Types.{FormatString, CSSClassName, HTMLString}
-import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types2.HiliteIconPosition.HiliteIconPosition
+import com.simplesys.System.Types2.{FormatString, CSSClassName, HTMLString}
+import com.simplesys.System.Types2.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.props.AbstractClassProps
 import com.simplesys.Types1.JSArray

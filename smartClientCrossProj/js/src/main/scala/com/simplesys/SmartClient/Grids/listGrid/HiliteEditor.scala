@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Foundation.StatefulCanvas
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Layout.VLayout
 import com.simplesys.SmartClient.System.Types.Callback
-import com.simplesys.System.Types.{AutoChild, SCImgURL, void}
+import com.simplesys.System.Types2.{AutoChild, SCImgURL, void}
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js

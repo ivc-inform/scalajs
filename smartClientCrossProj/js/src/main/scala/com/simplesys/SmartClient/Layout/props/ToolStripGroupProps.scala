@@ -2,9 +2,9 @@ package com.simplesys.SmartClient.Layout.props
 
 import com.simplesys.SmartClient.Foundation.{Canvas, Label}
 import com.simplesys.SmartClient.Layout.HLayout
-import com.simplesys.System.Types.Alignment.Alignment
-import com.simplesys.System.Types.SCClassName
-import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
+import com.simplesys.System.Types2.Alignment.Alignment
+import com.simplesys.System.Types2.SCClassName
+import com.simplesys.System.Types2.VerticalAlignment.VerticalAlignment
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

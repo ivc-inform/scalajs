@@ -9,9 +9,9 @@ import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerField
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.System.Types.{ValueMap, Record}
 import com.simplesys.SmartClient.System.{Types, Class, AbstractClassCompanion}
-import com.simplesys.System.Types.OperatorId.OperatorId
-import com.simplesys.System.Types.SummaryFunction.SummaryFunction
-import com.simplesys.System.Types.{void, ID, FormatString}
+import com.simplesys.System.Types2.OperatorId.OperatorId
+import com.simplesys.System.Types2.SummaryFunction.SummaryFunction
+import com.simplesys.System.Types2.{void, ID, FormatString}
 import com.simplesys.Types1.{JSArray, JSAny}
 
 import scala.scalajs.js

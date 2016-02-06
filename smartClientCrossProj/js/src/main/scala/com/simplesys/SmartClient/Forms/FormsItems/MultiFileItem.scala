@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Foundation.StatefulCanvas
-import com.simplesys.System.Types.{SCClassName, HTMLString, AutoChild}
+import com.simplesys.System.Types2.{SCClassName, HTMLString, AutoChild}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

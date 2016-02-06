@@ -3,9 +3,9 @@ package com.simplesys.SmartClient.Layout
 import com.simplesys.SmartClient.Foundation.{Label, Canvas}
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationBarViewState
 import com.simplesys.SmartClient.Layout.navigationBar.{MiniNavControl, NavigationButton}
-import com.simplesys.System.Types.Alignment.Alignment
-import com.simplesys.System.Types.NavigationDirection.NavigationDirection
-import com.simplesys.System.Types.{void, AutoChild, HTMLString, SCImgURL}
+import com.simplesys.System.Types2.Alignment.Alignment
+import com.simplesys.System.Types2.NavigationDirection.NavigationDirection
+import com.simplesys.System.Types2.{void, AutoChild, HTMLString, SCImgURL}
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js

@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.System.Types.LogPriority.LogPriority
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types2.LogPriority.LogPriority
+import com.simplesys.System.Types2.void
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js

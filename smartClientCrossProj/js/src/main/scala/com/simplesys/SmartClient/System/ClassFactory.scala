@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types2.void
 import com.simplesys.Types1.JSDictionary
 
 import scala.scalajs.js

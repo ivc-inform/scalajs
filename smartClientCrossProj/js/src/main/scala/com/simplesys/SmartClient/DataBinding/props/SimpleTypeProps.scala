@@ -5,8 +5,8 @@ import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.Validator
 import com.simplesys.SmartClient.System.Types.ValueMap
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.System.Types.{FormatString, ID}
-import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types2.{FormatString, ID}
+import com.simplesys.System.Types2.OperatorId.OperatorId
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.Types1.JSArray
 

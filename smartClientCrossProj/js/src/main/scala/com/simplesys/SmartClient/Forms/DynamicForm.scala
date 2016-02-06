@@ -11,19 +11,19 @@ import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.System.Types.{Criteria, Record, ValueMap}
 import com.simplesys.SmartClient.System.{AbstractClassCompanion, KeyIdentifier, Types}
 import com.simplesys.SmartClient.Workdlow.UserTask
-import com.simplesys.System.Types.Alignment.Alignment
-import com.simplesys.System.Types.AutoComplete.AutoComplete
-import com.simplesys.System.Types.DSOperationType.DSOperationType
-import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types.Encoding.Encoding
-import com.simplesys.System.Types.FormMethod.FormMethod
-import com.simplesys.System.Types.OperatorId.OperatorId
-import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
-import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.System.Types.TitleOrientation.TitleOrientation
-import com.simplesys.System.Types.VisibilityMode.VisibilityMode
-import com.simplesys.System.Types._
+import com.simplesys.System.Types2.Alignment.Alignment
+import com.simplesys.System.Types2.AutoComplete.AutoComplete
+import com.simplesys.System.Types2.DSOperationType.DSOperationType
+import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types2.Encoding.Encoding
+import com.simplesys.System.Types2.FormMethod.FormMethod
+import com.simplesys.System.Types2.OperatorId.OperatorId
+import com.simplesys.System.Types2.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
+import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types2.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types2.TitleOrientation.TitleOrientation
+import com.simplesys.System.Types2.VisibilityMode.VisibilityMode
+import com.simplesys.System.Types2._
 import com.simplesys.Types1.{JSArray, JSAny}
 
 import scala.scalajs.js

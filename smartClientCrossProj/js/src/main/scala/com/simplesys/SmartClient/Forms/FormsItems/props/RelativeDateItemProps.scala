@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.FormsItems.{BlurbItem, TimeItem, SpinnerItem, ComboBoxItem}
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types.RelativeDateRangePosition.RelativeDateRangePosition
+import com.simplesys.System.Types2.RelativeDateRangePosition.RelativeDateRangePosition
 import com.simplesys.option.{ScOption, ScNone}
 
 import scala.scalajs.js._

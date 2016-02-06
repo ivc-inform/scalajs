@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Foundation.props
 
-import com.simplesys.System.Types.{CSSColor, CSSStyleName}
+import com.simplesys.System.Types2.{CSSColor, CSSStyleName}
 import com.simplesys.option.{ScNone, ScOption}
 
 class EdgedCanvasProps extends CanvasProps {

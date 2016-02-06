@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.Layout.VLayout
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types2.void
 
 import scala.scalajs.js
 

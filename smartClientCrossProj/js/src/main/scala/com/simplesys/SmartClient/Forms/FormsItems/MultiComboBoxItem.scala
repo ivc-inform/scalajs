@@ -3,9 +3,9 @@ package com.simplesys.SmartClient.Forms.FormsItems
 import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Layout.Layout
-import com.simplesys.System.Types.MultiComboBoxLayoutStyle.MultiComboBoxLayoutStyle
-import com.simplesys.System.Types._
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types2.MultiComboBoxLayoutStyle.MultiComboBoxLayoutStyle
+import com.simplesys.System.Types2._
+import com.simplesys.System.Types2.void
 
 import scala.scalajs.js
 import scala.scalajs.js.|

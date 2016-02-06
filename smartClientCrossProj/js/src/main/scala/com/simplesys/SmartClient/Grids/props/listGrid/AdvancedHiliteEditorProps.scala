@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Forms.{FilterBuilder, DynamicForm}
 import com.simplesys.SmartClient.Foundation.StatefulCanvas
 import com.simplesys.SmartClient.Layout.props.VStackProps
 import com.simplesys.SmartClient.System.Types.Callback
-import com.simplesys.System.Types.SCImgURL
+import com.simplesys.System.Types2.SCImgURL
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.Types1.JSArray
 

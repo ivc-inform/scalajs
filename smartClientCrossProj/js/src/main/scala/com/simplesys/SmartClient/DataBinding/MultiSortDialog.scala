@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.Window
 import com.simplesys.SmartClient.System.Types.{Callback, Object}
-import com.simplesys.System.Types._
+import com.simplesys.System.Types2._
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js

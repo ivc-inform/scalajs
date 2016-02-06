@@ -6,8 +6,8 @@ import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.RPC.ServerObject
 import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
-import com.simplesys.System.Types.ValidatorType.ValidatorType
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types2.ValidatorType.ValidatorType
+import com.simplesys.System.Types2.void
 import com.simplesys.Types1.{JSArray, JSAny}
 
 import scala.scalajs.js

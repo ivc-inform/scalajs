@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types.Overflow.Overflow
+import com.simplesys.System.Types2.Overflow.Overflow
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.Types1.JSAny
 

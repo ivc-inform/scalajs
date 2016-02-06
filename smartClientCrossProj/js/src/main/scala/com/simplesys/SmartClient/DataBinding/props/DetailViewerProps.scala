@@ -5,14 +5,14 @@ import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.Record
-import com.simplesys.System.Types.DSOperationType.DSOperationType
-import com.simplesys.System.Types.DSProtocol.DSProtocol
-import com.simplesys.System.Types.ExportDisplay.ExportDisplay
-import com.simplesys.System.Types.ExportFormat.ExportFormat
-import com.simplesys.System.Types.ExportImageFormat.ExportImageFormat
-import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
-import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types.ValidationMode.ValidationMode
+import com.simplesys.System.Types2.DSOperationType.DSOperationType
+import com.simplesys.System.Types2.DSProtocol.DSProtocol
+import com.simplesys.System.Types2.ExportDisplay.ExportDisplay
+import com.simplesys.System.Types2.ExportFormat.ExportFormat
+import com.simplesys.System.Types2.ExportImageFormat.ExportImageFormat
+import com.simplesys.System.Types2.PropertyIdentifier.PropertyIdentifier
+import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types2.ValidationMode.ValidationMode
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.Types1.JSArray
 

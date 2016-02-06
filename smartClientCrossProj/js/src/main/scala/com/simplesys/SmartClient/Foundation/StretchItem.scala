@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Foundation
 
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types.SCImgURL
+import com.simplesys.System.Types2.SCImgURL
 
 import scala.scalajs.js
 import scala.scalajs.js.|

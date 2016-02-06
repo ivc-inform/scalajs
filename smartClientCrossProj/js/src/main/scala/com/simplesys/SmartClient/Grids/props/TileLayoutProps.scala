@@ -4,9 +4,9 @@ import com.simplesys.SmartClient.DataBinding.DataBoundComponent
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.System.Types.Record
-import com.simplesys.System.Types.DragDataAction.DragDataAction
-import com.simplesys.System.Types.Orientation.Orientation
-import com.simplesys.System.Types.TileLayoutPolicy.TileLayoutPolicy
+import com.simplesys.System.Types2.DragDataAction.DragDataAction
+import com.simplesys.System.Types2.Orientation.Orientation
+import com.simplesys.System.Types2.TileLayoutPolicy.TileLayoutPolicy
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.Types1.JSArray
 

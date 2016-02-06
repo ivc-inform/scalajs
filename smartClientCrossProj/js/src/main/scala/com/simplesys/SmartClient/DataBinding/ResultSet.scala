@@ -2,10 +2,10 @@ package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.System.Types.{ValueMap, Criteria, Record}
 import com.simplesys.SmartClient.System._
-import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
-import com.simplesys.System.Types.FetchMode.FetchMode
-import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types2.CriteriaPolicy.CriteriaPolicy
+import com.simplesys.System.Types2.FetchMode.FetchMode
+import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types2.void
 import com.simplesys.Types1.{JSArray, JSAny}
 
 import scala.scalajs.js

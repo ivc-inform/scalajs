@@ -2,9 +2,9 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.DateRangeDialog
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
-import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types.RelativeDateString
-import com.simplesys.System.Types.TimeUnit.TimeUnit
+import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types2.RelativeDateString
+import com.simplesys.System.Types2.TimeUnit.TimeUnit
 import com.simplesys.option.{ScOption, ScNone}
 
 import scala.scalajs.js._

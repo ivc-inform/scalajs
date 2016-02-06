@@ -3,10 +3,10 @@ package com.simplesys.SmartClient.Layout
 import com.simplesys.SmartClient.DataBinding.Callbacks.{CollapseSectionCallback, ExpandSectionCallback, HideSectionCallback, ShowSectionCallback}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Layout.sectionStack.{SectionHeader, SectionStackSection}
-import com.simplesys.System.Types.LocatorStrategy.LocatorStrategy
-import com.simplesys.System.Types.LocatorTypeStrategy.LocatorTypeStrategy
-import com.simplesys.System.Types.VisibilityMode.VisibilityMode
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types2.LocatorStrategy.LocatorStrategy
+import com.simplesys.System.Types2.LocatorTypeStrategy.LocatorTypeStrategy
+import com.simplesys.System.Types2.VisibilityMode.VisibilityMode
+import com.simplesys.System.Types2.void
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js

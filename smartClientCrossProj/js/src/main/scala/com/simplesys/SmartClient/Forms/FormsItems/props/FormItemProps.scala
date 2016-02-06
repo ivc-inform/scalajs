@@ -11,15 +11,15 @@ import com.simplesys.SmartClient.RPC.RPCRequest
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.System.Types.Alignment.Alignment
-import com.simplesys.System.Types.AutoComplete.AutoComplete
-import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types.FormItemType.FormItemType
-import com.simplesys.System.Types.OperatorId.OperatorId
-import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
-import com.simplesys.System.Types.TitleOrientation.TitleOrientation
-import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
-import com.simplesys.System.Types._
+import com.simplesys.System.Types2.Alignment.Alignment
+import com.simplesys.System.Types2.AutoComplete.AutoComplete
+import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types2.FormItemType.FormItemType
+import com.simplesys.System.Types2.OperatorId.OperatorId
+import com.simplesys.System.Types2.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
+import com.simplesys.System.Types2.TitleOrientation.TitleOrientation
+import com.simplesys.System.Types2.VerticalAlignment.VerticalAlignment
+import com.simplesys.System.Types2._
 import com.simplesys.option.{FormItemType_String, IntString, ScNone, ScOption}
 import com.simplesys.Types1._
 

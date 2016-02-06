@@ -8,9 +8,9 @@ import com.simplesys.SmartClient.Grids.treeGrid.TreeGridField
 import com.simplesys.SmartClient.Layout.HLayoutSS
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types._
-import com.simplesys.System.Types.SelectionStyle._
-import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types.{SCImgURL, void}
+import com.simplesys.System.Types2.SelectionStyle._
+import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types2.{SCImgURL, void}
 import com.simplesys.Types1.{JSAny, JSArray}
 
 import scala.scalajs.js

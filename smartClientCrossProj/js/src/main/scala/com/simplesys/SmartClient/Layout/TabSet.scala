@@ -8,11 +8,11 @@ import com.simplesys.SmartClient.Grids.TableView
 import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.EdgeSizes
-import com.simplesys.System.Types.Alignment.Alignment
-import com.simplesys.System.Types.Overflow.Overflow
-import com.simplesys.System.Types.Side.Side
-import com.simplesys.System.Types.TabTitleEditEvent.TabTitleEditEvent
-import com.simplesys.System.Types._
+import com.simplesys.System.Types2.Alignment.Alignment
+import com.simplesys.System.Types2.Overflow.Overflow
+import com.simplesys.System.Types2.Side.Side
+import com.simplesys.System.Types2.TabTitleEditEvent.TabTitleEditEvent
+import com.simplesys.System.Types2._
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js

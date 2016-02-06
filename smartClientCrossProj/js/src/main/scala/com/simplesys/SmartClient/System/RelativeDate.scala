@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.System.Types.RelativeDateRangePosition.RelativeDateRangePosition
-import com.simplesys.System.Types.RelativeDateShortcut.RelativeDateShortcut
-import com.simplesys.System.Types.RelativeDateString
+import com.simplesys.System.Types2.RelativeDateRangePosition.RelativeDateRangePosition
+import com.simplesys.System.Types2.RelativeDateShortcut.RelativeDateShortcut
+import com.simplesys.System.Types2.RelativeDateString
 
 import scala.scalajs.js
 import scala.scalajs.js.|

@@ -8,14 +8,14 @@ import com.simplesys.SmartClient.Grids.listGrid.{MasterDetailMapping, ListGridFi
 import com.simplesys.SmartClient.Layout.VLayoutSS
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types._
-import com.simplesys.System.Types.AutoFitWidthApproach._
-import com.simplesys.System.Types.DragDataAction._
-import com.simplesys.System.Types.DragTrackerMode._
-import com.simplesys.System.Types.ListGridEditEvent._
-import com.simplesys.System.Types.SelectionAppearance._
-import com.simplesys.System.Types.SelectionStyle._
-import com.simplesys.System.Types.TextMatchStyle._
-import com.simplesys.System.Types.{ID, void}
+import com.simplesys.System.Types2.AutoFitWidthApproach._
+import com.simplesys.System.Types2.DragDataAction._
+import com.simplesys.System.Types2.DragTrackerMode._
+import com.simplesys.System.Types2.ListGridEditEvent._
+import com.simplesys.System.Types2.SelectionAppearance._
+import com.simplesys.System.Types2.SelectionStyle._
+import com.simplesys.System.Types2.TextMatchStyle._
+import com.simplesys.System.Types2.{ID, void}
 import com.simplesys.Types1.{JSDictionary, JSAny, JSArray}
 
 import scala.scalajs.js

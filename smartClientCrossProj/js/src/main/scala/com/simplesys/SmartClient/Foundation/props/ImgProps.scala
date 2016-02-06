@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Foundation.props
 
-import com.simplesys.System.Types.ImageStyle.ImageStyle
-import com.simplesys.System.Types.SCImgURL
+import com.simplesys.System.Types2.ImageStyle.ImageStyle
+import com.simplesys.System.Types2.SCImgURL
 import com.simplesys.option.{ScNone, ScOption}
 
 class ImgProps extends StatefulCanvasProps {

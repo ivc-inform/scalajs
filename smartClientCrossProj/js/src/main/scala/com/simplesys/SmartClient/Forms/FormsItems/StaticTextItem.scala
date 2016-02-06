@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
-import com.simplesys.System.Types.SCClassName
+import com.simplesys.System.Types2.SCClassName
 
 import scala.scalajs.js
 import scala.scalajs.js.|

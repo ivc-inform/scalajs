@@ -3,10 +3,10 @@ package com.simplesys.SmartClient.Layout
 import com.simplesys.SmartClient.Control.ImgButton
 import com.simplesys.SmartClient.Foundation.{Img, Canvas, AbstractCanvasCompanion, Label}
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
-import com.simplesys.System.Types.ContentLayoutPolicy.ContentLayoutPolicy
-import com.simplesys.System.Types.PanelPlacement.PanelPlacement
-import com.simplesys.System.Types._
+import com.simplesys.System.Types2.AnimationAcceleration.AnimationAcceleration
+import com.simplesys.System.Types2.ContentLayoutPolicy.ContentLayoutPolicy
+import com.simplesys.System.Types2.PanelPlacement.PanelPlacement
+import com.simplesys.System.Types2._
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js

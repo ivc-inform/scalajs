@@ -3,13 +3,13 @@ package com.simplesys.SmartClient.Layout.props
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.Layout.{Layout, Splitbar}
-import com.simplesys.System.Types.Alignment.Alignment
-import com.simplesys.System.Types.LayoutPolicy.LayoutPolicy
-import com.simplesys.System.Types.LayoutResizeBarPolicy.LayoutResizeBarPolicy
-import com.simplesys.System.Types.LocatorStrategy.LocatorStrategy
-import com.simplesys.System.Types.LocatorTypeStrategy.LocatorTypeStrategy
-import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
-import com.simplesys.System.Types.{MultiAutoChild, void}
+import com.simplesys.System.Types2.Alignment.Alignment
+import com.simplesys.System.Types2.LayoutPolicy.LayoutPolicy
+import com.simplesys.System.Types2.LayoutResizeBarPolicy.LayoutResizeBarPolicy
+import com.simplesys.System.Types2.LocatorStrategy.LocatorStrategy
+import com.simplesys.System.Types2.LocatorTypeStrategy.LocatorTypeStrategy
+import com.simplesys.System.Types2.VerticalAlignment.VerticalAlignment
+import com.simplesys.System.Types2.{MultiAutoChild, void}
 import com.simplesys.option.{DoubleAlignment, ScNone, ScOption}
 
 import scala.scalajs.js

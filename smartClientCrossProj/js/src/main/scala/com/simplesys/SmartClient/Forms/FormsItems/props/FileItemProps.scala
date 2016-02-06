@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.{StaticTextItem, UploadItem}
-import com.simplesys.System.Types.SCImgURL
+import com.simplesys.System.Types2.SCImgURL
 import com.simplesys.option.{ScNone, ScOption}
 
 class FileItemProps extends CanvasItemProps {

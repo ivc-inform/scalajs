@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Layout.navigationBar
 
 import com.simplesys.SmartClient.Control.StretchImgButton
-import com.simplesys.System.Types.{SCImgURL, void}
+import com.simplesys.System.Types2.{SCImgURL, void}
 
 import scala.scalajs.js
 

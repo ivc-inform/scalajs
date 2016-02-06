@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Grids
 
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types2.void
 import org.scalajs.dom.html._
 
 import scala.scalajs.js

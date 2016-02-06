@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
-import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.System.Types.TimeUnit.TimeUnit
-import com.simplesys.System.Types.{void, HTMLString, AutoChild}
+import com.simplesys.System.Types2.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types2.TimeUnit.TimeUnit
+import com.simplesys.System.Types2.{void, HTMLString, AutoChild}
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js

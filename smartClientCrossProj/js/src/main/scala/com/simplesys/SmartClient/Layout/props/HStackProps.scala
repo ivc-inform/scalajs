@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Layout.props
 
-import com.simplesys.System.Types.SCImgURL
+import com.simplesys.System.Types2.SCImgURL
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

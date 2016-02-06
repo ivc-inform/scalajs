@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{HiliteRule, ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.props.VLayoutProps
 import com.simplesys.SmartClient.System.Types.Callback
-import com.simplesys.System.Types.SCImgURL
+import com.simplesys.System.Types2.SCImgURL
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

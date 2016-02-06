@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.System
 import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.Grids.ListGrid
 import com.simplesys.SmartClient.System.Types.Callback
-import com.simplesys.System.Types.{ID, void}
+import com.simplesys.System.Types2.{ID, void}
 import com.simplesys.common.Strings._
 import com.simplesys.Types1.{JSArray, JSDictionary, JSAny, JSArrayAny}
 

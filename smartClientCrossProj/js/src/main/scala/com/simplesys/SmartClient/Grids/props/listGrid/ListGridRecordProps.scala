@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Grids.props.listGrid
 
 import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.System.Types.{CSSStyleName, HTMLString}
+import com.simplesys.System.Types2.{CSSStyleName, HTMLString}
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.props.AbstractClassProps
 

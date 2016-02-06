@@ -4,8 +4,8 @@ import com.simplesys.SmartClient.DataBinding.{DSResponse, DataSource, SortSpecif
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{Criteria, Record}
 import com.simplesys.SmartClient.System.props.{ClassProps, ListProps}
-import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
-import com.simplesys.System.Types.FetchMode.FetchMode
+import com.simplesys.System.Types2.CriteriaPolicy.CriteriaPolicy
+import com.simplesys.System.Types2.FetchMode.FetchMode
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.Types1.{JSArray, JSAny}
 

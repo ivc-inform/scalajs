@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Control
 
 import com.simplesys.SmartClient.Foundation.StretchImg
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types2.void
 
 import scala.scalajs.js
 

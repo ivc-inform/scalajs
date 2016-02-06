@@ -6,8 +6,8 @@ import com.simplesys.SmartClient.Foundation.richTextEditor.ListPropertiesDialog
 import com.simplesys.SmartClient.Layout.Layout
 import com.simplesys.SmartClient.Layout.props.VLayoutProps
 import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types.ControlName.ControlName
-import com.simplesys.System.Types.MultiAutoChild
+import com.simplesys.System.Types2.ControlName.ControlName
+import com.simplesys.System.Types2.MultiAutoChild
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.Types1.JSArray
 

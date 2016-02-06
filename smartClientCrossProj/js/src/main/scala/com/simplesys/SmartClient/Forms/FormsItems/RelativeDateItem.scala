@@ -4,10 +4,10 @@ import com.simplesys.SmartClient.DataBinding.Criterion
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
 import com.simplesys.SmartClient.System.{Types, Date}
-import com.simplesys.System.Types.OperatorId.OperatorId
-import com.simplesys.System.Types.RelativeDateRangePosition.RelativeDateRangePosition
-import com.simplesys.System.Types.TimeUnit.TimeUnit
-import com.simplesys.System.Types.{DateInputFormat, RelativeDateString, AutoChild}
+import com.simplesys.System.Types2.OperatorId.OperatorId
+import com.simplesys.System.Types2.RelativeDateRangePosition.RelativeDateRangePosition
+import com.simplesys.System.Types2.TimeUnit.TimeUnit
+import com.simplesys.System.Types2.{DateInputFormat, RelativeDateString, AutoChild}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

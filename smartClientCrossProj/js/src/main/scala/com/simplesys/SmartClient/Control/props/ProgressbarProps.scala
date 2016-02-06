@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Control.props
 
 import com.simplesys.SmartClient.Foundation.props.StretchImgProps
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types2.void
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

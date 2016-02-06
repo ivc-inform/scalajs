@@ -3,9 +3,9 @@ package com.simplesys.SmartClient.RPC.props
 import com.simplesys.SmartClient.DataBinding.Callbacks.RPCCallback
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.System.Types.PromptStyle.PromptStyle
-import com.simplesys.System.Types.RPCTransport.RPCTransport
-import com.simplesys.System.Types._
+import com.simplesys.System.Types2.PromptStyle.PromptStyle
+import com.simplesys.System.Types2.RPCTransport.RPCTransport
+import com.simplesys.System.Types2._
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.Types1._
 

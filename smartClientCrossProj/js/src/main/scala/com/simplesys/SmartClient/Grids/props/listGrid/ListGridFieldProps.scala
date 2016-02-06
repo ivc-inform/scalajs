@@ -9,21 +9,21 @@ import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord, UserFormula, UserSummary}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{Criteria, ValueMap}
-import com.simplesys.System.Types.Alignment.Alignment
-import com.simplesys.System.Types.AutoComplete.AutoComplete
-import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
-import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types.EditCompletionEvent.EditCompletionEvent
-import com.simplesys.System.Types.EnterKeyEditAction.EnterKeyEditAction
-import com.simplesys.System.Types.EscapeKeyEditAction.EscapeKeyEditAction
-import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
-import com.simplesys.System.Types.OperatorId.OperatorId
-import com.simplesys.System.Types.RecordSummaryFunction.RecordSummaryFunction
-import com.simplesys.System.Types.SortDirection.SortDirection
-import com.simplesys.System.Types.SummaryFunction.SummaryFunction
-import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.System.Types._
+import com.simplesys.System.Types2.Alignment.Alignment
+import com.simplesys.System.Types2.AutoComplete.AutoComplete
+import com.simplesys.System.Types2.AutoFitWidthApproach.AutoFitWidthApproach
+import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types2.EditCompletionEvent.EditCompletionEvent
+import com.simplesys.System.Types2.EnterKeyEditAction.EnterKeyEditAction
+import com.simplesys.System.Types2.EscapeKeyEditAction.EscapeKeyEditAction
+import com.simplesys.System.Types2.HiliteIconPosition.HiliteIconPosition
+import com.simplesys.System.Types2.OperatorId.OperatorId
+import com.simplesys.System.Types2.RecordSummaryFunction.RecordSummaryFunction
+import com.simplesys.System.Types2.SortDirection.SortDirection
+import com.simplesys.System.Types2.SummaryFunction.SummaryFunction
+import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types2.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types2._
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 import com.simplesys.Types1.{JSDictionary, JSArray, JSAny}

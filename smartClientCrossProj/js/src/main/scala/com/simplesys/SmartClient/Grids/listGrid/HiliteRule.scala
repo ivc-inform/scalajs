@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Control.ImgButton
 import com.simplesys.SmartClient.Forms.{DynamicForm, FilterClause}
 import com.simplesys.SmartClient.Foundation.Label
 import com.simplesys.SmartClient.Layout.HLayout
-import com.simplesys.System.Types.{AutoChild, void}
+import com.simplesys.System.Types2.{AutoChild, void}
 
 import scala.scalajs.js
 

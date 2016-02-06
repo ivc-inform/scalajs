@@ -4,9 +4,9 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.RPC.props.RPCRequestProps
 import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
-import com.simplesys.System.Types.PromptStyle.PromptStyle
-import com.simplesys.System.Types.RPCTransport.RPCTransport
-import com.simplesys.System.Types.{void, HTMLString, URL}
+import com.simplesys.System.Types2.PromptStyle.PromptStyle
+import com.simplesys.System.Types2.RPCTransport.RPCTransport
+import com.simplesys.System.Types2.{void, HTMLString, URL}
 import com.simplesys.Types1.{JSArray, JSAny}
 
 import scala.scalajs.js

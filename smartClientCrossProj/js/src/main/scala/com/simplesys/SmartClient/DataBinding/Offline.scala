@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.System.AbstractClassCompanion
 import com.simplesys.SmartClient.System.Class
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types2.void
 import com.simplesys.Types1.JSAny
 
 import scala.scalajs.js

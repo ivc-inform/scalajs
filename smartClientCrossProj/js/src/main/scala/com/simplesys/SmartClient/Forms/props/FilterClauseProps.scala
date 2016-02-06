@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Forms.FormsItems.{FormItem, PickList, SelectIte
 import com.simplesys.SmartClient.Forms.SearchForm
 import com.simplesys.SmartClient.Layout.props.LayoutProps
 import com.simplesys.SmartClient.System.Types.Criteria
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types2.void
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

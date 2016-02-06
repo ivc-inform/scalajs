@@ -3,8 +3,8 @@ package com.simplesys.SmartClient.DataBinding.props
 import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
 import com.simplesys.SmartClient.System.props.TreeProps
-import com.simplesys.System.Types.FetchMode.FetchMode
-import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
+import com.simplesys.System.Types2.FetchMode.FetchMode
+import com.simplesys.System.Types2.PreserveOpenState.PreserveOpenState
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.Types1.{JSArray, JSAny}
 
