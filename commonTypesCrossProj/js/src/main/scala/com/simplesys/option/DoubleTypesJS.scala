@@ -1,6 +1,6 @@
 package com.simplesys.option
 
-import com.simplesys.types.{JSDictionary, JSDictionaryAny, JSAny, JSArrayAny}
+import com.simplesys.Types.{JSDictionary, JSDictionaryAny, JSAny, JSArrayAny}
 
 import scala.language.existentials
 import scala.scalajs.js

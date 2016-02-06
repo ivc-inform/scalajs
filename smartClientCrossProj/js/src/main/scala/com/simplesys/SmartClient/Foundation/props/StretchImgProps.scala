@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Foundation.StretchItem
 import com.simplesys.System.Types.ImageStyle.ImageStyle
 import com.simplesys.System.Types.{CSSStyleName, SCImgURL}
 import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js._
 

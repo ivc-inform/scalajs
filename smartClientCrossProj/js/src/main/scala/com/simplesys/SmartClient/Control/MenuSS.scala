@@ -8,7 +8,7 @@ import com.simplesys.SmartClient.Layout.{TabSet, NavigationBar}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.PanelPlacement._
 import com.simplesys.System.Types._
-import com.simplesys.types._
+import com.simplesys.Types._
 
 import scala.scalajs.js
 import scala.scalajs.js.|

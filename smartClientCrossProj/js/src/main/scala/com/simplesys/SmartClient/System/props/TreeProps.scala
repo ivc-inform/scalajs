@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
 import com.simplesys.System.Types.TreeModelType.TreeModelType
 import com.simplesys.System.Types.void
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.types.{JSAny, JSArray}
+import com.simplesys.Types.{JSAny, JSArray}
 
 import scala.scalajs.js._
 

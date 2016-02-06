@@ -12,7 +12,7 @@ import com.simplesys.System.Types.RPCTransport.RPCTransport
 import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
 import com.simplesys.System.Types.SQLType.SQLType
 import com.simplesys.System.Types.URL
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

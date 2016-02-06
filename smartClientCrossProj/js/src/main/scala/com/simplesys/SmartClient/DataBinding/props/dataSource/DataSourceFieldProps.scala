@@ -16,7 +16,7 @@ import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.option.{IntString, ScOption, ScNone}
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.types.JSAny
+import com.simplesys.Types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js._

@@ -10,7 +10,7 @@ import com.simplesys.SmartClient.System.Types.{Criteria, ValueMap}
 import com.simplesys.System.Types.PickListItemIconPlacement.PickListItemIconPlacement
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.{CSSStyleName, SCClassName, void}
-import com.simplesys.types.{JSAny, JSArray}
+import com.simplesys.Types.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

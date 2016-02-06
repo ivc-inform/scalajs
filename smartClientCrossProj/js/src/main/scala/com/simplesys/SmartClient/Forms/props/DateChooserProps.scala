@@ -7,7 +7,7 @@ import com.simplesys.SmartClient.Layout.HLayout
 import com.simplesys.SmartClient.Layout.props.VLayoutProps
 import com.simplesys.System.Types.{CSSStyleName, SCClassName, SCImgURL}
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.types.{JSArray, JSDictionaryAny, JSDictionary, JSAny}
+import com.simplesys.Types.{JSArray, JSDictionaryAny, JSDictionary, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._

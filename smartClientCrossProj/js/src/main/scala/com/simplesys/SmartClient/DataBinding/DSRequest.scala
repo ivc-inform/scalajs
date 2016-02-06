@@ -12,7 +12,7 @@ import com.simplesys.System.Types.ExportImageFormat.ExportImageFormat
 import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.ValidationMode.ValidationMode
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.OperatorId.OperatorId
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 

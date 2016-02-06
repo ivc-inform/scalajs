@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.Overflow.Overflow
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.types.JSAny
+import com.simplesys.Types.JSAny
 
 import scala.scalajs.js
 

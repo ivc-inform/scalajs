@@ -15,7 +15,7 @@ import com.simplesys.System.Types.SQLType.SQLType
 import com.simplesys.System.Types.URL
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js._
 

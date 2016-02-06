@@ -12,7 +12,7 @@ import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.ImportFormat.ImportFormat
 import com.simplesys.System.Types.PartialCommitOption.PartialCommitOption
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js._
 

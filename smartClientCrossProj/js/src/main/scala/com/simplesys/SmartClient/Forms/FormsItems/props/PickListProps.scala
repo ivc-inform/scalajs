@@ -9,7 +9,7 @@ import com.simplesys.System.Types.PickListItemIconPlacement.PickListItemIconPlac
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.{CSSStyleName, SCClassName}
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._

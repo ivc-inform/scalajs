@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js._
 

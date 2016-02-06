@@ -10,7 +10,7 @@ import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types._
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.types.{JSArray, JSAny}
+import com.simplesys.Types.{JSArray, JSAny}
 
 import scala.scalajs.js
 

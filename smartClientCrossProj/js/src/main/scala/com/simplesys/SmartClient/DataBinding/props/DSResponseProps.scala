@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.RPC.props.{ResponseCommon, RPCResponseProps}
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.System.Types.DSOperationType._
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.types.{JSDictionaryAny, JSDictionary, JSAny}
+import com.simplesys.Types.{JSDictionaryAny, JSDictionary, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.{Object, _}

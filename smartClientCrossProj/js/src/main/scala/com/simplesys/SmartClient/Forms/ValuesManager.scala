@@ -12,7 +12,7 @@ import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.void
-import com.simplesys.types.{JSAny, JSArray}
+import com.simplesys.Types.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

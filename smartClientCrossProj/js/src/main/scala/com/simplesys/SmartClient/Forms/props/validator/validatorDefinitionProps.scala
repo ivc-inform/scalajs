@@ -8,7 +8,7 @@ import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.Record
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.types.JSAny
+import com.simplesys.Types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js._

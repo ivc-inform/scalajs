@@ -10,7 +10,7 @@ import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.OperatorValueType.OperatorValueType
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.types.{JSArray, JSAny}
+import com.simplesys.Types.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._

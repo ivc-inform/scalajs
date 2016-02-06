@@ -11,7 +11,7 @@ import com.simplesys.SmartClient.System.Types._
 import com.simplesys.System.Types.SelectionStyle._
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.{SCImgURL, void}
-import com.simplesys.types.{JSAny, JSArray}
+import com.simplesys.Types.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Analytics.Facet
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{CellRecord, Record}
 import com.simplesys.System.Types.ChartType.ChartType
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

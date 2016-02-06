@@ -10,7 +10,7 @@ import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
 import com.simplesys.System.Types.{CSSStyleName, HTMLString}
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
 import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js._
 

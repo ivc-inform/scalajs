@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.Layout.navigationBar.{MiniNavControl, Navigatio
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.NavigationDirection.NavigationDirection
 import com.simplesys.System.Types.{void, AutoChild, HTMLString, SCImgURL}
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

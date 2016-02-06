@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.Layout.{HLayout, VLayout}
 import com.simplesys.SmartClient.System.Date
 import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
 import com.simplesys.System.Types.{void, _}
-import com.simplesys.types.{JSArray, JSDictionaryAny, JSAny}
+import com.simplesys.Types.{JSArray, JSDictionaryAny, JSAny}
 
 import scala.scalajs.js
 

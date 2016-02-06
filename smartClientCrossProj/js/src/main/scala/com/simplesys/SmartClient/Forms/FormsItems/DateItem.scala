@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.DateItemSelectorFormat.DateItemSelectorFormat
 import com.simplesys.System.Types.{AutoChild, DateInputFormat, SCClassName, void}
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

@@ -8,7 +8,7 @@ import com.simplesys.System.Types.DragDataAction.DragDataAction
 import com.simplesys.System.Types.Orientation.Orientation
 import com.simplesys.System.Types.TileLayoutPolicy.TileLayoutPolicy
 import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._

@@ -8,7 +8,7 @@ import com.simplesys.System.Types.NavigationDirection.NavigationDirection
 import com.simplesys.System.Types.PageOrientation.PageOrientation
 import com.simplesys.System.Types.{void, HTMLString, AutoChild}
 import com.simplesys.System.Types.CurrentPane.CurrentPane
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

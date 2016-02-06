@@ -12,7 +12,7 @@ import com.simplesys.System.Types.ValueItemType.ValueItemType
 import com.simplesys.System.Types.{void, MultiAutoChild, SCClassName, AutoChild}
 import com.simplesys.System.Types.LogicalOperator.LogicalOperator
 import com.simplesys.System.Types.OperatorId.OperatorId
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

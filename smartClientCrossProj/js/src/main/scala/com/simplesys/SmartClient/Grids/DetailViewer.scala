@@ -11,7 +11,7 @@ import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.{void, _}
-import com.simplesys.types.{JSAny, JSArray}
+import com.simplesys.Types.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

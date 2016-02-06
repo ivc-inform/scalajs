@@ -20,7 +20,7 @@ import com.simplesys.System.Types.SequenceMode.SequenceMode
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.{ID, URL, URN}
 import com.simplesys.option.{IntString, ScNone, ScOption}
-import com.simplesys.types.JSAny
+import com.simplesys.Types.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js._

@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.System.Class
 import com.simplesys.System.Types.{ID, void}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.types.JSArrayAny
+import com.simplesys.Types.JSArrayAny
 
 import scala.scalajs.js
 

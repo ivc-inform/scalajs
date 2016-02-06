@@ -14,7 +14,7 @@ import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.TopOperatorAppearance.TopOperatorAppearance
 import com.simplesys.System.Types.ValueItemType.ValueItemType
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._

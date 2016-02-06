@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.DataBinding.AdvancedCriteria
 import com.simplesys.System.Types.void
-import com.simplesys.types.{JSArray, JSAny, JSArrayAny}
+import com.simplesys.Types.{JSArray, JSAny, JSArrayAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

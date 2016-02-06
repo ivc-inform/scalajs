@@ -4,7 +4,7 @@ import com.simplesys.macros.PropsToDictionary
 import com.simplesys.props.AbstractClassProps
 import com.simplesys.json.Json._
 import com.simplesys.common._
-import com.simplesys.types.{JSDictionaryAny, JSAny}
+import com.simplesys.Types.{JSDictionaryAny, JSAny}
 
 import scala.reflect.ClassTag
 import scala.scalajs.js

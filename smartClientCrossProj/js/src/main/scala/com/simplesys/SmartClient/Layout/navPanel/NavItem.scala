@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Layout.navPanel
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
 import com.simplesys.System.Types.CSSStyleName
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

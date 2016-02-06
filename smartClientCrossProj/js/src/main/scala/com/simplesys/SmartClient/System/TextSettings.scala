@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.System.Types.EscapingMode.EscapingMode
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 

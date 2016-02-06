@@ -7,7 +7,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types._
 import com.simplesys.System.Types.void
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

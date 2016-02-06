@@ -7,7 +7,7 @@ import com.simplesys.System.Types.PromptStyle.PromptStyle
 import com.simplesys.System.Types.RPCTransport.RPCTransport
 import com.simplesys.System.Types._
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.types._
+import com.simplesys.Types._
 
 import scala.scalajs.js
 

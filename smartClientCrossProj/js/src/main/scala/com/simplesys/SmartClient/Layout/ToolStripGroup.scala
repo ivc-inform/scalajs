@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Foundation.{Label, Canvas, AbstractCanvasCompan
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.{void, SCClassName, AutoChild}
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

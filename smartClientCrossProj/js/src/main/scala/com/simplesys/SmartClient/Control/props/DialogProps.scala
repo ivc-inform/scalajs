@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.Layout.{Layout, Toolbar}
 import com.simplesys.SmartClient.Layout.props.WindowProps
 import com.simplesys.System.Types.{HTMLString, CSSStyleName, void, SCImgURL}
 import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._

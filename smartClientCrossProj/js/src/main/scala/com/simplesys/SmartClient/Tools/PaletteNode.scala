@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Tools
 
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.{SCClassName, SCImgURL}
-import com.simplesys.types.JSDictionaryAny
+import com.simplesys.Types.JSDictionaryAny
 
 import scala.scalajs.js
 

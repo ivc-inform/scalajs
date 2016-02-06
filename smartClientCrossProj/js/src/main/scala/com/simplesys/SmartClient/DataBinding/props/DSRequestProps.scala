@@ -15,7 +15,7 @@ import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.ValidationMode.ValidationMode
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.types.{JSArray, JSDictionaryAny}
+import com.simplesys.Types.{JSArray, JSDictionaryAny}
 
 class DSRequestProps extends RequestCommon[DSCallback] {
     var additionalOutputs: ScOption[String] = ScNone

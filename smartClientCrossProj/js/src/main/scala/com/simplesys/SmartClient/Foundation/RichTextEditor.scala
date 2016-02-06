@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.Layout.{Layout, VLayout}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.ControlName.ControlName
 import com.simplesys.System.Types.{AutoChild, MultiAutoChild, void}
-import com.simplesys.types.{JSArray, JSAny}
+import com.simplesys.Types.{JSArray, JSAny}
 
 import scala.scalajs.js
 

@@ -21,7 +21,7 @@ import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
 import com.simplesys.option.{FormItemType_String, IntString, ScNone, ScOption}
-import com.simplesys.types._
+import com.simplesys.Types._
 
 import scala.scalajs.js
 import scala.scalajs.js._

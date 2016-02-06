@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.System.Types.void
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 

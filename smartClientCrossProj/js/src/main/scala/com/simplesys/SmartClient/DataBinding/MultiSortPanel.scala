@@ -7,7 +7,7 @@ import com.simplesys.SmartClient.Layout.{AbstractLayoutCompanion, Layout}
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.Object
 import com.simplesys.System.Types.{HTMLString, AutoChild}
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

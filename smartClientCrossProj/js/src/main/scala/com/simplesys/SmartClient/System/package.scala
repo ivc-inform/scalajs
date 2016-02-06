@@ -27,7 +27,7 @@ import com.simplesys.SmartClient.Layout.toolStrip.{ToolStripResizer, ToolStripBu
 import com.simplesys.SmartClient.RPC.{RPCResponse, RPCRequest}
 import com.simplesys.SmartClient.RPC.props.{RPCResponseProps, RPCRequestProps}
 import com.simplesys.SmartClient.System.props.TreeProps
-import com.simplesys.types.JSAny
+import com.simplesys.Types.JSAny
 
 //import com.simplesys.macros.PropsToDictionary
 import com.simplesys.macros.PropsToDictionary

@@ -7,7 +7,7 @@ import com.simplesys.SmartClient.Grids.props.listGrid.ListGridRecordProps
 import com.simplesys.SmartClient.System.KeyIdentifier
 import com.simplesys.System.Types._
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._

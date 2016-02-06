@@ -8,7 +8,7 @@ import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.{FormatString, ID}
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._

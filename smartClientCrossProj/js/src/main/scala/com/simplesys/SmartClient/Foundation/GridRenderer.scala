@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.State.State
 import com.simplesys.System.Types.{void, HTMLString, CSSStyleName}
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 import org.scalajs.dom
 import org.scalajs.dom.Element
 import org.scalajs.dom.html.Document

@@ -6,7 +6,7 @@ import com.simplesys.System.Types.SCClassName
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.types.JSArray
+import com.simplesys.Types.JSArray
 
 import scala.scalajs.js._
 
