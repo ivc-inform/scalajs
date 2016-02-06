@@ -13,6 +13,7 @@ import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
 import com.simplesys.System.Types.RecategorizeMode.RecategorizeMode
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
+import com.simplesys.Types1
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js

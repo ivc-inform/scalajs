@@ -41,7 +41,7 @@ trait TileLayout extends Canvas {
     val tilesPerLine: Int
     val tileVMargin: Int
     val tileWidth: Int
-    def transferDragData(): JSArray[Object]
+    def transferDragData(): JSArray[js.Object]
 }
 
 
