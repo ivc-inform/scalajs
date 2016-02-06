@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.Class
-import com.simplesys.System.Types2.{AutoChild, void}
+import com.simplesys.System.Types.{AutoChild, void}
 
 import scala.scalajs.js
 

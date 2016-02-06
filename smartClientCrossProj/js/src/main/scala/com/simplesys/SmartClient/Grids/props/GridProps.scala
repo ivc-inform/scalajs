@@ -2,58 +2,56 @@ package com.simplesys.SmartClient.Grids.props
 
 import com.simplesys.SmartClient.Control.{Button, IButton}
 import com.simplesys.SmartClient.DataBinding._
-import com.simplesys.SmartClient.DataBinding.props.{SortSpecifierProps, DataBoundComponentProps}
+import com.simplesys.SmartClient.DataBinding.props.{DataBoundComponentProps, SortSpecifierProps}
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Foundation.{Canvas, GridRenderer, HTMLFlow, StatefulCanvas}
-import com.simplesys.SmartClient.Grids.{ListGrid, Grid}
 import com.simplesys.SmartClient.Grids.listGrid._
 import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
 import com.simplesys.SmartClient.Grids.treeGrid.Tree
+import com.simplesys.SmartClient.Grids.{Grid, ListGrid}
 import com.simplesys.SmartClient.Layout.props.VLayoutProps
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, VLayout}
-import com.simplesys.SmartClient.System.Types._
-import com.simplesys.SmartClient.System.{Class, Selection, Types}
-import com.simplesys.System.Types2.Alignment.Alignment
-import com.simplesys.System.Types2.AnimationAcceleration.AnimationAcceleration
-import com.simplesys.System.Types2.AutoComplete.AutoComplete
-import com.simplesys.System.Types2.AutoFitEvent.AutoFitEvent
-import com.simplesys.System.Types2.AutoFitIconFieldType.AutoFitIconFieldType
-import com.simplesys.System.Types2.AutoFitWidthApproach.AutoFitWidthApproach
-import com.simplesys.System.Types2.Autofit.Autofit
-import com.simplesys.System.Types2.ChartType.ChartType
-import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types2.DragTrackerMode.DragTrackerMode
-import com.simplesys.System.Types2.EditCompletionEvent.EditCompletionEvent
-import com.simplesys.System.Types2.EmbeddedPosition.EmbeddedPosition
-import com.simplesys.System.Types2.EnterKeyEditAction.EnterKeyEditAction
-import com.simplesys.System.Types2.EscapeKeyEditAction.EscapeKeyEditAction
-import com.simplesys.System.Types2.ExpansionComponentPoolingMode.ExpansionComponentPoolingMode
-import com.simplesys.System.Types2.ExpansionMode.ExpansionMode
-import com.simplesys.System.Types2.GroupStartOpen.GroupStartOpen
-import com.simplesys.System.Types2.HoverMode.HoverMode
-import com.simplesys.System.Types2.ListGridComponent.ListGridComponent
-import com.simplesys.System.Types2.ListGridEditEvent.ListGridEditEvent
-import com.simplesys.System.Types2.Overflow.Overflow
-import com.simplesys.System.Types2.RecordComponentPoolingMode.RecordComponentPoolingMode
-import com.simplesys.System.Types2.RecordDropAppearance.RecordDropAppearance
-import com.simplesys.System.Types2.RowEndEditAction.RowEndEditAction
-import com.simplesys.System.Types2.RowSpanEditMode.RowSpanEditMode
-import com.simplesys.System.Types2.RowSpanSelectionMode.RowSpanSelectionMode
-import com.simplesys.System.Types2.SelectionAppearance.SelectionAppearance
-import com.simplesys.System.Types2.SelectionNotificationType.SelectionNotificationType
-import com.simplesys.System.Types2.SelectionStyle.SelectionStyle
-import com.simplesys.System.Types2.SortArrow.SortArrow
-import com.simplesys.System.Types2.SortDirection.SortDirection
-import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types2.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.System.Types2.VerticalAlignment.VerticalAlignment
-import com.simplesys.System.Types2._
+import com.simplesys.SmartClient.System.{Class, Selection}
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
+import com.simplesys.System.Types.AutoComplete.AutoComplete
+import com.simplesys.System.Types.AutoFitEvent.AutoFitEvent
+import com.simplesys.System.Types.AutoFitIconFieldType.AutoFitIconFieldType
+import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
+import com.simplesys.System.Types.Autofit.Autofit
+import com.simplesys.System.Types.ChartType.ChartType
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.DragTrackerMode.DragTrackerMode
+import com.simplesys.System.Types.EditCompletionEvent.EditCompletionEvent
+import com.simplesys.System.Types.EmbeddedPosition.EmbeddedPosition
+import com.simplesys.System.Types.EnterKeyEditAction.EnterKeyEditAction
+import com.simplesys.System.Types.EscapeKeyEditAction.EscapeKeyEditAction
+import com.simplesys.System.Types.ExpansionComponentPoolingMode.ExpansionComponentPoolingMode
+import com.simplesys.System.Types.ExpansionMode.ExpansionMode
+import com.simplesys.System.Types.GroupStartOpen.GroupStartOpen
+import com.simplesys.System.Types.HoverMode.HoverMode
+import com.simplesys.System.Types.ListGridComponent.ListGridComponent
+import com.simplesys.System.Types.ListGridEditEvent.ListGridEditEvent
+import com.simplesys.System.Types.Overflow.Overflow
+import com.simplesys.System.Types.RecordComponentPoolingMode.RecordComponentPoolingMode
+import com.simplesys.System.Types.RecordDropAppearance.RecordDropAppearance
+import com.simplesys.System.Types.RowEndEditAction.RowEndEditAction
+import com.simplesys.System.Types.RowSpanEditMode.RowSpanEditMode
+import com.simplesys.System.Types.RowSpanSelectionMode.RowSpanSelectionMode
+import com.simplesys.System.Types.SelectionAppearance.SelectionAppearance
+import com.simplesys.System.Types.SelectionNotificationType.SelectionNotificationType
+import com.simplesys.System.Types.SelectionStyle.SelectionStyle
+import com.simplesys.System.Types.SortArrow.SortArrow
+import com.simplesys.System.Types.SortDirection.SortDirection
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
+import com.simplesys.System.Types._
+import com.simplesys.Types1.{JSAny, JSArray, JSArrayAny}
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.Types1.{JSArray, JSAny, JSArrayAny}
 
 import scala.scalajs.js
-import scala.scalajs.js.ThisFunction0
 
 class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps with DataBoundComponentProps {
     var advancedFieldPickerThreshold: ScOption[Int] = ScNone
@@ -281,7 +279,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var getCellRecord: ScOption[js.ThisFunction1[callbackHandler, Int, R]] = ScNone
     var getCellStyle: ScOption[js.ThisFunction3[callbackHandler, R, Int, Int, CSSStyleName]] = ScNone
     var getCellValue: ScOption[js.ThisFunction3[callbackHandler, R, Int, Int, String]] = ScNone
-    var getEditorProperties: ScOption[js.Function3[T, R, Int, Types.Object]] = ScNone
+    var getEditorProperties: ScOption[js.Function3[T, R, Int, js.Object]] = ScNone
     var getDragData: ScOption[js.Function1[DataBoundComponent, JSArray[R]]] = ScNone
     var getRowHeight: ScOption[js.Function2[Int, Int, Int]] = ScNone
     var getRowSpan: ScOption[js.Function3[R, Int, Int, Int]] = ScNone
@@ -379,7 +377,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var normalCellHeight: ScOption[Int] = ScNone
     var nullGroupTitle: ScOption[String] = ScNone
     var offlineMessageStyle: ScOption[CSSStyleName] = ScNone
-    var originalData: ScOption[Types.Object] = ScNone
+    var originalData: ScOption[js.Object] = ScNone
     var originBaseStyle: ScOption[CSSStyleName] = ScNone
     var parseEditorValue: ScOption[js.Function4[JSAny, R, Int, Int, JSAny]] = ScNone
     var poolComponentsPerColumn: ScOption[Boolean] = ScNone
@@ -426,8 +424,8 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var rowClick: ScOption[js.Function4[R, Int, Int, Boolean, Boolean]] = ScNone
     var rowContextClick: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var rowDoubleClick: ScOption[js.Function4[R, Int, Int, Boolean, Boolean]] = ScNone
-    var rowEditorEnter: ScOption[js.Function3[R, Types.Object, Int, void]] = ScNone
-    var rowEditorExit: ScOption[js.Function4[EditCompletionEvent, R, Types.Object, Int, Boolean]] = ScNone
+    var rowEditorEnter: ScOption[js.Function3[R, js.Object, Int, void]] = ScNone
+    var rowEditorExit: ScOption[js.Function4[EditCompletionEvent, R, js.Object, Int, Boolean]] = ScNone
     var rowEndEditAction: ScOption[RowEndEditAction] = ScNone
     var rowHover: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var rowMouseDown: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
@@ -508,7 +506,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var sorterClick: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var sorterConstructor: ScOption[Class] = ScNone
     var sorterContextClick: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
-    var sorterDefaults: ScOption[Types.Object] = ScNone
+    var sorterDefaults: ScOption[js.Object] = ScNone
     var sorterProperties: ScOption[Button] = ScNone
     var sortField: ScOption[String] = ScNone
     var sortFieldAscendingText: ScOption[String] = ScNone

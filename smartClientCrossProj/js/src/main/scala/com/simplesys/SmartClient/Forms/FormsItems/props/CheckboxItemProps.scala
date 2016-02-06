@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
-import com.simplesys.System.Types2.{SCClassName, CSSStyleName, HTMLString, SCImgURL}
+import com.simplesys.System.Types.{SCClassName, CSSStyleName, HTMLString, SCImgURL}
 import com.simplesys.option.{ScOption, ScNone}
 
 import scala.scalajs.js._

@@ -1,23 +1,21 @@
 package com.simplesys.SmartClient.DataBinding.props.dataSource
 
-import com.simplesys.SmartClient.DataBinding.dataSource.{Mail, DSRequestModifier}
+import com.simplesys.SmartClient.DataBinding.dataSource.{DSRequestModifier, Mail}
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
 import com.simplesys.SmartClient.RPC.ServerObject
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.{XPathExpression, VelocityExpression}
-import com.simplesys.System.Types2.DSDataFormat.DSDataFormat
-import com.simplesys.System.Types2.DSOperationType.DSOperationType
-import com.simplesys.System.Types2.DSProtocol.DSProtocol
-import com.simplesys.System.Types2.ExportFormat.ExportFormat
-import com.simplesys.System.Types2.RPCTransport.RPCTransport
-import com.simplesys.System.Types2.SQLPagingStrategy.SQLPagingStrategy
-import com.simplesys.System.Types2.SQLType.SQLType
-import com.simplesys.System.Types2.URL
-import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.props.AbstractClassProps
+import com.simplesys.System.Types.DSDataFormat.DSDataFormat
+import com.simplesys.System.Types.DSOperationType.DSOperationType
+import com.simplesys.System.Types.DSProtocol.DSProtocol
+import com.simplesys.System.Types.ExportFormat.ExportFormat
+import com.simplesys.System.Types.RPCTransport.RPCTransport
+import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
+import com.simplesys.System.Types.SQLType.SQLType
+import com.simplesys.System.Types.{XPathExpression, VelocityExpression, URL}
 import com.simplesys.Types1.JSArray
+import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.props.AbstractClassProps
 
-import scala.scalajs.js._
+import scala.scalajs.js
 
 class OperationBindingProps extends AbstractClassProps {
     var allowAdvancedCriteria: ScOption[Boolean] = ScNone
@@ -38,7 +36,7 @@ class OperationBindingProps extends AbstractClassProps {
     var dataProtocol: ScOption[DSProtocol] = ScNone
     var dataTransport: ScOption[RPCTransport] = ScNone
     var dataURL: ScOption[URL] = ScNone
-    var defaultParams: ScOption[Types.Object] = ScNone
+    var defaultParams: ScOption[js.Object] = ScNone
     var excludeCriteriaFields: ScOption[JSArray[String]] = ScNone
     var exportAs: ScOption[ExportFormat] = ScNone
     var exportFields: ScOption[JSArray[String]] = ScNone
@@ -78,7 +76,7 @@ class OperationBindingProps extends AbstractClassProps {
     var sqlPaging: ScOption[SQLPagingStrategy] = ScNone
     var sqlType: ScOption[SQLType] = ScNone
     var sqlUsePagingHint: ScOption[Boolean] = ScNone
-    var summaryFunctions: ScOption[Types.Object] = ScNone
+    var summaryFunctions: ScOption[js.Object] = ScNone
     var tableClause: ScOption[String] = ScNone
     var transformMultipleFields: ScOption[Boolean] = ScNone
     var useFlatFields: ScOption[Boolean] = ScNone
@@ -90,6 +88,6 @@ class OperationBindingProps extends AbstractClassProps {
     var valuesClause: ScOption[String] = ScNone
     var whereClause: ScOption[String] = ScNone
     var wsOperation: ScOption[String] = ScNone
-    var xmlNamespaces: ScOption[Types.Object] = ScNone
+    var xmlNamespaces: ScOption[js.Object] = ScNone
 
 }

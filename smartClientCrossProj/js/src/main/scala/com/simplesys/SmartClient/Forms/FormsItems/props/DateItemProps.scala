@@ -2,9 +2,9 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.DateChooser
 import com.simplesys.SmartClient.Forms.FormsItems.{SelectItem, TextItem, TimeItem}
-import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types2.DateItemSelectorFormat.DateItemSelectorFormat
-import com.simplesys.System.Types2.SCClassName
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.DateItemSelectorFormat.DateItemSelectorFormat
+import com.simplesys.System.Types.SCClassName
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js._

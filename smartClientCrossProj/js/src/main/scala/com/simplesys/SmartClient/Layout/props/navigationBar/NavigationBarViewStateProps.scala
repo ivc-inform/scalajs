@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Layout.props.navigationBar
 
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.System.Types2.HTMLString
+import com.simplesys.System.Types.HTMLString
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.props.AbstractClassProps
 

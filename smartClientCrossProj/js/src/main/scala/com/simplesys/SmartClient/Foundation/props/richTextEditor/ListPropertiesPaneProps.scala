@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Foundation.richTextEditor.ListProperties
 import com.simplesys.SmartClient.Grids.TileLayout
 import com.simplesys.SmartClient.Layout.props.LayoutProps
-import com.simplesys.System.Types2.MultiAutoChild
+import com.simplesys.System.Types.MultiAutoChild
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

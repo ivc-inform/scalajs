@@ -4,30 +4,28 @@ import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.SmartClient.Tools.EditNode
-import com.simplesys.System.Types2.Alignment.Alignment
-import com.simplesys.System.Types2.AnimationAcceleration.AnimationAcceleration
-import com.simplesys.System.Types2.BackgroundRepeat._
-import com.simplesys.System.Types2.Cursor._
-import com.simplesys.System.Types2.DragAppearance._
-import com.simplesys.System.Types2.DragIntersectStyle._
-import com.simplesys.System.Types2.DragMaskType._
-import com.simplesys.System.Types2.DrawPosition.DrawPosition
-import com.simplesys.System.Types2.EdgeName.EdgeName
-import com.simplesys.System.Types2.LocatorStrategy.LocatorStrategy
-import com.simplesys.System.Types2.LocatorTypeStrategy.LocatorTypeStrategy
-import com.simplesys.System.Types2.Overflow.Overflow
-import com.simplesys.System.Types2.PercentBoxModel.PercentBoxModel
-import com.simplesys.System.Types2.Positioning.Positioning
-import com.simplesys.System.Types2.ProportionalResizeMode.ProportionalResizeMode
-import com.simplesys.System.Types2.VerticalAlignment.VerticalAlignment
-import com.simplesys.System.Types2.Visibility.Visibility
-import com.simplesys.System.Types2._
-import com.simplesys.option._
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
+import com.simplesys.System.Types.BackgroundRepeat._
+import com.simplesys.System.Types.Cursor._
+import com.simplesys.System.Types.DragAppearance._
+import com.simplesys.System.Types.DragIntersectStyle._
+import com.simplesys.System.Types.DragMaskType._
+import com.simplesys.System.Types.DrawPosition.DrawPosition
+import com.simplesys.System.Types.EdgeName.EdgeName
+import com.simplesys.System.Types.LocatorStrategy.LocatorStrategy
+import com.simplesys.System.Types.LocatorTypeStrategy.LocatorTypeStrategy
+import com.simplesys.System.Types.Overflow.Overflow
+import com.simplesys.System.Types.PercentBoxModel.PercentBoxModel
+import com.simplesys.System.Types.Positioning.Positioning
+import com.simplesys.System.Types.ProportionalResizeMode.ProportionalResizeMode
+import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
+import com.simplesys.System.Types.Visibility.Visibility
+import com.simplesys.System.Types._
 import com.simplesys.Types1.JSArrayAny
+import com.simplesys.option._
 import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js
@@ -128,7 +126,7 @@ class CanvasProps extends ClassProps {
     var dynamicContentsVars: ScOption[ValueMap] = ScNone
     var edgeBackgroundColor: ScOption[Color] = ScNone
     var edgeCenterBackgroundColor: ScOption[Color] = ScNone
-    var edgeCursorMap: ScOption[Types.Object] = ScNone
+    var edgeCursorMap: ScOption[js.Object] = ScNone
     var edgeImage: ScOption[SCImgURL] = ScNone
     var edgeMarginSize: ScOption[Int] = ScNone
     var edgeOffset: ScOption[Int] = ScNone

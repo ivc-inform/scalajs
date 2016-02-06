@@ -1,8 +1,8 @@
 package com.simplesys.option
 
-import com.simplesys.System.Types2.Alignment._
-import com.simplesys.System.Types2.FormItemType.FormItemType
-import com.simplesys.System.Types2.VerticalAlignment._
+import com.simplesys.System.Types.Alignment._
+import com.simplesys.System.Types.FormItemType.FormItemType
+import com.simplesys.System.Types.VerticalAlignment._
 import scala.language.existentials
 
 sealed abstract class DoubleType[+A, +B]

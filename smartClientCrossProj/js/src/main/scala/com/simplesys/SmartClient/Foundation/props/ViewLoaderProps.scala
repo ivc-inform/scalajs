@@ -1,13 +1,11 @@
 package com.simplesys.SmartClient.Foundation.props
 
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.RPC.{RPCResponse, RPCRequest}
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.{HTMLString, URL}
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
+import com.simplesys.System.Types.{HTMLString, URL}
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
 class ViewLoaderProps extends LabelProps {
     var allowCaching: ScOption[Boolean] = ScNone
@@ -17,5 +15,5 @@ class ViewLoaderProps extends LabelProps {
     var viewLoaded: ScOption[js.Function1[Canvas, _]] = ScNone
     var viewRPCProperties: ScOption[RPCRequest] = ScNone
     var viewURL: ScOption[URL] = ScNone
-    var viewURLParams: ScOption[Types.Object] = ScNone
+    var viewURLParams: ScOption[js.Object] = ScNone
 }

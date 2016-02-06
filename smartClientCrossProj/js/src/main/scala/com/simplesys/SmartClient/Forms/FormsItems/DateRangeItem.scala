@@ -3,10 +3,10 @@ package com.simplesys.SmartClient.Forms.FormsItems
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.System.DateRange.DateRange
 import com.simplesys.SmartClient.System.Date
-import com.simplesys.System.Types2.TimeUnit.TimeUnit
-import com.simplesys.System.Types2.TitleOrientation.TitleOrientation
-import com.simplesys.System.Types2.{void, RelativeDateString, AutoChild}
-import com.simplesys.System.Types2.DateFieldLayout.DateFieldLayout
+import com.simplesys.System.Types.TimeUnit.TimeUnit
+import com.simplesys.System.Types.TitleOrientation.TitleOrientation
+import com.simplesys.System.Types.{void, RelativeDateString, AutoChild}
+import com.simplesys.System.Types.DateFieldLayout.DateFieldLayout
 
 import scala.scalajs.js
 import scala.scalajs.js.|

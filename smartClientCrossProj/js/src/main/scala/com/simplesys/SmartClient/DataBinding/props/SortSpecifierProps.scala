@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.DataBinding.props
 
 import com.simplesys.SmartClient.DataBinding.DataBoundComponent
-import com.simplesys.System.Types2.SortDirection.SortDirection
+import com.simplesys.System.Types.SortDirection.SortDirection
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 

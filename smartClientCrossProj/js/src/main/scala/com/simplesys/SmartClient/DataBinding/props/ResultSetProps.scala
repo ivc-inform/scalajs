@@ -1,13 +1,12 @@
 package com.simplesys.SmartClient.DataBinding.props
 
 import com.simplesys.SmartClient.DataBinding.{DSResponse, DataSource, SortSpecifier}
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.{Criteria, Record}
 import com.simplesys.SmartClient.System.props.{ClassProps, ListProps}
-import com.simplesys.System.Types2.CriteriaPolicy.CriteriaPolicy
-import com.simplesys.System.Types2.FetchMode.FetchMode
+import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
+import com.simplesys.System.Types.FetchMode.FetchMode
+import com.simplesys.System.Types.{Criteria, Record}
+import com.simplesys.Types1.{JSAny, JSArray}
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.Types1.{JSArray, JSAny}
 
 import scala.scalajs.js
 
@@ -29,7 +28,7 @@ class ResultSetProps extends ClassProps with ListProps {
     var progressiveLoading: ScOption[Boolean] = ScNone
     var resultSize: ScOption[Int] = ScNone
     var sortSpecifiers: ScOption[JSArray[SortSpecifier]] = ScNone
-    var transformData: ScOption[js.Function2[JSAny, DSResponse, JSArray[Types.Object]]] = ScNone
+    var transformData: ScOption[js.Function2[JSAny, DSResponse, JSArray[js.Object]]] = ScNone
     var updateCacheFromRequest: ScOption[Boolean] = ScNone
     var updatePartialCache: ScOption[Boolean] = ScNone
     var useClientFiltering: ScOption[Boolean] = ScNone

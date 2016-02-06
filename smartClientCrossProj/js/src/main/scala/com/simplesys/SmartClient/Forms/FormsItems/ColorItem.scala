@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
-import com.simplesys.System.Types2.ColorPickerMode.ColorPickerMode
+import com.simplesys.System.Types.ColorPickerMode.ColorPickerMode
 
 import scala.scalajs.js
 

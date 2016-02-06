@@ -1,14 +1,11 @@
 package com.simplesys.SmartClient.Grids.props.listGrid
 
-import com.simplesys.SmartClient.Forms.{FilterBuilder, DynamicForm}
+import com.simplesys.SmartClient.Forms.{DynamicForm, FilterBuilder}
 import com.simplesys.SmartClient.Foundation.StatefulCanvas
 import com.simplesys.SmartClient.Layout.props.VStackProps
-import com.simplesys.SmartClient.System.Types.Callback
-import com.simplesys.System.Types2.SCImgURL
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.System.Types.{Callback, SCImgURL}
 import com.simplesys.Types1.JSArray
-
-import scala.scalajs.js._
+import com.simplesys.option.{ScNone, ScOption}
 
 class AdvancedHiliteEditorProps extends VStackProps {
     var appearanceGroupTitle: ScOption[String] = ScNone

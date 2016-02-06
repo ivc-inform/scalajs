@@ -1,11 +1,10 @@
 package com.simplesys.SmartClient.Foundation.props
 
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.State.State
-import com.simplesys.System.Types2.{CSSStyleName, HTMLString}
-import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.System.Types.State.State
+import com.simplesys.System.Types.{CSSStyleName, HTMLString}
 import com.simplesys.Types1.JSArray
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
 
@@ -29,7 +28,7 @@ class GridRendererProps extends CanvasProps {
     var cellOut: ScOption[js.Function3[ListGridRecord, Int, Int, Boolean]] = ScNone
     var cellOver: ScOption[js.Function3[ListGridRecord, Int, Int, Boolean]] = ScNone
     var cellPadding: ScOption[Int] = ScNone
-    var cellSelectionChanged: ScOption[js.Function1[JSArray[Types.Object], Boolean]] = ScNone
+    var cellSelectionChanged: ScOption[js.Function1[JSArray[js.Object], Boolean]] = ScNone
     var cellValueHover: ScOption[js.Function3[ListGridRecord, Int, Int, Boolean]] = ScNone
     var cellValueHoverHTML: ScOption[js.Function3[ListGridRecord, Int, Int, HTMLString]] = ScNone
     var cellValueIsClipped: ScOption[js.Function2[Int, Int, Boolean]] = ScNone
@@ -47,7 +46,7 @@ class GridRendererProps extends CanvasProps {
     var getBaseStyle: ScOption[js.Function3[ListGridRecord, Int, Int, Boolean]] = ScNone
     var getCellCSSText: ScOption[js.Function3[ListGridRecord, Int, Int, Boolean]] = ScNone
     var getCellHoverComponent: ScOption[js.Function3[ListGridRecord, Int, Int, Boolean]] = ScNone
-    var getCellRecord: ScOption[js.Function2[Int, Int, Types.Object]] = ScNone
+    var getCellRecord: ScOption[js.Function2[Int, Int, js.Object]] = ScNone
     var getCellStyle: ScOption[js.Function3[ListGridRecord, Int, Int, CSSStyleName]] = ScNone
     var getCellValue: ScOption[js.Function3[ListGridRecord, Int, Int, String]] = ScNone
     var getRowHeight: ScOption[js.Function2[ListGridRecord, Int, Int]] = ScNone

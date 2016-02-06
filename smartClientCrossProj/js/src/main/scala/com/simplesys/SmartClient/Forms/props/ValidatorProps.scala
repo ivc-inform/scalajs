@@ -2,11 +2,10 @@ package com.simplesys.SmartClient.Forms.props
 
 import com.simplesys.SmartClient.DataBinding.AdvancedCriteria
 import com.simplesys.SmartClient.RPC.ServerObject
-import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.System.Types2.ValidatorType._
-import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.System.Types.ValidatorType._
 import com.simplesys.Types1.JSArray
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -22,7 +21,7 @@ class ValidatorProps extends ClassProps {
     var min: ScOption[Any] = ScNone
     var stopIfFalse: ScOption[Boolean] = ScNone
     var clientOnly: ScOption[Boolean] = ScNone
-    var resultingValue: ScOption[Types.Object] = ScNone
+    var resultingValue: ScOption[js.Object] = ScNone
     var serverObject: ScOption[ServerObject] = ScNone
     var errorMessage: ScOption[String] = ScNone
     var serverCondition: ScOption[String] = ScNone

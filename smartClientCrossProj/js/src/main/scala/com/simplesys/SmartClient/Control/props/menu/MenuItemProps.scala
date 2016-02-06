@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Control.menu.MenuItem
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.props.listGrid.ListGridRecordProps
 import com.simplesys.SmartClient.System.KeyIdentifier
-import com.simplesys.System.Types2.{HTMLString, SCImgURL, void}
+import com.simplesys.System.Types.{HTMLString, SCImgURL, void}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.Types1.JSArray
 

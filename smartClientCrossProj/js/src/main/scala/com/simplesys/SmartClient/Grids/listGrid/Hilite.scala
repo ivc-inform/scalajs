@@ -1,15 +1,13 @@
 package com.simplesys.SmartClient.Grids.listGrid
 
 import com.simplesys.SmartClient.DataBinding.AdvancedCriteria
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.Criteria
-import com.simplesys.System.Types2.{SCImgURL, HTMLString}
+import com.simplesys.System.Types.{Criteria, HTMLString, SCImgURL}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait Hilite extends Types.Object {
+trait Hilite extends js.Object {
     var backgroundColor: String
     val canEdit: Boolean
     val criteria: Criteria | AdvancedCriteria

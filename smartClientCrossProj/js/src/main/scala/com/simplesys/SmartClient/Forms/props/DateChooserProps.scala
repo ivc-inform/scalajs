@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Forms.FormsItems.TimeItem
 import com.simplesys.SmartClient.Forms.{DateChooser, DateGrid}
 import com.simplesys.SmartClient.Layout.HLayout
 import com.simplesys.SmartClient.Layout.props.VLayoutProps
-import com.simplesys.System.Types2.{CSSStyleName, SCClassName, SCImgURL}
+import com.simplesys.System.Types.{CSSStyleName, SCClassName, SCImgURL}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.Types1.{JSArray, JSDictionaryAny, JSDictionary, JSAny}
 

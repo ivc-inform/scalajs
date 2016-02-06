@@ -4,19 +4,17 @@ import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
-import com.simplesys.SmartClient.Grids.listGrid.{MasterDetailMapping, ListGridField, ListGridRecord}
+import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord, MasterDetailMapping}
 import com.simplesys.SmartClient.Layout.VLayoutSS
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types._
-import com.simplesys.System.Types2.AutoFitWidthApproach._
-import com.simplesys.System.Types2.DragDataAction._
-import com.simplesys.System.Types2.DragTrackerMode._
-import com.simplesys.System.Types2.ListGridEditEvent._
-import com.simplesys.System.Types2.SelectionAppearance._
-import com.simplesys.System.Types2.SelectionStyle._
-import com.simplesys.System.Types2.TextMatchStyle._
-import com.simplesys.System.Types2.{ID, void}
-import com.simplesys.Types1.{JSDictionary, JSAny, JSArray}
+import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
+import com.simplesys.System.Types.DragDataAction.DragDataAction
+import com.simplesys.System.Types.DragTrackerMode.DragTrackerMode
+import com.simplesys.System.Types.ListGridEditEvent.ListGridEditEvent
+import com.simplesys.System.Types.SelectionAppearance.SelectionAppearance
+import com.simplesys.System.Types.SelectionStyle.SelectionStyle
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types._
+import com.simplesys.Types1.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -85,7 +83,7 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     var cancelEditingConfirmationMessage: String
     def getAllRows(): JSArray[R]
     var fetchDelay: Int
-    def startEditingNew(newValues: Types.Object | R = js.native, suppressFocus: Boolean = js.native): void
+    def startEditingNew(newValues: js.Object | R = js.native, suppressFocus: Boolean = js.native): void
     var editEvent: ListGridEditEvent
     def getEditRecord(): R
     def getSelectedRecord(): R
@@ -97,7 +95,7 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     def getSelectedState(): S
     def getRecord(data: JSAny): R
     var dataPageSize: Int
-    def getEditorType(field: T, values: Types.Object): String
+    def getEditorType(field: T, values: js.Object): String
     def deselectRecord(record: R | Int): void
     def deselectRecords(records: JSArray[R]): void
     def deselectAllRecords(): void

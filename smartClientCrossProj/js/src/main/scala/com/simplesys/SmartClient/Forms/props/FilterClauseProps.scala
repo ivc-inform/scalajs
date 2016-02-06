@@ -4,8 +4,7 @@ import com.simplesys.SmartClient.Control.ImgButton
 import com.simplesys.SmartClient.Forms.FormsItems.{FormItem, PickList, SelectItem}
 import com.simplesys.SmartClient.Forms.SearchForm
 import com.simplesys.SmartClient.Layout.props.LayoutProps
-import com.simplesys.SmartClient.System.Types.Criteria
-import com.simplesys.System.Types2.void
+import com.simplesys.System.Types.{Criteria, void}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

@@ -1,13 +1,12 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.System.Types.Callback
-import com.simplesys.System.Types2.void
+import com.simplesys.System.Types.{Callback, void}
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
 
 @js.native
-object FileLoader extends Types.Object {
+object FileLoader extends js.Object {
     type OnLoad = js.Function0[_]
     var addVersionToLoadTags: Boolean = js.native
     def cacheEdgeImages(baseURLs: JSArray[String], showCenter: Boolean = js.native, edges: JSArray[String] = js.native, colors: JSArray[String] = js.native, onload: OnLoad): void = js.native

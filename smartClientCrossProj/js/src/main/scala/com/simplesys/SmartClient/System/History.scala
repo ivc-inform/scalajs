@@ -1,13 +1,12 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.System.Types.Callback
-import com.simplesys.System.Types2.void
+import com.simplesys.System.Types.{Callback, void}
 import com.simplesys.Types1.JSAny
 
 import scala.scalajs.js
 
 @js.native
-object History extends Types.Object {
+object History extends js.Object {
     type History = History.type
 
     def addHistoryEntry(id: String, title: String = js.native, data: JSAny = js.native): void = js.native

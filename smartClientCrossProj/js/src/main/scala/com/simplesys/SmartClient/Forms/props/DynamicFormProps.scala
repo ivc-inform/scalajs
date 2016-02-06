@@ -5,21 +5,21 @@ import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.FormsItems.props.FormItemProps
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
-import com.simplesys.SmartClient.System.{KeyIdentifier, Types}
+import com.simplesys.SmartClient.System.KeyIdentifier
 import com.simplesys.SmartClient.Workdlow.UserTask
-import com.simplesys.System.Types2.Alignment.Alignment
-import com.simplesys.System.Types2.AutoComplete.AutoComplete
-import com.simplesys.System.Types2.DSOperationType.DSOperationType
-import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types2.Encoding.Encoding
-import com.simplesys.System.Types2.FormMethod.FormMethod
-import com.simplesys.System.Types2.OperatorId.OperatorId
-import com.simplesys.System.Types2.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
-import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types2.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.System.Types2.TitleOrientation.TitleOrientation
-import com.simplesys.System.Types2.VisibilityMode.VisibilityMode
-import com.simplesys.System.Types2.{CSSStyleName, FormItemBaseStyle, HTMLString, URL}
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.AutoComplete.AutoComplete
+import com.simplesys.System.Types.DSOperationType.DSOperationType
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.Encoding.Encoding
+import com.simplesys.System.Types.FormMethod.FormMethod
+import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types.TitleOrientation.TitleOrientation
+import com.simplesys.System.Types.VisibilityMode.VisibilityMode
+import com.simplesys.System.Types.{CSSStyleName, FormItemBaseStyle, HTMLString, URL}
 import com.simplesys.option.{IntString, ScNone, ScOption}
 
 import scala.scalajs.js
@@ -51,14 +51,14 @@ class DynamicFormProps extends CanvasProps with DataBoundComponentProps{
     var disableValidation: ScOption[Boolean] = ScNone
     var encoding: ScOption[Encoding] = ScNone
     var errorItemCellStyle: ScOption[String] = ScNone
-    var errorItemProperties: ScOption[Types.Object] = ScNone
+    var errorItemProperties: ScOption[js.Object] = ScNone
     var errorOrientation: ScOption[Alignment] = ScNone
-    var errors: ScOption[Seq[Types.Object]] = ScNone
+    var errors: ScOption[Seq[js.Object]] = ScNone
     var errorsPreamble: ScOption[HTMLString] = ScNone
     var fields: ScOption[Seq[FormItemProps]] = ScNone
     var fixedColWidths: ScOption[Boolean] = ScNone
     var formSubmitFailedWarning: ScOption[String] = ScNone
-    var handleHiddenValidationErrors: ScOption[ThisFunction1[DynamicForm, Types.Object, Boolean]] = ScNone
+    var handleHiddenValidationErrors: ScOption[ThisFunction1[DynamicForm, js.Object, Boolean]] = ScNone
     var hiliteRequiredFields: ScOption[Boolean] = ScNone
     var implicitSave: ScOption[Boolean] = ScNone
     var implicitSaveDelay: ScOption[Int] = ScNone
@@ -109,7 +109,7 @@ class DynamicFormProps extends CanvasProps with DataBoundComponentProps{
     var showOldValueInHover: ScOption[Boolean] = ScNone
     var showTitlesWithErrorMessages: ScOption[Boolean] = ScNone
     var stopOnError: ScOption[Boolean] = ScNone
-    var submitValues: ScOption[Function2[Types.Object, DynamicForm, _]] = ScNone
+    var submitValues: ScOption[Function2[js.Object, DynamicForm, _]] = ScNone
     var suppressValidationErrorCallback: ScOption[Boolean] = ScNone
     var synchronousValidation: ScOption[Boolean] = ScNone
     var target: ScOption[String] = ScNone
@@ -125,7 +125,7 @@ class DynamicFormProps extends CanvasProps with DataBoundComponentProps{
     var validateOnChange: ScOption[Boolean] = ScNone
     var validateOnExit: ScOption[Boolean] = ScNone
     var validationURL: ScOption[URL] = ScNone
-    var values: ScOption[Types.Object] = ScNone
+    var values: ScOption[js.Object] = ScNone
     var valuesChanged: ScOption[ThisFunction0[DynamicForm, _]] = ScNone
     var wrapItemTitles: ScOption[Boolean] = ScNone
 }

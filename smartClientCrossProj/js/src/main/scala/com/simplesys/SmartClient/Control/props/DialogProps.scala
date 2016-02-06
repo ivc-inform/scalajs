@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Control.Button
 import com.simplesys.SmartClient.Foundation.{Label, Img}
 import com.simplesys.SmartClient.Layout.{Layout, Toolbar}
 import com.simplesys.SmartClient.Layout.props.WindowProps
-import com.simplesys.System.Types2.{HTMLString, CSSStyleName, void, SCImgURL}
+import com.simplesys.System.Types.{HTMLString, CSSStyleName, void, SCImgURL}
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.Types1.JSArray
 

@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Control
 
 import com.simplesys.SmartClient.Foundation.{Scrollbar, Canvas, AbstractCanvasCompanion}
 import com.simplesys.SmartClient.Layout.Snapbar
-import com.simplesys.System.Types2.AutoChild
+import com.simplesys.System.Types.AutoChild
 
 import scala.scalajs.js
 import scala.scalajs.js.|

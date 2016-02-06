@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.DataBinding._
-import com.simplesys.System.Types2.LogPriority._
-import com.simplesys.System.Types2.void
+import com.simplesys.System.Types.LogPriority._
+import com.simplesys.System.Types.void
 import com.simplesys.Types1._
 
 import scala.scalajs.js
@@ -13,10 +13,10 @@ trait Array extends List {
     def addAt(`object`: JSAny, pos: Int): this.type
     def and(start: Int, end: Int): Boolean
     def clearProperty(property: String): Boolean
-    def containsProperty(property: String, value: Types.Object = js.native): Boolean
-    def getUniqueItems(): JSArray[Types.Object]
-    def makeIndex(property: String, alwaysMakeArray: Boolean): Types.Object
-    def map(method: js.ThisFunction0[_, _], arguments: Types.Object*): JSArray[Types.Object]
+    def containsProperty(property: String, value: js.Object = js.native): Boolean
+    def getUniqueItems(): JSArray[js.Object]
+    def makeIndex(property: String, alwaysMakeArray: Boolean): js.Object
+    def map(method: js.ThisFunction0[_, _], arguments: js.Object*): JSArray[js.Object]
     def max(start: Int = js.native, end: Int = js.native): Int
     def min(start: Int = js.native, end: Int = js.native): Int
     def or(start: Int = js.native, end: Int = js.native): Boolean
@@ -28,7 +28,7 @@ trait Array extends List {
 }
 
 @js.native
-abstract trait AbstractArrayCompanion extends Types.Object {
+abstract trait AbstractArrayCompanion extends js.Object {
   var compareAscending: js.Function2[JSAny, JSAny, Int] = js.native
   var compareDescending: js.Function2[JSAny, JSAny, Int] = js.native
 }

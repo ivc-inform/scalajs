@@ -1,16 +1,13 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
-import com.simplesys.SmartClient.DataBinding.DSRequest
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.Object
-import com.simplesys.System.Types2.MultipleAppearance.MultipleAppearance
-import com.simplesys.System.Types2.PanelPlacement.PanelPlacement
-import com.simplesys.System.Types2.{HTMLString, AutoChild, SCClassName}
+import com.simplesys.System.Types.MultipleAppearance.MultipleAppearance
+import com.simplesys.System.Types.PanelPlacement.PanelPlacement
+import com.simplesys.System.Types.{AutoChild, HTMLString, SCClassName}
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js

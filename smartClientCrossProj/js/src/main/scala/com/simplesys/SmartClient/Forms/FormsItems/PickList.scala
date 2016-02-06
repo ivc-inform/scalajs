@@ -6,10 +6,9 @@ import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.System.Class
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
-import com.simplesys.SmartClient.System.Types.{Criteria, ValueMap}
-import com.simplesys.System.Types2.PickListItemIconPlacement.PickListItemIconPlacement
-import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types2.{CSSStyleName, SCClassName, void}
+import com.simplesys.System.Types.PickListItemIconPlacement.PickListItemIconPlacement
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types._
 import com.simplesys.Types1.{JSAny, JSArray}
 
 import scala.scalajs.js

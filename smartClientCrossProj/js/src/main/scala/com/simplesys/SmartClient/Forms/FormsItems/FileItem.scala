@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.SmartClient.Forms.DynamicForm
-import com.simplesys.System.Types2.{AutoChild, SCImgURL, void}
+import com.simplesys.System.Types.{AutoChild, SCImgURL, void}
 
 import scala.scalajs.js
 

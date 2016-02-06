@@ -3,9 +3,9 @@ package com.simplesys.SmartClient.Forms.FormsItems.props.formItem
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
-import com.simplesys.System.Types2.Alignment.Alignment
-import com.simplesys.System.Types2.PickListItemIconPlacement.PickListItemIconPlacement
-import com.simplesys.System.Types2.{CSSStyleName, HTMLString, SCImgURL, void}
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.PickListItemIconPlacement.PickListItemIconPlacement
+import com.simplesys.System.Types.{CSSStyleName, HTMLString, SCImgURL, void}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 

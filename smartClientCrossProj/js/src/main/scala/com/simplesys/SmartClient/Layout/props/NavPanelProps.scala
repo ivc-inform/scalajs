@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Layout.props
 import com.simplesys.SmartClient.Grids.TreeGrid
 import com.simplesys.SmartClient.Layout.Deck
 import com.simplesys.SmartClient.Layout.navPanel.NavItem
-import com.simplesys.System.Types2.CSSStyleName
+import com.simplesys.System.Types.CSSStyleName
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

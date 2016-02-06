@@ -1,14 +1,13 @@
 package com.simplesys.SmartClient.Layout.props
 
 import com.simplesys.SmartClient.Control.ImgButton
-import com.simplesys.SmartClient.Foundation.{Label, Img, Canvas}
-import com.simplesys.SmartClient.Layout.{Window, HLayout}
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.AnimationAcceleration.AnimationAcceleration
-import com.simplesys.System.Types2.ContentLayoutPolicy.ContentLayoutPolicy
-import com.simplesys.System.Types2.PanelPlacement.PanelPlacement
-import com.simplesys.System.Types2.{CSSColor, SCImgURL, CSSStyleName, HTMLString}
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.SmartClient.Foundation.{Canvas, Img, Label}
+import com.simplesys.SmartClient.Layout.{HLayout, Window}
+import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
+import com.simplesys.System.Types.ContentLayoutPolicy.ContentLayoutPolicy
+import com.simplesys.System.Types.PanelPlacement.PanelPlacement
+import com.simplesys.System.Types.{CSSColor, CSSStyleName, HTMLString, SCImgURL}
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
 
@@ -21,7 +20,7 @@ class WindowProps extends LayoutProps {
     var body: ScOption[Canvas] = ScNone
     var bodyColor: ScOption[CSSColor] = ScNone
     var bodyConstructor: ScOption[String] = ScNone
-    var bodyDefaults: ScOption[Types.Object] = ScNone
+    var bodyDefaults: ScOption[js.Object] = ScNone
     var bodyStyle: ScOption[CSSStyleName] = ScNone
     var bringToFrontOnMouseUp: ScOption[Boolean] = ScNone
     var canFocusInHeaderButtons: ScOption[Boolean] = ScNone
@@ -40,9 +39,9 @@ class WindowProps extends LayoutProps {
     var headerBackground: ScOption[Img] = ScNone
     var headerControls: ScOption[Seq[String]] = ScNone
     var headerIcon: ScOption[Img] = ScNone
-    var headerIconDefaults: ScOption[Types.Object] = ScNone
+    var headerIconDefaults: ScOption[js.Object] = ScNone
     var headerLabel: ScOption[Label] = ScNone
-    var headerLabelDefaults: ScOption[Types.Object] = ScNone
+    var headerLabelDefaults: ScOption[js.Object] = ScNone
     var headerSrc: ScOption[SCImgURL] = ScNone
     var headerStyle: ScOption[CSSStyleName] = ScNone
     var hiliteBodyColor: ScOption[CSSColor] = ScNone

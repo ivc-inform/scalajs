@@ -1,6 +1,7 @@
-package com.simplesys.SmartClient.System
+package com.simplesys.System
 
 import com.simplesys.Types1.{JSDictionary, JSDictionaryAny, JSAny, JSArrayAny}
+import com.simplesys.xml.Elem
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -42,4 +43,25 @@ package object Types {
     type XPathExpression = String
     type ListGridFieldState = Object
     type XPath = String
+    type FormatString = String
+    type SCClassName = String
+    type FormItemClassName = String
+    type FormItemBaseStyle = SCClassName
+    type CSSStyleName = String
+    type CSSColor = String
+    type CSSText = String
+    type CSSClassName = String
+    type Color = String
+    type HTMLString = String
+    type URL = String
+    type URN = String
+    type SCImgURL = String
+    type RelativeDateString = String
+    type KeyName = String
+    type PageHtml = Elem
+    type DataPath = String
+    type AnimateShowEffectId = String
+    type DateInputFormat = String
+    type void = Unit
+    type ID = String
 }

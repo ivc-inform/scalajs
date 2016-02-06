@@ -1,26 +1,25 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.SmartClient.DataBinding.{Criterion, DataSource}
-import com.simplesys.SmartClient.Forms.{Validator, DynamicForm}
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
+import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.RPC.RPCRequest
-import com.simplesys.SmartClient.System.Types.Criteria
 import com.simplesys.SmartClient.System._
-import com.simplesys.System.Types2.Alignment.Alignment
-import com.simplesys.System.Types2.AutoComplete.AutoComplete
-import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types2.FormItemElementType.FormItemElementType
-import com.simplesys.System.Types2.FormItemType.FormItemType
-import com.simplesys.System.Types2.OperatorId.OperatorId
-import com.simplesys.System.Types2.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
-import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types2.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.System.Types2.TitleOrientation.TitleOrientation
-import com.simplesys.System.Types2.VerticalAlignment.VerticalAlignment
-import com.simplesys.System.Types2._
-import com.simplesys.Types1.{JSDictionary, JSArray, JSAny}
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.AutoComplete.AutoComplete
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.FormItemElementType.FormItemElementType
+import com.simplesys.System.Types.FormItemType.FormItemType
+import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types.TitleOrientation.TitleOrientation
+import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
+import com.simplesys.System.Types._
+import com.simplesys.Types1.{JSAny, JSArray, JSDictionary}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -34,7 +33,7 @@ trait FormItem extends Class {
     var applyAlignToText: Boolean
     var applyHeightToTextBox: Boolean
     var ariaRole: String
-    var ariaState: Types.Object
+    var ariaState: js.Object
     var autoComplete: AutoComplete
     var blur: js.Function2[DynamicForm, FormItem, _]
     def blurItem(): void
@@ -62,7 +61,7 @@ trait FormItem extends Class {
     var dateFormatter: DateDisplayFormat
     var decimalPad: Int
     var decimalPrecision: Int
-    var defaultDynamicValue: js.Function3[FormItem, DynamicForm, Types.Object, _]
+    var defaultDynamicValue: js.Function3[FormItem, DynamicForm, js.Object, _]
     var defaultIconSrc: SCImgURL
     var defaultValue: JSAny
     def disable(): void
@@ -109,8 +108,8 @@ trait FormItem extends Class {
     def getGridColNum(): Int
     def getGridRowNum(): Int
     def getIcon(name: String): FormItemIcon
-    def getIconHeight(icon: Types.Object): Int
-    def getIconWidth(icon: Types.Object): Int
+    def getIconHeight(icon: js.Object): Int
+    def getIconWidth(icon: js.Object): Int
     def getLeft(): Int
     def getOptionDataSource(): DataSource
     def getPageLeft(): Int
@@ -176,8 +175,8 @@ trait FormItem extends Class {
     var left: Int
     var loadingDisplayValue: String
     var locateItemBy: String
-    def mapDisplayToValue(value: String): Types.Object
-    def mapValueToDisplay(value: Types.Object): String
+    def mapDisplayToValue(value: String): js.Object
+    def mapValueToDisplay(value: js.Object): String
     val multipleValueSeparator: String
     val name: String
     val operator: OperatorId
@@ -231,8 +230,8 @@ trait FormItem extends Class {
     def setTabIndex(): void
     def setTop(): void
     def setValue(newValue: JSAny): void
-    def setValueIcons(map: Types.Object): void
-    def setValueMap(valueMap: JSArray[Types.Object]): void
+    def setValueIcons(map: js.Object): void
+    def setValueMap(valueMap: JSArray[js.Object]): void
     def shouldApplyHeightToTextBox(): Boolean
     def shouldFetchMissingValue(newValue: JSAny): Boolean
     def shouldSaveOnEnter(): Boolean
@@ -253,7 +252,7 @@ trait FormItem extends Class {
     var showHint: Boolean
     def showIcon(icon: String): void
     var showIcons: Boolean
-    var showIf: js.Function4[FormItem, JSAny, DynamicForm, Types.Object, Boolean]
+    var showIf: js.Function4[FormItem, JSAny, DynamicForm, js.Object, Boolean]
     var showOldValueInHover: Boolean
     var showOverIcons: Boolean
     var showPending: Boolean

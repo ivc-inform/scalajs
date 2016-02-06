@@ -5,17 +5,17 @@ import com.simplesys.SmartClient.DataBinding.AdvancedCriteria
 import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.RPC.ServerObject
-import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
-import com.simplesys.System.Types2.ValidatorType.ValidatorType
-import com.simplesys.System.Types2.void
-import com.simplesys.Types1.{JSArray, JSAny}
+import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class}
+import com.simplesys.System.Types.ValidatorType.ValidatorType
+import com.simplesys.System.Types.void
+import com.simplesys.Types1.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
 trait Validator extends Class {
-    def condition(item: DataSourceField | FormItem, validator: Validator, value: JSAny, record: Types.Object): Boolean
+    def condition(item: DataSourceField | FormItem, validator: Validator, value: JSAny, record: js.Object): Boolean
     val applyWhen: AdvancedCriteria
     val dependentFields: JSArray[String]
     val serverOnly: Boolean
@@ -26,7 +26,7 @@ trait Validator extends Class {
     val caseSensitive: Boolean
     val stopIfFalse: Boolean
     val clientOnly: Boolean
-    val resultingValue: Types.Object
+    val resultingValue: js.Object
     val serverObject: ServerObject
     val errorMessage: String
     val serverCondition: String
@@ -36,8 +36,8 @@ trait Validator extends Class {
 @js.native
 abstract trait AbstractValidatorCompanion extends AbstractClassCompanion {
     def addValidator(`type`: String, condition: js.Function): void = js.native
-    def addValidatorDefinition(`type`: String, definition: Types.Object): void = js.native
-    def addValidators(newValidators: Types.Object): void = js.native
+    def addValidatorDefinition(`type`: String, definition: js.Object): void = js.native
+    def addValidators(newValidators: js.Object): void = js.native
     def create(): void = js.native
     val mustBeEarlierThan: String = js.native
     val mustBeEarlierThanTime: String = js.native

@@ -1,24 +1,21 @@
 package com.simplesys.SmartClient.DataBinding.dataSource
 
-import com.simplesys.SmartClient.DataBinding.{DataSource, DSRequest}
+import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
 import com.simplesys.SmartClient.RPC.ServerObject
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.{VelocityExpression, XPathExpression}
-import com.simplesys.System.Types2.DSDataFormat.DSDataFormat
-import com.simplesys.System.Types2.DSOperationType.DSOperationType
-import com.simplesys.System.Types2.DSProtocol.DSProtocol
-import com.simplesys.System.Types2.ExportFormat.ExportFormat
-import com.simplesys.System.Types2.RPCTransport.RPCTransport
-import com.simplesys.System.Types2.SQLPagingStrategy.SQLPagingStrategy
-import com.simplesys.System.Types2.SQLType.SQLType
-import com.simplesys.System.Types2.URL
+import com.simplesys.System.Types.DSDataFormat.DSDataFormat
+import com.simplesys.System.Types.DSOperationType.DSOperationType
+import com.simplesys.System.Types.DSProtocol.DSProtocol
+import com.simplesys.System.Types.ExportFormat.ExportFormat
+import com.simplesys.System.Types.RPCTransport.RPCTransport
+import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
+import com.simplesys.System.Types.SQLType.SQLType
+import com.simplesys.System.Types.{XPathExpression, VelocityExpression, URL}
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
-trait OperationBinding extends Types.Object {
+trait OperationBinding extends js.Object {
     val allowAdvancedCriteria: Boolean
     val allowMultiUpdate: Boolean
     val autoJoinTransactions: Boolean
@@ -37,7 +34,7 @@ trait OperationBinding extends Types.Object {
     val dataProtocol: DSProtocol
     val dataTransport: RPCTransport
     val dataURL: URL
-    val defaultParams: Types.Object
+    val defaultParams: js.Object
     val excludeCriteriaFields: JSArray[String]
     val exportAs: ExportFormat
     val exportFields: JSArray[String]
@@ -77,7 +74,7 @@ trait OperationBinding extends Types.Object {
     val sqlPaging: SQLPagingStrategy
     val sqlType: SQLType
     val sqlUsePagingHint: Boolean
-    val summaryFunctions: Types.Object
+    val summaryFunctions: js.Object
     val tableClause: String
     val transformMultipleFields: Boolean
     val useFlatFields: Boolean
@@ -89,6 +86,6 @@ trait OperationBinding extends Types.Object {
     val valuesClause: String
     val whereClause: String
     val wsOperation: String
-    val xmlNamespaces: Types.Object
+    val xmlNamespaces: js.Object
 }
 

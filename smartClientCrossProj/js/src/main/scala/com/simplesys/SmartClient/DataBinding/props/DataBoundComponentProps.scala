@@ -1,18 +1,16 @@
 package com.simplesys.SmartClient.DataBinding.props
 
 import com.simplesys.SmartClient.DataBinding.DataSource
-import com.simplesys.SmartClient.Grids.listGrid.{HiliteEditor, Hilite}
+import com.simplesys.SmartClient.Grids.listGrid.{Hilite, HiliteEditor}
 import com.simplesys.SmartClient.Layout.Window
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.Criteria
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.System.Types2.DragDataAction.DragDataAction
-import com.simplesys.System.Types2.FetchMode.FetchMode
-import com.simplesys.System.Types2.FieldNamingStrategy.FieldNamingStrategy
-import com.simplesys.System.Types2.RecategorizeMode.RecategorizeMode
-import com.simplesys.System.Types2.{CSSStyleName, HTMLString}
-import com.simplesys.System.Types2.HiliteIconPosition.HiliteIconPosition
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.System.Types.DragDataAction.DragDataAction
+import com.simplesys.System.Types.FetchMode.FetchMode
+import com.simplesys.System.Types.FieldNamingStrategy.FieldNamingStrategy
+import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
+import com.simplesys.System.Types.RecategorizeMode.RecategorizeMode
+import com.simplesys.System.Types.{CSSStyleName, Criteria, HTMLString}
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
 
@@ -37,7 +35,7 @@ trait DataBoundComponentProps extends ClassProps {
     var dragDataAction: ScOption[DragDataAction] = ScNone
     var dragRecategorize: ScOption[RecategorizeMode] = ScNone
     var dragTrackerStyle: ScOption[CSSStyleName] = ScNone
-    var dropValues: ScOption[Types.Object] = ScNone
+    var dropValues: ScOption[js.Object] = ScNone
     var duplicateDragMessage: ScOption[String] = ScNone
     var editFormulaFieldText: ScOption[String] = ScNone
     var editHilitesDialogTitle: ScOption[String] = ScNone

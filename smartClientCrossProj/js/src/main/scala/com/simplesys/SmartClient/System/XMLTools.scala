@@ -1,8 +1,7 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.RPC.RPCRequest
-import com.simplesys.SmartClient.System.Types._
-import com.simplesys.System.Types2.{void, URL}
+import com.simplesys.System.Types._
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
@@ -21,10 +20,10 @@ abstract trait AbstractXMLToolsCompanion extends AbstractClassCompanion {
     def parseXML(xmlText: String): XMLDocument = js.native
     def selectNodes(element: XMLDocument | XMLElement | String, expression: XPath, namespaces: String = js.native): JSArray[XMLNode] = js.native
     def selectNumber(element: XMLDocument | XMLElement | String, expression: XPath, namespaces: String = js.native): Int = js.native
-    def selectObjects(obj: Types.Object, xPath: XPath): JSArray[Types.Object] = js.native
+    def selectObjects(obj: js.Object, xPath: XPath): JSArray[js.Object] = js.native
     def selectString(element: XMLDocument | XMLElement | String, expression: XPath, namespaces: String = js.native): String = js.native
     def serializeToString(inputDocument: String): XMLDocument = js.native
-    def toJS(element: XMLElement | XMLDocument): Types.Object = js.native
+    def toJS(element: XMLElement | XMLDocument): js.Object = js.native
     def transformNodes(inputDocument: XMLDocument, styleSheet: XMLDocument): String = js.native
 }
 

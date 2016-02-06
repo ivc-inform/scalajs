@@ -6,10 +6,10 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.TileGrid
 import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerField
 import com.simplesys.SmartClient.Grids.tileGrid.{TileRecord, SimpleTile}
-import com.simplesys.System.Types2.SelectionType.SelectionType
-import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types2._
-import com.simplesys.System.Types2.DragAppearance.DragAppearance
+import com.simplesys.System.Types.SelectionType.SelectionType
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types._
+import com.simplesys.System.Types.DragAppearance.DragAppearance
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.Types1.{JSArray, JSDictionaryAny, JSDictionary, JSAny}
 

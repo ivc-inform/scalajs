@@ -2,8 +2,8 @@ package com.simplesys.SmartClient.Control.props
 
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Control.{MenuSS, MenuButton, Menu}
-import com.simplesys.System.Types2.Alignment.Alignment
-import com.simplesys.System.Types2.SCImgURL
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.SCImgURL
 import com.simplesys.option.{ScNone, ScOption}
 
 class MenuButtonProps extends ButtonProps {

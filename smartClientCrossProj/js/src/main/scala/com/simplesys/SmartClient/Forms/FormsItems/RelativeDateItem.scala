@@ -2,12 +2,10 @@ package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.SmartClient.DataBinding.Criterion
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
+import com.simplesys.SmartClient.System.Date
 import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
-import com.simplesys.SmartClient.System.{Types, Date}
-import com.simplesys.System.Types2.OperatorId.OperatorId
-import com.simplesys.System.Types2.RelativeDateRangePosition.RelativeDateRangePosition
-import com.simplesys.System.Types2.TimeUnit.TimeUnit
-import com.simplesys.System.Types2.{DateInputFormat, RelativeDateString, AutoChild}
+import com.simplesys.System.Types.RelativeDateRangePosition.RelativeDateRangePosition
+import com.simplesys.System.Types.{AutoChild, DateInputFormat}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -26,7 +24,7 @@ trait RelativeDateItem extends CanvasItem {
     def getEnteredValue(): String
     def getFiscalCalendar(): FiscalCalendar
     def getInputFormat(): DateInputFormat
-    def getRelativeDate(): Types.Object
+    def getRelativeDate(): js.Object
     var hoursAgoTitle: String
     var hoursFromNowTitle: String
     var millisecondsAgoTitle: String
@@ -36,7 +34,7 @@ trait RelativeDateItem extends CanvasItem {
     var monthsFromNowTitle: String
     var pickerIcon: FormItemIcon with AutoChild
     val pickerTimeItemProperties: TimeItem
-    val presetOptions: Types.Object
+    val presetOptions: js.Object
     val quantityField: SpinnerItem with AutoChild
     var quartersAgoTitle: String
     var quartersFromNowTitle: String

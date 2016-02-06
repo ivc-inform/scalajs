@@ -3,9 +3,9 @@ package com.simplesys.SmartClient.Tools
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Foundation.{Canvas, Label}
 import com.simplesys.SmartClient.System.Class
-import com.simplesys.System.Types2.InlineEditEvent.InlineEditEvent
-import com.simplesys.System.Types2.SelectedAppearance.SelectedAppearance
-import com.simplesys.System.Types2.{AutoChild, CSSColor, MultiAutoChild, void}
+import com.simplesys.System.Types.InlineEditEvent.InlineEditEvent
+import com.simplesys.System.Types.SelectedAppearance.SelectedAppearance
+import com.simplesys.System.Types.{AutoChild, CSSColor, MultiAutoChild, void}
 
 import scala.scalajs.js
 

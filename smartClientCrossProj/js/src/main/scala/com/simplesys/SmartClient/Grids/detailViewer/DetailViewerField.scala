@@ -1,19 +1,16 @@
 package com.simplesys.SmartClient.Grids.detailViewer
 
 import com.simplesys.SmartClient.DataBinding.DetailViewer
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.HiliteIconPosition.HiliteIconPosition
-import com.simplesys.System.Types2.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.System.Types2._
-import com.simplesys.System.Types2.void
-import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
+import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types.{void, _}
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
-trait DetailViewerField extends Types.Object {
+trait DetailViewerField extends js.Object {
     val canExport: Boolean
     val canHilite: Boolean
     val cellStyle: CSSClassName
@@ -53,5 +50,5 @@ trait DetailViewerField extends Types.Object {
     var title: HTMLString
     var `type`: String
     var value: HTMLString
-    val valueMap: Types.Object
+    val valueMap: js.Object
 }

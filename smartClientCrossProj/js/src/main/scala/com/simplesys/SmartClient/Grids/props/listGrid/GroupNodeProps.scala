@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Grids.props.listGrid
 
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
-import com.simplesys.System.Types2.HTMLString
+import com.simplesys.System.Types.HTMLString
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.props.AbstractClassProps
 import com.simplesys.Types1.{JSArray, JSAny}

@@ -2,10 +2,10 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
-import com.simplesys.System.Types2.DateFieldLayout.DateFieldLayout
-import com.simplesys.System.Types2.RelativeDateString
-import com.simplesys.System.Types2.TimeUnit.TimeUnit
-import com.simplesys.System.Types2.TitleOrientation.TitleOrientation
+import com.simplesys.System.Types.DateFieldLayout.DateFieldLayout
+import com.simplesys.System.Types.RelativeDateString
+import com.simplesys.System.Types.TimeUnit.TimeUnit
+import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.option.{ScOption, ScNone}
 
 import scala.scalajs.js._

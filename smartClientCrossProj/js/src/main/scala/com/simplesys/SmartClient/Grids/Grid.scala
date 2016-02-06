@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Grids
 
-import com.simplesys.SmartClient.Charts.{FacetChart, Chart}
+import com.simplesys.SmartClient.Charts.{Chart, FacetChart}
 import com.simplesys.SmartClient.Control.menu.MenuItem
 import com.simplesys.SmartClient.Control.{Button, IButton}
 import com.simplesys.SmartClient.DataBinding.Callbacks._
@@ -8,55 +8,52 @@ import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
-import com.simplesys.SmartClient.Foundation.{StatefulCanvas, HTMLFlow, GridRenderer, Canvas}
+import com.simplesys.SmartClient.Foundation.{Canvas, GridRenderer, HTMLFlow, StatefulCanvas}
 import com.simplesys.SmartClient.Grids.listGrid._
 import com.simplesys.SmartClient.Grids.treeGrid.Tree
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, VLayout}
 import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
-import com.simplesys.SmartClient.System.{Selection, Types, Class}
-import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System.selection.CellSelection
-import com.simplesys.System.Types2.Alignment.Alignment
-import com.simplesys.System.Types2.AnimationAcceleration.AnimationAcceleration
-import com.simplesys.System.Types2.AutoComplete.AutoComplete
-import com.simplesys.System.Types2.AutoFitEvent.AutoFitEvent
-import com.simplesys.System.Types2.AutoFitIconFieldType.AutoFitIconFieldType
-import com.simplesys.System.Types2.AutoFitWidthApproach.AutoFitWidthApproach
-import com.simplesys.System.Types2.Autofit.Autofit
-import com.simplesys.System.Types2.ChartType.ChartType
-import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types2.DragDataAction.DragDataAction
-import com.simplesys.System.Types2.DragTrackerMode.DragTrackerMode
-import com.simplesys.System.Types2.EditCompletionEvent.EditCompletionEvent
-import com.simplesys.System.Types2.EmbeddedPosition.EmbeddedPosition
-import com.simplesys.System.Types2.EnterKeyEditAction.EnterKeyEditAction
-import com.simplesys.System.Types2.EscapeKeyEditAction.EscapeKeyEditAction
-import com.simplesys.System.Types2.ExpansionComponentPoolingMode.ExpansionComponentPoolingMode
-import com.simplesys.System.Types2.ExpansionMode.ExpansionMode
-import com.simplesys.System.Types2.FetchMode.FetchMode
-import com.simplesys.System.Types2.GroupStartOpen.GroupStartOpen
-import com.simplesys.System.Types2.HoverMode.HoverMode
-import com.simplesys.System.Types2.ListGridComponent.ListGridComponent
-import com.simplesys.System.Types2.ListGridEditEvent.ListGridEditEvent
-import com.simplesys.System.Types2.Overflow.Overflow
-import com.simplesys.System.Types2.RecordComponentPoolingMode.RecordComponentPoolingMode
-import com.simplesys.System.Types2.RecordDropAppearance.RecordDropAppearance
-import com.simplesys.System.Types2.RecordDropPosition.RecordDropPosition
-import com.simplesys.System.Types2.ReorderPosition.ReorderPosition
-import com.simplesys.System.Types2.RowEndEditAction.RowEndEditAction
-import com.simplesys.System.Types2.RowSpanEditMode.RowSpanEditMode
-import com.simplesys.System.Types2.RowSpanSelectionMode.RowSpanSelectionMode
-import com.simplesys.System.Types2.SelectionAppearance.SelectionAppearance
-import com.simplesys.System.Types2.SelectionNotificationType.SelectionNotificationType
-import com.simplesys.System.Types2.SelectionStyle.SelectionStyle
-import com.simplesys.System.Types2.SortArrow.SortArrow
-import com.simplesys.System.Types2.SortDirection.SortDirection
-import com.simplesys.System.Types2.State.State
-import com.simplesys.System.Types2.SummaryFunction.SummaryFunction
-import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types2.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.System.Types2.VerticalAlignment.VerticalAlignment
-import com.simplesys.System.Types2._
+import com.simplesys.SmartClient.System.{Class, Selection}
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
+import com.simplesys.System.Types.AutoComplete.AutoComplete
+import com.simplesys.System.Types.AutoFitEvent.AutoFitEvent
+import com.simplesys.System.Types.AutoFitIconFieldType.AutoFitIconFieldType
+import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
+import com.simplesys.System.Types.Autofit.Autofit
+import com.simplesys.System.Types.ChartType.ChartType
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.DragTrackerMode.DragTrackerMode
+import com.simplesys.System.Types.EditCompletionEvent.EditCompletionEvent
+import com.simplesys.System.Types.EmbeddedPosition.EmbeddedPosition
+import com.simplesys.System.Types.EnterKeyEditAction.EnterKeyEditAction
+import com.simplesys.System.Types.EscapeKeyEditAction.EscapeKeyEditAction
+import com.simplesys.System.Types.ExpansionComponentPoolingMode.ExpansionComponentPoolingMode
+import com.simplesys.System.Types.ExpansionMode.ExpansionMode
+import com.simplesys.System.Types.GroupStartOpen.GroupStartOpen
+import com.simplesys.System.Types.HoverMode.HoverMode
+import com.simplesys.System.Types.ListGridComponent.ListGridComponent
+import com.simplesys.System.Types.ListGridEditEvent.ListGridEditEvent
+import com.simplesys.System.Types.Overflow.Overflow
+import com.simplesys.System.Types.RecordComponentPoolingMode.RecordComponentPoolingMode
+import com.simplesys.System.Types.RecordDropAppearance.RecordDropAppearance
+import com.simplesys.System.Types.RecordDropPosition.RecordDropPosition
+import com.simplesys.System.Types.ReorderPosition.ReorderPosition
+import com.simplesys.System.Types.RowEndEditAction.RowEndEditAction
+import com.simplesys.System.Types.RowSpanEditMode.RowSpanEditMode
+import com.simplesys.System.Types.RowSpanSelectionMode.RowSpanSelectionMode
+import com.simplesys.System.Types.SelectionAppearance.SelectionAppearance
+import com.simplesys.System.Types.SelectionNotificationType.SelectionNotificationType
+import com.simplesys.System.Types.SelectionStyle.SelectionStyle
+import com.simplesys.System.Types.SortArrow.SortArrow
+import com.simplesys.System.Types.SortDirection.SortDirection
+import com.simplesys.System.Types.State.State
+import com.simplesys.System.Types.SummaryFunction.SummaryFunction
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
+import com.simplesys.System.Types._
 import com.simplesys.Types1._
 
 import scala.scalajs.js
@@ -200,7 +197,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     var childExpansionMode: ExpansionMode
     var clearAllSortingText: String
     def clearCriteria(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    def clearEditValue(editValuesID: String | Types.Object, colNum: Int | String): void
+    def clearEditValue(editValuesID: String | js.Object, colNum: Int | String): void
     def clearFieldError(rowNum: Int, fieldName: Int | String): void
     var clearFilterText: String
     def clearRowErrors(rowNum: Int): void
@@ -369,16 +366,16 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def getDropIndex(recordNum: Int = js.native, reorderPosition: ReorderPosition = js.native): Int
     def getEditCol(): Int
     def getEditedCell(record: R, field: Int | String): JSAny
-    def getEditedRecord(valuesID: Int | Types.Object): Types.Object
-    def getEditField(): Types.Object
+    def getEditedRecord(valuesID: Int | js.Object): js.Object
+    def getEditField(): js.Object
     def getEditFormItem(field: String | Int): FormItem
-    var getEditorProperties: js.Function3[T, R, Int, Types.Object]
-    def getEditorType(field: T, values: Types.Object): String
-    def getEditorValueIcons(field: T, values: Types.Object): Types.Object
-    def getEditorValueMap(field: T, values: Types.Object): ValueMap
+    var getEditorProperties: js.Function3[T, R, Int, js.Object]
+    def getEditorType(field: T, values: js.Object): String
+    def getEditorValueIcons(field: T, values: js.Object): js.Object
+    def getEditorValueMap(field: T, values: js.Object): ValueMap
     def getEditRow(): Int
     def getEditValue(rowNum: Int, colNum: Int): JSAny
-    def getEditValues(valuesID: Types.Object | Int): Types.Object
+    def getEditValues(valuesID: js.Object | Int): js.Object
     def getEventColumn(x: Int): Int
     def getEventRow(y: Int): Int
     def getExpandedRecords(): JSArray[R]
@@ -404,13 +401,13 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def getGridSummaryFunction(field: T): SummaryFunction
     def getGroupByFields(): JSArray[String]
     def getGroupByText(field: T): HTMLString
-    def getGroupNodeHTML(node: Types.Object): void
+    def getGroupNodeHTML(node: js.Object): void
     def getGroupState(): ListGridGroupState
     def getGroupSummaryData(records: JSArray[R], groupNode: R): JSArray[R]
     def getGroupTreeSelection(excludePartialSelection: Boolean = js.native, groupNodesOnly: Boolean = js.native): JSArray[R]
     def getHeaderContextMenuItems(fieldNum: Int): JSArray[MenuItem]
     def getHeaderSpanContextMenuItems(headerSpan: HeaderSpan): JSArray[MenuItem]
-    def getOriginalData(): Types.Object
+    def getOriginalData(): js.Object
     def getRecord(recordNum: Int): R
     def getRecordComponent(rowNum: Int, colNum: Int = js.native): Canvas
     def getRecordDropPosition(): RecordDropPosition
@@ -420,7 +417,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def getRequiredFieldMessage(field: T, record: R): String
     def getRollOverCanvas(rowNum: Int, colNum: Int): Canvas
     def getRollUnderCanvas(rowNum: Int, colNum: Int): Canvas
-    def getRowErrors(rowNum: Int): Types.Object
+    def getRowErrors(rowNum: Int): js.Object
     var getRowHeight: js.Function2[Int, Int, Int]
     def getRowNum(record: R): Int
     def getRowPageTop(rowNum: Int): Int
@@ -559,7 +556,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     var nullGroupTitle: String
     var offlineMessageStyle: CSSStyleName
     def openGroup(record: R): Boolean
-    var originalData: Types.Object
+    var originalData: js.Object
     var originBaseStyle: CSSStyleName
     var parseEditorValue: js.Function4[JSAny, R, Int, Int, JSAny]
     var poolComponentsPerColumn: Boolean
@@ -625,8 +622,8 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     var rowClick: js.Function4[R, Int, Int, Boolean, Boolean]
     var rowContextClick: js.Function3[R, Int, Int, Boolean]
     var rowDoubleClick: js.Function4[R, Int, Int, Boolean, Boolean]
-    var rowEditorEnter: js.Function3[R, Types.Object, Int, void]
-    var rowEditorExit: js.Function4[EditCompletionEvent, R, Types.Object, Int, Boolean]
+    var rowEditorEnter: js.Function3[R, js.Object, Int, void]
+    var rowEditorExit: js.Function4[EditCompletionEvent, R, js.Object, Int, Boolean]
     var rowEndEditAction: RowEndEditAction
     def rowHasChanges(rowNum: Int): Boolean
     def rowHasErrors(rowNum: Int): Boolean
@@ -690,9 +687,9 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def setData(newData: JSArray[R]): void
     def setDataSource(dataSource: DataSource, fields: JSArray[T]): void
     def setDontAutoDestroyComponent(component: Canvas, dontAutoDestroy: Boolean): void
-    def setEditorValueMap(fieldID: Types.Object | Int | String, map: Types.Object): void
+    def setEditorValueMap(fieldID: js.Object | Int | String, map: js.Object): void
     def setEditValue(rowNum: Int, colNum: Int, value: JSAny): void
-    def setEditValues(rowNum: Int, values: Types.Object): void
+    def setEditValues(rowNum: Int, values: js.Object): void
     def setFastCellUpdates(fastCellUpdates: Boolean): void
     def setFieldButtonProperties(name: String, properties: Canvas): void
     def setFieldCellIcon(fieldName: String, cellIcon: SCImgURL): void
@@ -734,7 +731,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def setUserFormulaText(field: T | String, text: String = js.native): void
     def setUserSummary(field: T | String, userSummary: UserSummary = js.native): void
     def setUserSummaryText(field: T | String, text: String = js.native): void
-    def setValueMap(fieldID: String | Int, map: Types.Object): void
+    def setValueMap(fieldID: String | Int, map: js.Object): void
     def setViewState(viewState: ListGridViewState): void
     var showAllColumns: Boolean
     var showAllRecords: Boolean
@@ -788,7 +785,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     var sorterClick: js.ThisFunction0[callbackHandler, Boolean]
     val sorterConstructor: Class
     var sorterContextClick: js.ThisFunction0[callbackHandler, Boolean]
-    val sorterDefaults: Types.Object
+    val sorterDefaults: js.Object
     val sorterProperties: Button
     val sortField: String
     var sortFieldAscendingText: String
@@ -798,7 +795,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     var sortState: ListGridSortState
     val spanContextMenu: Layout with AutoChild
     def startEditing(rowNum: Int = js.native, colNum: Int = js.native, suppressFocus: Boolean = js.native): Boolean
-    def startEditingNew(newValues: Types.Object | R = js.native, suppressFocus: Boolean = js.native): void
+    def startEditingNew(newValues: js.Object | R = js.native, suppressFocus: Boolean = js.native): void
     var stopHover: js.ThisFunction0[callbackHandler, void]
     var stopOnErrors: Boolean
     val summaryRow: Grid[T, R] with AutoChild
@@ -853,7 +850,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def unSetSelectionChanged(func: js.Function2[R, Boolean, _]): void
     def unSetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
     def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor, pkFieldNames: JSArray[MasterDetailMapping] |MasterDetailMapping = js.native): void
-    def selectRecordsByKey(keyValues: Types.Object, newState: Boolean): R
+    def selectRecordsByKey(keyValues: js.Object, newState: Boolean): R
     var masterGrid: ListGrid
 }
 

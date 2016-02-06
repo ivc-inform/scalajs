@@ -1,7 +1,6 @@
 package com.simplesys.SmartClient.Layout.props
 
 import com.simplesys.SmartClient.Control.{ImgButton, StretchImgButton}
-import com.simplesys.SmartClient.System.Class
 import com.simplesys.SmartClient.Forms.FormsItems.TextItem
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
@@ -9,15 +8,14 @@ import com.simplesys.SmartClient.Grids.TableView
 import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
 import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.SmartClient.Layout.{NavigationBar, TabBar, TabSet, VLayout}
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.EdgeSizes
-import com.simplesys.System.Types2.Alignment.Alignment
-import com.simplesys.System.Types2.Overflow.Overflow
-import com.simplesys.System.Types2.Side.Side
-import com.simplesys.System.Types2.TabTitleEditEvent.TabTitleEditEvent
-import com.simplesys.System.Types2.{CSSClassName, ID, SCImgURL, void}
-import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.SmartClient.System.Class
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.Overflow.Overflow
+import com.simplesys.System.Types.Side.Side
+import com.simplesys.System.Types.TabTitleEditEvent.TabTitleEditEvent
+import com.simplesys.System.Types._
 import com.simplesys.Types1.JSArray
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
 
@@ -45,7 +43,7 @@ class TabSetProps extends CanvasProps {
     var defaultTabHeight: ScOption[Int] = ScNone
     var defaultTabWidth: ScOption[Int] = ScNone
     var destroyPanes: ScOption[Boolean] = ScNone
-    var getPaneContainerEdges: ScOption[js.Function1[void, JSArray[Types.Object]]] = ScNone
+    var getPaneContainerEdges: ScOption[js.Function1[void, JSArray[js.Object]]] = ScNone
     var leftEdgeOffsets: ScOption[EdgeSizes] = ScNone
     var leftEdgeSizes: ScOption[EdgeSizes] = ScNone
     var moreTab: ScOption[Tab] = ScNone
@@ -86,7 +84,7 @@ class TabSetProps extends CanvasProps {
     var symmetricScroller: ScOption[Boolean] = ScNone
     var tabBar: ScOption[TabBar] = ScNone
     var tabBarAlign: ScOption[Alignment] = ScNone
-    var tabBarControls: ScOption[JSArray[Types.Object]] = ScNone
+    var tabBarControls: ScOption[JSArray[js.Object]] = ScNone
     var tabBarPosition: ScOption[Side] = ScNone
     var tabBarProperties: ScOption[TabBar] = ScNone
     var tabBarThickness: ScOption[Int] = ScNone

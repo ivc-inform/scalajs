@@ -2,18 +2,14 @@ package com.simplesys.SmartClient.Forms.FormsItems.formItem
 
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.Alignment.Alignment
-import com.simplesys.System.Types2.CharacterCasing.CharacterCasing
-import com.simplesys.System.Types2.PickListItemIconPlacement.PickListItemIconPlacement
-import com.simplesys.System.Types2._
-import com.simplesys.System.Types2.void
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.PickListItemIconPlacement.PickListItemIconPlacement
+import com.simplesys.System.Types.{void, _}
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
-trait FormItemIcon extends Types.Object {
+trait FormItemIcon extends js.Object {
     var baseStyle: CSSStyleName
     var click: js.Function3[DynamicForm, FormItem, FormItemIcon, void]
     var disabled: Boolean

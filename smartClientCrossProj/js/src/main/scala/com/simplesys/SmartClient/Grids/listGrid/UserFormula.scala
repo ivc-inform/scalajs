@@ -1,13 +1,11 @@
 package com.simplesys.SmartClient.Grids.listGrid
 
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.Types1.{JSDictionaryAny, JSAny}
+import com.simplesys.Types1.JSDictionaryAny
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
-trait UserFormula extends Types.Object {
+trait UserFormula extends js.Object {
     val formulaVars: JSDictionaryAny
     var text: String
 }

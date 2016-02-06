@@ -1,14 +1,13 @@
 package com.simplesys.SmartClient.Control.props
 
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
-import com.simplesys.SmartClient.Control.props.menu.{MenuSSItemProps, MenuItemProps}
+import com.simplesys.SmartClient.Control.props.menu.{MenuItemProps, MenuSSItemProps}
 import com.simplesys.SmartClient.Foundation.{Canvas, Img}
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.Grids.props.GridProps
 import com.simplesys.SmartClient.Layout.NavigationBar
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.PanelPlacement._
-import com.simplesys.System.Types2._
+import com.simplesys.System.Types.PanelPlacement._
+import com.simplesys.System.Types._
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
@@ -30,7 +29,7 @@ class MenuSSProps extends GridProps[ListGridField, MenuSSItem] {
     var iconFillSpaceStyleName: ScOption[CSSStyleName] = ScNone
     var iconHeight: ScOption[Int] = ScNone
     var iconWidth: ScOption[Int] = ScNone
-    var itemClick: ScOption[js.Function2[Types.Object, Int, Boolean]] = ScNone
+    var itemClick: ScOption[js.Function2[js.Object, Int, Boolean]] = ScNone
     var items: ScOption[Seq[MenuSSItemProps]] = ScNone
     var keyFieldDefaults: ScOption[ListGridField] = ScNone
     var keyFieldProperties: ScOption[ListGridField] = ScNone

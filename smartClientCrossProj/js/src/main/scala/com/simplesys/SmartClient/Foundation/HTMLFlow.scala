@@ -4,10 +4,9 @@ import com.simplesys.SmartClient.DataBinding.Callbacks.DSCallback
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataBoundComponent, DataSource}
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.ContentsType.ContentsType
-import com.simplesys.System.Types2.SendMethod.SendMethod
-import com.simplesys.System.Types2._
+import com.simplesys.System.Types.ContentsType.ContentsType
+import com.simplesys.System.Types.SendMethod.SendMethod
+import com.simplesys.System.Types._
 import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js
@@ -21,7 +20,7 @@ trait HTMLFlow extends Canvas with DataBoundComponent {
     var contentLoaded: js.ThisFunction0[callbackHandler , _]
     var contentsType: ContentsType
     var contentsURL: URL
-    var contentsURLParams: Types.Object
+    var contentsURLParams: js.Object
     var evalScriptBlocks: Boolean
     def fetchRelatedData(record: ListGridRecord, schema: Canvas | DataSource | ID, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     var handleError: js.Function2[RPCRequest, RPCResponse, Boolean]
@@ -29,7 +28,7 @@ trait HTMLFlow extends Canvas with DataBoundComponent {
     def loadingContent(): Boolean
     val loadingMessage: HTMLString
     var selectContentOnSelectAll: Boolean
-    def setContentsURL(url: URL = js.native, params: Types.Object = js.native): void
+    def setContentsURL(url: URL = js.native, params: js.Object = js.native): void
     var transformHTML: js.Function1[HTMLElement, _]
 }
 

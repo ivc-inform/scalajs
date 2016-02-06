@@ -1,15 +1,13 @@
 package com.simplesys.SmartClient.DataBinding
 
-import com.simplesys.SmartClient.System.Types.{ValueMap, Criteria, Record}
 import com.simplesys.SmartClient.System._
-import com.simplesys.System.Types2.CriteriaPolicy.CriteriaPolicy
-import com.simplesys.System.Types2.FetchMode.FetchMode
-import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types2.void
-import com.simplesys.Types1.{JSArray, JSAny}
+import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
+import com.simplesys.System.Types.FetchMode.FetchMode
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.{Record, Criteria, void}
+import com.simplesys.Types1.{JSAny, JSArray}
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 trait ResultSet extends Class with List {
@@ -29,7 +27,7 @@ trait ResultSet extends Class with List {
     val fetchMode: FetchMode
     val fetchOperation: String
     def filterLocalData(): void
-    def findByKey(keyValue: Types.Object): Record
+    def findByKey(keyValue: js.Object): Record
     def getAllCachedRows(): JSArray[Record]
     def getAllVisibleRows(): JSArray[Record]
     def getCriteria(): Criteria
@@ -47,7 +45,7 @@ trait ResultSet extends Class with List {
     def setCriteria(newCriteria: Criteria): Boolean
     def setSort(): void
     val sortSpecifiers: JSArray[SortSpecifier]
-    var transformData: js.Function2[JSAny, DSResponse, JSArray[Types.Object]]
+    var transformData: js.Function2[JSAny, DSResponse, JSArray[js.Object]]
     val updateCacheFromRequest: Boolean
     val updatePartialCache: Boolean
     val useClientFiltering: Boolean

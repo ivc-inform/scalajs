@@ -3,8 +3,8 @@ package com.simplesys.SmartClient.Control.props
 import com.simplesys.SmartClient.Control.Button
 import com.simplesys.SmartClient.Foundation.props.StatefulCanvasProps
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.System.Types2.Cursor.Cursor
-import com.simplesys.System.Types2.void
+import com.simplesys.System.Types.Cursor.Cursor
+import com.simplesys.System.Types.void
 
 import scala.scalajs.js
 

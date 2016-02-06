@@ -5,9 +5,9 @@ import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
-import com.simplesys.System.Types2.{SCClassName, HTMLString}
-import com.simplesys.System.Types2.MultipleAppearance.MultipleAppearance
-import com.simplesys.System.Types2.PanelPlacement.PanelPlacement
+import com.simplesys.System.Types.{SCClassName, HTMLString}
+import com.simplesys.System.Types.MultipleAppearance.MultipleAppearance
+import com.simplesys.System.Types.PanelPlacement.PanelPlacement
 import com.simplesys.option.{ScOption, ScNone}
 
 import scala.scalajs.js._

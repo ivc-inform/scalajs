@@ -3,15 +3,11 @@ package com.simplesys.SmartClient.DataBinding.props
 import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.Validator
-import com.simplesys.SmartClient.System.Types.ValueMap
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.System.Types2.{FormatString, ID}
-import com.simplesys.System.Types2.OperatorId.OperatorId
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types.{ValueMap, FormatString, ID}
 import com.simplesys.Types1.JSArray
-
-import scala.scalajs.js
-import scala.scalajs.js._
+import com.simplesys.option.{ScNone, ScOption}
 
 class SimpleTypeProps extends ClassProps {
     var defaultGroupingMode: ScOption[String] = ScNone

@@ -1,17 +1,15 @@
 package com.simplesys.SmartClient.Foundation.props
 
 import com.simplesys.SmartClient.DataBinding.props.DataBoundComponentProps
-import com.simplesys.SmartClient.Foundation.{HTMLFlow, Canvas}
+import com.simplesys.SmartClient.Foundation.HTMLFlow
 import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
-import com.simplesys.SmartClient.System.{HTMLFlow, Types}
-import com.simplesys.System.Types2.ContentsType.ContentsType
-import com.simplesys.System.Types2.{void, URL, HTMLString}
-import com.simplesys.System.Types2.SendMethod.SendMethod
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.System.Types.ContentsType.ContentsType
+import com.simplesys.System.Types.SendMethod.SendMethod
+import com.simplesys.System.Types.{HTMLString, URL}
+import com.simplesys.option.{ScNone, ScOption}
 import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
 class HTMLFlowProps extends CanvasProps with DataBoundComponentProps{
     type callbackHandler <: HTMLFlow
@@ -21,7 +19,7 @@ class HTMLFlowProps extends CanvasProps with DataBoundComponentProps{
     var contentLoaded: ScOption[js.ThisFunction0[callbackHandler, _]] = ScNone
     var contentsType: ScOption[ContentsType] = ScNone
     var contentsURL: ScOption[URL] = ScNone
-    var contentsURLParams: ScOption[Types.Object] = ScNone
+    var contentsURLParams: ScOption[js.Object] = ScNone
     var evalScriptBlocks: ScOption[Boolean] = ScNone
     var handleError: ScOption[js.Function2[RPCRequest, RPCResponse, Boolean]] = ScNone
     var httpMethod: ScOption[SendMethod] = ScNone

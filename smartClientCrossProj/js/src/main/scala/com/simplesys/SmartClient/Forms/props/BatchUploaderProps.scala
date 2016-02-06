@@ -8,13 +8,12 @@ import com.simplesys.SmartClient.Foundation.HTMLFlow
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.props.VStackProps
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.ImportFormat.ImportFormat
-import com.simplesys.System.Types2.PartialCommitOption.PartialCommitOption
-import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.System.Types.ImportFormat.ImportFormat
+import com.simplesys.System.Types.PartialCommitOption.PartialCommitOption
 import com.simplesys.Types1.JSArray
+import com.simplesys.option.{ScNone, ScOption}
 
-import scala.scalajs.js._
+import scala.scalajs.js
 
 class BatchUploaderProps extends VStackProps {
     var allRecordsInErrorMessage: ScOption[String] = ScNone
@@ -34,7 +33,7 @@ class BatchUploaderProps extends VStackProps {
     var partialCommitConfirmationMessage: ScOption[String] = ScNone
     var partialCommitError: ScOption[String] = ScNone
     var partialCommitPrompt: ScOption[String] = ScNone
-    var requestProperties: ScOption[Types.Object] = ScNone
+    var requestProperties: ScOption[js.Object] = ScNone
     var showCommitConfirmation: ScOption[Boolean] = ScNone
     var uploadButton: ScOption[IButton] = ScNone
     var uploadButtonTitle: ScOption[String] = ScNone

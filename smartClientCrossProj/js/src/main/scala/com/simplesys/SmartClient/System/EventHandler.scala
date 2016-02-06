@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System._
-import com.simplesys.System.Types2.{void, SCImgURL, KeyName}
+import com.simplesys.System.Types.{void, SCImgURL, KeyName}
 import com.simplesys.Types1.JSArray
 import org.scalajs.dom.raw.HTMLElement
 
@@ -23,7 +23,7 @@ abstract trait AbstractEventHandlerCompanion extends AbstractClassCompanion {
     def getKey(): KeyName = js.native
     def getKeyEventCharacter(): String = js.native
     def getKeyEventCharacterValue(): Int = js.native
-    def getNativeDragData(): Types.Object = js.native
+    def getNativeDragData(): js.Object = js.native
     def getNativeMouseTarget(): HTMLElement = js.native
     def getTarget(): Canvas = js.native
     def getWheelDeltaY(): Double = js.native
@@ -36,7 +36,7 @@ abstract trait AbstractEventHandlerCompanion extends AbstractClassCompanion {
     def rightButtonDown(): Boolean = js.native
     def setDragTracker(html: String, newWidth: Int = js.native, newHeight: Int = js.native, offsetX: Int = js.native, offsetY: Int = js.native, properties: Canvas = js.native): void = js.native
     def setDragTrackerImage(src: SCImgURL, x: Int = js.native, y: Int = js.native): void = js.native
-    def setNativeDragData(data: Types.Object | String, strData: String = js.native): void = js.native
+    def setNativeDragData(data: js.Object | String, strData: String = js.native): void = js.native
     def shiftKeyDown(): Boolean = js.native
     var STILL_DOWN_DELAY: Int = js.native
     var STOP_BUBBLING: String = js.native

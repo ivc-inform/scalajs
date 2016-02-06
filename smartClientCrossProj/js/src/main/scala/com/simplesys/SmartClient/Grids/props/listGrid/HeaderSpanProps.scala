@@ -1,9 +1,9 @@
 package com.simplesys.SmartClient.Grids.props.listGrid
 
 import com.simplesys.SmartClient.Grids.listGrid.HeaderSpan
-import com.simplesys.System.Types2.Alignment.Alignment
-import com.simplesys.System.Types2.SCClassName
-import com.simplesys.System.Types2.VerticalAlignment.VerticalAlignment
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.SCClassName
+import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 import com.simplesys.Types1.JSArray

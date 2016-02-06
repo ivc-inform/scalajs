@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Grids.props.listGrid
 
 import com.simplesys.SmartClient.Control.Button
 import com.simplesys.SmartClient.Grids.props.GridProps
-import com.simplesys.System.Types2.{CSSStyleName, SCImgURL, void, URL}
+import com.simplesys.System.Types.{CSSStyleName, SCImgURL, void, URL}
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.Types1.{JSDictionaryAny, JSDictionary, JSAny}
 

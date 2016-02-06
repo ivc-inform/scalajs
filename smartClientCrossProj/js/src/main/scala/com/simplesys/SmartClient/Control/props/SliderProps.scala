@@ -2,8 +2,8 @@ package com.simplesys.SmartClient.Control.props
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
-import com.simplesys.System.Types2.{void, CSSStyleName}
-import com.simplesys.System.Types2.ImageStyle.ImageStyle
+import com.simplesys.System.Types.{void, CSSStyleName}
+import com.simplesys.System.Types.ImageStyle.ImageStyle
 import com.simplesys.option.{ScOption, ScNone}
 
 import scala.scalajs.js

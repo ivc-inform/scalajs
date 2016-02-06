@@ -1,26 +1,23 @@
 package com.simplesys.SmartClient.DataBinding.props
 
-import com.simplesys.SmartClient.DataBinding.dataSource.{DataSourceField, OperationBinding}
-import com.simplesys.SmartClient.DataBinding.props.dataSource.{WildRecordColumnProps, OperationBindingProps, DataSourceFieldProps}
+import com.simplesys.SmartClient.DataBinding.props.dataSource.{DataSourceFieldProps, OperationBindingProps, WildRecordColumnProps}
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DSResponse, DataSource, JSON}
 import com.simplesys.SmartClient.RPC.ServerObject
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.{Record, VelocityExpression, XPathExpression}
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.System.Types2.CriteriaPolicy.CriteriaPolicy
-import com.simplesys.System.Types2.DSDataFormat.DSDataFormat
-import com.simplesys.System.Types2.DSInheritanceMode.DSInheritanceMode
-import com.simplesys.System.Types2.DSProtocol.DSProtocol
-import com.simplesys.System.Types2.DSServerType.DSServerType
-import com.simplesys.System.Types2.EnumTranslateStrategy.EnumTranslateStrategy
-import com.simplesys.System.Types2.MultiUpdatePolicy.MultiUpdatePolicy
-import com.simplesys.System.Types2.RPCTransport.RPCTransport
-import com.simplesys.System.Types2.SQLPagingStrategy.SQLPagingStrategy
-import com.simplesys.System.Types2.SequenceMode.SequenceMode
-import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types2.{ID, URL, URN}
-import com.simplesys.option.{IntString, ScNone, ScOption}
+import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
+import com.simplesys.System.Types.DSDataFormat.DSDataFormat
+import com.simplesys.System.Types.DSInheritanceMode.DSInheritanceMode
+import com.simplesys.System.Types.DSProtocol.DSProtocol
+import com.simplesys.System.Types.DSServerType.DSServerType
+import com.simplesys.System.Types.EnumTranslateStrategy.EnumTranslateStrategy
+import com.simplesys.System.Types.MultiUpdatePolicy.MultiUpdatePolicy
+import com.simplesys.System.Types.RPCTransport.RPCTransport
+import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
+import com.simplesys.System.Types.SequenceMode.SequenceMode
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types._
 import com.simplesys.Types1.JSAny
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -80,7 +77,7 @@ class DataSourceProps extends ClassProps {
     var fileNameField: ScOption[String] = ScNone
     var fileTypeField: ScOption[String] = ScNone
     var fileVersionField: ScOption[String] = ScNone
-    var globalNamespaces: ScOption[Types.Object] = ScNone
+    var globalNamespaces: ScOption[js.Object] = ScNone
     var guestUserId: ScOption[String] = ScNone
     var handleError: ScOption[js.Function2[DSResponse, DSRequest, Boolean]] = ScNone
     var iconField: ScOption[String] = ScNone
@@ -123,8 +120,8 @@ class DataSourceProps extends ClassProps {
     var requiresAuthentication: ScOption[Boolean] = ScNone
     var requiresRole: ScOption[String] = ScNone
     var resultBatchSize: ScOption[Int] = ScNone
-    var resultSetClass: ScOption[Types.Object] = ScNone
-    var resultTreeClass: ScOption[Types.Object] = ScNone
+    var resultSetClass: ScOption[js.Object] = ScNone
+    var resultTreeClass: ScOption[js.Object] = ScNone
     var schema: ScOption[String] = ScNone
     var schemaBean: ScOption[String] = ScNone
     var schemaNamespace: ScOption[URN] = ScNone
@@ -164,6 +161,6 @@ class DataSourceProps extends ClassProps {
     var useSubselectForRowCount: ScOption[Boolean] = ScNone
     var useTestDataFetch: ScOption[Boolean] = ScNone
     var validateRelatedRecords: ScOption[Boolean] = ScNone
-    var xmlNamespaces: ScOption[Types.Object] = ScNone
+    var xmlNamespaces: ScOption[js.Object] = ScNone
     var wildRecord: ScOption[Seq[WildRecordColumnProps]] = ScNone
 }

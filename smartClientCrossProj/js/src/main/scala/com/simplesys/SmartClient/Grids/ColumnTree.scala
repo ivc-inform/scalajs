@@ -7,9 +7,8 @@ import com.simplesys.SmartClient.DataBinding.{DSRequest, DataBoundComponent}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeNode}
 import com.simplesys.SmartClient.Layout.{AbstractLayoutCompanion, Layout}
-import com.simplesys.SmartClient.System.Types.Criteria
-import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types2._
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types._
 import com.simplesys.Types1.{JSArray, JSDictionaryAny}
 
 import scala.scalajs.js

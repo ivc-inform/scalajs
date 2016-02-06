@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 import com.simplesys.SmartClient.Control.Button
 import com.simplesys.SmartClient.System.Class
 import com.simplesys.SmartClient.Foundation.StatefulCanvas
-import com.simplesys.System.Types2.CSSStyleName
+import com.simplesys.System.Types.CSSStyleName
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.Types1.JSArray
 

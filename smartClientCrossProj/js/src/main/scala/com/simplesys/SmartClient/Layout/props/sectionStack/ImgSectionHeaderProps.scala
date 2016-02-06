@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Layout.props.sectionStack
 import com.simplesys.SmartClient.Foundation.{Canvas, StretchImg}
 import com.simplesys.SmartClient.Layout.Layout
 import com.simplesys.SmartClient.Layout.props.HLayoutProps
-import com.simplesys.System.Types2.{HTMLString, SCImgURL}
+import com.simplesys.System.Types.{HTMLString, SCImgURL}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

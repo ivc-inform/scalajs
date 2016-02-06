@@ -2,16 +2,15 @@ package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
 import com.simplesys.SmartClient.RPC.{AbstractRPCRequestCompanion, RPCRequest}
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.{Record, Object}
-import com.simplesys.System.Types2.DSOperationType.DSOperationType
-import com.simplesys.System.Types2.DSProtocol.DSProtocol
-import com.simplesys.System.Types2.ExportDisplay.ExportDisplay
-import com.simplesys.System.Types2.ExportFormat.ExportFormat
-import com.simplesys.System.Types2.ExportImageFormat.ExportImageFormat
-import com.simplesys.System.Types2.PropertyIdentifier.PropertyIdentifier
-import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types2.ValidationMode.ValidationMode
+import com.simplesys.System.Types.DSOperationType.DSOperationType
+import com.simplesys.System.Types.DSProtocol.DSProtocol
+import com.simplesys.System.Types.ExportDisplay.ExportDisplay
+import com.simplesys.System.Types.ExportFormat.ExportFormat
+import com.simplesys.System.Types.ExportImageFormat.ExportImageFormat
+import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
+import com.simplesys.System.Types.Record
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.ValidationMode.ValidationMode
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
@@ -48,10 +47,10 @@ trait DSRequest extends RPCRequest {
     val exportToClient: Boolean
     val exportToFilesystem: Boolean
     val exportValueFields: Boolean
-    val fieldValueExpressions: Types.Object
+    val fieldValueExpressions: js.Object
     val generateRelatedUpdates: Boolean
     val groupBy: JSArray[String]
-    val headerData: Types.Object
+    val headerData: js.Object
     val keepParentsOnFilter: Boolean
     val lineBreakStyle: String
     val oldValues: Record
@@ -68,7 +67,7 @@ trait DSRequest extends RPCRequest {
     val sortBy: String | JSArray[String] | JSArray[SortSpecifier]
     val startRow: Int
     val streamResults: Boolean
-    val summaryFunctions: Types.Object
+    val summaryFunctions: js.Object
     val textMatchStyle: TextMatchStyle
     val useFlatFields: Boolean
     val useFlatHeaderFields: Boolean
@@ -81,5 +80,5 @@ abstract trait AbstractDSRequestCompanion extends AbstractRPCRequestCompanion {
 }
 
 @js.native
-   object DSRequest extends AbstractDSRequestCompanion
+object DSRequest extends AbstractDSRequestCompanion
 

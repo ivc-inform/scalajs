@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Layout.props
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Foundation.props.StretchImgProps
-import com.simplesys.System.Types2.Cursor.Cursor
+import com.simplesys.System.Types.Cursor.Cursor
 import com.simplesys.option.{ScOption, ScNone}
 
 import scala.scalajs.js._

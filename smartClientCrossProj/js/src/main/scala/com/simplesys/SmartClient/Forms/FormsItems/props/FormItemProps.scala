@@ -8,23 +8,20 @@ import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.RPC.RPCRequest
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types._
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.System.Types2.Alignment.Alignment
-import com.simplesys.System.Types2.AutoComplete.AutoComplete
-import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types2.FormItemType.FormItemType
-import com.simplesys.System.Types2.OperatorId.OperatorId
-import com.simplesys.System.Types2.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
-import com.simplesys.System.Types2.TitleOrientation.TitleOrientation
-import com.simplesys.System.Types2.VerticalAlignment.VerticalAlignment
-import com.simplesys.System.Types2._
-import com.simplesys.option.{FormItemType_String, IntString, ScNone, ScOption}
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.AutoComplete.AutoComplete
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.FormItemType.FormItemType
+import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
+import com.simplesys.System.Types.TitleOrientation.TitleOrientation
+import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
+import com.simplesys.System.Types._
 import com.simplesys.Types1._
+import com.simplesys.option.{FormItemType_String, IntString, ScNone, ScOption}
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
 class FormItemProps extends ClassProps {
     var accessKey: ScOption[Char] = ScNone
@@ -34,7 +31,7 @@ class FormItemProps extends ClassProps {
     var applyAlignToText: ScOption[Boolean] = ScNone
     var applyHeightToTextBox: ScOption[Boolean] = ScNone
     var ariaRole: ScOption[String] = ScNone
-    var ariaState: ScOption[Types.Object] = ScNone
+    var ariaState: ScOption[js.Object] = ScNone
     var autoComplete: ScOption[AutoComplete] = ScNone
     var blur: ScOption[js.Function2[DynamicForm, FormItem, _]] = ScNone
     var browserSpellCheck: ScOption[Boolean] = ScNone
@@ -58,7 +55,7 @@ class FormItemProps extends ClassProps {
     var dateFormatter: ScOption[DateDisplayFormat] = ScNone
     var decimalPad: ScOption[Int] = ScNone
     var decimalPrecision: ScOption[Int] = ScNone
-    var defaultDynamicValue: ScOption[js.Function3[FormItem, DynamicForm, Types.Object, _]] = ScNone
+    var defaultDynamicValue: ScOption[js.Function3[FormItem, DynamicForm, js.Object, _]] = ScNone
     var defaultIconSrc: ScOption[SCImgURL] = ScNone
     var defaultValue: ScOption[JSAny] = ScNone
     var disabled: ScOption[Boolean] = ScNone
@@ -169,7 +166,7 @@ class FormItemProps extends ClassProps {
     var showFocusedPickerIcon: ScOption[Boolean] = ScNone
     var showHint: ScOption[Boolean] = ScNone
     var showIcons: ScOption[Boolean] = ScNone
-    var showIf: ScOption[js.Function4[FormItem, JSAny, DynamicForm, Types.Object, Boolean]] = ScNone
+    var showIf: ScOption[js.Function4[FormItem, JSAny, DynamicForm, js.Object, Boolean]] = ScNone
     var showOldValueInHover: ScOption[Boolean] = ScNone
     var showOverIcons: ScOption[Boolean] = ScNone
     var showPending: ScOption[Boolean] = ScNone

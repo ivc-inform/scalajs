@@ -1,13 +1,11 @@
 package com.simplesys.SmartClient.DataBinding.props
 
-import com.simplesys.SmartClient.RPC.props.{ResponseCommon, RPCResponseProps}
-import com.simplesys.SmartClient.System.Types._
-import com.simplesys.System.Types2.DSOperationType._
+import com.simplesys.SmartClient.RPC.props.ResponseCommon
+import com.simplesys.System.Types.DSOperationType._
+import com.simplesys.Types1.JSDictionaryAny
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.Types1.{JSDictionaryAny, JSDictionary, JSAny}
 
-import scala.scalajs.js
-import scala.scalajs.js.{Object, _}
+import scala.scalajs.js.Object
 
 class DSResponseProps extends ResponseCommon[JSDictionaryAny] {
     var dataSource: ScOption[String] = ScNone

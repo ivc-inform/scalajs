@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Layout
 
-import com.simplesys.System.Types2.{void, ID}
+import com.simplesys.System.Types.{void, ID}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

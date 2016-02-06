@@ -4,18 +4,18 @@ import com.simplesys.SmartClient.DataBinding.DataBoundComponent
 import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.Validator
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.Record
+import com.simplesys.System.Types.Record
+import com.simplesys.Types1.JSAny
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.Types1.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js._
 
 class validatorDefinitionProps extends AbstractClassProps {
     var action: ScOption[js.Function5[Boolean, DataSourceField | FormItem, Validator, Record, DataBoundComponent, _]] = ScNone
-    var condition: ScOption[js.Function4[DataSourceField | FormItem, Validator, JSAny, Types.Object, Boolean]] = ScNone
+    var condition: ScOption[js.Function4[DataSourceField | FormItem, Validator, JSAny, js.Object, Boolean]] = ScNone
     var defaultErrorMessage: ScOption[String] = ScNone
     var requiresServer: ScOption[Boolean] = ScNone
 }
+

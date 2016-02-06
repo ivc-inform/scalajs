@@ -3,8 +3,8 @@ package com.simplesys.SmartClient.Layout
 import com.simplesys.SmartClient.Foundation.{Canvas, AbstractCanvasCompanion}
 import com.simplesys.SmartClient.Layout.portalLayout.PortalPosition
 import com.simplesys.SmartClient.Layout.portalLayout.Portlet
-import com.simplesys.System.Types2.{void, MultiAutoChild}
-import com.simplesys.System.Types2.Overflow.Overflow
+import com.simplesys.System.Types.{void, MultiAutoChild}
+import com.simplesys.System.Types.Overflow.Overflow
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js

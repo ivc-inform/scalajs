@@ -2,13 +2,13 @@ package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.AbstractClassCompanion
-import com.simplesys.System.Types2.Alignment.Alignment
-import com.simplesys.System.Types2.LayoutPolicy.LayoutPolicy
-import com.simplesys.System.Types2.LayoutResizeBarPolicy.LayoutResizeBarPolicy
-import com.simplesys.System.Types2.LocatorStrategy.LocatorStrategy
-import com.simplesys.System.Types2.LocatorTypeStrategy.LocatorTypeStrategy
-import com.simplesys.System.Types2.VerticalAlignment.VerticalAlignment
-import com.simplesys.System.Types2.{AutoChild, MultiAutoChild, void}
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.LayoutPolicy.LayoutPolicy
+import com.simplesys.System.Types.LayoutResizeBarPolicy.LayoutResizeBarPolicy
+import com.simplesys.System.Types.LocatorStrategy.LocatorStrategy
+import com.simplesys.System.Types.LocatorTypeStrategy.LocatorTypeStrategy
+import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
+import com.simplesys.System.Types.{AutoChild, MultiAutoChild, void}
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js

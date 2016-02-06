@@ -3,10 +3,9 @@ package com.simplesys.SmartClient.Foundation
 import com.simplesys.SmartClient.Forms.FormsItems.SelectItem
 import com.simplesys.SmartClient.Foundation.richTextEditor.ListPropertiesDialog
 import com.simplesys.SmartClient.Layout.{Layout, VLayout}
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.ControlName.ControlName
-import com.simplesys.System.Types2.{AutoChild, MultiAutoChild, void}
-import com.simplesys.Types1.{JSArray, JSAny}
+import com.simplesys.System.Types.ControlName.ControlName
+import com.simplesys.System.Types.{AutoChild, MultiAutoChild, void}
+import com.simplesys.Types1.{JSAny, JSArray}
 
 import scala.scalajs.js
 
@@ -28,10 +27,10 @@ trait RichTextEditor extends VLayout {
     val editArea: Canvas with AutoChild
     val editAreaBackgroundColor: String
     var fontControls: JSArray[ControlName]
-    var fontNames: Types.Object
+    var fontNames: js.Object
     val fontSelectorItem: SelectItem with AutoChild
     var fontSelectorPrompt: String
-    val fontSizes: Types.Object
+    val fontSizes: js.Object
     val fontSizeSelectorItem: SelectItem with AutoChild
     var fontSizeSelectorPrompt: String
     var formatControls: JSArray[ControlName]

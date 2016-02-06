@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Foundation
 
-import com.simplesys.System.Types2.{CSSStyleName, SCImgURL, CSSColor}
+import com.simplesys.System.Types.{CSSStyleName, SCImgURL, CSSColor}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

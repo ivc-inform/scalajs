@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Forms.FormsItems.SpinnerItem
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.TileLayout
 import com.simplesys.SmartClient.Layout.{AbstractLayoutCompanion, Layout}
-import com.simplesys.System.Types2.{MultiAutoChild, AutoChild}
+import com.simplesys.System.Types.{MultiAutoChild, AutoChild}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

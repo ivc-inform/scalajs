@@ -5,10 +5,10 @@ import com.simplesys.SmartClient.DataBinding.fieldPicker.FieldPickerWindow
 import com.simplesys.SmartClient.DataBinding.props.DataBoundComponentProps
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.Grids.detailViewer.{DetailViewerRecord, DetailViewerField}
-import com.simplesys.System.Types2.Alignment.Alignment
-import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types2._
-import com.simplesys.System.Types2.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types._
+import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.Types1.{JSArray, JSAny}
 

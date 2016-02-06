@@ -1,11 +1,11 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
-import com.simplesys.SmartClient.Forms.FormsItems.{BlurbItem, TimeItem, SpinnerItem, ComboBoxItem}
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.RelativeDateRangePosition.RelativeDateRangePosition
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.SmartClient.Forms.FormsItems.{BlurbItem, SpinnerItem, TimeItem}
+import com.simplesys.System.Types.RelativeDateRangePosition.RelativeDateRangePosition
+import com.simplesys.option.{ScNone, ScOption}
 
+import scala.scalajs.js
 import scala.scalajs.js._
 
 class RelativeDateItemProps extends CanvasItemProps {
@@ -25,7 +25,7 @@ class RelativeDateItemProps extends CanvasItemProps {
     var monthsFromNowTitle: ScOption[String] = ScNone
     var pickerIcon: ScOption[FormItemIcon ] = ScNone
     var pickerTimeItemProperties: ScOption[TimeItem] = ScNone
-    var presetOptions: ScOption[Types.Object] = ScNone
+    var presetOptions: ScOption[js.Object] = ScNone
     var quantityField: ScOption[SpinnerItem ] = ScNone
     var quartersAgoTitle: ScOption[String] = ScNone
     var quartersFromNowTitle: ScOption[String] = ScNone

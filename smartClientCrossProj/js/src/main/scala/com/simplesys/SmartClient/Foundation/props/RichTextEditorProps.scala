@@ -5,14 +5,12 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Foundation.richTextEditor.ListPropertiesDialog
 import com.simplesys.SmartClient.Layout.Layout
 import com.simplesys.SmartClient.Layout.props.VLayoutProps
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.ControlName.ControlName
-import com.simplesys.System.Types2.MultiAutoChild
-import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.System.Types.ControlName.ControlName
+import com.simplesys.System.Types.MultiAutoChild
 import com.simplesys.Types1.JSArray
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
 class RichTextEditorProps extends VLayoutProps {
     var alignCenterPrompt: ScOption[String] = ScNone
@@ -29,10 +27,10 @@ class RichTextEditorProps extends VLayoutProps {
     var editArea: ScOption[Canvas] = ScNone
     var editAreaBackgroundColor: ScOption[String] = ScNone
     var fontControls: ScOption[Seq[ControlName]] = ScNone
-    var fontNames: ScOption[Types.Object] = ScNone
+    var fontNames: ScOption[js.Object] = ScNone
     var fontSelectorItem: ScOption[SelectItem] = ScNone
     var fontSelectorPrompt: ScOption[String] = ScNone
-    var fontSizes: ScOption[Types.Object] = ScNone
+    var fontSizes: ScOption[js.Object] = ScNone
     var fontSizeSelectorItem: ScOption[SelectItem] = ScNone
     var fontSizeSelectorPrompt: ScOption[String] = ScNone
     var formatControls: ScOption[Seq[ControlName]] = ScNone

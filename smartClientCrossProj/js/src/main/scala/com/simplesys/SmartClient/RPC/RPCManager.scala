@@ -1,13 +1,11 @@
 package com.simplesys.SmartClient.RPC
 
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.RPC.props.RPCRequestProps
-import com.simplesys.SmartClient.System.Types.Callback
-import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
-import com.simplesys.System.Types2.PromptStyle.PromptStyle
-import com.simplesys.System.Types2.RPCTransport.RPCTransport
-import com.simplesys.System.Types2.{void, HTMLString, URL}
-import com.simplesys.Types1.{JSArray, JSAny}
+import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class}
+import com.simplesys.System.Types.PromptStyle.PromptStyle
+import com.simplesys.System.Types.RPCTransport.RPCTransport
+import com.simplesys.System.Types.{Callback, HTMLString, URL, void}
+import com.simplesys.Types1.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName

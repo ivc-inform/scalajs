@@ -1,36 +1,33 @@
 package com.simplesys.SmartClient.Grids.listGrid
 
-import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
-import com.simplesys.SmartClient.Forms.{Validator, DynamicForm}
+import com.simplesys.SmartClient.DataBinding.DSRequest
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
-import com.simplesys.SmartClient.Foundation.Canvas
+import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Grids.Grid
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.{Criteria, ValueMap}
-import com.simplesys.System.Types2.Alignment.Alignment
-import com.simplesys.System.Types2.AutoComplete.AutoComplete
-import com.simplesys.System.Types2.AutoFitWidthApproach.AutoFitWidthApproach
-import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types2.EditCompletionEvent.EditCompletionEvent
-import com.simplesys.System.Types2.EnterKeyEditAction.EnterKeyEditAction
-import com.simplesys.System.Types2.EscapeKeyEditAction.EscapeKeyEditAction
-import com.simplesys.System.Types2.HiliteIconPosition.HiliteIconPosition
-import com.simplesys.System.Types2.ListGridFieldType.ListGridFieldType
-import com.simplesys.System.Types2.OperatorId.OperatorId
-import com.simplesys.System.Types2.RecordSummaryFunction.RecordSummaryFunction
-import com.simplesys.System.Types2.SortDirection.SortDirection
-import com.simplesys.System.Types2.SummaryFunction.SummaryFunction
-import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types2.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.System.Types2._
-import com.simplesys.Types1.{JSArray, JSAny}
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.AutoComplete.AutoComplete
+import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.EditCompletionEvent.EditCompletionEvent
+import com.simplesys.System.Types.EnterKeyEditAction.EnterKeyEditAction
+import com.simplesys.System.Types.EscapeKeyEditAction.EscapeKeyEditAction
+import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
+import com.simplesys.System.Types.ListGridFieldType.ListGridFieldType
+import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types.RecordSummaryFunction.RecordSummaryFunction
+import com.simplesys.System.Types.SortDirection.SortDirection
+import com.simplesys.System.Types.SummaryFunction.SummaryFunction
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types._
+import com.simplesys.Types1.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait ListGridField extends Types.Object {
+trait ListGridField extends js.Object {
     var align: Alignment
     var applyAfterSummary: Boolean
     var autoComplete: AutoComplete
@@ -63,7 +60,7 @@ trait ListGridField extends Types.Object {
     var dateFormatter: DateDisplayFormat
     var decimalPad: Int
     var decimalPrecision: Int
-    def defaultDynamicValue(item: FormItem, form: DynamicForm, values: Types.Object): void
+    def defaultDynamicValue(item: FormItem, form: DynamicForm, values: js.Object): void
     var defaultFilterValue: JSAny
     val defaultGroupingMode: String
     val defaultIconSrc: String
@@ -80,9 +77,9 @@ trait ListGridField extends Types.Object {
     var editorProperties: FormItem
     var editorType: FormItemClassName
     var editorValueIconHeight: Int
-    var editorValueIcons: Types.Object
+    var editorValueIcons: js.Object
     var editorValueIconWidth: Int
-    var editorValueMap: Types.Object
+    var editorValueMap: js.Object
     var emptyCellValue: HTMLString
     var enterKeyEditAction: EnterKeyEditAction
     var escapeHTML: Boolean
@@ -92,7 +89,7 @@ trait ListGridField extends Types.Object {
     val exportRawValues: Boolean
     var filterEditorProperties: FormItem
     var filterEditorType: FormItemClassName
-    var filterEditorValueMap: Types.Object
+    var filterEditorValueMap: js.Object
     var filterOnKeypress: Boolean
     var filterOperator: OperatorId
     val format: FormatString
@@ -102,12 +99,12 @@ trait ListGridField extends Types.Object {
     var formatGroupSummary: String
     var frozen: Boolean
     def getAutoFreezePosition(): Int
-    def getEditorValueMap(values: Types.Object, field: ListGridField, grid: Grid[ListGridField, ListGridRecord]): ValueMap
+    def getEditorValueMap(values: js.Object, field: ListGridField, grid: Grid[ListGridField, ListGridRecord]): ValueMap
     def getFieldTitle(viewer: Grid[ListGridField, ListGridRecord], fieldNum: Int): String
-    def getGridSummary(records: JSArray[ListGridRecord], field: ListGridField, groupSummaries: JSArray[Types.Object] = js.native): JSAny
-    def getGroupSummary(records: JSArray[ListGridRecord], field: ListGridField, groupNode: Types.Object = js.native): JSAny
-    def getGroupTitle(groupValue: JSAny, groupNode: groupNode, field: Types.Object, fieldName: String, grid: Grid[ListGridField, ListGridRecord]): JSAny
-    def getGroupValue(value: JSAny, record: ListGridRecord, field: Types.Object, fieldName: String, grid: Grid[ListGridField, ListGridRecord]): JSAny
+    def getGridSummary(records: JSArray[ListGridRecord], field: ListGridField, groupSummaries: JSArray[js.Object] = js.native): JSAny
+    def getGroupSummary(records: JSArray[ListGridRecord], field: ListGridField, groupNode: js.Object = js.native): JSAny
+    def getGroupTitle(groupValue: JSAny, groupNode: groupNode, field: js.Object, fieldName: String, grid: Grid[ListGridField, ListGridRecord]): JSAny
+    def getGroupValue(value: JSAny, record: ListGridRecord, field: js.Object, fieldName: String, grid: Grid[ListGridField, ListGridRecord]): JSAny
     def getRecordSummary(record: ListGridRecord, field: ListGridField, grid: Grid[ListGridField, ListGridRecord]): JSAny
     def getSummaryTitle(viewer: Grid[ListGridField, ListGridRecord], field: ListGridField): void
     val groupGranularity: Int
@@ -162,7 +159,7 @@ trait ListGridField extends Types.Object {
     var optionFilterContext: DSRequest
     var optionOperationId: String
     var optionTextMatchStyle: TextMatchStyle
-    def parseEditorValue(value: JSAny, record: Types.Object, rowNum: Int, colNum: Int, grid: Grid[ListGridField, ListGridRecord]): JSAny
+    def parseEditorValue(value: JSAny, record: js.Object, rowNum: Int, colNum: Int, grid: Grid[ListGridField, ListGridRecord]): JSAny
     var partialSummary: Boolean
     var prompt: HTMLString
     var recordClick: js.Function7[Grid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, Int, JSAny, JSAny, Boolean]
@@ -187,7 +184,7 @@ trait ListGridField extends Types.Object {
     var sortByDisplayField: Boolean
     var sortByMappedValue: Boolean
     var sortDirection: SortDirection
-    def sortNormalizer(recordObject: Types.Object, fieldName: String, context: Grid[ListGridField, ListGridRecord]): JSAny
+    def sortNormalizer(recordObject: js.Object, fieldName: String, context: Grid[ListGridField, ListGridRecord]): JSAny
     var summaryFunction: SummaryFunction | JSArray[SummaryFunction]
     var summaryTitle: String
     var summaryValue: HTMLString
@@ -207,10 +204,10 @@ trait ListGridField extends Types.Object {
     var valueIconLeftPadding: Int
     var valueIconOrientation: String
     var valueIconRightPadding: Int
-    var valueIcons: Types.Object
+    var valueIcons: js.Object
     var valueIconSize: Int
     var valueIconWidth: Int
-    var valueMap: Types.Object | JSArray[String]
+    var valueMap: js.Object | JSArray[String]
     var width: Int | String
     var wrap: Boolean
 }

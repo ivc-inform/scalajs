@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
-import com.simplesys.System.Types2.FormItemBaseStyle
+import com.simplesys.System.Types.FormItemBaseStyle
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.Types1.{JSDictionaryAny, JSDictionary, JSAny}
 

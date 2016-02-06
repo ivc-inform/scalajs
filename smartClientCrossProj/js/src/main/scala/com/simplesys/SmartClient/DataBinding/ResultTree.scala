@@ -1,12 +1,11 @@
 package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeNode}
-import com.simplesys.SmartClient.System.Types.{Criteria, TreeGridOpenState}
-import com.simplesys.System.Types2.FetchMode.FetchMode
-import com.simplesys.System.Types2.PreserveOpenState.PreserveOpenState
-import com.simplesys.System.Types2.TreeFilterMode.TreeFilterMode
-import com.simplesys.System.Types2.void
-import com.simplesys.Types1.{JSArray, JSAny}
+import com.simplesys.System.Types.FetchMode.FetchMode
+import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
+import com.simplesys.System.Types.TreeFilterMode.TreeFilterMode
+import com.simplesys.System.Types.{Criteria, TreeGridOpenState, void}
+import com.simplesys.Types1.{JSAny, JSArray}
 
 import scala.scalajs.js
 

@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Layout.props
 
 import com.simplesys.SmartClient.Control.props.ButtonProps
-import com.simplesys.System.Types2.SCImgURL
+import com.simplesys.System.Types.SCImgURL
 import com.simplesys.option.{ScOption, ScNone}
 
 import scala.scalajs.js

@@ -6,11 +6,9 @@ import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Grids.treeGrid.TreeGridField
 import com.simplesys.SmartClient.Layout.HLayoutSS
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types._
-import com.simplesys.System.Types2.SelectionStyle._
-import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types2.{SCImgURL, void}
+import com.simplesys.System.Types.SelectionStyle.SelectionStyle
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types._
 import com.simplesys.Types1.{JSAny, JSArray}
 
 import scala.scalajs.js
@@ -68,7 +66,7 @@ trait TreeListGridEditor extends HLayoutSS {
     def getListSelectedState(): ListGridSelectedState
     var drawAheadRatioTree: Double
     def startListEditingNew
-    def startListEditingNew(newValues: Types.Object | ListGridRecord = js.native, suppressFocus: Boolean = js.native): void
+    def startListEditingNew(newValues: js.Object | ListGridRecord = js.native, suppressFocus: Boolean = js.native): void
     def setFuncMenu(menu: MenuSS): void
     def getFuncMenu(): MenuSS
     var showResizeBarList: Boolean

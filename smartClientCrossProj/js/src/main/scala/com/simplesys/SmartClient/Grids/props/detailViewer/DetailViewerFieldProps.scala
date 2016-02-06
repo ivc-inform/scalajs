@@ -2,17 +2,15 @@ package com.simplesys.SmartClient.Grids.props.detailViewer
 
 import com.simplesys.SmartClient.DataBinding.DetailViewer
 import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerRecord
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types2.HiliteIconPosition.HiliteIconPosition
-import com.simplesys.System.Types2.{FormatString, CSSClassName, HTMLString}
-import com.simplesys.System.Types2.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.props.AbstractClassProps
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
+import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types.{CSSClassName, FormatString, HTMLString}
 import com.simplesys.Types1.JSArray
+import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.props.AbstractClassProps
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
 class DetailViewerFieldProps extends AbstractClassProps {
     var canExport: ScOption[Boolean] = ScNone
@@ -51,5 +49,5 @@ class DetailViewerFieldProps extends AbstractClassProps {
     var timeFormatter: ScOption[TimeDisplayFormat] = ScNone
     var title: ScOption[HTMLString] = ScNone
     var value: ScOption[HTMLString] = ScNone
-    var valueMap: ScOption[Types.Object] = ScNone
+    var valueMap: ScOption[js.Object] = ScNone
 }

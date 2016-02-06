@@ -1,10 +1,9 @@
 package com.simplesys.SmartClient.RPC
 
-import com.simplesys.SmartClient.System.Types.{Record, Callback}
-import com.simplesys.SmartClient.System.{Types, AbstractClassCompanion, Class}
-import com.simplesys.System.Types2.PromptStyle.PromptStyle
-import com.simplesys.System.Types2.RPCTransport.RPCTransport
-import com.simplesys.System.Types2.{void, URL}
+import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class}
+import com.simplesys.System.Types.PromptStyle.PromptStyle
+import com.simplesys.System.Types.RPCTransport.RPCTransport
+import com.simplesys.System.Types.{URL, void}
 import com.simplesys.Types1._
 
 import scala.scalajs.js
@@ -18,20 +17,20 @@ trait RPCRequest extends Class {
     var bypassCache: Boolean
     var callback: js.Function3[RPCResponse,JSDictionaryAny, RPCRequest, void]
     var callbackParam: String
-    var clientContext: Types.Object
+    var clientContext: js.Object
     var containsCredentials: Boolean
     var contentType: String
-    var data:Types.Object| JSArray[Types.Object]
+    var data:js.Object| JSArray[js.Object]
     var downloadResult: Boolean
     var downloadToNewWindow: Boolean
     var evalResult: Boolean
-    var evalVars: Types.Object
-    var httpHeaders: Types.Object
+    var evalVars: js.Object
+    var httpHeaders: js.Object
     var httpMethod: String
     val httpProxyURL: String
     var ignoreTimeout: Boolean
     var omitNullMapValuesInResponse: Boolean
-    var params: Types.Object
+    var params: js.Object
     var prompt: String
     var promptCursor: String
     var promptDelay: Int

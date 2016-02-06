@@ -2,15 +2,12 @@ package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.Grids.Grid
-import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
+import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.{AbstractLayoutCompanion, Layout}
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.Object
-import com.simplesys.System.Types2.{HTMLString, AutoChild}
+import com.simplesys.System.Types.{AutoChild, HTMLString}
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 trait MultiSortPanel extends Layout {

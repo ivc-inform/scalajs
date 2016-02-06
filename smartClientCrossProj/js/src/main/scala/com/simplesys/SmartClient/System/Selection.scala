@@ -1,15 +1,14 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.System
-import com.simplesys.SmartClient.System.Types.Record
-import com.simplesys.Types1.{JSArrayAny, JSArray}
+import com.simplesys.System.Types.Record
+import com.simplesys.Types1.JSArrayAny
 
 import scala.scalajs.js
 
 @js.native
 trait Selection extends Class {
     def anySelected(): Boolean
-    def deselect(item: Types.Object): Boolean
+    def deselect(item: js.Object): Boolean
     def deselectAll(): Boolean
     def deselectItem(position: Int): Boolean
     def deselectList(list: JSArrayAny): Boolean

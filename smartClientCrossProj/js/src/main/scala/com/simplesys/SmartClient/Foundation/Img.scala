@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Foundation
 
-import com.simplesys.System.Types2.{SCImgURL, URL, void, HTMLString}
-import com.simplesys.System.Types2.ImageStyle.ImageStyle
+import com.simplesys.System.Types.{SCImgURL, URL, void, HTMLString}
+import com.simplesys.System.Types.ImageStyle.ImageStyle
 
 import scala.scalajs.js
 import scala.scalajs.js.|

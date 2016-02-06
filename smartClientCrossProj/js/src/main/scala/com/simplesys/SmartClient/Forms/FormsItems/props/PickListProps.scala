@@ -1,15 +1,14 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
-import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource, ResultSet, SortSpecifier}
+import com.simplesys.SmartClient.DataBinding.{ResultSet, SortSpecifier}
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
-import com.simplesys.SmartClient.System.Types.{Criteria, ValueMap}
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.System.Types2.PickListItemIconPlacement.PickListItemIconPlacement
-import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types2.{CSSStyleName, SCClassName}
-import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.System.Types.PickListItemIconPlacement.PickListItemIconPlacement
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.{Criteria, ValueMap, CSSStyleName, SCClassName}
 import com.simplesys.Types1.JSArray
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
 import scala.scalajs.js._

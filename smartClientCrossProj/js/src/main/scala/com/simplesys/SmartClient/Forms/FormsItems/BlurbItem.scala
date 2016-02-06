@@ -1,10 +1,8 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.SCClassName
+import com.simplesys.System.Types.SCClassName
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait BlurbItem extends FormItem {

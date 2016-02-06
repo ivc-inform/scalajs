@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.Foundation.props
 
 import com.simplesys.SmartClient.Foundation.StretchItem
-import com.simplesys.System.Types2.ImageStyle.ImageStyle
-import com.simplesys.System.Types2.{CSSStyleName, SCImgURL}
+import com.simplesys.System.Types.ImageStyle.ImageStyle
+import com.simplesys.System.Types.{CSSStyleName, SCImgURL}
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.Types1.JSArray
 

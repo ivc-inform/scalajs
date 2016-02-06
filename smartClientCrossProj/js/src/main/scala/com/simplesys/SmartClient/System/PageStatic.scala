@@ -1,14 +1,12 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.System.Types._
-import com.simplesys.System.Types2.FireStyle._
-import com.simplesys.System.Types2.PageEvent.PageEvent
-import com.simplesys.System.Types2.PageOrientation._
-import com.simplesys.System.Types2._
+import com.simplesys.System.Types.FireStyle._
+import com.simplesys.System.Types.PageEvent.PageEvent
+import com.simplesys.System.Types.PageOrientation._
+import com.simplesys.System.Types._
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait Page extends Class
@@ -43,22 +41,22 @@ abstract trait AbstractPageCompanion extends AbstractClassCompanion {
     def loadStyleSheet(url: URL): void = js.native
     def moveTo(left: Int, top: Int): void = js.native
     val protocolURLs: JSArray[String] = js.native
-    def registerKey(key: KeyIdentifier, action: js.Function1[Types.Object, _]): void = js.native
+    def registerKey(key: KeyIdentifier, action: js.Function1[js.Object, _]): void = js.native
     def resizeTo(width: Int, height: Int): void = js.native
     def scrollTo(left: Int, top: Int): void = js.native
     def setAddVersionToSkinCSS(addVersionToSkinCss: Boolean): void = js.native
     def setAppFilesDir(url: URL = js.native): void = js.native
     def setAppImgDir(url: URL = js.native) : void = js.native
-    def setEvent(eventType: PageEvent, action: js.Function1[Types.Object, _], fireStyle: FireStyle = js.native, functionName: js.Function = js.native): Int = js.native
+    def setEvent(eventType: PageEvent, action: js.Function1[js.Object, _], fireStyle: FireStyle = js.native, functionName: js.Function = js.native): Int = js.native
     def setIsomorphicDir(url: URL): void = js.native
     def setSkinDir(url: URL): void = js.native
     def setTitle(title: String): void = js.native
     var suppressBackspaceNavigation: Boolean = js.native
-    def unregisterKey(actionID: KeyName, target: Types.Object = js.native): void = js.native
+    def unregisterKey(actionID: KeyName, target: js.Object = js.native): void = js.native
     val unsupportedBrowserAction: UnsupportedOperationException = js.native
     def updateViewport(scale: Int, width: Int, height: Int, scalable: Int): void = js.native
-    def waitFor(obj: Types.Object, methodName: String, callback: Callback, timeout: Int = js.native, timeoutCallback: Callback = js.native): Boolean = js.native
-    def waitForMultiple(obj: Types.Object, methodName: String, callback: Callback, timeout: Int = js.native, timeoutCallback: Callback = js.native): Boolean = js.native
+    def waitFor(obj: js.Object, methodName: String, callback: Callback, timeout: Int = js.native, timeoutCallback: Callback = js.native): Boolean = js.native
+    def waitForMultiple(obj: js.Object, methodName: String, callback: Callback, timeout: Int = js.native, timeoutCallback: Callback = js.native): Boolean = js.native
 }
 
 @js.native

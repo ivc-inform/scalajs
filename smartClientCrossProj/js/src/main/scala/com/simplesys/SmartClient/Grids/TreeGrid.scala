@@ -2,18 +2,13 @@ package com.simplesys.SmartClient.Grids
 
 
 import com.simplesys.SmartClient.Control.{Menu, MenuSS}
-import com.simplesys.SmartClient.Foundation.{Canvas, AbstractCanvasCompanion}
+import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
-import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeNode, TreeGridField}
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types._
-import com.simplesys.System.Types2.Alignment.Alignment
-import com.simplesys.System.Types2.AnimationAcceleration.AnimationAcceleration
-import com.simplesys.System.Types2.DisplayNodeType.DisplayNodeType
-import com.simplesys.System.Types2.PreserveOpenState.PreserveOpenState
-import com.simplesys.System.Types2.RecordDropAppearance.RecordDropAppearance
-import com.simplesys.System.Types2.{void, HTMLString, URL, SCImgURL}
-import com.simplesys.Types1.{JSArray, JSAny}
+import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeGridField, TreeNode}
+import com.simplesys.System.Types.DisplayNodeType.DisplayNodeType
+import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
+import com.simplesys.System.Types._
+import com.simplesys.Types1.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

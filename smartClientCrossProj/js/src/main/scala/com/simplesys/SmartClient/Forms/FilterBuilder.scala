@@ -6,12 +6,12 @@ import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
 import com.simplesys.SmartClient.Forms.FormsItems.{SelectItem, FormItem, PickList}
 import com.simplesys.SmartClient.Foundation.{Label, Canvas}
 import com.simplesys.SmartClient.Layout.{HLayout, VStack, AbstractLayoutCompanion, Layout}
-import com.simplesys.System.Types2.FieldType.FieldType
-import com.simplesys.System.Types2.TopOperatorAppearance.TopOperatorAppearance
-import com.simplesys.System.Types2.ValueItemType.ValueItemType
-import com.simplesys.System.Types2.{void, MultiAutoChild, SCClassName, AutoChild}
-import com.simplesys.System.Types2.LogicalOperator.LogicalOperator
-import com.simplesys.System.Types2.OperatorId.OperatorId
+import com.simplesys.System.Types.FieldType.FieldType
+import com.simplesys.System.Types.TopOperatorAppearance.TopOperatorAppearance
+import com.simplesys.System.Types.ValueItemType.ValueItemType
+import com.simplesys.System.Types.{void, MultiAutoChild, SCClassName, AutoChild}
+import com.simplesys.System.Types.LogicalOperator.LogicalOperator
+import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js

@@ -1,11 +1,11 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.System.Types2.KeyName
+import com.simplesys.System.Types.KeyName
 
 import scala.scalajs.js
 
 @js.native
-trait KeyIdentifier extends Types.Object {
+trait KeyIdentifier extends js.Object {
     val altKey: Boolean
     val ctrlKey: Boolean
     val keyName: KeyName

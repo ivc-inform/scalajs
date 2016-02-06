@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Layout.props.sectionStack
 
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.System.Types2.{HTMLString, SCImgURL}
+import com.simplesys.System.Types.{HTMLString, SCImgURL}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 

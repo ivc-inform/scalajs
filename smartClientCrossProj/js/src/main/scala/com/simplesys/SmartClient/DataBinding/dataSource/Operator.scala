@@ -2,19 +2,16 @@ package com.simplesys.SmartClient.DataBinding.dataSource
 
 import com.simplesys.SmartClient.DataBinding.Criterion
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
-import com.simplesys.SmartClient.System.Types.Record
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.FieldType.FieldType
-import com.simplesys.System.Types2.ID
-import com.simplesys.System.Types2.OperatorId.OperatorId
-import com.simplesys.System.Types2.OperatorValueType.OperatorValueType
-import com.simplesys.Types1.{JSArray, JSAny}
+import com.simplesys.System.Types.FieldType.FieldType
+import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types.OperatorValueType.OperatorValueType
+import com.simplesys.System.Types.{ID, Record}
+import com.simplesys.Types1.{JSAny, JSArray}
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
-trait Operator extends Types.Object {
+trait Operator extends js.Object {
     def compareCriteria(newCriterion: Criterion, oldCriterion: Criterion): Int
     var condition: js.Function5[JSAny, Record, JSAny, Criterion, Operator, Boolean]
     val editorType: FormItem

@@ -1,12 +1,11 @@
 package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Control.ImgButton
-import com.simplesys.SmartClient.Foundation.{Img, Canvas, AbstractCanvasCompanion, Label}
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.AnimationAcceleration.AnimationAcceleration
-import com.simplesys.System.Types2.ContentLayoutPolicy.ContentLayoutPolicy
-import com.simplesys.System.Types2.PanelPlacement.PanelPlacement
-import com.simplesys.System.Types2._
+import com.simplesys.SmartClient.Foundation.{Canvas, Img, Label}
+import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
+import com.simplesys.System.Types.ContentLayoutPolicy.ContentLayoutPolicy
+import com.simplesys.System.Types.PanelPlacement.PanelPlacement
+import com.simplesys.System.Types._
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
@@ -22,7 +21,7 @@ trait Window extends Layout {
     val body: Canvas with AutoChild
     var bodyColor: CSSColor
     var bodyConstructor: String
-    var bodyDefaults: Types.Object
+    var bodyDefaults: js.Object
     var bodyStyle: CSSStyleName
     var bringToFrontOnMouseUp: Boolean
     var canFocusInHeaderButtons: Boolean
@@ -44,9 +43,9 @@ trait Window extends Layout {
     val headerBackground: Img with AutoChild
     val headerControls: JSArray[String]
     val headerIcon: Img with AutoChild
-    var headerIconDefaults: Types.Object
+    var headerIconDefaults: js.Object
     val headerLabel: Label with AutoChild
-    var headerLabelDefaults: Types.Object
+    var headerLabelDefaults: js.Object
     var headerSrc: SCImgURL
     var headerStyle: CSSStyleName
     var hiliteBodyColor: CSSColor

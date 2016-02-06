@@ -3,8 +3,8 @@ package com.simplesys.SmartClient.Forms.props
 import com.simplesys.SmartClient.System.Class
 import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.Layout.props.WindowProps
-import com.simplesys.System.Types2.ColorPickerMode.ColorPickerMode
-import com.simplesys.System.Types2.{CSSStyleName, void, SCImgURL, HTMLString}
+import com.simplesys.System.Types.ColorPickerMode.ColorPickerMode
+import com.simplesys.System.Types.{CSSStyleName, void, SCImgURL, HTMLString}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.Types1.JSArray
 

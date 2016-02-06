@@ -1,13 +1,12 @@
 package com.simplesys.SmartClient.Control
 
-import com.simplesys.SmartClient.Control.menu.{MenuItem, MenuSSItem}
+import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Foundation.{Canvas, Img}
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField
-import com.simplesys.SmartClient.Layout.{TabSet, NavigationBar}
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.PanelPlacement._
-import com.simplesys.System.Types2._
+import com.simplesys.SmartClient.Layout.{NavigationBar, TabSet}
+import com.simplesys.System.Types.PanelPlacement._
+import com.simplesys.System.Types._
 import com.simplesys.Types1._
 
 import scala.scalajs.js
@@ -47,7 +46,7 @@ trait MenuSS extends Grid[ListGridField, MenuSSItem] {
     val iconFillSpaceStyleName: CSSStyleName
     val iconHeight: Int
     val iconWidth: Int
-    var itemClick: js.Function2[Types.Object, Int, Boolean]
+    var itemClick: js.Function2[js.Object, Int, Boolean]
     var items: JSArray[MenuSSItem]
     val keyFieldDefaults: ListGridField
     val keyFieldProperties: ListGridField

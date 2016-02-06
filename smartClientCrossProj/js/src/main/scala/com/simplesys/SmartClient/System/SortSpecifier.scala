@@ -1,13 +1,13 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.DataBinding.DataBoundComponent
-import com.simplesys.System.Types2.SortDirection.SortDirection
+import com.simplesys.System.Types.SortDirection.SortDirection
 
 import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object SortSpecifier extends Types.Object {
+object SortSpecifier extends js.Object {
     type SortSpecifier = SortSpecifier.type
     val context: DataBoundComponent = js.native
     val direction: SortDirection = js.native

@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.DataBinding.props
 
-import com.simplesys.System.Types2.void
+import com.simplesys.System.Types.void
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

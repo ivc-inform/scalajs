@@ -3,21 +3,19 @@ package com.simplesys.SmartClient.DataBinding.props
 import com.simplesys.SmartClient.DataBinding.{ResultSet, ResultTree, SortSpecifier}
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.Record
-import com.simplesys.System.Types2.DSOperationType.DSOperationType
-import com.simplesys.System.Types2.DSProtocol.DSProtocol
-import com.simplesys.System.Types2.ExportDisplay.ExportDisplay
-import com.simplesys.System.Types2.ExportFormat.ExportFormat
-import com.simplesys.System.Types2.ExportImageFormat.ExportImageFormat
-import com.simplesys.System.Types2.PropertyIdentifier.PropertyIdentifier
-import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types2.ValidationMode.ValidationMode
-import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.System.Types.DSOperationType.DSOperationType
+import com.simplesys.System.Types.DSProtocol.DSProtocol
+import com.simplesys.System.Types.ExportDisplay.ExportDisplay
+import com.simplesys.System.Types.ExportFormat.ExportFormat
+import com.simplesys.System.Types.ExportImageFormat.ExportImageFormat
+import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
+import com.simplesys.System.Types.Record
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.ValidationMode.ValidationMode
 import com.simplesys.Types1.JSArray
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
 class DetailViewerProps extends CanvasProps {
     var additionalOutputs: ScOption[String] = ScNone
@@ -49,10 +47,10 @@ class DetailViewerProps extends CanvasProps {
     var exportToClient: ScOption[Boolean] = ScNone
     var exportToFilesystem: ScOption[Boolean] = ScNone
     var exportValueFields: ScOption[Boolean] = ScNone
-    var fieldValueExpressions: ScOption[Types.Object] = ScNone
+    var fieldValueExpressions: ScOption[js.Object] = ScNone
     var generateRelatedUpdates: ScOption[Boolean] = ScNone
     var groupBy: ScOption[JSArray[String]] = ScNone
-    var headerData: ScOption[Types.Object] = ScNone
+    var headerData: ScOption[js.Object] = ScNone
     var keepParentsOnFilter: ScOption[Boolean] = ScNone
     var lineBreakStyle: ScOption[String] = ScNone
     var oldValues: ScOption[Record] = ScNone
@@ -69,7 +67,7 @@ class DetailViewerProps extends CanvasProps {
     var sortBy: ScOption[Seq[SortSpecifier]] = ScNone
     var startRow: ScOption[Int] = ScNone
     var streamResults: ScOption[Boolean] = ScNone
-    var summaryFunctions: ScOption[Types.Object] = ScNone
+    var summaryFunctions: ScOption[js.Object] = ScNone
     var textMatchStyle: ScOption[TextMatchStyle] = ScNone
     var useFlatFields: ScOption[Boolean] = ScNone
     var useFlatHeaderFields: ScOption[Boolean] = ScNone

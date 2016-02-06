@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Foundation.StatefulCanvas
-import com.simplesys.System.Types2.HTMLString
+import com.simplesys.System.Types.HTMLString
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js._

@@ -7,29 +7,26 @@ import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord, UserFormula, UserSummary}
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.{Criteria, ValueMap}
-import com.simplesys.System.Types2.Alignment.Alignment
-import com.simplesys.System.Types2.AutoComplete.AutoComplete
-import com.simplesys.System.Types2.AutoFitWidthApproach.AutoFitWidthApproach
-import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types2.EditCompletionEvent.EditCompletionEvent
-import com.simplesys.System.Types2.EnterKeyEditAction.EnterKeyEditAction
-import com.simplesys.System.Types2.EscapeKeyEditAction.EscapeKeyEditAction
-import com.simplesys.System.Types2.HiliteIconPosition.HiliteIconPosition
-import com.simplesys.System.Types2.OperatorId.OperatorId
-import com.simplesys.System.Types2.RecordSummaryFunction.RecordSummaryFunction
-import com.simplesys.System.Types2.SortDirection.SortDirection
-import com.simplesys.System.Types2.SummaryFunction.SummaryFunction
-import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types2.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.System.Types2._
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.AutoComplete.AutoComplete
+import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.EditCompletionEvent.EditCompletionEvent
+import com.simplesys.System.Types.EnterKeyEditAction.EnterKeyEditAction
+import com.simplesys.System.Types.EscapeKeyEditAction.EscapeKeyEditAction
+import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
+import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types.RecordSummaryFunction.RecordSummaryFunction
+import com.simplesys.System.Types.SortDirection.SortDirection
+import com.simplesys.System.Types.SummaryFunction.SummaryFunction
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
+import com.simplesys.System.Types._
+import com.simplesys.Types1.{JSAny, JSArray, JSDictionary}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.Types1.{JSDictionary, JSArray, JSAny}
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
 class ListGridFieldProps extends AbstractClassProps {
     var align: ScOption[Alignment] = ScNone
@@ -80,9 +77,9 @@ class ListGridFieldProps extends AbstractClassProps {
     var editorProperties: ScOption[FormItem] = ScNone
     var editorType: ScOption[FormItems] = ScNone
     var editorValueIconHeight: ScOption[Int] = ScNone
-    var editorValueIcons: ScOption[Types.Object] = ScNone
+    var editorValueIcons: ScOption[js.Object] = ScNone
     var editorValueIconWidth: ScOption[Int] = ScNone
-    var editorValueMap: ScOption[Types.Object] = ScNone
+    var editorValueMap: ScOption[js.Object] = ScNone
     var emptyCellValue: ScOption[HTMLString] = ScNone
     var enterKeyEditAction: ScOption[EnterKeyEditAction] = ScNone
     var escapeHTML: ScOption[Boolean] = ScNone
@@ -92,7 +89,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var exportRawValues: ScOption[Boolean] = ScNone
     var filterEditorProperties: ScOption[FormItem] = ScNone
     var filterEditorType: ScOption[FormItems] = ScNone
-    var filterEditorValueMap: ScOption[Types.Object] = ScNone
+    var filterEditorValueMap: ScOption[js.Object] = ScNone
     var filterOnKeypress: ScOption[Boolean] = ScNone
     var filterOperator: ScOption[OperatorId] = ScNone
     var format: ScOption[FormatString] = ScNone

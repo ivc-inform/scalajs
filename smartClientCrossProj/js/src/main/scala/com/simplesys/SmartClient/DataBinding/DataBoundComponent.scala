@@ -3,18 +3,16 @@ package com.simplesys.SmartClient.DataBinding
 import com.simplesys.SmartClient.DataBinding.Callbacks.DSCallback
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.{Hilite, HiliteEditor, ListGridField}
-import com.simplesys.SmartClient.Layout.{Window}
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.SmartClient.System.Types.{Callback, Criteria, Field, Record}
+import com.simplesys.SmartClient.Layout.Window
 import com.simplesys.SmartClient.System.Class
-import com.simplesys.System.Types2.Alignment.Alignment
-import com.simplesys.System.Types2.DragDataAction.DragDataAction
-import com.simplesys.System.Types2.FetchMode.FetchMode
-import com.simplesys.System.Types2.FieldNamingStrategy.FieldNamingStrategy
-import com.simplesys.System.Types2.HiliteIconPosition.HiliteIconPosition
-import com.simplesys.System.Types2.RecategorizeMode.RecategorizeMode
-import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types2.{void, CSSStyleName, DataPath, HTMLString}
+import com.simplesys.System.Types.Alignment.Alignment
+import com.simplesys.System.Types.DragDataAction.DragDataAction
+import com.simplesys.System.Types.FetchMode.FetchMode
+import com.simplesys.System.Types.FieldNamingStrategy.FieldNamingStrategy
+import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
+import com.simplesys.System.Types.RecategorizeMode.RecategorizeMode
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types._
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
@@ -54,7 +52,7 @@ trait DataBoundComponent extends Class {
     var dragRecategorize: RecategorizeMode
     var dragTrackerStyle: CSSStyleName
     def dropComplete(transferredRecords: JSArray[Record]): void
-    var dropValues: Types.Object
+    var dropValues: js.Object
     val duplicateDragMessage: String
     def editFields(): void
     def editFormulaField(field: Field): void
@@ -75,14 +73,14 @@ trait DataBoundComponent extends Class {
     val fieldEditorWindow: Window
     var fieldEditorWindowTitle: HTMLString
     var fieldNamingStrategy: FieldNamingStrategy
-    def find(advancedCriteria: AdvancedCriteria): Types.Object
-    def findAll(advancedCriteria: AdvancedCriteria): JSArray[Types.Object]
-    def findByKey(keyValue: Types.Object): Record
+    def find(advancedCriteria: AdvancedCriteria): js.Object
+    def findAll(advancedCriteria: AdvancedCriteria): JSArray[js.Object]
+    def findByKey(keyValue: js.Object): Record
     def findIndex(advancedCriteria: AdvancedCriteria): Int
     def findNextIndex(startIndex: Int, advancedCriteria: AdvancedCriteria, endIndex: Int = js.native): Int
     def getDataPathField(dataPath: DataPath): Field
     def getDragData(source: DataBoundComponent): JSArray[Record]
-    def getDropValues(record: Record, sourceDS: DataSource, targetRecord: Record, index: Int, sourceWidget: Canvas): Types.Object
+    def getDropValues(record: Record, sourceDS: DataSource, targetRecord: Record, index: Int, sourceWidget: Canvas): js.Object
     def getField(fieldID: String | Int): Field
     def getFieldAlignments(): JSArray[Alignment]
     def getFieldNum(fieldID: String | Int): Int
@@ -131,7 +129,7 @@ trait DataBoundComponent extends Class {
     var showHiddenFields: Boolean
     var showOfflineMessage: Boolean
     val titleField: String
-    def transferDragData(): JSArray[Types.Object]
+    def transferDragData(): JSArray[js.Object]
     def transferRecords(dropRecords: JSArray[Record], targetRecord: Record, index: Int, sourceWidget: Canvas, callback: Callback = js.native): void
     def transferSelectedData(source: DataBoundComponent, index: Int, callback: Callback = js.native): void
     var unknownErrorMessage: HTMLString

@@ -5,9 +5,9 @@ import com.simplesys.SmartClient.Forms.DateRangeDialog
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.System.DateRange.DateRange
 import com.simplesys.SmartClient.System.Date
-import com.simplesys.System.Types2.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types2.{void, AutoChild, RelativeDateString}
-import com.simplesys.System.Types2.TimeUnit.TimeUnit
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.{void, AutoChild, RelativeDateString}
+import com.simplesys.System.Types.TimeUnit.TimeUnit
 
 import scala.scalajs.js
 import scala.scalajs.js.|

@@ -1,9 +1,8 @@
 package com.simplesys.SmartClient.Forms
 
-import com.simplesys.SmartClient.System.Types.Criteria
+import com.simplesys.System.Types.Criteria
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 trait SearchForm extends DynamicForm {

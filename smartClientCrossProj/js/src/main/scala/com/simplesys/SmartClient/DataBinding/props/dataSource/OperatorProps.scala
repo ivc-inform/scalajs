@@ -3,17 +3,15 @@ package com.simplesys.SmartClient.DataBinding.props.dataSource
 import com.simplesys.SmartClient.DataBinding.Criterion
 import com.simplesys.SmartClient.DataBinding.dataSource.Operator
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
-import com.simplesys.SmartClient.System.Types.Record
-import com.simplesys.System.Types2.FieldType.FieldType
-import com.simplesys.System.Types2.ID
-import com.simplesys.System.Types2.OperatorId.OperatorId
-import com.simplesys.System.Types2.OperatorValueType.OperatorValueType
+import com.simplesys.System.Types.FieldType.FieldType
+import com.simplesys.System.Types.OperatorId.OperatorId
+import com.simplesys.System.Types.OperatorValueType.OperatorValueType
+import com.simplesys.System.Types.{ID, Record}
+import com.simplesys.Types1.{JSAny, JSArray}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.Types1.{JSArray, JSAny}
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
 class OperatorProps extends AbstractClassProps {
     var condition: ScOption[js.Function5[JSAny, Record, JSAny, Criterion, Operator, Boolean]] = ScNone

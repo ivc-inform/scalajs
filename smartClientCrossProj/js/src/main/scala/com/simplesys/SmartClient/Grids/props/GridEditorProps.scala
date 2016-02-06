@@ -7,13 +7,13 @@ import com.simplesys.SmartClient.Grids.ListGrid
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.props.listGrid.{ListGridFieldProps, ListGridRecordProps}
 import com.simplesys.SmartClient.Layout.props.VLayoutSSProps
-import com.simplesys.System.Types2.AutoFitWidthApproach.AutoFitWidthApproach
-import com.simplesys.System.Types2.DragDataAction._
-import com.simplesys.System.Types2.DragTrackerMode.DragTrackerMode
-import com.simplesys.System.Types2.ListGridEditEvent.ListGridEditEvent
-import com.simplesys.System.Types2.SelectionAppearance.SelectionAppearance
-import com.simplesys.System.Types2.SelectionStyle._
-import com.simplesys.System.Types2.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
+import com.simplesys.System.Types.DragDataAction._
+import com.simplesys.System.Types.DragTrackerMode.DragTrackerMode
+import com.simplesys.System.Types.ListGridEditEvent.ListGridEditEvent
+import com.simplesys.System.Types.SelectionAppearance.SelectionAppearance
+import com.simplesys.System.Types.SelectionStyle._
+import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.option.{ScNone, ScOption}
 
 class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends VLayoutSSProps {

@@ -1,16 +1,12 @@
 package com.simplesys.SmartClient.Foundation
 
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.State.State
-import com.simplesys.System.Types2.{void, HTMLString, CSSStyleName}
+import com.simplesys.System.Types.State.State
+import com.simplesys.System.Types.{CSSStyleName, HTMLString, void}
 import com.simplesys.Types1.JSArray
 import org.scalajs.dom
-import org.scalajs.dom.Element
-import org.scalajs.dom.html.Document
 
 import scala.scalajs.js
-import scala.scalajs.js.{Any, |}
 
 @js.native
 trait GridRenderer extends Canvas {
@@ -33,7 +29,7 @@ trait GridRenderer extends Canvas {
     var cellOut: js.Function3[ListGridRecord, Int, Int, Boolean]
     var cellOver: js.Function3[ListGridRecord, Int, Int, Boolean]
     var cellPadding: Int
-    var cellSelectionChanged: js.Function1[JSArray[Types.Object], Boolean]
+    var cellSelectionChanged: js.Function1[JSArray[js.Object], Boolean]
     var cellValueHover: js.Function3[ListGridRecord, Int, Int, Boolean]
     var cellValueHoverHTML: js.Function3[ListGridRecord, Int, Int, HTMLString]
     var cellValueIsClipped: js.Function2[Int, Int, Boolean]
@@ -53,7 +49,7 @@ trait GridRenderer extends Canvas {
     def getCellFromDomElement(element: dom.Element): JSArray[Int]
     var getCellHoverComponent: js.Function3[ListGridRecord, Int, Int, Boolean]
     def getCellPageRect(rowNum: Int, colNum: Int): JSArray[Int]
-    var getCellRecord: js.Function2[Int, Int, Types.Object]
+    var getCellRecord: js.Function2[Int, Int, js.Object]
     def getCellRowSpan(rowNum: Int, colNum: Int): Int
     def getCellStartRow(rowNum: Int, colNum: Int): Int
     var getCellStyle: js.Function3[ListGridRecord, Int, Int, CSSStyleName]

@@ -7,10 +7,9 @@ import com.simplesys.SmartClient.Foundation.HTMLFlow
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.VStack
-import com.simplesys.SmartClient.System.Types
-import com.simplesys.System.Types2.AutoChild
-import com.simplesys.System.Types2.ImportFormat.ImportFormat
-import com.simplesys.System.Types2.PartialCommitOption.PartialCommitOption
+import com.simplesys.System.Types.AutoChild
+import com.simplesys.System.Types.ImportFormat.ImportFormat
+import com.simplesys.System.Types.PartialCommitOption.PartialCommitOption
 import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
@@ -35,7 +34,7 @@ trait BatchUploader extends VStack {
     val partialCommitConfirmationMessage: String
     val partialCommitError: String
     val partialCommitPrompt: String
-    var requestProperties: Types.Object
+    var requestProperties: js.Object
     val showCommitConfirmation: Boolean
     val uploadButton: IButton with AutoChild
     val uploadButtonTitle: String

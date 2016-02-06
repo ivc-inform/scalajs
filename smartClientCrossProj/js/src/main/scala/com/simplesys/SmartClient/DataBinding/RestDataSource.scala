@@ -1,11 +1,8 @@
 package com.simplesys.SmartClient.DataBinding
 
-import com.simplesys.SmartClient.DataBinding.dataSource.OperationBinding
-import com.simplesys.SmartClient.System.Types.XMLDocument
-import com.simplesys.System.Types2.void
+import com.simplesys.System.Types.void
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 trait RestDataSource extends DataSource {

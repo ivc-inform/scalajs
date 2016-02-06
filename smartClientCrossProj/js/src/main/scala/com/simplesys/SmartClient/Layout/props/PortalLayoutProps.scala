@@ -2,8 +2,8 @@ package com.simplesys.SmartClient.Layout.props
 
 import com.simplesys.SmartClient.Layout.Layout
 import com.simplesys.SmartClient.Layout.portalLayout.Portlet
-import com.simplesys.System.Types2.Overflow.Overflow
-import com.simplesys.System.Types2.{MultiAutoChild, void}
+import com.simplesys.System.Types.Overflow.Overflow
+import com.simplesys.System.Types.{MultiAutoChild, void}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
