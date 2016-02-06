@@ -8,9 +8,7 @@ import scala.scalajs.js.|
 
 @ScalaJSDefined
 trait PKForignMapping extends Types.Object {
-    @JSName ("pk")
     val masterGridField: String
-    @JSName ("forign")
     val detailGridField: String
 }
 
