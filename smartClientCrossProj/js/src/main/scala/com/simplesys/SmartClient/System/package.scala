@@ -79,6 +79,8 @@ package object System {
     //</editor-fold>
 
     //<editor-fold desc="Foundation">
+    object Canvas extends SCApply[Canvas, CanvasProps]
+    object JoinJSCanvas extends SCApply[JoinJSCanvas, JoinJSCanvasProps]
     object Label extends SCApply[Label, LabelProps]
     object Img extends SCApply[Img, ImgProps]
     object ImgTab extends SCApply[ImgTab, ImgTabProps]
