@@ -9,7 +9,7 @@ import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.ControlName.ControlName
 import com.simplesys.System.Types.MultiAutoChild
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.Types.JSArray
+import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._

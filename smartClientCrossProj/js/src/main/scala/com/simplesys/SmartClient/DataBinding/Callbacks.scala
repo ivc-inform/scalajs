@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.DataBinding
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Layout.SectionStack
 import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
-import com.simplesys.Types.JSDictionaryAny
+import com.simplesys.Types1.JSDictionaryAny
 
 import scala.scalajs.js
 import scala.scalajs.js.{ThisFunction0, ThisFunction1, ThisFunction2}

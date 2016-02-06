@@ -10,7 +10,7 @@ import com.simplesys.SmartClient.Layout.{AbstractLayoutCompanion, Layout}
 import com.simplesys.SmartClient.System.Types.Criteria
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.Types.{JSArray, JSDictionaryAny}
+import com.simplesys.Types1.{JSArray, JSDictionaryAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

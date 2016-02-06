@@ -26,7 +26,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types._
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.Types.{JSDictionary, JSArray, JSAny}
+import com.simplesys.Types1.{JSDictionary, JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._

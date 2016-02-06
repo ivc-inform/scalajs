@@ -27,7 +27,7 @@ import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types.Visibility.Visibility
 import com.simplesys.System.Types._
 import com.simplesys.option._
-import com.simplesys.Types.JSArrayAny
+import com.simplesys.Types1.JSArrayAny
 import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js

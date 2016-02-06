@@ -11,7 +11,7 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
 import com.simplesys.System.Types.DragAppearance.DragAppearance
 import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.Types.{JSArray, JSDictionaryAny, JSDictionary, JSAny}
+import com.simplesys.Types1.{JSArray, JSDictionaryAny, JSDictionary, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._

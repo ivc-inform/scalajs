@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.ValidatorType._
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.Types.JSArray
+import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._

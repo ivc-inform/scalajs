@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.{Object, Record}
 import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.void
-import com.simplesys.Types.JSArray
+import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

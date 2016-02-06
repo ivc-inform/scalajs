@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.Validator
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.Record
-import com.simplesys.Types.JSAny
+import com.simplesys.Types1.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.|

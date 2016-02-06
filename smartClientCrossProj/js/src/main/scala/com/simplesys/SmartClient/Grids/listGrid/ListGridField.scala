@@ -24,7 +24,7 @@ import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types._
-import com.simplesys.Types.{JSArray, JSAny}
+import com.simplesys.Types1.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

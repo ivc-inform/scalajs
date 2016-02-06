@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.System.props.TreeProps
 import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
 import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.Types.{JSArray, JSAny}
+import com.simplesys.Types1.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._

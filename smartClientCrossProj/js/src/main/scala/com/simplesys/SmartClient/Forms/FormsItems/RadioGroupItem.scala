@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.SmartClient.Forms.FormsItems.radioGroupItem.RadioItem
 import com.simplesys.System.Types.{void, FormItemBaseStyle, SCClassName}
-import com.simplesys.Types.{JSArray, JSAny}
+import com.simplesys.Types1.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

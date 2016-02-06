@@ -15,7 +15,7 @@ import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
 import com.simplesys.System.Types.RecategorizeMode.RecategorizeMode
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.{void, CSSStyleName, DataPath, HTMLString}
-import com.simplesys.Types.JSArray
+import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

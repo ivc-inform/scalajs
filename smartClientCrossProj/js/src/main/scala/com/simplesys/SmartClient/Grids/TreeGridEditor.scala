@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.Layout.VLayoutSS
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.Types.ListGridSelectedState
 import com.simplesys.System.Types._
-import com.simplesys.Types.{JSArray, JSArrayAny}
+import com.simplesys.Types1.{JSArray, JSArrayAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

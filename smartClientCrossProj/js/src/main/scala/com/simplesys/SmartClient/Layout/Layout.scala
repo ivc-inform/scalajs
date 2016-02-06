@@ -9,7 +9,7 @@ import com.simplesys.System.Types.LocatorStrategy.LocatorStrategy
 import com.simplesys.System.Types.LocatorTypeStrategy.LocatorTypeStrategy
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types.{AutoChild, MultiAutoChild, void}
-import com.simplesys.Types.JSArray
+import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

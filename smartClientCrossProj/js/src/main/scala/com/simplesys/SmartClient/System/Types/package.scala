@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.Types.{JSDictionary, JSDictionaryAny, JSAny, JSArrayAny}
+import com.simplesys.Types1.{JSDictionary, JSDictionaryAny, JSAny, JSArrayAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

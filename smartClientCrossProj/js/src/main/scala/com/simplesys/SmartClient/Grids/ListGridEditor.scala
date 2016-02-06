@@ -16,7 +16,7 @@ import com.simplesys.System.Types.SelectionAppearance._
 import com.simplesys.System.Types.SelectionStyle._
 import com.simplesys.System.Types.TextMatchStyle._
 import com.simplesys.System.Types.{ID, void}
-import com.simplesys.Types.{JSDictionary, JSAny, JSArray}
+import com.simplesys.Types1.{JSDictionary, JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

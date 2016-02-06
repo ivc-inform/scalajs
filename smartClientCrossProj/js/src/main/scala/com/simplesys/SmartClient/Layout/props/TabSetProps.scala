@@ -17,7 +17,7 @@ import com.simplesys.System.Types.Side.Side
 import com.simplesys.System.Types.TabTitleEditEvent.TabTitleEditEvent
 import com.simplesys.System.Types.{CSSClassName, ID, SCImgURL, void}
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.Types.JSArray
+import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
 

@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.System.Types
 import com.simplesys.System.Types.State.State
 import com.simplesys.System.Types.{CSSStyleName, HTMLString}
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.Types.JSArray
+import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
 

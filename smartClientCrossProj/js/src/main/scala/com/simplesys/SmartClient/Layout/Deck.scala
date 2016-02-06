@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.System.Types.void
-import com.simplesys.Types.JSArray
+import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

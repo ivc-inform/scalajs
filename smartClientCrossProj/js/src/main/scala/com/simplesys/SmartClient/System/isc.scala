@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Grids.ListGrid
 import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.System.Types.{ID, void}
 import com.simplesys.common.Strings._
-import com.simplesys.Types.{JSArray, JSDictionary, JSAny, JSArrayAny}
+import com.simplesys.Types1.{JSArray, JSDictionary, JSAny, JSArrayAny}
 
 import scala.reflect.ClassTag
 import scala.scalajs.js

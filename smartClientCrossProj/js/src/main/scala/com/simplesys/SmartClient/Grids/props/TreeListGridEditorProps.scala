@@ -10,7 +10,7 @@ import com.simplesys.System.Types.SelectionStyle.SelectionStyle
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
 import com.simplesys.option.{IntString, ScNone, ScOption}
-import com.simplesys.Types.JSArray
+import com.simplesys.Types1.JSArray
 
 class TreeListGridEditorProps extends HLayoutSSProps {
     var widthTree: ScOption[IntString[Int, String]] = ScNone

@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.RPC.props
 import com.simplesys.SmartClient.System.Types
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.Types.JSAny
+import com.simplesys.Types1.JSAny
 
 import scala.scalajs.js._
 import scala.scalajs.js

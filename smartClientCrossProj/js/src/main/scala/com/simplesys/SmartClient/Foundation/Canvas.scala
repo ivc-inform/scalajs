@@ -27,7 +27,7 @@ import com.simplesys.System.Types.ProportionalResizeMode._
 import com.simplesys.System.Types.VerticalAlignment._
 import com.simplesys.System.Types.Visibility._
 import com.simplesys.System.Types._
-import com.simplesys.Types.{JSArray, JSArrayAny}
+import com.simplesys.Types1.{JSArray, JSArrayAny}
 import org.scalajs.dom.DocumentEvent
 import org.scalajs.dom.html.Element
 import org.scalajs.dom.raw.HTMLElement

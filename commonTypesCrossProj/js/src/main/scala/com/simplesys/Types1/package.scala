@@ -2,7 +2,7 @@ package com.simplesys
 
 import scala.scalajs.js
 
-package object Types {
+package object Types1 {
     type JSAny = js.Any
     type JSArray[T] = js.Array[T]
     type JSDictionary[T] = js.Dictionary[T]

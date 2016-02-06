@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.System
 import com.simplesys.SmartClient.RPC.RPCRequest
 import com.simplesys.SmartClient.System.Types._
 import com.simplesys.System.Types.{void, URL}
-import com.simplesys.Types.JSArray
+import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.{Object, |}

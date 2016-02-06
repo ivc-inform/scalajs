@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Foundation.StatefulCanvas
 import com.simplesys.SmartClient.Layout.VStack
 import com.simplesys.SmartClient.System.Types.Callback
 import com.simplesys.System.Types.{AutoChild, SCImgURL, void}
-import com.simplesys.Types.JSArray
+import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
 

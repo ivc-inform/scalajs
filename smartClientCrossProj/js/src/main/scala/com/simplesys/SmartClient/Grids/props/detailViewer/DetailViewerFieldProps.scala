@@ -9,7 +9,7 @@ import com.simplesys.System.Types.{FormatString, CSSClassName, HTMLString}
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.Types.JSArray
+import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._

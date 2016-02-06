@@ -13,7 +13,7 @@ import com.simplesys.System.Types.DisplayNodeType.DisplayNodeType
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
 import com.simplesys.System.Types.RecordDropAppearance.RecordDropAppearance
 import com.simplesys.System.Types.{void, HTMLString, URL, SCImgURL}
-import com.simplesys.Types.{JSArray, JSAny}
+import com.simplesys.Types1.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

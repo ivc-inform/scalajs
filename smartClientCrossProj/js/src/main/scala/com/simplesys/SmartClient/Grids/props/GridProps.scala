@@ -50,7 +50,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.Types.{JSArray, JSAny, JSArrayAny}
+import com.simplesys.Types1.{JSArray, JSAny, JSArrayAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.ThisFunction0

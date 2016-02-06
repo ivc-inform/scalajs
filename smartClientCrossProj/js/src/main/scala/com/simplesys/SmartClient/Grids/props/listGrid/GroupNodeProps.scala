@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.System.Types.HTMLString
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.Types.{JSArray, JSAny}
+import com.simplesys.Types1.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._

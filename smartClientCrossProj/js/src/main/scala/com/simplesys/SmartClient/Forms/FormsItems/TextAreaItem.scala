@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.System.Types.TEXTAREA_WRAP.TEXTAREA_WRAP
 import com.simplesys.System.Types.{SCClassName, void}
-import com.simplesys.Types.JSArray
+import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
 

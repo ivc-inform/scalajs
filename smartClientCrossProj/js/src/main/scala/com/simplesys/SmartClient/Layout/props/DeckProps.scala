@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Layout.props
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Layout.{Deck, Window}
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.Types.JSArray
+import com.simplesys.Types1.JSArray
 
 import scala.scalajs.js
 

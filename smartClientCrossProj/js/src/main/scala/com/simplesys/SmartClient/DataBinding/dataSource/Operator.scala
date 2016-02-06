@@ -8,7 +8,7 @@ import com.simplesys.System.Types.FieldType.FieldType
 import com.simplesys.System.Types.ID
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.OperatorValueType.OperatorValueType
-import com.simplesys.Types.{JSArray, JSAny}
+import com.simplesys.Types1.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

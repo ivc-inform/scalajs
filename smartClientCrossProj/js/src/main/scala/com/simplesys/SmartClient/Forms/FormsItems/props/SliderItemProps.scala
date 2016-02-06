@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.Class
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.Types.{JSDictionaryAny, JSDictionary, JSAny}
+import com.simplesys.Types1.{JSDictionaryAny, JSDictionary, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._

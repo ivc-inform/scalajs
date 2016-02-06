@@ -7,7 +7,7 @@ import com.simplesys.SmartClient.System.props.{ClassProps, ListProps}
 import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
 import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.Types.{JSArray, JSAny}
+import com.simplesys.Types1.{JSArray, JSAny}
 
 import scala.scalajs.js
 
