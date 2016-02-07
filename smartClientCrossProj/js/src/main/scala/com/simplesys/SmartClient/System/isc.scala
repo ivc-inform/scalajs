@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.System
 import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.Grids.ListGrid
 import com.simplesys.System.Types.{Callback, ID, void}
-import com.simplesys.System.{JSAny, JSArray, JSArrayAny, JSDictionary}
+import com.simplesys.System._
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName

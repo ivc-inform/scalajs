@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.Layout.props
 
 import com.simplesys.SmartClient.Forms.DynamicForm
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.option.{ScNone, ScOption}

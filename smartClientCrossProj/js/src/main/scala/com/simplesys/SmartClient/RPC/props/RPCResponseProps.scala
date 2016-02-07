@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.RPC.props
 
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.System.JSAny
+import com.simplesys.System.{JSObject, JSAny}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

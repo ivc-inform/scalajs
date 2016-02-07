@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Control.Button
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.Class
 import com.simplesys.System.Types.void
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

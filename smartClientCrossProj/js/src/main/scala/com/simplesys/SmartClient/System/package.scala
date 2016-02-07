@@ -2,8 +2,6 @@ package com.simplesys.SmartClient
 
 import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.Control.props._
-import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
-import com.simplesys.SmartClient.DataBinding.props.dataSource.DataSourceFieldProps
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.DataBinding.props._
 import com.simplesys.SmartClient.Forms.FormsItems.props.{ButtonItemProps, FormItemProps}
@@ -12,25 +10,20 @@ import com.simplesys.SmartClient.Forms._
 import com.simplesys.SmartClient.Forms.props._
 import com.simplesys.SmartClient.Foundation._
 import com.simplesys.SmartClient.Foundation.props._
-import com.simplesys.SmartClient.Grids.treeGrid.Tree
 import com.simplesys.SmartClient.Grids._
-import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
 import com.simplesys.SmartClient.Grids.props._
+import com.simplesys.SmartClient.Grids.treeGrid.Tree
 import com.simplesys.SmartClient.Layout._
-import com.simplesys.SmartClient.Layout.portalLayout.{PortletSS, Portlet}
+import com.simplesys.SmartClient.Layout.portalLayout.{Portlet, PortletSS}
 import com.simplesys.SmartClient.Layout.props._
-import com.simplesys.SmartClient.Layout.props.portalLayout.{PortletSSProps, PortletProps}
-import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
-import com.simplesys.SmartClient.Layout.props.toolStrip.{ToolStripResizerProps, ToolStripButtonProps, ToolStripSeparatorProps, ToolStripMenuButtonProps}
-import com.simplesys.SmartClient.Layout.tabSet.Tab
-import com.simplesys.SmartClient.Layout.toolStrip.{ToolStripResizer, ToolStripButton, ToolStripSeparator, ToolStripMenuButton}
-import com.simplesys.SmartClient.RPC.{RPCResponse, RPCRequest}
-import com.simplesys.SmartClient.RPC.props.{RPCResponseProps, RPCRequestProps}
+import com.simplesys.SmartClient.Layout.props.portalLayout.{PortletProps, PortletSSProps}
+import com.simplesys.SmartClient.Layout.props.toolStrip.{ToolStripButtonProps, ToolStripMenuButtonProps, ToolStripResizerProps, ToolStripSeparatorProps}
+import com.simplesys.SmartClient.Layout.toolStrip.{ToolStripButton, ToolStripMenuButton, ToolStripResizer, ToolStripSeparator}
+import com.simplesys.SmartClient.RPC.props.{RPCRequestProps, RPCResponseProps}
+import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
 import com.simplesys.SmartClient.System.props.TreeProps
-import com.simplesys.System.JSAny
 
 //import com.simplesys.macros.PropsToDictionary
-import com.simplesys.macros.PropsToDictionary
 
 package object System {
 

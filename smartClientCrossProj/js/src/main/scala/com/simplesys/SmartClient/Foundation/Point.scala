@@ -1,5 +1,7 @@
 package com.simplesys.SmartClient.Foundation
 
+import com.simplesys.System.JSObject
+
 import scala.scalajs.js
 
 @js.native

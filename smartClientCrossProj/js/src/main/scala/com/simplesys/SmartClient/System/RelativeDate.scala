@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.System
 
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.RelativeDateRangePosition.RelativeDateRangePosition
 import com.simplesys.System.Types.RelativeDateShortcut.RelativeDateShortcut
 import com.simplesys.System.Types.RelativeDateString

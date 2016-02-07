@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.System.RelativeDate.RelativeDate
+import com.simplesys.System.JSObject
 
 import scala.scalajs.js
 import scala.scalajs.js.|

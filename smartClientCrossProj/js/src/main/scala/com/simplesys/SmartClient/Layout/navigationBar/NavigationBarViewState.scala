@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Layout.navigationBar
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.System.Types.HTMLString
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.RPC
 
 import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class}
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.void
 
 import scala.scalajs.js

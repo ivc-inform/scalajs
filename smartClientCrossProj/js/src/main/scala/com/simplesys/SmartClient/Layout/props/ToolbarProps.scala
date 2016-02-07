@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.Layout.props
 
 import com.simplesys.SmartClient.Control.Button
 import com.simplesys.SmartClient.System.Class
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.void
 import com.simplesys.option.{ScNone, ScOption}
 

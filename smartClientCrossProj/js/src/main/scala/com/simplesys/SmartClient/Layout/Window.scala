@@ -6,7 +6,7 @@ import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.System.Types.ContentLayoutPolicy.ContentLayoutPolicy
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
 import com.simplesys.System.Types._
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

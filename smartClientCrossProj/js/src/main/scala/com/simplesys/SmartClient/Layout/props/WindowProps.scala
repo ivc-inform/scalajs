@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.Layout.props
 import com.simplesys.SmartClient.Control.ImgButton
 import com.simplesys.SmartClient.Foundation.{Canvas, Img, Label}
 import com.simplesys.SmartClient.Layout.{HLayout, Window}
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.System.Types.ContentLayoutPolicy.ContentLayoutPolicy
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement

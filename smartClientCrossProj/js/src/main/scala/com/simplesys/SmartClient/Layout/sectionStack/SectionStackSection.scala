@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Layout.sectionStack
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.System.Types.{HTMLString, SCImgURL}
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 
