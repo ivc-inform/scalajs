@@ -1,9 +1,9 @@
 package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.RPC.{AbstractRPCResponseCompanion, RPCResponse}
+import com.simplesys.System.{JSObject, JSArray}
 import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.Record
-import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 
@@ -12,7 +12,7 @@ trait DSResponse extends RPCResponse {
     val data: JSArray[Record]
     val dataSource: String
     val endRow: Int
-    val errors: Object
+    val errors: JSObject
     val fromOfflineCache: Boolean
     val offlineTimestamp: Int
     val operationType: DSOperationType

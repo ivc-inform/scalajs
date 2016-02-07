@@ -19,7 +19,7 @@ abstract trait AbstractPageCompanion extends AbstractClassCompanion {
     def getAppDir(): String = js.native
     def getAppFilesDir(url: URL = js.native): void = js.native
     def getAppImgDir(): String = js.native
-    def getHeight(wd: Object = js.native): Int = js.native
+    def getHeight(wd: JSObject = js.native): Int = js.native
     def getImgURL(src: SCImgURL, imgDir: String): String = js.native
     def getIsomorphicDir(): String = js.native
     def getOrientation(): PageOrientation = js.native
@@ -33,7 +33,7 @@ abstract trait AbstractPageCompanion extends AbstractClassCompanion {
     def getSkinImgDir(url: URL = js.native): String = js.native
     def getUnsupportedBrowserPromptString(): String = js.native
     def getURL(fileName: String): String = js.native
-    def getWidth(wd: Object = js.native): Int = js.native
+    def getWidth(wd: JSObject = js.native): Int = js.native
     def goBack(): void = js.native
     def isAddVersionToSkinCSS(): Boolean = js.native
     def isLoaded(): Boolean = js.native

@@ -66,7 +66,7 @@ trait ValuesManager extends Class {
     def saveData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     var saveOperationType: DSOperationType
     def setDataSource(dataSource: DataSource): void
-    def setErrors(errors: Object, showErrors: Boolean): void
+    def setErrors(errors: JSObject, showErrors: Boolean): void
     def setFieldErrors(fieldName: String, errors: JSArray[String], showErrors: Boolean): void
     def setMemberValues(ID: String, values: JSObject): void
     def setValue(fieldName: String, newValue: JSAny): void

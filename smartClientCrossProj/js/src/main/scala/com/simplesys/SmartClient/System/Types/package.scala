@@ -6,41 +6,40 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 package object Types {
-    type Object = JSObject
 
-    type Field = Object
+    type Field = JSObject
 
-    type Criteria = JSDictionary[Object]
+    type Criteria = JSDictionary[JSObject]
 
     trait CallbackObject {
-        val target: Object
+        val target: JSObject
         val methodName: String
     }
 
-    type Properties = Object
-    type EdgeSizes = Object
-    type Record = Object
-    type DataSourceRecord = Object
-    type CellRecord = Object
-    type ListGridSelectedState = Object
-    type ListGridSortState = Object
-    type ListGridViewState = Object
-    type ListGridGroupState = Object
+    type Properties = JSObject
+    type EdgeSizes = JSObject
+    type Record = JSObject
+    type DataSourceRecord = JSObject
+    type CellRecord = JSObject
+    type ListGridSelectedState = JSObject
+    type ListGridSortState = JSObject
+    type ListGridViewState = JSObject
+    type ListGridGroupState = JSObject
 
-    type TreeGridOpenState = Object
-    type TreeGridViewState = Object
-    type TreeGridSelectedState = Object
+    type TreeGridOpenState = JSObject
+    type TreeGridViewState = JSObject
+    type TreeGridSelectedState = JSObject
 
-    type DetailViewerViewState = Object
+    type DetailViewerViewState = JSObject
 
     type Callback = js.Function | js.ThisFunction | CallbackObject
     type ValueMap = JSDictionaryAny
-    type XMLDocument = Object
-    type XMLElement = Object
-    type XMLNode = Object
-    type VelocityExpression = Object
+    type XMLDocument = JSObject
+    type XMLElement = JSObject
+    type XMLNode = JSObject
+    type VelocityExpression = JSObject
     type XPathExpression = String
-    type ListGridFieldState = Object
+    type ListGridFieldState = JSObject
     type XPath = String
     type FormatString = String
     type SCClassName = String

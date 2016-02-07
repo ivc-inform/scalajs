@@ -1,11 +1,11 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.RPC.RPCRequest
+import com.simplesys.SmartClient.RPC._
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSArray}
+import com.simplesys.System.{JSArray, JSObject}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Object, |}
+import scala.scalajs.js.|
 
 @js.native
 trait XMLTools extends Class

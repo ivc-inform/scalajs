@@ -10,7 +10,7 @@ import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.{void, _}
-import com.simplesys.System.{JSAny, JSArray}
+import com.simplesys.System.{JSObject, JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -53,7 +53,7 @@ trait DetailViewer extends Canvas with DataBoundComponent {
     var printLabelStyle: CSSStyleName
     var recordsPerBlock: Int
     var separatorStyle: SCClassName
-    def setData(newData: JSArray[Object]): void
+    def setData(newData: JSArray[JSObject]): void
     def setViewState(viewState: DetailViewerViewState): void
     val showEmptyField: Boolean
     val showEmptyMessage: Boolean
