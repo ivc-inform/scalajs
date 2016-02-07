@@ -1,11 +1,9 @@
 package com.simplesys.SmartClient.Charts
 
 import com.simplesys.SmartClient.Analytics.Facet
-import com.simplesys.System.Types
-
+import com.simplesys.System.JSArray
 import com.simplesys.System.Types.CellRecord
 import com.simplesys.System.Types.ChartType.ChartType
-import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|
