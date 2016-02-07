@@ -9,7 +9,7 @@ package com.simplesys {
 
     package backbone {
 
-        import com.simplesys.System.{JSDictionary, JSArray, JSArrayAny, JSAny}
+        import com.simplesys.System.{JSAny, JSDictionary, JSArray, JSArrayAny}
 
         @js.native
         trait Silenceable extends js.Object {
