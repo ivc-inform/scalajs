@@ -26,7 +26,7 @@ import com.simplesys.System.Types.ProportionalResizeMode._
 import com.simplesys.System.Types.VerticalAlignment._
 import com.simplesys.System.Types.Visibility._
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSArray, JSArrayAny}
+import com.simplesys.System.{JSObject, JSArray, JSArrayAny}
 import org.scalajs.dom.DocumentEvent
 import org.scalajs.dom.html.Element
 import org.scalajs.dom.raw.HTMLElement
@@ -155,7 +155,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var dynamicContentsVars: ValueMap
     val edgeBackgroundColor: Color
     val edgeCenterBackgroundColor: Color
-    var edgeCursorMap: js.Object
+    var edgeCursorMap: JSObject
     val edgeImage: SCImgURL
     var edgeMarginSize: Int
     val edgeOffset: Int

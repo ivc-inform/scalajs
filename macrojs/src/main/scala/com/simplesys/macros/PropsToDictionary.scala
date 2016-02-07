@@ -4,7 +4,7 @@ import com.simplesys.common.Strings._
 import com.simplesys.log.Logging
 import com.simplesys.option._
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.System.{JSDictionaryAny, JSAny}
+import com.simplesys.System.{JSObject, JSDictionaryAny, JSAny}
 
 import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context
@@ -24,7 +24,7 @@ object PropsToDictionary extends Logging {
         val tsScOption = typeOf[ScOption[_]].typeSymbol
         val tsScEnumeration = typeOf[Enumeration].typeSymbol
         val tsAbstractClassProps = typeOf[AbstractClassProps].typeSymbol
-        val tsJSObject = typeOf[js.Object].typeSymbol
+        val tsJSObject = typeOf[JSObject].typeSymbol
 
         def typeToConvertedValueInt(typeDef: context.universe.Type, valueAccess: context.universe.Tree): Option[context.universe.Tree] = {
             typeDef.baseType(typeOf[Seq[_]].typeSymbol) match {

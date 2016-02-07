@@ -1,11 +1,12 @@
 package com.simplesys.SmartClient.DataBinding.dataSource
 
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.{URL, VelocityExpression}
 
 import scala.scalajs.js
 
 @js.native
-trait Mail extends js.Object {
+trait Mail extends JSObject {
     val bcc: String
     val cc: String
     val contentType: String

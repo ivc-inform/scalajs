@@ -2,13 +2,14 @@ package com.simplesys.SmartClient.Layout.tabSet
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Layout.TabSet
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.{HTMLString, SCImgURL, void}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait Tab extends js.Object {
+trait Tab extends JSObject {
     var canClose: Boolean
     var canEditTitle: Boolean
     var canReorder: Boolean

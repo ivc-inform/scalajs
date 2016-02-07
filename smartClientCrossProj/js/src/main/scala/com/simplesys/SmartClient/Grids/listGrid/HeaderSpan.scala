@@ -3,12 +3,12 @@ package com.simplesys.SmartClient.Grids.listGrid
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 
 @js.native
-trait HeaderSpan extends js.Object {
+trait HeaderSpan extends JSObject {
     val align: Alignment
     val fields: JSArray[String]
     var headerBaseStyle: SCClassName

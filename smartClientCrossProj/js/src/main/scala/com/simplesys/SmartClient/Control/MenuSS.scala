@@ -46,7 +46,7 @@ trait MenuSS extends Grid[ListGridField, MenuSSItem] {
     val iconFillSpaceStyleName: CSSStyleName
     val iconHeight: Int
     val iconWidth: Int
-    var itemClick: js.Function2[js.Object, Int, Boolean]
+    var itemClick: js.Function2[JSObject, Int, Boolean]
     var items: JSArray[MenuSSItem]
     val keyFieldDefaults: ListGridField
     val keyFieldProperties: ListGridField

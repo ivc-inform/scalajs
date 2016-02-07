@@ -14,7 +14,7 @@ import com.simplesys.System.Types.SelectionAppearance.SelectionAppearance
 import com.simplesys.System.Types.SelectionStyle.SelectionStyle
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSAny, JSArray}
+import com.simplesys.System.{JSObject, JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -83,7 +83,7 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     var cancelEditingConfirmationMessage: String
     def getAllRows(): JSArray[R]
     var fetchDelay: Int
-    def startEditingNew(newValues: js.Object | R = js.native, suppressFocus: Boolean = js.native): void
+    def startEditingNew(newValues: JSObject | R = js.native, suppressFocus: Boolean = js.native): void
     var editEvent: ListGridEditEvent
     def getEditRecord(): R
     def getSelectedRecord(): R
@@ -95,7 +95,7 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     def getSelectedState(): S
     def getRecord(data: JSAny): R
     var dataPageSize: Int
-    def getEditorType(field: T, values: js.Object): String
+    def getEditorType(field: T, values: JSObject): String
     def deselectRecord(record: R | Int): void
     def deselectRecords(records: JSArray[R]): void
     def deselectAllRecords(): void

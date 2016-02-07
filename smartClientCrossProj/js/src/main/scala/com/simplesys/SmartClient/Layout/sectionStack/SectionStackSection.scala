@@ -7,7 +7,7 @@ import com.simplesys.System.JSArray
 import scala.scalajs.js
 
 @js.native
-trait SectionStackSection extends js.Object {
+trait SectionStackSection extends JSObject {
     var canCollapse: Boolean
     var canDropBefore: Boolean
     var canReorder: Boolean

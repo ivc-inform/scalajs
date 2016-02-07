@@ -20,7 +20,7 @@ class WindowProps extends LayoutProps {
     var body: ScOption[Canvas] = ScNone
     var bodyColor: ScOption[CSSColor] = ScNone
     var bodyConstructor: ScOption[String] = ScNone
-    var bodyDefaults: ScOption[js.Object] = ScNone
+    var bodyDefaults: ScOption[JSObject] = ScNone
     var bodyStyle: ScOption[CSSStyleName] = ScNone
     var bringToFrontOnMouseUp: ScOption[Boolean] = ScNone
     var canFocusInHeaderButtons: ScOption[Boolean] = ScNone
@@ -39,9 +39,9 @@ class WindowProps extends LayoutProps {
     var headerBackground: ScOption[Img] = ScNone
     var headerControls: ScOption[Seq[String]] = ScNone
     var headerIcon: ScOption[Img] = ScNone
-    var headerIconDefaults: ScOption[js.Object] = ScNone
+    var headerIconDefaults: ScOption[JSObject] = ScNone
     var headerLabel: ScOption[Label] = ScNone
-    var headerLabelDefaults: ScOption[js.Object] = ScNone
+    var headerLabelDefaults: ScOption[JSObject] = ScNone
     var headerSrc: ScOption[SCImgURL] = ScNone
     var headerStyle: ScOption[CSSStyleName] = ScNone
     var hiliteBodyColor: ScOption[CSSColor] = ScNone

@@ -8,12 +8,12 @@ import com.simplesys.System.Types.void
 import scala.scalajs.js
 
 @js.native
-trait Config extends js.Object {
+trait Config extends JSObject {
     val confirmDeleting: String
 }
 
 @js.native
-object simpleSyS extends js.Object {
+object simpleSyS extends JSObject {
     def checkOwner(canvas: Canvas): Canvas = js.native
     def _enableDeleteFromTree(menu: MenuSSItem): Boolean = js.native
     def _openFolders(menu: MenuSS): void = js.native

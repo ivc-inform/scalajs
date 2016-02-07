@@ -12,8 +12,8 @@ trait ToolStrip extends Layout {
     def addFormItem(formItem: FormItem, formProperties: DynamicForm = js.native, position: Int = js.native): DynamicForm
     val formWrapper: DynamicForm
     val formWrapperConstructor: String
-    val formWrapperDefaults: js.Object
-    val formWrapperProperties: js.Object
+    val formWrapperDefaults: JSObject
+    val formWrapperProperties: JSObject
     val groupTitleAlign: Alignment
     val groupTitleOrientation: VerticalAlignment
     val separatorClass: String

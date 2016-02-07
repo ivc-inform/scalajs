@@ -9,10 +9,10 @@ package com.simplesys {
 
     package backbone {
 
-        import com.simplesys.System.{JSAny, JSDictionary, JSArray, JSArrayAny}
+        import com.simplesys.System._
 
         @js.native
-        trait Silenceable extends js.Object {
+        trait Silenceable extends JSObject {
             var silent: Boolean = js.native
         }
 
@@ -28,33 +28,33 @@ package com.simplesys {
         }
 
         @js.native
-        trait NavigateOptions extends js.Object {
+        trait NavigateOptions extends JSObject {
             var trigger: Boolean = js.native
         }
 
         @js.native
-        trait RouterOptions extends js.Object {
+        trait RouterOptions extends JSObject {
             var routes: JSAny = js.native
         }
 
         @js.native
-        trait Validable extends js.Object {
+        trait Validable extends JSObject {
             var validate: Boolean = js.native
         }
 
         @js.native
-        trait Waitable extends js.Object {
+        trait Waitable extends JSObject {
             @JSName("wait")
             var waitJS: Boolean = js.native
         }
 
         @js.native
-        trait Parseable extends js.Object {
+        trait Parseable extends JSObject {
             var parse: JSAny = js.native
         }
 
         @js.native
-        trait PersistenceOptions extends js.Object {
+        trait PersistenceOptions extends JSObject {
             var url: String = js.native
             var beforeSend: js.Function1[JQueryXHR, Unit] = js.native
             var success: js.Function3[JSAny, JSAny, JSAny, Unit] = js.native
@@ -85,7 +85,7 @@ package com.simplesys {
 
         @js.native
         @JSName("Backbone.Events")
-        class Events extends js.Object {
+        class Events extends JSObject {
             def on(eventName: String, callback: js.Function = js.native, context: JSAny = js.native): js.Dynamic = js.native
             def off(eventName: String = js.native, callback: js.Function = js.native, context: JSAny = js.native): js.Dynamic = js.native
             def trigger(eventName: String, args: JSAny*): js.Dynamic = js.native
@@ -291,7 +291,7 @@ package com.simplesys {
         }
 
         @js.native
-        trait ViewOptions[TModel <: Model] extends js.Object {
+        trait ViewOptions[TModel <: Model] extends JSObject {
             var model: TModel = js.native
             var collection: backbone.Collection[TModel] = js.native
             var el: JSAny = js.native
@@ -337,9 +337,12 @@ package com.simplesys {
     }
 
     package backbone {
+
+        import com.simplesys.System.JSObject
+
         @js.native
         @JSName("Backbone")
-        object Backbone extends js.Object {
+        object Backbone extends JSObject {
             var history: History = js.native
             def sync(method: String, model: Model, options: JQueryAjaxSettings = js.native): js.Dynamic = js.native
             def ajax(options: JQueryAjaxSettings = js.native): JQueryXHR = js.native

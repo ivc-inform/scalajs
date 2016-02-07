@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.Foundation.props
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.{HTMLString, URL}
 import com.simplesys.option.{ScNone, ScOption}
 
@@ -15,5 +16,5 @@ class ViewLoaderProps extends LabelProps {
     var viewLoaded: ScOption[js.Function1[Canvas, _]] = ScNone
     var viewRPCProperties: ScOption[RPCRequest] = ScNone
     var viewURL: ScOption[URL] = ScNone
-    var viewURLParams: ScOption[js.Object] = ScNone
+    var viewURLParams: ScOption[JSObject] = ScNone
 }

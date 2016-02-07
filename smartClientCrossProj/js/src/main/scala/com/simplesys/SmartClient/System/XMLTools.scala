@@ -20,10 +20,10 @@ abstract trait AbstractXMLToolsCompanion extends AbstractClassCompanion {
     def parseXML(xmlText: String): XMLDocument = js.native
     def selectNodes(element: XMLDocument | XMLElement | String, expression: XPath, namespaces: String = js.native): JSArray[XMLNode] = js.native
     def selectNumber(element: XMLDocument | XMLElement | String, expression: XPath, namespaces: String = js.native): Int = js.native
-    def selectObjects(obj: js.Object, xPath: XPath): JSArray[js.Object] = js.native
+    def selectObjects(obj: JSObject, xPath: XPath): JSArray[JSObject] = js.native
     def selectString(element: XMLDocument | XMLElement | String, expression: XPath, namespaces: String = js.native): String = js.native
     def serializeToString(inputDocument: String): XMLDocument = js.native
-    def toJS(element: XMLElement | XMLDocument): js.Object = js.native
+    def toJS(element: XMLElement | XMLDocument): JSObject = js.native
     def transformNodes(inputDocument: XMLDocument, styleSheet: XMLDocument): String = js.native
 }
 

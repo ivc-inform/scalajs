@@ -1,16 +1,15 @@
 package com.simplesys.SmartClient.Analytics
 
-import com.simplesys.System.Types
+import com.simplesys.System.JSObject
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
-trait Facet extends js.Object {
+trait Facet extends JSObject {
 }
 
 @js.native
-trait FacetValue extends js.Object {
+trait FacetValue extends JSObject {
 }
 
 

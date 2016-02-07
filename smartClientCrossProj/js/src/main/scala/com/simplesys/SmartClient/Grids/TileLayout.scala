@@ -6,7 +6,7 @@ import com.simplesys.System.Types.DragDataAction.DragDataAction
 import com.simplesys.System.Types.Orientation.Orientation
 import com.simplesys.System.Types.TileLayoutPolicy.TileLayoutPolicy
 import com.simplesys.System.Types.{AutoChild, Record, void}
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -41,7 +41,7 @@ trait TileLayout extends Canvas {
     val tilesPerLine: Int
     val tileVMargin: Int
     val tileWidth: Int
-    def transferDragData(): JSArray[js.Object]
+    def transferDragData(): JSArray[JSObject]
 }
 
 

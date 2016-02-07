@@ -7,7 +7,7 @@ import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSArray, JSDictionaryAny}
+import com.simplesys.System.{JSObject, JSArray, JSDictionaryAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -33,7 +33,7 @@ trait Menu extends Grid[ListGridField, MenuItem] {
     val iconFillSpaceStyleName: CSSStyleName
     val iconHeight: Int
     val iconWidth: Int
-    var itemClick: js.Function2[js.Object, Int, Boolean]
+    var itemClick: js.Function2[JSObject, Int, Boolean]
     var items: JSArray[MenuItem]
     val keyFieldDefaults: ListGridField
     val keyFieldProperties: ListGridField

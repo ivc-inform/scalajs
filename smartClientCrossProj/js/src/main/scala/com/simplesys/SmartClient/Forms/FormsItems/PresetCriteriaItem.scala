@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.SmartClient.DataBinding.{AdvancedCriteria, Criterion}
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.{Callback, void}
 
 import scala.scalajs.js
@@ -11,7 +12,7 @@ trait PresetCriteriaItem extends SelectItem {
     val customOptionTitle: String
     def getCriterion(): Criterion | AdvancedCriteria
     def getCustomCriteria(callback: Callback): void
-    val options: js.Object
+    val options: JSObject
     val showCustomOption: Boolean
 }
 

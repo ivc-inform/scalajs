@@ -11,7 +11,7 @@ import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.{Criteria, Record, void}
-import com.simplesys.System.{JSAny, JSArray}
+import com.simplesys.System.{JSObject, JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -31,34 +31,34 @@ trait ValuesManager extends Class {
     var dataSource: DataSource | String
     var deepCloneOnEdit: Boolean
     var disableValidation: Boolean
-    def editNewRecord(initialValues: js.Object | Record = js.native): void
+    def editNewRecord(initialValues: JSObject | Record = js.native): void
     def editRecord(record: Record): void
     def editSelectedData(selectionComponent: Grid[ListGridField, ListGridRecord] | String): void
     def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def filterData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    def getChangedValues(): js.Object
+    def getChangedValues(): JSObject
     def getDataSource(): DataSource
-    def getErrors(): js.Object
+    def getErrors(): JSObject
     def getFieldErrors(fieldName: String): JSArray[String]
     def getItem(itemID: String, retrieveAll: Boolean = js.native): FormItem
     def getMember(ID: String): Canvas
     def getMemberForField(fieldName: String): Canvas
     def getMembers(): JSArray[Canvas]
-    def getMemberValues(ID: String): js.Object
-    def getOldValues(): js.Object
+    def getMemberValues(ID: String): JSObject
+    def getOldValues(): JSObject
     def getSaveOperationType(requestProperties: DSRequest = js.native): DSOperationType
-    def getValidatedValues(): js.Object
+    def getValidatedValues(): JSObject
     def getValue(fieldName: String, component: Canvas = js.native): JSAny
-    def getValues(): js.Object
+    def getValues(): JSObject
     def getValuesAsAdvancedCriteria(textMatchStyle: TextMatchStyle = js.native): AdvancedCriteria
     def getValuesAsCriteria(advanced: Boolean, textMatchStyle: TextMatchStyle = js.native): Criteria | AdvancedCriteria
-    var handleHiddenValidationErrors: js.Function1[js.Object, Boolean]
+    var handleHiddenValidationErrors: js.Function1[JSObject, Boolean]
     def hasErrors(): Boolean
     def hasFieldErrors(fieldName: String): Boolean
     def isNewRecord(): Boolean
     var members: JSArray[DynamicForm]
     val operator: OperatorId
-    def rememberValues(): js.Object
+    def rememberValues(): JSObject
     def removeMember(member: DynamicForm | String): void
     def removeMembers(members: JSArray[DynamicForm] | JSArray[String]): void
     var removeOperation: String
@@ -68,13 +68,13 @@ trait ValuesManager extends Class {
     def setDataSource(dataSource: DataSource): void
     def setErrors(errors: Object, showErrors: Boolean): void
     def setFieldErrors(fieldName: String, errors: JSArray[String], showErrors: Boolean): void
-    def setMemberValues(ID: String, values: js.Object): void
+    def setMemberValues(ID: String, values: JSObject): void
     def setValue(fieldName: String, newValue: JSAny): void
-    def setValues(values: js.Object): void
+    def setValues(values: JSObject): void
     def showErrors(): void
     def showFieldErrors(): void
     def submit(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    var submitValues: js.Function2[js.Object, ValuesManager, _]
+    var submitValues: js.Function2[JSObject, ValuesManager, _]
     var suppressValidationErrorCallback: Boolean
     def synchronizeMember(member: Canvas): void
     def synchronizeMembers(): void

@@ -11,7 +11,7 @@ import com.simplesys.System.Types.RPCTransport.RPCTransport
 import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
 import com.simplesys.System.Types.SQLType.SQLType
 import com.simplesys.System.Types.{XPathExpression, VelocityExpression, URL}
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 
@@ -36,7 +36,7 @@ class OperationBindingProps extends AbstractClassProps {
     var dataProtocol: ScOption[DSProtocol] = ScNone
     var dataTransport: ScOption[RPCTransport] = ScNone
     var dataURL: ScOption[URL] = ScNone
-    var defaultParams: ScOption[js.Object] = ScNone
+    var defaultParams: ScOption[JSObject] = ScNone
     var excludeCriteriaFields: ScOption[JSArray[String]] = ScNone
     var exportAs: ScOption[ExportFormat] = ScNone
     var exportFields: ScOption[JSArray[String]] = ScNone
@@ -76,7 +76,7 @@ class OperationBindingProps extends AbstractClassProps {
     var sqlPaging: ScOption[SQLPagingStrategy] = ScNone
     var sqlType: ScOption[SQLType] = ScNone
     var sqlUsePagingHint: ScOption[Boolean] = ScNone
-    var summaryFunctions: ScOption[js.Object] = ScNone
+    var summaryFunctions: ScOption[JSObject] = ScNone
     var tableClause: ScOption[String] = ScNone
     var transformMultipleFields: ScOption[Boolean] = ScNone
     var useFlatFields: ScOption[Boolean] = ScNone
@@ -88,6 +88,6 @@ class OperationBindingProps extends AbstractClassProps {
     var valuesClause: ScOption[String] = ScNone
     var whereClause: ScOption[String] = ScNone
     var wsOperation: ScOption[String] = ScNone
-    var xmlNamespaces: ScOption[js.Object] = ScNone
+    var xmlNamespaces: ScOption[JSObject] = ScNone
 
 }

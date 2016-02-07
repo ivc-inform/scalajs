@@ -8,7 +8,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait NavigationBarViewState extends js.Object {
+trait NavigationBarViewState extends JSObject {
     var alwaysShowLeftButtonTitle: Boolean
     var controls: JSArray[String] | JSArray[Canvas]
     var leftButtonTitle: HTMLString

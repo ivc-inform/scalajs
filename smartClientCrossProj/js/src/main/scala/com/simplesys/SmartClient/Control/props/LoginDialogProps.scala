@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems._
 import com.simplesys.SmartClient.Layout.props.WindowProps
+import com.simplesys.System.JSObject
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
@@ -18,13 +19,13 @@ class LoginDialogProps extends WindowProps {
     var loginButtonTitle: ScOption[String] = ScNone
     var loginFailureItem: ScOption[BlurbItem] = ScNone
     var loginForm: ScOption[DynamicForm] = ScNone
-    var loginFunc: ScOption[js.Function2[js.Object, js.Function1[Boolean, _], _]] = ScNone
-    var lostPassword: ScOption[js.Function2[js.Object, DynamicForm, _]] = ScNone
+    var loginFunc: ScOption[js.Function2[JSObject, js.Function1[Boolean, _], _]] = ScNone
+    var lostPassword: ScOption[js.Function2[JSObject, DynamicForm, _]] = ScNone
     var lostPasswordItem: ScOption[LinkItem] = ScNone
     var lostPasswordItemTitle: ScOption[String] = ScNone
     var passwordItem: ScOption[PasswordItem] = ScNone
     var passwordItemTitle: ScOption[String] = ScNone
-    var register: ScOption[js.Function2[js.Object, DynamicForm, _]] = ScNone
+    var register: ScOption[js.Function2[JSObject, DynamicForm, _]] = ScNone
     var registrationItem: ScOption[LinkItem] = ScNone
     var registrationItemTitle: ScOption[String] = ScNone
     var showLostPasswordLink: ScOption[Boolean] = ScNone

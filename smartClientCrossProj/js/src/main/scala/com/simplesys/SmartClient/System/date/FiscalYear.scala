@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.System.date
 import scala.scalajs.js
 
 @js.native
-object FiscalYear extends js.Object{
+object FiscalYear extends JSObject{
   type FiscalYear = FiscalYear.type
 
   var date: Int = js.native

@@ -6,7 +6,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 package object Types {
-    type Object = js.Object
+    type Object = JSObject
 
     type Field = Object
 

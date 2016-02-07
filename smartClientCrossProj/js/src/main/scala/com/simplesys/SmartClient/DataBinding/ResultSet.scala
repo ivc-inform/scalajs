@@ -5,7 +5,7 @@ import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
 import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.{Record, Criteria, void}
-import com.simplesys.System.{JSAny, JSArray}
+import com.simplesys.System.{JSObject, JSAny, JSArray}
 
 import scala.scalajs.js
 
@@ -27,7 +27,7 @@ trait ResultSet extends Class with List {
     val fetchMode: FetchMode
     val fetchOperation: String
     def filterLocalData(): void
-    def findByKey(keyValue: js.Object): Record
+    def findByKey(keyValue: JSObject): Record
     def getAllCachedRows(): JSArray[Record]
     def getAllVisibleRows(): JSArray[Record]
     def getCriteria(): Criteria
@@ -45,7 +45,7 @@ trait ResultSet extends Class with List {
     def setCriteria(newCriteria: Criteria): Boolean
     def setSort(): void
     val sortSpecifiers: JSArray[SortSpecifier]
-    var transformData: js.Function2[JSAny, DSResponse, JSArray[js.Object]]
+    var transformData: js.Function2[JSAny, DSResponse, JSArray[JSObject]]
     val updateCacheFromRequest: Boolean
     val updatePartialCache: Boolean
     val useClientFiltering: Boolean

@@ -7,7 +7,7 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.System.Types.Overflow.Overflow
 import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
 import com.simplesys.System.Types.void
-import com.simplesys.System.JSAny
+import com.simplesys.System.{JSObject, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
@@ -19,8 +19,8 @@ trait CanvasItem extends FormItem {
     var canEditChanged: js.Function1[Boolean, Boolean]
     var canvas: Canvas
     var canvasConstructor: String
-    var canvasDefaults: js.Object
-    var canvasProperties: js.Object
+    var canvasDefaults: JSObject
+    var canvasProperties: JSObject
     var createCanvas: js.Function2[DynamicForm, CanvasItem, Canvas]
     val editCriteriaInInnerForm: Boolean
     def getCriterion(): Criterion

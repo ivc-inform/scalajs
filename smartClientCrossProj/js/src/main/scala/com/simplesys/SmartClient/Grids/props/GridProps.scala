@@ -48,7 +48,7 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSAny, JSArray, JSArrayAny}
+import com.simplesys.System.{JSObject, JSAny, JSArray, JSArrayAny}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
@@ -279,7 +279,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var getCellRecord: ScOption[js.ThisFunction1[callbackHandler, Int, R]] = ScNone
     var getCellStyle: ScOption[js.ThisFunction3[callbackHandler, R, Int, Int, CSSStyleName]] = ScNone
     var getCellValue: ScOption[js.ThisFunction3[callbackHandler, R, Int, Int, String]] = ScNone
-    var getEditorProperties: ScOption[js.Function3[T, R, Int, js.Object]] = ScNone
+    var getEditorProperties: ScOption[js.Function3[T, R, Int, JSObject]] = ScNone
     var getDragData: ScOption[js.Function1[DataBoundComponent, JSArray[R]]] = ScNone
     var getRowHeight: ScOption[js.Function2[Int, Int, Int]] = ScNone
     var getRowSpan: ScOption[js.Function3[R, Int, Int, Int]] = ScNone
@@ -377,7 +377,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var normalCellHeight: ScOption[Int] = ScNone
     var nullGroupTitle: ScOption[String] = ScNone
     var offlineMessageStyle: ScOption[CSSStyleName] = ScNone
-    var originalData: ScOption[js.Object] = ScNone
+    var originalData: ScOption[JSObject] = ScNone
     var originBaseStyle: ScOption[CSSStyleName] = ScNone
     var parseEditorValue: ScOption[js.Function4[JSAny, R, Int, Int, JSAny]] = ScNone
     var poolComponentsPerColumn: ScOption[Boolean] = ScNone
@@ -424,8 +424,8 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var rowClick: ScOption[js.Function4[R, Int, Int, Boolean, Boolean]] = ScNone
     var rowContextClick: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var rowDoubleClick: ScOption[js.Function4[R, Int, Int, Boolean, Boolean]] = ScNone
-    var rowEditorEnter: ScOption[js.Function3[R, js.Object, Int, void]] = ScNone
-    var rowEditorExit: ScOption[js.Function4[EditCompletionEvent, R, js.Object, Int, Boolean]] = ScNone
+    var rowEditorEnter: ScOption[js.Function3[R, JSObject, Int, void]] = ScNone
+    var rowEditorExit: ScOption[js.Function4[EditCompletionEvent, R, JSObject, Int, Boolean]] = ScNone
     var rowEndEditAction: ScOption[RowEndEditAction] = ScNone
     var rowHover: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var rowMouseDown: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
@@ -506,7 +506,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var sorterClick: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var sorterConstructor: ScOption[Class] = ScNone
     var sorterContextClick: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
-    var sorterDefaults: ScOption[js.Object] = ScNone
+    var sorterDefaults: ScOption[JSObject] = ScNone
     var sorterProperties: ScOption[Button] = ScNone
     var sortField: ScOption[String] = ScNone
     var sortFieldAscendingText: ScOption[String] = ScNone

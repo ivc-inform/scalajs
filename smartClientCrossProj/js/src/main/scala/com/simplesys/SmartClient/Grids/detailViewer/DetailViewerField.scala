@@ -5,12 +5,12 @@ import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.{void, _}
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 
 @js.native
-trait DetailViewerField extends js.Object {
+trait DetailViewerField extends JSObject {
     val canExport: Boolean
     val canHilite: Boolean
     val cellStyle: CSSClassName
@@ -50,5 +50,5 @@ trait DetailViewerField extends js.Object {
     var title: HTMLString
     var `type`: String
     var value: HTMLString
-    val valueMap: js.Object
+    val valueMap: JSObject
 }

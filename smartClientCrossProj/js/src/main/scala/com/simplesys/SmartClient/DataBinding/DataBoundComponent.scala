@@ -14,7 +14,7 @@ import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
 import com.simplesys.System.Types.RecategorizeMode.RecategorizeMode
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -53,7 +53,7 @@ trait DataBoundComponent extends Class {
     var dragRecategorize: RecategorizeMode
     var dragTrackerStyle: CSSStyleName
     def dropComplete(transferredRecords: JSArray[Record]): void
-    var dropValues: js.Object
+    var dropValues: JSObject
     val duplicateDragMessage: String
     def editFields(): void
     def editFormulaField(field: Field): void
@@ -74,14 +74,14 @@ trait DataBoundComponent extends Class {
     val fieldEditorWindow: Window
     var fieldEditorWindowTitle: HTMLString
     var fieldNamingStrategy: FieldNamingStrategy
-    def find(advancedCriteria: AdvancedCriteria): js.Object
-    def findAll(advancedCriteria: AdvancedCriteria): JSArray[js.Object]
-    def findByKey(keyValue: js.Object): Record
+    def find(advancedCriteria: AdvancedCriteria): JSObject
+    def findAll(advancedCriteria: AdvancedCriteria): JSArray[JSObject]
+    def findByKey(keyValue: JSObject): Record
     def findIndex(advancedCriteria: AdvancedCriteria): Int
     def findNextIndex(startIndex: Int, advancedCriteria: AdvancedCriteria, endIndex: Int = js.native): Int
     def getDataPathField(dataPath: DataPath): Field
     def getDragData(source: DataBoundComponent): JSArray[Record]
-    def getDropValues(record: Record, sourceDS: DataSource, targetRecord: Record, index: Int, sourceWidget: Canvas): js.Object
+    def getDropValues(record: Record, sourceDS: DataSource, targetRecord: Record, index: Int, sourceWidget: Canvas): JSObject
     def getField(fieldID: String | Int): Field
     def getFieldAlignments(): JSArray[Alignment]
     def getFieldNum(fieldID: String | Int): Int
@@ -130,7 +130,7 @@ trait DataBoundComponent extends Class {
     var showHiddenFields: Boolean
     var showOfflineMessage: Boolean
     val titleField: String
-    def transferDragData(): JSArray[js.Object]
+    def transferDragData(): JSArray[JSObject]
     def transferRecords(dropRecords: JSArray[Record], targetRecord: Record, index: Int, sourceWidget: Canvas, callback: Callback = js.native): void
     def transferSelectedData(source: DataBoundComponent, index: Int, callback: Callback = js.native): void
     var unknownErrorMessage: HTMLString

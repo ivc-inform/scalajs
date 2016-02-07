@@ -5,7 +5,6 @@ import com.simplesys.System.Types.DSOperationType._
 import com.simplesys.System.JSDictionaryAny
 import com.simplesys.option.{ScNone, ScOption}
 
-import scala.scalajs.js.Object
 
 class DSResponseProps extends ResponseCommon[JSDictionaryAny] {
     var dataSource: ScOption[String] = ScNone

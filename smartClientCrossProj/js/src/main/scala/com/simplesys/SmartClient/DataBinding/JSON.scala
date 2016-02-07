@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class}
+import com.simplesys.System.JSObject
 
 import scala.scalajs.js
 
@@ -10,8 +11,8 @@ trait JSON extends Class {
 
 @js.native
 abstract trait AbstractJSONCompanion extends AbstractClassCompanion {
-    def decode(jsonString: String): js.Object = js.native
-    def encode(obj: js.Object, settings: JSONEncoder = js.native): String = js.native
+    def decode(jsonString: String): JSObject = js.native
+    def encode(obj: JSObject, settings: JSONEncoder = js.native): String = js.native
 }
 
 @js.native

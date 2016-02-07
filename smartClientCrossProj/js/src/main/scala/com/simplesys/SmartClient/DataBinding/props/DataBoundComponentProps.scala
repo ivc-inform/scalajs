@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Grids.listGrid.{Hilite, HiliteEditor}
 import com.simplesys.SmartClient.Layout.Window
 import com.simplesys.SmartClient.System.props.ClassProps
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.DragDataAction.DragDataAction
 import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.System.Types.FieldNamingStrategy.FieldNamingStrategy
@@ -35,7 +36,7 @@ trait DataBoundComponentProps extends ClassProps {
     var dragDataAction: ScOption[DragDataAction] = ScNone
     var dragRecategorize: ScOption[RecategorizeMode] = ScNone
     var dragTrackerStyle: ScOption[CSSStyleName] = ScNone
-    var dropValues: ScOption[js.Object] = ScNone
+    var dropValues: ScOption[JSObject] = ScNone
     var duplicateDragMessage: ScOption[String] = ScNone
     var editFormulaFieldText: ScOption[String] = ScNone
     var editHilitesDialogTitle: ScOption[String] = ScNone

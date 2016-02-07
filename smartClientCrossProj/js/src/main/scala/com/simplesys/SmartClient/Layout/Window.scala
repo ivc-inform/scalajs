@@ -21,7 +21,7 @@ trait Window extends Layout {
     val body: Canvas with AutoChild
     var bodyColor: CSSColor
     var bodyConstructor: String
-    var bodyDefaults: js.Object
+    var bodyDefaults: JSObject
     var bodyStyle: CSSStyleName
     var bringToFrontOnMouseUp: Boolean
     var canFocusInHeaderButtons: Boolean
@@ -43,9 +43,9 @@ trait Window extends Layout {
     val headerBackground: Img with AutoChild
     val headerControls: JSArray[String]
     val headerIcon: Img with AutoChild
-    var headerIconDefaults: js.Object
+    var headerIconDefaults: JSObject
     val headerLabel: Label with AutoChild
-    var headerLabelDefaults: js.Object
+    var headerLabelDefaults: JSObject
     var headerSrc: SCImgURL
     var headerStyle: CSSStyleName
     var hiliteBodyColor: CSSColor

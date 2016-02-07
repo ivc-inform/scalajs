@@ -21,13 +21,13 @@ import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSAny, JSArray}
+import com.simplesys.System.{JSObject, JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait ListGridField extends js.Object {
+trait ListGridField extends JSObject {
     var align: Alignment
     var applyAfterSummary: Boolean
     var autoComplete: AutoComplete
@@ -60,7 +60,7 @@ trait ListGridField extends js.Object {
     var dateFormatter: DateDisplayFormat
     var decimalPad: Int
     var decimalPrecision: Int
-    def defaultDynamicValue(item: FormItem, form: DynamicForm, values: js.Object): void
+    def defaultDynamicValue(item: FormItem, form: DynamicForm, values: JSObject): void
     var defaultFilterValue: JSAny
     val defaultGroupingMode: String
     val defaultIconSrc: String
@@ -77,9 +77,9 @@ trait ListGridField extends js.Object {
     var editorProperties: FormItem
     var editorType: FormItemClassName
     var editorValueIconHeight: Int
-    var editorValueIcons: js.Object
+    var editorValueIcons: JSObject
     var editorValueIconWidth: Int
-    var editorValueMap: js.Object
+    var editorValueMap: JSObject
     var emptyCellValue: HTMLString
     var enterKeyEditAction: EnterKeyEditAction
     var escapeHTML: Boolean
@@ -89,7 +89,7 @@ trait ListGridField extends js.Object {
     val exportRawValues: Boolean
     var filterEditorProperties: FormItem
     var filterEditorType: FormItemClassName
-    var filterEditorValueMap: js.Object
+    var filterEditorValueMap: JSObject
     var filterOnKeypress: Boolean
     var filterOperator: OperatorId
     val format: FormatString
@@ -99,12 +99,12 @@ trait ListGridField extends js.Object {
     var formatGroupSummary: String
     var frozen: Boolean
     def getAutoFreezePosition(): Int
-    def getEditorValueMap(values: js.Object, field: ListGridField, grid: Grid[ListGridField, ListGridRecord]): ValueMap
+    def getEditorValueMap(values: JSObject, field: ListGridField, grid: Grid[ListGridField, ListGridRecord]): ValueMap
     def getFieldTitle(viewer: Grid[ListGridField, ListGridRecord], fieldNum: Int): String
-    def getGridSummary(records: JSArray[ListGridRecord], field: ListGridField, groupSummaries: JSArray[js.Object] = js.native): JSAny
-    def getGroupSummary(records: JSArray[ListGridRecord], field: ListGridField, groupNode: js.Object = js.native): JSAny
-    def getGroupTitle(groupValue: JSAny, groupNode: groupNode, field: js.Object, fieldName: String, grid: Grid[ListGridField, ListGridRecord]): JSAny
-    def getGroupValue(value: JSAny, record: ListGridRecord, field: js.Object, fieldName: String, grid: Grid[ListGridField, ListGridRecord]): JSAny
+    def getGridSummary(records: JSArray[ListGridRecord], field: ListGridField, groupSummaries: JSArray[JSObject] = js.native): JSAny
+    def getGroupSummary(records: JSArray[ListGridRecord], field: ListGridField, groupNode: JSObject = js.native): JSAny
+    def getGroupTitle(groupValue: JSAny, groupNode: groupNode, field: JSObject, fieldName: String, grid: Grid[ListGridField, ListGridRecord]): JSAny
+    def getGroupValue(value: JSAny, record: ListGridRecord, field: JSObject, fieldName: String, grid: Grid[ListGridField, ListGridRecord]): JSAny
     def getRecordSummary(record: ListGridRecord, field: ListGridField, grid: Grid[ListGridField, ListGridRecord]): JSAny
     def getSummaryTitle(viewer: Grid[ListGridField, ListGridRecord], field: ListGridField): void
     val groupGranularity: Int
@@ -159,7 +159,7 @@ trait ListGridField extends js.Object {
     var optionFilterContext: DSRequest
     var optionOperationId: String
     var optionTextMatchStyle: TextMatchStyle
-    def parseEditorValue(value: JSAny, record: js.Object, rowNum: Int, colNum: Int, grid: Grid[ListGridField, ListGridRecord]): JSAny
+    def parseEditorValue(value: JSAny, record: JSObject, rowNum: Int, colNum: Int, grid: Grid[ListGridField, ListGridRecord]): JSAny
     var partialSummary: Boolean
     var prompt: HTMLString
     var recordClick: js.Function7[Grid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, Int, JSAny, JSAny, Boolean]
@@ -184,7 +184,7 @@ trait ListGridField extends js.Object {
     var sortByDisplayField: Boolean
     var sortByMappedValue: Boolean
     var sortDirection: SortDirection
-    def sortNormalizer(recordObject: js.Object, fieldName: String, context: Grid[ListGridField, ListGridRecord]): JSAny
+    def sortNormalizer(recordObject: JSObject, fieldName: String, context: Grid[ListGridField, ListGridRecord]): JSAny
     var summaryFunction: SummaryFunction | JSArray[SummaryFunction]
     var summaryTitle: String
     var summaryValue: HTMLString
@@ -204,10 +204,10 @@ trait ListGridField extends js.Object {
     var valueIconLeftPadding: Int
     var valueIconOrientation: String
     var valueIconRightPadding: Int
-    var valueIcons: js.Object
+    var valueIcons: JSObject
     var valueIconSize: Int
     var valueIconWidth: Int
-    var valueMap: js.Object | JSArray[String]
+    var valueMap: JSObject | JSArray[String]
     var width: Int | String
     var wrap: Boolean
 }

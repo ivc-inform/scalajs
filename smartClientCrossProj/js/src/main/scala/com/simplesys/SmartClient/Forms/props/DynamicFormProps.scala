@@ -7,6 +7,7 @@ import com.simplesys.SmartClient.Forms.FormsItems.props.FormItemProps
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.System.KeyIdentifier
 import com.simplesys.SmartClient.Workdlow.UserTask
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AutoComplete.AutoComplete
 import com.simplesys.System.Types.DSOperationType.DSOperationType
@@ -51,14 +52,14 @@ class DynamicFormProps extends CanvasProps with DataBoundComponentProps{
     var disableValidation: ScOption[Boolean] = ScNone
     var encoding: ScOption[Encoding] = ScNone
     var errorItemCellStyle: ScOption[String] = ScNone
-    var errorItemProperties: ScOption[js.Object] = ScNone
+    var errorItemProperties: ScOption[JSObject] = ScNone
     var errorOrientation: ScOption[Alignment] = ScNone
-    var errors: ScOption[Seq[js.Object]] = ScNone
+    var errors: ScOption[Seq[JSObject]] = ScNone
     var errorsPreamble: ScOption[HTMLString] = ScNone
     var fields: ScOption[Seq[FormItemProps]] = ScNone
     var fixedColWidths: ScOption[Boolean] = ScNone
     var formSubmitFailedWarning: ScOption[String] = ScNone
-    var handleHiddenValidationErrors: ScOption[ThisFunction1[DynamicForm, js.Object, Boolean]] = ScNone
+    var handleHiddenValidationErrors: ScOption[ThisFunction1[DynamicForm, JSObject, Boolean]] = ScNone
     var hiliteRequiredFields: ScOption[Boolean] = ScNone
     var implicitSave: ScOption[Boolean] = ScNone
     var implicitSaveDelay: ScOption[Int] = ScNone
@@ -109,7 +110,7 @@ class DynamicFormProps extends CanvasProps with DataBoundComponentProps{
     var showOldValueInHover: ScOption[Boolean] = ScNone
     var showTitlesWithErrorMessages: ScOption[Boolean] = ScNone
     var stopOnError: ScOption[Boolean] = ScNone
-    var submitValues: ScOption[Function2[js.Object, DynamicForm, _]] = ScNone
+    var submitValues: ScOption[Function2[JSObject, DynamicForm, _]] = ScNone
     var suppressValidationErrorCallback: ScOption[Boolean] = ScNone
     var synchronousValidation: ScOption[Boolean] = ScNone
     var target: ScOption[String] = ScNone
@@ -125,7 +126,7 @@ class DynamicFormProps extends CanvasProps with DataBoundComponentProps{
     var validateOnChange: ScOption[Boolean] = ScNone
     var validateOnExit: ScOption[Boolean] = ScNone
     var validationURL: ScOption[URL] = ScNone
-    var values: ScOption[js.Object] = ScNone
+    var values: ScOption[JSObject] = ScNone
     var valuesChanged: ScOption[ThisFunction0[DynamicForm, _]] = ScNone
     var wrapItemTitles: ScOption[Boolean] = ScNone
 }

@@ -6,7 +6,7 @@ import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.{CSSClassName, FormatString, HTMLString}
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 
@@ -49,5 +49,5 @@ class DetailViewerFieldProps extends AbstractClassProps {
     var timeFormatter: ScOption[TimeDisplayFormat] = ScNone
     var title: ScOption[HTMLString] = ScNone
     var value: ScOption[HTMLString] = ScNone
-    var valueMap: ScOption[js.Object] = ScNone
+    var valueMap: ScOption[JSObject] = ScNone
 }

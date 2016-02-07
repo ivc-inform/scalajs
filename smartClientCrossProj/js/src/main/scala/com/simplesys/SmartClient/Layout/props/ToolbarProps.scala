@@ -9,7 +9,7 @@ import scala.scalajs.js
 
 class ToolbarProps extends LayoutProps {
     var buttonConstructor: ScOption[Class] = ScNone
-    var buttonDefaults: ScOption[js.Object] = ScNone
+    var buttonDefaults: ScOption[JSObject] = ScNone
     var buttons: ScOption[Seq[Button]] = ScNone
     var canReorderItems: ScOption[Boolean] = ScNone
     var canResizeItems: ScOption[Boolean] = ScNone

@@ -6,12 +6,12 @@ import com.simplesys.System.Types.FieldType.FieldType
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.OperatorValueType.OperatorValueType
 import com.simplesys.System.Types.{ID, Record}
-import com.simplesys.System.{JSAny, JSArray}
+import com.simplesys.System.{JSObject, JSAny, JSArray}
 
 import scala.scalajs.js
 
 @js.native
-trait Operator extends js.Object {
+trait Operator extends JSObject {
     def compareCriteria(newCriterion: Criterion, oldCriterion: Criterion): Int
     var condition: js.Function5[JSAny, Record, JSAny, Criterion, Operator, Boolean]
     val editorType: FormItem

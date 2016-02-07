@@ -8,7 +8,7 @@ import scala.scalajs.js
 @js.native
 trait Selection extends Class {
     def anySelected(): Boolean
-    def deselect(item: js.Object): Boolean
+    def deselect(item: JSObject): Boolean
     def deselectAll(): Boolean
     def deselectItem(position: Int): Boolean
     def deselectList(list: JSArrayAny): Boolean

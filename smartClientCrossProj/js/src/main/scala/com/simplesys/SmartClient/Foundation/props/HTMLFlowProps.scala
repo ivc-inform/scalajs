@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.Foundation.props
 import com.simplesys.SmartClient.DataBinding.props.DataBoundComponentProps
 import com.simplesys.SmartClient.Foundation.HTMLFlow
 import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.ContentsType.ContentsType
 import com.simplesys.System.Types.SendMethod.SendMethod
 import com.simplesys.System.Types.{HTMLString, URL}
@@ -19,7 +20,7 @@ class HTMLFlowProps extends CanvasProps with DataBoundComponentProps{
     var contentLoaded: ScOption[js.ThisFunction0[callbackHandler, _]] = ScNone
     var contentsType: ScOption[ContentsType] = ScNone
     var contentsURL: ScOption[URL] = ScNone
-    var contentsURLParams: ScOption[js.Object] = ScNone
+    var contentsURLParams: ScOption[JSObject] = ScNone
     var evalScriptBlocks: ScOption[Boolean] = ScNone
     var handleError: ScOption[js.Function2[RPCRequest, RPCResponse, Boolean]] = ScNone
     var httpMethod: ScOption[SendMethod] = ScNone

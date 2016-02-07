@@ -13,11 +13,11 @@ trait CellSelection extends Class {
     def anySelected(): Boolean
     def cellIsSelected(rowNum: Int, colNum: Int): Boolean
     def deselectCell(rowNum: Int, colNum: Int): Boolean
-    def deselectCellList(list: JSArray[js.Object]): Boolean
-    def getSelectedCells(): JSArray[js.Object]
+    def deselectCellList(list: JSArray[JSObject]): Boolean
+    def getSelectedCells(): JSArray[JSObject]
     def getSelectedRecord(): ListGridRecord
     def selectCell(rowNum: Int, colNum: Int): Boolean
-    def selectCellList(list: JSArray[js.Object]): Boolean
+    def selectCellList(list: JSArray[JSObject]): Boolean
     def selectionChanged(): void
     def selectSingleCell(rowNum: Int, colNum: Int): Boolean
 }

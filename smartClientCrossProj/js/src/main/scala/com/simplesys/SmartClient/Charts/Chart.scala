@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Charts
 
 import com.simplesys.SmartClient.Analytics.Facet
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 import com.simplesys.System.Types.CellRecord
 import com.simplesys.System.Types.ChartType.ChartType
 
@@ -9,7 +9,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait Chart extends js.Object {
+trait Chart extends JSObject {
     var chartType: ChartType
     val data: CellRecord | JSArray[CellRecord]
     val facets: Facet | JSArray[Facet]
@@ -17,7 +17,7 @@ trait Chart extends js.Object {
 }
 
 @js.native
-abstract trait AbstractChartCompanion extends js.Object {
+abstract trait AbstractChartCompanion extends JSObject {
     val allChartTypes: JSArray[ChartType] = js.native
 }
 

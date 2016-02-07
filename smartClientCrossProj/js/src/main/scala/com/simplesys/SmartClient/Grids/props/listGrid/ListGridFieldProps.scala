@@ -22,7 +22,7 @@ import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSAny, JSArray, JSDictionary}
+import com.simplesys.System.{JSObject, JSAny, JSArray, JSDictionary}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 
@@ -77,9 +77,9 @@ class ListGridFieldProps extends AbstractClassProps {
     var editorProperties: ScOption[FormItem] = ScNone
     var editorType: ScOption[FormItems] = ScNone
     var editorValueIconHeight: ScOption[Int] = ScNone
-    var editorValueIcons: ScOption[js.Object] = ScNone
+    var editorValueIcons: ScOption[JSObject] = ScNone
     var editorValueIconWidth: ScOption[Int] = ScNone
-    var editorValueMap: ScOption[js.Object] = ScNone
+    var editorValueMap: ScOption[JSObject] = ScNone
     var emptyCellValue: ScOption[HTMLString] = ScNone
     var enterKeyEditAction: ScOption[EnterKeyEditAction] = ScNone
     var escapeHTML: ScOption[Boolean] = ScNone
@@ -89,7 +89,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var exportRawValues: ScOption[Boolean] = ScNone
     var filterEditorProperties: ScOption[FormItem] = ScNone
     var filterEditorType: ScOption[FormItems] = ScNone
-    var filterEditorValueMap: ScOption[js.Object] = ScNone
+    var filterEditorValueMap: ScOption[JSObject] = ScNone
     var filterOnKeypress: ScOption[Boolean] = ScNone
     var filterOperator: ScOption[OperatorId] = ScNone
     var format: ScOption[FormatString] = ScNone

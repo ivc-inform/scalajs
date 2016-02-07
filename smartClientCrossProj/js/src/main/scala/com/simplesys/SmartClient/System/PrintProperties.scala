@@ -5,7 +5,7 @@ import com.simplesys.System.JSArray
 import scala.scalajs.js
 
 @js.native
-trait PrintProperties extends js.Object {
+trait PrintProperties extends JSObject {
     val includeControls: JSArray[String]
     val omitControls: JSArray[String]
     val printForExport: Boolean

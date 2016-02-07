@@ -7,7 +7,7 @@ import com.simplesys.SmartClient.Layout.Layout
 import com.simplesys.SmartClient.Layout.props.VLayoutProps
 import com.simplesys.System.Types.ControlName.ControlName
 import com.simplesys.System.Types.MultiAutoChild
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
@@ -27,10 +27,10 @@ class RichTextEditorProps extends VLayoutProps {
     var editArea: ScOption[Canvas] = ScNone
     var editAreaBackgroundColor: ScOption[String] = ScNone
     var fontControls: ScOption[Seq[ControlName]] = ScNone
-    var fontNames: ScOption[js.Object] = ScNone
+    var fontNames: ScOption[JSObject] = ScNone
     var fontSelectorItem: ScOption[SelectItem] = ScNone
     var fontSelectorPrompt: ScOption[String] = ScNone
-    var fontSizes: ScOption[js.Object] = ScNone
+    var fontSizes: ScOption[JSObject] = ScNone
     var fontSizeSelectorItem: ScOption[SelectItem] = ScNone
     var fontSizeSelectorPrompt: ScOption[String] = ScNone
     var formatControls: ScOption[Seq[ControlName]] = ScNone

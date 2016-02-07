@@ -6,7 +6,7 @@ import com.simplesys.System.Types.LoadState.LoadState
 import com.simplesys.System.Types.TreeFilterMode.TreeFilterMode
 import com.simplesys.System.Types.TreeModelType.TreeModelType
 import com.simplesys.System.Types.{Callback, Criteria, void}
-import com.simplesys.System.{JSAny, JSArray}
+import com.simplesys.System.{JSObject, JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.{ThisFunction0, |}
@@ -26,8 +26,8 @@ trait Tree extends Class {
     val defaultIsFolder: Boolean
     var defaultNodeTitle: String
     val discardParentlessNodes: Boolean
-    def find(fieldNameOrPath: String, value: JSAny = js.native): js.Object
-    def findById(id: String): js.Object
+    def find(fieldNameOrPath: String, value: JSAny = js.native): JSObject
+    def findById(id: String): JSObject
     def getAllNodes(node: TreeNode = js.native): JSArray[TreeNode]
     def getChildren(node: TreeNode): JSArray[TreeNode]
     def getChildrenResultSet(node: TreeNode): ResultSet
@@ -52,7 +52,7 @@ trait Tree extends Class {
     def hasFolders(node: TreeNode): Boolean
     def hasLeaves(node: TreeNode): Boolean
     val idField: String
-    def indexOf(obj: js.Object, pos: Int = js.native, endPos: Int = js.native): Int
+    def indexOf(obj: JSObject, pos: Int = js.native, endPos: Int = js.native): Int
     def isDescendantOf(child: TreeNode, parent: TreeNode): Boolean
     def isFolder(node: TreeNode): Boolean
     var isFolderProperty: String
@@ -60,7 +60,7 @@ trait Tree extends Class {
     def isLoaded(node: TreeNode): Boolean
     def isOpen(node: TreeNode): Boolean
     def isRoot(node: TreeNode): Boolean
-    def lastIndexOf(obj: js.Object, pos: Int = js.native, endPos: Int = js.native): Int
+    def lastIndexOf(obj: JSObject, pos: Int = js.native, endPos: Int = js.native): Int
     def linkNodes(nodes: JSArray[TreeNode]): void
     def loadChildren(node: TreeNode, callback: Callback = js.native): void
     var modelType: TreeModelType

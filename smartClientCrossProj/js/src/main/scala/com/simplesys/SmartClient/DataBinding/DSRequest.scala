@@ -11,7 +11,7 @@ import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
 import com.simplesys.System.Types.Record
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.ValidationMode.ValidationMode
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -47,10 +47,10 @@ trait DSRequest extends RPCRequest {
     val exportToClient: Boolean
     val exportToFilesystem: Boolean
     val exportValueFields: Boolean
-    val fieldValueExpressions: js.Object
+    val fieldValueExpressions: JSObject
     val generateRelatedUpdates: Boolean
     val groupBy: JSArray[String]
-    val headerData: js.Object
+    val headerData: JSObject
     val keepParentsOnFilter: Boolean
     val lineBreakStyle: String
     val oldValues: Record
@@ -67,7 +67,7 @@ trait DSRequest extends RPCRequest {
     val sortBy: String | JSArray[String] | JSArray[SortSpecifier]
     val startRow: Int
     val streamResults: Boolean
-    val summaryFunctions: js.Object
+    val summaryFunctions: JSObject
     val textMatchStyle: TextMatchStyle
     val useFlatFields: Boolean
     val useFlatHeaderFields: Boolean

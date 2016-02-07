@@ -6,7 +6,7 @@ import com.simplesys.System.JSAny
 import scala.scalajs.js
 
 @js.native
-object History extends js.Object {
+object History extends JSObject {
     type History = History.type
 
     def addHistoryEntry(id: String, title: String = js.native, data: JSAny = js.native): void = js.native

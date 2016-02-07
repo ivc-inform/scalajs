@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.System.props.{ClassProps, ListProps}
 import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
 import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.System.Types.{Criteria, Record}
-import com.simplesys.System.{JSAny, JSArray}
+import com.simplesys.System.{JSObject, JSAny, JSArray}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
@@ -28,7 +28,7 @@ class ResultSetProps extends ClassProps with ListProps {
     var progressiveLoading: ScOption[Boolean] = ScNone
     var resultSize: ScOption[Int] = ScNone
     var sortSpecifiers: ScOption[JSArray[SortSpecifier]] = ScNone
-    var transformData: ScOption[js.Function2[JSAny, DSResponse, JSArray[js.Object]]] = ScNone
+    var transformData: ScOption[js.Function2[JSAny, DSResponse, JSArray[JSObject]]] = ScNone
     var updateCacheFromRequest: ScOption[Boolean] = ScNone
     var updatePartialCache: ScOption[Boolean] = ScNone
     var useClientFiltering: ScOption[Boolean] = ScNone

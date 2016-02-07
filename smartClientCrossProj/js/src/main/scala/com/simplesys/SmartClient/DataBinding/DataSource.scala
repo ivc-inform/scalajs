@@ -25,7 +25,7 @@ import com.simplesys.System.Types.SequenceMode.SequenceMode
 import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSAny, JSArray}
+import com.simplesys.System.{JSObject, JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -132,7 +132,7 @@ trait DataSource extends Class {
     def getTypeOperators(typeName: FieldType | String): JSArray[OperatorId]
     def getUpdatedData(dsRequest: DSRequest, dsResponse: DSResponse, useDataFromRequest: Boolean): JSArray[DataSourceRecord]
     def getXMLRequestBody(dsRequest: DSRequest): String
-    var globalNamespaces: js.Object
+    var globalNamespaces: JSObject
     val guestUserId: String
     var handleError: js.Function2[DSResponse, DSRequest, Boolean]
     def hasAllData(): Boolean
@@ -190,8 +190,8 @@ trait DataSource extends Class {
     val requiresAuthentication: Boolean
     val requiresRole: String
     val resultBatchSize: Int
-    val resultSetClass: js.Object
-    val resultTreeClass: js.Object
+    val resultSetClass: JSObject
+    val resultTreeClass: JSObject
     def saveFile(fileSpec: FileSpec | String, contents: String, callback: DSCallback = js.native): void
     val schema: String
     val schemaBean: String
@@ -244,7 +244,7 @@ trait DataSource extends Class {
     def validateData(values: Record, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     val validateRelatedRecords: Boolean
     def viewFile(data: Record, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    val xmlNamespaces: js.Object
+    val xmlNamespaces: JSObject
     def xmlSerialize(data: JSAny, flags: SerializationContext)
 }
 
@@ -265,7 +265,7 @@ abstract trait AbstractDataSourceCompanion extends AbstractClassCompanion {
     def getDataSource(id: ID): DataSource = js.native
     def getFieldValue(field: DataSourceField | ListGridField | DetailViewerField | FormItem, record: Record | DataPath | Canvas | String): JSAny = js.native
     def getLoaderURL(): String = js.native
-    def getSimpleErrors(dsResponse: DSResponse): js.Object = js.native
+    def getSimpleErrors(dsResponse: DSResponse): JSObject = js.native
     def getSortBy(sortSpecifiers: JSArray[SortSpecifier]): JSArray[String] = js.native
     def getSortSpecifiers(sortBy: JSArray[String]): JSArray[String] = js.native
     def isFlatCriteria(criteria: AdvancedCriteria): Boolean = js.native

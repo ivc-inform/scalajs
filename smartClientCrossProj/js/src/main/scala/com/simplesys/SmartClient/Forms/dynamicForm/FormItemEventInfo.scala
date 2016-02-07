@@ -1,11 +1,12 @@
 package com.simplesys.SmartClient.Forms.dynamicForm
 
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.System.JSObject
 
 import scala.scalajs.js
 
 @js.native
-trait FormItemEventInfo extends js.Object {
+trait FormItemEventInfo extends JSObject {
     val icon: String
     val item: FormItem
     val overItem: Boolean

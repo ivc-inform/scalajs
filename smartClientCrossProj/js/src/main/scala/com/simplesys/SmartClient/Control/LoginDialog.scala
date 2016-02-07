@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems._
 import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
 import com.simplesys.SmartClient.Layout.Window
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.AutoChild
 
 import scala.scalajs.js
@@ -20,13 +21,13 @@ trait LoginDialog extends Window {
     val loginButtonTitle: String
     val loginFailureItem: BlurbItem with AutoChild
     val loginForm: DynamicForm with AutoChild
-    var loginFunc: js.Function2[js.Object, js.Function1[Boolean, _], _]
-    var lostPassword: js.Function2[js.Object, DynamicForm, _]
+    var loginFunc: js.Function2[JSObject, js.Function1[Boolean, _], _]
+    var lostPassword: js.Function2[JSObject, DynamicForm, _]
     val lostPasswordItem: LinkItem with AutoChild
     val lostPasswordItemTitle: String
     val passwordItem: PasswordItem with AutoChild
     val passwordItemTitle: String
-    var register: js.Function2[js.Object, DynamicForm, _]
+    var register: js.Function2[JSObject, DynamicForm, _]
     val registrationItem: LinkItem with AutoChild
     val registrationItemTitle: String
     val showLostPasswordLink: Boolean

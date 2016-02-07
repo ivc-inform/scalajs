@@ -4,13 +4,13 @@ import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
 import com.simplesys.SmartClient.System.date.FiscalYear.FiscalYear
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.void
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object Date extends js.Object {
+object Date extends JSObject {
     def combineLogicalDateAndTime(date: Date, time: Date): Date = js.native
     def compareDates(date1: Date, date2: Date): Int = js.native
     def compareLogicalDates(date1: Date, date2: Date): Int = js.native
@@ -47,7 +47,7 @@ object Date extends js.Object {
 }
 
 @js.native
-trait Date extends js.Object {
+trait Date extends JSObject {
     def duplicate(): Date
     def getDayName(): String
     def getDefaultDateSeparator(): String

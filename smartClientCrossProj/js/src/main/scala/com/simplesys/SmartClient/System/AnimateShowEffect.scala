@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.System
 import scala.scalajs.js
 
 @js.native
-object AnimateShowEffect extends js.Object {
+object AnimateShowEffect extends JSObject {
     type AnimateShowEffect = AnimateShowEffect.type
     val effect:String = js.native
     val endsAt:String = js.native

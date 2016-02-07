@@ -13,10 +13,10 @@ trait Array extends List {
     def addAt(`object`: JSAny, pos: Int): this.type
     def and(start: Int, end: Int): Boolean
     def clearProperty(property: String): Boolean
-    def containsProperty(property: String, value: js.Object = js.native): Boolean
-    def getUniqueItems(): JSArray[js.Object]
-    def makeIndex(property: String, alwaysMakeArray: Boolean): js.Object
-    def map(method: js.ThisFunction0[_, _], arguments: js.Object*): JSArray[js.Object]
+    def containsProperty(property: String, value: JSObject = js.native): Boolean
+    def getUniqueItems(): JSArray[JSObject]
+    def makeIndex(property: String, alwaysMakeArray: Boolean): JSObject
+    def map(method: js.ThisFunction0[_, _], arguments: JSObject*): JSArray[JSObject]
     def max(start: Int = js.native, end: Int = js.native): Int
     def min(start: Int = js.native, end: Int = js.native): Int
     def or(start: Int = js.native, end: Int = js.native): Boolean
@@ -28,7 +28,7 @@ trait Array extends List {
 }
 
 @js.native
-abstract trait AbstractArrayCompanion extends js.Object {
+abstract trait AbstractArrayCompanion extends JSObject {
   var compareAscending: js.Function2[JSAny, JSAny, Int] = js.native
   var compareDescending: js.Function2[JSAny, JSAny, Int] = js.native
 }

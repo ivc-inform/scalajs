@@ -43,7 +43,7 @@ class TabSetProps extends CanvasProps {
     var defaultTabHeight: ScOption[Int] = ScNone
     var defaultTabWidth: ScOption[Int] = ScNone
     var destroyPanes: ScOption[Boolean] = ScNone
-    var getPaneContainerEdges: ScOption[js.Function1[void, JSArray[js.Object]]] = ScNone
+    var getPaneContainerEdges: ScOption[js.Function1[void, JSArray[JSObject]]] = ScNone
     var leftEdgeOffsets: ScOption[EdgeSizes] = ScNone
     var leftEdgeSizes: ScOption[EdgeSizes] = ScNone
     var moreTab: ScOption[Tab] = ScNone
@@ -84,7 +84,7 @@ class TabSetProps extends CanvasProps {
     var symmetricScroller: ScOption[Boolean] = ScNone
     var tabBar: ScOption[TabBar] = ScNone
     var tabBarAlign: ScOption[Alignment] = ScNone
-    var tabBarControls: ScOption[JSArray[js.Object]] = ScNone
+    var tabBarControls: ScOption[JSArray[JSObject]] = ScNone
     var tabBarPosition: ScOption[Side] = ScNone
     var tabBarProperties: ScOption[TabBar] = ScNone
     var tabBarThickness: ScOption[Int] = ScNone

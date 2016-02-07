@@ -8,7 +8,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-object RelativeDate extends js.Object{
+object RelativeDate extends JSObject{
   type RelativeDate = RelativeDate.type
 
   var rangePosition:RelativeDateRangePosition = js.native

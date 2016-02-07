@@ -19,7 +19,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSAny, JSArray, JSDictionary}
+import com.simplesys.System.{JSObject, JSAny, JSArray, JSDictionary}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -33,7 +33,7 @@ trait FormItem extends Class {
     var applyAlignToText: Boolean
     var applyHeightToTextBox: Boolean
     var ariaRole: String
-    var ariaState: js.Object
+    var ariaState: JSObject
     var autoComplete: AutoComplete
     var blur: js.Function2[DynamicForm, FormItem, _]
     def blurItem(): void
@@ -61,7 +61,7 @@ trait FormItem extends Class {
     var dateFormatter: DateDisplayFormat
     var decimalPad: Int
     var decimalPrecision: Int
-    var defaultDynamicValue: js.Function3[FormItem, DynamicForm, js.Object, _]
+    var defaultDynamicValue: js.Function3[FormItem, DynamicForm, JSObject, _]
     var defaultIconSrc: SCImgURL
     var defaultValue: JSAny
     def disable(): void
@@ -108,8 +108,8 @@ trait FormItem extends Class {
     def getGridColNum(): Int
     def getGridRowNum(): Int
     def getIcon(name: String): FormItemIcon
-    def getIconHeight(icon: js.Object): Int
-    def getIconWidth(icon: js.Object): Int
+    def getIconHeight(icon: JSObject): Int
+    def getIconWidth(icon: JSObject): Int
     def getLeft(): Int
     def getOptionDataSource(): DataSource
     def getPageLeft(): Int
@@ -175,8 +175,8 @@ trait FormItem extends Class {
     var left: Int
     var loadingDisplayValue: String
     var locateItemBy: String
-    def mapDisplayToValue(value: String): js.Object
-    def mapValueToDisplay(value: js.Object): String
+    def mapDisplayToValue(value: String): JSObject
+    def mapValueToDisplay(value: JSObject): String
     val multipleValueSeparator: String
     val name: String
     val operator: OperatorId
@@ -230,8 +230,8 @@ trait FormItem extends Class {
     def setTabIndex(): void
     def setTop(): void
     def setValue(newValue: JSAny): void
-    def setValueIcons(map: js.Object): void
-    def setValueMap(valueMap: JSArray[js.Object]): void
+    def setValueIcons(map: JSObject): void
+    def setValueMap(valueMap: JSArray[JSObject]): void
     def shouldApplyHeightToTextBox(): Boolean
     def shouldFetchMissingValue(newValue: JSAny): Boolean
     def shouldSaveOnEnter(): Boolean
@@ -252,7 +252,7 @@ trait FormItem extends Class {
     var showHint: Boolean
     def showIcon(icon: String): void
     var showIcons: Boolean
-    var showIf: js.Function4[FormItem, JSAny, DynamicForm, js.Object, Boolean]
+    var showIf: js.Function4[FormItem, JSAny, DynamicForm, JSObject, Boolean]
     var showOldValueInHover: Boolean
     var showOverIcons: Boolean
     var showPending: Boolean

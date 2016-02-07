@@ -7,11 +7,11 @@ package com.simplesys {
 
         package dia {
 
-            import com.simplesys.System.{JSAny, JSArray, JSDictionaryAny}
+            import com.simplesys.System.{JSObject, JSAny, JSArray, JSDictionaryAny}
             import com.simplesys.backbone.Model
 
             @js.native
-            trait IElementSize extends js.Object {
+            trait IElementSize extends JSObject {
                 var width: Double = js.native
                 var height: Double = js.native
             }
@@ -23,7 +23,7 @@ package com.simplesys {
                 def addCells(cells: JSArray[Cell]): Unit = js.native
                 def initialize(): Unit = js.native
                 def fromJSON(json: JSAny): Unit = js.native
-                def toJSON(): js.Object = js.native
+                def toJSON(): JSObject = js.native
                 def clear(): Unit = js.native
                 def getConnectedLinks(cell: Cell, opt: JSAny = js.native): JSArray[Link] = js.native
                 def disconnectLinks(cell: Cell): Unit = js.native
@@ -34,7 +34,7 @@ package com.simplesys {
             @js.native
             @JSName("joint.dia.Cell")
             class Cell extends backbone.Model {
-                def toJSON(): js.Object = js.native
+                def toJSON(): JSObject = js.native
                 def remove(options: JSAny = js.native): Unit = js.native
                 def toFront(): Unit = js.native
                 def toBack(): Unit = js.native
@@ -57,7 +57,7 @@ package com.simplesys {
             }
 
             @js.native
-            trait IDefaults extends js.Object {
+            trait IDefaults extends JSObject {
                 var `type`: String = js.native
             }
 
@@ -72,7 +72,7 @@ package com.simplesys {
             }
 
             @ScalaJSDefined
-            trait IOptions extends js.Object {
+            trait IOptions extends JSObject {
                 var width: Double
                 var height: Double
                 var gridSize: Double
@@ -168,7 +168,7 @@ package com.simplesys {
 
             @js.native
             @JSName("joint.util")
-            object Util extends js.Object {
+            object Util extends JSObject {
                 def uuid(): String = js.native
                 def guid(obj: JSAny): String = js.native
                 def mixin(objects: JSArrayAny): js.Dynamic = js.native

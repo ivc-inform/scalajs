@@ -8,23 +8,23 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 
 @js.native
-trait Class extends js.Object {
+trait Class extends JSObject {
     type classHandler <: this.type
 
-    def addAutoChild(childName: String, defaults: JSDictionary[js.Object]): Class
-    def addProperties(arguments: JSDictionaryAny): js.Object
+    def addAutoChild(childName: String, defaults: JSDictionary[JSObject]): Class
+    def addProperties(arguments: JSDictionaryAny): JSObject
     var addPropertiesOnCreate: Boolean
-    def addPropertyList(list: JSArray[JSDictionary[js.Object]]): js.Object
+    def addPropertyList(list: JSArray[JSDictionary[JSObject]]): JSObject
     def clearLogPriority(category: String): void
-    def createAutoChild(childName: String, defaults: JSDictionary[js.Object]): this.type
+    def createAutoChild(childName: String, defaults: JSDictionary[JSObject]): this.type
     def destroy(): void
     def delayCall(methodName: String, arrayArgs: JSArray[Any] = js.native, time: Int = js.native): String
     def echo(obj: JSAny): String
     def echoAll(obj: JSAny): String
     def echoLeaf(obj: JSAny): String
-    def evaluate(expression: String, evalArgs: JSDictionary[js.Object]): js.Object
-    def fireCallback(callback: Callback, argNames: String = js.native, args: JSArray[js.Object] = js.native): JSAny
-    def getCallTrace(args: js.Object = js.native): void
+    def evaluate(expression: String, evalArgs: JSDictionary[JSObject]): JSObject
+    def fireCallback(callback: Callback, argNames: String = js.native, args: JSArray[JSObject] = js.native): JSAny
+    def getCallTrace(args: JSObject = js.native): void
     def GetClass(): this.type
     def getClassName(): String
     def getDefaultLogPriority(): LogPriority
@@ -32,11 +32,11 @@ trait Class extends js.Object {
     def getIdentifier(): String
     def getStackTrace(): String
     def getSuperClass(): String
-    def ignore(`object`: js.Object, methodName: String): Boolean
+    def ignore(`object`: JSObject, methodName: String): Boolean
     var identifier: ID
     var init: js.ThisFunction1[classHandler, JSArrayAny , _]
     def isA(className: String): Boolean
-    def isObserving(`object`: js.Object, methodName: String): Boolean
+    def isObserving(`object`: JSObject, methodName: String): Boolean
     def logDebug(message: String, category: String = js.native): void
     def logError(message: String, category: String = js.native): void
     def logFatal(message: String, category: String = js.native): void
@@ -48,29 +48,29 @@ trait Class extends js.Object {
     def logIsWarnEnabled(category: String = js.native): void
     def logIsEnabledFor(priority: LogPriority, category: String): void
     def map(methodName: String, items: JSArrayAny): JSArrayAny
-    def observe(`object`: js.Object, methodName: String, action: String = js.native): Boolean
+    def observe(`object`: JSObject, methodName: String, action: String = js.native): Boolean
     def setDefaultLogPriority(category: String, priority: LogPriority): void
     def setLogPriority(category: String, priority: LogPriority): void
-    def setProperties(arguments: JSDictionary[js.Object]): void
+    def setProperties(arguments: JSDictionary[JSObject]): void
     def setProperty(propertyName: String, newValue: JSAny): void
     def Super(methodName: String, args: JSArrayAny, nativeArgs: JSArrayAny = js.native): JSAny
 }
 
 @js.native
-abstract trait AbstractClassCompanion extends js.Object {
-    def addClassProperties(arguments: JSDictionary[js.Object]): js.Object = js.native
-    def addMethods(arguments: JSDictionary[js.Object]): js.Object = js.native
-    def addProperties(arguments: JSDictionary[js.Object]): js.Object = js.native
-    def addPropertyList(list: JSArray[JSDictionary[js.Object]]): js.Object = js.native
-    def changeDefaults(defaultsName: String, newDefaults: js.Object): void = js.native
+abstract trait AbstractClassCompanion extends JSObject {
+    def addClassProperties(arguments: JSDictionary[JSObject]): JSObject = js.native
+    def addMethods(arguments: JSDictionary[JSObject]): JSObject = js.native
+    def addProperties(arguments: JSDictionary[JSObject]): JSObject = js.native
+    def addPropertyList(list: JSArray[JSDictionary[JSObject]]): JSObject = js.native
+    def changeDefaults(defaultsName: String, newDefaults: JSObject): void = js.native
     def clearLogPriority(category: String): void = js.native
-    def delayCall(methodName: String, arrayArgs: JSArray[Any] = js.native, time: Int = js.native, target: js.Object = js.native): String = js.native
+    def delayCall(methodName: String, arrayArgs: JSArray[Any] = js.native, time: Int = js.native, target: JSObject = js.native): String = js.native
     def echo(obj: JSAny): String = js.native
     def echoAll(obj: JSAny): String = js.native
     def echoLeaf(obj: JSAny): String = js.native
-    def evaluate(expression: String, evalArgs: JSDictionary[js.Object]): js.Object = js.native
-    def fireCallback(callback: Callback, argNames: String = js.native, args: JSArray[js.Object] = js.native, target: js.Object = js.native): JSAny = js.native
-    def getCallTrace(args: js.Object = js.native): void = js.native
+    def evaluate(expression: String, evalArgs: JSDictionary[JSObject]): JSObject = js.native
+    def fireCallback(callback: Callback, argNames: String = js.native, args: JSArray[JSObject] = js.native, target: JSObject = js.native): JSAny = js.native
+    def getCallTrace(args: JSObject = js.native): void = js.native
     def getClassName(): String = js.native
     def getDefaultLogPriority(): LogPriority = js.native
     def getInstanceProperty(property: String): void = js.native
@@ -98,7 +98,7 @@ abstract trait AbstractClassCompanion extends js.Object {
     def setDefaultLogPriority(category: String, priority: LogPriority): void = js.native
     def setInstanceProperty(property: String, value: JSAny): void = js.native
     def setLogPriority(category: String, priority: LogPriority): void = js.native
-    def setProperties(arguments: JSDictionary[js.Object]): void = js.native
+    def setProperties(arguments: JSDictionary[JSObject]): void = js.native
     def Super(methodName: String, args: JSArrayAny, nativeArgs: JSArrayAny = js.native): JSAny = js.native
 }
 

@@ -6,10 +6,10 @@ import com.simplesys.System.JSDictionary
 import scala.scalajs.js
 
 @js.native
-object ClassFactory extends js.Object {
+object ClassFactory extends JSObject {
     type ClassFactory = ClassFactory.type
     def defineClass(className: String, superClass: Class = js.native): Class = js.native
     def GetClass(): Class = js.native
-    def newInstance(className: String, props: JSDictionary[js.Object] = js.native, props2: JSDictionary[js.Object] = js.native, props3: JSDictionary[js.Object] = js.native): Class = js.native
+    def newInstance(className: String, props: JSDictionary[JSObject] = js.native, props2: JSDictionary[JSObject] = js.native, props3: JSDictionary[JSObject] = js.native): Class = js.native
     def overwriteClass(): void = js.native
 }

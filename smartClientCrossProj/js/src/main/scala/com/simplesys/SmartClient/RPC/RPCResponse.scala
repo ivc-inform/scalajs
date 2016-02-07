@@ -8,9 +8,9 @@ import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait RPCResponse extends Class {
-    val clientContext: js.Object
-    val data: js.Object
-    val httpHeaders: js.Object
+    val clientContext: JSObject
+    val data: JSObject
+    val httpHeaders: JSObject
     val httpResponseCode: Int
     val httpResponseText: String
     val status: Int

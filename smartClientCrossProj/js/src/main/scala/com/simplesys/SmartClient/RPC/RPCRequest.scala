@@ -17,20 +17,20 @@ trait RPCRequest extends Class {
     var bypassCache: Boolean
     var callback: js.Function3[RPCResponse,JSDictionaryAny, RPCRequest, void]
     var callbackParam: String
-    var clientContext: js.Object
+    var clientContext: JSObject
     var containsCredentials: Boolean
     var contentType: String
-    var data:js.Object| JSArray[js.Object]
+    var data:JSObject| JSArray[JSObject]
     var downloadResult: Boolean
     var downloadToNewWindow: Boolean
     var evalResult: Boolean
-    var evalVars: js.Object
-    var httpHeaders: js.Object
+    var evalVars: JSObject
+    var httpHeaders: JSObject
     var httpMethod: String
     val httpProxyURL: String
     var ignoreTimeout: Boolean
     var omitNullMapValuesInResponse: Boolean
-    var params: js.Object
+    var params: JSObject
     var prompt: String
     var promptCursor: String
     var promptDelay: Int

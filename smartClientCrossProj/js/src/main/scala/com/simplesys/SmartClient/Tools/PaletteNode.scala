@@ -1,18 +1,18 @@
 package com.simplesys.SmartClient.Tools
 
 import com.simplesys.System.Types.{SCClassName, SCImgURL}
-import com.simplesys.System.JSDictionaryAny
+import com.simplesys.System.{JSObject, JSDictionaryAny}
 
 import scala.scalajs.js
 
 @js.native
-trait PaletteNode extends js.Object {
+trait PaletteNode extends JSObject {
     val defaults: JSDictionaryAny
     val editNodeProperties: EditNode
     val editProxyProperties: EditProxy
     val icon: SCImgURL
     val idPrefix: String
-    val liveObject: js.Object
+    val liveObject: JSObject
     val title: String
     val `type`: SCClassName
 }

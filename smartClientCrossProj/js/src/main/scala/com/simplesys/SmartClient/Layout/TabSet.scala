@@ -11,7 +11,7 @@ import com.simplesys.System.Types.Overflow.Overflow
 import com.simplesys.System.Types.Side.Side
 import com.simplesys.System.Types.TabTitleEditEvent.TabTitleEditEvent
 import com.simplesys.System.Types._
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -47,12 +47,12 @@ trait TabSet extends Canvas {
     def disableTab(tab: Tab | Int | ID): void
     def editTabTitle(tab: Tab | Int | ID): void
     def enableTab(tab: Tab | Int | ID): void
-    var getPaneContainerEdges: js.Function1[void, JSArray[js.Object]]
+    var getPaneContainerEdges: js.Function1[void, JSArray[JSObject]]
     def getSelectedTab(): Tab
     def getSelectedTabNumber(): Int
     def getTab(tab: Int | ID): Tab
     def getTabNumber(tab: Int | ID): Int
-    def getTabObject(tab: Int | ID): js.Object
+    def getTabObject(tab: Int | ID): JSObject
     def getTabPane(tab: Int | ID): Canvas
     var leftEdgeOffsets: EdgeSizes
     var leftEdgeSizes: EdgeSizes
@@ -95,7 +95,7 @@ trait TabSet extends Canvas {
     def setPaneContainerOverflow(newOverflow: Overflow): void
     def setTabIcon(tab: Tab | ID | Int, icon: SCImgURL): void
     def setTabPane(tab: Tab | ID | Int, pane: Canvas): void
-    def setTabProperties(tab: Tab | ID | Int, properties: js.Object): void
+    def setTabProperties(tab: Tab | ID | Int, properties: JSObject): void
     var showMoreTab: Boolean
     var showPaneContainerEdges: Boolean
     var showPartialEdges: Boolean
@@ -108,7 +108,7 @@ trait TabSet extends Canvas {
     var symmetricScroller: Boolean
     val tabBar: TabBar with AutoChild
     var tabBarAlign: Alignment | Side
-    var tabBarControls: JSArray[js.Object]
+    var tabBarControls: JSArray[JSObject]
     var tabBarPosition: Side
     var tabBarProperties: TabBar
     var tabBarThickness: Int

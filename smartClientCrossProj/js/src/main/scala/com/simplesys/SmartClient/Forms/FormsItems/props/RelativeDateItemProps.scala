@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.FormsItems.{BlurbItem, SpinnerItem, TimeItem}
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.RelativeDateRangePosition.RelativeDateRangePosition
 import com.simplesys.option.{ScNone, ScOption}
 
@@ -25,7 +26,7 @@ class RelativeDateItemProps extends CanvasItemProps {
     var monthsFromNowTitle: ScOption[String] = ScNone
     var pickerIcon: ScOption[FormItemIcon ] = ScNone
     var pickerTimeItemProperties: ScOption[TimeItem] = ScNone
-    var presetOptions: ScOption[js.Object] = ScNone
+    var presetOptions: ScOption[JSObject] = ScNone
     var quantityField: ScOption[SpinnerItem ] = ScNone
     var quartersAgoTitle: ScOption[String] = ScNone
     var quartersFromNowTitle: ScOption[String] = ScNone

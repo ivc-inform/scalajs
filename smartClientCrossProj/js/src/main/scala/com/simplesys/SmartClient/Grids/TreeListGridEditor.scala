@@ -9,7 +9,7 @@ import com.simplesys.SmartClient.Layout.HLayoutSS
 import com.simplesys.System.Types.SelectionStyle.SelectionStyle
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSAny, JSArray}
+import com.simplesys.System.{JSObject, JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -66,7 +66,7 @@ trait TreeListGridEditor extends HLayoutSS {
     def getListSelectedState(): ListGridSelectedState
     var drawAheadRatioTree: Double
     def startListEditingNew
-    def startListEditingNew(newValues: js.Object | ListGridRecord = js.native, suppressFocus: Boolean = js.native): void
+    def startListEditingNew(newValues: JSObject | ListGridRecord = js.native, suppressFocus: Boolean = js.native): void
     def setFuncMenu(menu: MenuSS): void
     def getFuncMenu(): MenuSS
     var showResizeBarList: Boolean

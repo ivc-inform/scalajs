@@ -24,7 +24,7 @@ import com.simplesys.System.Types.ProportionalResizeMode.ProportionalResizeMode
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types.Visibility.Visibility
 import com.simplesys.System.Types._
-import com.simplesys.System.JSArrayAny
+import com.simplesys.System.{JSObject, JSArrayAny}
 import com.simplesys.option._
 import org.scalajs.dom.raw.HTMLElement
 
@@ -126,7 +126,7 @@ class CanvasProps extends ClassProps {
     var dynamicContentsVars: ScOption[ValueMap] = ScNone
     var edgeBackgroundColor: ScOption[Color] = ScNone
     var edgeCenterBackgroundColor: ScOption[Color] = ScNone
-    var edgeCursorMap: ScOption[js.Object] = ScNone
+    var edgeCursorMap: ScOption[JSObject] = ScNone
     var edgeImage: ScOption[SCImgURL] = ScNone
     var edgeMarginSize: ScOption[Int] = ScNone
     var edgeOffset: ScOption[Int] = ScNone

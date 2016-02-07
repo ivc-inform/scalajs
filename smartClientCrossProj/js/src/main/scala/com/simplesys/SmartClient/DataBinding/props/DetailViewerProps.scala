@@ -12,7 +12,7 @@ import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
 import com.simplesys.System.Types.Record
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.ValidationMode.ValidationMode
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
@@ -47,10 +47,10 @@ class DetailViewerProps extends CanvasProps {
     var exportToClient: ScOption[Boolean] = ScNone
     var exportToFilesystem: ScOption[Boolean] = ScNone
     var exportValueFields: ScOption[Boolean] = ScNone
-    var fieldValueExpressions: ScOption[js.Object] = ScNone
+    var fieldValueExpressions: ScOption[JSObject] = ScNone
     var generateRelatedUpdates: ScOption[Boolean] = ScNone
     var groupBy: ScOption[JSArray[String]] = ScNone
-    var headerData: ScOption[js.Object] = ScNone
+    var headerData: ScOption[JSObject] = ScNone
     var keepParentsOnFilter: ScOption[Boolean] = ScNone
     var lineBreakStyle: ScOption[String] = ScNone
     var oldValues: ScOption[Record] = ScNone
@@ -67,7 +67,7 @@ class DetailViewerProps extends CanvasProps {
     var sortBy: ScOption[Seq[SortSpecifier]] = ScNone
     var startRow: ScOption[Int] = ScNone
     var streamResults: ScOption[Boolean] = ScNone
-    var summaryFunctions: ScOption[js.Object] = ScNone
+    var summaryFunctions: ScOption[JSObject] = ScNone
     var textMatchStyle: ScOption[TextMatchStyle] = ScNone
     var useFlatFields: ScOption[Boolean] = ScNone
     var useFlatHeaderFields: ScOption[Boolean] = ScNone

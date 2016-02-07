@@ -8,8 +8,8 @@ import scala.scalajs.js
 
 class ResponseCommon[D <: JSAny] extends ClassProps {
     val data: ScOption[D] = ScNone
-    var clientContext: ScOption[js.Object] = ScNone
-    var httpHeaders: ScOption[js.Object] = ScNone
+    var clientContext: ScOption[JSObject] = ScNone
+    var httpHeaders: ScOption[JSObject] = ScNone
     var httpResponseCode: ScOption[Int] = ScNone
     var httpResponseText: ScOption[String] = ScNone
     var status: ScOption[Int] = ScNone

@@ -197,7 +197,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     var childExpansionMode: ExpansionMode
     var clearAllSortingText: String
     def clearCriteria(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    def clearEditValue(editValuesID: String | js.Object, colNum: Int | String): void
+    def clearEditValue(editValuesID: String | JSObject, colNum: Int | String): void
     def clearFieldError(rowNum: Int, fieldName: Int | String): void
     var clearFilterText: String
     def clearRowErrors(rowNum: Int): void
@@ -366,16 +366,16 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def getDropIndex(recordNum: Int = js.native, reorderPosition: ReorderPosition = js.native): Int
     def getEditCol(): Int
     def getEditedCell(record: R, field: Int | String): JSAny
-    def getEditedRecord(valuesID: Int | js.Object): js.Object
-    def getEditField(): js.Object
+    def getEditedRecord(valuesID: Int | JSObject): JSObject
+    def getEditField(): JSObject
     def getEditFormItem(field: String | Int): FormItem
-    var getEditorProperties: js.Function3[T, R, Int, js.Object]
-    def getEditorType(field: T, values: js.Object): String
-    def getEditorValueIcons(field: T, values: js.Object): js.Object
-    def getEditorValueMap(field: T, values: js.Object): ValueMap
+    var getEditorProperties: js.Function3[T, R, Int, JSObject]
+    def getEditorType(field: T, values: JSObject): String
+    def getEditorValueIcons(field: T, values: JSObject): JSObject
+    def getEditorValueMap(field: T, values: JSObject): ValueMap
     def getEditRow(): Int
     def getEditValue(rowNum: Int, colNum: Int): JSAny
-    def getEditValues(valuesID: js.Object | Int): js.Object
+    def getEditValues(valuesID: JSObject | Int): JSObject
     def getEventColumn(x: Int): Int
     def getEventRow(y: Int): Int
     def getExpandedRecords(): JSArray[R]
@@ -401,13 +401,13 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def getGridSummaryFunction(field: T): SummaryFunction
     def getGroupByFields(): JSArray[String]
     def getGroupByText(field: T): HTMLString
-    def getGroupNodeHTML(node: js.Object): void
+    def getGroupNodeHTML(node: JSObject): void
     def getGroupState(): ListGridGroupState
     def getGroupSummaryData(records: JSArray[R], groupNode: R): JSArray[R]
     def getGroupTreeSelection(excludePartialSelection: Boolean = js.native, groupNodesOnly: Boolean = js.native): JSArray[R]
     def getHeaderContextMenuItems(fieldNum: Int): JSArray[MenuItem]
     def getHeaderSpanContextMenuItems(headerSpan: HeaderSpan): JSArray[MenuItem]
-    def getOriginalData(): js.Object
+    def getOriginalData(): JSObject
     def getRecord(recordNum: Int): R
     def getRecordComponent(rowNum: Int, colNum: Int = js.native): Canvas
     def getRecordDropPosition(): RecordDropPosition
@@ -417,7 +417,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def getRequiredFieldMessage(field: T, record: R): String
     def getRollOverCanvas(rowNum: Int, colNum: Int): Canvas
     def getRollUnderCanvas(rowNum: Int, colNum: Int): Canvas
-    def getRowErrors(rowNum: Int): js.Object
+    def getRowErrors(rowNum: Int): JSObject
     var getRowHeight: js.Function2[Int, Int, Int]
     def getRowNum(record: R): Int
     def getRowPageTop(rowNum: Int): Int
@@ -556,7 +556,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     var nullGroupTitle: String
     var offlineMessageStyle: CSSStyleName
     def openGroup(record: R): Boolean
-    var originalData: js.Object
+    var originalData: JSObject
     var originBaseStyle: CSSStyleName
     var parseEditorValue: js.Function4[JSAny, R, Int, Int, JSAny]
     var poolComponentsPerColumn: Boolean
@@ -622,8 +622,8 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     var rowClick: js.Function4[R, Int, Int, Boolean, Boolean]
     var rowContextClick: js.Function3[R, Int, Int, Boolean]
     var rowDoubleClick: js.Function4[R, Int, Int, Boolean, Boolean]
-    var rowEditorEnter: js.Function3[R, js.Object, Int, void]
-    var rowEditorExit: js.Function4[EditCompletionEvent, R, js.Object, Int, Boolean]
+    var rowEditorEnter: js.Function3[R, JSObject, Int, void]
+    var rowEditorExit: js.Function4[EditCompletionEvent, R, JSObject, Int, Boolean]
     var rowEndEditAction: RowEndEditAction
     def rowHasChanges(rowNum: Int): Boolean
     def rowHasErrors(rowNum: Int): Boolean
@@ -687,9 +687,9 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def setData(newData: JSArray[R]): void
     def setDataSource(dataSource: DataSource, fields: JSArray[T]): void
     def setDontAutoDestroyComponent(component: Canvas, dontAutoDestroy: Boolean): void
-    def setEditorValueMap(fieldID: js.Object | Int | String, map: js.Object): void
+    def setEditorValueMap(fieldID: JSObject | Int | String, map: JSObject): void
     def setEditValue(rowNum: Int, colNum: Int, value: JSAny): void
-    def setEditValues(rowNum: Int, values: js.Object): void
+    def setEditValues(rowNum: Int, values: JSObject): void
     def setFastCellUpdates(fastCellUpdates: Boolean): void
     def setFieldButtonProperties(name: String, properties: Canvas): void
     def setFieldCellIcon(fieldName: String, cellIcon: SCImgURL): void
@@ -731,7 +731,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def setUserFormulaText(field: T | String, text: String = js.native): void
     def setUserSummary(field: T | String, userSummary: UserSummary = js.native): void
     def setUserSummaryText(field: T | String, text: String = js.native): void
-    def setValueMap(fieldID: String | Int, map: js.Object): void
+    def setValueMap(fieldID: String | Int, map: JSObject): void
     def setViewState(viewState: ListGridViewState): void
     var showAllColumns: Boolean
     var showAllRecords: Boolean
@@ -785,7 +785,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     var sorterClick: js.ThisFunction0[callbackHandler, Boolean]
     val sorterConstructor: Class
     var sorterContextClick: js.ThisFunction0[callbackHandler, Boolean]
-    val sorterDefaults: js.Object
+    val sorterDefaults: JSObject
     val sorterProperties: Button
     val sortField: String
     var sortFieldAscendingText: String
@@ -795,7 +795,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     var sortState: ListGridSortState
     val spanContextMenu: Layout with AutoChild
     def startEditing(rowNum: Int = js.native, colNum: Int = js.native, suppressFocus: Boolean = js.native): Boolean
-    def startEditingNew(newValues: js.Object | R = js.native, suppressFocus: Boolean = js.native): void
+    def startEditingNew(newValues: JSObject | R = js.native, suppressFocus: Boolean = js.native): void
     var stopHover: js.ThisFunction0[callbackHandler, void]
     var stopOnErrors: Boolean
     val summaryRow: Grid[T, R] with AutoChild
@@ -850,7 +850,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def unSetSelectionChanged(func: js.Function2[R, Boolean, _]): void
     def unSetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
     def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor, pkFieldNames: JSArray[MasterDetailMapping] |MasterDetailMapping = js.native): void
-    def selectRecordsByKey(keyValues: js.Object, newState: Boolean): R
+    def selectRecordsByKey(keyValues: JSObject, newState: Boolean): R
     var masterGrid: ListGrid
 }
 

@@ -10,7 +10,7 @@ import com.simplesys.SmartClient.Layout.VStack
 import com.simplesys.System.Types.AutoChild
 import com.simplesys.System.Types.ImportFormat.ImportFormat
 import com.simplesys.System.Types.PartialCommitOption.PartialCommitOption
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 
@@ -34,7 +34,7 @@ trait BatchUploader extends VStack {
     val partialCommitConfirmationMessage: String
     val partialCommitError: String
     val partialCommitPrompt: String
-    var requestProperties: js.Object
+    var requestProperties: JSObject
     val showCommitConfirmation: Boolean
     val uploadButton: IButton with AutoChild
     val uploadButtonTitle: String

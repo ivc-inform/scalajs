@@ -6,6 +6,7 @@ import com.simplesys.SmartClient.Foundation.{Canvas, Img}
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.Grids.props.GridProps
 import com.simplesys.SmartClient.Layout.NavigationBar
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
 import com.simplesys.System.Types.{CSSStyleName, HTMLString, SCClassName}
 import com.simplesys.option.{ScNone, ScOption}
@@ -28,7 +29,7 @@ class MenuProps extends GridProps[ListGridField, MenuItem] {
     var iconFillSpaceStyleName: ScOption[CSSStyleName] = ScNone
     var iconHeight: ScOption[Int] = ScNone
     var iconWidth: ScOption[Int] = ScNone
-    var itemClick: ScOption[js.Function2[js.Object, Int, Boolean]] = ScNone
+    var itemClick: ScOption[js.Function2[JSObject, Int, Boolean]] = ScNone
     var items: ScOption[Seq[MenuItemProps]] = ScNone
     var keyFieldDefaults: ScOption[ListGridField] = ScNone
     var keyFieldProperties: ScOption[ListGridField] = ScNone

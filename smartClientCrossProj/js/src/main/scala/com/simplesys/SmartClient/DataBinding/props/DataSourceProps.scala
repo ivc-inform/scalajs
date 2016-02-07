@@ -16,7 +16,7 @@ import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
 import com.simplesys.System.Types.SequenceMode.SequenceMode
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.System.JSAny
+import com.simplesys.System.{JSObject, JSAny}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
@@ -77,7 +77,7 @@ class DataSourceProps extends ClassProps {
     var fileNameField: ScOption[String] = ScNone
     var fileTypeField: ScOption[String] = ScNone
     var fileVersionField: ScOption[String] = ScNone
-    var globalNamespaces: ScOption[js.Object] = ScNone
+    var globalNamespaces: ScOption[JSObject] = ScNone
     var guestUserId: ScOption[String] = ScNone
     var handleError: ScOption[js.Function2[DSResponse, DSRequest, Boolean]] = ScNone
     var iconField: ScOption[String] = ScNone
@@ -120,8 +120,8 @@ class DataSourceProps extends ClassProps {
     var requiresAuthentication: ScOption[Boolean] = ScNone
     var requiresRole: ScOption[String] = ScNone
     var resultBatchSize: ScOption[Int] = ScNone
-    var resultSetClass: ScOption[js.Object] = ScNone
-    var resultTreeClass: ScOption[js.Object] = ScNone
+    var resultSetClass: ScOption[JSObject] = ScNone
+    var resultTreeClass: ScOption[JSObject] = ScNone
     var schema: ScOption[String] = ScNone
     var schemaBean: ScOption[String] = ScNone
     var schemaNamespace: ScOption[URN] = ScNone
@@ -161,6 +161,6 @@ class DataSourceProps extends ClassProps {
     var useSubselectForRowCount: ScOption[Boolean] = ScNone
     var useTestDataFetch: ScOption[Boolean] = ScNone
     var validateRelatedRecords: ScOption[Boolean] = ScNone
-    var xmlNamespaces: ScOption[js.Object] = ScNone
+    var xmlNamespaces: ScOption[JSObject] = ScNone
     var wildRecord: ScOption[Seq[WildRecordColumnProps]] = ScNone
 }

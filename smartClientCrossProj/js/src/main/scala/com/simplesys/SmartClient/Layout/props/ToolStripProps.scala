@@ -11,8 +11,8 @@ class ToolStripProps extends LayoutProps {
     var externalStylesheet: ScOption[String] = ScNone
     var formWrapper: ScOption[DynamicForm] = ScNone
     var formWrapperConstructor: ScOption[String] = ScNone
-    var formWrapperDefaults: ScOption[js.Object] = ScNone
-    var formWrapperProperties: ScOption[js.Object] = ScNone
+    var formWrapperDefaults: ScOption[JSObject] = ScNone
+    var formWrapperProperties: ScOption[JSObject] = ScNone
     var groupTitleAlign: ScOption[Alignment] = ScNone
     var groupTitleOrientation: ScOption[VerticalAlignment] = ScNone
     var separatorClass: ScOption[String] = ScNone

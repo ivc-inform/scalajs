@@ -13,18 +13,18 @@ import scala.scalajs.js.|
 trait Toolbar extends Layout {
     def addButtons(buttons: JSArray[Button] = js.native, position: Int = js.native): void
     var buttonConstructor: Class
-    var buttonDefaults: js.Object
+    var buttonDefaults: JSObject
     var buttons: JSArray[Button]
     var canReorderItems: Boolean
     var canResizeItems: Boolean
-    def deselectButton(buttonID: Int | String | js.Object | Canvas): void
+    def deselectButton(buttonID: Int | String | JSObject | Canvas): void
     def getButton(index: Int): Button
-    def getButtonNumber(button: Int | String | Button | js.Object): Int
+    def getButtonNumber(button: Int | String | Button | JSObject): Int
     var itemClick: js.ThisFunction2[callbackHandler, Button, Int, void]
     var itemDoubleClick: js.ThisFunction2[callbackHandler, Button, Int, void]
     var itemDragResized: js.ThisFunction2[callbackHandler, Int, Int, void]
     def removeButtons(buttons: JSArray[Button] = js.native): void
-    def selectButton(buttonID: Int | String | js.Object | Canvas): void
+    def selectButton(buttonID: Int | String | JSObject | Canvas): void
     def setButtons(buttons: JSArray[Button] = js.native): void
     def setCanResizeItems(canResizeItems: Boolean): void
 }

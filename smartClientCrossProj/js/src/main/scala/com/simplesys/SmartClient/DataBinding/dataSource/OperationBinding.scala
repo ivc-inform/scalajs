@@ -10,12 +10,12 @@ import com.simplesys.System.Types.RPCTransport.RPCTransport
 import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
 import com.simplesys.System.Types.SQLType.SQLType
 import com.simplesys.System.Types.{XPathExpression, VelocityExpression, URL}
-import com.simplesys.System.JSArray
+import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 
 @js.native
-trait OperationBinding extends js.Object {
+trait OperationBinding extends JSObject {
     val allowAdvancedCriteria: Boolean
     val allowMultiUpdate: Boolean
     val autoJoinTransactions: Boolean
@@ -34,7 +34,7 @@ trait OperationBinding extends js.Object {
     val dataProtocol: DSProtocol
     val dataTransport: RPCTransport
     val dataURL: URL
-    val defaultParams: js.Object
+    val defaultParams: JSObject
     val excludeCriteriaFields: JSArray[String]
     val exportAs: ExportFormat
     val exportFields: JSArray[String]
@@ -74,7 +74,7 @@ trait OperationBinding extends js.Object {
     val sqlPaging: SQLPagingStrategy
     val sqlType: SQLType
     val sqlUsePagingHint: Boolean
-    val summaryFunctions: js.Object
+    val summaryFunctions: JSObject
     val tableClause: String
     val transformMultipleFields: Boolean
     val useFlatFields: Boolean
@@ -86,6 +86,6 @@ trait OperationBinding extends js.Object {
     val valuesClause: String
     val whereClause: String
     val wsOperation: String
-    val xmlNamespaces: js.Object
+    val xmlNamespaces: JSObject
 }
 

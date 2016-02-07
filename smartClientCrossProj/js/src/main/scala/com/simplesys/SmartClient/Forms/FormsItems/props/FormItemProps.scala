@@ -31,7 +31,7 @@ class FormItemProps extends ClassProps {
     var applyAlignToText: ScOption[Boolean] = ScNone
     var applyHeightToTextBox: ScOption[Boolean] = ScNone
     var ariaRole: ScOption[String] = ScNone
-    var ariaState: ScOption[js.Object] = ScNone
+    var ariaState: ScOption[JSObject] = ScNone
     var autoComplete: ScOption[AutoComplete] = ScNone
     var blur: ScOption[js.Function2[DynamicForm, FormItem, _]] = ScNone
     var browserSpellCheck: ScOption[Boolean] = ScNone
@@ -55,7 +55,7 @@ class FormItemProps extends ClassProps {
     var dateFormatter: ScOption[DateDisplayFormat] = ScNone
     var decimalPad: ScOption[Int] = ScNone
     var decimalPrecision: ScOption[Int] = ScNone
-    var defaultDynamicValue: ScOption[js.Function3[FormItem, DynamicForm, js.Object, _]] = ScNone
+    var defaultDynamicValue: ScOption[js.Function3[FormItem, DynamicForm, JSObject, _]] = ScNone
     var defaultIconSrc: ScOption[SCImgURL] = ScNone
     var defaultValue: ScOption[JSAny] = ScNone
     var disabled: ScOption[Boolean] = ScNone
@@ -166,7 +166,7 @@ class FormItemProps extends ClassProps {
     var showFocusedPickerIcon: ScOption[Boolean] = ScNone
     var showHint: ScOption[Boolean] = ScNone
     var showIcons: ScOption[Boolean] = ScNone
-    var showIf: ScOption[js.Function4[FormItem, JSAny, DynamicForm, js.Object, Boolean]] = ScNone
+    var showIf: ScOption[js.Function4[FormItem, JSAny, DynamicForm, JSObject, Boolean]] = ScNone
     var showOldValueInHover: ScOption[Boolean] = ScNone
     var showOverIcons: ScOption[Boolean] = ScNone
     var showPending: ScOption[Boolean] = ScNone
