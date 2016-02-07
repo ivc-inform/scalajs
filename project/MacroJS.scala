@@ -8,7 +8,7 @@ trait MacroJSProject {
   self: Build with CommonTypesProj =>
   lazy val macroJS = Project("macrojs", file("macrojs")).settings(
     name := "macrojs",
-    version := "1.0-SNAPSHOT",
+    version := "1.1-SNAPSHOT",
     libraryDependencies <++= (scalaVersion)(v => Seq(("org.scala-lang" % "scala-compiler" % v), ("org.scala-lang" % "scala-reflect" % v)))
     ).dependsOn(commonTypesJS).enablePlugins(ScalaJSPlugin)
 }
