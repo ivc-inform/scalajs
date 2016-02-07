@@ -7,7 +7,7 @@ import com.simplesys.System.Types.CharacterCasing.CharacterCasing
 import com.simplesys.System.Types.CharacterCasing._
 import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
 import com.simplesys.System.Types._
-import com.simplesys.Types1.{JSArray, JSAny}
+import com.simplesys.System.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

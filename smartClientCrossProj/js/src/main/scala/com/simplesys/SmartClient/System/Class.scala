@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.System.Types.LogPriority.LogPriority
 import com.simplesys.System.Types.{Callback, ID, void}
-import com.simplesys.Types1._
+import com.simplesys.System._
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName

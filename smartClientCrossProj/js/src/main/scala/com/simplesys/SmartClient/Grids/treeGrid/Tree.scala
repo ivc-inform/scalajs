@@ -6,7 +6,7 @@ import com.simplesys.System.Types.LoadState.LoadState
 import com.simplesys.System.Types.TreeFilterMode.TreeFilterMode
 import com.simplesys.System.Types.TreeModelType.TreeModelType
 import com.simplesys.System.Types.{Callback, Criteria, void}
-import com.simplesys.Types1.{JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.{ThisFunction0, |}

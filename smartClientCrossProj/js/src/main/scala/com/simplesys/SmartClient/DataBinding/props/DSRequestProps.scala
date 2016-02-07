@@ -13,7 +13,7 @@ import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
 import com.simplesys.System.Types.Record
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.ValidationMode.ValidationMode
-import com.simplesys.Types1.{JSArray, JSDictionaryAny}
+import com.simplesys.System.{JSArray, JSDictionaryAny}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

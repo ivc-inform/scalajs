@@ -1,7 +1,7 @@
 package com.simplesys
 
+import com.simplesys.System.JSAny
 import com.simplesys.option.{ScOption, ScSome}
-import com.simplesys.Types1.JSAny
 
 import scala.scalajs.js
 

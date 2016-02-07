@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Forms.{DynamicForm, ValuesManager}
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.OperatorId.OperatorId
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

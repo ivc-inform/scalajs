@@ -8,7 +8,7 @@ import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
 import com.simplesys.System.Types.MultipleAppearance.MultipleAppearance
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
 import com.simplesys.System.Types.{AutoChild, HTMLString, SCClassName}
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

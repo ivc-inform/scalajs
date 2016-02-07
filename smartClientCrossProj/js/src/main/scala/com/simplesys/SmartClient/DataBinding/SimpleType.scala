@@ -11,7 +11,7 @@ import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class}
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types._
-import com.simplesys.Types1.{JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName

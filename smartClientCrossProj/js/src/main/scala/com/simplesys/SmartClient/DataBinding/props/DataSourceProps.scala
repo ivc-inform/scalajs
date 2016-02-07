@@ -16,7 +16,7 @@ import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
 import com.simplesys.System.Types.SequenceMode.SequenceMode
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.Types1.JSAny
+import com.simplesys.System.JSAny
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

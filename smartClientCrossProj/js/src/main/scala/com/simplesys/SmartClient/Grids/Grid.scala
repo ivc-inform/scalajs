@@ -54,7 +54,7 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.Types1._
+import com.simplesys.System._
 
 import scala.scalajs.js
 import scala.scalajs.js.|

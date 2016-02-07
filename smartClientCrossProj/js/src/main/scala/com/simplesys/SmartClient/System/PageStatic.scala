@@ -4,7 +4,7 @@ import com.simplesys.System.Types.FireStyle._
 import com.simplesys.System.Types.PageEvent.PageEvent
 import com.simplesys.System.Types.PageOrientation._
 import com.simplesys.System.Types._
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 

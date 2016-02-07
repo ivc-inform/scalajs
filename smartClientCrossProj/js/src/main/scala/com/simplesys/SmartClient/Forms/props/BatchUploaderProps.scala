@@ -10,7 +10,7 @@ import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.props.VStackProps
 import com.simplesys.System.Types.ImportFormat.ImportFormat
 import com.simplesys.System.Types.PartialCommitOption.PartialCommitOption
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

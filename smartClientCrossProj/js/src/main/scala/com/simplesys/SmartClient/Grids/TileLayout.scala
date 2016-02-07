@@ -6,7 +6,7 @@ import com.simplesys.System.Types.DragDataAction.DragDataAction
 import com.simplesys.System.Types.Orientation.Orientation
 import com.simplesys.System.Types.TileLayoutPolicy.TileLayoutPolicy
 import com.simplesys.System.Types.{AutoChild, Record, void}
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

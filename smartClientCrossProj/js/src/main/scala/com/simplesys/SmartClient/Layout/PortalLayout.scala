@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Layout.portalLayout.PortalPosition
 import com.simplesys.SmartClient.Layout.portalLayout.Portlet
 import com.simplesys.System.Types.{void, MultiAutoChild}
 import com.simplesys.System.Types.Overflow.Overflow
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

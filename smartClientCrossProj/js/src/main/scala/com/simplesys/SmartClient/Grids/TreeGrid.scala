@@ -8,7 +8,7 @@ import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeGridField, TreeNode}
 import com.simplesys.System.Types.DisplayNodeType.DisplayNodeType
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
 import com.simplesys.System.Types._
-import com.simplesys.Types1.{JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

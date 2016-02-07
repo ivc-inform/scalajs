@@ -9,7 +9,7 @@ import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeNode}
 import com.simplesys.SmartClient.Layout.{AbstractLayoutCompanion, Layout}
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.Types1.{JSArray, JSDictionaryAny}
+import com.simplesys.System.{JSArray, JSDictionaryAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

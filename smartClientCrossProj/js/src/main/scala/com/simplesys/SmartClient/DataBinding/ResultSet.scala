@@ -5,7 +5,7 @@ import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
 import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.{Record, Criteria, void}
-import com.simplesys.Types1.{JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSArray}
 
 import scala.scalajs.js
 

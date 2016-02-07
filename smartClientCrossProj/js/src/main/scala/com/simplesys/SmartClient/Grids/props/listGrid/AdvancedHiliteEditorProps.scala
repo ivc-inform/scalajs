@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Forms.{DynamicForm, FilterBuilder}
 import com.simplesys.SmartClient.Foundation.StatefulCanvas
 import com.simplesys.SmartClient.Layout.props.VStackProps
 import com.simplesys.System.Types.{Callback, SCImgURL}
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 import com.simplesys.option.{ScNone, ScOption}
 
 class AdvancedHiliteEditorProps extends VStackProps {

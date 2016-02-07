@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.System.Types.{Callback, void}
-import com.simplesys.Types1.JSAny
+import com.simplesys.System.JSAny
 
 import scala.scalajs.js
 

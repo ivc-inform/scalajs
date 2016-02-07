@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.DataBinding.props
 
 import com.simplesys.SmartClient.RPC.props.ResponseCommon
 import com.simplesys.System.Types.DSOperationType._
-import com.simplesys.Types1.JSDictionaryAny
+import com.simplesys.System.JSDictionaryAny
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js.Object

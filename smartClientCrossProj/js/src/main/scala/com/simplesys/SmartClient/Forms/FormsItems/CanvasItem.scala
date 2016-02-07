@@ -7,7 +7,7 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.System.Types.Overflow.Overflow
 import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
 import com.simplesys.System.Types.void
-import com.simplesys.Types1.JSAny
+import com.simplesys.System.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName

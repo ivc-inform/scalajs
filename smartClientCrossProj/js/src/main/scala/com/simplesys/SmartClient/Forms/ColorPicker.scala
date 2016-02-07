@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Layout.Window
 import com.simplesys.SmartClient.System.Class
 import com.simplesys.System.Types.ColorPickerMode.ColorPickerMode
 import com.simplesys.System.Types.{void, _}
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 

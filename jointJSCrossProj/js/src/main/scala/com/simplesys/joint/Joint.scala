@@ -7,8 +7,8 @@ package com.simplesys {
 
         package dia {
 
+            import com.simplesys.System.{JSAny, JSArray, JSDictionaryAny}
             import com.simplesys.backbone.Model
-            import com.simplesys.Types1.{JSArray, JSDictionaryAny, JSAny}
 
             @js.native
             trait IElementSize extends js.Object {
@@ -130,7 +130,7 @@ package com.simplesys {
 
             package basic {
 
-                import com.simplesys.Types1.JSAny
+                import com.simplesys.System.JSAny
 
                 @js.native
                 @JSName("joint.shapes.basic.Generic")
@@ -164,8 +164,7 @@ package com.simplesys {
         }
 
         package util {
-
-            import com.simplesys.Types1.{JSAny, JSArrayAny}
+            import com.simplesys.System._
 
             @js.native
             @JSName("joint.util")

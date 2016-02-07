@@ -5,7 +5,7 @@ import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
 import com.simplesys.System.Types.TreeFilterMode.TreeFilterMode
 import com.simplesys.System.Types.{Criteria, TreeGridOpenState, void}
-import com.simplesys.Types1.{JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSArray}
 
 import scala.scalajs.js
 

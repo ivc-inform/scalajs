@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.Validator
 import com.simplesys.System.Types.Record
-import com.simplesys.Types1.JSAny
+import com.simplesys.System.JSAny
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 

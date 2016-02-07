@@ -9,7 +9,7 @@ import com.simplesys.SmartClient.Layout.props.LayoutProps
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.{MultiAutoChild, SCImgURL}
 import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.Types1.{JSArray, JSDictionaryAny, JSDictionary, JSAny}
+import com.simplesys.System.{JSArray, JSDictionaryAny, JSDictionary, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._

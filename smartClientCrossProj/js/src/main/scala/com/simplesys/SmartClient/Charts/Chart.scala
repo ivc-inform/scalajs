@@ -5,7 +5,7 @@ import com.simplesys.System.Types
 
 import com.simplesys.System.Types.CellRecord
 import com.simplesys.System.Types.ChartType.ChartType
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

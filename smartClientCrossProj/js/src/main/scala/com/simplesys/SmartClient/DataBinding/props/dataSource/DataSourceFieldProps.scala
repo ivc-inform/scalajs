@@ -12,7 +12,7 @@ import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types._
-import com.simplesys.Types1.JSAny
+import com.simplesys.System.JSAny
 import com.simplesys.option.{IntString, ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 

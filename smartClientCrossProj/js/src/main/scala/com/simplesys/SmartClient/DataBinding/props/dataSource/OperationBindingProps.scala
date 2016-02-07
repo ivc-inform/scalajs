@@ -11,7 +11,7 @@ import com.simplesys.System.Types.RPCTransport.RPCTransport
 import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
 import com.simplesys.System.Types.SQLType.SQLType
 import com.simplesys.System.Types.{XPathExpression, VelocityExpression, URL}
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 

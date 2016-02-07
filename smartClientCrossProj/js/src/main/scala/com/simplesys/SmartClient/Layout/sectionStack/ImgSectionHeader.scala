@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Layout.sectionStack
 import com.simplesys.SmartClient.Foundation.{Canvas, StretchImg}
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, SectionStack}
 import com.simplesys.System.Types.{void, _}
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 

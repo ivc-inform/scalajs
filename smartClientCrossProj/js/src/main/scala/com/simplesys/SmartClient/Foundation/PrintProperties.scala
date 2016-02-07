@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Foundation
 
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 

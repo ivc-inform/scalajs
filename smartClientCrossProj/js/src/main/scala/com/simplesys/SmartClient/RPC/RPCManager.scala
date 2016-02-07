@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class}
 import com.simplesys.System.Types.PromptStyle.PromptStyle
 import com.simplesys.System.Types.RPCTransport.RPCTransport
 import com.simplesys.System.Types.{Callback, HTMLString, URL, void}
-import com.simplesys.Types1.{JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName

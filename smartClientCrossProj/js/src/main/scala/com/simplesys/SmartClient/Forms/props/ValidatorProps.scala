@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.DataBinding.AdvancedCriteria
 import com.simplesys.SmartClient.RPC.ServerObject
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.ValidatorType._
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

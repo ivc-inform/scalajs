@@ -10,7 +10,7 @@ import com.simplesys.System.Types.DragAppearance.DragAppearance
 import com.simplesys.System.Types.SelectionType.SelectionType
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.Types1.{JSArray, JSDictionaryAny}
+import com.simplesys.System.{JSArray, JSDictionaryAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

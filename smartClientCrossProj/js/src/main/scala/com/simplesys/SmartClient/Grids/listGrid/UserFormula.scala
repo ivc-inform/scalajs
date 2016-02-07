@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Grids.listGrid
 
-import com.simplesys.Types1.JSDictionaryAny
+import com.simplesys.System.JSDictionaryAny
 
 import scala.scalajs.js
 

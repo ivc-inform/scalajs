@@ -10,7 +10,7 @@ import com.simplesys.SmartClient.Layout.VStack
 import com.simplesys.System.Types.AutoChild
 import com.simplesys.System.Types.ImportFormat.ImportFormat
 import com.simplesys.System.Types.PartialCommitOption.PartialCommitOption
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 

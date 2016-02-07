@@ -4,7 +4,7 @@ import com.simplesys.common.Strings._
 import com.simplesys.log.Logging
 import com.simplesys.option._
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.Types1.{JSDictionaryAny, JSAny}
+import com.simplesys.System.{JSDictionaryAny, JSAny}
 
 import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context
@@ -148,7 +148,7 @@ object PropsToDictionary extends Logging {
                 import com.simplesys.option._
                 import scala.scalajs.js
                 import scala.scalajs.js.JSConverters._
-                import com.simplesys.Types1.{JSAny, JSDictionaryAny}
+                import com.simplesys.System.{JSAny, JSDictionaryAny}
 
                 new PropsToDictionary[$tpeAbstractPropsClass] {
 

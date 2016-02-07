@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.System.Types.Record
-import com.simplesys.Types1.JSArrayAny
+import com.simplesys.System.JSArrayAny
 
 import scala.scalajs.js
 

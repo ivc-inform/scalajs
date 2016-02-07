@@ -19,7 +19,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.Types1.{JSAny, JSArray, JSDictionary}
+import com.simplesys.System.{JSAny, JSArray, JSDictionary}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

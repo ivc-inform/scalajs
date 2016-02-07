@@ -18,7 +18,7 @@ import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppea
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.Types1._
+import com.simplesys.System._
 import com.simplesys.option.{FormItemType_String, IntString, ScNone, ScOption}
 
 import scala.scalajs.js

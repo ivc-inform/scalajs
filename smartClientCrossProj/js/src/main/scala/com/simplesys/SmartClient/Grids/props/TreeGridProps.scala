@@ -10,7 +10,7 @@ import com.simplesys.System.Types.DisplayNodeType.DisplayNodeType
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
 import com.simplesys.System.Types.{void, SCImgURL}
 import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.Types1.{JSArray, JSAny}
+import com.simplesys.System.{JSArray, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._

@@ -8,7 +8,7 @@ import com.simplesys.SmartClient.RPC.ServerObject
 import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class}
 import com.simplesys.System.Types.ValidatorType.ValidatorType
 import com.simplesys.System.Types.void
-import com.simplesys.Types1.{JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|

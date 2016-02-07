@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Foundation.richTextEditor.ListPropertiesDialog
 import com.simplesys.SmartClient.Layout.{Layout, VLayout}
 import com.simplesys.System.Types.ControlName.ControlName
 import com.simplesys.System.Types.{AutoChild, MultiAutoChild, void}
-import com.simplesys.Types1.{JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSArray}
 
 import scala.scalajs.js
 

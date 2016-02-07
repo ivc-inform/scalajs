@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.Layout.props.WindowProps
 import com.simplesys.System.Types.ColorPickerMode.ColorPickerMode
 import com.simplesys.System.Types.{CSSStyleName, void, SCImgURL, HTMLString}
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js._

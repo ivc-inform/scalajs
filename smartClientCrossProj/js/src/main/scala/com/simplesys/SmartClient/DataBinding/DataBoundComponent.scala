@@ -5,6 +5,7 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.{Hilite, HiliteEditor, ListGridField}
 import com.simplesys.SmartClient.Layout.Window
 import com.simplesys.SmartClient.System.Class
+import com.simplesys.System
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.DragDataAction.DragDataAction
 import com.simplesys.System.Types.FetchMode.FetchMode
@@ -13,8 +14,7 @@ import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
 import com.simplesys.System.Types.RecategorizeMode.RecategorizeMode
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.Types1
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|

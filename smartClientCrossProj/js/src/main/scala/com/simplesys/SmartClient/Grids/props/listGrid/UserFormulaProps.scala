@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Grids.props.listGrid
 
 import com.simplesys.option.{ScOption, ScNone}
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.Types1.{JSDictionaryAny, JSDictionary, JSAny}
+import com.simplesys.System.{JSDictionaryAny, JSDictionary, JSAny}
 
 import scala.scalajs.js
 import scala.scalajs.js._

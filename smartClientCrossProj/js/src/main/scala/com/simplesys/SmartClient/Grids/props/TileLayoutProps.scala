@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.System.Types.Orientation.Orientation
 import com.simplesys.System.Types.Record
 import com.simplesys.System.Types.TileLayoutPolicy.TileLayoutPolicy
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

@@ -48,7 +48,7 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.Types1.{JSAny, JSArray, JSArrayAny}
+import com.simplesys.System.{JSAny, JSArray, JSArrayAny}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

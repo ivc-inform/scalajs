@@ -7,7 +7,7 @@ import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.Layout.{NavigationBar, TabSet}
 import com.simplesys.System.Types.PanelPlacement._
 import com.simplesys.System.Types._
-import com.simplesys.Types1._
+import com.simplesys.System._
 
 import scala.scalajs.js
 import scala.scalajs.js.|

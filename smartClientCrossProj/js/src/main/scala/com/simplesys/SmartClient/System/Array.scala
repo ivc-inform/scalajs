@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.System
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.System.Types.LogPriority._
 import com.simplesys.System.Types.void
-import com.simplesys.Types1._
+import com.simplesys.System._
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName

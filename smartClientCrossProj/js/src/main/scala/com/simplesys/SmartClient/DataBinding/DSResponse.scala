@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.DataBinding
 import com.simplesys.SmartClient.RPC.{AbstractRPCResponseCompanion, RPCResponse}
 import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.Record
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 

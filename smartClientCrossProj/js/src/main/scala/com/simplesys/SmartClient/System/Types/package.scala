@@ -1,6 +1,5 @@
 package com.simplesys.System
 
-import com.simplesys.Types1.{JSDictionary, JSDictionaryAny, JSAny, JSArrayAny}
 import com.simplesys.xml.Elem
 
 import scala.scalajs.js

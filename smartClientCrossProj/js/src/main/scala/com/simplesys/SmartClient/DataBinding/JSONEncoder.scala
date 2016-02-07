@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.System.{Date, AbstractClassCompanion, Class}
 import com.simplesys.System.Types.JSONCircularReferenceMode.JSONCircularReferenceMode
 import com.simplesys.System.Types.JSONDateFormat.JSONDateFormat
 import com.simplesys.System.Types.JSONInstanceSerializationMode.JSONInstanceSerializationMode
-import com.simplesys.Types1.JSAny
+import com.simplesys.System.JSAny
 
 import scala.scalajs.js
 import scala.scalajs.js.|

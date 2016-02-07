@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 import com.simplesys.SmartClient.Forms.FormsItems.radioGroupItem.RadioItem
 import com.simplesys.System.Types.SCClassName
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 
 import scala.scalajs.js._
 

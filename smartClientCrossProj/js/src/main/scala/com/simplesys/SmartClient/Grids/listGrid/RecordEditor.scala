@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Grids.listGrid
 import com.simplesys.SmartClient.Control.Button
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.System.Types.{void, _}
-import com.simplesys.Types1.{JSDictionaryAny, JSAny}
+import com.simplesys.System.{JSDictionaryAny, JSAny}
 
 import scala.scalajs.js
 

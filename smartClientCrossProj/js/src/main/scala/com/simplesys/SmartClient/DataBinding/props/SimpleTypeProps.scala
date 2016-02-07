@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.Forms.Validator
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.{ValueMap, FormatString, ID}
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 import com.simplesys.option.{ScNone, ScOption}
 
 class SimpleTypeProps extends ClassProps {

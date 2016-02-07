@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Foundation
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.System.Types.State.State
 import com.simplesys.System.Types.{CSSStyleName, HTMLString, void}
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 import org.scalajs.dom
 
 import scala.scalajs.js

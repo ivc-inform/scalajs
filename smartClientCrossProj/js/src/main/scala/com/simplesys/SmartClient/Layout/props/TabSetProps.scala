@@ -14,7 +14,7 @@ import com.simplesys.System.Types.Overflow.Overflow
 import com.simplesys.System.Types.Side.Side
 import com.simplesys.System.Types.TabTitleEditEvent.TabTitleEditEvent
 import com.simplesys.System.Types._
-import com.simplesys.Types1.JSArray
+import com.simplesys.System.JSArray
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
