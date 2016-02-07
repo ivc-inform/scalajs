@@ -1,5 +1,6 @@
 package com.simplesys.build
 
+import org.scalajs.sbtplugin.ScalaJSPlugin
 import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport._
 import sbt.Keys._
 import sbt._
@@ -27,7 +28,7 @@ trait CommonTypesProj {
           }).
       jsSettings(
           //jsDependencies += "org.example" %% "js-thing" % "0.1" / "foo.js"
-      )
+      ).enablePlugins(ScalaJSPlugin)
 
     // Needed, so sbt finds the projects
     lazy val commonTypesJVM = commonTypesCrossProj.jvm
