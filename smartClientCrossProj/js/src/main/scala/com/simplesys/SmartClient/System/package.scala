@@ -24,6 +24,7 @@ import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
 import com.simplesys.SmartClient.System.props.TreeProps
 
 //import com.simplesys.macros.PropsToDictionary
+import com.simplesys.macros.PropsToDictionary
 
 package object System {
 
