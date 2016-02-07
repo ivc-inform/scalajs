@@ -652,6 +652,7 @@ trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBou
     def scrollToRow(rowNum: Int, yPosition: VerticalAlignment = js.native): void
     var scrollWheelRedrawDelay: Int
     def selectAllRecords(visibleNodesOnly: Boolean = js.native): void
+    def selectFirstRecord():void
     var selectedState: ListGridSelectedState
     var selectHeaderOnSort: Boolean
     val selection: Selection
