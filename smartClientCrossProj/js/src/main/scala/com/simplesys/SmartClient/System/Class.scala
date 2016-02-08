@@ -17,7 +17,7 @@ trait Class extends JSObject {
     def addPropertyList(list: JSArray[JSDictionary[JSObject]]): JSObject
     def clearLogPriority(category: String): void
     def createAutoChild(childName: String, defaults: JSDictionary[JSObject]): this.type
-    def destroy(): void
+    var destroy: js.ThisFunction0[classHandler, _]
     def delayCall(methodName: String, arrayArgs: JSArray[Any] = js.native, time: Int = js.native): String
     def echo(obj: JSAny): String
     def echoAll(obj: JSAny): String
@@ -53,7 +53,7 @@ trait Class extends JSObject {
     def setLogPriority(category: String, priority: LogPriority): void
     def setProperties(arguments: JSDictionary[JSObject]): void
     def setProperty(propertyName: String, newValue: JSAny): void
-    def Super(methodName: String, args: JSArrayAny, nativeArgs: JSArrayAny = js.native): JSAny
+    def Super(methodName: String, args: JSArrayAny = js.native, nativeArgs: JSArrayAny = js.native): JSAny
 }
 
 @js.native
