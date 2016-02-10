@@ -41,7 +41,7 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     var autoSaveEdits: Boolean
     var selectionType: SelectionStyle
     var canEdit: Boolean
-    var showRollOve: Boolean
+    var showRollOver: Boolean
     var autoFetchData: Boolean
     var showRowNumbers: Boolean
     var autoSaveConfig: Boolean
