@@ -49,7 +49,7 @@ object PropsToDictionary extends Logging {
                     def getTree4DoubleType(symb: Symbol, tp1: Tree, tp2: Tree): Option[Tree] = {
                         typeDef.baseType(symb) match {
                             case TypeRef(_, _, targs) =>
-                                val access = q"ei"
+                                val access = q"item"
                                 val checkedTypes = targs.map(t => typeToConvertedValueInt(t, access))
                                 val type1 = checkedTypes.head.getOrElse(valueAccess)
                                 val type2 = checkedTypes.last.getOrElse(valueAccess)
@@ -83,7 +83,7 @@ object PropsToDictionary extends Logging {
                                                     getTree4DoubleType(typeOf[IntString[_, _]].typeSymbol, q"IntFRomIntString", q"StringFRomIntString") match {
                                                         case None => getTree4DoubleType(typeOf[DoubleAlignment[_, _]].typeSymbol, q"AlignmentfromDoubleAlignment", q"VerticalAlignmentfromDoubleAlignment") match {
                                                             case None => getTree4DoubleType(typeOf[FormItemType_String[_, _]].typeSymbol, q"FormItemTypefromFormItemType_String", q"StringfromFormItemType_String") match {
-                                                                case None => getTree4DoubleType(typeOf[Function0CanvasClick_String[_, _]].typeSymbol, q"Function0CanvasClickfromFunction0CanvasClick_String", q"StringfromFunction0CanvasClick_String")
+                                                                case None => getTree4DoubleType(typeOf[Function1_String[_, _]].typeSymbol, q"Function1CanvasClickfromFunction1_String", q"StringfromFunction1_String")
                                                                 case some => some
                                                             }
                                                             case some => some
@@ -163,7 +163,7 @@ object PropsToDictionary extends Logging {
                     }
                 }"""
         }
-        logger debug showCode(res.tree)
+        //logger debug showCode(res.tree)
         res
     }
 }

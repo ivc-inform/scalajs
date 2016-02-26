@@ -49,15 +49,15 @@ object FormItemType_String {
 }
 //</editor-fold>
 
-//<editor-fold desc="Function1CanvasClick_String">
-sealed abstract class Function0CanvasClick_String[+A, +B]
+//<editor-fold desc="Function_String">
+sealed abstract class Function1_String[+A, +B]
 
-case class Function0CanvasClickfromFunction0CanvasClick_String(a: js.ThisFunction0[_, _]) extends Function0CanvasClick_String[js.ThisFunction0[_, _], String]
-case class StringfromFunction0CanvasClick_String(a: String) extends Function0CanvasClick_String[js.ThisFunction0[_, _], String]
+case class Function1CanvasClickfromFunction1_String(a: js.ThisFunction1[_,String, _]) extends Function1_String[js.ThisFunction1[_,String, _], String]
+case class StringfromFunction1_String(a: String) extends Function1_String[js.ThisFunction1[_, String, _], String]
 
-object Function0CanvasClick_String {
-    implicit def Function1CanvasClick2Function1CanvasClick_String(x: js.ThisFunction0[_, _]) = ScSome(Function0CanvasClickfromFunction0CanvasClick_String(x))
-    implicit def String2Function1CanvasClick_String(x: String) = ScSome(StringfromFunction0CanvasClick_String(x))
+object Function1_String {
+    implicit def Function1CanvasClick2Function1CanvasClick_String(x: js.ThisFunction1[_, String, _]) = ScSome(Function1CanvasClickfromFunction1_String(x))
+    implicit def String2Function1CanvasClick_String(x: String) = ScSome(StringfromFunction1_String(x))
 }
 //</editor-fold>
 
