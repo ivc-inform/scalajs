@@ -18,7 +18,7 @@ package com.simplesys {
 
             @js.native
             @JSName("joint.dia.Graph")
-            class Graph extends backbone.Model {
+            class Graph extends Model {
                 def addCell(cell: Cell): Unit = js.native
                 def addCells(cells: JSArray[Cell]): Unit = js.native
                 def initialize(): Unit = js.native
@@ -33,7 +33,7 @@ package com.simplesys {
 
             @js.native
             @JSName("joint.dia.Cell")
-            class Cell extends backbone.Model {
+            class Cell extends Model {
                 def toJSON(): JSObject = js.native
                 def remove(options: JSAny = js.native): Unit = js.native
                 def toFront(): Unit = js.native
@@ -84,7 +84,7 @@ package com.simplesys {
 
             @js.native
             @JSName("joint.dia.Paper")
-            class Paper extends backbone.View[backbone.Model] {
+            class Paper extends backbone.View[Model] {
                 var options: JSDictionaryAny = js.native
                 def setDimensions(width: Double, height: Double): Unit = js.native
                 def scale(sx: Double, sy: Double = js.native, ox: Double = js.native, oy: Double = js.native): Paper = js.native
