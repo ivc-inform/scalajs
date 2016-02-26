@@ -82,7 +82,10 @@ object PropsToDictionary extends Logging {
                                                 case None =>
                                                     getTree4DoubleType(typeOf[IntString[_, _]].typeSymbol, q"IntFRomIntString", q"StringFRomIntString") match {
                                                         case None => getTree4DoubleType(typeOf[DoubleAlignment[_, _]].typeSymbol, q"AlignmentfromDoubleAlignment", q"VerticalAlignmentfromDoubleAlignment") match {
-                                                            case None => getTree4DoubleType(typeOf[FormItemType_String[_, _]].typeSymbol, q"FormItemTypefromFormItemType_String", q"StringfromFormItemType_String")
+                                                            case None => getTree4DoubleType(typeOf[FormItemType_String[_, _]].typeSymbol, q"FormItemTypefromFormItemType_String", q"StringfromFormItemType_String") match {
+                                                                case None => getTree4DoubleType(typeOf[Function1CanvasClick_String[_, _]].typeSymbol, q"Function1CanvasClickfromFunction1CanvasClick_String", q"StringfromFunction1CanvasClick_String")
+                                                                case some => some
+                                                            }
                                                             case some => some
                                                         }
                                                         case some => some
