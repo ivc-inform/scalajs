@@ -292,13 +292,13 @@ package com.simplesys {
 
         @js.native
         trait ViewOptions[TModel <: Model] extends JSObject {
-            var model: TModel = js.native
-            var collection: backbone.Collection[TModel] = js.native
-            var el: JSAny = js.native
-            var id: String = js.native
-            var className: String = js.native
-            var tagName: String = js.native
-            var attributes: JSAny = js.native
+            var model: TModel
+            var collection: Collection[TModel]
+            var el: JSAny
+            var id: String
+            var className: String
+            var tagName: String
+            var attributes: JSAny
         }
 
         @js.native
