@@ -8,7 +8,7 @@ package com.simplesys {
         package dia {
 
             import com.simplesys.System.{JSObject, JSAny, JSArray, JSDictionaryAny}
-            import com.simplesys.backbone.Model
+            import com.simplesys.backbone.{View, Model}
 
             @js.native
             trait IElementSize extends JSObject {
@@ -42,7 +42,7 @@ package com.simplesys {
                 def unembed(cell: Cell): Unit = js.native
                 def getEmbeddedCells(): JSArray[Cell] = js.native
                 @JSName("clone")
-                def cloneJS(opt: JSAny = js.native): backbone.Model /*Cell?*/ = js.native
+                def cloneJS(opt: JSAny = js.native): Model /*Cell?*/ = js.native
                 def attr(attrs: JSAny): Cell = js.native
             }
 
@@ -83,8 +83,13 @@ package com.simplesys {
             }
 
             @js.native
+            class PaperOption extends JSObject {
+
+            }
+
+            @js.native
             @JSName("joint.dia.Paper")
-            class Paper extends backbone.View[Model] {
+            class Paper extends View[Model] {
                 var options: JSDictionaryAny = js.native
                 def setDimensions(width: Double, height: Double): Unit = js.native
                 def scale(sx: Double, sy: Double = js.native, ox: Double = js.native, oy: Double = js.native): Paper = js.native
@@ -104,7 +109,7 @@ package com.simplesys {
 
             @js.native
             @JSName("joint.dia.CellView")
-            class CellView extends backbone.View[Cell] {
+            class CellView extends View[Cell] {
                 def getBBox(): JSAny = js.native
                 def highlight(el: JSAny = js.native): Unit = js.native
                 def unhighlight(el: JSAny = js.native): Unit = js.native
