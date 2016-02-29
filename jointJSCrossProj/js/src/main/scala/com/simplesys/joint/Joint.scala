@@ -7,7 +7,7 @@ package com.simplesys {
 
         package dia {
 
-            import com.simplesys.System.{JSAny, JSArray, JSObject}
+            import com.simplesys.System.{JSDictionaryAny, JSAny, JSArray, JSObject}
             import com.simplesys.backbone.{Model, View}
             import com.simplesys.option.{ScNone, ScOption}
 
@@ -73,47 +73,9 @@ package com.simplesys {
             }
 
             @js.native
-            trait PaperOptions extends JSObject {
-                var width: Double
-                var height: Double
-                var gridSize: Double
-                val perpendicularLinks: Boolean
-                val elementView: ElementView
-                val linkView: LinkView
-                var model: Model
-                var defaultLink: Link
-                var defaultRouter: Link
-                var defaultConnector: Link
-                var interactive: Boolean
-            }
-
-            object PaperOptions {
-                def apply(width: ScOption[Double] = ScNone,
-                          height: ScOption[Double] = ScNone,
-                          gridSize: ScOption[Double] = ScNone,
-                          perpendicularLinks: ScOption[Boolean] = ScNone,
-                          elementView: ScOption[ElementView] = ScNone,
-                          linkView: ScOption[LinkView] = ScNone,
-                          model: ScOption[Model] = ScNone): PaperOptions = {
-
-                    val res = js.Dynamic.literal
-
-                    width.foreach(item => res(width = item))
-                    height.foreach(item => res(height = item))
-                    gridSize.foreach(item => res(gridSize = item))
-                    perpendicularLinks.foreach(item => res(perpendicularLinks = item))
-                    elementView.foreach(item => res(elementView = item))
-                    linkView.foreach(item => res(linkViewView = item))
-                    model.foreach(item => res(model = item))
-
-                    res.asInstanceOf[PaperOptions]
-                }
-            }
-
-            @js.native
             @JSName("joint.dia.Paper")
             class Paper extends View[Model] {
-                var options: PaperOptions = js.native
+                var options: JSDictionaryAny = js.native
                 def setDimensions(width: Double, height: Double): Unit = js.native
                 def scale(sx: Double, sy: Double = js.native, ox: Double = js.native, oy: Double = js.native): Paper = js.native
                 def rotate(deg: Double, ox: Double = js.native, oy: Double = js.native): Paper = js.native
