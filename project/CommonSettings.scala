@@ -22,8 +22,8 @@ object CommonSettings {
         val uTestVersion = "0.3.1"
         val scalaTestVersion = "3.0.0-M15"
         val ssysCoreVersion = "1.2-SNAPSHOT"
-        val scalajsDOMVersion = "0.8.1"
-        val scalajsJQueryVersion = "0.8.1"
+        val scalajsDOMVersion = "0.9.0"
+        val scalajsJQueryVersion = "0.9.0"
     }
 
     object cmnDependencies {

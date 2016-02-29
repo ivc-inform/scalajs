@@ -323,7 +323,7 @@ package com.simplesys {
             var tagName: String = js.native
             var el: JSAny = js.native
             @JSName("$el")
-            var `$el`: JQuery = js.native
+            var $el: JQuery = js.native
             def setElement(element: JSAny): View[TModel] = js.native
             var attributes: JSAny = js.native
             def render(): View[TModel] = js.native
