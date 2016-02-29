@@ -116,11 +116,11 @@ package com.simplesys {
             //        private static extend(properties: any, classProperties?: any): any;
 
 
-            def this(attributes: JSAny = js.native, options: JSAny = js.native) = this()
-            var attributes: JSAny = js.native
+            def this(attributes: JSDictionaryAny = js.native, options: JSDictionaryAny = js.native) = this()
+            var attributes: JSDictionaryAny = js.native
             var changed: JSArrayAny = js.native
             var cid: String = js.native
-            var collection: backbone.Collection[_ <: Model /*JSAny*/ ] = js.native
+            var collection: Collection[_ <: Model /*JSAny*/ ] = js.native
             def defaults(): js.Dynamic = js.native
             var id: JSAny = js.native
             var idAttribute: String = js.native
