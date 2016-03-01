@@ -12,7 +12,8 @@ object MyBuild extends Build with
   CommonTypesProj with
   CommonDomainsProj with
   JointJSProj with
-  BackboneJSProj {
+  BackboneJSProj with
+  UnderscoreJSProj {
 
     override def settings: Seq[Def.Setting[_]] = super.settings ++ Seq(
         scalaVersion := CommonSettings.scalaVersion,
@@ -57,7 +58,9 @@ object MyBuild extends Build with
       jointJSCrossJVM,
       jointJSCrossJS,
       backboneJSCrossJVM,
-      backboneJSCrossJS)
+      backboneJSCrossJS,
+      underscoreJSCrossJS,
+      underscoreJSCrossJVM)
 
 }
 
