@@ -305,7 +305,7 @@ package com.simplesys {
 
         @js.native
         @JSName ("Backbone.LocalStorage")
-        class LocalStorage[TModel <: Model] extends JSObject {
+        class LocalStorage[TModel <: Model](name:String) extends JSObject {
           def save():Unit = js.native
           def create(model:TModel): TModel = js.native
           def update(model:TModel): TModel = js.native
