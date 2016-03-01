@@ -282,7 +282,7 @@ package com.simplesys {
         class View[TModel <: Model] protected() extends Events {
 
             def this(options: ViewOptions[TModel] = js.native) = this()
-            def initialize(options: ViewOptions[TModel] = js.native): Unit = js.native
+            def initialize(): Unit = js.native
             def events(): JSDynamic = js.native
             def `$`(selector: String): JQuery = js.native
             var model: TModel = js.native
