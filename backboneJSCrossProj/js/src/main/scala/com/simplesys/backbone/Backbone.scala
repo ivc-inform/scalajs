@@ -109,12 +109,6 @@ package com.simplesys {
         @js.native
         @JSName("Backbone.Model")
         class Model protected() extends ModelBase {
-            //https://books.google.com/books?id=3JOHCAAAQBAJ&lpg=PT274&ots=eMqG4wHhYz&dq=private%20static%20extend%20typescript&pg=PT273#v=onepage&q=private%20static%20extend%20typescript&f=false
-            //          /**
-            //        * Do not use, prefer TypeScript's extend functionality.
-            //        **/
-            //        private static extend(properties: any, classProperties?: any): any;
-
 
             def this(attributes: JSDictionaryAny = js.native, options: JSDictionaryAny = js.native) = this()
             var attributes: JSDictionaryAny = js.native
@@ -149,8 +143,6 @@ package com.simplesys {
             def unset(attribute: String, options: Silenceable = js.native): Model = js.native
             def validate(attributes: JSAny, options: JSAny = js.native): js.Dynamic = js.native
 
-            //        private _validate(attrs: any, options: any): boolean;
-
             def keys(): JSArray[String] = js.native
             def values(): JSArrayAny = js.native
             def pairs(): JSArrayAny = js.native
@@ -162,10 +154,7 @@ package com.simplesys {
         @js.native
         @JSName("Backbone.Collection")
         class Collection[TModel <: Model] protected() extends ModelBase {
-            //        /**
-            //        * Do not use, prefer TypeScript's extend functionality.
-            //        **/
-            //        private static extend(properties: any, classProperties?: any): any;
+
             def this(models: JSArray[TModel] = js.native, options: JSAny = js.native) = this()
             var models: JSArray[TModel] = js.native
             var length: Double = js.native
@@ -192,10 +181,6 @@ package com.simplesys {
             def unshift(model: TModel, options: AddOptions = js.native): TModel = js.native
             def where(properies: JSAny): JSArray[TModel] = js.native
             def findWhere(properties: JSAny): TModel = js.native
-
-            //        private _prepareModel(attrs?: any, options?: any): any;
-            //        private _removeReference(model: TModel): void;
-            //        private _onModelEvent(event: string, model: TModel, collection: Collection<TModel>, options: any): void;
 
             def all(iterator: js.Function2[TModel, Double, Boolean], context: JSAny = js.native): Boolean = js.native
             def any(iterator: js.Function2[TModel, Double, Boolean], context: JSAny = js.native): Boolean = js.native
@@ -253,10 +238,6 @@ package com.simplesys {
         @js.native
         @JSName("Backbone.Router")
         class Router protected() extends Events {
-            //        /**
-            //        * Do not use, prefer TypeScript's extend functionality.
-            //        **/
-            //        private static extend(properties: any, classProperties?: any): any;
 
             def this(options: RouterOptions = js.native) = this()
             var routes: JSAny = js.native
@@ -265,10 +246,6 @@ package com.simplesys {
             def navigate(fragment: String, options: NavigateOptions = js.native): Router = js.native
             @JSName("navigate")
             def navigateTrigger(fragment: String, trigger: Boolean = js.native): Router = js.native
-
-            //        private _bindRoutes(): void;
-            //        private _routeToRegExp(route: string): RegExp;
-            //        private _extractParameters(route: RegExp, fragment: string): string[];
         }
 
         @js.native
@@ -287,7 +264,6 @@ package com.simplesys {
             var started: Boolean = js.native
             var options: JSAny = js.native
 
-            //        private _updateHash(location: Location, fragment: string, replace: boolean): void;
         }
 
         @js.native
@@ -304,10 +280,6 @@ package com.simplesys {
         @js.native
         @JSName("Backbone.View")
         class View[TModel <: Model] protected() extends Events {
-            //        /**
-            //        * Do not use, prefer TypeScript's extend functionality.
-            //        **/
-            //        private static extend(properties: any, classProperties?: any): any;
 
             def this(options: ViewOptions[TModel] = js.native) = this()
             def initialize(options: ViewOptions[TModel] = js.native): Unit = js.native
