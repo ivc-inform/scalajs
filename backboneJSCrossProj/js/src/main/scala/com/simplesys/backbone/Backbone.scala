@@ -283,7 +283,6 @@ package com.simplesys {
             def this(options: ViewOptions[TModel] = js.native) = this()
             def initialize(options: ViewOptions[TModel] = js.native): Unit = js.native
             def events(): JSDynamic = js.native
-            @JSName("$")
             def `$`(selector: String): JQuery = js.native
             var model: TModel = js.native
             var collection: Collection[TModel] = js.native
@@ -293,8 +292,7 @@ package com.simplesys {
             var className: String = js.native
             var tagName: String = js.native
             var el: JSAny = js.native
-            @JSName("$el")
-            var $el: JQuery = js.native
+            var `$el`: JQuery = js.native
             def setElement(element: JSAny): View[TModel] = js.native
             var attributes: JSAny = js.native
             def render(): View[TModel] = js.native
