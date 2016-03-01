@@ -3,7 +3,7 @@ import scala.scalajs.js.annotation._
 
 package com.simplesys.underscore {
 
-    import com.simplesys.System.{JSFunction, JSAny, JSArray, JSObject}
+    import com.simplesys.System._
     import com.simplesys.underscore.__._
 
     package __ {
@@ -118,7 +118,7 @@ package com.simplesys.underscore {
         def contains[T](`object`: Dictionary[T], value: T): Boolean = js.native
         def include[T](list: Collection[T], value: T): Boolean = js.native
         def include[T](`object`: Dictionary[T], value: T): Boolean = js.native
-        def invoke[T <: AnyRef](list: List[T], methodName: String, arguments: JSAny*): js.Dynamic = js.native
+        def invoke[T <: AnyRef](list: List[T], methodName: String, arguments: JSAny*): JSDynamic = js.native
         def pluck[T <: AnyRef](list: List[T], propertyName: String): JSArray[JSAny] = js.native
         def max(list: List[Double]): Double = js.native
         def max[T](list: List[T], iterator: ListIterator[T, JSAny] = js.native, context: JSAny = js.native): T = js.native
@@ -173,11 +173,11 @@ package com.simplesys.underscore {
         def range(start: Double, stop: Double, step: Double = js.native): JSArray[Double] = js.native
         def range(stop: Double): JSArray[Double] = js.native
         def bind(func: JSFunction, context: JSAny, arguments: JSAny*): js.Function0[Any] = js.native
-        def bindAll(`object`: JSAny, methodNames: String*): js.Dynamic = js.native
+        def bindAll(`object`: JSAny, methodNames: String*): JSDynamic = js.native
         def partial(fn: JSFunction, arguments: JSAny*): JSFunction = js.native
         def memoize(fn: JSFunction, hashFn: JSFunction = js.native): JSFunction = js.native
-        def delay(func: JSFunction, wait: Double, arguments: JSAny*): js.Dynamic = js.native
-        def delay(func: JSFunction, arguments: JSAny*): js.Dynamic = js.native
+        def delay(func: JSFunction, wait: Double, arguments: JSAny*): JSDynamic = js.native
+        def delay(func: JSFunction, arguments: JSAny*): JSDynamic = js.native
         def defer(fn: JSFunction, arguments: JSAny*): Unit = js.native
         def throttle[T <: JSFunction](func: T, wait: Double, options: ThrottleSettings = js.native): T = js.native
         def debounce[T <: JSFunction](fn: T, wait: Double, immediate: Boolean = js.native): T = js.native
@@ -195,15 +195,15 @@ package com.simplesys.underscore {
         @JSName("mapObject")
         def mapObjectString(`object`: JSAny, iteratee: String, context: JSAny = js.native): Dictionary[JSAny] = js.native
         def pairs(`object`: JSAny): JSArray[JSArray[JSAny]] = js.native
-        def invert(`object`: JSAny): js.Dynamic = js.native
+        def invert(`object`: JSAny): JSDynamic = js.native
         def functions(`object`: JSAny): JSArray[String] = js.native
         def methods(`object`: JSAny): JSArray[String] = js.native
-        def extend(destination: JSAny, sources: JSAny*): js.Dynamic = js.native
-        def pick(`object`: JSAny, keys: JSAny*): js.Dynamic = js.native
-        def pick(`object`: JSAny, fn: js.Function3[JSAny, JSAny, JSAny, Any]): js.Dynamic = js.native
-        def omit(`object`: JSAny, keys: String*): js.Dynamic = js.native
-        def omit(`object`: JSAny, iteratee: JSFunction): js.Dynamic = js.native
-        def defaults(`object`: JSAny, defaults: JSAny*): js.Dynamic = js.native
+        def extend(destination: JSAny, sources: JSAny*): JSDynamic = js.native
+        def pick(`object`: JSAny, keys: JSAny*): JSDynamic = js.native
+        def pick(`object`: JSAny, fn: js.Function3[JSAny, JSAny, JSAny, Any]): JSDynamic = js.native
+        def omit(`object`: JSAny, keys: String*): JSDynamic = js.native
+        def omit(`object`: JSAny, iteratee: JSFunction): JSDynamic = js.native
+        def defaults(`object`: JSAny, defaults: JSAny*): JSDynamic = js.native
         @JSName("clone")
         def cloneJS[T](`object`: T): T = js.native
         def tap[T](`object`: T, intercepter: JSFunction): T = js.native
@@ -226,7 +226,7 @@ package com.simplesys.underscore {
         def isNaN(`object`: JSAny): Boolean = js.native
         def isNull(`object`: JSAny): Boolean = js.native
         def isUndefined(value: JSAny): Boolean = js.native
-        def noConflict(): js.Dynamic = js.native
+        def noConflict(): JSDynamic = js.native
         def identity[T](value: T): T = js.native
         def constant[T](value: T): js.Function0[T] = js.native
         def noop(): Unit = js.native
@@ -240,7 +240,7 @@ package com.simplesys.underscore {
         def uniqueId(): Double = js.native
         def escape(str: String): String = js.native
         def unescape(str: String): String = js.native
-        def result(`object`: JSAny, property: String): js.Dynamic = js.native
+        def result(`object`: JSAny, property: String): JSDynamic = js.native
         def template(templateString: String, settings: TemplateSettings = js.native): JSFunction = js.native
         var templateSettings: TemplateSettings = js.native
         def now(): Double = js.native
@@ -273,7 +273,7 @@ package com.simplesys.underscore {
         def some(iterator: ListIterator[T, Boolean] = js.native, context: JSAny = js.native): Boolean = js.native
         def contains(value: T): Boolean = js.native
         def include(value: T): Boolean = js.native
-        def invoke(methodName: String, arguments: JSAny*): js.Dynamic = js.native
+        def invoke(methodName: String, arguments: JSAny*): JSDynamic = js.native
         def pluck(propertyName: String): JSArray[JSAny] = js.native
         def max(): Double = js.native
         def max(iterator: ListIterator[T, Double], context: JSAny = js.native): T = js.native
@@ -316,8 +316,8 @@ package com.simplesys.underscore {
         @JSName("unique")
         def uniqueNonBoolean[TSort](iterator: ListIterator[T, TSort] = js.native, context: JSAny = js.native): JSArray[T] = js.native
         def zip(arrays: JSArray[JSAny]*): JSArray[JSArray[JSAny]] = js.native
-        def `object`(keyValuePairs: JSArray[JSAny]*): js.Dynamic = js.native
-        def `object`(values: JSAny = js.native): js.Dynamic = js.native
+        def `object`(keyValuePairs: JSArray[JSAny]*): JSDynamic = js.native
+        def `object`(values: JSAny = js.native): JSDynamic = js.native
         def indexOf(value: T, isSorted: Boolean = js.native): Double = js.native
         def indexOf(value: T, startFrom: Double): Double = js.native
         def lastIndexOf(value: T, from: Double = js.native): Double = js.native
@@ -325,12 +325,12 @@ package com.simplesys.underscore {
         def range(stop: Double, step: Double = js.native): JSArray[Double] = js.native
         def range(): JSArray[Double] = js.native
         def bind(`object`: JSAny, arguments: JSAny*): JSFunction = js.native
-        def bindAll(methodNames: String*): js.Dynamic = js.native
+        def bindAll(methodNames: String*): JSDynamic = js.native
         def partial(arguments: JSAny*): JSFunction = js.native
         def memoize(hashFn: js.Function1[JSAny, String] = js.native): JSFunction = js.native
         def defer(arguments: JSAny*): Unit = js.native
-        def delay(wait: Double, arguments: JSAny*): js.Dynamic = js.native
-        def delay(arguments: JSAny*): js.Dynamic = js.native
+        def delay(wait: Double, arguments: JSAny*): JSDynamic = js.native
+        def delay(arguments: JSAny*): JSDynamic = js.native
         def throttle(wait: Double, options: ThrottleSettings = js.native): JSFunction = js.native
         def debounce(wait: Double, immediate: Boolean = js.native): JSFunction = js.native
         def once(): JSFunction = js.native
@@ -342,18 +342,18 @@ package com.simplesys.underscore {
         def keys(): JSArray[String] = js.native
         def values(): JSArray[T] = js.native
         def pairs(): JSArray[JSArray[JSAny]] = js.native
-        def invert(): js.Dynamic = js.native
+        def invert(): JSDynamic = js.native
         def functions(): JSArray[String] = js.native
         def methods(): JSArray[String] = js.native
-        def extend(sources: JSAny*): js.Dynamic = js.native
-        def pick(keys: String*): js.Dynamic = js.native
-        def pick(fn: js.Function3[JSAny, JSAny, JSAny, Any]): js.Dynamic = js.native
-        def omit(keys: String*): js.Dynamic = js.native
-        def omit(fn: JSFunction): js.Dynamic = js.native
-        def defaults(defaults: JSAny*): js.Dynamic = js.native
+        def extend(sources: JSAny*): JSDynamic = js.native
+        def pick(keys: String*): JSDynamic = js.native
+        def pick(fn: js.Function3[JSAny, JSAny, JSAny, Any]): JSDynamic = js.native
+        def omit(keys: String*): JSDynamic = js.native
+        def omit(fn: JSFunction): JSDynamic = js.native
+        def defaults(defaults: JSAny*): JSDynamic = js.native
         @JSName("clone")
         def cloneJS(): T = js.native
-        def tap(interceptor: JSFunction): js.Dynamic = js.native
+        def tap(interceptor: JSFunction): JSDynamic = js.native
         def has(key: String): Boolean = js.native
         def matches[TResult](): ListIterator[T, TResult] = js.native
         def property(): js.Function1[Object, Any] = js.native
@@ -373,7 +373,7 @@ package com.simplesys.underscore {
         def isNaN(): Boolean = js.native
         def isNull(): Boolean = js.native
         def isUndefined(): Boolean = js.native
-        def identity(): js.Dynamic = js.native
+        def identity(): JSDynamic = js.native
         def constant(): js.Function0[T] = js.native
         def noop(): Unit = js.native
         def times[TResult](iterator: js.Function1[Double, TResult], context: JSAny = js.native): JSArray[TResult] = js.native
@@ -384,7 +384,7 @@ package com.simplesys.underscore {
         def uniqueId(): String = js.native
         def escape(): String = js.native
         def unescape(): String = js.native
-        def result(property: String): js.Dynamic = js.native
+        def result(property: String): JSDynamic = js.native
         def template(settings: TemplateSettings = js.native): JSFunction = js.native
         def chain(): _Chain[T] = js.native
         def value[TResult](): TResult = js.native
