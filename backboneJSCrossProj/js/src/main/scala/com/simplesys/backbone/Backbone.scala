@@ -110,44 +110,44 @@ package com.simplesys {
         @JSName("Backbone.Model")
         class Model protected() extends ModelBase {
             def this(attributes: JSAny = js.native, options: JSAny = js.native) = this()
-              var attributes: JSAny = js.native
-              var changed: JSArrayAny = js.native
-              var cid: String = js.native
-              var collection: backbone.Collection[_ <: Model/*JSAny*/] = js.native
-              def defaults(): JSDynamic = js.native
-              var id: JSAny = js.native
-              var idAttribute: String = js.native
-              var validationError: JSAny = js.native
-              var urlRoot: JSAny = js.native
-              def initialize(attributes: JSAny = js.native, options: JSAny = js.native): Unit = js.native
-              def fetch(options: ModelFetchOptions = js.native): JQueryXHR = js.native
-              def get(attributeName: String): JSDynamic = js.native
-              @JSName("set")
-              def setAttribute(attributeName: String, value: JSAny, options: ModelSetOptions = js.native): Model = js.native
-              def set(obj: JSAny, options: ModelSetOptions = js.native): Model = js.native
-              def change(): JSDynamic = js.native
-              def changedAttributes(attributes: JSAny = js.native): JSArrayAny = js.native
-              def clear(options: Silenceable = js.native): JSDynamic = js.native
-              @JSName("clone")
-              def cloneJS(): Model = js.native
-              def destroy(options: ModelDestroyOptions = js.native): JSDynamic = js.native
-              def escape(attribute: String): String = js.native
-              def has(attribute: String): Boolean = js.native
-              def hasChanged(attribute: String = js.native): Boolean = js.native
-              def isNew(): Boolean = js.native
-              def isValid(options: JSAny = js.native): Boolean = js.native
-              def previous(attribute: String): JSDynamic = js.native
-              def previousAttributes(): JSArrayAny = js.native
-              def save(attributes: JSAny = js.native, options: ModelSaveOptions = js.native): JSDynamic = js.native
-              def unset(attribute: String, options: Silenceable = js.native): Model = js.native
-              def validate(attributes: JSAny, options: JSAny = js.native): JSDynamic = js.native
-                         
-              def keys(): JSArray[String] = js.native
-              def values(): JSArrayAny = js.native
-              def pairs(): JSArrayAny = js.native
-              def invert(): JSDynamic = js.native
-              def pick(keys: JSArray[String]): JSDynamic = js.native
-              def omit(keys: JSArray[String]): JSDynamic = js.native
+            var attributes: JSAny = js.native
+            var changed: JSArrayAny = js.native
+            var cid: String = js.native
+            var collection: backbone.Collection[_ <: Model /*JSAny*/ ] = js.native
+            def defaults(): JSDynamic = js.native
+            var id: JSAny = js.native
+            var idAttribute: String = js.native
+            var validationError: JSAny = js.native
+            var urlRoot: JSAny = js.native
+            def initialize(attributes: JSAny = js.native, options: JSAny = js.native): Unit = js.native
+            def fetch(options: ModelFetchOptions = js.native): JQueryXHR = js.native
+            def get(attributeName: String): JSDynamic = js.native
+            @JSName("set")
+            def setAttribute(attributeName: String, value: JSAny, options: ModelSetOptions = js.native): Model = js.native
+            def set(obj: JSAny, options: ModelSetOptions = js.native): Model = js.native
+            def change(): JSDynamic = js.native
+            def changedAttributes(attributes: JSAny = js.native): JSArrayAny = js.native
+            def clear(options: Silenceable = js.native): JSDynamic = js.native
+            @JSName("clone")
+            def cloneJS(): Model = js.native
+            def destroy(options: ModelDestroyOptions = js.native): JSDynamic = js.native
+            def escape(attribute: String): String = js.native
+            def has(attribute: String): Boolean = js.native
+            def hasChanged(attribute: String = js.native): Boolean = js.native
+            def isNew(): Boolean = js.native
+            def isValid(options: JSAny = js.native): Boolean = js.native
+            def previous(attribute: String): JSDynamic = js.native
+            def previousAttributes(): JSArrayAny = js.native
+            def save(attributes: JSAny = js.native, options: ModelSaveOptions = js.native): JSDynamic = js.native
+            def unset(attribute: String, options: Silenceable = js.native): Model = js.native
+            def validate(attributes: JSAny, options: JSAny = js.native): JSDynamic = js.native
+
+            def keys(): JSArray[String] = js.native
+            def values(): JSArrayAny = js.native
+            def pairs(): JSArrayAny = js.native
+            def invert(): JSDynamic = js.native
+            def pick(keys: JSArray[String]): JSDynamic = js.native
+            def omit(keys: JSArray[String]): JSDynamic = js.native
         }
 
         @js.native
@@ -303,11 +303,22 @@ package com.simplesys {
             def _ensureElement(): Unit = js.native
         }
 
+        @js.native
+        @JSName ("Backbone.LocalStorage")
+        class LocalStorage[TModel <: Model] extends JSObject {
+          def save():Unit = js.native
+          def create(model:TModel): TModel = js.native
+          def update(model:TModel): TModel = js.native
+          def find(model:TModel): TModel = js.native
+          def destroy(model:TModel): Unit = js.native
+          def findAll(model:TModel): Collection[TModel] = js.native
+        }
+
     }
 
     package backbone {
 
-        import com.simplesys.System.JSObject
+        import com.simplesys.System.{JSDynamic, JSObject}
 
         @js.native
         @JSName("Backbone")
