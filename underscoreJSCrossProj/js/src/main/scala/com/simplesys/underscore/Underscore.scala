@@ -71,12 +71,12 @@ package com.simplesys.underscore {
     @js.native
     trait UnderscoreStatic extends JSObject {
         def apply[T](value: JSArray[T]): Underscore[T] = js.native
-        def each[T](list: List[T], iterator: ListIterator[T, Unit], context: JSAny = js.native): List[T] = js.native
+        def each[T](list: List[T], iterator: ListIterator[T, _], context: JSAny = js.native): List[T] = js.native
         @JSName("each")
-        def eachDictionary[T](`object`: Dictionary[T], iterator: ObjectIterator[T, Unit], context: JSAny = js.native): Dictionary[T] = js.native
-        def forEach[T](list: List[T], iterator: ListIterator[T, Unit], context: JSAny = js.native): List[T] = js.native
+        def eachDictionary[T](`object`: Dictionary[T], iterator: ObjectIterator[T, _], context: JSAny = js.native): Dictionary[T] = js.native
+        def forEach[T](list: List[T], iterator: ListIterator[T, _], context: JSAny = js.native): List[T] = js.native
         @JSName("forEach")
-        def forEachDictionary[T](`object`: Dictionary[T], iterator: ObjectIterator[T, Unit], context: JSAny = js.native): Dictionary[T] = js.native
+        def forEachDictionary[T](`object`: Dictionary[T], iterator: ObjectIterator[T, _], context: JSAny = js.native): Dictionary[T] = js.native
         def map[T, TResult](list: List[T], iterator: ListIterator[T, TResult], context: JSAny = js.native): JSArray[TResult] = js.native
         @JSName("map")
         def mapDictionary[T, TResult](`object`: Dictionary[T], iterator: ObjectIterator[T, TResult], context: JSAny = js.native): JSArray[TResult] = js.native
@@ -251,8 +251,8 @@ package com.simplesys.underscore {
 
     @js.native
     trait Underscore[T] extends JSObject {
-        def each(iterator: ListIterator[T, Unit], context: JSAny = js.native): JSArray[T] = js.native
-        def forEach(iterator: ListIterator[T, Unit], context: JSAny = js.native): JSArray[T] = js.native
+        def each(iterator: ListIterator[T, _], context: JSAny = js.native): JSArray[T] = js.native
+        def forEach(iterator: ListIterator[T, _], context: JSAny = js.native): JSArray[T] = js.native
         def map[TResult](iterator: ListIterator[T, TResult], context: JSAny = js.native): JSArray[TResult] = js.native
         def collect[TResult](iterator: ListIterator[T, TResult], context: JSAny = js.native): JSArray[TResult] = js.native
         def reduce[TResult](iterator: MemoIterator[T, TResult], memo: TResult = js.native, context: JSAny = js.native): TResult = js.native
@@ -392,8 +392,8 @@ package com.simplesys.underscore {
 
     @js.native
     trait _Chain[T] extends JSObject {
-        def each(iterator: ListIterator[T, Unit], context: JSAny = js.native): _Chain[T] = js.native
-        def forEach(iterator: ListIterator[T, Unit], context: JSAny = js.native): _Chain[T] = js.native
+        def each(iterator: ListIterator[T, _], context: JSAny = js.native): _Chain[T] = js.native
+        def forEach(iterator: ListIterator[T, _], context: JSAny = js.native): _Chain[T] = js.native
         def map[TArray](iterator: ListIterator[T, JSArray[TArray]], context: JSAny = js.native): _ChainOfArrays[TArray] = js.native
         @JSName("map")
         def mapGeneric[TResult](iterator: ListIterator[T, TResult], context: JSAny = js.native): _Chain[TResult] = js.native

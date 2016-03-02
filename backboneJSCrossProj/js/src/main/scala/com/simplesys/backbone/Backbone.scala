@@ -56,9 +56,9 @@ package com.simplesys {
         @js.native
         trait PersistenceOptions extends JSObject {
             var url: String = js.native
-            var beforeSend: js.Function1[JQueryXHR, Unit] = js.native
-            var success: js.Function3[JSAny, JSAny, JSAny, Unit] = js.native
-            var error: js.Function3[JSAny, JQueryXHR, JSAny, Unit] = js.native
+            var beforeSend: js.Function1[JQueryXHR, _] = js.native
+            var success: js.Function3[JSAny, JSAny, JSAny, _] = js.native
+            var error: js.Function3[JSAny, JQueryXHR, JSAny, _] = js.native
         }
 
         @js.native
@@ -192,14 +192,14 @@ package com.simplesys {
             def detect(iterator: js.Function1[JSAny, Boolean], context: JSAny = js.native): JSDynamic = js.native
             def drop(): TModel = js.native
             def drop(n: Double): List[TModel] = js.native
-            def each(iterator: js.Function3[TModel, Double, JSAny, Unit], context: JSAny = js.native): JSDynamic = js.native
+            def each(iterator: js.Function3[TModel, Double, JSAny, _], context: JSAny = js.native): JSDynamic = js.native
             def every(iterator: js.Function2[TModel, Double, Boolean], context: JSAny = js.native): Boolean = js.native
             def filter(iterator: js.Function2[TModel, Double, Boolean], context: JSAny = js.native): List[TModel] = js.native
             def find(iterator: js.Function2[TModel, Double, Boolean], context: JSAny = js.native): TModel = js.native
             def first(): TModel = js.native
             def first(n: Double): List[TModel] = js.native
             def foldl(iterator: js.Function3[JSAny, TModel, Double, Any], initialMemo: JSAny, context: JSAny = js.native): JSDynamic = js.native
-            def forEach(iterator: js.Function3[TModel, Double, JSAny, Unit], context: JSAny = js.native): JSDynamic = js.native
+            def forEach(iterator: js.Function3[TModel, Double, JSAny, _], context: JSAny = js.native): JSDynamic = js.native
             def groupBy(iterator: js.Function2[TModel, Double, String], context: JSAny = js.native): JSDictionary[JSArray[TModel]] = js.native
             @JSName("groupBy")
             def groupByAttribute(attribute: String, context: JSAny = js.native): JSDictionary[JSArray[TModel]] = js.native
