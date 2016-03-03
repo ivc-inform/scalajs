@@ -243,7 +243,9 @@ package com.simplesys.underscore {
         def escape(str: String): String = js.native
         def unescape(str: String): String = js.native
         def result(`object`: JSAny, property: String): JSDynamic = js.native
-        def template(templateString: String, settings: TemplateSettings = js.native): js.Function1[JSAny, String]  | js.Function0[String] = js.native
+        def template(templateString: String, settings: TemplateSettings = js.native): js.Function1[JSAny, String] = js.native
+        @JSName("template")
+        def templateWithoutData(templateString: String, settings: TemplateSettings = js.native): js.Function0[String] = js.native
         var templateSettings: TemplateSettings = js.native
         def now(): Double = js.native
         def chain[T](obj: JSArray[T]): _Chain[T] = js.native
