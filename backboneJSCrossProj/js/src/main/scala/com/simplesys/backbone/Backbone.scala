@@ -351,9 +351,6 @@ package com.simplesys {
             def delegateEvents(events: JSAny = js.native): JSDynamic = js.native
             def undelegateEvents(): JSDynamic = js.native
             def _ensureElement(): Unit = js.native
-            var template: js.Function1[JSAny, String] = js.native
-            @JSName("template")
-            var templateWithoutData: js.Function1[JSAny, String] = js.native
         }
 
         @js.native
