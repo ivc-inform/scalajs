@@ -6,6 +6,8 @@ package com.simplesys.underscore {
     import com.simplesys.System._
     import com.simplesys.underscore.__._
 
+    import scala.scalajs.js.|
+
     package __ {
 
         import com.simplesys.System.JSObject
@@ -241,7 +243,7 @@ package com.simplesys.underscore {
         def escape(str: String): String = js.native
         def unescape(str: String): String = js.native
         def result(`object`: JSAny, property: String): JSDynamic = js.native
-        def template(templateString: String, settings: TemplateSettings = js.native): JSFunction = js.native
+        def template(templateString: String, settings: TemplateSettings = js.native): js.Function1[JSAny, String]  | js.Function0[String] = js.native
         var templateSettings: TemplateSettings = js.native
         def now(): Double = js.native
         def chain[T](obj: JSArray[T]): _Chain[T] = js.native

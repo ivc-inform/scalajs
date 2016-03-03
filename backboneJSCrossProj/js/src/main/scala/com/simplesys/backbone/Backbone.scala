@@ -11,6 +11,8 @@ package com.simplesys {
 
         import com.simplesys.System._
 
+        import scala.scalajs.js.|
+
         @js.native
         trait Silenceable extends JSObject {
             var silent: Boolean = js.native
@@ -111,9 +113,9 @@ package com.simplesys {
         class Model protected() extends ModelBase {
             def this(attributes: JSAny = js.native, options: JSAny = js.native) = this()
             var attributes: JSAny = js.native
-            var changed: JSArrayAny = js.native
+            var changed: JSDictionaryAny = js.native
             var cid: String = js.native
-            var collection: backbone.Collection[_ <: Model /*JSAny*/ ] = js.native
+            var collection: backbone.Collection[_ <: Model] = js.native
             def defaults(): JSDynamic = js.native
             var id: JSAny = js.native
             var idAttribute: String = js.native
@@ -153,6 +155,7 @@ package com.simplesys {
         @js.native
         @JSName("Backbone.Collection")
         class Collection[TModel <: Model] protected() extends ModelBase {
+
             import com.simplesys.underscore.__.List
 
             def this(models: List[TModel] = js.native, options: JSAny = js.native) = this()
@@ -302,17 +305,18 @@ package com.simplesys {
             def delegateEvents(events: JSAny = js.native): JSDynamic = js.native
             def undelegateEvents(): JSDynamic = js.native
             def _ensureElement(): Unit = js.native
+            var template: js.Function1[JSAny, String]  | js.Function0[String] = js.native
         }
 
         @js.native
-        @JSName ("Backbone.LocalStorage")
-        class LocalStorage[TModel <: Model](name:String) extends JSObject {
-          def save():Unit = js.native
-          def create(model:TModel): TModel = js.native
-          def update(model:TModel): TModel = js.native
-          def find(model:TModel): TModel = js.native
-          def destroy(model:TModel): Unit = js.native
-          def findAll(model:TModel): Collection[TModel] = js.native
+        @JSName("Backbone.LocalStorage")
+        class LocalStorage[TModel <: Model](name: String) extends JSObject {
+            def save(): Unit = js.native
+            def create(model: TModel): TModel = js.native
+            def update(model: TModel): TModel = js.native
+            def find(model: TModel): TModel = js.native
+            def destroy(model: TModel): Unit = js.native
+            def findAll(model: TModel): Collection[TModel] = js.native
         }
 
     }
