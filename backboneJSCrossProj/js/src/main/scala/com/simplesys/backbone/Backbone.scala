@@ -307,7 +307,7 @@ package com.simplesys {
             def apply[TModel <: Model](model: ScOption[TModel] = ScNone,
                                        className: ScOption[String] = ScNone,
                                        tagName: ScOption[String] = ScNone,
-                                       collection: ScOption[Collection[TModel]] = ScNone,
+                                       collection: ScOption[Collection[_ <:Model]] = ScNone,
                                        attributes: ScOption[JSAny] = ScNone,
                                        el: ScOption[JSAny] = ScNone,
                                        id: ScOption[String] = ScNone): ViewOptions[TModel] = {
