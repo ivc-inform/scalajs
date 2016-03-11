@@ -963,9 +963,7 @@
                         for (i = 0; i < toAdd.length; i++) {
                             if (at != null) options.index = at + i;
                             model = toAdd[i];
-                            var collection = model.collection  //Added A.Yudin
                             model.trigger('add', model, this, options);
-                            model.collection = collection //Added A.Yudin
                         }
                         if (sort || orderChanged) this.trigger('sort', this, options);
                         if (toAdd.length || toRemove.length || toMerge.length) {
