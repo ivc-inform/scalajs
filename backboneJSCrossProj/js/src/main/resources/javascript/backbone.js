@@ -768,7 +768,7 @@
         // number of arguments they take.
         var modelMethods = {
             keys: 1, values: 1, pairs: 1, invert: 1, pick: 0,
-            omit                                         : 0, chain: 1, isEmpty                   : 1
+            omit                                         : 0, chain                               : 1, isEmpty: 1
         };
 
         // Mix in each Underscore method as a proxy to `Model#attributes`.
@@ -1239,14 +1239,14 @@
         // 90% of the core usefulness of Backbone Collections is actually implemented
         // right here:
         var collectionMethods = {
-            forEach                                                                      : 3, each: 3, map: 3, collect                                         : 3, reduce: 0,
-            foldl                                                                        : 0, inject: 0, reduceRight                                             : 0, foldr: 0, find: 3, detect: 3, filter: 3,
+            forEach                                                                      : 3, each: 3, map                                                     : 3, collect: 3, reduce: 0,
+            foldl                                                                        : 0, inject                                                             : 0, reduceRight: 0, foldr: 0, find: 3, detect               : 3, filter: 3,
             select: 3, reject: 3, every: 3, all: 3, some: 3, any: 3, include: 3, includes: 3,
-            contains                                                                     : 3, invoke                                                          : 0, max: 3, min                                          : 3, toArray: 1, size: 1, first: 3,
-            head                                                                         : 3, take: 3, initial                                                    : 3, rest: 3, tail: 3, drop: 3, last: 3,
-            without                                                                      : 0, difference                                                       : 0, indexOf: 3, shuffle: 1, lastIndexOf               : 3,
-            isEmpty                                                                      : 1, chain: 1, sample: 3, partition                                   : 3, groupBy: 3, countBy           : 3,
-            sortBy                                                                       : 3, indexBy: 3, findIndex: 3, findLastIndex                           : 3
+            contains                                                                     : 3, invoke                                                          : 0, max                                                  : 3, min: 3, toArray                              : 1, size: 1, first           : 3,
+            head                                                                         : 3, take: 3, initial: 3, rest: 3, tail: 3, drop                         : 3, last: 3,
+            without                                                                      : 0, difference: 0, indexOf                                           : 3, shuffle                               : 1, lastIndexOf               : 3,
+            isEmpty                                                                      : 1, chain                                                            : 1, sample: 3, partition: 3, groupBy: 3, countBy           : 3,
+            sortBy                                                                       : 3, indexBy                                                           : 3, findIndex                                             : 3, findLastIndex: 3
         };
 
         // Mix in each Underscore method as a proxy to `Collection#models`.

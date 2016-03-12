@@ -261,6 +261,16 @@ package com.simplesys {
             def without(values: JSAny*): List[TModel] = js.native
         }
 
+        object RouterOptions {
+            def apply(routes: ScOption[JSAny] = ScNone): RouterOptions = {
+
+                val res = js.Dynamic.literal()
+                routes.foreach(item => res.routes = item)
+
+                res.asInstanceOf[RouterOptions]
+            }
+        }
+
         @js.native
         @JSName("Backbone.Router")
         class Router protected() extends Events {
@@ -307,7 +317,7 @@ package com.simplesys {
             def apply[TModel <: Model](model: ScOption[TModel] = ScNone,
                                        className: ScOption[String] = ScNone,
                                        tagName: ScOption[String] = ScNone,
-                                       collection: ScOption[Collection[_ <:Model]] = ScNone,
+                                       collection: ScOption[Collection[_ <: Model]] = ScNone,
                                        attributes: ScOption[JSAny] = ScNone,
                                        el: ScOption[JSAny] = ScNone,
                                        id: ScOption[String] = ScNone): ViewOptions[TModel] = {
