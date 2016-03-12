@@ -1,10 +1,9 @@
 package com.simplesys.SmartClient.System
 
+import com.simplesys.System.JSDictionaryAny
+import com.simplesys.json.Json._
 import com.simplesys.macros.PropsToDictionary
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.json.Json._
-import com.simplesys.common._
-import com.simplesys.System.{JSDictionaryAny, JSAny}
 
 import scala.reflect.ClassTag
 import scala.scalajs.js
@@ -23,5 +22,6 @@ class SCApply4Props[P <: AbstractClassProps](implicit propsToDictionary: PropsTo
 class isc[SuperClassType <: Class, NewClassType <: Class, PropsNewClassType <: AbstractClassProps](implicit classTag_OLD: ClassTag[SuperClassType], classTag_NEW: ClassTag[NewClassType], propsToDictionary: PropsToDictionary[PropsNewClassType]) {
     def defineClass(propsClass: PropsNewClassType): Unit = js.Dynamic.global.isc.defineClass(classTag_NEW.runtimeClass.getSimpleName.dblQuoted, s"isc.${classTag_OLD.runtimeClass.getSimpleName.dblQuoted}").addProperties(propsToDictionary.getDictionary(propsClass))
 }
+
 
 
