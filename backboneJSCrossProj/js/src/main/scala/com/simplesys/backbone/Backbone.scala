@@ -65,21 +65,16 @@ package com.simplesys {
         }
 
         @js.native
-        trait ModelSetOptions extends Silenceable with Validable {
-        }
+        trait ModelSetOptions extends Silenceable with Validable
 
         @js.native
-        trait ModelFetchOptions extends PersistenceOptions with ModelSetOptions with Parseable {
-        }
+        trait ModelFetchOptions extends PersistenceOptions with ModelSetOptions with Parseable
 
         @js.native
-        trait ModelSaveOptions extends Silenceable with Waitable with Validable with Parseable with PersistenceOptions {
-            var patch: Boolean = js.native
-        }
+        trait ModelSaveOptions extends Silenceable with Waitable with Validable with Parseable with PersistenceOptions
 
         @js.native
-        trait ModelDestroyOptions extends Waitable with PersistenceOptions {
-        }
+        trait ModelDestroyOptions extends Waitable with PersistenceOptions
 
         @js.native
         trait CollectionFetchOptions extends PersistenceOptions with Parseable {
@@ -375,21 +370,4 @@ package com.simplesys {
         }
 
     }
-
-    package backbone {
-
-        import com.simplesys.System.{JSDynamic, JSObject}
-
-        @js.native
-        @JSName("Backbone")
-        object Backbone extends JSObject {
-            var history: History = js.native
-            def sync(method: String, model: Model, options: JQueryAjaxSettings = js.native): JSDynamic = js.native
-            def ajax(options: JQueryAjaxSettings = js.native): JQueryXHR = js.native
-            var emulateHTTP: Boolean = js.native
-            var emulateJSON: Boolean = js.native
-            var `$`: JQueryStatic = js.native
-        }
-    }
-
 }
