@@ -1,9 +1,13 @@
 package com.simplesys
 
+import com.simplesys.backbone.props._
 import org.scalajs.jquery.{JQueryStatic, JQueryXHR, JQueryAjaxSettings}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
+
+//import com.simplesys.macros.PropsToDictionary
+import com.simplesys.macros.PropsToDictionary
 
 package object backbone {
 
@@ -19,4 +23,6 @@ package object backbone {
         var emulateJSON: Boolean = js.native
         var `$`: JQueryStatic = js.native
     }
+
+    object RouterOptions extends BackboneApply[RouterOptions, RouterOptionsProps]
 }
