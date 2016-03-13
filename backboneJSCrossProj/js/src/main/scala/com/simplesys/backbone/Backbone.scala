@@ -15,7 +15,10 @@ package com.simplesys {
         import scala.scalajs.js.{Function1, Function3, |}
 
         @js.native
-        trait Silenceable extends JSObject {
+        class BackboneObject extends JSObject
+
+        @js.native
+        trait Silenceable extends BackboneObject {
             var silent: Boolean = js.native
         }
 
@@ -31,33 +34,33 @@ package com.simplesys {
         }
 
         @js.native
-        trait NavigateOptions extends JSObject {
+        trait NavigateOptions extends BackboneObject {
             var trigger: Boolean = js.native
         }
 
         @js.native
-        trait RouterOptions extends JSObject {
+        trait RouterOptions extends BackboneObject {
             var routes: JSAny = js.native
         }
 
         @js.native
-        trait Validable extends JSObject {
+        trait Validable extends BackboneObject {
             var validate: Boolean = js.native
         }
 
         @js.native
-        trait Waitable extends JSObject {
+        trait Waitable extends BackboneObject {
             @JSName("wait")
             var waitJS: Boolean = js.native
         }
 
         @js.native
-        trait Parseable extends JSObject {
+        trait Parseable extends BackboneObject {
             var parse: JSAny = js.native
         }
 
         @js.native
-        trait PersistenceOptions extends JSObject {
+        trait PersistenceOptions extends BackboneObject {
             var url: String = js.native
             var beforeSend: js.Function1[JQueryXHR, _] = js.native
             var success: js.Function3[JSAny, JSAny, JSAny, _] = js.native
@@ -105,7 +108,7 @@ package com.simplesys {
 
         @js.native
         @JSName("Backbone.Events")
-        class Events extends JSObject {
+        class Events extends BackboneObject {
             def on(eventName: String, callback: js.Function = js.native, context: JSAny = js.native): JSDynamic = js.native
             def off(eventName: String = js.native, callback: js.Function = js.native, context: JSAny = js.native): JSDynamic = js.native
             def trigger(eventName: String, args: JSAny*): JSDynamic = js.native
@@ -298,7 +301,7 @@ package com.simplesys {
         }
 
         @js.native
-        trait ViewOptions[TModel <: Model] extends JSObject {
+        trait ViewOptions[TModel <: Model] extends BackboneObject {
             var model: TModel = js.native
             var collection: Collection[TModel] = js.native
             var el: JSAny = js.native
@@ -360,7 +363,7 @@ package com.simplesys {
 
         @js.native
         @JSName("Backbone.LocalStorage")
-        class LocalStorage[TModel <: Model](name: String) extends JSObject {
+        class LocalStorage[TModel <: Model](name: String) extends BackboneObject {
             def save(): Unit = js.native
             def create(model: TModel): TModel = js.native
             def update(model: TModel): TModel = js.native
