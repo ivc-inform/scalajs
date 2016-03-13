@@ -24,5 +24,5 @@ package object backbone {
         var `$`: JQueryStatic = js.native
     }
 
-    //object RouterOptions extends BackboneApply[RouterOptions, RouterOptionsProps]
+    object RouterOptions extends BackboneApply[RouterOptions, RouterOptionsProps]
 }
