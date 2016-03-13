@@ -5,7 +5,7 @@ import sbt.Keys._
 import sbt._
 
 trait BackboneJSProj {
-    self: Build with UnderscoreJSProj =>
+    self: Build with MacroJSProject with MacroJVMProject with UnderscoreJSProj =>
 
     lazy val backboneJSCrossProj = crossProject.dependsOn(underscoreJSCrossProj).
       settings(
@@ -26,7 +26,7 @@ trait BackboneJSProj {
               CommonSettings.jsDependencies.scalajsDOM.value,
               CommonSettings.jsDependencies.scalajsJQuey.value
           )
-      ) //.dependsOn().jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
+      ).dependsOn().jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
 
     lazy val backboneJSCrossJVM = backboneJSCrossProj.jvm
     lazy val backboneJSCrossJS = backboneJSCrossProj.js
