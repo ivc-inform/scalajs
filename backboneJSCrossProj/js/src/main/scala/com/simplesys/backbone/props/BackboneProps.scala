@@ -27,7 +27,7 @@ trait NavigateOptionsProps extends AbstractClassProps {
 }
 
 trait RouterOptionsProps extends AbstractClassProps {
-    var routes: ScOption[JSDictionaryAny] = ScNone
+    var routes: ScOption[JSAny] = ScNone
 }
 
 trait ValidableProps extends AbstractClassProps {
