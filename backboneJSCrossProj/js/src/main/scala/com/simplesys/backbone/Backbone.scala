@@ -84,28 +84,6 @@ package com.simplesys {
             var reset: Boolean = js.native
         }
 
-        object CollectionFetchOptions {
-            def apply(reset: ScOption[Boolean] = ScNone,
-                      error: ScOption[Function3[JSAny, JQueryXHR, JSAny, _]] = ScNone,
-                      success: ScOption[Function3[JSAny, JSAny, JSAny, _]] = ScNone,
-                      url: ScOption[String] = ScNone,
-                      beforeSend: ScOption[Function1[JQueryXHR, _]] = ScNone,
-                      parse: ScOption[JSAny] = ScNone
-                     ): CollectionFetchOptions = {
-
-                val res = js.Dynamic.literal()
-
-                reset.foreach(item => res.reset = item)
-                error.foreach(item => res.error = item)
-                success.foreach(item => res.success = item)
-                url.foreach(item => res.url = item)
-                beforeSend.foreach(item => res.beforeSend = item)
-                parse.foreach(item => res.parse = item)
-
-                res.asInstanceOf[CollectionFetchOptions]
-            }
-        }
-
         @js.native
         @JSName("Backbone.Events")
         class Events extends BackboneObject {
@@ -299,29 +277,6 @@ package com.simplesys {
             var className: String = js.native
             var tagName: String = js.native
             var attributes: JSAny = js.native
-        }
-
-        object ViewOptions {
-            def apply[TModel <: Model](model: ScOption[TModel] = ScNone,
-                                       className: ScOption[String] = ScNone,
-                                       tagName: ScOption[String] = ScNone,
-                                       collection: ScOption[Collection[_ <: Model]] = ScNone,
-                                       attributes: ScOption[JSAny] = ScNone,
-                                       el: ScOption[JSAny] = ScNone,
-                                       id: ScOption[String] = ScNone): ViewOptions[TModel] = {
-
-                val res = js.Dynamic.literal()
-
-                model.foreach(item => res.model = item)
-                className.foreach(item => res.className = item)
-                tagName.foreach(item => res.tagName = item)
-                collection.foreach(item => res.collection = item)
-                attributes.foreach(item => res.attributes = item)
-                el.foreach(item => res.el = item)
-                id.foreach(item => res.id = item)
-
-                res.asInstanceOf[ViewOptions[TModel]]
-            }
         }
 
         @js.native

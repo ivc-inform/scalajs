@@ -25,4 +25,6 @@ package object backbone {
     }
 
     object RouterOptions extends BackboneApply[RouterOptions, RouterOptionsProps]
+    object CollectionFetchOptions extends BackboneApply[CollectionFetchOptions, CollectionFetchOptionsProps]
+    object ViewOptions extends BackboneApply[ViewOptions[_ <: Model], ViewOptionsProps[_ <: Model]]
 }

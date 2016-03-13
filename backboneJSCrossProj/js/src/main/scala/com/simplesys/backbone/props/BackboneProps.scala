@@ -49,15 +49,15 @@ trait PersistenceOptionsProps extends AbstractClassProps {
     var error: ScOption[Function3[JSAny, JQueryXHR, JSAny, _]] = ScNone
 }
 
-trait ModelSetOptions extends SilenceableProps with ValidableProps
+trait ModelSetOptionsProps extends SilenceableProps with ValidableProps
 
-trait ModelFetchOptions extends PersistenceOptionsProps with ModelSetOptions with ParseableProps
+trait ModelFetchOptions extends PersistenceOptionsProps with ModelSetOptionsProps with ParseableProps
 
-trait ModelSaveOptions extends SilenceableProps with WaitableProps with ValidableProps with ParseableProps with PersistenceOptionsProps
+trait ModelSaveOptionsProps extends SilenceableProps with WaitableProps with ValidableProps with ParseableProps with PersistenceOptionsProps
 
-trait ModelDestroyOptions extends WaitableProps with PersistenceOptionsProps
+trait ModelDestroyOptionsProps extends WaitableProps with PersistenceOptionsProps
 
-trait CollectionFetchOptions extends PersistenceOptionsProps with ParseableProps {
+trait CollectionFetchOptionsProps extends PersistenceOptionsProps with ParseableProps {
     var reset: ScOption[Boolean] = ScNone
 }
 
