@@ -117,6 +117,7 @@ package object System {
     object VLayoutSS extends SCApply[VLayoutSS, VLayoutSSProps]
     object ChainMasterDetail extends SCApply[ChainMasterDetail, ChainMasterDetailProps]
     object TabSet extends SCApply[TabSet, TabSetProps]
+    object TabSetSS extends SCApply[TabSetSS, TabSetSSProps]
     object Window extends SCApply[Window, WindowProps]
     object WindowSS extends SCApply[WindowSS, WindowSSProps]
     object LoginWindow extends SCApply[LoginWindow, LoginWindowProps]

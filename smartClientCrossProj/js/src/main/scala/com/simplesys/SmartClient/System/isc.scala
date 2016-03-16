@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.Control._
-import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.Grids._
 import com.simplesys.System.Types.{Callback, ID, void}
 import com.simplesys.System._
 
