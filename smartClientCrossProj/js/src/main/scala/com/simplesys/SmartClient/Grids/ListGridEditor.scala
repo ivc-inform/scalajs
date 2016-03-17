@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
+import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord, MasterDetailMapping}
 import com.simplesys.SmartClient.Layout.VLayoutSS
 import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
@@ -117,8 +118,8 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     var canDragRecordsOut: Boolean
     var canReorderRecords: Boolean
     var dragDataAction: DragDataAction
-    def startEditingNewInForm(obj: JSDictionaryAny = js.native, callback: DSCallback = js.native): void
-    def startEditingInForm(obj: JSDictionaryAny = js.native, callback: DSCallback = js.native): void
+    def startEditingNewInForm(obj: JSDictionaryAny = js.native, fields: JSArray[FormItem] = js.native, callback: DSCallback = js.native): void
+    def startEditingInForm(obj: JSDictionaryAny = js.native, fields: JSArray[FormItem] = js.native, callback: DSCallback = js.native): void
 }
 
 @js.native
