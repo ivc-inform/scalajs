@@ -60,7 +60,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
-trait Grid[T <: ListGridField, R <: ListGridRecord] extends VLayout with DataBoundComponent {
+trait Grid[T <: ListGridField, R <: JSObject] extends VLayout with DataBoundComponent {
     def addData(newRecord: Record, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def addEmbeddedComponent(component: Canvas, record: Record, rowNum: Int = js.native, colNum: Int = js.native, position: Int = js.native): void
     def addSort(sortSpecifier: SortSpecifier): void
