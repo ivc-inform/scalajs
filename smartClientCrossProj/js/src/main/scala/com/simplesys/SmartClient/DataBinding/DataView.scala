@@ -8,7 +8,7 @@ import scala.scalajs.js
 @js.native
 trait DataView extends VLayout {
 
-    var dataViewLoaded: js.Function1[void, _]
+    var dataViewLoaded: js.Function0[_]
 }
 
 
