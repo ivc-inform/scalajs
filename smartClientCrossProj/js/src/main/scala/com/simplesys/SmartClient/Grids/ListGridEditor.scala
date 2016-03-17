@@ -14,7 +14,7 @@ import com.simplesys.System.Types.SelectionAppearance.SelectionAppearance
 import com.simplesys.System.Types.SelectionStyle.SelectionStyle
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSAny, JSArray}
+import com.simplesys.System._
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -117,6 +117,8 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     var canDragRecordsOut: Boolean
     var canReorderRecords: Boolean
     var dragDataAction: DragDataAction
+    def startEditingNewInForm(obj: JSDictionaryAny = js.native, callback: DSCallback = js.native): void
+    def startEditingInForm(obj: JSDictionaryAny = js.native, callback: DSCallback = js.native): void
 }
 
 @js.native
