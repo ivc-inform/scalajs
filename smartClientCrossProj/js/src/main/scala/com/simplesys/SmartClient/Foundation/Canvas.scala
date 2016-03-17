@@ -101,6 +101,8 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var childrenSnapToGrid: Boolean
     def clear(): void
     var click: js.ThisFunction0[callbackHandler, Boolean] | String
+    @JSName("click")
+    def clickProc (): Boolean
     def clickMaskUp(ID: String = js.native): Boolean
     val componentMask: Canvas with AutoChild
     val componentMaskDefaults: Canvas
