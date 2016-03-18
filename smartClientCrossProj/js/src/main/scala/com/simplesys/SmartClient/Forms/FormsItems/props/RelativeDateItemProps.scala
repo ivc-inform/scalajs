@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Forms.FormsItems.{BlurbItem, SpinnerItem, TimeI
 import com.simplesys.System.JSObject
 import com.simplesys.System.Types.FormItemComponentType
 import com.simplesys.System.Types.RelativeDateRangePosition.RelativeDateRangePosition
-import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.option.{IntString, ScNone, ScOption}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -33,7 +33,7 @@ class RelativeDateItemProps extends CanvasItemProps {
     var quartersFromNowTitle: ScOption[String] = ScNone
     var rangePosition: ScOption[RelativeDateRangePosition] = ScNone
     var useSharedPicker: ScOption[Boolean] = ScNone
-    var valueFieldWidth: ScOption[Int | String] = ScNone
+    var valueFieldWidth: ScOption[IntString[Int, String]] = ScNone
     var weeksAgoTitle: ScOption[String] = ScNone
     var weeksFromNowTitle: ScOption[String] = ScNone
     var yearsAgoTitle: ScOption[String] = ScNone

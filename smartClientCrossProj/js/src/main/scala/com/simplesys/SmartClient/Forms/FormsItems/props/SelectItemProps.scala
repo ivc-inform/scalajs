@@ -27,7 +27,7 @@ class SelectItemProps extends FormItemProps with PickListProps{
     var pickerExitButton: ScOption[NavigationButton ] = ScNone
     var pickerExitButtonTitle: ScOption[HTMLString] = ScNone
     var pickerNavigationBar: ScOption[NavigationBar ] = ScNone
-    var pickListPlacement: ScOption[PanelPlacement | Canvas | String] = ScNone
+    var pickListPlacement: ScOption[Canvas] = ScNone
     var progressiveLoading: ScOption[Boolean] = ScNone
     var separateSpecialValues: ScOption[Boolean] = ScNone
     var separateValuesList: ScOption[Grid[ListGridField, ListGridRecord]] = ScNone

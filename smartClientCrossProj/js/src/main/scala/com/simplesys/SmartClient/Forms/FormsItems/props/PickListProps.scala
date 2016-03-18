@@ -40,7 +40,7 @@ trait PickListProps extends ClassProps {
     var separatorRows: ScOption[JSArray[ListGridRecord]] = ScNone
     var showAllOptions: ScOption[Boolean] = ScNone
     var showOptionsFromDataSource: ScOption[Boolean] = ScNone
-    var sortField: ScOption[String | JSArray[String] | Int] = ScNone
+    var sortField: ScOption[JSArray[String]] = ScNone
     var specialValues: ScOption[ValueMap] = ScNone
     var textMatchStyle: ScOption[TextMatchStyle] = ScNone
     var useClientFiltering: ScOption[Boolean] = ScNone
