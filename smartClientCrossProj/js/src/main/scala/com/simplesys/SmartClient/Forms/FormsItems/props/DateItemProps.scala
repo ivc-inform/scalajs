@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Forms.DateChooser
 import com.simplesys.SmartClient.Forms.FormsItems.{SelectItem, TextItem, TimeItem}
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.DateItemSelectorFormat.DateItemSelectorFormat
-import com.simplesys.System.Types.SCClassName
+import com.simplesys.System.Types.{FormItemComponentType, SCClassName}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js._
@@ -40,4 +40,5 @@ class DateItemProps extends FormItemProps {
     var useTextField: ScOption[Boolean] = ScNone
     var yearSelector: ScOption[SelectItem] = ScNone
     var yearSelectorProperties: ScOption[SelectItem] = ScNone
+    `type` = FormItemComponentType.DateItem
 }

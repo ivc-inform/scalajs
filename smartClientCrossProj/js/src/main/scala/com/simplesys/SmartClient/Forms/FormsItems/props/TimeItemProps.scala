@@ -1,9 +1,9 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.FormsItems.{SelectItem, TextItem}
-import com.simplesys.System.Types.HTMLString
+import com.simplesys.System.Types.{FormItemComponentType, HTMLString}
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.System.JSArray
 
 import scala.scalajs.js
@@ -60,4 +60,5 @@ class TimeItemProps extends FormItemProps {
     var useMask: ScOption[Boolean] = ScNone
     var usePlaceholderForHint: ScOption[Boolean] = ScNone
     var useTextField: ScOption[Boolean] = ScNone
+    `type` = FormItemComponentType.TimeItem
 }

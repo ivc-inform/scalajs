@@ -3,8 +3,8 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.treeGrid.Tree
-import com.simplesys.System.Types.{HTMLString, CSSStyleName}
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.System.Types.{CSSStyleName, FormItemComponentType, HTMLString}
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js._
 
@@ -17,4 +17,5 @@ class PickTreeItemProps extends CanvasItemProps {
     var loadDataOnDemand: ScOption[Boolean] = ScNone
     var pendingButtonStyle: ScOption[CSSStyleName] = ScNone
     var valueTree: ScOption[Tree] = ScNone
+    `type` = FormItemComponentType.PickTreeItem
 }

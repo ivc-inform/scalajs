@@ -5,10 +5,10 @@ import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
-import com.simplesys.System.Types.{SCClassName, HTMLString}
+import com.simplesys.System.Types.{FormItemComponentType, HTMLString, SCClassName}
 import com.simplesys.System.Types.MultipleAppearance.MultipleAppearance
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js._
 
@@ -33,4 +33,5 @@ class SelectItemProps extends FormItemProps with PickListProps{
     var separateValuesList: ScOption[Grid[ListGridField, ListGridRecord]] = ScNone
     var showHintInField: ScOption[Boolean] = ScNone
     var showOver: ScOption[Boolean] = ScNone
+    `type` = FormItemComponentType.SelectItem
 }

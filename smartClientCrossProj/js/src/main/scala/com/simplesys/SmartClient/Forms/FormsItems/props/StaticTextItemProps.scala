@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
-import com.simplesys.System.Types.SCClassName
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.System.Types.{FormItemComponentType, SCClassName}
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js._
 
@@ -10,4 +10,5 @@ class StaticTextItemProps extends FormItemProps {
     var editProxyConstructor: ScOption[SCClassName] = ScNone
     var escapeHTML: ScOption[Boolean] = ScNone
     var wrap: ScOption[Boolean] = ScNone
+    `type` = FormItemComponentType.StaticTextItem
 }

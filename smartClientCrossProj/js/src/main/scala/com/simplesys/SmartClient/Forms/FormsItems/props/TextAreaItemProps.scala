@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
-import com.simplesys.System.Types.SCClassName
+import com.simplesys.System.Types.{FormItemComponentType, SCClassName}
 import com.simplesys.System.Types.TEXTAREA_WRAP.TEXTAREA_WRAP
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js._
 
@@ -19,4 +19,5 @@ class TextAreaItemProps extends FormItemProps {
     var showHintInField: ScOption[Boolean] = ScNone
     var usePlaceholderForHint: ScOption[Boolean] = ScNone
     var wrap: ScOption[TEXTAREA_WRAP] = ScNone
+    `type` = FormItemComponentType.TextAreaItem
 }

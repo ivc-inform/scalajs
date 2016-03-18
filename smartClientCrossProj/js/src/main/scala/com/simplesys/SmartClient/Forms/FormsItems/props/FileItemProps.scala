@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.{StaticTextItem, UploadItem}
-import com.simplesys.System.Types.SCImgURL
+import com.simplesys.System.Types.{FormItemComponentType, SCImgURL}
 import com.simplesys.option.{ScNone, ScOption}
 
 class FileItemProps extends CanvasItemProps {
@@ -14,4 +14,5 @@ class FileItemProps extends CanvasItemProps {
     var showFileInline: ScOption[Boolean] = ScNone
     var uploadItem: ScOption[UploadItem] = ScNone
     var viewIconSrc: ScOption[SCImgURL] = ScNone
+    `type` = FormItemComponentType.FileItem
 }

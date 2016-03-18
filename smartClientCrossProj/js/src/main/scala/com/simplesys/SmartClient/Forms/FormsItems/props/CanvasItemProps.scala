@@ -3,8 +3,9 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Foundation.Canvas
+import com.simplesys.System.Types.FormItemComponentType
 import com.simplesys.System.Types.Overflow.Overflow
-import com.simplesys.System.{JSObject, JSAny}
+import com.simplesys.System.{JSAny, JSObject}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
@@ -22,4 +23,5 @@ class CanvasItemProps extends FormItemProps {
     var multiple: ScOption[Boolean] = ScNone
     var overflow: ScOption[Overflow] = ScNone
     var showValue: ScOption[js.Function3[JSAny, JSAny, DynamicForm, CanvasItem]] = ScNone
+    `type` = FormItemComponentType.CanvasItem
 }

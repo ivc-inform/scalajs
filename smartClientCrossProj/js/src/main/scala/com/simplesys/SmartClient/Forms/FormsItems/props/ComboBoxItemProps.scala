@@ -7,9 +7,9 @@ import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
-import com.simplesys.System.Types.{CSSStyleName, HTMLString}
+import com.simplesys.System.Types.{CSSStyleName, FormItemComponentType, HTMLString}
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.System.JSArray
 
 import scala.scalajs.js._
@@ -39,5 +39,5 @@ class ComboBoxItemProps extends TextItemProps with PickListProps{
     var separateSpecialValues: ScOption[Boolean] = ScNone
     var separateValuesList: ScOption[Grid[ListGridField, ListGridRecord]] = ScNone
     var showPickListOnKeypress: ScOption[Boolean] = ScNone
-
+    `type` = FormItemComponentType.ComboBoxItem
 }

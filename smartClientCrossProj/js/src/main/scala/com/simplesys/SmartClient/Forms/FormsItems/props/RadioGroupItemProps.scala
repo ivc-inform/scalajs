@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.FormsItems.radioGroupItem.RadioItem
-import com.simplesys.System.Types.SCClassName
+import com.simplesys.System.Types.{FormItemComponentType, SCClassName}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.System.JSArray
 
@@ -14,4 +14,5 @@ class RadioGroupItemProps extends FormItemProps {
     var itemProperties: ScOption[RadioItem] = ScNone
     var vertical: ScOption[Boolean] = ScNone
     var wrap: ScOption[Boolean] = ScNone
+    `type` = FormItemComponentType.RadioGroupItem
 }

@@ -3,9 +3,9 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 import com.simplesys.SmartClient.Forms.DateRangeDialog
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
-import com.simplesys.System.Types.RelativeDateString
+import com.simplesys.System.Types.{FormItemComponentType, RelativeDateString}
 import com.simplesys.System.Types.TimeUnit.TimeUnit
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js._
 
@@ -19,4 +19,5 @@ class MultiComboBoxItemProps extends CanvasItemProps {
     var rangeDialog: ScOption[DateRangeDialog ] = ScNone
     var toDate: ScOption[Date | RelativeDateString | TimeUnit] = ScNone
     var toDateOnlyPrefix: ScOption[String] = ScNone
+    `type` = FormItemComponentType.MultiComboBoxItem
 }

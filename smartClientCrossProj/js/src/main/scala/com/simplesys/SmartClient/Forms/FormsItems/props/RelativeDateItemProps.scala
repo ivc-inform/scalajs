@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.FormsItems.{BlurbItem, SpinnerItem, TimeItem}
 import com.simplesys.System.JSObject
+import com.simplesys.System.Types.FormItemComponentType
 import com.simplesys.System.Types.RelativeDateRangePosition.RelativeDateRangePosition
 import com.simplesys.option.{ScNone, ScOption}
 
@@ -37,4 +38,5 @@ class RelativeDateItemProps extends CanvasItemProps {
     var weeksFromNowTitle: ScOption[String] = ScNone
     var yearsAgoTitle: ScOption[String] = ScNone
     var yearsFromNowTitle: ScOption[String] = ScNone
+    `type` = FormItemComponentType.RelativeDateItem
 }
