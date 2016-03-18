@@ -33,7 +33,7 @@ class ComboBoxItemProps extends TextItemProps with PickListProps{
     var pickerSearchField: ScOption[TextItem ] = ScNone
     var pickerSearchFieldHint: ScOption[HTMLString] = ScNone
     var pickerSearchForm: ScOption[DynamicForm ] = ScNone
-    var pickListPlacement: ScOption[PanelPlacement | Canvas | String] = ScNone
+    var pickListPlacement: ScOption[PanelPlacement] = ScNone
     var progressiveLoading: ScOption[Boolean] = ScNone
     var searchStringTooShortMessage: ScOption[String] = ScNone
     var separateSpecialValues: ScOption[Boolean] = ScNone

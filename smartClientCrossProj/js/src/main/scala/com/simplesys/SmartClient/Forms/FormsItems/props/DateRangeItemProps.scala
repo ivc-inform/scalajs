@@ -16,13 +16,13 @@ class DateRangeItemProps extends CanvasItemProps {
     var allowRelativeDates: ScOption[Boolean] = ScNone
     var dateRangeForm: ScOption[DynamicForm ] = ScNone
     var fieldLayout: ScOption[DateFieldLayout] = ScNone
-    var fromDate: ScOption[Date | RelativeDateString | TimeUnit] = ScNone
+    var fromDate: ScOption[Date] = ScNone
     var fromField: ScOption[FormItem ] = ScNone
     var fromTitle: ScOption[String] = ScNone
     var innerTitleOrientation: ScOption[TitleOrientation] = ScNone
     var invalidRangeErrorMessage: ScOption[String] = ScNone
     var relativeItemConstructor: ScOption[String] = ScNone
-    var toDate: ScOption[Date | RelativeDateString | TimeUnit] = ScNone
+    var toDate: ScOption[Date] = ScNone
     var toField: ScOption[FormItem ] = ScNone
     var toTitle: ScOption[String] = ScNone
     var validateCriteria: ScOption[Boolean] = ScNone

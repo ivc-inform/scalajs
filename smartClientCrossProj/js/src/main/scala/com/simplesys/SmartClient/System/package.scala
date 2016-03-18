@@ -4,8 +4,8 @@ import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.Control.props._
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.DataBinding.props._
-import com.simplesys.SmartClient.Forms.FormsItems.props.{ButtonItemProps, FormItemProps}
-import com.simplesys.SmartClient.Forms.FormsItems.{ButtonItem, FormItem}
+import com.simplesys.SmartClient.Forms.FormsItems._
+import com.simplesys.SmartClient.Forms.FormsItems.props._
 import com.simplesys.SmartClient.Forms._
 import com.simplesys.SmartClient.Forms.props._
 import com.simplesys.SmartClient.Foundation._
@@ -70,6 +70,59 @@ package object System {
     //<editor-fold desc="FormsItems">
     object FormItem extends SCApply[FormItem, FormItemProps]
     object ButtonItem extends SCApply[ButtonItem, ButtonItemProps]
+    object AutoFitTextAreaItem extends SCApply[AutoFitTextAreaItem, AutoFitTextAreaItemProps]
+    object BlurbItem extends SCApply[BlurbItem, BlurbItemProps]
+    object BooleanItem extends SCApply[BooleanItem, BooleanItemProps]
+    object CancelItem extends SCApply[CancelItem, CancelItemProps]
+    object CanvasItem extends SCApply[CanvasItem, CanvasItemProps]
+    object CheckboxItem extends SCApply[CheckboxItem, CheckboxItemProps]
+    object ColorItem extends SCApply[ColorItem, ColorItemProps]
+    object ColorPickerItem extends SCApply[ColorPickerItem, ColorPickerItemProps]
+    object ComboBoxItem extends SCApply[ComboBoxItem, ComboBoxItemProps]
+    object CycleItem extends SCApply[CycleItem, CycleItemProps]
+    object DataPathItem extends SCApply[DataPathItem, DataPathItemProps]
+    object DateItem extends SCApply[DateItem, DateItemProps]
+    object DateRangeItem extends SCApply[DateRangeItem, DateRangeItemProps]
+    object DateTimeItem extends SCApply[DateTimeItem, DateTimeItemProps]
+    object DoubleItem extends SCApply[DoubleItem, DoubleItemProps]
+    object FileItem extends SCApply[FileItem, FileItemProps]
+    object FloatItem extends SCApply[FloatItem, FloatItemProps]
+    object HeaderItem extends SCApply[HeaderItem, HeaderItemProps]
+    object HiddenItem extends SCApply[HiddenItem, HiddenItemProps]
+    object IntegerItem extends SCApply[IntegerItem, IntegerItemProps]
+    object IPickTreeItem extends SCApply[IPickTreeItem, IPickTreeItemProps]
+    object LinkItem extends SCApply[LinkItem, LinkItemProps]
+    object MiniDateRangeItem extends SCApply[MiniDateRangeItem, MiniDateRangeItemProps]
+    object MultiComboBoxItem extends SCApply[MultiComboBoxItem, MultiComboBoxItemProps]
+    object MultiFileItem extends SCApply[MultiFileItem, MultiFileItemProps]
+    object NativeCheckboxItem extends SCApply[NativeCheckboxItem, NativeCheckboxItemProps]
+    object PasswordItem extends SCApply[PasswordItem, PasswordItemProps]
+    object PickList extends SCApply[PickList, PickListProps]
+    object PickListMenu extends SCApply[PickListMenu, PickListMenuProps]
+    object PickTreeItem extends SCApply[PickTreeItem, PickTreeItemProps]
+    object PresetCriteriaItem extends SCApply[PresetCriteriaItem, PresetCriteriaItemProps]
+    object PresetDateRangeItem extends SCApply[PresetDateRangeItem, PresetDateRangeItemProps]
+    object RadioGroupItem extends SCApply[RadioGroupItem, RadioGroupItemProps]
+    object RelationItem extends SCApply[RelationItem, RelationItemProps]
+    object RelativeDateItem extends SCApply[RelativeDateItem, RelativeDateItemProps]
+    object ResetItem extends SCApply[ResetItem, ResetItemProps]
+    object RichTextItem extends SCApply[RichTextItem, RichTextItemProps]
+    object RowSpacerItem extends SCApply[RowSpacerItem, RowSpacerItemProps]
+    object ScrollingMenu extends SCApply[ScrollingMenu, ScrollingMenuProps]
+    object SectionItem extends SCApply[SectionItem, SectionItemProps]
+    object SelectItem extends SCApply[SelectItem, SelectItemProps]
+    object SelectOtherItem extends SCApply[SelectOtherItem, SelectOtherItemProps]
+    object SliderItem extends SCApply[SliderItem, SliderItemProps]
+    object SpacerItem extends SCApply[SpacerItem, SpacerItemProps]
+    object SpinnerItem extends SCApply[SpinnerItem, SpinnerItemProps]
+    object StaticTextItem extends SCApply[StaticTextItem, StaticTextItemProps]
+    object SubmitItem extends SCApply[SubmitItem, SubmitItemProps]
+    object TextAreaItem extends SCApply[TextAreaItem, TextAreaItemProps]
+    object TextItem extends SCApply[TextItem, TextItemProps]
+    object TimeItem extends SCApply[TimeItem, TimeItemProps]
+    object ToolbarItem extends SCApply[ToolbarItem, ToolbarItemProps]
+    object UploadItem extends SCApply[UploadItem, UploadItemProps]
+    object ViewFileItem extends SCApply[ViewFileItem, ViewFileItemProps]
     //</editor-fold>
 
     //<editor-fold desc="Foundation">

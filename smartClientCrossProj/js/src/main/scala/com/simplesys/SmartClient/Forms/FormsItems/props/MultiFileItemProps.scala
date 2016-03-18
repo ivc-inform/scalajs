@@ -8,7 +8,6 @@ import com.simplesys.option.{ScNone, ScOption}
 import scala.scalajs.js._
 
 class MultiFileItemProps extends RelationItemProps {
-    var dataSource: ScOption[DataSource | String] = ScNone
     var editButton: ScOption[StatefulCanvas] = ScNone
     var editButtonPrompt: ScOption[String] = ScNone
     var emptyMessage: ScOption[String] = ScNone

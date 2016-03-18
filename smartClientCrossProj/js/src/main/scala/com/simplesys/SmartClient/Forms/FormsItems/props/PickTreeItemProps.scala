@@ -12,7 +12,7 @@ class PickTreeItemProps extends CanvasItemProps {
     var button: ScOption[Canvas ] = ScNone
     var canSelectParentItems: ScOption[Boolean] = ScNone
     var dataProperties: ScOption[Tree] = ScNone
-    var dataSource: ScOption[DataSource | String] = ScNone
+    var dataSource: ScOption[DataSource] = ScNone
     var emptyMenuMessage: ScOption[HTMLString] = ScNone
     var loadDataOnDemand: ScOption[Boolean] = ScNone
     var pendingButtonStyle: ScOption[CSSStyleName] = ScNone
