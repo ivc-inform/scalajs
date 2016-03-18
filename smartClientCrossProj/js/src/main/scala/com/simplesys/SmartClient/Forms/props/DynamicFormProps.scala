@@ -19,11 +19,10 @@ import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppea
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
-import com.simplesys.System.Types.VisibilityMode.VisibilityMode
 import com.simplesys.System.Types.{CSSStyleName, FormItemBaseStyle, HTMLString, URL}
+import com.simplesys.System.Types.VisibilityMode.VisibilityMode
 import com.simplesys.option.{IntString, ScNone, ScOption}
 
-import scala.scalajs.js
 import scala.scalajs.js._
 
 class DynamicFormProps extends CanvasProps with DataBoundComponentProps{

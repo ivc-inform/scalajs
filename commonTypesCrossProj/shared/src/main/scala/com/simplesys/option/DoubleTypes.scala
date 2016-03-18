@@ -1,9 +1,11 @@
 package com.simplesys.option
 
 import com.simplesys.System.Types.Alignment._
+import com.simplesys.System.Types.FormItemComponentType.FormItemComponentType
 import com.simplesys.System.Types.FormItemType.FormItemType
 import com.simplesys.System.Types.VerticalAlignment._
 import com.simplesys.System._
+
 import scala.language.existentials
 import scala.scalajs.js
 
@@ -40,12 +42,12 @@ object DoubleAlignment {
 //<editor-fold desc="FormItemType_String">
 sealed abstract class FormItemType_FormItemComponentType[+A, +B]
 
-case class FormItemTypefromFormItemType_String(a: FormItemType) extends FormItemType_FormItemComponentType[FormItemType, String]
-case class StringfromFormItemType_String(a: String) extends FormItemType_FormItemComponentType[FormItemType, String]
+case class FormItemTypefromFormItemType_FormItemComponentType(a: FormItemType) extends FormItemType_FormItemComponentType[FormItemType, FormItemComponentType]
+case class FormItemComponentTypefromFormItemType_FormItemComponentType(a: FormItemComponentType) extends FormItemType_FormItemComponentType[FormItemType, FormItemComponentType]
 
 object FormItemType_FormItemComponentType {
-    implicit def FormItemType2FormItemType_String(x: FormItemType) = ScSome(FormItemTypefromFormItemType_String(x))
-    implicit def String2FormItemType_String(x: String) = ScSome(StringfromFormItemType_String(x))
+    implicit def FormItemType2FormItemType_FormItemComponentType(x: FormItemType) = ScSome(FormItemTypefromFormItemType_FormItemComponentType(x))
+    implicit def FormItemComponentType2FormItemType_FormItemComponentType(x: FormItemComponentType) = ScSome(FormItemComponentTypefromFormItemType_FormItemComponentType(x))
 }
 //</editor-fold>
 

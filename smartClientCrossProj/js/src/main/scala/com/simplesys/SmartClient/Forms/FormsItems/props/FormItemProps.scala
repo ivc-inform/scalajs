@@ -1,7 +1,6 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.DataBinding.DataSource
-import com.simplesys.SmartClient.Forms.FormsItems.FormItemComponentType._
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.FormsItems.{CanvasItem, FormItem}
 import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
@@ -12,14 +11,15 @@ import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AutoComplete.AutoComplete
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.FormItemComponentType.FormItemComponentType
 import com.simplesys.System.Types.FormItemType.FormItemType
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
-import com.simplesys.System.Types._
+import com.simplesys.System.Types.{SCImgURL, _}
 import com.simplesys.System._
-import com.simplesys.option.{FormItemType_FormItemComponentType$, IntString, ScNone, ScOption}
+import com.simplesys.option.{FormItemType_FormItemComponentType, IntString, ScNone, ScOption}
 
 import scala.scalajs.js
 
@@ -64,7 +64,7 @@ class FormItemProps extends ClassProps {
     var doubleClick: ScOption[js.Function2[DynamicForm, FormItem, Boolean]] = ScNone
     var editorEnter: ScOption[js.Function3[DynamicForm, FormItem, JSAny, _]] = ScNone
     var editorExit: ScOption[js.Function3[DynamicForm, FormItem, JSAny, _]] = ScNone
-    var editorType: ScOption[FormItems] = ScNone
+    var editorType: ScOption[FormItemComponentType] = ScNone
     var editPendingCSSText: ScOption[CSSText] = ScNone
     var emptyDisplayValue: ScOption[String] = ScNone
     var emptyValueIcon: ScOption[String] = ScNone
@@ -218,5 +218,5 @@ class FormItemProps extends ClassProps {
     var visible: ScOption[Boolean] = ScNone
     var width: ScOption[IntString[Int, String]] = ScNone
     var wrapTitle: ScOption[Boolean] = ScNone
-    var `type`: ScOption[FormItemType_FormItemComponentType[FormItemType, String]] = ScNone
+    var `type`: ScOption[FormItemType_FormItemComponentType[FormItemType, FormItemComponentType]] = ScNone
 }
