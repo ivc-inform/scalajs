@@ -30,6 +30,7 @@ package object System {
 
     implicit class StringOpts(x: String) {
         def ellipsis = s"$x..."
+        def fromSkinPath = s"[SKIN]$x"
         def dblQuoted: String = "\"" + x + "\""
     }
 
@@ -184,4 +185,5 @@ package object System {
     object ToolStripButton extends SCApply[ToolStripButton, ToolStripButtonProps]
     object ToolStripResizer extends SCApply[ToolStripResizer, ToolStripResizerProps]
     //</editor-fold>
+
 }
