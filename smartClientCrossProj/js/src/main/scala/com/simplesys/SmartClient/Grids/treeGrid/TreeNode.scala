@@ -14,7 +14,7 @@ trait TreeNode extends JSObject {
     var enabled: Boolean
     var icon: SCImgURL
     var id: String
-    var isFolder: Option[Boolean]
+    var isFolder: js.UndefOr[Boolean]
     var name: String
     var parentId: String
     var showDropIcon: Boolean
