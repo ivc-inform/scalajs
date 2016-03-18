@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Grids.props.listGrid
 
 import com.simplesys.SmartClient.DataBinding.DSRequest
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
-import com.simplesys.SmartClient.Forms.FormsItems.FormItems.FormItems
+import com.simplesys.SmartClient.Forms.FormsItems.FormItemComponentType.FormItems
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Grids.Grid

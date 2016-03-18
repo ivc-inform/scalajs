@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.DataBinding.DataSource
-import com.simplesys.SmartClient.Forms.FormsItems.FormItems._
+import com.simplesys.SmartClient.Forms.FormsItems.FormItemComponentType._
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.FormsItems.{CanvasItem, FormItem}
 import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
@@ -19,7 +19,7 @@ import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
 import com.simplesys.System._
-import com.simplesys.option.{FormItemType_String, IntString, ScNone, ScOption}
+import com.simplesys.option.{FormItemType_FormItemComponentType$, IntString, ScNone, ScOption}
 
 import scala.scalajs.js
 
@@ -218,5 +218,5 @@ class FormItemProps extends ClassProps {
     var visible: ScOption[Boolean] = ScNone
     var width: ScOption[IntString[Int, String]] = ScNone
     var wrapTitle: ScOption[Boolean] = ScNone
-    var `type`: ScOption[FormItemType_String[FormItemType, String]] = ScNone
+    var `type`: ScOption[FormItemType_FormItemComponentType[FormItemType, String]] = ScNone
 }

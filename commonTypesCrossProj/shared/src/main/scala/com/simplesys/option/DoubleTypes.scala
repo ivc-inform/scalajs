@@ -38,12 +38,12 @@ object DoubleAlignment {
 //</editor-fold>
 
 //<editor-fold desc="FormItemType_String">
-sealed abstract class FormItemType_String[+A, +B]
+sealed abstract class FormItemType_FormItemComponentType[+A, +B]
 
-case class FormItemTypefromFormItemType_String(a: FormItemType) extends FormItemType_String[FormItemType, String]
-case class StringfromFormItemType_String(a: String) extends FormItemType_String[FormItemType, String]
+case class FormItemTypefromFormItemType_String(a: FormItemType) extends FormItemType_FormItemComponentType[FormItemType, String]
+case class StringfromFormItemType_String(a: String) extends FormItemType_FormItemComponentType[FormItemType, String]
 
-object FormItemType_String {
+object FormItemType_FormItemComponentType {
     implicit def FormItemType2FormItemType_String(x: FormItemType) = ScSome(FormItemTypefromFormItemType_String(x))
     implicit def String2FormItemType_String(x: String) = ScSome(StringfromFormItemType_String(x))
 }
