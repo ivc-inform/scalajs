@@ -10,11 +10,11 @@ trait TreeNode extends JSObject {
 
     var canAcceptDrop: Boolean
     var canDrag: Boolean
-    var children: JSArray[TreeNode]
+    var children: Option[JSArray[TreeNode]]
     var enabled: Boolean
     var icon: SCImgURL
     var id: String
-    var isFolder: Boolean
+    var isFolder: Option[Boolean]
     var name: String
     var parentId: String
     var showDropIcon: Boolean
