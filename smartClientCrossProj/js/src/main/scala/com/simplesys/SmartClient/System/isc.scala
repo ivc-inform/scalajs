@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.Control._
+import com.simplesys.SmartClient.DataBinding.AbstractJSONCompanion
 import com.simplesys.SmartClient.Grids._
 import com.simplesys.System.Types.{Callback, ID, void}
 import com.simplesys.System._
@@ -61,6 +62,7 @@ object iscStatic extends JSObject {
     def ok(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
     def infos(grid: ListGrid, identifier: ID = js.native, callback: Callback = js.native): void = js.native
     def errors(grid: ListGrid, identifier: ID = js.native, callback: Callback = js.native): void = js.native
+    val JSON : AbstractJSONCompanion = js.native
 }
 
 
