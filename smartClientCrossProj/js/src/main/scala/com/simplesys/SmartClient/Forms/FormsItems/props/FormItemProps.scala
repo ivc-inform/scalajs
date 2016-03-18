@@ -15,6 +15,7 @@ import com.simplesys.System.Types.FormItemComponentType.FormItemComponentType
 import com.simplesys.System.Types.FormItemType.FormItemType
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
+import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types.{SCImgURL, _}
@@ -182,7 +183,7 @@ class FormItemProps extends ClassProps {
     var tabIndex: ScOption[Int] = ScNone
     var textAlign: ScOption[Alignment] = ScNone
     var textBoxStyle: ScOption[FormItemBaseStyle] = ScNone
-    //    var timeFormatter: ScOption[TimeDisplayFormat] = ScNone
+    var timeFormatter: ScOption[TimeDisplayFormat] = ScNone
     var title: ScOption[String] = ScNone
     var titleAlign: ScOption[Alignment] = ScNone
     var titleClassName: ScOption[CSSStyleName] = ScNone
