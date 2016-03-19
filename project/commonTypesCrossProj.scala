@@ -24,7 +24,7 @@ trait commonTypesCrossProj {
       jvmSettings().
       jsSettings(
           //jsDependencies += "org.example" %% "js-thing" % "0.1" / "foo.js"
-      )/*.enablePlugins(ScalaJSPlugin)*/
+      )
 
     // Needed, so sbt finds the projects
     lazy val commonTypesJVM = commonTypesCrossProj.jvm
