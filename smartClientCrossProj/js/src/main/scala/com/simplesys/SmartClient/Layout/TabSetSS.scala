@@ -18,6 +18,8 @@ trait TabSetSS extends TabSet {
     def getLength(): Int
     def isEmpty(): Boolean
     def isNotEmpty(): Boolean
+    def hideTab(tabName: String): void
+    def showTab(tabName: String): void
 }
 
 
