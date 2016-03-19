@@ -21,11 +21,8 @@ trait UnderscoreJSCrossProj {
       ).
       jvmSettings().
       jsSettings(
-          libraryDependencies ++= Seq(
-//              CommonSettings.jsDependencies.scalajsDOM.value,
-//              CommonSettings.jsDependencies.scalajsJQuey.value
-          )
-      ) //.dependsOn().jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
+          libraryDependencies ++= Seq()
+      )
 
     lazy val underscoreJSCrossJVM = underscoreJSCrossProj.jvm
     lazy val underscoreJSCrossJS = underscoreJSCrossProj.js

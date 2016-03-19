@@ -21,14 +21,10 @@ trait commonTypesCrossProj {
           testFrameworks += new TestFramework("utest.runner.Framework"),
           publishArtifact in(Compile, packageDoc) := false
       ).
-      jvmSettings(
-          libraryDependencies ++= {
-              Seq(
-              )
-          }).
+      jvmSettings().
       jsSettings(
           //jsDependencies += "org.example" %% "js-thing" % "0.1" / "foo.js"
-      ).enablePlugins(ScalaJSPlugin)
+      )/*.enablePlugins(ScalaJSPlugin)*/
 
     // Needed, so sbt finds the projects
     lazy val commonTypesJVM = commonTypesCrossProj.jvm
