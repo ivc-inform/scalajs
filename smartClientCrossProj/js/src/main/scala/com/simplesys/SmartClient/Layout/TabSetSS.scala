@@ -18,7 +18,6 @@ trait TabSetSS extends TabSet {
     def getLength(): Int
     def isEmpty(): Boolean
     def isNotEmpty(): Boolean
-    def restorePosTabs(): void
 }
 
 
