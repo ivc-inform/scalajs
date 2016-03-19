@@ -4,7 +4,7 @@ import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport._
 import sbt.Keys._
 import sbt._
 
-trait UnderscoreJSProj {
+trait UnderscoreJSCrossProj {
     self: Build with commonTypesCrossProj =>
 
     lazy val underscoreJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).

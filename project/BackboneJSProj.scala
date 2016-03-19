@@ -5,7 +5,7 @@ import sbt.Keys._
 import sbt._
 
 trait BackboneJSProj {
-    self: Build with MacroJSProject with MacroJVMProject with UnderscoreJSProj =>
+    self: Build with MacroJSProject with MacroJVMProject with UnderscoreJSCrossProj =>
 
     lazy val backboneJSCrossProj = crossProject.dependsOn(underscoreJSCrossProj).
       settings(

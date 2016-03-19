@@ -5,7 +5,7 @@ import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport._
 import sbt.Keys._
 import sbt._
 
-trait JointJSProj {
+trait JointJSCrossProj {
     self: Build with  BackboneJSProj =>
 
     lazy val jointJSCrossProj = crossProject.dependsOn(backboneJSCrossProj).

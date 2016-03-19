@@ -11,9 +11,9 @@ object MyBuild extends Build with
   SmartClientCrossProj with
   commonTypesCrossProj with
   CommonDomainsCrossProj with
-  JointJSProj with
+  JointJSCrossProj with
   BackboneJSProj with
-  UnderscoreJSProj {
+  UnderscoreJSCrossProj {
 
     override def settings: Seq[Def.Setting[_]] = super.settings ++ Seq(
         scalaVersion := CommonSettings.scalaVersion,
