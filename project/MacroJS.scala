@@ -5,7 +5,7 @@ import Keys._
 import org.scalajs.sbtplugin.ScalaJSPlugin
 
 trait MacroJSProject {
-  self: Build with CommonTypesProj =>
+  self: Build with commonTypesCrossProj =>
   lazy val macroJS = Project("macrojs", file("macrojs")).settings(
     name := "macrojs",
     version := "1.1-SNAPSHOT",

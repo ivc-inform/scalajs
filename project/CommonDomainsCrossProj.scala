@@ -5,7 +5,7 @@ import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport._
 import sbt.Keys._
 import sbt._
 
-trait CommonDomainsProj {
+trait CommonDomainsCrossProj {
     self: Build with MacroJSProject with MacroJVMProject with SmartClientCrossProj =>
 
     lazy val commonDomainsCrossProj = crossProject.dependsOn(smartClientCrossProj).

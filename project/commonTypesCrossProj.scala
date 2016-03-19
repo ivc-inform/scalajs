@@ -5,7 +5,7 @@ import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport._
 import sbt.Keys._
 import sbt._
 
-trait CommonTypesProj {
+trait commonTypesCrossProj {
     self: Build =>
 
     lazy val commonTypesCrossProj = crossProject.

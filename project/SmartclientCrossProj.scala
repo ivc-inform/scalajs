@@ -5,7 +5,7 @@ import sbt.Keys._
 import sbt._
 
 trait SmartClientCrossProj {
-    self: Build with MacroJSProject with MacroJVMProject with CommonTypesProj =>
+    self: Build with MacroJSProject with MacroJVMProject with commonTypesCrossProj =>
 
     lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
       settings(

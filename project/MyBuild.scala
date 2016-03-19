@@ -9,8 +9,8 @@ object MyBuild extends Build with
   MacroJSProject with
   MacroJVMProject with
   SmartClientCrossProj with
-  CommonTypesProj with
-  CommonDomainsProj with
+  commonTypesCrossProj with
+  CommonDomainsCrossProj with
   JointJSProj with
   BackboneJSProj with
   UnderscoreJSProj {

@@ -4,7 +4,7 @@ import sbt._
 import Keys._
 
 trait MacroJVMProject {
-  self: Build with CommonTypesProj =>
+  self: Build with commonTypesCrossProj =>
   lazy val macroJVM = Project("macrojvm", file("macrojvm")).settings(
     name := "macrojvm",
     version := "1.1-SNAPSHOT",

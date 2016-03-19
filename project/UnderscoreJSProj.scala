@@ -5,7 +5,7 @@ import sbt.Keys._
 import sbt._
 
 trait UnderscoreJSProj {
-    self: Build with CommonTypesProj =>
+    self: Build with commonTypesCrossProj =>
 
     lazy val underscoreJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).
       settings(
