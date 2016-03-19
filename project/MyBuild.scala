@@ -35,7 +35,7 @@ object MyBuild extends Build with
         credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
     )
 
-    lazy val root = Project("core-libs-scalajs", file(".")) settings (
+    lazy val root = Project("scalajs", file(".")) settings (
       Seq(
           publishArtifact in(Compile, packageBin) := false,
           publishArtifact in(Compile, packageDoc) := false,
