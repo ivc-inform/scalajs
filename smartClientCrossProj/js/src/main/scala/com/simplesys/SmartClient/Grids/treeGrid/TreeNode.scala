@@ -1,12 +1,13 @@
 package com.simplesys.SmartClient.Grids.treeGrid
 
 import com.simplesys.System.Types.{HTMLString, SCImgURL}
-import com.simplesys.System.{JSObject, JSArray}
+import com.simplesys.System.{JSArray, JSDynamic, JSObject}
+import scala.language.dynamics
 
 import scala.scalajs.js
 
 @js.native
-trait TreeNode extends JSObject {
+trait TreeNode extends JSObject with scala.Dynamic{
 
     var canAcceptDrop: Boolean
     var canDrag: Boolean
