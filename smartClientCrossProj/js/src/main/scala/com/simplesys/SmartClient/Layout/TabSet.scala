@@ -113,7 +113,7 @@ trait TabSet extends Canvas {
     var tabBarProperties: TabBar
     var tabBarThickness: Int
     var tabDeselected: js.Function5[Int, Canvas, ID, Tab, Tab, Boolean]
-    var tabSelected: js.Function5[Int, Canvas, ID, Tab, Tab, Boolean]
+    var tabSelected: js.Function5[Int, Canvas, ID, Tab, String, _]
     def tabForPane(pane: Canvas): Tab
     var tabIconClick: js.Function1[Tab, _]
     var tabPicker: ImgButton with AutoChild
