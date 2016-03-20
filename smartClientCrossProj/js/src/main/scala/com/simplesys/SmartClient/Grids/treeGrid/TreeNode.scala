@@ -2,23 +2,24 @@ package com.simplesys.SmartClient.Grids.treeGrid
 
 import com.simplesys.System.Types.{HTMLString, SCImgURL}
 import com.simplesys.System.{JSArray, JSDynamic, JSObject}
-import scala.language.dynamics
 
+import scala.language.dynamics
 import scala.scalajs.js
+import scala.scalajs.js.UndefOr
 
 @js.native
 trait TreeNode extends JSObject with scala.Dynamic{
 
-    var canAcceptDrop: Boolean
-    var canDrag: Boolean
-    var children: Option[JSArray[TreeNode]]
-    var enabled: Boolean
-    var icon: SCImgURL
-    var id: String
+    var canAcceptDrop: js.UndefOr[Boolean]
+    var canDrag: UndefOr[Boolean]
+    var children: UndefOr[JSArray[TreeNode]]
+    var enabled: UndefOr[Boolean]
+    var icon: UndefOr[SCImgURL]
+    var id: js.UndefOr[String]
     var isFolder: js.UndefOr[Boolean]
-    var name: String
-    var parentId: String
-    var showDropIcon: Boolean
-    var showOpenIcon: Boolean
-    var title: HTMLString
+    var name: UndefOr[String]
+    var parentId: js.UndefOr[String]
+    var showDropIcon: UndefOr[Boolean]
+    var showOpenIcon: UndefOr[Boolean]
+    var title: UndefOr[HTMLString]
 }
