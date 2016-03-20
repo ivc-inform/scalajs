@@ -20,6 +20,7 @@ trait TabSetSS extends TabSet {
     def isNotEmpty(): Boolean
     def hideTab(tabName: String): void
     def showTab(tabName: String): void
+    def getSelectedTabNumber(): Int
 }
 
 
