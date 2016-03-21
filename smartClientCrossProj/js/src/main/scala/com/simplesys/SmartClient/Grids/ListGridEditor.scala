@@ -18,7 +18,7 @@ import com.simplesys.System.Types._
 import com.simplesys.System._
 
 import scala.scalajs.js
-import scala.scalajs.js.|
+import scala.scalajs.js.{UndefOr, |}
 
 @js.native
 trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedState] extends VLayoutSS {
@@ -113,8 +113,8 @@ trait GridEditor[T <: ListGridField, R <: ListGridRecord, S <: ListGridSelectedS
     def unSetSelectionChanged(func: js.Function2[R, Boolean, _]): void
     def unSetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
     def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor, pkFieldNames: JSArray[MasterDetailMapping] | MasterDetailMapping = js.native): void
-    def setForignFieldFields(grid: ListGrid, masterGrid: js.UndefOr[ListGrid]): void
-    var masterGrid: js.UndefOr[ListGrid | ListGridEditor | TreeGrid | TreeGridEditor]
+    def setForignFieldFields(grid: ListGrid, masterGrid: js.UndefOr[ListGrid] | UndefOr[TreeGrid]): void
+    var masterGrid: js.UndefOr[ListGrid] | UndefOr[ListGridEditor] | UndefOr[TreeGrid] | UndefOr[TreeGridEditor]
     var canDragRecordsOut: Boolean
     var canReorderRecords: Boolean
     var dragDataAction: DragDataAction

@@ -57,7 +57,7 @@ import com.simplesys.System.Types._
 import com.simplesys.System._
 
 import scala.scalajs.js
-import scala.scalajs.js.|
+import scala.scalajs.js.{UndefOr, |}
 
 @js.native
 trait Grid[T <: ListGridField, R <: JSObject] extends VLayout with DataBoundComponent {
@@ -852,7 +852,7 @@ trait Grid[T <: ListGridField, R <: JSObject] extends VLayout with DataBoundComp
     def unSetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
     def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor, pkFieldNames: JSArray[MasterDetailMapping] | MasterDetailMapping = js.native): void
     def selectRecordsByKey(keyValues: JSObject, newState: Boolean): R
-    var masterGrid: js.UndefOr[ListGrid | TreeGrid]
+    var masterGrid: js.UndefOr[ListGrid] | UndefOr[TreeGrid]
 }
 
 @js.native
