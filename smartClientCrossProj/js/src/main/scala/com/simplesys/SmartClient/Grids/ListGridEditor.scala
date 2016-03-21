@@ -113,7 +113,7 @@ trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayo
     def unSetSelectionChanged(func: js.Function2[R, Boolean, _]): void
     def unSetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
     def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor, pkFieldNames: JSArray[MasterDetailMapping] | MasterDetailMapping = js.native): void
-    def setForignFieldFields(grid: ListGrid, masterGrid: ListGrid | TreeGrid): void
+    def setForignFieldFields(grid: ListGrid | TreeGrid, masterGrid: UndefOr[ListGrid] | UndefOr[TreeGrid]): void
     var masterGrid: ListGrid | ListGridEditor | TreeGrid | TreeGridEditor
     var canDragRecordsOut: Boolean
     var canReorderRecords: Boolean
