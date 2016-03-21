@@ -11,10 +11,10 @@ import com.simplesys.System.Types.Overflow.Overflow
 import com.simplesys.System.Types.Side.Side
 import com.simplesys.System.Types.TabTitleEditEvent.TabTitleEditEvent
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSArray}
+import com.simplesys.System.{JSArray, JSObject}
 
 import scala.scalajs.js
-import scala.scalajs.js.|
+import scala.scalajs.js.{UndefOr, |}
 
 @js.native
 trait TabSet extends Canvas {
@@ -112,8 +112,8 @@ trait TabSet extends Canvas {
     var tabBarPosition: Side
     var tabBarProperties: TabBar
     var tabBarThickness: Int
-    var tabDeselected: js.Function5[Int, Canvas, ID, Tab, Tab, Boolean]
-    var tabSelected: js.Function5[Int, Canvas, ID, Tab, String, _]
+    var tabDeselected: js.Function5[Int, Canvas, UndefOr[ID], Tab, Tab, Boolean]
+    var tabSelected: js.Function5[Int, Canvas, UndefOr[ID], Tab, String, _]
     def tabForPane(pane: Canvas): Tab
     var tabIconClick: js.Function1[Tab, _]
     var tabPicker: ImgButton with AutoChild
