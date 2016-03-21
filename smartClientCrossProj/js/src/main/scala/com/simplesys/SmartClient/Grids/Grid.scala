@@ -652,7 +652,7 @@ trait Grid[T <: ListGridField, R <: JSObject] extends VLayout with DataBoundComp
     def scrollToRow(rowNum: Int, yPosition: VerticalAlignment = js.native): void
     var scrollWheelRedrawDelay: Int
     def selectAllRecords(visibleNodesOnly: Boolean = js.native): void
-    def selectFirstRecord():void
+    def selectFirstRecord(): void
     var selectedState: ListGridSelectedState
     var selectHeaderOnSort: Boolean
     val selection: Selection
@@ -850,9 +850,9 @@ trait Grid[T <: ListGridField, R <: JSObject] extends VLayout with DataBoundComp
     def setSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
     def unSetSelectionChanged(func: js.Function2[R, Boolean, _]): void
     def unSetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
-    def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor, pkFieldNames: JSArray[MasterDetailMapping] |MasterDetailMapping = js.native): void
+    def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor, pkFieldNames: JSArray[MasterDetailMapping] | MasterDetailMapping = js.native): void
     def selectRecordsByKey(keyValues: JSObject, newState: Boolean): R
-    var masterGrid: ListGrid
+    var masterGrid: js.UndefOr[ListGrid | TreeGrid]
 }
 
 @js.native
