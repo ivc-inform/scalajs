@@ -13,6 +13,7 @@ trait JSON extends Class {
 abstract trait AbstractJSONCompanion extends AbstractClassCompanion {
     def decode(jsonString: String): JSObject = js.native
     def encode(obj: JSObject, settings: JSONEncoder = js.native): String = js.native
+    def printObject(obj: JSObject): String = js.native
 }
 
 @js.native
