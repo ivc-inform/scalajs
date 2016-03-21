@@ -852,7 +852,7 @@ trait Grid[T <: ListGridField, R <: JSObject] extends VLayout with DataBoundComp
     def unSetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
     def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor, pkFieldNames: JSArray[MasterDetailMapping] | MasterDetailMapping = js.native): void
     def selectRecordsByKey(keyValues: JSObject, newState: Boolean): R
-    var masterGrid: js.UndefOr[ListGrid] | UndefOr[TreeGrid]
+    var masterGrid: ListGrid | TreeGrid
 }
 
 @js.native
