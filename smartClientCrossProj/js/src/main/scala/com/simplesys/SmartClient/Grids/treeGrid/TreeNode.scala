@@ -8,7 +8,7 @@ import scala.scalajs.js
 import scala.scalajs.js.UndefOr
 
 @js.native
-trait TreeNode extends JSObject with scala.Dynamic{
+trait TreeNode extends JSObject{
 
     var canAcceptDrop: js.UndefOr[Boolean]
     var canDrag: UndefOr[Boolean]

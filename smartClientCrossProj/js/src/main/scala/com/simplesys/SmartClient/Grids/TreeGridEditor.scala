@@ -10,7 +10,7 @@ import com.simplesys.System.Types._
 import scala.scalajs.js
 
 @js.native
-trait TreeGridEditor extends VLayoutSS with GridEditor[TreeGridField, TreeNode, ListGridSelectedState] {
+trait TreeGridEditor extends VLayoutSS with GridEditor[TreeGridField, TreeNode, TreeGridSelectedState] {
     var folderIcon: SCImgURL
     var dataProperties: Tree
     var nodeIcon: SCImgURL

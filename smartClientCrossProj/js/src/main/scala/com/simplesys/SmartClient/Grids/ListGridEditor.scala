@@ -21,7 +21,7 @@ import scala.scalajs.js
 import scala.scalajs.js.{UndefOr, |}
 
 @js.native
-trait GridEditor[T <: ListGridField, R <: JSObject, S <: ListGridSelectedState] extends VLayoutSS {
+trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayoutSS {
     var canDragSelectText: Boolean
     var canAcceptDroppedRecords: Boolean
     var autoFitFieldWidth: Boolean
