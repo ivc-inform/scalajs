@@ -2,7 +2,7 @@ package com.simplesys.option
 
 object ScOption {
     implicit def anyToScOpt[T](x: T): ScOption[T] = ScSome(x)
-    implicit def anyToScOpt1[T](x: T): ScOption[Any] = ScSome(x)
+    //implicit def anyToScOpt1[T](x: T): ScOption[Any] = ScSome(x)
 }
 
 sealed abstract class ScOption[+A] extends Product with Serializable {
