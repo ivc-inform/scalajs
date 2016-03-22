@@ -17,7 +17,9 @@ import com.simplesys.SmartClient.Layout._
 import com.simplesys.SmartClient.Layout.portalLayout.{Portlet, PortletSS}
 import com.simplesys.SmartClient.Layout.props._
 import com.simplesys.SmartClient.Layout.props.portalLayout.{PortletProps, PortletSSProps}
+import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
 import com.simplesys.SmartClient.Layout.props.toolStrip.{ToolStripButtonProps, ToolStripMenuButtonProps, ToolStripResizerProps, ToolStripSeparatorProps}
+import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.SmartClient.Layout.toolStrip.{ToolStripButton, ToolStripMenuButton, ToolStripResizer, ToolStripSeparator}
 import com.simplesys.SmartClient.RPC.props.{RPCRequestProps, RPCResponseProps}
 import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
@@ -124,6 +126,7 @@ package object System {
     object ToolbarItem extends SCApply[ToolbarItem, ToolbarItemProps]
     object UploadItem extends SCApply[UploadItem, UploadItemProps]
     object ViewFileItem extends SCApply[ViewFileItem, ViewFileItemProps]
+    object Tab extends SCApply4Object[Tab, TabProps]
     //</editor-fold>
 
     //<editor-fold desc="Foundation">
