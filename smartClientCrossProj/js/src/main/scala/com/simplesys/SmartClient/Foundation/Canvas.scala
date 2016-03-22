@@ -82,6 +82,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val border: String
     def bringToFront(): void
     var canAcceptDrop: Boolean
+    var beforeDestroy: js.ThisFunction0[callbackHandler, _]
     var canDrag: Boolean
     var canDragReposition: Boolean
     var canDragResize: Boolean

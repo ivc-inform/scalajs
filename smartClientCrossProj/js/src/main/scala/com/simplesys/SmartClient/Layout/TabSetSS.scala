@@ -12,6 +12,8 @@ import scala.scalajs.js.|
 trait TabSetSS extends TabSet {
     @JSName("tabsReordered")
     var tabsReorderedSS: js.ThisFunction0[TabSetSS, _]
+    var beforeRemoveTabs : js.Function1[Tab, _]
+    var afterRemoveTabs : js.Function1[Tab, _]
     def filter4Visiblity(tabs: JSArray[Tab]): JSArray[Tab]
     def addTabs(tabs: JSArray[Tab], position: Int = js.native): void
     def addTab(tab: Tab, position: Int = js.native): void
