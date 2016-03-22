@@ -849,8 +849,8 @@ trait Grid[T <: ListGridField, R <: JSObject] extends VLayout with DataBoundComp
     def getRowNumSelectedGridRecord(): Int
     def setSelectionChanged(func: js.Function2[R, Boolean, _]): void
     def setSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
-    def unSetSelectionChanged(func: js.Function2[R, Boolean, _]): void
-    def unSetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
+    def unsetSelectionChanged(func: js.Function2[R, Boolean, _]): void
+    def unsetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
     def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor, pkFieldNames: JSArray[MasterDetailMapping] | MasterDetailMapping = js.native): void
     def selectRecordsByKey(keyValues: JSObject, newState: Boolean): R
     @JSName("masterGrid")
