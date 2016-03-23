@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Drawing
 
 import com.simplesys.SmartClient.Control.Menu
 import com.simplesys.SmartClient.Drawing.Gradients.Gradient
-import com.simplesys.SmartClient.Drawing.drawItem.{DrawGroup, DrawRect}
+import com.simplesys.SmartClient.Drawing.drawItem.{DrawGroup, DrawLabel, DrawRect}
 import com.simplesys.System.Types.ArrowStyle.ArrowStyle
 import com.simplesys.System.Types.Cursor.Cursor
 import com.simplesys.System.Types.KnobType.KnobType
@@ -11,6 +11,7 @@ import com.simplesys.System.Types.LinePattern.LinePattern
 import com.simplesys.System.Types.MoveKnobPoint.MoveKnobPoint
 import com.simplesys.System.Types.ProportionalResizeMode.ProportionalResizeMode
 import com.simplesys.System.Types.ResizeKnobPoint.ResizeKnobPoint
+import com.simplesys.System.Types.TitleRotationMode.TitleRotationMode
 import com.simplesys.System.Types._
 import com.simplesys.System.{JSAny, JSArray, JSObject}
 import com.simplesys.props.AbstractClassProps
@@ -117,6 +118,21 @@ trait DrawItem extends JSObject {
     def showContextMenu(): void
     var showHover: Boolean
     def showKnobs(knobType: KnobType | JSArray[KnobType]): void
+    var showResizeOutline: Boolean
+    val showTitleLabelBackground: Boolean
+    val sideResizeKnob: DrawKnob with MultiAutoChild
+    var startArrow: ArrowStyle
+    val startKnob: DrawKnob with AutoChild
+    def supportsEndArrow(): Boolean
+    def supportsStartArrow(): Boolean
+    var title: String
+    val titleLabel: DrawLabel with AutoChild
+    val titleLabelBackground: DrawLabel with AutoChild
+    val titleLabelPadding: Int
+    val titleRotationMode: TitleRotationMode
+    val translate: JSArray[Double]
+    val xShearFactor: Double
+    val yShearFactor: Double
 }
 
 @js.native
