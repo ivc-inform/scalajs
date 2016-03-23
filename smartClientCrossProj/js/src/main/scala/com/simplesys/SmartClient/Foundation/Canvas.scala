@@ -86,7 +86,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var canDrag: Boolean
     var canDragReposition: Boolean
     var canDragResize: Boolean
-    var canDragScroll: Boolean
+    val canDragScroll: Boolean
     var canDrop: Boolean
     var canDropBefore: Boolean
     val canFocus: Boolean
