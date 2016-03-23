@@ -48,7 +48,8 @@ trait Class extends JSObject {
     def logIsWarnEnabled(category: String = js.native): void
     def logIsEnabledFor(priority: LogPriority, category: String): void
     def map(methodName: String, items: JSArrayAny): JSArrayAny
-    def observe(`object`: JSObject, methodName: String, action: String = js.native): Boolean
+    def observe(`object`: JSObject, methodName: String, action: String): Boolean
+    def observe(`object`: JSObject, methodName: String, action: js.Function): Boolean
     def setDefaultLogPriority(category: String, priority: LogPriority): void
     def setLogPriority(category: String, priority: LogPriority): void
     def setProperties(arguments: JSDictionary[JSObject]): void
