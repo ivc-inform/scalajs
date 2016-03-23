@@ -5,5 +5,6 @@ import scala.scalajs.js.|
 
 @js.native
 trait SimpleGradient extends Gradient {
+    val direction:Double
 }
 
