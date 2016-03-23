@@ -24,11 +24,12 @@ import com.simplesys.System.Types.ProportionalResizeMode.ProportionalResizeMode
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types.Visibility.Visibility
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSArrayAny}
+import com.simplesys.System.{JSArrayAny, JSObject}
 import com.simplesys.option._
 import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js
+import scala.scalajs.js.ThisFunction0
 
 class CanvasProps extends ClassProps {
     type callbackHandler <: Canvas
@@ -61,6 +62,7 @@ class CanvasProps extends ClassProps {
     var backgroundImage: ScOption[SCImgURL] = ScNone
     var backgroundPosition: ScOption[String] = ScNone
     var backgroundRepeat: ScOption[BackgroundRepeat] = ScNone
+    var beforeDestroy: ScOption[ThisFunction0[callbackHandler, _]] = ScNone
     var border: ScOption[String] = ScNone
     var canAcceptDrop: ScOption[Boolean] = ScNone
     var canDrag: ScOption[Boolean] = ScNone
