@@ -2,14 +2,17 @@ package com.simplesys.SmartClient.Drawing
 
 import com.simplesys.SmartClient.Control.Menu
 import com.simplesys.SmartClient.Drawing.Gradients.Gradient
-import com.simplesys.SmartClient.Drawing.drawItem.DrawGroup
+import com.simplesys.SmartClient.Drawing.drawItem.{DrawGroup, DrawRect}
 import com.simplesys.System.Types.ArrowStyle.ArrowStyle
 import com.simplesys.System.Types.Cursor.Cursor
 import com.simplesys.System.Types.KnobType.KnobType
 import com.simplesys.System.Types.LineCap.LineCap
 import com.simplesys.System.Types.LinePattern.LinePattern
+import com.simplesys.System.Types.MoveKnobPoint.MoveKnobPoint
+import com.simplesys.System.Types.ProportionalResizeMode.ProportionalResizeMode
+import com.simplesys.System.Types.ResizeKnobPoint.ResizeKnobPoint
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSArray, JSObject}
+import com.simplesys.System.{JSAny, JSArray, JSObject}
 import com.simplesys.props.AbstractClassProps
 
 import scala.scalajs.js
@@ -72,6 +75,48 @@ trait DrawItem extends JSObject {
     var moved: js.Function2[Int, Int, _]
     val moveKnob: DrawKnob with AutoChild
     var moveKnobOffset: JSArray[Int]
+    val moveKnobPoint: MoveKnobPoint
+    def moveTo(left: Int, top: Int): void
+    var prompt: HTMLString
+    val proportionalResizeModifiers: JSArray[KeyName]
+    val proportionalResizing: ProportionalResizeMode
+    def resizeBy(dX: Int, dY: Int): void
+    var resized: js.Function0[_]
+    val resizeKnobPoints: JSArray[ResizeKnobPoint]
+    val resizeOutline: DrawRect with AutoChild
+    def resizeTo(width: Int, height: Int): void
+    val resizeViaLocalTransformOnly: Boolean
+    def rotateBy(degrees: Double): void
+    def rotateTo(degrees: Double): void
+    val rotation: Double
+    val scale: JSArray[Double]
+    def scaleBy(x: Double, y: Double): void
+    def scaleTo(x: Double, y: Double): void
+    def setCanDrag(canDrag: Boolean): void
+    def setCenterPoint(left: Int, top: Int): void
+    def setCursor(newCursor: Cursor): void
+    def setDrawPane(drawPane: DrawPane): void
+    def setEndArrow(arrowStyle: ArrowStyle): void
+    def setFillColor(color: Color): void
+    def setFillGradient(gradient: Gradient): void
+    def setFillOpacity(opacity: Double): void
+    def setLineCap(cap: LineCap): void
+    def setLineColor(color: CSSColor): void
+    def setLineOpacity(opacity: Double): void
+    def setLinePattern(pattern: LinePattern): void
+    def setLineWidth(width: Int): void
+    def setMoveKnobOffset(newMoveKnobOffset: JSArray[Int] = js.native): void
+    def setPropertyValue(propertyName: String, newValue: JSAny): void
+    def setShadow(shadow: Shadow): void
+    def setStartArrow(arrowStyle: ArrowStyle): void
+    def setTitle(newTitle: String = js.native): void
+    var shadow: Shadow
+    val shapeData: JSObject
+    def show(): void
+    def showAllKnobs(): void
+    def showContextMenu(): void
+    var showHover: Boolean
+    def showKnobs(knobType: KnobType | JSArray[KnobType]): void
 }
 
 @js.native
