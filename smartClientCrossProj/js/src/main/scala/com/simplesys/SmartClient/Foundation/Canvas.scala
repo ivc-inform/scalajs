@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.Foundation
 
 import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.DataBinding.Callbacks._
+import com.simplesys.SmartClient.Drawing.Point
 import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
 import com.simplesys.SmartClient.Layout.PrintWindow
@@ -26,7 +27,7 @@ import com.simplesys.System.Types.ProportionalResizeMode._
 import com.simplesys.System.Types.VerticalAlignment._
 import com.simplesys.System.Types.Visibility._
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSArray, JSArrayAny}
+import com.simplesys.System.{JSArray, JSArrayAny, JSObject}
 import org.scalajs.dom.DocumentEvent
 import org.scalajs.dom.html.Element
 import org.scalajs.dom.raw.HTMLElement

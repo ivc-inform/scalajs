@@ -14,7 +14,6 @@ import com.simplesys.System.Types.ResizeKnobPoint.ResizeKnobPoint
 import com.simplesys.System.Types.TitleRotationMode.TitleRotationMode
 import com.simplesys.System.Types._
 import com.simplesys.System.{JSAny, JSArray, JSObject}
-import com.simplesys.props.AbstractClassProps
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -136,7 +135,7 @@ trait DrawItem extends JSObject {
 }
 
 @js.native
-abstract trait AbstractDrawItemCompanion extends AbstractClassProps {
+abstract trait AbstractDrawItemCompanion extends JSObject {
     def computeAngle(px1: Double, py1: Double, px2: Double, py2: Double): Double = js.native
 }
 
