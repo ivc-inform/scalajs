@@ -18,5 +18,5 @@ trait DrawImage extends DrawItem {
     var src: URL
     var top: Int
     val useMatrixFilter:Boolean
-    var top: Int
+    var width: Int
 }
