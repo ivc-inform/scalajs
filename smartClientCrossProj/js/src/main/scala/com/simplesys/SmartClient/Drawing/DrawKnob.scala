@@ -8,9 +8,3 @@ import scala.scalajs.js
 trait DrawKnob extends Canvas {
 }
 
-@js.native
-abstract trait AbstractDrawKnobCompanion extends AbstractCanvasCompanion {
-}
-
-@js.native
-object DrawKnob extends AbstractDrawKnobCompanion
