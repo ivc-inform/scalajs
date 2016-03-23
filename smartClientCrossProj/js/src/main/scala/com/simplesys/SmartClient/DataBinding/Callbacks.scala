@@ -8,28 +8,30 @@ import com.simplesys.System.JSDictionaryAny
 import scala.scalajs.js
 import scala.scalajs.js.{ThisFunction0, ThisFunction1, ThisFunction2}
 
-object Callbacks{
+object Callbacks {
     type AnimationCallback = ThisFunction1[Canvas#callbackHandler, Boolean, _]
-    
+
     type CollapseSectionCallback = ThisFunction0[SectionStack#callbackHandler, _]
-    
+
     type ExpandSectionCallback = ThisFunction0[SectionStack#callbackHandler, _]
-    
+
     type HideSectionCallback = ThisFunction0[SectionStack#callbackHandler, _]
-    
+
     type ShowSectionCallback = ThisFunction0[SectionStack#callbackHandler, _]
-    
+
     type ClientOnlyDataSourceCallback = ThisFunction0[DataSource, _]
-    
-    type  GetFileCallback = ThisFunction2[DSResponse, String, DSRequest, _]
-    
-    type  GetFileVersionCallback = ThisFunction2[DSResponse, String, DSRequest, _]
-    
-    type  HasFileCallback = ThisFunction2[DSResponse, String, DSRequest, _]
-    
-    type DSCallback = js.Function3[DSResponse,JSDictionaryAny, DSRequest, _]
-    
-    type RPCCallback = js.Function3[RPCResponse,JSDictionaryAny, RPCRequest, _]
+
+    type GetFileCallback = ThisFunction2[DSResponse, String, DSRequest, _]
+
+    type GetFileVersionCallback = ThisFunction2[DSResponse, String, DSRequest, _]
+
+    type HasFileCallback = ThisFunction2[DSResponse, String, DSRequest, _]
+
+    type DSCallback = js.Function3[DSResponse, JSDictionaryAny, DSRequest, _]
+
+    type RPCCallback = js.Function3[RPCResponse, JSDictionaryAny, RPCRequest, _]
+
+    type DataURLCallback = js.Function1[String, _]
 }
 
 
