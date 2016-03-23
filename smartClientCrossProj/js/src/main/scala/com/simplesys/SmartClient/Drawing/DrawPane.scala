@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.Drawing
 import com.simplesys.SmartClient.DataBinding.Callbacks.DataURLCallback
 import com.simplesys.SmartClient.Drawing.Gradients.{Gradient, LinearGradient, SimpleGradient}
 import com.simplesys.SmartClient.Foundation.{AbstractCanvasCompanion, Canvas}
+import com.simplesys.System.JSArray
 import com.simplesys.System.Types.{ID, void}
 import org.scalajs.dom.svg.RadialGradient
 
@@ -40,6 +41,13 @@ trait DrawPane extends Canvas {
 
 @js.native
 abstract trait AbstractDrawPaneCompanion extends AbstractCanvasCompanion {
+    def bezier(p1: Double, cp1: Double, cp2: Double, p2: Double, t: Double): Double = js.native
+    def bezierExtrema(p1: Double, cp1: Double, cp2: Double, p2: Double): JSArray[Double] = js.native
+    def getBezierBoundingBox(p1: Double, cp1: Double, cp2: Double, p2: Double): JSArray[Double] = js.native
+    def getPolygonPoints(width: Int, height: Int, xc: Int, yc: Int, angles: JSArray[Double]): JSArray[Point] = js.native
+    def getRegularPolygonPoints(n: Int, width: Int, height: Int, xc: Int, yc: Int, startAngle: Double): JSArray[Point] = js.native
+    def scaleAndCenter(width: Int, height: Int, xc: Int, yc: Int, points: JSArray[Point]): void = js.native
+    def scaleAndCenterBezier(width: Int, height: Int, xc: Int, yc: Int, startPoint: Point, endPoint: Point, controlPoint1: Point, controlPoint2: Point): void = js.native
 }
 
 @js.native

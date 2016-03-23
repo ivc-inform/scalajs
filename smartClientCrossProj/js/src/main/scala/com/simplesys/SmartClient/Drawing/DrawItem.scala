@@ -19,6 +19,7 @@ trait DrawItem extends JSObject {
 
 @js.native
 abstract trait AbstractDrawItemCompanion extends AbstractClassProps {
+    def computeAngle(px1: Double, py1: Double, px2: Double, py2: Double): Double = js.native
 }
 
 @js.native
