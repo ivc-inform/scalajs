@@ -1,6 +1,5 @@
-package com.simplesys.SmartClient.System
+package com.simplesys.System
 
-import com.simplesys.System._
 import com.simplesys.xml.Elem
 
 import scala.scalajs.js
