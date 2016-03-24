@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.System.{JSDictionaryAny, JSObject}
-import com.simplesys.json.Json._
+import com.simplesys.json.JSON._
 import com.simplesys.macros.PropsToDictionary
 import com.simplesys.props.AbstractClassProps
 
