@@ -6,7 +6,6 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 package object Types {
-
     type Field = JSObject
 
     type Criteria = JSDictionary[JSObject]
