@@ -4,13 +4,12 @@ import com.simplesys.SmartClient.DataBinding.Criterion
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.Grid
-import com.simplesys.SmartClient.Grids.listGrid.{ListGridRecord, ListGridField}
+import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
-import com.simplesys.System.Types.PanelPlacement.PanelPlacement
-import com.simplesys.System.Types.{void, HTMLString, AutoChild, CSSStyleName}
-import com.simplesys.System.Types.PickListItemIconPlacement.PickListItemIconPlacement
 import com.simplesys.System.JSArray
+import com.simplesys.System.Types.PanelPlacement.PanelPlacement
+import com.simplesys.System.Types.{AutoChild, CSSStyleName, HTMLString, void}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
