@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Charts
 
-import com.simplesys.SmartClient.Foundation.DrawPane
+import com.simplesys.SmartClient.Drawing.DrawPane
 
 import scala.scalajs.js
 
