@@ -102,6 +102,7 @@ trait Window extends Layout {
     var status: String
     val statusBar: Canvas with AutoChild
     var title: HTMLString
+    def saveParams(): void
 }
 
 

@@ -4,7 +4,7 @@ package com.simplesys.json
 
 import scala.collection.GenSeq
 
-object Json extends {
+object JSON extends {
     type funcFormatter = Any => String
 
     private val defaultFormatter: funcFormatter = (in: Any) => {
