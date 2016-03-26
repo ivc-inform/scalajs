@@ -6,7 +6,6 @@ import scala.scalajs.js
 
 @js.native
 trait PropertySheet extends DynamicForm {
-    def  editRecord (record:Record)
 }
 
 

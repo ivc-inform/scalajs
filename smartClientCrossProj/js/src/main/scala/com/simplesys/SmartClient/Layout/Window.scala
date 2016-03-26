@@ -73,6 +73,7 @@ trait Window extends Layout {
     val resizer: ImgButton with AutoChild
     def restore(): void
     val restoreButton: ImgButton with AutoChild
+    def saveParams():void
     def setAutoSize(autoSize: Boolean): void
     def setBodyColor(newBodyColor: CSSColor): void
     def setBodyStyle(newBodyStyle: CSSStyleName): void
@@ -102,7 +103,6 @@ trait Window extends Layout {
     var status: String
     val statusBar: Canvas with AutoChild
     var title: HTMLString
-    def saveParams(): void
 }
 
 

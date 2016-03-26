@@ -212,7 +212,7 @@ class CanvasProps extends ClassProps {
     var proportionalResizing: ScOption[ProportionalResizeMode] = ScNone
     var redrawOnResize: ScOption[Boolean] = ScNone
     var resizeBarTarget: ScOption[String] = ScNone
-    var resized: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
+    var resized: ScOption[js.ThisFunction0[callbackHandler, _]] = ScNone
     var resizeFrom: ScOption[Seq[EdgeName]] = ScNone
     var rightMouseDown: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var scrollbarConstructor: ScOption[String] = ScNone
