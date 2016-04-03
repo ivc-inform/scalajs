@@ -1,9 +1,8 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.System._
-import com.simplesys.System.Types.{void, SCImgURL, KeyName}
-import com.simplesys.System.{JSObject, JSArray}
+import com.simplesys.System.Types.{KeyName, SCImgURL, void}
+import com.simplesys.System.{JSArray, JSObject}
 import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js

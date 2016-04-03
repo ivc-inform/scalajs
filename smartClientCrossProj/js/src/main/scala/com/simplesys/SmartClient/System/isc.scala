@@ -56,6 +56,7 @@ object iscStatic extends JSObject {
 
     val params: com.simplesys.SmartClient.System.params.type = js.native
     val Log: AbstractLogCompanion = js.native
+    val EventHandler: AbstractEventHandlerCompanion = js.native
 
     def error(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
     def info(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native

@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.Drawing
 
 import com.simplesys.SmartClient.Control.Menu
-import com.simplesys.SmartClient.Drawing.Gradients.Gradient
 import com.simplesys.SmartClient.Drawing.drawItem.{DrawGroup, DrawLabel, DrawRect}
+import com.simplesys.SmartClient.Drawing.radient.Gradient
 import com.simplesys.System.Types.ArrowStyle.ArrowStyle
 import com.simplesys.System.Types.Cursor.Cursor
 import com.simplesys.System.Types.KnobType.KnobType
@@ -16,6 +16,7 @@ import com.simplesys.System.Types._
 import com.simplesys.System.{JSAny, JSArray, JSObject}
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.|
 
 @js.native
@@ -140,4 +141,5 @@ abstract trait AbstractDrawItemCompanion extends JSObject {
 }
 
 @js.native
-object DrawItem extends AbstractDrawItemCompanion
+@JSName("DrawItem")
+object DrawItemStatic extends AbstractDrawItemCompanion
