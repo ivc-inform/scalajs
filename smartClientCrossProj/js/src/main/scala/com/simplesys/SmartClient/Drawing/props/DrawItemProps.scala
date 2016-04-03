@@ -2,8 +2,9 @@ package com.simplesys.SmartClient.Drawing.props
 
 import com.simplesys.SmartClient.Control.Menu
 import com.simplesys.SmartClient.Drawing.drawItem.{DrawGroup, DrawLabel, DrawRect}
-import com.simplesys.SmartClient.Drawing.gradient.props.GradientProps
+import com.simplesys.SmartClient.Drawing.radient.Gradient
 import com.simplesys.SmartClient.Drawing.{DrawKnob, DrawPane, Shadow}
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.ArrowStyle.ArrowStyle
 import com.simplesys.System.Types.Cursor.Cursor
 import com.simplesys.System.Types.KnobType.KnobType
@@ -14,7 +15,6 @@ import com.simplesys.System.Types.ProportionalResizeMode.ProportionalResizeMode
 import com.simplesys.System.Types.ResizeKnobPoint.ResizeKnobPoint
 import com.simplesys.System.Types.TitleRotationMode.TitleRotationMode
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSArray, JSObject}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 
@@ -40,7 +40,7 @@ class DrawItemProps extends AbstractClassProps {
     var endArrow: ScOption[ArrowStyle] = ScNone
     var endKnob: ScOption[DrawKnob] = ScNone
     var fillColor: ScOption[CSSColor] = ScNone
-    var fillGradient: ScOption[GradientProps] = ScNone
+    var fillGradient: ScOption[Gradient] = ScNone
     var fillOpacity: ScOption[Double] = ScNone
     var keepInParentRect: ScOption[Boolean] = ScNone
     var knobs: ScOption[Seq[KnobType]] = ScNone
