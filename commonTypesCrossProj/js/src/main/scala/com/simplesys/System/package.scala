@@ -9,6 +9,7 @@ package object System {
     type JSObject = js.Object
     type JSArray[T] = js.Array[T]
     type JSUndefined[T] = js.UndefOr[T]
+    type JSUndefinedOpt[T] = js.UndefOrOps[T]
     type JSDictionary[T] = js.Dictionary[T]
     type JSArrayAny = JSArray[JSAny]
     type JSDictionaryAny = JSDictionary[JSAny]

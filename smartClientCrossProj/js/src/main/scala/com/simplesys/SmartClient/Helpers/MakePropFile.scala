@@ -6,8 +6,8 @@ import scala.io.Codec._
 import scala.io.Source
 
 object MakePropFile extends App {
-    val f = "smartClientCrossProj/js/src/main/resources/Fasade.rc".toFile
-    val fres = "smartClientCrossProj/js/src/main/resources/Props.rc".toFile
+    val f = "web-ui/src/main/resources/Fasade.rc".toFile
+    val fres = "web-ui/src/main/resources/Props.rc".toFile
 
     val rExp = """(?:\w+)(?:\s+)(\w+)\s*(?:\:)\s*(.*)""".r("name", "type")
 

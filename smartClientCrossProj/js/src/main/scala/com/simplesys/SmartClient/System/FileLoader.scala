@@ -1,9 +1,10 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.System.Types.{Callback, void}
-import com.simplesys.System.{JSObject, JSArray}
+import com.simplesys.System.{JSArray, JSObject}
 
 import scala.scalajs.js
+import scala.scalajs.js.|
 
 @js.native
 object FileLoader extends JSObject {
@@ -22,7 +23,7 @@ object FileLoader extends JSObject {
     def ensureLoaded(callback: Callback): void = js.native
     def loadISC(skin: String = js.native, modules: JSArray[String] = js.native, onload: OnLoad = js.native): void = js.native
     def loadSkin(skin: String, onload: OnLoad = js.native): void = js.native
-    def loadJSFiles(URLs: JSArray[String], onload: OnLoad = js.native): void = js.native
+    def loadJSFiles(URLs: JSArray[String] | String, onload: OnLoad = js.native): void = js.native
     def loadLocale(locale: String = js.native, onload: OnLoad = js.native): void = js.native
     def loadModules(modules: JSArray[String] = js.native, onload: OnLoad = js.native): void = js.native
     val modulesDir: String = js.native

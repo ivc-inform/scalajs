@@ -1,4 +1,4 @@
-package com.simplesys.SmartClient.Drawing.Gradients
+package com.simplesys.SmartClient.Drawing.radient
 
 import com.simplesys.System.JSObject
 import com.simplesys.System.Types.CSSColor

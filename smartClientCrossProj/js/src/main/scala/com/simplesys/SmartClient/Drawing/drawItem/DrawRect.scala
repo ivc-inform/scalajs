@@ -9,7 +9,7 @@ import scala.scalajs.js
 trait DrawRect extends DrawItem {
     var height: Int
     var left: Int
-    val rounding: Boolean
+    val rounding: Double
     def setCenter(left: Int, top: Int): void
     def setHeight(height: Int): void
     def setLeft(left: Int): void

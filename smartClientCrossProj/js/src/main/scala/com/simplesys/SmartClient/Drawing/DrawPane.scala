@@ -1,13 +1,14 @@
 package com.simplesys.SmartClient.Drawing
 
 import com.simplesys.SmartClient.DataBinding.Callbacks.DataURLCallback
-import com.simplesys.SmartClient.Drawing.Gradients.{Gradient, LinearGradient, SimpleGradient}
+import com.simplesys.SmartClient.Drawing.radient.{Gradient, LinearGradient, SimpleGradient}
 import com.simplesys.SmartClient.Foundation.{AbstractCanvasCompanion, Canvas}
 import com.simplesys.System.JSArray
 import com.simplesys.System.Types.{ID, void}
 import org.scalajs.dom.svg.RadialGradient
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait DrawPane extends Canvas {
@@ -37,6 +38,7 @@ trait DrawPane extends Canvas {
     var translate: js.Array[Int]
     def zoom(zoomLevel: Double): void
     var zoomLevel: Double
+    var `type`: String
 }
 
 @js.native
@@ -51,4 +53,5 @@ abstract trait AbstractDrawPaneCompanion extends AbstractCanvasCompanion {
 }
 
 @js.native
-object DrawPane extends AbstractDrawPaneCompanion
+@JSName("DrawPane")
+object DrawPaneSatic extends AbstractDrawPaneCompanion

@@ -1,0 +1,23 @@
+package com.simplesys.SmartClient.Drawing.drawItem.props
+
+import com.simplesys.SmartClient.Drawing.Point
+import com.simplesys.SmartClient.Drawing.props.DrawItemProps
+import com.simplesys.System.Types.ConnectorOrientation.ConnectorOrientation
+import com.simplesys.System.Types.ConnectorStyle.ConnectorStyle
+
+import scala.scalajs.js._
+import com.simplesys.option.{ScNone, ScOption}
+
+class DrawLinePathProps extends DrawItemProps {
+    var connectorOrientation: ScOption[ConnectorOrientation] = ScNone
+    var connectorStyle: ScOption[ConnectorStyle] = ScNone
+    var controlPoint1: ScOption[Point] = ScNone
+    var controlPoint2: ScOption[Point] = ScNone
+    var endLeft: ScOption[Int] = ScNone
+    var endPoint: ScOption[Point] = ScNone
+    var endTop: ScOption[Int] = ScNone
+    var startLeft: ScOption[Int] = ScNone
+    var startPoint: ScOption[Point] = ScNone
+    var startTop: ScOption[Int] = ScNone
+    var tailSize: ScOption[Int] = ScNone
+}

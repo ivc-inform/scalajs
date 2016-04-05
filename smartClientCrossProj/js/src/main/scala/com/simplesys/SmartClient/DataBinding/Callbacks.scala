@@ -3,7 +3,8 @@ package com.simplesys.SmartClient.DataBinding
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Layout.SectionStack
 import com.simplesys.SmartClient.RPC.{RPCRequest, RPCResponse}
-import com.simplesys.System.JSDictionaryAny
+import com.simplesys.SmartClient.Tools.PaletteNode
+import com.simplesys.System.{JSArray, JSDictionaryAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.{ThisFunction0, ThisFunction1, ThisFunction2}
@@ -32,6 +33,8 @@ object Callbacks {
     type RPCCallback = js.Function3[RPCResponse, JSDictionaryAny, RPCRequest, _]
 
     type DataURLCallback = js.Function1[String, _]
+
+    type PaletteNodeCallback = js.Function1[JSArray[PaletteNode], _]
 }
 
 
