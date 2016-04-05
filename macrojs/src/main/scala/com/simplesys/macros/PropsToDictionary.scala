@@ -34,7 +34,7 @@ object PropsToDictionary extends Logging {
                         checkedType match {
                             case Some(ex) =>
                                 if (targs.head.baseClasses.contains(tsAbstractClassProps))
-                                    q"$valueAccess.map(x => (new SCApply4Props[${targs.head}]).getDictionary($ex))"
+                                    q"$valueAccess.map(x => (new SCApply4Props[${targs.head}]).apply($ex))"
                                 else
                                     valueAccess
 
