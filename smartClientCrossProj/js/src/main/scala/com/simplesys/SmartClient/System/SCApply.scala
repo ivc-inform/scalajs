@@ -30,7 +30,7 @@ class SCApply4Object[T <: JSObject, P <: AbstractClassProps](implicit classTag_T
 }
 
 class SCApply4Props[P <: AbstractClassProps](implicit propsToDictionary: PropsToDictionary[P]) {
-    def getDictionary(propsClass: P): JSDictionaryAny = propsToDictionary.getDictionary(propsClass)
+    def apply(propsClass: P): JSDictionaryAny = propsToDictionary.getDictionary(propsClass)
 }
 
 class isc[SuperClassType <: Class, NewClassType <: Class, PropsNewClassType <: AbstractClassProps](implicit classTag_OLD: ClassTag[SuperClassType], classTag_NEW: ClassTag[NewClassType], propsToDictionary: PropsToDictionary[PropsNewClassType]) {
