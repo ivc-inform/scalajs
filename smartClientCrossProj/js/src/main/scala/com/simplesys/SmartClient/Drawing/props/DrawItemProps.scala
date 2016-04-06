@@ -29,7 +29,7 @@ class DrawItemProps extends AbstractClassProps {
     var contextMenu: ScOption[Menu] = ScNone
     var cornerResizeKnob: ScOption[DrawKnob with MultiAutoChild] = ScNone
     var cursor: ScOption[Cursor] = ScNone
-    //var defaults: ScOption[DefaultsProps] = ScNone
+    var defaults: ScOption[DefaultsProps] = ScNone
     var destroyed: ScOption[Boolean] = ScNone
     var destroying: ScOption[Boolean] = ScNone
     var dragMove: ScOption[js.Function0[Boolean]] = ScNone
