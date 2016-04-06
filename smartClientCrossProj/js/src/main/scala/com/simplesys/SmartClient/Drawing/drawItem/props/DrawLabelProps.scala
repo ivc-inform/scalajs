@@ -14,4 +14,5 @@ class DrawLabelProps extends DrawItemProps {
     var fontWeight: ScOption[String] = ScNone
     var left: ScOption[Int] = ScNone
     var top: ScOption[Int] = ScNone
+    override val `type`: ScOption[String]  = "DrawLabel"
 }

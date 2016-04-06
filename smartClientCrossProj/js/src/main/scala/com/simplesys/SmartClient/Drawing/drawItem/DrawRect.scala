@@ -2,11 +2,13 @@ package com.simplesys.SmartClient.Drawing.drawItem
 
 import com.simplesys.SmartClient.Drawing.DrawItem
 import com.simplesys.System.Types.void
+import com.simplesys.js.com.simplesys.SmartClient.Drawing.DrawRectDefaults
 
 import scala.scalajs.js
 
 @js.native
 trait DrawRect extends DrawItem {
+    val defaults: DrawRectDefaults
     var height: Int
     var left: Int
     val rounding: Double

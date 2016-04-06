@@ -8,7 +8,8 @@ import com.simplesys.SmartClient.Drawing.drawItem._
 import com.simplesys.SmartClient.Drawing.drawItem.props._
 import com.simplesys.SmartClient.Drawing.drawItem.props.drawShape.DrawShapeCommandProps
 import com.simplesys.SmartClient.Drawing.gradient.props.{ColorStopProps, GradientProps, LinearGradientProps, RadialGradientProps}
-import com.simplesys.SmartClient.Drawing.props.{DrawItemProps, DrawPaneProps, DrawPaneSSProps}
+import com.simplesys.SmartClient.Drawing.props.{DrawItemProps, DrawPaneDefaults, DrawPaneProps, DrawPaneSSProps}
+import com.simplesys.SmartClient.Drawing.radient._
 import com.simplesys.SmartClient.Drawing.{DrawItem, DrawPane}
 import com.simplesys.SmartClient.Forms.FormsItems._
 import com.simplesys.SmartClient.Forms.FormsItems.props._
@@ -35,18 +36,20 @@ import com.simplesys.SmartClient.Tools.editContext.{EditPane, EditTree}
 import com.simplesys.SmartClient.Tools.palette._
 import com.simplesys.SmartClient.Tools.palette.props._
 import com.simplesys.SmartClient.Tools.props._
-import com.simplesys.SmartClient.Tools.{EditContext, EditProxy, Palette}
+import com.simplesys.SmartClient.Tools.{EditContext, EditProxy, Palette, PaletteNode}
+import com.simplesys.System.JSArray
 import com.simplesys.js.com.simplesys.SmartClient.DataBinding.DataSourceSS
 import com.simplesys.js.com.simplesys.SmartClient.DataBinding.props.DataSourceSSProps
 import com.simplesys.js.com.simplesys.SmartClient.Drawing.DrawPaneSS
 import com.simplesys.js.com.simplesys.SmartClient.Drawing.gradient.props.SimpleGradientProps
-import com.simplesys.js.com.simplesys.SmartClient.Layout.SectionStackSS
 import com.simplesys.js.com.simplesys.SmartClient.Layout.props.SectionStackSSProps
 
 //import com.simplesys.macros.PropsToDictionary
 import com.simplesys.macros.PropsToDictionary
 
 package object System {
+
+    type Point =  JSArray[Int]
 
     implicit class StringOpts(x: String) {
         def ellipsis = s"$x..."
@@ -213,21 +216,22 @@ package object System {
     //<editor-fold desc="drawing">
     object DrawPaneSS extends SCApply[DrawPaneSS, DrawPaneSSProps]
     object DrawPane extends SCApply[DrawPane, DrawPaneProps]
+    object DrawPaneDefaults extends SCApply4Props[DrawPaneDefaults]
     object EditProxy extends SCApply[EditProxy, EditProxyProps]
     object EditContext extends SCApply[EditContext, EditContextProps]
     object EditPane extends SCApply[EditPane, EditPaneProps]
     object EditTree extends SCApply[EditTree, EditTreeProps]
-    object PaletteNode extends SCApply4Props[PaletteNodeProps]
+    object PaletteNode extends SCApply4Object[PaletteNode, PaletteNodeProps]
     object EditNode extends SCApply4Props[EditNodeProps]
     object SerializationSettings extends SCApply4Props[SerializationSettingsProps]
     object SelectionOutline extends SCApply4Props[SelectionOutlineProps]
 
     //<editor-fold desc="gradient">
-    object ColorStop extends SCApply4Props[ColorStopProps]
-    object Gradient extends SCApply4Props[GradientProps]
-    object LinearGradient extends SCApply4Props[LinearGradientProps]
-    object RadialGradient extends SCApply4Props[RadialGradientProps]
-    object SimpleGradient extends SCApply4Props[SimpleGradientProps]
+    object ColorStop extends  SCApply4Object[ColorStop, ColorStopProps]
+    object Gradient extends  SCApply4Object[Gradient, GradientProps]
+    object LinearGradient extends SCApply4Object[LinearGradient, LinearGradientProps]
+    object RadialGradient extends SCApply4Object[RadialGradient, RadialGradientProps]
+    object SimpleGradient extends SCApply4Object[SimpleGradient, SimpleGradientProps]
     //</editor-fold>
 
     //<editor-fold desc="Palette">

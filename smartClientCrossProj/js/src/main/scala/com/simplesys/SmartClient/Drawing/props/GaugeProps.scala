@@ -1,8 +1,9 @@
 package com.simplesys.SmartClient.Drawing.props
 
-import com.simplesys.SmartClient.Drawing.{DrawItem, Point}
+import com.simplesys.SmartClient.Drawing.DrawItem
 import com.simplesys.SmartClient.Drawing.drawItem.{DrawLabel, DrawSector}
 import com.simplesys.SmartClient.Drawing.gauge.GaugeSector
+import com.simplesys.SmartClient.System.Point
 import com.simplesys.System.JSArray
 import com.simplesys.System.Types.{CSSColor, MultiAutoChild}
 import com.simplesys.option.{ScNone, ScOption}

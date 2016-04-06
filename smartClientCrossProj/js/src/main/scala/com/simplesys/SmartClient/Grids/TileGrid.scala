@@ -10,7 +10,7 @@ import com.simplesys.System.Types.DragAppearance.DragAppearance
 import com.simplesys.System.Types.SelectionType.SelectionType
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSArray, JSDictionaryAny}
+import com.simplesys.System.{JSArray, JSDictionaryAny, JSObject}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -55,6 +55,7 @@ trait TileGrid extends TileLayout with DataBoundComponent {
     def removeTile(): void
     var selectionChanged: js.Function2[TileRecord, Boolean, void]
     var selectionType: SelectionType
+    def setData(newData: JSArray[_ <: JSObject]): void
     def selectRecord(record: TileRecord | Int, newState: Boolean = js.native): void
     def selectRecords(record: JSArray[TileRecord] | JSArray[Int], newState: Boolean = js.native): void
     def setCanAcceptDroppedRecords(): void

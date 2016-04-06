@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Tools.props
 
 import com.simplesys.SmartClient.Tools.{EditNode, EditProxy}
 import com.simplesys.System.{JSDictionaryAny, JSObject}
-import com.simplesys.System.Types.SCImgURL
+import com.simplesys.System.Types._
 
 import scala.scalajs.js._
 import com.simplesys.option.{ScNone, ScOption}
@@ -16,5 +16,6 @@ class PaletteNodeProps extends AbstractClassProps {
     var idPrefix: ScOption[String] = ScNone
     var liveObject: ScOption[JSObject] = ScNone
     var title: ScOption[String] = ScNone
+    var `type`: ScOption[SCClassName] = ScNone
 }
 

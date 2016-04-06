@@ -1,12 +1,12 @@
 package com.simplesys.SmartClient.Drawing.drawItem
 
-import com.simplesys.SmartClient.Drawing.{DrawItem, Point}
+import com.simplesys.SmartClient.Drawing.DrawItem
+import com.simplesys.SmartClient.System.Point
 import com.simplesys.System.Types.ConnectorOrientation.ConnectorOrientation
 import com.simplesys.System.Types.ConnectorStyle.ConnectorStyle
 import com.simplesys.System.Types.void
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 trait DrawLinePath extends DrawItem {

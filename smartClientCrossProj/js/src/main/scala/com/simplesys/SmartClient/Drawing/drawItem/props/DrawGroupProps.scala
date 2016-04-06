@@ -2,9 +2,6 @@ package com.simplesys.SmartClient.Drawing.drawItem.props
 
 import com.simplesys.SmartClient.Drawing.DrawItem
 import com.simplesys.SmartClient.Drawing.props.DrawItemProps
-import com.simplesys.System.JSArray
-
-import scala.scalajs.js._
 import com.simplesys.option.{ScNone, ScOption}
 
 class DrawGroupProps extends DrawItemProps {
@@ -14,4 +11,5 @@ class DrawGroupProps extends DrawItemProps {
     var top: ScOption[Int] = ScNone
     var useGroupRect: ScOption[Boolean] = ScNone
     var width: ScOption[Int] = ScNone
+    override val `type`: ScOption[String] = "DrawGroup"
 }

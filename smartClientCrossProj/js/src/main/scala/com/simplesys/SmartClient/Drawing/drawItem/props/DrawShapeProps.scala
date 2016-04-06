@@ -6,4 +6,5 @@ import com.simplesys.option.{ScNone, ScOption}
 
 class DrawShapeProps extends DrawItemProps {
     var commands: ScOption[Seq[DrawShapeCommandProps]] = ScNone
+    override val `type`: ScOption[String]  = "DrawShape"
 }

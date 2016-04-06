@@ -1,9 +1,7 @@
 package com.simplesys.SmartClient.Drawing.drawItem.props
 
-import com.simplesys.SmartClient.Drawing.Point
 import com.simplesys.SmartClient.Drawing.props.DrawItemProps
-
-import scala.scalajs.js._
+import com.simplesys.SmartClient.System.Point
 import com.simplesys.option.{ScNone, ScOption}
 
 class DrawSectorProps extends DrawItemProps {
@@ -11,4 +9,5 @@ class DrawSectorProps extends DrawItemProps {
     var endAngle: ScOption[Double] = ScNone
     var radius: ScOption[Int] = ScNone
     var startAngle: ScOption[Double] = ScNone
+    override val `type`: ScOption[String]  = "DrawSector"
 }

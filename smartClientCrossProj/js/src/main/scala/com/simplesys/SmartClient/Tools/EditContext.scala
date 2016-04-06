@@ -1,21 +1,22 @@
 package com.simplesys.SmartClient.Tools
 
 import com.simplesys.SmartClient.DataBinding.Callbacks.PaletteNodeCallback
+import com.simplesys.SmartClient.Drawing.DrawPane
 import com.simplesys.SmartClient.Grids.treeGrid.Tree
 import com.simplesys.SmartClient.System.Class
 import com.simplesys.System.Types.HoopSelectionStyle.HoopSelectionStyle
 import com.simplesys.System.Types.SelectedAppearance.SelectedAppearance
-import com.simplesys.System.Types.SelectionType.SelectionType
 import com.simplesys.System.Types.{CSSColor, HTMLString, void}
 import com.simplesys.System.{JSArray, JSFunction, JSObject}
 import org.scalajs.dom.html.Canvas
 
 import scala.scalajs.js
+import scala.scalajs.js.|
 
 @js.native
 trait EditContext extends Class {
-    def addFromPaletteNode(paletteNode: PaletteNode, parentNode: EditNode = js.native): EditNode
-    def addFromPaletteNodes(paletteNodes: JSArray[PaletteNode], parentNode: EditNode = js.native): JSArray[EditNode]
+    def addFromPaletteNode(paletteNode: PaletteNode | DrawPane, parentNode: EditNode = js.native): EditNode
+    def addFromPaletteNodes(paletteNodes: JSArray[PaletteNode | DrawPane], parentNode: EditNode = js.native): JSArray[EditNode]
     def addNode(newNode: EditNode, parentNode: EditNode = js.native, index: Int = js.native, parentProperty: String = js.native, skipParentComponentAdd: Boolean): EditNode
     def addPaletteNodesFromJS(jsCode: String, parentNode: EditNode = js.native, globals: JSArray[String] = js.native): void
     def addPaletteNodesFromJSON(jsonString: String, parentNode: EditNode = js.native, globals: JSArray[String] = js.native, callback: JSFunction = js.native): void

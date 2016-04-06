@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.Drawing.drawItem
 
-import com.simplesys.SmartClient.Drawing.{DrawItem, Point}
+import com.simplesys.SmartClient.Drawing.DrawItem
+import com.simplesys.SmartClient.System.Point
 import com.simplesys.System.Types.void
 
 import scala.scalajs.js

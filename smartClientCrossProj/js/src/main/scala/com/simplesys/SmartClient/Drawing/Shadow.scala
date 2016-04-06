@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Drawing
 
+import com.simplesys.SmartClient.System.Point
 import com.simplesys.System.JSObject
 import com.simplesys.System.Types.CSSColor
 

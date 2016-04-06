@@ -1,9 +1,8 @@
 package com.simplesys.SmartClient.Drawing.drawItem.props
 
 import com.simplesys.SmartClient.Drawing.props.DrawItemProps
-
-import scala.scalajs.js._
-import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.option.ScOption
 
 class DrawPolygonProps extends DrawItemProps {
+    override val `type`: ScOption[String]  = "DrawPolygon"
 }

@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.Drawing
 
 import com.simplesys.SmartClient.Drawing.drawItem.{DrawLabel, DrawSector}
 import com.simplesys.SmartClient.Drawing.gauge.GaugeSector
+import com.simplesys.SmartClient.System.Point
 import com.simplesys.System.JSArray
 import com.simplesys.System.Types.{AutoChild, CSSColor, MultiAutoChild, void}
 

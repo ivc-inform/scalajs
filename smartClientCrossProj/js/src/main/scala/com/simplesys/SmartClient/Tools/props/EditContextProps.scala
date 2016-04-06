@@ -2,18 +2,18 @@ package com.simplesys.SmartClient.Tools.props
 
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.SmartClient.Tools.{EditContext, EditNode, Palette, PaletteNode}
-import com.simplesys.System.{JSArray, JSObject}
 import com.simplesys.System.Types.CSSColor
 import com.simplesys.System.Types.HoopSelectionStyle.HoopSelectionStyle
 import com.simplesys.System.Types.SelectedAppearance.SelectedAppearance
-import com.simplesys.System.Types.SelectionType.SelectionType
-
-import scala.scalajs.js._
+import com.simplesys.System.{JSArray, JSObject, JSUndefined}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
+import scala.scalajs.js._
 
 trait EditContextProps extends ClassProps {
+    type classHandler <: EditContext
+
     var allowNestedDrops: ScOption[Boolean] = ScNone
     var autoEditNewNodes: ScOption[Boolean] = ScNone
     var canDragGroup: ScOption[Boolean] = ScNone
@@ -38,4 +38,5 @@ trait EditContextProps extends ClassProps {
     //var selectionType: ScOption[SelectionType] = ScNone //todo  сделать анотацию @JSPropsName
     var showSelectedLabel: ScOption[Boolean] = ScNone
     var showSelectedLabelOnSelect: ScOption[Boolean] = ScNone
+    var selectedEditNodesUpdated: ScOption[Function2[JSUndefined[EditNode], JSArray[EditNode], _]] = ScNone
 }

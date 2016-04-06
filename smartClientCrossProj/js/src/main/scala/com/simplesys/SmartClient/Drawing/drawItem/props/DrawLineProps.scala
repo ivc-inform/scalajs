@@ -1,9 +1,7 @@
 package com.simplesys.SmartClient.Drawing.drawItem.props
 
-import com.simplesys.SmartClient.Drawing.Point
 import com.simplesys.SmartClient.Drawing.props.DrawItemProps
-
-import scala.scalajs.js._
+import com.simplesys.SmartClient.System.Point
 import com.simplesys.option.{ScNone, ScOption}
 
 class DrawLineProps extends DrawItemProps {
@@ -13,4 +11,5 @@ class DrawLineProps extends DrawItemProps {
     var startLeft: ScOption[Int] = ScNone
     var startPoint: ScOption[Point] = ScNone
     var startTop: ScOption[Int] = ScNone
+    override val `type`: ScOption[String]  = "DrawLine"
 }

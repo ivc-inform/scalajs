@@ -2,11 +2,12 @@ package com.simplesys.SmartClient.Grids.treeGrid
 
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.System.Class
+import com.simplesys.SmartClient.Tools.EditNode
 import com.simplesys.System.Types.LoadState.LoadState
 import com.simplesys.System.Types.TreeFilterMode.TreeFilterMode
 import com.simplesys.System.Types.TreeModelType.TreeModelType
 import com.simplesys.System.Types.{Callback, Criteria, void}
-import com.simplesys.System.{JSObject, JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSArray, JSObject}
 
 import scala.scalajs.js
 import scala.scalajs.js.{ThisFunction0, |}
@@ -29,7 +30,7 @@ trait Tree extends Class {
     def find(fieldNameOrPath: String, value: JSAny = js.native): JSObject
     def findById(id: String): JSObject
     def getAllNodes(node: TreeNode = js.native): JSArray[TreeNode]
-    def getChildren(node: TreeNode): JSArray[TreeNode]
+    def getChildren(node: TreeNode | EditNode): JSArray[TreeNode]
     def getChildrenResultSet(node: TreeNode): ResultSet
     def getDescendantFolders(node: TreeNode = js.native): JSArray[TreeNode]
     def getDescendantLeaves(node: TreeNode = js.native): JSArray[TreeNode]

@@ -22,6 +22,8 @@ object iscStatic extends JSObject {
     def clearPrompt(): void = js.native
     def clone(obj: JSObject): JSObject = js.native
     def confirm(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
+    def defineClass(className: String, superClass: String): void = js.native
+    //    def defineClass[SuperClassType <: Class, NewClassType <: Class](implicit classTag_OLD: ClassTag[SuperClassType], classTag_NEW: ClassTag[NewClassType]):void = js.Dynamic.global.isc.defineClass(classTag_NEW.runtimeClass.getSimpleName.dblQuoted, s"isc.${classTag_OLD.runtimeClass.getSimpleName.dblQuoted}")
     def dismissCurrentDialog(): void = js.native
     def echo(value: JSAny): String = js.native
     def echoAll(value: JSAny): String = js.native
@@ -56,6 +58,7 @@ object iscStatic extends JSObject {
 
     val params: com.simplesys.SmartClient.System.params.type = js.native
     val Log: AbstractLogCompanion = js.native
+    val Class: AbstractClassCompanion = js.native
     val EventHandler: AbstractEventHandlerCompanion = js.native
 
     def error(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
@@ -63,7 +66,8 @@ object iscStatic extends JSObject {
     def ok(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
     def infos(grid: ListGrid, identifier: ID = js.native, callback: Callback = js.native): void = js.native
     def errors(grid: ListGrid, identifier: ID = js.native, callback: Callback = js.native): void = js.native
-    val JSON : AbstractJSONCompanion = js.native
+    val JSON: AbstractJSONCompanion = js.native
+    def debugTrap[T <: JSObject](obj: T): T = js.native
 }
 
 

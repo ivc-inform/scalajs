@@ -11,4 +11,5 @@ class DrawRectProps extends DrawItemProps {
     var rounding: ScOption[Double] = ScNone
     var top: ScOption[Int] = ScNone
     var width: ScOption[Int] = ScNone
+    override val `type`: ScOption[String]  = "DrawRect"
 }

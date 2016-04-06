@@ -13,4 +13,5 @@ class DrawImageProps extends DrawItemProps {
     var top: ScOption[Int] = ScNone
     var useMatrixFilter: ScOption[Boolean] = ScNone
     var width: ScOption[Int] = ScNone
+    override val `type`: ScOption[String]  = "DrawImage"
 }
