@@ -1,14 +1,13 @@
 package com.simplesys.macros
 
+import com.simplesys.System.{JSDictionaryAny, JSObject}
 import com.simplesys.common.Strings._
 import com.simplesys.log.Logging
 import com.simplesys.option._
 import com.simplesys.props.AbstractClassProps
-import com.simplesys.System.{JSObject, JSDictionaryAny, JSAny}
 
 import scala.language.experimental.macros
 import scala.reflect.macros.whitebox.Context
-import scala.scalajs.js
 
 trait PropsToDictionary[P <: AbstractClassProps] {
     def getDictionary(props: P): JSDictionaryAny
@@ -26,11 +25,11 @@ object PropsToDictionary extends Logging {
         val tsAbstractClassProps = typeOf[AbstractClassProps].typeSymbol
         val tsJSObject = typeOf[JSObject].typeSymbol
 
-        def typeToConvertedValueInt(typeDef: context.universe.Type, valueAccess: context.universe.Tree): Option[context.universe.Tree] = {
+        def typeToConvertedValueTree(typeDef: context.universe.Type, valueAccess: context.universe.Tree, parentArgs: Int = 0): Option[context.universe.Tree] = {
             typeDef.baseType(typeOf[Seq[_]].typeSymbol) match {
                 case TypeRef(_, _, targs) =>
                     val arrEx = if (targs.size == 1) {
-                        val checkedType: Option[context.universe.Tree] = typeToConvertedValueInt(targs.head, q"x")
+                        val checkedType: Option[context.universe.Tree] = typeToConvertedValueTree(targs.head, q"x", targs.size)
                         checkedType match {
                             case Some(ex) =>
                                 if (targs.head.baseClasses.contains(tsAbstractClassProps))
@@ -41,7 +40,8 @@ object PropsToDictionary extends Logging {
                             case None =>
                                 valueAccess
                         }
-                    } else valueAccess
+                    } else
+                        valueAccess
 
                     Some(q"scala.scalajs.runtime.genTraversableOnce2jsArray($arrEx)")
 
@@ -50,7 +50,7 @@ object PropsToDictionary extends Logging {
                         typeDef.baseType(symb) match {
                             case TypeRef(_, _, targs) =>
                                 val access = q"item"
-                                val checkedTypes = targs.map(t => typeToConvertedValueInt(t, access))
+                                val checkedTypes = targs.map(t => typeToConvertedValueTree(t, access))
                                 val type1 = checkedTypes.head.getOrElse(valueAccess)
                                 val type2 = checkedTypes.last.getOrElse(valueAccess)
 
@@ -67,8 +67,12 @@ object PropsToDictionary extends Logging {
                         }
                     }
                     typeDef.baseType(tsAbstractClassProps) match {
-                        case TypeRef(_, _, _) =>
-                            Some(q"$valueAccess")
+                        case TypeRef(tp, symb, listTp) =>
+                            if (parentArgs > 0)
+                                Some(q"$valueAccess")
+                            else
+                                Some(q"(new SCApply4Props[$typeDef]).apply($valueAccess)")
+
                         case NoType =>
                             typeDef.baseType(tsJSObject) match {
                                 case TypeRef(_, _, _) =>
@@ -97,7 +101,7 @@ object PropsToDictionary extends Logging {
                     }
             }
         }
-        typeToConvertedValueInt(typeDef, valueAccess).getOrElse(q"$valueAccess")
+        typeToConvertedValueTree(typeDef, valueAccess).getOrElse(q"$valueAccess")
     }
 
     def materializeImpl[P <: AbstractClassProps : context.WeakTypeTag](context: Context): context.Expr[PropsToDictionary[P]] = {

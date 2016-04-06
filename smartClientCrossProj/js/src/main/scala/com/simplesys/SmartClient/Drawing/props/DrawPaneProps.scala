@@ -14,7 +14,7 @@ class DrawPaneDefaults extends AbstractClassProps {
     var canFocus: ScOption[Boolean] = ScNone
     var width: ScOption[IntString[Int, String]] = ScNone
     var height: ScOption[IntString[Int, String]] = ScNone
-    var gradients: ScOption[JSArray[SimpleGradient]] = ScNone
+    var gradients: ScOption[Seq[SimpleGradient]] = ScNone
 }
 
 class DrawPaneProps extends CanvasProps {
@@ -25,6 +25,6 @@ class DrawPaneProps extends CanvasProps {
     var rotation: ScOption[Double] = ScNone
     var translate: ScOption[js.Array[Int]] = ScNone
     var zoomLevel: ScOption[Double] = ScNone
-    var defaults: ScOption[JSUndefined[JSDictionaryAny]] = ScNone
+    var defaults: ScOption[DrawPaneDefaults] = ScNone
     var `type`: ScOption[String] = "DrawPane"
 }
