@@ -2,10 +2,10 @@ package com.simplesys.System.Types
 
 object LogPriority extends Enumeration {
     type LogPriority = Value
-    val _1 = Value(1)
-    val _2 = Value(2)
-    val _3 = Value(3)
-    val _4 = Value(4)
-    val _5 = Value(5)
+    val FATAL = Value(1)
+    val ERROR = Value(2)
+    val WARN = Value(3)
+    val INFO = Value(4)
+    val DEBUG = Value(5)
 }
 
