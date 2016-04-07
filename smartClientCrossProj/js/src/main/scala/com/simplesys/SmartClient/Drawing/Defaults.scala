@@ -1,12 +1,12 @@
-package com.simplesys.js.com.simplesys.SmartClient.Drawing
+package com.simplesys.SmartClient.Drawing
 
-import com.simplesys.SmartClient.Drawing.Shadow
-import com.simplesys.SmartClient.Drawing.radient.SimpleGradient
+import com.simplesys.SmartClient.Drawing.gradient.SimpleGradient
 import com.simplesys.SmartClient.System.Point
 import com.simplesys.System.Types.ArrowStyle.ArrowStyle
 import com.simplesys.System.{JSArray, JSObject}
 
 import scala.scalajs.js
+import scala.scalajs.js.|
 
 @js.native
 trait Defaults extends JSObject {
@@ -41,18 +41,18 @@ trait DrawCurveDefaults extends Defaults {
     var startPoint: Point
     var endArrow: ArrowStyle
     var startArrow: ArrowStyle
-    var controlPoint1 : Point
-    var controlPoint2 : Point
+    var controlPoint1: Point
+    var controlPoint2: Point
 }
 
 @js.native
-trait DrawLinePath extends Defaults {
+trait DrawLinePathDefaults extends Defaults {
     var endPoint: Point
     var startPoint: Point
     var endArrow: ArrowStyle
     var startArrow: ArrowStyle
-    var controlPoint1 : Point
-    var controlPoint2 : Point
+    var controlPoint1: Point
+    var controlPoint2: Point
 }
 
 @js.native
@@ -66,7 +66,7 @@ trait DrawOvalDefaults extends Defaults {
 }
 
 @js.native
-trait DrawDiamond extends Defaults {
+trait DrawDiamondDefaults extends Defaults {
     var top: Int
     var left: Int
     var width: Int
@@ -76,14 +76,14 @@ trait DrawDiamond extends Defaults {
 }
 
 @js.native
-trait DrawTriangle extends Defaults {
+trait DrawTriangleDefaults extends Defaults {
     var points: JSArray[Point]
     var fillGradient: SimpleGradient
     var shadow: Shadow
 }
 
 @js.native
-trait DrawLabel extends Defaults {
+trait DrawLabelDefaults extends Defaults {
     var top: Int
     var left: Int
     var contents: String
@@ -92,3 +92,10 @@ trait DrawLabel extends Defaults {
     var shadow: Shadow
 }
 
+@js.native
+trait DrawPaneDefaults extends Defaults {
+    var canFocus: Boolean
+    var width: Int | String
+    var height: Int | String
+    var gradients: JSArray[SimpleGradient]
+}

@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Drawing.gradient.props
 
-import com.simplesys.SmartClient.Drawing.radient.ColorStop
+import com.simplesys.SmartClient.Drawing.gradient.ColorStop
 import com.simplesys.System.Types._
 import com.simplesys.System._
 import com.simplesys.option.{ScNone, ScOption}

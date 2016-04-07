@@ -1,19 +1,19 @@
 package com.simplesys.SmartClient.Drawing.props
 
-import com.simplesys.SmartClient.Drawing.drawItem.props.DrawLabelProps
-import com.simplesys.SmartClient.Drawing.gradient.props.SimpleGradientProps
+import com.simplesys.SmartClient.Drawing.gradient.SimpleGradient
+import com.simplesys.SmartClient.Drawing.{DrawLabelDefaults, Shadow}
 import com.simplesys.SmartClient.System._
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.ArrowStyle._
 import com.simplesys.System._
-import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.option.{IntString, ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 
 class DefaultsDrawItem extends AbstractClassProps {
     var title: ScOption[String] = ScNone
     var keepInParentRect: ScOption[Boolean] = ScNone
     var lineWidth: ScOption[Int] = ScNone
-    var titleLabelProperties: ScOption[DrawLabelProps] = ScNone
+    var titleLabelProperties: ScOption[DrawLabelDefaults] = ScNone
 }
 
 class DrawRectDefaultsProps extends DefaultsDrawItem {
@@ -22,8 +22,8 @@ class DrawRectDefaultsProps extends DefaultsDrawItem {
     var width: ScOption[Int] = ScNone
     var height: ScOption[Int] = ScNone
     var rounding: ScOption[Double] = ScNone
-    var fillGradient: ScOption[SimpleGradientProps] = ScNone
-    var shadow: ScOption[ShadowProps] = ScNone
+    var fillGradient: ScOption[SimpleGradient] = ScNone
+    var shadow: ScOption[Shadow] = ScNone
 }
 
 class DrawLineDefaultsProps extends DefaultsDrawItem {
@@ -65,8 +65,8 @@ class DrawOvalDefaultsProps extends DefaultsDrawItem {
     var left: ScOption[Int] = ScNone
     var width: ScOption[Int] = ScNone
     var height: ScOption[Int] = ScNone
-    var fillGradient: ScOption[SimpleGradientProps] = ScNone
-    var shadow: ScOption[ShadowProps] = ScNone
+    var fillGradient: ScOption[SimpleGradient] = ScNone
+    var shadow: ScOption[Shadow] = ScNone
 }
 
 class DrawDiamondDefaultsProps extends DefaultsDrawItem {
@@ -74,14 +74,14 @@ class DrawDiamondDefaultsProps extends DefaultsDrawItem {
     var left: ScOption[Int] = ScNone
     var width: ScOption[Int] = ScNone
     var height: ScOption[Int] = ScNone
-    var fillGradient: ScOption[SimpleGradientProps] = ScNone
-    var shadow: ScOption[ShadowProps] = ScNone
+    var fillGradient: ScOption[SimpleGradient] = ScNone
+    var shadow: ScOption[Shadow] = ScNone
 }
 
 class DrawTriangleDefaultsProps extends DefaultsDrawItem {
     var points: ScOption[JSArray[Point]] = ScNone
-    var fillGradient: ScOption[SimpleGradientProps] = ScNone
-    var shadow: ScOption[ShadowProps] = ScNone
+    var fillGradient: ScOption[SimpleGradient] = ScNone
+    var shadow: ScOption[Shadow] = ScNone
 }
 
 class DrawLabelDefaultsProps extends DefaultsDrawItem {
@@ -89,6 +89,13 @@ class DrawLabelDefaultsProps extends DefaultsDrawItem {
     var left: ScOption[Int] = ScNone
     var contents: ScOption[String] = ScNone
     var alignment: ScOption[Alignment] = ScNone
-    var fillGradient: ScOption[SimpleGradientProps] = ScNone
-    var shadow: ScOption[ShadowProps] = ScNone
+    var fillGradient: ScOption[SimpleGradient] = ScNone
+    var shadow: ScOption[Shadow] = ScNone
+}
+
+class DrawPaneDefaultsProps extends AbstractClassProps {
+    var canFocus: ScOption[Boolean] = ScNone
+    var width: ScOption[IntString[Int, String]] = ScNone
+    var height: ScOption[IntString[Int, String]] = ScNone
+    var gradients: ScOption[Seq[SimpleGradient]] = ScNone
 }

@@ -1,4 +1,4 @@
-package com.simplesys.SmartClient.Drawing.radient
+package com.simplesys.SmartClient.Drawing.gradient
 
 import scala.scalajs.js
 

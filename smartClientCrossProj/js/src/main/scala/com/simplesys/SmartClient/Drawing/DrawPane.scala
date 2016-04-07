@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Drawing
 
 import com.simplesys.SmartClient.DataBinding.Callbacks.DataURLCallback
-import com.simplesys.SmartClient.Drawing.radient.{Gradient, LinearGradient, SimpleGradient}
+import com.simplesys.SmartClient.Drawing.gradient.{Gradient, LinearGradient, SimpleGradient}
 import com.simplesys.SmartClient.Foundation.{AbstractCanvasCompanion, Canvas}
 import com.simplesys.SmartClient.System.Point
 import com.simplesys.System.Types.{ID, void}

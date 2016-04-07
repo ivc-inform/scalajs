@@ -1,10 +1,10 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.Drawing.DrawItem
 import com.simplesys.System.{JSDictionaryAny, JSObject}
 import com.simplesys.json.JSON._
 import com.simplesys.macros.PropsToDictionary
 import com.simplesys.props.AbstractClassProps
+import com.simplesys.SmartClient.Drawing.DrawItem
 
 import scala.reflect.ClassTag
 import scala.scalajs.js

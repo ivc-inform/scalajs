@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Drawing
 
 import com.simplesys.SmartClient.Control.Menu
 import com.simplesys.SmartClient.Drawing.drawItem.{DrawGroup, DrawLabel, DrawRect}
-import com.simplesys.SmartClient.Drawing.radient.Gradient
+import com.simplesys.SmartClient.Drawing.gradient.Gradient
 import com.simplesys.SmartClient.System.Point
 import com.simplesys.SmartClient.Tools.EditProxy
 import com.simplesys.System.Types.ArrowStyle.ArrowStyle
