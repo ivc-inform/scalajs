@@ -57,6 +57,16 @@ trait DrawLinePathDefaults extends Defaults {
 }
 
 @js.native
+trait DrawPathDefaults extends Defaults {
+    var endPoint: Point
+    var startPoint: Point
+    var endArrow: ArrowStyle
+    var startArrow: ArrowStyle
+    var controlPoint1: Point
+    var controlPoint2: Point
+}
+
+@js.native
 trait DrawOvalDefaults extends Defaults {
     var top: Int
     var left: Int
