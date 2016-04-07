@@ -33,7 +33,8 @@ object PropsToDictionary extends Logging {
                         checkedType match {
                             case Some(ex) =>
                                 if (targs.head.baseClasses.contains(tsAbstractClassProps))
-                                    q"$valueAccess.map(x => (new SCApply4Props[${targs.head}]).apply($ex))"
+                                    q"$valueAccess.map(x => $ex)"
+                                    //q"$valueAccess.map(x => (new SCApply4Props[${targs.head}]).apply($ex))"
                                 else
                                     valueAccess
 
@@ -68,10 +69,10 @@ object PropsToDictionary extends Logging {
                     }
                     typeDef.baseType(tsAbstractClassProps) match {
                         case TypeRef(tp, symb, listTp) =>
-                            //if (parentArgs > 0)
+//                            if (parentArgs > 0)
                                 Some(q"$valueAccess")
-                            /*else
-                                Some(q"(new SCApply4Props[$typeDef]).apply($valueAccess)")*/
+//                            else
+//                                Some(q"(new SCApply4Props[$typeDef]).apply($valueAccess)")
 
                         case NoType =>
                             typeDef.baseType(tsJSObject) match {

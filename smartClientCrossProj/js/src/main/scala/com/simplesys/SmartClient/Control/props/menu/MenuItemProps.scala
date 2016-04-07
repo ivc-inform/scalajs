@@ -5,12 +5,11 @@ import com.simplesys.SmartClient.Control.menu.MenuItem
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.props.listGrid.ListGridRecordProps
 import com.simplesys.SmartClient.System.KeyIdentifier
+import com.simplesys.System.JSArray
 import com.simplesys.System.Types.{HTMLString, SCImgURL, void}
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.System.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
 class MenuItemProps extends ListGridRecordProps {
     var action: ScOption[js.Function1[void, _]] = ScNone
