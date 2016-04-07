@@ -1,9 +1,8 @@
 package com.simplesys.SmartClient.Drawing.props
 
-import com.simplesys.SmartClient.Drawing.DrawItem
+import com.simplesys.SmartClient.Drawing.{DrawItem, DrawPaneDefaults}
 import com.simplesys.SmartClient.Drawing.gradient.Gradient
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
-import com.simplesys.js.com.simplesys.SmartClient.Drawing.DrawPaneDefaults
 import com.simplesys.option.{ScNone, ScOption}
 
 class DrawPaneProps extends CanvasProps {

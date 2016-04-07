@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Drawing
 
+import com.simplesys.SmartClient.Drawing.drawItem.DrawLabel
 import com.simplesys.SmartClient.Drawing.gradient.SimpleGradient
 import com.simplesys.SmartClient.System.Point
 import com.simplesys.System.Types.ArrowStyle.ArrowStyle
