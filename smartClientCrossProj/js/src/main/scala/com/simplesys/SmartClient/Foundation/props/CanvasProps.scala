@@ -29,7 +29,7 @@ import com.simplesys.option._
 import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js
-import scala.scalajs.js.ThisFunction0
+import scala.scalajs.js.{ThisFunction0, ThisFunction1}
 
 class CanvasProps extends ClassProps {
     type callbackHandler <: Canvas
@@ -119,6 +119,7 @@ class CanvasProps extends ClassProps {
     var dragStop: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var dragTarget: ScOption[Canvas] = ScNone
     var dragType: ScOption[String] = ScNone
+    var draw: ScOption[ThisFunction1[callbackHandler, JSArrayAny, Canvas]] = ScNone
     var drop: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var dropMove: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var dropOut: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
@@ -141,6 +142,7 @@ class CanvasProps extends ClassProps {
     var extraSpace: ScOption[Int] = ScNone
     var focusChanged: ScOption[js.ThisFunction1[callbackHandler, Boolean, void]] = ScNone
     var getHoverHTML: ScOption[Function0[HTMLString]] = ScNone
+    var getInnerHTML: ScOption[Function0[HTMLString]] = ScNone
     var groupBorderCSS: ScOption[String] = ScNone
     var groupLabelBackgroundColor: ScOption[CSSColor] = ScNone
     var groupLabelStyleName: ScOption[CSSStyleName] = ScNone
@@ -210,6 +212,7 @@ class CanvasProps extends ClassProps {
     var prompt: ScOption[HTMLString] = ScNone
     var proportionalResizeModifiers: ScOption[Seq[KeyName]] = ScNone
     var proportionalResizing: ScOption[ProportionalResizeMode] = ScNone
+    var redraw: ScOption[ThisFunction1[callbackHandler, JSArrayAny, _]] = ScNone
     var redrawOnResize: ScOption[Boolean] = ScNone
     var resizeBarTarget: ScOption[String] = ScNone
     var resized: ScOption[js.ThisFunction0[callbackHandler, _]] = ScNone

@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Drawing.drawItem.props
 
-import com.simplesys.SmartClient.Drawing.props.DrawItemProps
+import com.simplesys.SmartClient.Drawing.props.{DrawItemProps, DrawLinePathDefaultsProps}
 import com.simplesys.SmartClient.System.Point
 import com.simplesys.System.Types.ConnectorOrientation.ConnectorOrientation
 import com.simplesys.System.Types.ConnectorStyle.ConnectorStyle
@@ -18,5 +18,6 @@ class DrawLinePathProps extends DrawItemProps {
     var startPoint: ScOption[Point] = ScNone
     var startTop: ScOption[Int] = ScNone
     var tailSize: ScOption[Int] = ScNone
+    var defaults: ScOption[DrawLinePathDefaultsProps] = ScNone
     override val `type`: ScOption[String]  = "DrawLinePath"
 }

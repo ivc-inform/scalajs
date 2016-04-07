@@ -5,7 +5,6 @@ import com.simplesys.SmartClient.Drawing.drawItem.{DrawGroup, DrawLabel, DrawRec
 import com.simplesys.SmartClient.Drawing.radient.Gradient
 import com.simplesys.SmartClient.Drawing.{DrawKnob, DrawPane, Shadow}
 import com.simplesys.SmartClient.Tools.EditProxy
-import com.simplesys.System._
 import com.simplesys.System.Types.ArrowStyle.ArrowStyle
 import com.simplesys.System.Types.Cursor.Cursor
 import com.simplesys.System.Types.KnobType.KnobType
@@ -16,7 +15,7 @@ import com.simplesys.System.Types.ProportionalResizeMode.ProportionalResizeMode
 import com.simplesys.System.Types.ResizeKnobPoint.ResizeKnobPoint
 import com.simplesys.System.Types.TitleRotationMode.TitleRotationMode
 import com.simplesys.System.Types._
-import com.simplesys.js.com.simplesys.SmartClient.Drawing.props.DefaultsProps
+import com.simplesys.System._
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 
@@ -29,7 +28,6 @@ class DrawItemProps extends AbstractClassProps {
     var contextMenu: ScOption[Menu] = ScNone
     var cornerResizeKnob: ScOption[DrawKnob with MultiAutoChild] = ScNone
     var cursor: ScOption[Cursor] = ScNone
-    var defaults: ScOption[DefaultsProps] = ScNone
     var destroyed: ScOption[Boolean] = ScNone
     var destroying: ScOption[Boolean] = ScNone
     var dragMove: ScOption[js.Function0[Boolean]] = ScNone

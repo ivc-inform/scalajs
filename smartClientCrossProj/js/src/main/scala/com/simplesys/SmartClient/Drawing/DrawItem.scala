@@ -27,6 +27,7 @@ trait DrawItem extends JSObject {
     var canHover: Boolean
     var click: js.Function0[Boolean]
     def computeAngle(px1: Double, py1: Double, px2: Double, py2: Double): Double
+    var _constructor : JSUndefined[String]
     var contextMenu: Menu
     var cornerResizeKnob: DrawKnob with MultiAutoChild
     var cursor: Cursor

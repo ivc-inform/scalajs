@@ -65,6 +65,7 @@ abstract trait AbstractClassCompanion extends JSObject {
     def addPropertyList(list: JSArray[JSDictionary[JSObject]]): JSObject = js.native
     def changeDefaults(defaultsName: String, newDefaults: JSObject): void = js.native
     def clearLogPriority(category: String): void = js.native
+    def create(arguments: JSAny): JSObject = js.native
     def delayCall(methodName: String, arrayArgs: JSArray[Any] = js.native, time: Int = js.native, target: JSObject = js.native): String = js.native
     def echo(obj: JSAny): String = js.native
     def echoAll(obj: JSAny): String = js.native

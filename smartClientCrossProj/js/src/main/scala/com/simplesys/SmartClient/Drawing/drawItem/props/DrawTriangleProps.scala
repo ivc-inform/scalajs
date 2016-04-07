@@ -1,7 +1,9 @@
 package com.simplesys.SmartClient.Drawing.drawItem.props
 
-import com.simplesys.option.ScOption
+import com.simplesys.SmartClient.Drawing.props.DrawTriangleDefaultsProps
+import com.simplesys.option.{ScNone, ScOption}
 
 class DrawTriangleProps extends DrawPolygonProps {
-    override val `type`: ScOption[String]  = "DrawTriangle"
+    var defaults: ScOption[DrawTriangleDefaultsProps] = ScNone
+    override val `type`: ScOption[String] = "DrawTriangle"
 }

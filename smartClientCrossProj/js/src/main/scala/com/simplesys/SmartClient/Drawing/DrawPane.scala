@@ -13,7 +13,7 @@ import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait DrawPane extends Canvas {
-    def addDrawItem(item: DrawItem, autoDraw: Boolean): void
+    def addDrawItem(item: DrawItem, autoDraw: Boolean = js.native): void
     def addGradient(gradient: Gradient): ID
     def createLinearGradient(id: ID, linearGradient: LinearGradient): ID
     def createRadialGradient(id: ID, radialGradient: RadialGradient): ID

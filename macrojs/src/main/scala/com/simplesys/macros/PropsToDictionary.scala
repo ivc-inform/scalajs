@@ -68,10 +68,10 @@ object PropsToDictionary extends Logging {
                     }
                     typeDef.baseType(tsAbstractClassProps) match {
                         case TypeRef(tp, symb, listTp) =>
-                            if (parentArgs > 0)
+                            //if (parentArgs > 0)
                                 Some(q"$valueAccess")
-                            else
-                                Some(q"(new SCApply4Props[$typeDef]).apply($valueAccess)")
+                            /*else
+                                Some(q"(new SCApply4Props[$typeDef]).apply($valueAccess)")*/
 
                         case NoType =>
                             typeDef.baseType(tsJSObject) match {

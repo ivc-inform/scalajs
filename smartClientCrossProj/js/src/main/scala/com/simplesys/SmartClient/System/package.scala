@@ -6,9 +6,8 @@ import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.DataBinding.props._
 import com.simplesys.SmartClient.Drawing.drawItem._
 import com.simplesys.SmartClient.Drawing.drawItem.props._
-import com.simplesys.SmartClient.Drawing.drawItem.props.drawShape.DrawShapeCommandProps
-import com.simplesys.SmartClient.Drawing.gradient.props.{ColorStopProps, GradientProps, LinearGradientProps, RadialGradientProps}
-import com.simplesys.SmartClient.Drawing.props.{DrawItemProps, DrawPaneDefaults, DrawPaneProps, DrawPaneSSProps}
+import com.simplesys.SmartClient.Drawing.gradient.props._
+import com.simplesys.SmartClient.Drawing.props.{DrawItemProps, DrawPaneProps, DrawPaneSSProps}
 import com.simplesys.SmartClient.Drawing.radient._
 import com.simplesys.SmartClient.Drawing.{DrawItem, DrawPane}
 import com.simplesys.SmartClient.Forms.FormsItems._
@@ -41,7 +40,6 @@ import com.simplesys.System.JSArray
 import com.simplesys.js.com.simplesys.SmartClient.DataBinding.DataSourceSS
 import com.simplesys.js.com.simplesys.SmartClient.DataBinding.props.DataSourceSSProps
 import com.simplesys.js.com.simplesys.SmartClient.Drawing.DrawPaneSS
-import com.simplesys.js.com.simplesys.SmartClient.Drawing.gradient.props.SimpleGradientProps
 import com.simplesys.js.com.simplesys.SmartClient.Layout.props.SectionStackSSProps
 
 //import com.simplesys.macros.PropsToDictionary
@@ -214,14 +212,14 @@ package object System {
     //</editor-fold>
 
     //<editor-fold desc="drawing">
-    object DrawPaneSS extends SCApply[DrawPaneSS, DrawPaneSSProps]
-    object DrawPane extends SCApply[DrawPane, DrawPaneProps]
-    object EditProxy extends SCApply[EditProxy, EditProxyProps]
-    object EditContext extends SCApply[EditContext, EditContextProps]
-    object EditPane extends SCApply[EditPane, EditPaneProps]
-    object EditTree extends SCApply[EditTree, EditTreeProps]
-    object PaletteNode extends SCApply4Object[PaletteNode, PaletteNodeProps]
-    object SelectionOutline extends SCApply4Props[SelectionOutlineProps]
+//    object DrawPaneSS extends SCApply[DrawPaneSS, DrawPaneSSProps]
+//    object DrawPane extends SCApply[DrawPane, DrawPaneProps]
+//    object EditProxy extends SCApply[EditProxy, EditProxyProps]
+//    object EditContext extends SCApply[EditContext, EditContextProps]
+//    object EditPane extends SCApply[EditPane, EditPaneProps]
+//    object EditTree extends SCApply[EditTree, EditTreeProps]
+//    object PaletteNode extends SCApply4Object[PaletteNode, PaletteNodeProps]
+//    object SelectionOutline extends SCApply4Props[SelectionOutlineProps]
 
     //<editor-fold desc="gradient">
     object ColorStop extends  SCApply4Object[ColorStop, ColorStopProps]
@@ -241,22 +239,22 @@ package object System {
     //</editor-fold>
 
     //<editor-fold desc="DrawItem">
-    object DrawItem extends SCApplyDrawItem[DrawItem, DrawItemProps]
-    object DrawGroup extends SCApplyDrawItem[DrawGroup, DrawGroupProps]
-    object DrawLine extends SCApplyDrawItem[DrawLine, DrawLineProps]
-    object DrawRect extends SCApplyDrawItem[DrawRect, DrawRectProps]
-    object DrawOval extends SCApplyDrawItem[DrawOval, DrawOvalProps]
-    object DrawSector extends SCApplyDrawItem[DrawSector, DrawSectorProps]
-    object DrawLabel extends SCApplyDrawItem[DrawLabel, DrawLabelProps]
-    object DrawImage extends SCApplyDrawItem[DrawImage, DrawImageProps]
-    object DrawCurve extends SCApplyDrawItem[DrawCurve, DrawCurveProps]
-    object DrawBlockConnector extends SCApplyDrawItem[DrawBlockConnector, DrawBlockConnectorProps]
-    object DrawPath extends SCApplyDrawItem[DrawPath, DrawPathProps]
-    object DrawPolygon extends SCApplyDrawItem[DrawPolygon, DrawPolygonProps]
-    object DrawTriangle extends SCApplyDrawItem[DrawTriangle, DrawTriangleProps]
-    object DrawDiamond extends SCApplyDrawItem[DrawDiamond, DrawDiamondProps]
-    object DrawLinePath extends SCApplyDrawItem[DrawLinePath, DrawLinePathProps]
-    object DrawShape extends SCApplyDrawItem[DrawShape, DrawShapeProps]
+//    object DrawItem extends SCApplyDrawItem[DrawItem, DrawItemProps]
+//    object DrawGroup extends SCApplyDrawItem[DrawGroup, DrawGroupProps]
+//    object DrawLine extends SCApplyDrawItem[DrawLine, DrawLineProps]
+//    object DrawRect extends SCApplyDrawItem[DrawRect, DrawRectProps]
+//    object DrawOval extends SCApplyDrawItem[DrawOval, DrawOvalProps]
+//    object DrawSector extends SCApplyDrawItem[DrawSector, DrawSectorProps]
+//    object DrawLabel extends SCApplyDrawItem[DrawLabel, DrawLabelProps]
+//    object DrawImage extends SCApplyDrawItem[DrawImage, DrawImageProps]
+//    object DrawCurve extends SCApplyDrawItem[DrawCurve, DrawCurveProps]
+//    object DrawBlockConnector extends SCApplyDrawItem[DrawBlockConnector, DrawBlockConnectorProps]
+//    object DrawPath extends SCApplyDrawItem[DrawPath, DrawPathProps]
+//    object DrawPolygon extends SCApplyDrawItem[DrawPolygon, DrawPolygonProps]
+//    object DrawTriangle extends SCApplyDrawItem[DrawTriangle, DrawTriangleProps]
+//    object DrawDiamond extends SCApplyDrawItem[DrawDiamond, DrawDiamondProps]
+//    object DrawLinePath extends SCApplyDrawItem[DrawLinePath, DrawLinePathProps]
+//    object DrawShape extends SCApplyDrawItem[DrawShape, DrawShapeProps]
 
     //</editor-fold>
     //</editor-fold>

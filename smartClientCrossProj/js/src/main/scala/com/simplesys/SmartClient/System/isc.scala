@@ -7,7 +7,7 @@ import com.simplesys.System.Types.{Callback, ID, void}
 import com.simplesys.System._
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation.{JSBracketAccess, JSName}
 import scala.scalajs.js.|
 
 abstract trait Properties
@@ -16,7 +16,7 @@ abstract trait Properties
 @JSName("isc")
 object iscStatic extends JSObject {
     def addDefaults(destination: JSObject, source: JSObject): JSObject = js.native
-    def addProperties(destination: JSObject, propsArray: JSArray[JSObject]): JSObject = js.native
+    def addProperties(destination: JSObject, propsArray: JSObject*): JSObject = js.native
     def ask(message: String, callback: js.Function1[Boolean, _] = js.native, properties: Dialog = js.native): void = js.native
     def askForValue(message: String, callback: js.Function1[JSAny, _] = js.native, properties: Dialog = js.native): void = js.native
     def clearPrompt(): void = js.native
@@ -60,6 +60,7 @@ object iscStatic extends JSObject {
     val Log: AbstractLogCompanion = js.native
     val Class: AbstractClassCompanion = js.native
     val EventHandler: AbstractEventHandlerCompanion = js.native
+    val isA: isAStatic = js.native
 
     def error(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
     def info(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
@@ -68,6 +69,14 @@ object iscStatic extends JSObject {
     def errors(grid: ListGrid, identifier: ID = js.native, callback: Callback = js.native): void = js.native
     val JSON: AbstractJSONCompanion = js.native
     def debugTrap[T <: JSObject](obj: T): T = js.native
+
+    @JSBracketAccess
+    def apply(name: String): JSUndefined[AbstractClassCompanion] = js.native
+
+    @JSBracketAccess
+    def update(name: String, value: Class | JSObject): Unit = js.native
+
+    def js_beautify(str: String): String = js.native
 }
 
 
