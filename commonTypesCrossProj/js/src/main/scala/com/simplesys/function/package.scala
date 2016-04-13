@@ -39,6 +39,6 @@ package object function {
         def toFunc = function4: js.Function4[T1, T2, T3, T4, R]
     }
 
-    implicit def str2Any(x: String): ScOption[JSAny] = ScSome(js.use(x).as[JSAny])
+    //implicit def str2Any(x: String): ScOption[JSAny] = ScSome(js.use(x).as[JSAny])
 
 }
