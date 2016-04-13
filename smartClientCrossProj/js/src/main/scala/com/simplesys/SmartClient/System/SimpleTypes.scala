@@ -2,16 +2,17 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.DataBinding.props.SimpleTypeProps
 import com.simplesys.System.Types.OperatorId
+import com.simplesys.option.ScOption._
 
 object SimpleTypes {
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "boolean"
-        name = "bBoolean_SimpleType"
+        inheritsFrom = "boolean".opt
+        name = "bBoolean_SimpleType".opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "textArea"
-        name = "clob_SimpleType"
+        inheritsFrom = "textArea".opt
+        name = "clob_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -27,12 +28,12 @@ object SimpleTypes {
             OperatorId.endsWith,
             OperatorId.iStartsWith,
             OperatorId.iEquals
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "date"
-        name = "dDate_SimpleType"
+        inheritsFrom = "date".opt
+        name = "dDate_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -61,12 +62,12 @@ object SimpleTypes {
             OperatorId.between,
             OperatorId.betweenInclusive,
             OperatorId.greaterThan
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "datetime"
-        name = "dDateOptTime_SimpleType"
+        inheritsFrom = "datetime".opt
+        name = "dDateOptTime_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -95,12 +96,12 @@ object SimpleTypes {
             OperatorId.between,
             OperatorId.betweenInclusive,
             OperatorId.greaterThan
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "datetime"
-        name = "dDateTime_SimpleType"
+        inheritsFrom = "datetime".opt
+        name = "dDateTime_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -129,12 +130,12 @@ object SimpleTypes {
             OperatorId.between,
             OperatorId.betweenInclusive,
             OperatorId.greaterThan
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "datetime"
-        name = "dTimestamp_SimpleType"
+        inheritsFrom = "datetime".opt
+        name = "dTimestamp_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -163,12 +164,12 @@ object SimpleTypes {
             OperatorId.between,
             OperatorId.betweenInclusive,
             OperatorId.greaterThan
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "datetime"
-        name = "dTimestampWithTZ_SimpleType"
+        inheritsFrom = "datetime".opt
+        name = "dTimestampWithTZ_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -197,12 +198,12 @@ object SimpleTypes {
             OperatorId.between,
             OperatorId.betweenInclusive,
             OperatorId.greaterThan
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "float"
-        name = "di_SimpleType"
+        inheritsFrom = "float".opt
+        name = "di_SimpleType".opt
         validOperators = Seq(
             OperatorId.isNull,
             OperatorId.notInSet,
@@ -212,12 +213,12 @@ object SimpleTypes {
             OperatorId.notEqual,
             OperatorId.equals,
             OperatorId.notNull
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "float"
-        name = "fDouble_SimpleType"
+        inheritsFrom = "float".opt
+        name = "fDouble_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -246,12 +247,12 @@ object SimpleTypes {
             OperatorId.between,
             OperatorId.betweenInclusive,
             OperatorId.greaterThan
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "float"
-        name = "fPrice_SimpleType"
+        inheritsFrom = "float".opt
+        name = "fPrice_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -280,12 +281,12 @@ object SimpleTypes {
             OperatorId.between,
             OperatorId.betweenInclusive,
             OperatorId.greaterThan
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "float"
-        name = "fSum_SimpleType"
+        inheritsFrom = "float".opt
+        name = "fSum_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -314,12 +315,12 @@ object SimpleTypes {
             OperatorId.between,
             OperatorId.betweenInclusive,
             OperatorId.greaterThan
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "integer"
-        name = "id_SimpleType"
+        inheritsFrom = "integer".opt
+        name = "id_SimpleType".opt
         validOperators = Seq(
             OperatorId.isNull,
             OperatorId.notInSet,
@@ -329,12 +330,12 @@ object SimpleTypes {
             OperatorId.notEqual,
             OperatorId.equals,
             OperatorId.notNull
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "integer"
-        name = "nInt_SimpleType"
+        inheritsFrom = "integer".opt
+        name = "nInt_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -363,12 +364,12 @@ object SimpleTypes {
             OperatorId.between,
             OperatorId.betweenInclusive,
             OperatorId.greaterThan
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "text"
-        name = "sAddress_SimpleType"
+        inheritsFrom = "text".opt
+        name = "sAddress_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -384,12 +385,12 @@ object SimpleTypes {
             OperatorId.endsWith,
             OperatorId.iStartsWith,
             OperatorId.iEquals
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "text"
-        name = "sBarCode_SimpleType"
+        inheritsFrom = "text".opt
+        name = "sBarCode_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -405,12 +406,12 @@ object SimpleTypes {
             OperatorId.endsWith,
             OperatorId.iStartsWith,
             OperatorId.iEquals
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "text"
-        name = "sCaption_SimpleType"
+        inheritsFrom = "text".opt
+        name = "sCaption_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -426,12 +427,12 @@ object SimpleTypes {
             OperatorId.endsWith,
             OperatorId.iStartsWith,
             OperatorId.iEquals
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "text"
-        name = "sCode_SimpleType"
+        inheritsFrom = "text".opt
+        name = "sCode_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -447,12 +448,12 @@ object SimpleTypes {
             OperatorId.endsWith,
             OperatorId.iStartsWith,
             OperatorId.iEquals
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "textArea"
-        name = "sDescription_SimpleType"
+        inheritsFrom = "textArea".opt
+        name = "sDescription_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -468,12 +469,12 @@ object SimpleTypes {
             OperatorId.endsWith,
             OperatorId.iStartsWith,
             OperatorId.iEquals
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "text"
-        name = "sEMail_SimpleType"
+        inheritsFrom = "text".opt
+        name = "sEMail_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -489,12 +490,12 @@ object SimpleTypes {
             OperatorId.endsWith,
             OperatorId.iStartsWith,
             OperatorId.iEquals
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "password"
-        name = "sPasswordHashSHA_SimpleType"
+        inheritsFrom = "password".opt
+        name = "sPasswordHashSHA_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -510,12 +511,12 @@ object SimpleTypes {
             OperatorId.endsWith,
             OperatorId.iStartsWith,
             OperatorId.iEquals
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "password"
-        name = "sPasswordPlain_SimpleType"
+        inheritsFrom = "password".opt
+        name = "sPasswordPlain_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -531,12 +532,12 @@ object SimpleTypes {
             OperatorId.endsWith,
             OperatorId.iStartsWith,
             OperatorId.iEquals
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "text"
-        name = "sPhone_SimpleType"
+        inheritsFrom = "text".opt
+        name = "sPhone_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -552,12 +553,12 @@ object SimpleTypes {
             OperatorId.endsWith,
             OperatorId.iStartsWith,
             OperatorId.iEquals
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "text"
-        name = "sPostalIndex_SimpleType"
+        inheritsFrom = "text".opt
+        name = "sPostalIndex_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -573,12 +574,12 @@ object SimpleTypes {
             OperatorId.endsWith,
             OperatorId.iStartsWith,
             OperatorId.iEquals
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "link"
-        name = "sURL_SimpleType"
+        inheritsFrom = "link".opt
+        name = "sURL_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -594,12 +595,12 @@ object SimpleTypes {
             OperatorId.endsWith,
             OperatorId.iStartsWith,
             OperatorId.iEquals
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "text"
-        name = "sURLDomain_SimpleType"
+        inheritsFrom = "text".opt
+        name = "sURLDomain_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -615,12 +616,12 @@ object SimpleTypes {
             OperatorId.endsWith,
             OperatorId.iStartsWith,
             OperatorId.iEquals
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "image"
-        name = "sURLImage_SimpleType"
+        inheritsFrom = "image".opt
+        name = "sURLImage_SimpleType".opt
         validOperators = Seq(
             OperatorId.contains,
             OperatorId.isNull,
@@ -636,12 +637,12 @@ object SimpleTypes {
             OperatorId.endsWith,
             OperatorId.iStartsWith,
             OperatorId.iEquals
-        )
+        ).opt
     })
 
     SimpleType.create(new SimpleTypeProps {
-        inheritsFrom = "text"
-        name = "ss_SimpleType"
+        inheritsFrom = "text".opt
+        name = "ss_SimpleType".opt
         validOperators = Seq(
             OperatorId.isNull,
             OperatorId.notInSet,
@@ -651,6 +652,6 @@ object SimpleTypes {
             OperatorId.notEqual,
             OperatorId.equals,
             OperatorId.notNull
-        )
+        ).opt
     })
 }
