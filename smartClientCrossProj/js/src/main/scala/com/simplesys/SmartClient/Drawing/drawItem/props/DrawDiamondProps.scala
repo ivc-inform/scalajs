@@ -11,5 +11,5 @@ class DrawDiamondProps extends DrawItemProps {
     var top: ScOption[Int] = ScNone
     var width: ScOption[Int] = ScNone
     var defaults: ScOption[DrawDiamondDefaults] = ScNone
-    override val `type`: ScOption[String] = "DrawDiamond"
+    override val `type`: ScOption[String] = "DrawDiamond".opt
 }

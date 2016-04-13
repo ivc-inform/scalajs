@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.Drawing.drawItem.props
 import com.simplesys.SmartClient.Drawing.props.DrawItemProps
 import com.simplesys.SmartClient.Drawing.{DrawCurveDefaults, DrawKnob}
 import com.simplesys.SmartClient.System.Point
+import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
 
 class DrawCurveProps extends DrawItemProps {
@@ -13,5 +14,5 @@ class DrawCurveProps extends DrawItemProps {
     var endPoint: ScOption[Point] = ScNone
     var startPoint: ScOption[Point] = ScNone
     var defaults: ScOption[DrawCurveDefaults] = ScNone
-    override val `type`: ScOption[String] = "DrawCurve"
+    override val `type`: ScOption[String] = "DrawCurve".opt
 }

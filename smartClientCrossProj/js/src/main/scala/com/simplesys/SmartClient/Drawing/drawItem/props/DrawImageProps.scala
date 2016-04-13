@@ -5,6 +5,7 @@ import com.simplesys.System.Types.URL
 
 import scala.scalajs.js._
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.option.ScOption._
 
 class DrawImageProps extends DrawItemProps {
     var height: ScOption[Int] = ScNone
@@ -13,5 +14,5 @@ class DrawImageProps extends DrawItemProps {
     var top: ScOption[Int] = ScNone
     var useMatrixFilter: ScOption[Boolean] = ScNone
     var width: ScOption[Int] = ScNone
-    override val `type`: ScOption[String]  = "DrawImage"
+    override val `type`: ScOption[String]  = "DrawImage".opt
 }
