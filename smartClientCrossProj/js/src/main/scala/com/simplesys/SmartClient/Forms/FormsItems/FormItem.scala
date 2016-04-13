@@ -19,9 +19,10 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSAny, JSArray, JSDictionary}
+import com.simplesys.System.{JSAny, JSArray, JSDictionary, JSObject}
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.|
 
 @js.native
@@ -231,7 +232,9 @@ trait FormItem extends Class {
     def setTop(): void
     def setValue(newValue: JSAny): void
     def setValueIcons(map: JSObject): void
-    def setValueMap(valueMap: JSArray[JSObject]): void
+    def setValueMap(valueMap: JSArray[JSAny]): void
+    @JSName("setValueMap")
+    def setValueMapString(valueMap: JSArray[String]): void
     def shouldApplyHeightToTextBox(): Boolean
     def shouldFetchMissingValue(newValue: JSAny): Boolean
     def shouldSaveOnEnter(): Boolean

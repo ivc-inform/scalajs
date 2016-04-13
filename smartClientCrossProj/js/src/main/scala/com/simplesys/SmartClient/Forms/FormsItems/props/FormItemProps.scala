@@ -7,6 +7,7 @@ import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.RPC.RPCRequest
+import com.simplesys.SmartClient.System.Class
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AutoComplete.AutoComplete
@@ -25,6 +26,8 @@ import com.simplesys.option.{FormItemType_FormItemComponentType, IntString, ScNo
 import scala.scalajs.js
 
 class FormItemProps extends ClassProps {
+    type classHandler <: FormItem
+
     var accessKey: ScOption[Char] = ScNone
     var align: ScOption[Alignment] = ScNone
     var allowExpressions: ScOption[Boolean] = ScNone

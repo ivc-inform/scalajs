@@ -6,6 +6,7 @@ import com.simplesys.SmartClient.System.Point
 import com.simplesys.System.Types.ConnectorOrientation.ConnectorOrientation
 import com.simplesys.System.Types.ConnectorStyle.ConnectorStyle
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.option.ScOption._
 
 class DrawLinePathProps extends DrawItemProps {
     var connectorOrientation: ScOption[ConnectorOrientation] = ScNone
@@ -20,5 +21,5 @@ class DrawLinePathProps extends DrawItemProps {
     var startTop: ScOption[Int] = ScNone
     var tailSize: ScOption[Int] = ScNone
     var defaults: ScOption[DrawLinePathDefaults] = ScNone
-    override val `type`: ScOption[String]  = "DrawLinePath"
+    override val `type`: ScOption[String]  = "DrawLinePath".opt
 }

@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.Tools.props
 
 import com.simplesys.SmartClient.System.props.ClassProps
+import com.simplesys.SmartClient.Tools.props.EditContextProps.SelectedUpdated
 import com.simplesys.SmartClient.Tools.{EditContext, EditNode, Palette, PaletteNode}
 import com.simplesys.System.Types.CSSColor
 import com.simplesys.System.Types.HoopSelectionStyle.HoopSelectionStyle
@@ -10,6 +11,10 @@ import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
 import scala.scalajs.js._
+
+object EditContextProps {
+    type SelectedUpdated = Function2[JSUndefined[EditNode], JSArray[EditNode], _]
+}
 
 trait EditContextProps extends ClassProps {
     type classHandler <: EditContext
@@ -22,7 +27,7 @@ trait EditContextProps extends ClassProps {
     var defaultPalette: ScOption[Palette] = ScNone
     var defaultParent: ScOption[EditNode] = ScNone
     var editMaskProperties: ScOption[JSObject] = ScNone
-    var editNodeUpdated: ScOption[js.Function3[EditNode, EditContext, JSArray[String], _]] = ScNone
+    var editNodeUpdated: ScOption[js.Function3[JSUndefined[EditNode], JSUndefined[EditContext], JSArray[String], _]] = ScNone
     var enableInlineEdit: ScOption[Boolean] = ScNone
     var extraPalettes: ScOption[JSArray[Palette]] = ScNone
     var hideGroupBorderOnDrag: ScOption[Boolean] = ScNone
@@ -38,5 +43,5 @@ trait EditContextProps extends ClassProps {
     //var selectionType: ScOption[SelectionType] = ScNone //todo  сделать анотацию @JSPropsName
     var showSelectedLabel: ScOption[Boolean] = ScNone
     var showSelectedLabelOnSelect: ScOption[Boolean] = ScNone
-    var selectedEditNodesUpdated: ScOption[Function2[JSUndefined[EditNode], JSArray[EditNode], _]] = ScNone
+    var selectedEditNodesUpdated: ScOption[SelectedUpdated] = ScNone
 }

@@ -3,9 +3,11 @@ package com.simplesys.SmartClient.System
 import com.simplesys.System.JSObject
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait isAStatic extends JSObject {
+    @JSName("Array")
     def JSArray(`object`: JSObject): Boolean
     def Boolean(`object`: JSObject): Boolean
     def ClassObject(`object`: JSObject): Boolean

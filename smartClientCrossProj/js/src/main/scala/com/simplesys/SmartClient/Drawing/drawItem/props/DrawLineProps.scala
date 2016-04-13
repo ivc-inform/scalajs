@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.Drawing.DrawLineDefaults
 import com.simplesys.SmartClient.Drawing.props.DrawItemProps
 import com.simplesys.SmartClient.System.Point
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.option.ScOption._
 
 class DrawLineProps extends DrawItemProps {
     var endLeft: ScOption[Int] = ScNone
@@ -13,5 +14,5 @@ class DrawLineProps extends DrawItemProps {
     var startPoint: ScOption[Point] = ScNone
     var startTop: ScOption[Int] = ScNone
     var defaults: ScOption[DrawLineDefaults] = ScNone
-    override val `type`: ScOption[String]  = "DrawLine"
+    override val `type`: ScOption[String]  = "DrawLine".opt
 }

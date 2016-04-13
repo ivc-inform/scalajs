@@ -5,12 +5,12 @@ import com.simplesys.SmartClient.DataBinding.AbstractJSONCompanion
 import com.simplesys.SmartClient.Grids._
 import com.simplesys.System.Types.{Callback, ID, void}
 import com.simplesys.System._
+import com.simplesys.props.AbstractClassProps
 
+import scala.reflect.ClassTag
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSBracketAccess, JSName}
 import scala.scalajs.js.|
-
-abstract trait Properties
 
 @js.native
 @JSName("isc")
@@ -20,10 +20,9 @@ object iscStatic extends JSObject {
     def ask(message: String, callback: js.Function1[Boolean, _] = js.native, properties: Dialog = js.native): void = js.native
     def askForValue(message: String, callback: js.Function1[JSAny, _] = js.native, properties: Dialog = js.native): void = js.native
     def clearPrompt(): void = js.native
-    def clone(obj: JSObject): JSObject = js.native
+    def clone[T <: JSObject](obj: T): T = js.native
     def confirm(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
     def defineClass(className: String, superClass: String): void = js.native
-    //    def defineClass[SuperClassType <: Class, NewClassType <: Class](implicit classTag_OLD: ClassTag[SuperClassType], classTag_NEW: ClassTag[NewClassType]):void = js.Dynamic.global.isc.defineClass(classTag_NEW.runtimeClass.getSimpleName.dblQuoted, s"isc.${classTag_OLD.runtimeClass.getSimpleName.dblQuoted}")
     def dismissCurrentDialog(): void = js.native
     def echo(value: JSAny): String = js.native
     def echoAll(value: JSAny): String = js.native
@@ -68,7 +67,7 @@ object iscStatic extends JSObject {
     def infos(grid: ListGrid, identifier: ID = js.native, callback: Callback = js.native): void = js.native
     def errors(grid: ListGrid, identifier: ID = js.native, callback: Callback = js.native): void = js.native
     val JSON: AbstractJSONCompanion = js.native
-    def debugTrap[T <: JSObject](obj: T): T = js.native
+    def debugTrap[T](obj: T): T = js.native
 
     @JSBracketAccess
     def apply(name: String): JSUndefined[AbstractClassCompanion] = js.native

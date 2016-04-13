@@ -7,7 +7,7 @@ import com.simplesys.SmartClient.System.Class
 import com.simplesys.System.Types.HoopSelectionStyle.HoopSelectionStyle
 import com.simplesys.System.Types.SelectedAppearance.SelectedAppearance
 import com.simplesys.System.Types.{CSSColor, HTMLString, void}
-import com.simplesys.System.{JSArray, JSFunction, JSObject}
+import com.simplesys.System.{JSArray, JSDictionaryAny, JSFunction, JSObject}
 import org.scalajs.dom.html.Canvas
 
 import scala.scalajs.js
@@ -54,6 +54,7 @@ trait EditContext extends Class {
     def nodeAdded(newNode: EditNode, parentNode: EditNode, rootNode: EditNode): void
     var persistCoordinates: Boolean
     def removeAll(): void
+    def removeNode(editNode: EditNode): void
     def removeNodeProperties(editNode: EditNode, properties: JSArray[String]): void
     val rootComponent: PaletteNode
     def selectAllEditNodes(): void
@@ -72,7 +73,7 @@ trait EditContext extends Class {
     def serializeEditNodesAsJSON(nodes: JSArray[EditNode], settings: SerializationSettings = js.native): String
     def setDefaultPalette(palette: Palette): void
     def setEditProxyProperties(editNode: EditNode, properties: EditProxy): void
-    def setNodeProperties(editNode: EditNode, properties: Canvas, skipLiveObjectUpdate: Boolean = js.native): void
+    def setNodeProperties(editNode: EditNode, properties: JSDictionaryAny, skipLiveObjectUpdate: Boolean = js.native): void
     val showSelectedLabel: Boolean
     val showSelectedLabelOnSelect: Boolean
 }

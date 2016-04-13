@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
+import com.simplesys.SmartClient.Forms.FormsItems.{FormItem, TextItem}
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.System.Types.CharacterCasing.CharacterCasing
 import com.simplesys.System.Types.{FormItemComponentType, SCClassName}
@@ -10,6 +11,8 @@ import scala.scalajs.js
 import scala.scalajs.js._
 
 class TextItemProps extends FormItemProps {
+    type classHandler <: TextItem
+
     var browserAutoCapitalize: ScOption[Boolean] = ScNone
     var browserAutoCorrect: ScOption[Boolean] = ScNone
     var browserInputType: ScOption[String] = ScNone

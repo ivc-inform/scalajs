@@ -13,7 +13,6 @@ class EditPaneProps extends CanvasProps {
     var canDragGroup: ScOption[Boolean] = ScNone
     var canGroupSelect: ScOption[Boolean] = ScNone
     var defaultPalette: ScOption[Palette] = ScNone
-    var editContext: ScOption[EditContext] = ScNone
     var editContextProperties: ScOption[EditContext] = ScNone
     var extraPalettes: ScOption[JSArray[Palette]] = ScNone
     var hideGroupBorderOnDrag: ScOption[Boolean] = ScNone

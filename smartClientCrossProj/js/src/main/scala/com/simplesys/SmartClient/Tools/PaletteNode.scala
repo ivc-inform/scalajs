@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.Tools
 
 import com.simplesys.System.Types.{SCClassName, SCImgURL}
 import com.simplesys.System.{JSObject, JSDictionaryAny}
+import com.simplesys.SmartClient.System.Class
 
 import scala.scalajs.js
 
@@ -12,7 +13,7 @@ trait PaletteNode extends JSObject {
     val editProxyProperties: EditProxy
     val icon: SCImgURL
     val idPrefix: String
-    val liveObject: JSObject
+    val liveObject: Class
     val title: String
     val `type`: SCClassName
 }

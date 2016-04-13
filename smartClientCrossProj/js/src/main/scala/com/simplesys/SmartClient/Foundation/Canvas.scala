@@ -26,7 +26,7 @@ import com.simplesys.System.Types.ProportionalResizeMode._
 import com.simplesys.System.Types.VerticalAlignment._
 import com.simplesys.System.Types.Visibility._
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSArray, JSArrayAny, JSObject}
+import com.simplesys.System.{JSArray, JSArrayAny, JSObject, JSUndefined}
 import org.scalajs.dom.DocumentEvent
 import org.scalajs.dom.html.Element
 import org.scalajs.dom.raw.HTMLElement
@@ -165,6 +165,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val edgeOpacity: Int
     val edgeShowCenter: Boolean
     val edgeSize: Int
+    var editContext: JSUndefined[EditContext]
     val editNode: EditNode
     var editProxy: EditNode with AutoChild
     val editProxyConstructor: SCClassName
@@ -447,7 +448,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var visibilityChanged: js.ThisFunction1[callbackHandler, Boolean, void]
     def visibleAtPoint(x: Int, y: Int, withinViewport: Boolean = js.native, ignoreWidgets: Canvas = js.native, upToParent: Canvas = js.native): Boolean
     val width: Int | String
-    def willAcceptDrop(): Boolean
+    var willAcceptDrop : js.ThisFunction0[callbackHandler, Boolean]
 }
 
 @js.native

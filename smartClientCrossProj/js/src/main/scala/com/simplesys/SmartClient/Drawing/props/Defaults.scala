@@ -1,5 +1,7 @@
 package com.simplesys.SmartClient.Drawing.props
 
+import com.simplesys.SmartClient.Control.MenuSS
+import com.simplesys.SmartClient.Drawing.drawItem.DrawLabel
 import com.simplesys.SmartClient.Drawing.gradient.SimpleGradient
 import com.simplesys.SmartClient.Drawing.{DrawLabelDefaults, Shadow}
 import com.simplesys.SmartClient.System._
@@ -13,7 +15,8 @@ class DefaultsDrawItem extends AbstractClassProps {
     var title: ScOption[String] = ScNone
     var keepInParentRect: ScOption[Boolean] = ScNone
     var lineWidth: ScOption[Int] = ScNone
-    var titleLabelProperties: ScOption[DrawLabelDefaults] = ScNone
+    var titleLabelProperties: ScOption[DrawLabel] = ScNone
+    var contextMenu: ScOption[MenuSS] = ScNone
 }
 
 class DrawRectDefaultsProps extends DefaultsDrawItem {

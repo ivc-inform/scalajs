@@ -22,7 +22,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VisibilityMode.VisibilityMode
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSArray, JSObject, JSUndefined}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -88,7 +88,7 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     def getFocusItem(): FormItem
     def getItem(itemName: String): FormItem
     def getItemErrorHTML(item: FormItem, error: JSArray[String]): void
-    def getItems(): JSArray[FormItem]
+    def getItems(): JSUndefined[JSArray[FormItem]]
     def getOldValues(): JSObject
     def getSaveOperationType(requestProperties: DSRequest = js.native): DSOperationType
     def getTitleAlign(item: FormItem): Alignment

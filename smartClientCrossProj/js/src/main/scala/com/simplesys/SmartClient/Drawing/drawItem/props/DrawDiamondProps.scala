@@ -1,9 +1,9 @@
 package com.simplesys.SmartClient.Drawing.drawItem.props
 
 import com.simplesys.SmartClient.Drawing.DrawDiamondDefaults
-import com.simplesys.SmartClient.Drawing.props.{DrawDiamondDefaultsProps, DrawItemProps}
-import com.simplesys.option.ScOption._
+import com.simplesys.SmartClient.Drawing.props.DrawItemProps
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.option.ScOption._
 
 class DrawDiamondProps extends DrawItemProps {
     var height: ScOption[Int] = ScNone

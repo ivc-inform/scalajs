@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.SmartClient.Tools.EditNode
+import com.simplesys.SmartClient.Tools.{EditContext, EditNode, EditProxy}
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.System.Types.BackgroundRepeat._
@@ -137,7 +137,8 @@ class CanvasProps extends ClassProps {
     var edgeShowCenter: ScOption[Boolean] = ScNone
     var edgeSize: ScOption[Int] = ScNone
     var editNode: ScOption[EditNode] = ScNone
-    var editProxy: ScOption[EditNode] = ScNone
+    var editContext: ScOption[EditContext] = ScNone
+    var editProxyProperties: ScOption[EditProxy] = ScNone //Не менять !!!!
     var editProxyConstructor: ScOption[SCClassName] = ScNone
     var extraSpace: ScOption[Int] = ScNone
     var focusChanged: ScOption[js.ThisFunction1[callbackHandler, Boolean, void]] = ScNone
@@ -269,4 +270,5 @@ class CanvasProps extends ClassProps {
     var visibility: ScOption[Visibility] = ScNone
     var visibilityChanged: ScOption[js.ThisFunction1[callbackHandler, Boolean, void]] = ScNone
     var width: ScOption[IntString[Int, String]] = ScNone
+    var willAcceptDrop : ScOption[ThisFunction0[callbackHandler, Boolean]] = ScNone
 }

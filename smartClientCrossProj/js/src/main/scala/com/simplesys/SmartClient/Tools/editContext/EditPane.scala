@@ -22,7 +22,6 @@ trait EditPane extends Canvas {
     val canGroupSelect: Boolean
     var defaultPalette: Palette
     def destroyAll(): void
-    val editContext: EditContext with AutoChild
     val editContextProperties: EditContext
     def enableEditing(editNode: EditNode): void
     var extraPalettes: JSArray[Palette]

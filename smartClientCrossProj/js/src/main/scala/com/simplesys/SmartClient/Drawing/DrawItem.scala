@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Drawing
 
-import com.simplesys.SmartClient.Control.Menu
+import com.simplesys.SmartClient.Control.{Menu, MenuSS}
 import com.simplesys.SmartClient.Drawing.drawItem.{DrawGroup, DrawLabel, DrawRect}
 import com.simplesys.SmartClient.Drawing.gradient.Gradient
 import com.simplesys.SmartClient.System.Point
@@ -23,19 +23,21 @@ import scala.scalajs.js.|
 
 @js.native
 trait DrawItem extends JSObject {
+    type itemHandler <: this.type
+
     var canDrag: Boolean
     var canHover: Boolean
-    var click: js.Function0[Boolean]
+    var click: js.ThisFunction0[itemHandler, Boolean]
     def computeAngle(px1: Double, py1: Double, px2: Double, py2: Double): Double
     var _constructor : JSUndefined[String]
-    var contextMenu: Menu
+    var contextMenu: MenuSS
     var cornerResizeKnob: DrawKnob with MultiAutoChild
     var cursor: Cursor
-    val defaults: JSObject
+    val defaults:  Defaults
     def destroy(): void
     val destroyed: Boolean
     val destroying: Boolean
-    var dragMove: js.Function0[Boolean]
+    var dragMove: js.ThisFunction0[itemHandler, Boolean]
     var dragResizeMove: js.Function5[String, Int, Int, Int, Int, _]
     var dragStart: js.Function0[Boolean]
     var dragStartDistance: Int
@@ -138,7 +140,7 @@ trait DrawItem extends JSObject {
     val translate: JSArray[Double]
     val xShearFactor: Double
     val yShearFactor: Double
-    val `type`: String
+    val `type`: JSUndefined[String]
 }
 
 @js.native

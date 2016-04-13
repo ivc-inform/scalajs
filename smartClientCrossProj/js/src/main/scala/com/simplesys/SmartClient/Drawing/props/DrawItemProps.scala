@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Drawing.props
 
-import com.simplesys.SmartClient.Control.Menu
+import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Drawing.drawItem.{DrawGroup, DrawLabel, DrawRect}
 import com.simplesys.SmartClient.Drawing.gradient.Gradient
 import com.simplesys.SmartClient.Drawing.{DrawKnob, DrawPane, Shadow}
@@ -18,6 +18,7 @@ import com.simplesys.System.Types._
 import com.simplesys.System._
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
+import com.simplesys.option.ScOption._
 
 import scala.scalajs.js
 
@@ -25,9 +26,10 @@ class DrawItemProps extends AbstractClassProps {
     var canDrag: ScOption[Boolean] = ScNone
     var canHover: ScOption[Boolean] = ScNone
     var click: ScOption[js.Function0[Boolean]] = ScNone
-    var contextMenu: ScOption[Menu] = ScNone
+    var contextMenu: ScOption[MenuSS] = ScNone
     var cornerResizeKnob: ScOption[DrawKnob with MultiAutoChild] = ScNone
     var cursor: ScOption[Cursor] = ScNone
+    //val defaults: ScOption[Defaults] = ScNone
     var destroyed: ScOption[Boolean] = ScNone
     var destroying: ScOption[Boolean] = ScNone
     var dragMove: ScOption[js.Function0[Boolean]] = ScNone
@@ -85,6 +87,5 @@ class DrawItemProps extends AbstractClassProps {
     var translate: ScOption[Seq[Double]] = ScNone
     var xShearFactor: ScOption[Double] = ScNone
     var yShearFactor: ScOption[Double] = ScNone
-    val `type`: ScOption[String] = "DrawItem"
-
+    val `type`: ScOption[String] = "DrawItem".opt
 }

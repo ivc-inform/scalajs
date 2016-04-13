@@ -1,8 +1,9 @@
 package com.simplesys.SmartClient.Drawing.drawItem.props
 
 import com.simplesys.SmartClient.Drawing.DrawRectDefaults
-import com.simplesys.SmartClient.Drawing.props.{DrawItemProps, DrawRectDefaultsProps}
+import com.simplesys.SmartClient.Drawing.props.DrawItemProps
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.option.ScOption._
 
 class DrawRectProps extends DrawItemProps {
     var height: ScOption[Int] = ScNone
@@ -11,5 +12,5 @@ class DrawRectProps extends DrawItemProps {
     var top: ScOption[Int] = ScNone
     var width: ScOption[Int] = ScNone
     var defaults: ScOption[DrawRectDefaults] = ScNone
-    override val `type`: ScOption[String]  = "DrawRect"
+    override val `type`: ScOption[String]  = "DrawRect".opt
 }

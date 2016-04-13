@@ -10,6 +10,8 @@ import com.simplesys.System.Types.SelectedAppearance.SelectedAppearance
 import scala.scalajs.js._
 import com.simplesys.option.{ScNone, ScOption}
 
+import scala.scalajs.js
+
 class EditProxyProps extends ClassProps {
     var allowNestedDrops: ScOption[Boolean] = ScNone
     var autoMaskChildren: ScOption[Boolean] = ScNone
