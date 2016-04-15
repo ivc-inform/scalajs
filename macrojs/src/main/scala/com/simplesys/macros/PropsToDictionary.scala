@@ -167,7 +167,7 @@ object PropsToDictionary extends Logging {
                     }
                 }"""
         }
-        //logger debug showCode(res.tree)
+        logger trace showCode(res.tree)
         res
     }
 }
