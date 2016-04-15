@@ -1,10 +1,5 @@
 package com.simplesys
 
-import com.simplesys.System.JSAny
-import com.simplesys.option.{ScOption, ScSome}
-
-import scala.scalajs.js
-
 package object function {
 
     implicit class f01tf0_[+R](function0: Function0[R]) {
@@ -36,6 +31,10 @@ package object function {
     }
 
     implicit class f42tf3_[-T1, -T2, -T3, -T4, +R](function4: Function4[T1, T2, T3, T4, R]) {
+        def toFunc = function4: js.Function4[T1, T2, T3, T4, R]
+    }
+
+    implicit class f52tf5_[-T1, -T2, -T3, -T4, -T5, +R](function4: Function5[T1, T2, T3, T4, T5, R]) {
         def toFunc = function4: js.Function4[T1, T2, T3, T4, R]
     }
 
