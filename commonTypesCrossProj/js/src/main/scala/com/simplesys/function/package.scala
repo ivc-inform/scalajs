@@ -1,5 +1,7 @@
 package com.simplesys
 
+import scala.scalajs.js
+
 package object function {
 
     implicit class f01tf0_[+R](function0: Function0[R]) {
@@ -34,8 +36,8 @@ package object function {
         def toFunc = function4: js.Function4[T1, T2, T3, T4, R]
     }
 
-    implicit class f52tf5_[-T1, -T2, -T3, -T4, -T5, +R](function4: Function5[T1, T2, T3, T4, T5, R]) {
-        def toFunc = function4: js.Function4[T1, T2, T3, T4, R]
+    implicit class f52tf5_[-T1, -T2, -T3, -T4, -T5, +R](function5: Function5[T1, T2, T3, T4, T5, R]) {
+        def toFunc = function5: js.Function5[T1, T2, T3, T4, T5, R]
     }
 
     //implicit def str2Any(x: String): ScOption[JSAny] = ScSome(js.use(x).as[JSAny])
