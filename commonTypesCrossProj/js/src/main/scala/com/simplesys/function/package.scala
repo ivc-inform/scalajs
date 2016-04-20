@@ -39,6 +39,10 @@ package object function {
         def toFunc = function4: js.Function4[T1, T2, T3, T4, R]
     }
 
+    implicit class f44tf4[-T1, -T2, -T3, -T4, -T5, +R](function5: Function5[T1, T2, T3, T4, T5, R]) {
+        def toThisFunc = function5: js.ThisFunction4[T1, T2, T3, T4, T5, R]
+    }
+
     implicit class f52tf5_[-T1, -T2, -T3, -T4, -T5, +R](function5: Function5[T1, T2, T3, T4, T5, R]) {
         def toFunc = function5: js.Function5[T1, T2, T3, T4, T5, R]
     }
