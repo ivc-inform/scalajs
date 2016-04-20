@@ -48,7 +48,7 @@ package object function {
     }
 
     implicit class f55tf5_[-T1, -T2, -T3, -T4, -T5, -T6, +R](function6: Function6[T1, T2, T3, T4, T5, T6, R]) {
-        def toFunc = function6: js.Function6[T1, T2, T3, T4, T5, T6, R]
+        def toThisFunc = function6: js.ThisFunction5[T1, T2, T3, T4, T5, T6, R]
     }
 
     //implicit def str2Any(x: String): ScOption[JSAny] = ScSome(js.use(x).as[JSAny])
