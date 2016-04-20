@@ -1,5 +1,4 @@
 package com.simplesys
-
 import scala.scalajs.js
 
 package object function {
@@ -30,6 +29,10 @@ package object function {
 
     implicit class f32tf1_[-T1, -T2, -T3, +R](function3: Function3[T1, T2, T3, R]) {
         def toFunc = function3: js.Function3[T1, T2, T3, R]
+    }
+
+    implicit class f42tf4[-T1, -T2, -T3, -T4, +R](function4: Function4[T1, T2, T3, T4, R]) {
+        def toThisFunc = function4: js.ThisFunction3[T1, T2, T3, T4, R]
     }
 
     implicit class f42tf3_[-T1, -T2, -T3, -T4, +R](function4: Function4[T1, T2, T3, T4, R]) {
