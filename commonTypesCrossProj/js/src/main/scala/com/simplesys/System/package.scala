@@ -7,7 +7,7 @@ package object System {
     type JSFunction = js.Function
     type JSDynamic = js.Dynamic
     type JSObject = js.Object
-    type JSArray[T] = js.Array[T]
+    type JSArray[T] = JSEArray[T]
     type JSUndefined[T] = js.UndefOr[T]
     type JSUndefinedOpt[T] = js.UndefOrOps[T]
     type JSDictionary[T] = js.Dictionary[T]
