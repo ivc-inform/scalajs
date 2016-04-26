@@ -55,8 +55,12 @@ package object function {
         def toThisFunc = function7: js.ThisFunction6[T1, T2, T3, T4, T5, T6, T7, R]
     }
 
-    implicit class f7tf6_[-T1, -T2, -T3, -T4, -T5, -T6, -T7, -T8, +R](function8: Function7[T1, T2, T3, T4, T5, T6, T7, T8, R]) {
+    implicit class f7tf6_[-T1, -T2, -T3, -T4, -T5, -T6, -T7, -T8, +R](function8: Function8[T1, T2, T3, T4, T5, T6, T7, T8, R]) {
         def toThisFunc = function8: js.ThisFunction7[T1, T2, T3, T4, T5, T6, T7, T8, R]
+    }
+
+    implicit class f8tf7_[-T1, -T2, -T3, -T4, -T5, -T6, -T7, -T8, -T9, +R](function9: Function9[T1, T2, T3, T4, T5, T6, T7, T8, T9, R]) {
+        def toThisFunc = function9: js.ThisFunction8[T1, T2, T3, T4, T5, T6, T7, T8, T9, R]
     }
 
     //implicit def str2Any(x: String): ScOption[JSAny] = ScSome(js.use(x).as[JSAny])
