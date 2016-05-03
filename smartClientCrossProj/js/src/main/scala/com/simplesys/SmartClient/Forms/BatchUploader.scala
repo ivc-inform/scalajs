@@ -7,10 +7,11 @@ import com.simplesys.SmartClient.Foundation.HTMLFlow
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.VStack
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.AutoChild
 import com.simplesys.System.Types.ImportFormat.ImportFormat
 import com.simplesys.System.Types.PartialCommitOption.PartialCommitOption
-import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 
@@ -29,7 +30,7 @@ trait BatchUploader extends VStack {
     var discardedColumnsMessage: String
     val displayDiscardedColumns: Boolean
     var grid: Grid[ListGridField, ListGridRecord] with AutoChild
-    var gridFields: JSArray[ListGridField]
+    var gridFields: IscArray[ListGridField]
     var partialCommit: PartialCommitOption
     val partialCommitConfirmationMessage: String
     val partialCommitError: String
@@ -42,7 +43,7 @@ trait BatchUploader extends VStack {
     var uploadFieldPrefix: String
     var uploadFileLabel: String
     val uploadForm: DynamicForm with AutoChild
-    val uploadFormFields: JSArray[FormItem]
+    val uploadFormFields: IscArray[FormItem]
     val uploadOperation: String
     val uploadStatusMessages: HTMLFlow with AutoChild
     var warnOnCancel: Boolean

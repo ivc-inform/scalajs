@@ -1,13 +1,13 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.void
-import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 
 @js.native
 trait RichTextItem extends CanvasItem {
-    var controlGroups: JSArray[String]
+    var controlGroups: IscArray[String]
     var moveFocusOnTab:Boolean
     def  setMoveFocusOnTab (moveFocusOnTab:Boolean):void
 }

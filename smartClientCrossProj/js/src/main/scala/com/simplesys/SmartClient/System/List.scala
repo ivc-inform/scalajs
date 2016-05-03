@@ -2,13 +2,15 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.DataBinding.AdvancedCriteria
 import com.simplesys.System.Types.void
-import com.simplesys.System.{JSObject, JSArray, JSAny, JSArrayAny}
+import com.simplesys.System.{JSAny, JSObject}
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.|
 
 @js.native
-trait List extends Class {
+@JSName("List")
+trait IscList[A] extends js.Array[A] with Class {
     def add(`object`: JSAny): this.type = js.native
     def addPos(`object`: JSAny, pos: Int): this.type = js.native
     def addList(list: this.type, listStartRow: Int = js.native, listEndRow: Int = js.native): this.type = js.native
@@ -21,14 +23,14 @@ trait List extends Class {
     def find(propertyName: String | JSObject | AdvancedCriteria, value: JSObject = js.native): JSObject = js.native
     def findIndex(propertyName: String | JSObject | AdvancedCriteria, value: JSObject = js.native): Int = js.native
     def findNextIndex(startIndex: Int, propertyName: String | JSObject | AdvancedCriteria, value: JSObject = js.native): Int = js.native
-    def findAll(propertyName: String | JSObject | AdvancedCriteria, value: JSObject = js.native, endIndex: Int = js.native): JSArray[JSObject] = js.native
+    def findAll(propertyName: String | JSObject | AdvancedCriteria, value: JSObject = js.native, endIndex: Int = js.native): IscArray[JSObject] = js.native
     def first(): JSObject = js.native
     def last(): JSObject = js.native
     def get(pos: Int): JSObject = js.native
-    def getItems(itemList: JSArray[Int]): JSArrayAny = js.native
+    def getItems(itemList: IscArray[Int]): IscArray[JSAny] = js.native
     def getLength(): Int = js.native
-    def getProperty(property: String): JSArrayAny = js.native
-    def getRange(start: Int, end: Int): JSArrayAny = js.native
+    def getProperty(property: String): IscArray[JSAny] = js.native
+    def getRange(start: Int, end: Int): IscArray[JSAny] = js.native
     def getValueMap(idField: String, displayField: String): JSObject = js.native
     def indexOf(obj: JSObject, pos: Int = js.native, endPos: Int = js.native): Int = js.native
     def lastIndexOf(obj: JSObject, pos: Int = js.native, endPos: Int = js.native): Int = js.native

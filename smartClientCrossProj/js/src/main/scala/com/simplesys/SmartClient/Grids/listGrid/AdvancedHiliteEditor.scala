@@ -3,8 +3,8 @@ package com.simplesys.SmartClient.Grids.listGrid
 import com.simplesys.SmartClient.Forms.{DynamicForm, FilterBuilder}
 import com.simplesys.SmartClient.Foundation.StatefulCanvas
 import com.simplesys.SmartClient.Layout.VStack
-import com.simplesys.System.Types.{Callback, AutoChild, SCImgURL, void}
-import com.simplesys.System.JSArray
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.Types.{AutoChild, Callback, SCImgURL, void}
 
 import scala.scalajs.js
 
@@ -19,7 +19,7 @@ trait AdvancedHiliteEditor extends VStack {
     val filterBuilder: FilterBuilder
     val filterGroupTitle: String
     val hiliteForm: DynamicForm with AutoChild
-    val hiliteIcons: JSArray[SCImgURL]
+    val hiliteIcons: IscArray[SCImgURL]
     val invalidHilitePrompt: String
     val saveButton: StatefulCanvas with AutoChild
     val saveButtonTitle: String

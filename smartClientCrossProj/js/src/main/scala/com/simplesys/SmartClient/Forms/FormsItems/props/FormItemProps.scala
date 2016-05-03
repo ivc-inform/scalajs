@@ -7,7 +7,7 @@ import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.RPC.RPCRequest
-import com.simplesys.SmartClient.System.Class
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AutoComplete.AutoComplete
@@ -103,7 +103,7 @@ class FormItemProps extends ClassProps {
     var iconHSpace: ScOption[Int] = ScNone
     var iconKeyPress: ScOption[js.Function5[String, Char, DynamicForm, FormItem, FormItemIcon, _]] = ScNone
     var iconPrompt: ScOption[HTMLString] = ScNone
-    var icons: ScOption[JSArray[FormItemIcon]] = ScNone
+    var icons: ScOption[IscArray[FormItemIcon]] = ScNone
     var iconVAlign: ScOption[VerticalAlignment] = ScNone
     var iconWidth: ScOption[Int] = ScNone
     var ID: ScOption[String] = ScNone
@@ -203,8 +203,8 @@ class FormItemProps extends ClassProps {
     var useDisabledHintStyleForReadOnly: ScOption[Boolean] = ScNone
     var validateOnChange: ScOption[Boolean] = ScNone
     var validateOnExit: ScOption[Boolean] = ScNone
-    var validators: ScOption[JSArray[Validator]] = ScNone
-    var validOperators: ScOption[JSArray[OperatorId]] = ScNone
+    var validators: ScOption[IscArray[Validator]] = ScNone
+    var validOperators: ScOption[IscArray[OperatorId]] = ScNone
     var vAlign: ScOption[VerticalAlignment] = ScNone
     var value: ScOption[JSAny] = ScNone
     var valueDeselectedCSSText: ScOption[CSSText] = ScNone

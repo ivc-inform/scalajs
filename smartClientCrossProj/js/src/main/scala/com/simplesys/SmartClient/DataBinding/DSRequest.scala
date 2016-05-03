@@ -2,6 +2,8 @@ package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
 import com.simplesys.SmartClient.RPC.{AbstractRPCRequestCompanion, RPCRequest}
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.DSProtocol.DSProtocol
 import com.simplesys.System.Types.ExportDisplay.ExportDisplay
@@ -11,9 +13,9 @@ import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
 import com.simplesys.System.Types.Record
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.ValidationMode.ValidationMode
-import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.|
 
 @js.native
@@ -25,11 +27,11 @@ trait DSRequest extends RPCRequest {
     val endRow: Int
     val exportAs: ExportFormat
     val exportCSS: String
-    val exportData: JSArray[Record]
+    val exportData: IscArray[Record]
     val exportDatesAsFormattedString: Boolean
     val exportDelimiter: String
     val exportDisplay: ExportDisplay
-    val exportFields: JSArray[String]
+    val exportFields: IscArray[String]
     val exportFilename: String
     val exportFooter: String
     val exportHeader: String
@@ -49,7 +51,7 @@ trait DSRequest extends RPCRequest {
     val exportValueFields: Boolean
     val fieldValueExpressions: JSObject
     val generateRelatedUpdates: Boolean
-    val groupBy: JSArray[String]
+    val groupBy: IscArray[String]
     val headerData: JSObject
     val keepParentsOnFilter: Boolean
     val lineBreakStyle: String
@@ -64,7 +66,7 @@ trait DSRequest extends RPCRequest {
     val resultSet: ResultSet
     val resultTree: ResultTree
     val shouldUseCache: Boolean
-    val sortBy: String | JSArray[String] | JSArray[SortSpecifier]
+    val sortBy: String | IscArray[String] | IscArray[SortSpecifier]
     val startRow: Int
     val streamResults: Boolean
     val summaryFunctions: JSObject
@@ -80,5 +82,6 @@ abstract trait AbstractDSRequestCompanion extends AbstractRPCRequestCompanion {
 }
 
 @js.native
-object DSRequest extends AbstractDSRequestCompanion
+@JSName("isc.DSRequest")
+object DSRequestStatic extends AbstractDSRequestCompanion
 

@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Foundation.props
 
-import com.simplesys.SmartClient.Foundation.Canvas
+import com.simplesys.SmartClient.Foundation.{Canvas, StatefulCanvas}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.IconOrientation.IconOrientation
@@ -10,6 +10,8 @@ import com.simplesys.System.Types.VerticalAlignment._
 import com.simplesys.System.Types._
 
 class StatefulCanvasProps extends CanvasProps {
+    type callbackHandler <: StatefulCanvas
+
     var actionType: ScOption[SelectionType] = ScNone
     var align: ScOption[Alignment] = ScNone
     var autoFit: ScOption[Boolean] = ScNone

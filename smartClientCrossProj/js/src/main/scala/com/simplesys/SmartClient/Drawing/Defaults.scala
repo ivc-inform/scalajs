@@ -1,19 +1,18 @@
 package com.simplesys.SmartClient.Drawing
 
 import com.simplesys.SmartClient.Control.MenuSS
+import com.simplesys.SmartClient.DataBinding.AdvancedCriteria
 import com.simplesys.SmartClient.Drawing.drawItem.DrawLabel
 import com.simplesys.SmartClient.Drawing.gradient.SimpleGradient
-import com.simplesys.SmartClient.System.Point
+import com.simplesys.SmartClient.System.{IscArray, Point}
 import com.simplesys.System.Types.ArrowStyle.ArrowStyle
-import com.simplesys.System.Types.CSSColor
-import com.simplesys.System.Types.Cursor.Cursor
-import com.simplesys.System.Types.LineCap.LineCap
 import com.simplesys.System.Types.LinePattern.LinePattern
-import com.simplesys.System.{JSArray, JSObject, JSUndefined, jSUndefined}
+import com.simplesys.System.{JSObject, JSUndefined}
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.ScalaJSDefined
-import scala.scalajs.js.|
+import scala.scalajs.js.{ThisFunction0, ThisFunction2, |}
 
 @js.native
 trait Defaults extends JSObject {
@@ -22,6 +21,10 @@ trait Defaults extends JSObject {
     var lineWidth: Int
     var titleLabelProperties: DrawLabel
     var contextMenu: MenuSS
+    var criteria: AdvancedCriteria
+    var linePattern : LinePattern
+    var onDragStop: ThisFunction2[DrawItem, Int, Int, _]
+    var resized: ThisFunction0[DrawItem, _]
 }
 
 @js.native
@@ -54,7 +57,7 @@ trait DrawCurveDefaults extends Defaults {
 }
 
 @js.native
-trait DrawLinePathDefaults extends Defaults {
+trait DrawPathDefaults extends Defaults {
     var endPoint: Point
     var startPoint: Point
     var endArrow: ArrowStyle
@@ -64,7 +67,7 @@ trait DrawLinePathDefaults extends Defaults {
 }
 
 @js.native
-trait DrawPathDefaults extends Defaults {
+trait DrawLinePathDefaults extends Defaults {
     var endPoint: Point
     var startPoint: Point
     var endArrow: ArrowStyle
@@ -95,7 +98,7 @@ trait DrawDiamondDefaults extends Defaults {
 
 @js.native
 trait DrawTriangleDefaults extends Defaults {
-    var points: JSArray[Point]
+    var points: IscArray[Point]
     var fillGradient: SimpleGradient
     var shadow: Shadow
 }
@@ -115,24 +118,25 @@ trait DrawPaneDefaults extends Defaults {
     var canFocus: Boolean
     var width: Int | String
     var height: Int | String
-    var gradients: JSArray[SimpleGradient]
+    var gradients: IscArray[SimpleGradient]
 }
 
 @ScalaJSDefined
 trait PropEditorLiveObject extends JSObject {
     var canDrag: JSUndefined[Boolean]
-    var cursor: JSUndefined[Cursor]
-    var endArraw: JSUndefined[ArrowStyle]
-    var fillColor: JSUndefined[CSSColor]
-    var fillGradient: JSUndefined[SimpleGradient]
+    var cursor: JSUndefined[String]
+    var endArrow: JSUndefined[String]
+    var fillColor: JSUndefined[String]
+    var fillGradient: JSUndefined[JSObject]
     var fillOpacity: JSUndefined[Double]
-    val lineCap: JSUndefined[LineCap]
-    val lineColor: JSUndefined[CSSColor]
+    val lineCap: JSUndefined[String]
+    val lineColor: JSUndefined[String]
     val lineOpacity: JSUndefined[Double]
-    val linePattern: JSUndefined[LinePattern]
-    val lineWidth: JSUndefined[Double]
-    val shadow: JSUndefined[Shadow]
-    val startArraw: JSUndefined[ArrowStyle]
+    val linePattern: JSUndefined[String]
+    val lineWidth: JSUndefined[Int]
+    val shadow: JSUndefined[JSObject]
+    val criteria: JSUndefined[JSObject]
+    val startArrow: JSUndefined[String]
     val title: JSUndefined[String]
     val rounding: JSUndefined[Double]
     val keepInParentRect:JSUndefined[Boolean]

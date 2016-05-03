@@ -1,12 +1,13 @@
 package com.simplesys.SmartClient.Foundation
 
-import com.simplesys.System.{JSObject, JSArray}
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSObject
 
 import scala.scalajs.js
 
 @js.native
 trait PrintProperties extends JSObject {
-    val includeControls: JSArray[String]
-    val omitControls: JSArray[String]
+    val includeControls: IscArray[String]
+    val omitControls: IscArray[String]
     val printForExport: Boolean
 }

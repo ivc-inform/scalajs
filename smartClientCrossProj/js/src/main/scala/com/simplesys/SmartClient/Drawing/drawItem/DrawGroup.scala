@@ -1,15 +1,15 @@
 package com.simplesys.SmartClient.Drawing.drawItem
 
 import com.simplesys.SmartClient.Drawing.DrawItem
-import com.simplesys.System.JSArray
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.void
 
 import scala.scalajs.js
 
 @js.native
 trait DrawGroup extends DrawItem {
-    val drawItems: JSArray[DrawItem]
-    def getGroupRect(): JSArray[Int]
+    val drawItems: IscArray[DrawItem]
+    def getGroupRect(): IscArray[Int]
     var height: Int
     var left: Int
     def setHeight(height: Int): void

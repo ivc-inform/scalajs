@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.SmartClient.DataBinding.Callbacks.RPCCallback
-import com.simplesys.SmartClient.System.AbstractClassCompanion
+import com.simplesys.SmartClient.System.{AbstractClassCompanion, IscArray}
 import com.simplesys.System.Types._
 import com.simplesys.System._
 
@@ -16,10 +16,10 @@ abstract trait AbstractOfflineSSCompanion extends AbstractOfflineCompanion {
     def putBoolean(key: String, value: Boolean): void = js.native
     def getNumber(key: String, defValue: Double): Double = js.native
     def putNumber(key: String, value: Double): void = js.native
-    def putArray(key: String, values: JSArray[Any]): void = js.native
-    def getArray(key: String): JSArray[Any] = js.native
-    def removeArray(key: String): JSArray[Any] = js.native
-    def getFromBase(key: String, defValue: JSAny, _callback: js.Function2[String, JSArrayAny, _]): JSAny = js.native
+    def putArray(key: String, values: IscArray[JSAny]): void = js.native
+    def getArray(key: String): IscArray[JSAny] = js.native
+    def removeArray(key: String): IscArray[JSAny] = js.native
+    def getFromBase(key: String, defValue: JSAny, _callback: js.Function2[String, IscArray[JSAny], _]): JSAny = js.native
     def putToBase(key:String, value: JSAny, callback: RPCCallback):void = js.native
 }
 

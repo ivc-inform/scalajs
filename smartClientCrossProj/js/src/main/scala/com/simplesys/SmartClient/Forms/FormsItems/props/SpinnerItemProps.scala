@@ -15,9 +15,9 @@ class SpinnerItemProps extends TextItemProps {
     var getPreviousValue: ScOption[js.Function2[Int, Int, Int]] = ScNone
     var increaseIcon: ScOption[FormItemIcon ] = ScNone
     var increaseIconProperties: ScOption[JSDictionaryAny] = ScNone
-    var max: ScOption[Double] = ScNone
-    var min: ScOption[Double] = ScNone
-    var step: ScOption[Double] = ScNone
+    var max: ScOption[JSAny] = ScNone
+    var min: ScOption[JSAny] = ScNone
+    var step: ScOption[JSAny] = ScNone
     var unstackedDecreaseIcon: ScOption[FormItemIcon ] = ScNone
     var unstackedIncreaseIcon: ScOption[FormItemIcon ] = ScNone
     var unstackedPrintTextBoxStyle: ScOption[FormItemBaseStyle] = ScNone

@@ -3,10 +3,10 @@ package com.simplesys.SmartClient.Forms
 import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.Forms.FormsItems.TimeItem
 import com.simplesys.SmartClient.Layout.{HLayout, VLayout}
-import com.simplesys.SmartClient.System.Date
+import com.simplesys.SmartClient.System.{Date, IscArray}
 import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
+import com.simplesys.System.JSDictionaryAny
 import com.simplesys.System.Types.{void, _}
-import com.simplesys.System.{JSArray, JSDictionaryAny, JSAny}
 
 import scala.scalajs.js
 
@@ -33,7 +33,7 @@ trait DateChooser extends VLayout {
     var dataChanged: js.ThisFunction0[DateChooser, _]
     val dateGrid: DateGrid with AutoChild
     val dayNameLength: Int
-    var disabledDates: JSArray[Date]
+    var disabledDates: IscArray[Date]
     var disabledWeekdayStyle: CSSStyleName
     var disabledWeekendStyle: CSSStyleName
     val disableWeekends: Boolean
@@ -94,7 +94,7 @@ trait DateChooser extends VLayout {
     var use24HourTime: Boolean
     var useFirstDayOfFiscalWeek: Boolean
     val weekChooserButton: IButton with AutoChild
-    var weekendDays: JSArray[Int]
+    var weekendDays: IscArray[Int]
     var weekendHeaderStyle: String
     var weekFieldTitle: String
     var weekHeaderStyle: CSSStyleName

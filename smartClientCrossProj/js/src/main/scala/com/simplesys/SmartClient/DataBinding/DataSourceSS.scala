@@ -1,12 +1,9 @@
-package com.simplesys.js.com.simplesys.SmartClient.DataBinding
+package com.simplesys.SmartClient.DataBinding
 
-import com.simplesys.SmartClient.DataBinding.{AbstractDataSourceCompanion, DataSource}
-import com.simplesys.System.JSArray
 import com.simplesys.System.Types.{URL, void}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
-import scala.scalajs.js.|
 
 @js.native
 trait DataSourceSS extends DataSource {

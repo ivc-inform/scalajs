@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.TEXTAREA_WRAP.TEXTAREA_WRAP
 import com.simplesys.System.Types.{SCClassName, void}
-import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 
@@ -16,7 +16,7 @@ trait TextAreaItem extends FormItem {
     var enforceLength: Boolean
     var formatOnBlur: Boolean
     def getEnteredValue(): String
-    def getSelectionRange(): JSArray[Int]
+    def getSelectionRange(): IscArray[Int]
     var length: Int
     var minHeight: Int
     var printFullText: Boolean

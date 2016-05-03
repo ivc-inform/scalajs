@@ -12,7 +12,7 @@ import com.simplesys.SmartClient.Grids.treeGrid.Tree
 import com.simplesys.SmartClient.Grids.{Grid, ListGrid}
 import com.simplesys.SmartClient.Layout.props.VLayoutProps
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, VLayout}
-import com.simplesys.SmartClient.System.{Class, Selection}
+import com.simplesys.SmartClient.System.{Class, IscArray, Selection}
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.System.Types.AutoComplete.AutoComplete
@@ -48,7 +48,7 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSAny, JSArray, JSArrayAny}
+import com.simplesys.System.{JSAny, JSObject}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
@@ -156,7 +156,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var cellOut: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var cellOver: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var cellPadding: ScOption[Int] = ScNone
-    var cellSelectionChanged: ScOption[js.Function1[JSArrayAny, Boolean]] = ScNone
+    var cellSelectionChanged: ScOption[js.Function1[IscArray[JSAny], Boolean]] = ScNone
     var cellValueHover: ScOption[js.Function3[R, Int, Int, Boolean]] = ScNone
     var cellValueHoverHTML: ScOption[js.Function3[R, Int, Int, HTMLString]] = ScNone
     var chartConstructor: ScOption[String] = ScNone
@@ -280,13 +280,13 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var getCellStyle: ScOption[js.ThisFunction3[callbackHandler, R, Int, Int, CSSStyleName]] = ScNone
     var getCellValue: ScOption[js.ThisFunction3[callbackHandler, R, Int, Int, String]] = ScNone
     var getEditorProperties: ScOption[js.Function3[T, R, Int, JSObject]] = ScNone
-    var getDragData: ScOption[js.Function1[DataBoundComponent, JSArray[R]]] = ScNone
+    var getDragData: ScOption[js.Function1[DataBoundComponent, IscArray[R]]] = ScNone
     var getRowHeight: ScOption[js.Function2[Int, Int, Int]] = ScNone
     var getRowSpan: ScOption[js.Function3[R, Int, Int, Int]] = ScNone
     var gridComponents: ScOption[Seq[ListGridComponent]] = ScNone
     var gridSummaryRecordProperty: ScOption[String] = ScNone
     var groupByAsyncThreshold: ScOption[Int] = ScNone
-    var groupByComplete: ScOption[js.Function1[JSArray[String], void]] = ScNone
+    var groupByComplete: ScOption[js.Function1[IscArray[String], void]] = ScNone
     var groupByField: ScOption[Seq[String]] = ScNone
     var groupByFieldSummaries: ScOption[Seq[String]] = ScNone
     var groupByMaxRecords: ScOption[Int] = ScNone
@@ -307,7 +307,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var groupTitleColumnProperties: ScOption[T] = ScNone
     var groupTitleField: ScOption[String] = ScNone
     var groupTree: ScOption[Tree] = ScNone
-    var handleGroupBy: ScOption[js.Function1[JSArray[String], Boolean]] = ScNone
+    var handleGroupBy: ScOption[js.Function1[IscArray[String], Boolean]] = ScNone
     var header: ScOption[Layout] = ScNone
     var headerAutoFitEvent: ScOption[AutoFitEvent] = ScNone
     var headerBackgroundColor: ScOption[CSSColor] = ScNone
@@ -455,7 +455,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var selectionProperty: ScOption[String] = ScNone
     var selectionType: ScOption[SelectionStyle] = ScNone
     var selectionUnderCanvas: ScOption[Canvas] = ScNone
-    var selectionUpdated: ScOption[js.Function2[R, JSArray[R], void]] = ScNone
+    var selectionUpdated: ScOption[js.Function2[R, IscArray[R], void]] = ScNone
     var selectOnEdit: ScOption[Boolean] = ScNone
     var showAllColumns: ScOption[Boolean] = ScNone
     var showAllRecords: ScOption[Boolean] = ScNone
@@ -498,7 +498,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var singleCellValueProperty: ScOption[String] = ScNone
     var sortAscendingImage: ScOption[ImgProperties] = ScNone
     var sortByGroupFirst: ScOption[Boolean] = ScNone
-    var sortChanged: ScOption[js.Function1[JSArray[SortSpecifier], void]] = ScNone
+    var sortChanged: ScOption[js.Function1[IscArray[SortSpecifier], void]] = ScNone
     var sortDescendingImage: ScOption[ImgProperties] = ScNone
     var sortDirection: ScOption[SortDirection] = ScNone
     var sortEditorSpanTitleSeparator: ScOption[String] = ScNone

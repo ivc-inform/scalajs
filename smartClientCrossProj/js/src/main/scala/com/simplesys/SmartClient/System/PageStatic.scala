@@ -1,10 +1,10 @@
 package com.simplesys.SmartClient.System
 
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.FireStyle._
 import com.simplesys.System.Types.PageEvent.PageEvent
 import com.simplesys.System.Types.PageOrientation._
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 
@@ -40,7 +40,7 @@ abstract trait AbstractPageCompanion extends AbstractClassCompanion {
     def isRTL(): Boolean = js.native
     def loadStyleSheet(url: URL): void = js.native
     def moveTo(left: Int, top: Int): void = js.native
-    val protocolURLs: JSArray[String] = js.native
+    val protocolURLs: IscArray[String] = js.native
     def registerKey(key: KeyIdentifier, action: js.Function1[JSObject, _]): void = js.native
     def resizeTo(width: Int, height: Int): void = js.native
     def scrollTo(left: Int, top: Int): void = js.native

@@ -1,17 +1,22 @@
 package com.simplesys.SmartClient.Drawing.props
 
-import com.simplesys.SmartClient.Drawing.{DrawItem, DrawPane}
+import com.simplesys.SmartClient.Drawing.{DrawItem, DrawKnob, DrawPane}
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
+import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
 
-import scala.scalajs.js
-import scala.scalajs.js._
+import scala.scalajs.js.{ThisFunction0, ThisFunction5}
 
 class DrawKnobProps extends CanvasProps {
+    type callbackHandler <: DrawKnob
+
     var drawPane: ScOption[DrawPane] = ScNone
     var knobShape: ScOption[DrawItem] = ScNone
     var knobShapeDefaults: ScOption[DrawItem] = ScNone
-    var updatePoints: ScOption[js.Function5[Int, Int, Int, Int, String, _]] = ScNone
+    var resetKnobPosition: ScOption[ThisFunction0[callbackHandler, _]] = ScNone
+    var updatePoints: ScOption[ThisFunction5[callbackHandler, Int, Int, Int, Int, String, _]] = ScNone
     var x: ScOption[Int] = ScNone
     var y: ScOption[Int] = ScNone
+
+    _constructor = "DrawKnob".opt
 }

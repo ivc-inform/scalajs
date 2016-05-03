@@ -9,9 +9,8 @@ import scala.scalajs.js.|
 
 @js.native
 trait SimpleTile extends StatefulCanvas {
-    val creator: TileGrid
     def getRecord(): TileRecord
-    val tileGrid: TileGrid
+    var tileGrid: TileGrid
 }
 
 

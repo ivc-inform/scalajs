@@ -6,21 +6,21 @@ import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
-import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class}
+import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class, IscArray}
 import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.{Criteria, Record, void}
-import com.simplesys.System.{JSObject, JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSObject}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
 trait ValuesManager extends Class {
-    def addFieldErrors(fieldName: String, errors: JSArray[String], showErrors: Boolean): void
+    def addFieldErrors(fieldName: String, errors: IscArray[String], showErrors: Boolean): void
     def addMember(member: DynamicForm | String): void
-    def addMembers(members: JSArray[DynamicForm] | JSArray[String]): void
+    def addMembers(members: IscArray[DynamicForm] | IscArray[String]): void
     var addOperation: String
     var autoSynchronize: Boolean
     def cancel(requestProperties: DSRequest = js.native): void
@@ -39,11 +39,11 @@ trait ValuesManager extends Class {
     def getChangedValues(): JSObject
     def getDataSource(): DataSource
     def getErrors(): JSObject
-    def getFieldErrors(fieldName: String): JSArray[String]
+    def getFieldErrors(fieldName: String): IscArray[String]
     def getItem(itemID: String, retrieveAll: Boolean = js.native): FormItem
     def getMember(ID: String): Canvas
     def getMemberForField(fieldName: String): Canvas
-    def getMembers(): JSArray[Canvas]
+    def getMembers(): IscArray[Canvas]
     def getMemberValues(ID: String): JSObject
     def getOldValues(): JSObject
     def getSaveOperationType(requestProperties: DSRequest = js.native): DSOperationType
@@ -56,18 +56,18 @@ trait ValuesManager extends Class {
     def hasErrors(): Boolean
     def hasFieldErrors(fieldName: String): Boolean
     def isNewRecord(): Boolean
-    var members: JSArray[DynamicForm]
+    var members: IscArray[DynamicForm]
     val operator: OperatorId
     def rememberValues(): JSObject
     def removeMember(member: DynamicForm | String): void
-    def removeMembers(members: JSArray[DynamicForm] | JSArray[String]): void
+    def removeMembers(members: IscArray[DynamicForm] | IscArray[String]): void
     var removeOperation: String
     def resetValues(): void
     def saveData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     var saveOperationType: DSOperationType
     def setDataSource(dataSource: DataSource): void
     def setErrors(errors: JSObject, showErrors: Boolean): void
-    def setFieldErrors(fieldName: String, errors: JSArray[String], showErrors: Boolean): void
+    def setFieldErrors(fieldName: String, errors: IscArray[String], showErrors: Boolean): void
     def setMemberValues(ID: String, values: JSObject): void
     def setValue(fieldName: String, newValue: JSAny): void
     def setValues(values: JSObject): void

@@ -1,7 +1,8 @@
 package com.simplesys.SmartClient.Grids.treeGrid
 
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.{HTMLString, SCImgURL}
-import com.simplesys.System.{JSArray, JSDynamic, JSObject, JSUndefined}
+import com.simplesys.System.{JSObject, JSUndefined}
 
 import scala.language.dynamics
 import scala.scalajs.js
@@ -11,7 +12,7 @@ trait TreeNode extends JSObject{
 
     var canAcceptDrop: JSUndefined[Boolean]
     var canDrag:  JSUndefined[Boolean]
-    var children:  JSUndefined[JSArray[TreeNode]]
+    var children:  JSUndefined[IscArray[TreeNode]]
     var enabled:  JSUndefined[Boolean]
     var icon:  JSUndefined[SCImgURL]
     var id: JSUndefined[String]

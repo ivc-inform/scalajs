@@ -4,24 +4,25 @@ import com.simplesys.SmartClient.DataBinding.DetailViewer
 import com.simplesys.SmartClient.DataBinding.props.DataBoundComponentProps
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.TileGrid
-import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerField
 import com.simplesys.SmartClient.Grids.props.detailViewer.DetailViewerFieldProps
 import com.simplesys.SmartClient.Grids.tileGrid.{SimpleTile, TileRecord}
+import com.simplesys.System.JSDictionaryAny
+import com.simplesys.System.Types.DragAppearance.DragAppearance
 import com.simplesys.System.Types.SelectionType.SelectionType
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.System.Types.DragAppearance.DragAppearance
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.System.{JSAny, JSArray, JSDictionary, JSDictionaryAny}
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
 class TileGridProps extends TileLayoutProps with DataBoundComponentProps{
+    type callbackHandler <: TileGrid
+
     var autoFetchTextMatchStyle: ScOption[TextMatchStyle] = ScNone
     var canAcceptDroppedRecords: ScOption[Boolean] = ScNone
     var canDragTilesOut: ScOption[Boolean] = ScNone
     var canReorderTiles: ScOption[Boolean] = ScNone
+    var createTile: ScOption[js.ThisFunction2[callbackHandler, TileRecord, Int, Canvas]] = ScNone
     var data: ScOption[Seq[Record]] = ScNone
     var dataArrived: ScOption[js.Function2[Int, Int, void]] = ScNone
     var detailViewer: ScOption[DetailViewer] = ScNone

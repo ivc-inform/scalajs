@@ -1,14 +1,13 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
-import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.ColorItem
-import com.simplesys.System.JSUndefined
+import com.simplesys.System.{JSAny, JSUndefined}
 import com.simplesys.System.Types.ColorPickerMode.ColorPickerMode
-import com.simplesys.System.Types.FormItemComponentType
+import com.simplesys.System.Types.{CSSColor, FormItemComponentType}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
-import scala.scalajs.js._
+import scala.scalajs.js.{Function2, Function5}
 
 class ColorItemProps extends TextItemProps {
     type classHandler <: ColorItem
@@ -17,5 +16,6 @@ class ColorItemProps extends TextItemProps {
     var defaultPickerMode: ScOption[ColorPickerMode] = ScNone
     var pickerColorSelected: ScOption[js.ThisFunction2[classHandler, String, JSUndefined[Int], _]] = ScNone
     var supportsTransparency: ScOption[Boolean] = ScNone
+    var setValuePicker: ScOption[js.Function2[CSSColor, Int, _]] = ScNone
     `type` = FormItemComponentType.ColorItem
 }

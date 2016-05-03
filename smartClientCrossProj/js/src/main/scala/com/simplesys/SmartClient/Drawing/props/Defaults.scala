@@ -1,22 +1,33 @@
 package com.simplesys.SmartClient.Drawing.props
 
 import com.simplesys.SmartClient.Control.MenuSS
+import com.simplesys.SmartClient.Drawing.{DrawItem, Shadow}
 import com.simplesys.SmartClient.Drawing.drawItem.DrawLabel
 import com.simplesys.SmartClient.Drawing.gradient.SimpleGradient
-import com.simplesys.SmartClient.Drawing.{DrawLabelDefaults, Shadow}
 import com.simplesys.SmartClient.System._
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.ArrowStyle._
+import com.simplesys.System.Types.LinePattern._
+import com.simplesys.System.Types.{ArrowStyle => _, LinePattern => _, _}
 import com.simplesys.System._
+import com.simplesys.option.ScOption._
 import com.simplesys.option.{IntString, ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 
+import scala.scalajs.js.{Function2, ThisFunction0, ThisFunction2}
+
 class DefaultsDrawItem extends AbstractClassProps {
+
+    var canDrop: ScOption[Boolean] = false.opt
+    var onDragStop: ScOption[ThisFunction2[DrawItem, Int, Int, _]] = ScNone
+    var resized: ScOption[ThisFunction0[DrawItem, _]] = ScNone
     var title: ScOption[String] = ScNone
     var keepInParentRect: ScOption[Boolean] = ScNone
     var lineWidth: ScOption[Int] = ScNone
     var titleLabelProperties: ScOption[DrawLabel] = ScNone
     var contextMenu: ScOption[MenuSS] = ScNone
+    var linePattern : ScOption[LinePattern] = ScNone
+    var lineColor: ScOption[CSSColor] = ScNone
 }
 
 class DrawRectDefaultsProps extends DefaultsDrawItem {
@@ -82,7 +93,7 @@ class DrawDiamondDefaultsProps extends DefaultsDrawItem {
 }
 
 class DrawTriangleDefaultsProps extends DefaultsDrawItem {
-    var points: ScOption[JSArray[Point]] = ScNone
+    var points: ScOption[IscArray[Point]] = ScNone
     var fillGradient: ScOption[SimpleGradient] = ScNone
     var shadow: ScOption[Shadow] = ScNone
 }

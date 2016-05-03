@@ -5,11 +5,10 @@ import com.simplesys.SmartClient.DataBinding.SortSpecifier
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.props.LayoutProps
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.HTMLString
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.System.{JSObject, JSArray}
-
-import scala.scalajs.js._
 
 class MultiSortPanelProps extends LayoutProps {
     var addLevelButton: ScOption[IButton] = ScNone
@@ -21,9 +20,9 @@ class MultiSortPanelProps extends LayoutProps {
     var deleteLevelButtonTitle: ScOption[String] = ScNone
     var descendingTitle: ScOption[String] = ScNone
     var directionFieldTitle: ScOption[String] = ScNone
-    var fields: ScOption[JSArray[JSObject]] = ScNone
+    var fields: ScOption[IscArray[JSObject]] = ScNone
     var firstSortLevelTitle: ScOption[String] = ScNone
-    var initialSort: ScOption[JSArray[SortSpecifier]] = ScNone
+    var initialSort: ScOption[IscArray[SortSpecifier]] = ScNone
     var invalidListPrompt: ScOption[HTMLString] = ScNone
     var levelDownButton: ScOption[IButton] = ScNone
     var levelDownButtonTitle: ScOption[String] = ScNone

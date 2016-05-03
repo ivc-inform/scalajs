@@ -5,6 +5,7 @@ import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Grids.Grid
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AutoComplete.AutoComplete
 import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
@@ -21,7 +22,7 @@ import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSObject}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -101,8 +102,8 @@ trait ListGridField extends JSObject {
     def getAutoFreezePosition(): Int
     def getEditorValueMap(values: JSObject, field: ListGridField, grid: Grid[ListGridField, ListGridRecord]): ValueMap
     def getFieldTitle(viewer: Grid[ListGridField, ListGridRecord], fieldNum: Int): String
-    def getGridSummary(records: JSArray[ListGridRecord], field: ListGridField, groupSummaries: JSArray[JSObject] = js.native): JSAny
-    def getGroupSummary(records: JSArray[ListGridRecord], field: ListGridField, groupNode: JSObject = js.native): JSAny
+    def getGridSummary(records: IscArray[ListGridRecord], field: ListGridField, groupSummaries: IscArray[JSObject] = js.native): JSAny
+    def getGroupSummary(records: IscArray[ListGridRecord], field: ListGridField, groupNode: JSObject = js.native): JSAny
     def getGroupTitle(groupValue: JSAny, groupNode: groupNode, field: JSObject, fieldName: String, grid: Grid[ListGridField, ListGridRecord]): JSAny
     def getGroupValue(value: JSAny, record: ListGridRecord, field: JSObject, fieldName: String, grid: Grid[ListGridField, ListGridRecord]): JSAny
     def getRecordSummary(record: ListGridRecord, field: ListGridField, grid: Grid[ListGridField, ListGridRecord]): JSAny
@@ -130,7 +131,7 @@ trait ListGridField extends JSObject {
     var icon: SCImgURL
     var iconHeight: Int
     var iconOrientation: String
-    var icons: JSArray[FormItemIcon]
+    var icons: IscArray[FormItemIcon]
     var iconSize: Int
     var iconSpacing: Int
     var iconVAlign: String
@@ -143,7 +144,7 @@ trait ListGridField extends JSObject {
     var imageWidth: Int
     var includeFrom: String
     var includeInRecordSummary: Boolean
-    val includeInRecordSummaryFields: JSArray[String]
+    val includeInRecordSummaryFields: IscArray[String]
     val initialValue: JSAny
     var inputFormat: DateInputFormat
     val isRemoveField: Boolean
@@ -185,7 +186,7 @@ trait ListGridField extends JSObject {
     var sortByMappedValue: Boolean
     var sortDirection: SortDirection
     def sortNormalizer(recordObject: JSObject, fieldName: String, context: Grid[ListGridField, ListGridRecord]): JSAny
-    var summaryFunction: SummaryFunction | JSArray[SummaryFunction]
+    var summaryFunction: SummaryFunction | IscArray[SummaryFunction]
     var summaryTitle: String
     var summaryValue: HTMLString
     val summaryValueTitle: String
@@ -197,7 +198,7 @@ trait ListGridField extends JSObject {
     var userFormula: UserFormula
     var userSummary: UserSummary
     var validateOnChange: Boolean
-    var validators: JSArray[Validator]
+    var validators: IscArray[Validator]
     var valueField: String
     var valueIconClick: js.Function6[Grid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, JSAny, FormItem, Boolean]
     var valueIconHeight: Int
@@ -207,7 +208,7 @@ trait ListGridField extends JSObject {
     var valueIcons: JSObject
     var valueIconSize: Int
     var valueIconWidth: Int
-    var valueMap: JSObject | JSArray[String]
+    var valueMap: JSObject | IscArray[String]
     var width: Int | String
     var wrap: Boolean
 }

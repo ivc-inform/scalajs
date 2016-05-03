@@ -6,10 +6,10 @@ import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord, UserFormula, UserSummary}
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AutoComplete.AutoComplete
 import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
-import com.simplesys.System.Types._
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.EditCompletionEvent.EditCompletionEvent
 import com.simplesys.System.Types.EnterKeyEditAction.EnterKeyEditAction
@@ -22,7 +22,8 @@ import com.simplesys.System.Types.SortDirection.SortDirection
 import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.System.{JSAny, JSArray, JSDictionary, JSObject}
+import com.simplesys.System.Types._
+import com.simplesys.System.{JSAny, JSDictionary, JSObject}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 
@@ -119,7 +120,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var icon: ScOption[SCImgURL] = ScNone
     var iconHeight: ScOption[Int] = ScNone
     var iconOrientation: ScOption[String] = ScNone
-    var icons: ScOption[JSArray[FormItemIcon]] = ScNone
+    var icons: ScOption[IscArray[FormItemIcon]] = ScNone
     var iconSize: ScOption[Int] = ScNone
     var iconSpacing: ScOption[Int] = ScNone
     var iconVAlign: ScOption[String] = ScNone
@@ -132,7 +133,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var imageWidth: ScOption[Int] = ScNone
     var includeFrom: ScOption[String] = ScNone
     var includeInRecordSummary: ScOption[Boolean] = ScNone
-    var includeInRecordSummaryFields: ScOption[JSArray[String]] = ScNone
+    var includeInRecordSummaryFields: ScOption[IscArray[String]] = ScNone
     var initialValue: ScOption[JSAny] = ScNone
     var inputFormat: ScOption[DateInputFormat] = ScNone
     var isRemoveField: ScOption[Boolean] = ScNone
@@ -183,7 +184,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var userFormula: ScOption[UserFormula] = ScNone
     var userSummary: ScOption[UserSummary] = ScNone
     var validateOnChange: ScOption[Boolean] = ScNone
-    var validators: ScOption[JSArray[Validator]] = ScNone
+    var validators: ScOption[IscArray[Validator]] = ScNone
     var valueField: ScOption[String] = ScNone
     var valueIconClick: ScOption[js.Function6[Grid[ListGridField, ListGridRecord], ListGridRecord, Int, ListGridField, JSAny, FormItem, Boolean]] = ScNone
     var valueIconHeight: ScOption[Int] = ScNone

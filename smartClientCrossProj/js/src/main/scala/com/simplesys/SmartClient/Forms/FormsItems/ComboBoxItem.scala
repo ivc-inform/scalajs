@@ -7,7 +7,7 @@ import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
-import com.simplesys.System.JSArray
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
 import com.simplesys.System.Types.{AutoChild, CSSStyleName, HTMLString, void}
 
@@ -22,7 +22,7 @@ trait ComboBoxItem extends TextItem with PickList {
     def canEditCriterion(): void
     var completeOnTab: Boolean
     var defaultToFirstOption: Boolean
-    val filterFields: JSArray[String]
+    val filterFields: IscArray[String]
     var filterWithValue: Boolean
     var generateExactMatchCriteria: Boolean
     def getCriterion(): Criterion

@@ -3,6 +3,8 @@ package com.simplesys.SmartClient.DataBinding.props.dataSource
 import com.simplesys.SmartClient.DataBinding.dataSource.{DSRequestModifier, Mail}
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
 import com.simplesys.SmartClient.RPC.ServerObject
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.DSDataFormat.DSDataFormat
 import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.DSProtocol.DSProtocol
@@ -10,12 +12,9 @@ import com.simplesys.System.Types.ExportFormat.ExportFormat
 import com.simplesys.System.Types.RPCTransport.RPCTransport
 import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
 import com.simplesys.System.Types.SQLType.SQLType
-import com.simplesys.System.Types.{XPathExpression, VelocityExpression, URL}
-import com.simplesys.System.{JSObject, JSArray}
+import com.simplesys.System.Types.{URL, VelocityExpression, XPathExpression}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
-
-import scala.scalajs.js
 
 class OperationBindingProps extends AbstractClassProps {
     var allowAdvancedCriteria: ScOption[Boolean] = ScNone
@@ -25,24 +24,24 @@ class OperationBindingProps extends AbstractClassProps {
     var callbackParam: ScOption[String] = ScNone
     var canSyncCache: ScOption[Boolean] = ScNone
     var creatorOverrides: ScOption[Boolean] = ScNone
-    var criteria: ScOption[JSArray[DSRequestModifier]] = ScNone
-    var customCriteriaFields: ScOption[JSArray[String]] = ScNone
-    var customFields: ScOption[JSArray[String]] = ScNone
+    var criteria: ScOption[IscArray[DSRequestModifier]] = ScNone
+    var customCriteriaFields: ScOption[IscArray[String]] = ScNone
+    var customFields: ScOption[IscArray[String]] = ScNone
     var customHQL: ScOption[String] = ScNone
     var customJQL: ScOption[String] = ScNone
     var customSQL: ScOption[String] = ScNone
-    var customValueFields: ScOption[JSArray[String]] = ScNone
+    var customValueFields: ScOption[IscArray[String]] = ScNone
     var dataFormat: ScOption[DSDataFormat] = ScNone
     var dataProtocol: ScOption[DSProtocol] = ScNone
     var dataTransport: ScOption[RPCTransport] = ScNone
     var dataURL: ScOption[URL] = ScNone
     var defaultParams: ScOption[JSObject] = ScNone
-    var excludeCriteriaFields: ScOption[JSArray[String]] = ScNone
+    var excludeCriteriaFields: ScOption[IscArray[String]] = ScNone
     var exportAs: ScOption[ExportFormat] = ScNone
-    var exportFields: ScOption[JSArray[String]] = ScNone
+    var exportFields: ScOption[IscArray[String]] = ScNone
     var exportFilename: ScOption[String] = ScNone
     var exportResults: ScOption[Boolean] = ScNone
-    var groupBy: ScOption[JSArray[String]] = ScNone
+    var groupBy: ScOption[IscArray[String]] = ScNone
     var groupClause: ScOption[String] = ScNone
     var guestUserId: ScOption[String] = ScNone
     var invalidateCache: ScOption[Boolean] = ScNone
@@ -84,7 +83,7 @@ class OperationBindingProps extends AbstractClassProps {
     var useHttpProxy: ScOption[Boolean] = ScNone
     var useSpringTransaction: ScOption[Boolean] = ScNone
     var useSubselectForRowCount: ScOption[Boolean] = ScNone
-    var values: ScOption[JSArray[DSRequestModifier]] = ScNone
+    var values: ScOption[IscArray[DSRequestModifier]] = ScNone
     var valuesClause: ScOption[String] = ScNone
     var whereClause: ScOption[String] = ScNone
     var wsOperation: ScOption[String] = ScNone

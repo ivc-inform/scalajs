@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Drawing.drawItem.{DrawGroup, DrawLabel, DrawRect}
 import com.simplesys.SmartClient.Drawing.gradient.Gradient
 import com.simplesys.SmartClient.Drawing.{DrawKnob, DrawPane, Shadow}
+import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.SmartClient.Tools.EditProxy
 import com.simplesys.System.Types.ArrowStyle.ArrowStyle
 import com.simplesys.System.Types.Cursor.Cursor
@@ -21,8 +22,9 @@ import com.simplesys.props.AbstractClassProps
 import com.simplesys.option.ScOption._
 
 import scala.scalajs.js
+import scala.scalajs.js.Function2
 
-class DrawItemProps extends AbstractClassProps {
+class DrawItemProps extends ClassProps {
     var canDrag: ScOption[Boolean] = ScNone
     var canHover: ScOption[Boolean] = ScNone
     var click: ScOption[js.Function0[Boolean]] = ScNone
@@ -37,6 +39,7 @@ class DrawItemProps extends AbstractClassProps {
     var dragStart: ScOption[js.Function0[Boolean]] = ScNone
     var dragStartDistance: ScOption[Int] = ScNone
     var dragStop: ScOption[js.Function0[Boolean]] = ScNone
+    var onDragStop: ScOption[Function2[Int, Int, _]] = ScNone
     var drawGroup: ScOption[DrawGroup] = ScNone
     var drawPane: ScOption[DrawPane] = ScNone
     var editProxyConstructor: ScOption[SCClassName] = ScNone

@@ -3,10 +3,10 @@ package com.simplesys.SmartClient.DataBinding.props
 import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.Validator
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.OperatorId.OperatorId
-import com.simplesys.System.Types.{ValueMap, FormatString, ID}
-import com.simplesys.System.JSArray
+import com.simplesys.System.Types.{FormatString, ID, ValueMap}
 import com.simplesys.option.{ScNone, ScOption}
 
 class SimpleTypeProps extends ClassProps {
@@ -20,7 +20,7 @@ class SimpleTypeProps extends ClassProps {
     var inheritsFrom: ScOption[ID] = ScNone
     var name: ScOption[ID] = ScNone
     var readOnlyEditorType: ScOption[FormItem] = ScNone
-    var validators: ScOption[JSArray[Validator]] = ScNone
+    var validators: ScOption[IscArray[Validator]] = ScNone
     var validOperators: ScOption[Seq[OperatorId]] = ScNone
     var valueMap: ScOption[ValueMap] = ScNone
 }

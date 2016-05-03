@@ -8,13 +8,13 @@ import com.simplesys.SmartClient.Grids.TableView
 import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
 import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.SmartClient.Layout.{NavigationBar, TabBar, TabSet, VLayout}
-import com.simplesys.SmartClient.System.Class
+import com.simplesys.SmartClient.System.{Class, IscArray}
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.Overflow.Overflow
 import com.simplesys.System.Types.Side.Side
 import com.simplesys.System.Types.TabTitleEditEvent.TabTitleEditEvent
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSArray}
+import com.simplesys.System.{JSObject, JSUndefined}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
@@ -23,7 +23,7 @@ class TabSetProps extends CanvasProps {
     var addTabButton: ScOption[ImgButton] = ScNone
     var animateTabScrolling: ScOption[Boolean] = ScNone
     var addTabButtonIcon: ScOption[SCImgURL] = ScNone
-    var addTabs: ScOption[js.Function2[JSArray[Tab], Int, _]] = ScNone
+    var addTabs: ScOption[js.Function2[IscArray[Tab], Int, _]] = ScNone
     var ariaCloseableSuffix: ScOption[String] = ScNone
     var bottomEdgeOffsets: ScOption[EdgeSizes] = ScNone
     var bottomEdgeSizes: ScOption[EdgeSizes] = ScNone
@@ -43,7 +43,7 @@ class TabSetProps extends CanvasProps {
     var defaultTabHeight: ScOption[Int] = ScNone
     var defaultTabWidth: ScOption[Int] = ScNone
     var destroyPanes: ScOption[Boolean] = ScNone
-    var getPaneContainerEdges: ScOption[js.Function1[void, JSArray[JSObject]]] = ScNone
+    var getPaneContainerEdges: ScOption[js.Function1[void, IscArray[JSObject]]] = ScNone
     var leftEdgeOffsets: ScOption[EdgeSizes] = ScNone
     var leftEdgeSizes: ScOption[EdgeSizes] = ScNone
     var moreTab: ScOption[Tab] = ScNone
@@ -84,12 +84,12 @@ class TabSetProps extends CanvasProps {
     var symmetricScroller: ScOption[Boolean] = ScNone
     var tabBar: ScOption[TabBar] = ScNone
     var tabBarAlign: ScOption[Alignment] = ScNone
-    var tabBarControls: ScOption[JSArray[JSObject]] = ScNone
+    var tabBarControls: ScOption[IscArray[JSObject]] = ScNone
     var tabBarPosition: ScOption[Side] = ScNone
     var tabBarProperties: ScOption[TabBar] = ScNone
     var tabBarThickness: ScOption[Int] = ScNone
     var tabDeselected: ScOption[js.Function5[Int, Canvas, ID, Tab, Tab, Boolean]] = ScNone
-    var tabSelected: ScOption[js.Function5[Int, Canvas, ID, Tab, Tab, Boolean]] = ScNone
+    var tabSelected: ScOption[js.Function5[Int, Canvas, JSUndefined[ID], Tab, JSUndefined[String], Boolean]] = ScNone
     var tabIconClick: ScOption[js.Function1[Tab, _]] = ScNone
     var tabPicker: ScOption[ImgButton] = ScNone
     var tabProperties: ScOption[Tab] = ScNone

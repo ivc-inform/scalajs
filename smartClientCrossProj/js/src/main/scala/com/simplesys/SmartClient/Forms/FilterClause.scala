@@ -3,11 +3,11 @@ package com.simplesys.SmartClient.Forms
 import com.simplesys.SmartClient.Control.ImgButton
 import com.simplesys.SmartClient.Forms.FormsItems.{FormItem, PickList, SelectItem}
 import com.simplesys.SmartClient.Layout.{AbstractLayoutCompanion, Layout}
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.FieldType.FieldType
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.ValueItemType.ValueItemType
-import com.simplesys.System.Types.{Criteria, AutoChild, void}
-import com.simplesys.System.JSArray
+import com.simplesys.System.Types.{AutoChild, Criteria, void}
 
 import scala.scalajs.js
 
@@ -19,7 +19,7 @@ trait FilterClause extends Layout {
     val fieldPickerProperties: FormItem
     val fieldPickerTitle: String
     def getCriterion(): Criteria
-    def getFieldOperators(fieldName: String): JSArray[OperatorId]
+    def getFieldOperators(fieldName: String): IscArray[OperatorId]
     def getFilterBuilder(): FilterBuilder
     def getValueFieldProperties(`type`: FieldType, fieldName: String, operatorId: OperatorId, itemType: ValueItemType): FormItem
     val operatorPicker: SelectItem with AutoChild

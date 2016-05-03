@@ -1,11 +1,10 @@
 package com.simplesys.SmartClient.System
 
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.LogPriority.LogPriority
 import com.simplesys.System.Types.void
-import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.|
 
 @js.native
@@ -20,7 +19,7 @@ abstract trait AbstractLogCompanion extends AbstractClassCompanion {
     var defaultPriority: LogPriority = js.native
     def getDefaultPriority(obj: Class | JSObject): LogPriority = js.native
     def getLogPriorities(obj: Class | JSObject, overridesOnly: Boolean = js.native): JSObject = js.native
-    def getMessages(): JSArray[String] = js.native
+    def getMessages(): IscArray[String] = js.native
     def getPriority(category: String, obj: Class | JSObject): LogPriority = js.native
     def isEnabledFor(category: String, priority: LogPriority): void = js.native
     var messageCount: Int = js.native

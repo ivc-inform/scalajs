@@ -1,7 +1,9 @@
 package com.simplesys.SmartClient
 
 import com.simplesys.SmartClient.Control._
+import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Control.props._
+import com.simplesys.SmartClient.Control.props.menu.MenuSSItemProps
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.DataBinding.props._
 import com.simplesys.SmartClient.Drawing._
@@ -18,6 +20,8 @@ import com.simplesys.SmartClient.Foundation._
 import com.simplesys.SmartClient.Foundation.props._
 import com.simplesys.SmartClient.Grids._
 import com.simplesys.SmartClient.Grids.props._
+import com.simplesys.SmartClient.Grids.props.tileGrid.SimpleTileProps
+import com.simplesys.SmartClient.Grids.tileGrid.SimpleTile
 import com.simplesys.SmartClient.Grids.treeGrid.Tree
 import com.simplesys.SmartClient.Layout._
 import com.simplesys.SmartClient.Layout.props._
@@ -25,24 +29,24 @@ import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
 import com.simplesys.SmartClient.Layout.props.toolStrip.{ToolStripButtonProps, ToolStripMenuButtonProps, ToolStripSeparatorProps}
 import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.SmartClient.Layout.toolStrip.{ToolStripButton, ToolStripMenuButton, ToolStripSeparator}
+import com.simplesys.SmartClient.RPC.RPCRequest
+import com.simplesys.SmartClient.RPC.props.RPCRequestProps
 import com.simplesys.SmartClient.System.props.TreeProps
 import com.simplesys.SmartClient.Tools.editProxy.DrawPaneEditProxy
 import com.simplesys.SmartClient.Tools.palette._
 import com.simplesys.SmartClient.Tools.palette.props._
 import com.simplesys.SmartClient.Tools.props._
-import com.simplesys.SmartClient.Tools.{EditContext, EditProxy, PaletteNode}
-import com.simplesys.System.JSArray
-import com.simplesys.js.com.simplesys.SmartClient.DataBinding.DataSourceSS
-import com.simplesys.js.com.simplesys.SmartClient.DataBinding.props.DataSourceSSProps
-import com.simplesys.js.com.simplesys.SmartClient.Layout.props.SectionStackSSProps
-import com.simplesys.js.com.simplesys.SmartClient.Tools.props.editProxy.DrawPaneEditProxyProps
+import com.simplesys.SmartClient.Tools.props.editProxy.DrawPaneEditProxyProps
+import com.simplesys.SmartClient.Tools.{EditContext, EditContextSS, EditProxy, PaletteNode}
+import com.simplesys.js.com.simplesys.SmartClient.Layout.props.{OkPanelProps, SectionStackSSProps}
+import com.simplesys.js.com.simplesys.SmartClient.Layout.{OkPanel, SectionStackSS}
+import com.simplesys.js.com.simplesys.SmartClient.Tools.props.EditContextSSProps
 
 //import com.simplesys.macros.PropsToDictionary
-import com.simplesys.macros.PropsToDictionary
 
 package object System {
 
-    type Point = JSArray[Int]
+    type Point = IscArray[Int]
 
     implicit class StringOpts(x: String) {
         def ellipsis = s"$x..."
@@ -60,6 +64,7 @@ package object System {
     //    object Hover extends SCApply[Hover, HoverProps]
     //    object Menu extends SCApply[Menu, MenuProps]
     object MenuSS extends SCApply[MenuSS, MenuSSProps]
+    object MenuSSItem extends SCApply4Object[MenuSSItem, MenuSSItemProps]
     //    object MenuButton extends SCApply[MenuButton, MenuButtonProps]
     //    object IMenuButton extends SCApply[IMenuButton, IMenuButtonProps]
     //    object Progressbar extends SCApply[Progressbar, ProgressbarProps]
@@ -73,16 +78,18 @@ package object System {
 
     //<editor-fold desc="DataBinding">
     object DataView extends SCApply[DataView, DataViewProps]
-    //    object DataSource extends SCApply[DataSource, DataSourceProps]
+    object DataSource extends SCApply[DataSource, DataSourceProps]
     object DataSourceSS extends SCApply[DataSourceSS, DataSourceSSProps]
     //    object RestDataSource extends SCApply[RestDataSource, RestDataSourceProps]
     object RestDataSourceSS extends SCApply[RestDataSourceSS, RestDataSourceSSProps]
     object SimpleType extends SCApply[SimpleType, SimpleTypeProps]
+    object SimpleTile extends SCApply[SimpleTile, SimpleTileProps]
     //</editor-fold>
 
     //<editor-fold desc="Forms">
     //    object DynamicForm extends SCApply[DynamicForm, DynamicFormProps]
     object DynamicFormSS extends SCApply[DynamicFormSS, DynamicFormSSProps]
+    object FilterBuilder extends SCApply[FilterBuilder, FilterBuilderProps]
     //</editor-fold>
 
     //<editor-fold desc="FormsItems">
@@ -92,19 +99,18 @@ package object System {
     //    object BlurbItem extends SCApply[BlurbItem, BlurbItemProps]
     //    object BooleanItem extends SCApply[BooleanItem, BooleanItemProps]
     //    object CancelItem extends SCApply[CancelItem, CancelItemProps]
-    //    object CanvasItem extends SCApply[CanvasItem, CanvasItemProps]
+    object CanvasItem extends SCApply[CanvasItem, CanvasItemProps]
     object CheckboxItem extends SCApply[CheckboxItem, CheckboxItemProps]
-    //    object ColorItem extends SCApply[ColorItem, ColorItemProps]
-    //    object ColorPickerItem extends SCApply[ColorPickerItem, ColorPickerItemProps]
+    object ColorItem extends SCApply[ColorItem, ColorItemProps]
     //    object ComboBoxItem extends SCApply[ComboBoxItem, ComboBoxItemProps]
     //    object CycleItem extends SCApply[CycleItem, CycleItemProps]
     //    object DataPathItem extends SCApply[DataPathItem, DataPathItemProps]
     object DateItem extends SCApply[DateItem, DateItemProps]
     //    object DateRangeItem extends SCApply[DateRangeItem, DateRangeItemProps]
-    //    object DateTimeItem extends SCApply[DateTimeItem, DateTimeItemProps]
-    //    object DoubleItem extends SCApply[DoubleItem, DoubleItemProps]
+    object DateTimeItem extends SCApply[DateTimeItem, DateTimeItemProps]
+    object DoubleItem extends SCApply[DoubleItem, DoubleItemProps]
     //    object FileItem extends SCApply[FileItem, FileItemProps]
-    //    object FloatItem extends SCApply[FloatItem, FloatItemProps]
+    object FloatItem extends SCApply[FloatItem, FloatItemProps]
     //    object HeaderItem extends SCApply[HeaderItem, HeaderItemProps]
     //    object HiddenItem extends SCApply[HiddenItem, HiddenItemProps]
     //    object IntegerItem extends SCApply[IntegerItem, IntegerItemProps]
@@ -128,14 +134,14 @@ package object System {
     //    object RowSpacerItem extends SCApply[RowSpacerItem, RowSpacerItemProps]
     //    object ScrollingMenu extends SCApply[ScrollingMenu, ScrollingMenuProps]
     //    object SectionItem extends SCApply[SectionItem, SectionItemProps]
-    //    object SelectItem extends SCApply[SelectItem, SelectItemProps]
+        object SelectItem extends SCApply[SelectItem, SelectItemProps]
     //    object SelectOtherItem extends SCApply[SelectOtherItem, SelectOtherItemProps]
     //    object SliderItem extends SCApply[SliderItem, SliderItemProps]
     //    object SpacerItem extends SCApply[SpacerItem, SpacerItemProps]
-    //    object SpinnerItem extends SCApply[SpinnerItem, SpinnerItemProps]
+    object SpinnerItem extends SCApply[SpinnerItem, SpinnerItemProps]
     //    object StaticTextItem extends SCApply[StaticTextItem, StaticTextItemProps]
     //    object SubmitItem extends SCApply[SubmitItem, SubmitItemProps]
-    //    object TextAreaItem extends SCApply[TextAreaItem, TextAreaItemProps]
+    object TextAreaItem extends SCApply[TextAreaItem, TextAreaItemProps]
     object TextItem extends SCApply[TextItem, TextItemProps]
     //    object TimeItem extends SCApply[TimeItem, TimeItemProps]
     //    object ToolbarItem extends SCApply[ToolbarItem, ToolbarItemProps]
@@ -152,14 +158,14 @@ package object System {
     //    object ImgTab extends SCApply[ImgTab, ImgTabProps]
     //    object RichTextEditor extends SCApply[RichTextEditor, RichTextEditorProps]
     //    object ViewLoader extends SCApply[ViewLoader, ViewLoaderProps]
-    //    object HTMLFlow extends SCApply[HTMLFlow, HTMLFlowProps]
+    object HTMLFlow extends SCApply[HTMLFlow, HTMLFlowProps]
     //    object HTMLPane extends SCApply[HTMLPane, HTMLPaneProps]
     //</editor-fold>
 
     //<editor-fold desc="RPC">
-    //    object RPCRequest extends SCApply[RPCRequest, RPCRequestProps]
+    object RPCRequest extends SCApply[RPCRequest, RPCRequestProps]
     //    object RPCResponse extends SCApply[RPCResponse, RPCResponseProps]
-    //    object DSRequest extends SCApply[DSRequest, DSRequestProps]
+    object DSRequest extends SCApply[DSRequest, DSRequestProps]
     //    object DSResponse extends SCApply[DSResponse, DSResponseProps]
     //</editor-fold>
 
@@ -171,7 +177,7 @@ package object System {
     object TreeGridEditor extends SCApply[TreeGridEditor, TreeGridEditorProps]
     //    object TreeListGridEditor extends SCApply[TreeListGridEditor, TreeListGridEditorProps]
     object Tree extends SCApply[Tree, TreeProps]
-    //    object ResultTree extends SCApply[ResultTree, ResultTreeProps]
+    object ResultTree extends SCApply[ResultTree, ResultTreeProps]
     //</editor-fold>
 
     //<editor-fold desc="Layout">
@@ -186,8 +192,9 @@ package object System {
     //    object LayoutSS extends SCApply[LayoutSS, LayoutSSProps]
     //    object HPanelSS extends SCApply[HPanelSS, HPanelSSProps]
     object OkCancelPanel extends SCApply[OkCancelPanel, OkCancelPanelProps]
+    object OkPanel extends SCApply[OkPanel, OkPanelProps]
     //    object VLayout extends SCApply[VLayout, VLayoutProps]
-    //    object VLayoutSS extends SCApply[VLayoutSS, VLayoutSSProps]
+    object VLayoutSS extends SCApply[VLayoutSS, VLayoutSSProps]
     object ChainMasterDetail extends SCApply[ChainMasterDetail, ChainMasterDetailProps]
     //    object TabSet extends SCApply[TabSet, TabSetProps]
     object TabSetSS extends SCApply[TabSetSS, TabSetSSProps]
@@ -203,15 +210,16 @@ package object System {
     object ToolStripSeparator extends SCApply[ToolStripSeparator, ToolStripSeparatorProps]
     object ToolStripButton extends SCApply[ToolStripButton, ToolStripButtonProps]
     //    object ToolStripResizer extends SCApply[ToolStripResizer, ToolStripResizerProps]
+    object SectionStack extends SCApply[SectionStack, SectionStackProps]
     object SectionStackSS extends SCApply[SectionStackSS, SectionStackSSProps]
     //</editor-fold>
 
     //<editor-fold desc="drawing">
-    //    object DrawPaneSS extends SCApply[DrawPaneSS, DrawPaneSSProps]
     object DrawPane extends SCApply[DrawPane, DrawPaneProps]
     object EditProxy extends SCApply[EditProxy, EditProxyProps]
     object DrawPaneEditProxy extends SCApply[DrawPaneEditProxy, DrawPaneEditProxyProps]
     object EditContext extends SCApply[EditContext, EditContextProps]
+    object EditContextSS extends SCApply[EditContextSS, EditContextSSProps]
     //    object EditPane extends SCApply[EditPane, EditPaneProps]
     //    object EditTree extends SCApply[EditTree, EditTreeProps]
     object PaletteNode extends SCApply4Object[PaletteNode, PaletteNodeProps]
@@ -237,36 +245,26 @@ package object System {
     //<editor-fold desc="DrawItem">
     //    object DrawItem extends SCApplyDrawItem[DrawItem, DrawItemProps]
     //    object DrawGroup extends SCApplyDrawItem[DrawGroup, DrawGroupProps]
-    //    object DrawLine extends SCApplyDrawItem[DrawLine, DrawLineProps]
-    object DrawRect extends SCApplyDrawItem[DrawRect, DrawRectProps]
-    object DrawOval extends SCApplyDrawItem[DrawOval, DrawOvalProps]
+    object DrawLine extends SCApply[DrawLine, DrawLineProps]
+    object DrawRect extends SCApply[DrawRect, DrawRectProps]
+    object DrawOval extends SCApply[DrawOval, DrawOvalProps]
     //    object DrawSector extends SCApplyDrawItem[DrawSector, DrawSectorProps]
-    object DrawLabel extends SCApplyDrawItem[DrawLabel, DrawLabelProps]
+    object DrawLabel extends SCApply[DrawLabel, DrawLabelProps]
     //    object DrawImage extends SCApplyDrawItem[DrawImage, DrawImageProps]
-    object DrawCurve extends SCApplyDrawItem[DrawCurve, DrawCurveProps]
+    object DrawCurve extends SCApply[DrawCurve, DrawCurveProps]
     //    object DrawBlockConnector extends SCApplyDrawItem[DrawBlockConnector, DrawBlockConnectorProps]
     //    object DrawPath extends SCApplyDrawItem[DrawPath, DrawPathProps]
     //    object DrawPolygon extends SCApplyDrawItem[DrawPolygon, DrawPolygonProps]
     //    object DrawTriangle extends SCApplyDrawItem[DrawTriangle, DrawTriangleProps]
     //    object DrawDiamond extends SCApplyDrawItem[DrawDiamond, DrawDiamondProps]
-    //    object DrawLinePath extends SCApplyDrawItem[DrawLinePath, DrawLinePathProps]
+    object DrawLinePath extends SCApply[DrawLinePath, DrawLinePathProps]
+    object DrawLinePathSS extends SCApply[DrawLinePathSS, DrawLinePathSSProps]
+    object DrawKnob extends SCApply[DrawKnob, DrawKnobProps]
     //    object DrawShape extends SCApplyDrawItem[DrawShape, DrawShapeProps]
     object Shadow extends SCApply4Object[Shadow, ShadowProps]
 
-    object DrawRectDefaults extends SCApply4Object[DrawRectDefaults, DrawRectDefaultsProps]
-    object DrawOvalDefaults extends SCApply4Object[DrawOvalDefaults, DrawOvalDefaultsProps]
-    object DrawPaneDefaults extends SCApply4Object[DrawPaneDefaults, DrawPaneDefaultsProps]
-    object DrawCurveDefaults extends SCApply4Object[DrawCurveDefaults, DrawCurveDefaultsProps]
-
-//    object StartState extends SCApplyDrawItem[StartState, StartStateProps]
-//    object StopState extends SCApplyDrawItem[StopState, StopStateProps]
-//    object PropertyEditorDynamicForm extends SCApply[PropertyEditorDynamicForm, PropertyEditorDynamicFormProps]
-
     //</editor-fold>
     //</editor-fold>
+
 }
 
-/*object isc {
-    def defineClass[NewClassType <: Class, SuperClassType <: Class, P <: AbstractClassProps](implicit classTag_OLD: ClassTag[SuperClassType], classTag_NEW: ClassTag[NewClassType]) = new SCApply1[NewClassType, SuperClassType, P]
-    def defineDrawItem[NewClassType <: DrawItem, SuperClassType <: DrawItem, P <: AbstractClassProps](implicit classTag_OLD: ClassTag[SuperClassType], classTag_NEW: ClassTag[NewClassType]) = new SCApplyDrawItem1[NewClassType, SuperClassType, P]
-}*/

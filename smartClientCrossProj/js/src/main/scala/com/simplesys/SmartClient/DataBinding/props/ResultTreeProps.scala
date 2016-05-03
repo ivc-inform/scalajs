@@ -2,14 +2,14 @@ package com.simplesys.SmartClient.DataBinding.props
 
 import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.SmartClient.System.props.TreeProps
+import com.simplesys.System.JSAny
 import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
-import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.System.{JSArray, JSAny}
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
 class ResultTreeProps extends TreeProps {
     var autoPreserveOpenState: ScOption[PreserveOpenState] = ScNone
@@ -26,7 +26,7 @@ class ResultTreeProps extends TreeProps {
     var progressiveLoading: ScOption[Boolean] = ScNone
     var resultSize: ScOption[Int] = ScNone
     var rootNode: ScOption[JSAny] = ScNone
-    var serverFilterFields: ScOption[JSArray[String]] = ScNone
+    var serverFilterFields: ScOption[IscArray[String]] = ScNone
     var updateCacheFromRequest: ScOption[Boolean] = ScNone
 
 }

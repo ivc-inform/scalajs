@@ -2,9 +2,9 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.System.date.FiscalCalendar.FiscalCalendar
 import com.simplesys.SmartClient.System.date.FiscalYear.FiscalYear
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.void
-import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -17,7 +17,7 @@ object Date extends JSObject {
     def create(): Date = js.native
     def createLogicalDate(year: Int, month: Int, date: Int): Date = js.native
     def createLogicalTime(hour: Int, minute: Int, second: Int): Date = js.native
-    var dayNames: JSArray[String] = js.native
+    var dayNames: IscArray[String] = js.native
     def getDefaultDateSeparator(): String = js.native
     def getFirstDayOfWeek(): Int = js.native
     def getFiscalCalendar(): FiscalCalendar = js.native
@@ -27,8 +27,8 @@ object Date extends JSObject {
     def getInputFormat(): String = js.native
     def getLogicalDateOnly(date: Date): Date = js.native
     def getLogicalTimeOnly(date: Date): Date = js.native
-    def getWeekendDays(): JSArray[Int] = js.native
-    var monthNames: JSArray[String] = js.native
+    def getWeekendDays(): IscArray[Int] = js.native
+    var monthNames: IscArray[String] = js.native
     def parseInput(dateString: String, format: String = js.native, centuryThreshold: Int = js.native, suppressConversion: Boolean = js.native): Date = js.native
     def setDefaultDateSeparator(separator: String): void = js.native
     def setFirstDayOfWeek(firstDayOfWeek: Int): void = js.native
@@ -40,10 +40,10 @@ object Date extends JSObject {
     def setShortDisplayFormat (format: String | DateDisplayFormat): void = js.native
     def  setShowChooserFiscalYearPickers (showChooserFiscalYearPickers:Boolean): void = js.native
     def  setShowChooserWeekPickers (showChooserWeekPickers:Boolean): void = js.native
-    def  setWeekendDays (weekendDays:JSArray[Int]): void = js.native
-    var shortDayNames:JSArray[String] = js.native
-    var shortMonthNames:JSArray[String] = js.native
-    var weekendDays:JSArray[Int] = js.native
+    def  setWeekendDays (weekendDays:IscArray[Int]): void = js.native
+    var shortDayNames:IscArray[String] = js.native
+    var shortMonthNames:IscArray[String] = js.native
+    var weekendDays:IscArray[Int] = js.native
 }
 
 @js.native

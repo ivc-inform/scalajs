@@ -5,9 +5,10 @@ import com.simplesys.SmartClient.Foundation.{Canvas, Img}
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.Layout.NavigationBar
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSArray, JSDictionaryAny}
+import com.simplesys.System.{JSDictionaryAny, JSObject}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -21,11 +22,11 @@ trait Menu extends Grid[ListGridField, MenuItem] {
     var cascadeAutoDismiss: Boolean
     var checkmarkDisabledImage: Img
     var checkmarkImage: Img
-    var data: JSArray[MenuItem]
+    var data: IscArray[MenuItem]
     var fillSpaceStyleName: CSSStyleName
     def getItem(item: Int): MenuItem
     def getItemNum(item: MenuItem): Int
-    def getItems(): JSArray[MenuItem]
+    def getItems(): IscArray[MenuItem]
     def getSubmenu(item: MenuItem | Int): MenuItem
     var iconBodyStyleName: CSSStyleName
     val iconFieldDefaults: ListGridField
@@ -34,19 +35,19 @@ trait Menu extends Grid[ListGridField, MenuItem] {
     val iconHeight: Int
     val iconWidth: Int
     var itemClick: js.Function2[JSObject, Int, Boolean]
-    var items: JSArray[MenuItem]
+    var items: IscArray[MenuItem]
     val keyFieldDefaults: ListGridField
     val keyFieldProperties: ListGridField
     val menuButtonWidth: Int
     val navigationBar: NavigationBar with AutoChild
     val navStack: Canvas with AutoChild
     val placement: PanelPlacement
-    def setData(items: JSArray[MenuItem]): void
+    def setData(items: IscArray[MenuItem]): callbackHandler
     def setItemChecked(item: MenuItem | Int, newState: Boolean = js.native): Boolean
     def setItemEnabled(item: MenuItem | Int, newState: Boolean = js.native): Boolean
     def setItemIcon(item: MenuItem | Int, newIcon: SCImgURL, newDisabledIcon: SCImgURL = js.native): Boolean
     def setItemProperties(item: MenuItem | Int, properties: JSDictionaryAny): void
-    def setItems(items: JSArray[MenuItem]): void
+    def setItems(items: IscArray[MenuItem]): void
     def setItemTitle(item: MenuItem | Int, newTitle: String): Boolean
     def setShowIcons(showIcons: Boolean): void
     def setShowSubmenus(showSubmenus: Boolean): void

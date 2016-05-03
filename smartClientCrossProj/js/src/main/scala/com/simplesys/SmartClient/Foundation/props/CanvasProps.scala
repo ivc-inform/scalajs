@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
 import com.simplesys.SmartClient.Foundation.Canvas
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.SmartClient.Tools.{EditContext, EditNode, EditProxy}
 import com.simplesys.System.Types.Alignment.Alignment
@@ -24,7 +25,7 @@ import com.simplesys.System.Types.ProportionalResizeMode.ProportionalResizeMode
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types.Visibility.Visibility
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSArrayAny, JSObject}
+import com.simplesys.System._
 import com.simplesys.option._
 import org.scalajs.dom.raw.HTMLElement
 
@@ -64,6 +65,7 @@ class CanvasProps extends ClassProps {
     var backgroundRepeat: ScOption[BackgroundRepeat] = ScNone
     var beforeDestroy: ScOption[ThisFunction0[callbackHandler, _]] = ScNone
     var border: ScOption[String] = ScNone
+    var _constructor: ScOption[String] = ScNone
     var canAcceptDrop: ScOption[Boolean] = ScNone
     var canDrag: ScOption[Boolean] = ScNone
     var canDragReposition: ScOption[Boolean] = ScNone
@@ -119,7 +121,7 @@ class CanvasProps extends ClassProps {
     var dragStop: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var dragTarget: ScOption[Canvas] = ScNone
     var dragType: ScOption[String] = ScNone
-    var draw: ScOption[ThisFunction1[callbackHandler, JSArrayAny, Canvas]] = ScNone
+    var draw: ScOption[js.ThisFunction1[callbackHandler, IscArray[JSAny], Canvas]] = ScNone
     var drop: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var dropMove: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
     var dropOut: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
@@ -142,8 +144,8 @@ class CanvasProps extends ClassProps {
     var editProxyConstructor: ScOption[SCClassName] = ScNone
     var extraSpace: ScOption[Int] = ScNone
     var focusChanged: ScOption[js.ThisFunction1[callbackHandler, Boolean, void]] = ScNone
-    var getHoverHTML: ScOption[Function0[HTMLString]] = ScNone
-    var getInnerHTML: ScOption[Function0[HTMLString]] = ScNone
+    var getHoverHTML: ScOption[js.Function0[HTMLString]] = ScNone
+    var getInnerHTML: ScOption[js.Function0[HTMLString]] = ScNone
     var groupBorderCSS: ScOption[String] = ScNone
     var groupLabelBackgroundColor: ScOption[CSSColor] = ScNone
     var groupLabelStyleName: ScOption[CSSStyleName] = ScNone
@@ -164,7 +166,7 @@ class CanvasProps extends ClassProps {
     var htmlElement: ScOption[HTMLElement] = ScNone
     var htmlPosition: ScOption[DrawPosition] = ScNone
     var ID: ScOption[String] = ScNone
-    var initWidget: ScOption[js.ThisFunction1[callbackHandler, JSArrayAny, _]] = ScNone
+    var initWidget: ScOption[js.ThisFunction1[callbackHandler, IscArray[JSAny], _]] = ScNone
     var isGroup: ScOption[Boolean] = ScNone
     var isPrinting: ScOption[Boolean] = ScNone
     var isSnapAlignCandidate: ScOption[Boolean] = ScNone
@@ -213,7 +215,7 @@ class CanvasProps extends ClassProps {
     var prompt: ScOption[HTMLString] = ScNone
     var proportionalResizeModifiers: ScOption[Seq[KeyName]] = ScNone
     var proportionalResizing: ScOption[ProportionalResizeMode] = ScNone
-    var redraw: ScOption[ThisFunction1[callbackHandler, JSArrayAny, _]] = ScNone
+    var redraw: ScOption[ThisFunction1[callbackHandler, IscArray[JSAny], _]] = ScNone
     var redrawOnResize: ScOption[Boolean] = ScNone
     var resizeBarTarget: ScOption[String] = ScNone
     var resized: ScOption[js.ThisFunction0[callbackHandler, _]] = ScNone
@@ -261,6 +263,7 @@ class CanvasProps extends ClassProps {
     var tabIndex: ScOption[Int] = ScNone
     var top: ScOption[IntString[Int, String]] = ScNone
     var topElement: ScOption[Canvas] = ScNone
+    var unserialize: ScOption[Boolean] = ScNone
     var useBackMask: ScOption[Boolean] = ScNone
     var useDragMask: ScOption[Boolean] = ScNone
     var useNativeDrag: ScOption[Boolean] = ScNone

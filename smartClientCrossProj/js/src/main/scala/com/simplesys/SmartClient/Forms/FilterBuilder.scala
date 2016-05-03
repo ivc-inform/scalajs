@@ -1,18 +1,18 @@
 package com.simplesys.SmartClient.Forms
 
 import com.simplesys.SmartClient.Control.{IButton, ImgButton}
-import com.simplesys.SmartClient.DataBinding.{AdvancedCriteria, Criterion, DataSource}
 import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
-import com.simplesys.SmartClient.Forms.FormsItems.{SelectItem, FormItem, PickList}
-import com.simplesys.SmartClient.Foundation.{Label, Canvas}
-import com.simplesys.SmartClient.Layout.{HLayout, VStack, AbstractLayoutCompanion, Layout}
+import com.simplesys.SmartClient.DataBinding.{AdvancedCriteria, Criterion, DataSource}
+import com.simplesys.SmartClient.Forms.FormsItems.{FormItem, PickList, SelectItem}
+import com.simplesys.SmartClient.Foundation.{Canvas, Label}
+import com.simplesys.SmartClient.Layout.{AbstractLayoutCompanion, HLayout, Layout, VStack}
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.FieldType.FieldType
-import com.simplesys.System.Types.TopOperatorAppearance.TopOperatorAppearance
-import com.simplesys.System.Types.ValueItemType.ValueItemType
-import com.simplesys.System.Types.{void, MultiAutoChild, SCClassName, AutoChild}
 import com.simplesys.System.Types.LogicalOperator.LogicalOperator
 import com.simplesys.System.Types.OperatorId.OperatorId
-import com.simplesys.System.JSArray
+import com.simplesys.System.Types.TopOperatorAppearance.TopOperatorAppearance
+import com.simplesys.System.Types.ValueItemType.ValueItemType
+import com.simplesys.System.Types.{AutoChild, MultiAutoChild, SCClassName, void}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -35,12 +35,12 @@ trait FilterBuilder extends Layout {
     val fieldPickerProperties: FormItem
     val fieldPickerTitle: String
     var filterChanged: js.Function1[void, _]
-    def getChildFilters(): JSArray[FilterBuilder]
+    def getChildFilters(): IscArray[FilterBuilder]
     def getCriteria(includeEmptyValues: Boolean = js.native): AdvancedCriteria
     def getEditorType(field: DataSourceField, operatorId: OperatorId): SCClassName
-    def getFieldOperators(fieldName: String): JSArray[OperatorId]
+    def getFieldOperators(fieldName: String): IscArray[OperatorId]
     def getFilterDescription(): String
-    def getSelectedClauses(): JSArray[FilterClause]
+    def getSelectedClauses(): IscArray[FilterClause]
     var getValueFieldProperties: js.Function4[FieldType, String, OperatorId, ValueItemType, FormItem]
     val inlineAndNotTitle: String
     val inlineAndTitle: String
@@ -85,7 +85,7 @@ trait FilterBuilder extends Layout {
     val topOperatorForm: DynamicForm with AutoChild
     val topOperatorItem: SelectItem with AutoChild
     val topOperatorItemWidth: String | Int
-    val topOperatorOptions: JSArray[OperatorId]
+    val topOperatorOptions: IscArray[OperatorId]
     val topOperatorTitle: String
     def validate(): Boolean
     val validateOnChange: Boolean
@@ -96,6 +96,4 @@ trait FilterBuilder extends Layout {
 abstract trait AbstractFilterBuilderCompanion extends AbstractLayoutCompanion {
 }
 
-@js.native
-object FilterBuilder extends AbstractFilterBuilderCompanion
 
