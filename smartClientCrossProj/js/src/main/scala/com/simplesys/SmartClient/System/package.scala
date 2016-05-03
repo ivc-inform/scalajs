@@ -37,12 +37,12 @@ import com.simplesys.SmartClient.Tools.palette._
 import com.simplesys.SmartClient.Tools.palette.props._
 import com.simplesys.SmartClient.Tools.props._
 import com.simplesys.SmartClient.Tools.props.editProxy.DrawPaneEditProxyProps
-import com.simplesys.SmartClient.Tools.{EditContext, EditContextSS, EditProxy, PaletteNode}
+import com.simplesys.SmartClient.Tools.{EditContext, EditProxy, PaletteNode}
 import com.simplesys.js.com.simplesys.SmartClient.Layout.props.{OkPanelProps, SectionStackSSProps}
 import com.simplesys.js.com.simplesys.SmartClient.Layout.{OkPanel, SectionStackSS}
-import com.simplesys.js.com.simplesys.SmartClient.Tools.props.EditContextSSProps
 
 //import com.simplesys.macros.PropsToDictionary
+import com.simplesys.macros.PropsToDictionary
 
 package object System {
 
@@ -219,7 +219,6 @@ package object System {
     object EditProxy extends SCApply[EditProxy, EditProxyProps]
     object DrawPaneEditProxy extends SCApply[DrawPaneEditProxy, DrawPaneEditProxyProps]
     object EditContext extends SCApply[EditContext, EditContextProps]
-    object EditContextSS extends SCApply[EditContextSS, EditContextSSProps]
     //    object EditPane extends SCApply[EditPane, EditPaneProps]
     //    object EditTree extends SCApply[EditTree, EditTreeProps]
     object PaletteNode extends SCApply4Object[PaletteNode, PaletteNodeProps]
