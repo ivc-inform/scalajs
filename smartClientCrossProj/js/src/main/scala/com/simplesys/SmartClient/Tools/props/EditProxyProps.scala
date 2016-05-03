@@ -1,20 +1,16 @@
 package com.simplesys.SmartClient.Tools.props
 
-import com.simplesys.SmartClient.Drawing.DrawItem
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Foundation.{Canvas, Label}
-import com.simplesys.SmartClient.System.isc
 import com.simplesys.SmartClient.System.props.ClassProps
-import com.simplesys.SmartClient.Tools.{EditNode, EditProxy}
+import com.simplesys.SmartClient.Tools.EditProxy
 import com.simplesys.System.Types.InlineEditEvent.InlineEditEvent
 import com.simplesys.System.Types.SelectedAppearance.SelectedAppearance
 import com.simplesys.System.Types._
 import com.simplesys.System._
-import com.simplesys.js.components.AddedProps
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
-import scala.scalajs.js.Function2
 
 class EditProxyProps extends ClassProps {
     type classHandler <: EditProxy

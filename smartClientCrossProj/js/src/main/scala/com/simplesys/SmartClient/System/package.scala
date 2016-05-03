@@ -257,7 +257,6 @@ package object System {
     //    object DrawTriangle extends SCApplyDrawItem[DrawTriangle, DrawTriangleProps]
     //    object DrawDiamond extends SCApplyDrawItem[DrawDiamond, DrawDiamondProps]
     object DrawLinePath extends SCApply[DrawLinePath, DrawLinePathProps]
-    object DrawLinePathSS extends SCApply[DrawLinePathSS, DrawLinePathSSProps]
     object DrawKnob extends SCApply[DrawKnob, DrawKnobProps]
     //    object DrawShape extends SCApplyDrawItem[DrawShape, DrawShapeProps]
     object Shadow extends SCApply4Object[Shadow, ShadowProps]
