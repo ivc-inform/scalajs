@@ -11,7 +11,7 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System._
 import com.simplesys.SmartClient.math.AffineTransform
 import com.simplesys.System.Types.ConnectorOrientation._
-import com.simplesys.System.Types.ConnectorStyle.{apply => _}
+import com.simplesys.System.Types.ConnectorStyle.ConnectorStyle
 import com.simplesys.System.Types.{ConnectorOrientation, ConnectorStyle, TitleRotationMode}
 import com.simplesys.System.{JSAny, JSObject, JSUndefined, jSUndefined}
 import com.simplesys.function._
@@ -20,22 +20,22 @@ import com.simplesys.option.ScOption._
 
 import scala.scalajs.js._
 
-class DrawLinePathSSProps extends DrawLinePathProps {
+class DrawLinePathSSProps extends DrawPathProps {
     type classHandler <: DrawLinePathSS
 
-    connectorOrientation = ConnectorOrientation.auto.opt
+    var connectorOrientation: ScOption[ConnectorOrientation] = ConnectorOrientation.auto.opt
 
-    connectorStyle = ConnectorStyle.diagonal.opt
+    var connectorStyle: ScOption[ConnectorStyle] = ConnectorStyle.diagonal.opt
 
     titleRotationMode = TitleRotationMode.withItemAlwaysUp.opt
 
     showTitleLabelBackground = true.opt
 
-    startPoint = Point(0, 0).opt
+    var startPoint: ScOption[Point] = Point(0, 0).opt
 
-    endPoint = Point(100, 100).opt
+    var endPoint: ScOption[Point] = Point(100, 100).opt
 
-    tailSize = 30.opt
+    var tailSize: ScOption[Int] = 30.opt
 
     contextMenu = MenuSS.create(
         new MenuSSProps {
@@ -48,6 +48,7 @@ class DrawLinePathSSProps extends DrawLinePathProps {
                     click = {
                         (target: Canvas, item: MenuSSItem, menu: MenuSS, colNum: JSUndefined[Int]) =>
 
+
                     }.toFunc.opt
                 }
             ).opt
@@ -55,6 +56,8 @@ class DrawLinePathSSProps extends DrawLinePathProps {
 
     init = {
         (thiz: classHandler, arguments: IscArray[JSAny]) =>
+
+            isc debugTrap 0
 
             thiz.startPoint = thiz.startPoint.duplicate()
             thiz.endPoint = thiz.endPoint.duplicate()
@@ -73,12 +76,15 @@ class DrawLinePathSSProps extends DrawLinePathProps {
 
             thiz.points = IscArray(Point(thiz.startLeft.get, thiz.startTop.get), Point(thiz.startLeft.get, thiz.startTop.get))
 
+            isc debugTrap thiz.points
+
             thiz.Super("init", arguments)
 
     }.toThisFunc.opt
 
     var getConnectorOrientationState: ScOption[ThisFunction0[classHandler, ConnectorOrientation]] = {
         (thiz: classHandler) =>
+          isc.debugTrap("getConnectorOrientationState")
             if (thiz.connectorOrientation == ConnectorOrientation.auto) {
                 val width = Math.abs(thiz.endLeft.get - thiz.startLeft.get)
                 val height = Math.abs(thiz.endTop.get - thiz.startTop.get)
@@ -169,6 +175,7 @@ class DrawLinePathSSProps extends DrawLinePathProps {
 
             thiz._segmentPoints = IscArray(p1, _leader.get, _trailer.get, p2)
 
+            isc.debugTrap("_getSegmentPoints")
             thiz._segmentPoints
 
     }.toThisFunc.opt
@@ -179,6 +186,7 @@ class DrawLinePathSSProps extends DrawLinePathProps {
             val startPoint = p1.getOrElse(thiz.startPoint)
             val endPoint = p2.getOrElse(thiz.endPoint)
 
+            isc.debugTrap("getCenter")
             Point(startPoint.getX().get + isc.DrawItem._makeCoordinate((endPoint.getX().get - startPoint.getX().get) / 2), startPoint.getY().get + isc.DrawItem._makeCoordinate((endPoint.getY().get - startPoint.getY().get) / 2))
     }.toThisFunc.opt
 
@@ -202,6 +210,7 @@ class DrawLinePathSSProps extends DrawLinePathProps {
             // regenerate points
 
             thiz.setPoints(thiz._getSegmentPoints(jSUndefined, thiz.controlPoint2), cx, cy)
+            isc.debugTrap("setStartPoint")
     }.toThisFunc.opt
 
 
@@ -217,6 +226,7 @@ class DrawLinePathSSProps extends DrawLinePathProps {
             // regenerate points
 
             thiz.setPoints(thiz._getSegmentPoints(thiz.controlPoint1, jSUndefined), cx, cy)
+            isc.debugTrap("setEndPoint")
     }.toThisFunc.opt
 
     var setControlPoint1: ScOption[ThisFunction5[classHandler, Int, Int, JSUndefined[Boolean], JSUndefined[Int], JSUndefined[Int], _]] = {
@@ -227,6 +237,8 @@ class DrawLinePathSSProps extends DrawLinePathProps {
 
             // regenerate points so that the line gets dragged along with the knob
             thiz.setPoints(thiz._getSegmentPoints(thiz.controlPoint1, thiz.controlPoint2), cx, cy)
+
+            isc.debugTrap("setControlPoint1")
     }.toThisFunc.opt
 
     var setControlPoint2: ScOption[ThisFunction5[classHandler, Int, Int, JSUndefined[Boolean], JSUndefined[Int], JSUndefined[Int], _]] = {
@@ -237,6 +249,7 @@ class DrawLinePathSSProps extends DrawLinePathProps {
 
             // regenerate points so that the line gets dragged along with the knob
             thiz.setPoints(thiz._getSegmentPoints(thiz.controlPoint1, thiz.controlPoint2), cx, cy)
+            isc.debugTrap("setControlPoint1")
     }.toThisFunc.opt
 
     var getBoundingBox: ScOption[ThisFunction2[classHandler, Boolean, JSUndefined[IscArray[Int]], IscArray[Int]]] = {
@@ -253,6 +266,7 @@ class DrawLinePathSSProps extends DrawLinePathProps {
             bbox(2) = Math.max(x1, x2)
             bbox(3) = Math.max(y1, y2)
 
+            isc.debugTrap("getBoundingBox")
             if (includeStroke) bbox else thiz._adjustBoundingBox(true, false, bbox)
     }.toThisFunc.opt
 
@@ -312,6 +326,7 @@ class DrawLinePathSSProps extends DrawLinePathProps {
                         }
                     )
                 )
+                isc.debugTrap("showControlPoint1Knobs")
             }
     }.toThisFunc.opt
 
@@ -320,6 +335,7 @@ class DrawLinePathSSProps extends DrawLinePathProps {
             if (thiz._c1Knob.isDefined) {
                 thiz._c1Knob.get.destroy()
                 thiz._c1Knob = jSUndefined
+                isc.debugTrap("hideControlPoint1Knobs")
             }
     }.toThisFunc.opt
 
@@ -374,6 +390,7 @@ class DrawLinePathSSProps extends DrawLinePathProps {
                         }
                     )
                 )
+                isc.debugTrap("showControlPoint2Knobs")
             }
     }.toThisFunc.opt
 
@@ -382,6 +399,7 @@ class DrawLinePathSSProps extends DrawLinePathProps {
             if (thiz._c2Knob.isDefined) {
                 thiz._c2Knob.get.destroy()
                 thiz._c2Knob = jSUndefined
+                isc.debugTrap("hideControlPoint1Knobs")
             }
     }.toThisFunc.opt
 
@@ -390,6 +408,7 @@ class DrawLinePathSSProps extends DrawLinePathProps {
             if (thiz._startKnob.isDefined) {
                 val v = thiz._normalize(thiz.startLeft.get, thiz.startTop.get, "local", "global")
                 thiz.setCenterPoint(v.getX().get, v.getY().get)
+                isc.debugTrap("updateStartPointKnob")
             }
     }.toThisFunc.opt
 
@@ -398,6 +417,7 @@ class DrawLinePathSSProps extends DrawLinePathProps {
             if (thiz._startKnob.isDefined) {
                 val v = thiz._normalize(thiz.endLeft.get, thiz.endTop.get, "local", "global")
                 thiz.setCenterPoint(v.getX().get, v.getY().get)
+                isc.debugTrap("updateEndPointKnob")
             }
     }.toThisFunc.opt
 
@@ -406,6 +426,7 @@ class DrawLinePathSSProps extends DrawLinePathProps {
             if (thiz._c1Knob.isDefined) {
                 val v = thiz._normalize(thiz.controlPoint1.get.getX().get, thiz.controlPoint1.get.getY().get, "local", "global")
                 thiz._c1Knob.get.setCenterPoint(v.getX().get, v.getY().get)
+                isc.debugTrap("updateControlPoint1Knob")
             }
     }.toThisFunc.opt
 
@@ -415,26 +436,31 @@ class DrawLinePathSSProps extends DrawLinePathProps {
             if (thiz._c2Knob.isDefined) {
                 val v = thiz._normalize(thiz.controlPoint2.get.getX().get, thiz.controlPoint2.get.getY().get, "local", "global")
                 thiz._c2Knob.get.setCenterPoint(v.getX().get, v.getY().get)
+                isc.debugTrap("updateControlPoint2Knob")
             }
     }.toThisFunc.opt
 
     var updateControlKnobs: ScOption[ThisFunction1[classHandler, IscArray[JSAny], _]] = {
         (thiz: classHandler, arguments: IscArray[JSAny]) =>
+            isc.debugTrap("updateControlKnobs begin")
             thiz.Super("updateControlKnobs", arguments)
             thiz.updateStartPointKnob()
             thiz.updateEndPointKnob()
             thiz.updateControlPoint1Knob()
             thiz.updateControlPoint2Knob()
+            isc.debugTrap("updateControlKnobs end")
     }.toThisFunc.opt
 
     var moveStartPointTo: ScOption[ThisFunction2[classHandler, Int, Int, _]] = {
         (thiz: classHandler, left: Int, top: Int) =>
             thiz._movePointToPoint(left, top, thiz.startLeft.get, thiz.startTop.get)
-
+            isc.debugTrap("moveStartPointTo")
     }.toThisFunc.opt
 
     var _updateLocalTransform: ScOption[ThisFunction7[classHandler, AffineTransform, Int, Int, JSObject, Boolean, Boolean, IscArray[JSAny], _]] = {
         (thiz: classHandler, transform: AffineTransform, cx: Int, cy: Int, initialShape: JSObject, fireReshaped: Boolean, viaLocalTransformOnly: Boolean, arguments: IscArray[JSAny]) =>
+
+            isc.debugTrap("_updateLocalTransform")
 
             if (viaLocalTransformOnly)
                 thiz.Super("_updateLocalTransform", IscArray(transform, cx, cy, initialShape, fireReshaped, true), arguments)

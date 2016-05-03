@@ -143,6 +143,7 @@ package object System {
     object DrawLabel extends SCApply[DrawLabel, DrawLabelProps]
     object DrawCurve extends SCApply[DrawCurve, DrawCurveProps]
     object DrawLinePath extends SCApply[DrawLinePath, DrawLinePathProps]
+    object DrawLinePathSS extends SCApply[DrawLinePathSS, DrawLinePathSSProps]
     object DrawKnob extends SCApply[DrawKnob, DrawKnobProps]
     object Shadow extends SCApply4Object[Shadow, ShadowProps]
 
