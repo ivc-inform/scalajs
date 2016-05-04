@@ -3,6 +3,8 @@ package com.simplesys.SmartClient.DataBinding.props
 import com.simplesys.SmartClient.DataBinding.{ResultSet, ResultTree, SortSpecifier}
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.DSProtocol.DSProtocol
 import com.simplesys.System.Types.ExportDisplay.ExportDisplay
@@ -12,10 +14,7 @@ import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
 import com.simplesys.System.Types.Record
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.ValidationMode.ValidationMode
-import com.simplesys.System.{JSObject, JSArray}
 import com.simplesys.option.{ScNone, ScOption}
-
-import scala.scalajs.js
 
 class DetailViewerProps extends CanvasProps {
     var additionalOutputs: ScOption[String] = ScNone
@@ -25,11 +24,11 @@ class DetailViewerProps extends CanvasProps {
     var endRow: ScOption[Int] = ScNone
     var exportAs: ScOption[ExportFormat] = ScNone
     var exportCSS: ScOption[String] = ScNone
-    var exportData: ScOption[JSArray[Record]] = ScNone
+    var exportData: ScOption[IscArray[Record]] = ScNone
     var exportDatesAsFormattedString: ScOption[Boolean] = ScNone
     var exportDelimiter: ScOption[String] = ScNone
     var exportDisplay: ScOption[ExportDisplay] = ScNone
-    var exportFields: ScOption[JSArray[String]] = ScNone
+    var exportFields: ScOption[IscArray[String]] = ScNone
     var exportFilename: ScOption[String] = ScNone
     var exportFooter: ScOption[String] = ScNone
     var exportHeader: ScOption[String] = ScNone
@@ -49,7 +48,7 @@ class DetailViewerProps extends CanvasProps {
     var exportValueFields: ScOption[Boolean] = ScNone
     var fieldValueExpressions: ScOption[JSObject] = ScNone
     var generateRelatedUpdates: ScOption[Boolean] = ScNone
-    var groupBy: ScOption[JSArray[String]] = ScNone
+    var groupBy: ScOption[IscArray[String]] = ScNone
     var headerData: ScOption[JSObject] = ScNone
     var keepParentsOnFilter: ScOption[Boolean] = ScNone
     var lineBreakStyle: ScOption[String] = ScNone

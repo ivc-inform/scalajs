@@ -5,8 +5,9 @@ import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.Window
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js._
@@ -27,12 +28,12 @@ trait MultiSortDialog extends Window {
     val deleteLevelButtonTitle: String
     val descendingTitle: String
     val directionFieldTitle: String
-    val fields: JSArray[JSObject]
+    val fields: IscArray[JSObject]
     val firstSortLevelTitle: String
     def getNumLevels(): Int
-    def getSort(): JSArray[SortSpecifier]
+    def getSort(): IscArray[SortSpecifier]
     def getSortLevel(levelNum: Int): SortSpecifier
-    val initialSort: JSArray[SortSpecifier]
+    val initialSort: IscArray[SortSpecifier]
     val invalidListPrompt: HTMLString
     val levelDownButton: IButton with AutoChild
     val levelDownButtonTitle: String
@@ -48,7 +49,7 @@ trait MultiSortDialog extends Window {
 
 @js.native
 abstract trait AbstractMultiSortDialogCompanion extends AbstractCanvasCompanion {
-    def askForSort(fieldSource: JSArray[JSObject] | DataSource | DataBoundComponent, initialSort: JSArray[SortSpecifier], callback: Callback): void = js.native
+    def askForSort(fieldSource: IscArray[JSObject] | DataSource | DataBoundComponent, initialSort: IscArray[SortSpecifier], callback: Callback): void = js.native
 }
 
 @js.native

@@ -8,12 +8,11 @@ import com.simplesys.SmartClient.Foundation.HTMLFlow
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.props.VStackProps
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.ImportFormat.ImportFormat
 import com.simplesys.System.Types.PartialCommitOption.PartialCommitOption
-import com.simplesys.System.{JSObject, JSArray}
 import com.simplesys.option.{ScNone, ScOption}
-
-import scala.scalajs.js
 
 class BatchUploaderProps extends VStackProps {
     var allRecordsInErrorMessage: ScOption[String] = ScNone
@@ -28,7 +27,7 @@ class BatchUploaderProps extends VStackProps {
     var discardedColumnsMessage: ScOption[String] = ScNone
     var displayDiscardedColumns: ScOption[Boolean] = ScNone
     var grid: ScOption[Grid[ListGridField, ListGridRecord]] = ScNone
-    var gridFields: ScOption[JSArray[ListGridField]] = ScNone
+    var gridFields: ScOption[IscArray[ListGridField]] = ScNone
     var partialCommit: ScOption[PartialCommitOption] = ScNone
     var partialCommitConfirmationMessage: ScOption[String] = ScNone
     var partialCommitError: ScOption[String] = ScNone
@@ -41,7 +40,7 @@ class BatchUploaderProps extends VStackProps {
     var uploadFieldPrefix: ScOption[String] = ScNone
     var uploadFileLabel: ScOption[String] = ScNone
     var uploadForm: ScOption[DynamicForm] = ScNone
-    var uploadFormFields: ScOption[JSArray[FormItem]] = ScNone
+    var uploadFormFields: ScOption[IscArray[FormItem]] = ScNone
     var uploadOperation: ScOption[String] = ScNone
     var uploadStatusMessages: ScOption[HTMLFlow] = ScNone
     var warnOnCancel: ScOption[Boolean] = ScNone

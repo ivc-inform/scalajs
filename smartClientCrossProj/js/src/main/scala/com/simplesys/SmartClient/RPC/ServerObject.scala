@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.RPC
 
-import com.simplesys.System.{JSObject, JSArray}
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSObject
 
 import scala.scalajs.js
 
@@ -16,7 +17,7 @@ trait ServerObject extends JSObject {
     val lookupStyle:String
     val methodName:String
     val targetXPath:String
-    val visibleMethods : JSArray[JSObject]
+    val visibleMethods : IscArray[JSObject]
     val serverObject:ServerObject
 }
 

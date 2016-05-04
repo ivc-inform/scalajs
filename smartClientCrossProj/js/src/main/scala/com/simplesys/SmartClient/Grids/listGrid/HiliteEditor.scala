@@ -3,8 +3,8 @@ package com.simplesys.SmartClient.Grids.listGrid
 import com.simplesys.SmartClient.Foundation.StatefulCanvas
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Layout.VLayout
-import com.simplesys.System.Types.{Callback, AutoChild, SCImgURL, void}
-import com.simplesys.System.JSArray
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.Types.{AutoChild, Callback, SCImgURL, void}
 
 import scala.scalajs.js
 
@@ -18,13 +18,13 @@ trait HiliteEditor extends VLayout {
     val cancelButtonTitle: String
     def clearHilites(): void
     val fieldList: Grid[ListGridField, ListGridRecord]
-    val hiliteIcons: JSArray[SCImgURL]
+    val hiliteIcons: IscArray[SCImgURL]
     val hiliteRule: HiliteRule with AutoChild
     def removeRule(hiliteRule: HiliteRule): void
     val saveButton: StatefulCanvas with AutoChild
     val saveButtonTitle: String
     def saveHilites(callback: Callback): void
-    def setHilites(hilites: JSArray[Hilite]): void
+    def setHilites(hilites: IscArray[Hilite]): void
 }
 
 

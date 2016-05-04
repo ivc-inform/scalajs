@@ -4,8 +4,9 @@ import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.{AbstractLayoutCompanion, Layout}
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.{AutoChild, HTMLString}
-import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 
@@ -20,12 +21,12 @@ trait MultiSortPanel extends Layout {
     val deleteLevelButtonTitle: String
     val descendingTitle: String
     val directionFieldTitle: String
-    val fields: JSArray[JSObject]
+    val fields: IscArray[JSObject]
     val firstSortLevelTitle: String
     def getNumLevels(): Int
-    def getSort(): JSArray[SortSpecifier]
+    def getSort(): IscArray[SortSpecifier]
     def getSortLevel(levelNum: Int): SortSpecifier
-    val initialSort: JSArray[SortSpecifier]
+    val initialSort: IscArray[SortSpecifier]
     val invalidListPrompt: HTMLString
     val levelDownButton: IButton with AutoChild
     val levelDownButtonTitle: String
@@ -35,7 +36,7 @@ trait MultiSortPanel extends Layout {
     val optionsGrid: Grid[ListGridField, ListGridRecord] with AutoChild
     val otherSortLevelTitle: String
     val propertyFieldTitle: String
-    def sortChanged (sortLevels: JSArray[SortSpecifier])
+    def sortChanged (sortLevels: IscArray[SortSpecifier])
     def validate(): Boolean
 }
 

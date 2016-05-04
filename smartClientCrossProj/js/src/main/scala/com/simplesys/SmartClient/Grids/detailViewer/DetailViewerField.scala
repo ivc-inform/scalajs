@@ -1,11 +1,12 @@
 package com.simplesys.SmartClient.Grids.detailViewer
 
 import com.simplesys.SmartClient.DataBinding.DetailViewer
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.{void, _}
-import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 
@@ -44,7 +45,7 @@ trait DetailViewerField extends JSObject {
     var name: String
     var printCellStyle: CSSClassName
     val showFileInline: Boolean
-    var showIf: js.Function2[DetailViewer, JSArray[DetailViewerRecord], Boolean]
+    var showIf: js.Function2[DetailViewer, IscArray[DetailViewerRecord], Boolean]
     var target: String
     var timeFormatter: TimeDisplayFormat
     var title: HTMLString

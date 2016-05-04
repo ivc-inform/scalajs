@@ -7,9 +7,10 @@ import com.simplesys.SmartClient.DataBinding.{DSRequest, DataBoundComponent}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeNode}
 import com.simplesys.SmartClient.Layout.{AbstractLayoutCompanion, Layout}
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSDictionaryAny
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSArray, JSDictionaryAny}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -28,7 +29,7 @@ trait ColumnTree extends Layout with DataBoundComponent {
     var data: Tree
     var dataProperties: Tree
     def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    var fields: JSArray[ListGridField]
+    var fields: IscArray[ListGridField]
     def filterData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     val firstColumnTitle: String
     var folderIcon: SCImgURL
@@ -46,7 +47,7 @@ trait ColumnTree extends Layout with DataBoundComponent {
     var nodeSelected: js.Function2[Grid[ListGridField, ListGridRecord], TreeNode, Boolean]
     var openIconSuffix: String
     def selectRecord(record: ListGridRecord | Int, newState: Boolean = js.native, colNum: Int = js.native): void
-    def selectRecords(records: JSArray[ListGridRecord] | JSArray[Int], newState: Boolean = js.native, colNum: Int = js.native): void
+    def selectRecords(records: IscArray[ListGridRecord] | IscArray[Int], newState: Boolean = js.native, colNum: Int = js.native): void
     def setData(newData: Tree): void
     def shouldShowHeader(node: TreeNode, colNum: Int): void
     var showCustomIconOpen:Boolean

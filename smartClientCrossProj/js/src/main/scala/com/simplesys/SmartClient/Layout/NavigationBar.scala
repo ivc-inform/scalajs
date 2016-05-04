@@ -1,12 +1,11 @@
 package com.simplesys.SmartClient.Layout
 
-import com.simplesys.SmartClient.Foundation.{Label, Canvas}
-import com.simplesys.SmartClient.Layout.navigationBar.NavigationBarViewState
-import com.simplesys.SmartClient.Layout.navigationBar.{MiniNavControl, NavigationButton}
+import com.simplesys.SmartClient.Foundation.{Canvas, Label}
+import com.simplesys.SmartClient.Layout.navigationBar.{MiniNavControl, NavigationBarViewState, NavigationButton}
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.NavigationDirection.NavigationDirection
-import com.simplesys.System.Types.{void, AutoChild, HTMLString, SCImgURL}
-import com.simplesys.System.JSArray
+import com.simplesys.System.Types.{AutoChild, HTMLString, SCImgURL, void}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -28,7 +27,7 @@ trait NavigationBar extends HLayout {
     var rightButtonIcon: SCImgURL
     var rightButtonTitle: HTMLString
     def setAlwaysShowLeftButtonTitle(newAlwaysShowLeftButtonTitle: Boolean): void
-    def setCustomNavControl(controls: JSArray[String] | JSArray[Canvas]): void
+    def setCustomNavControl(controls: IscArray[String] | IscArray[Canvas]): void
     def setLeftButtonIcon(newIcon: SCImgURL): void
     def setRightButtonIcon(newIcon: SCImgURL): void
     def setLeftButtonTitle(newTitle: HTMLString): void

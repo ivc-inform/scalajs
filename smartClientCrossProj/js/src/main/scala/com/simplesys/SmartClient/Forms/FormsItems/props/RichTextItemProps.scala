@@ -1,13 +1,11 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
-import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.System.JSArray
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.FormItemComponentType
-
-import scala.scalajs.js._
+import com.simplesys.option.{ScNone, ScOption}
 
 class RichTextItemProps extends CanvasItemProps {
-    var controlGroups: ScOption[JSArray[String]] = ScNone
+    var controlGroups: ScOption[IscArray[String]] = ScNone
     var moveFocusOnTab: ScOption[Boolean] = ScNone
     `type` = FormItemComponentType.RichTextItem
 }

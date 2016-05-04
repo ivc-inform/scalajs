@@ -7,11 +7,11 @@ import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerField
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField
-import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class}
+import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class, IscArray}
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSObject}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
@@ -39,17 +39,17 @@ trait SimpleType extends Class {
     var readOnlyEditorType: FormItem
     def shortDisplayFormatter(value: JSAny, field: FormItem | DetailViewerField = js.native, component: DataBoundComponent = js.native, record: JSObject = js.native): void
     def updateAtomicValue(atomicValue: JSAny, currentValue: JSAny, reason: String): JSAny
-    var validators: JSArray[Validator]
-    var validOperators: JSArray[OperatorId]
+    var validators: IscArray[Validator]
+    var validOperators: IscArray[OperatorId]
     var valueMap: ValueMap
 }
 
 @js.native
 abstract trait AbstractSimpleTypeCompanion extends AbstractClassCompanion {
-    def applySummaryFunction(records: JSArray[JSObject], field: DataSourceField, summaryFunction: SummaryFunction, summaryConfig: SummaryConfiguration): JSAny = js.native
+    def applySummaryFunction(records: IscArray[JSObject], field: DataSourceField, summaryFunction: SummaryFunction, summaryConfig: SummaryConfiguration): JSAny = js.native
     def getDefaultSummaryFunction(typeName: String): SummaryFunction = js.native
     def getType(typeName: String): SimpleType = js.native
-    def registerSummaryFunction(functionName: String, method: JSArray[Record] | DataSourceField | SummaryConfiguration): void = js.native
+    def registerSummaryFunction(functionName: String, method: IscArray[Record] | DataSourceField | SummaryConfiguration): void = js.native
     def setDefaultSummaryFunction(typeName: String, summaryFunction: SummaryFunction): void = js.native
 }
 

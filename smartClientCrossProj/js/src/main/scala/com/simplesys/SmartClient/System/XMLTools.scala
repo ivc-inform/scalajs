@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.RPC._
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSArray, JSObject}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -18,9 +18,9 @@ abstract trait AbstractXMLToolsCompanion extends AbstractClassCompanion {
     def loadXMLSchema(schemaURL: URL, callback: Callback, requestProperties: RPCRequest = js.native, autoLoadImports: Boolean = js.native): void = js.native
     def nativeXMLAvailable(): Boolean = js.native
     def parseXML(xmlText: String): XMLDocument = js.native
-    def selectNodes(element: XMLDocument | XMLElement | String, expression: XPath, namespaces: String = js.native): JSArray[XMLNode] = js.native
+    def selectNodes(element: XMLDocument | XMLElement | String, expression: XPath, namespaces: String = js.native): IscArray[XMLNode] = js.native
     def selectNumber(element: XMLDocument | XMLElement | String, expression: XPath, namespaces: String = js.native): Int = js.native
-    def selectObjects(obj: JSObject, xPath: XPath): JSArray[JSObject] = js.native
+    def selectObjects(obj: JSObject, xPath: XPath): IscArray[JSObject] = js.native
     def selectString(element: XMLDocument | XMLElement | String, expression: XPath, namespaces: String = js.native): String = js.native
     def serializeToString(inputDocument: String): XMLDocument = js.native
     def toJS(element: XMLElement | XMLDocument): JSObject = js.native

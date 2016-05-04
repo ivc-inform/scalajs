@@ -55,7 +55,7 @@ class DynamicFormProps extends CanvasProps with DataBoundComponentProps{
     var errorOrientation: ScOption[Alignment] = ScNone
     var errors: ScOption[Seq[JSObject]] = ScNone
     var errorsPreamble: ScOption[HTMLString] = ScNone
-    var fields: ScOption[Seq[FormItemProps]] = ScNone
+    var fields: ScOption[Seq[FormItem]] = ScNone  //Не менять !!!!!
     var fixedColWidths: ScOption[Boolean] = ScNone
     var formSubmitFailedWarning: ScOption[String] = ScNone
     var handleHiddenValidationErrors: ScOption[ThisFunction1[DynamicForm, JSObject, Boolean]] = ScNone
@@ -75,7 +75,7 @@ class DynamicFormProps extends CanvasProps with DataBoundComponentProps{
     var itemHoverWidth: ScOption[Int] = ScNone
     var itemKeyPress: ScOption[Function3[FormItem, String, Int, Boolean]] = ScNone
     var itemLayout: ScOption[String] = ScNone
-    var items: ScOption[Seq[FormItemProps]] = ScNone
+    var items: ScOption[Seq[FormItem]] = ScNone  //Не менять !!!!!
     var longTextEditorThreshold: ScOption[Int] = ScNone
     var longTextEditorType: ScOption[String] = ScNone
     var method: ScOption[FormMethod] = ScNone
@@ -126,6 +126,6 @@ class DynamicFormProps extends CanvasProps with DataBoundComponentProps{
     var validateOnExit: ScOption[Boolean] = ScNone
     var validationURL: ScOption[URL] = ScNone
     var values: ScOption[JSObject] = ScNone
-    var valuesChanged: ScOption[ThisFunction0[DynamicForm, _]] = ScNone
+    var valuesChanged: ScOption[ThisFunction0[callbackHandler, _]] = ScNone
     var wrapItemTitles: ScOption[Boolean] = ScNone
 }

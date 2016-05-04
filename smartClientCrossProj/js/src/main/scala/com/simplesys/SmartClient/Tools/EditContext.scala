@@ -1,26 +1,29 @@
 package com.simplesys.SmartClient.Tools
 
+import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.DataBinding.Callbacks.PaletteNodeCallback
-import com.simplesys.SmartClient.Drawing.DrawPane
+import com.simplesys.SmartClient.Drawing.{DrawItem, DrawPane}
 import com.simplesys.SmartClient.Grids.treeGrid.Tree
-import com.simplesys.SmartClient.System.Class
+import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class, IscArray}
 import com.simplesys.System.Types.HoopSelectionStyle.HoopSelectionStyle
 import com.simplesys.System.Types.SelectedAppearance.SelectedAppearance
 import com.simplesys.System.Types.{CSSColor, HTMLString, void}
-import com.simplesys.System.{JSArray, JSDictionaryAny, JSFunction, JSObject}
+import com.simplesys.System._
 import org.scalajs.dom.html.Canvas
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.|
 
 @js.native
 trait EditContext extends Class {
-    def addFromPaletteNode(paletteNode: PaletteNode | DrawPane, parentNode: EditNode = js.native): EditNode
-    def addFromPaletteNodes(paletteNodes: JSArray[PaletteNode | DrawPane], parentNode: EditNode = js.native): JSArray[EditNode]
-    def addNode(newNode: EditNode, parentNode: EditNode = js.native, index: Int = js.native, parentProperty: String = js.native, skipParentComponentAdd: Boolean): EditNode
-    def addPaletteNodesFromJS(jsCode: String, parentNode: EditNode = js.native, globals: JSArray[String] = js.native): void
-    def addPaletteNodesFromJSON(jsonString: String, parentNode: EditNode = js.native, globals: JSArray[String] = js.native, callback: JSFunction = js.native): void
-    def addPaletteNodesFromXML(xmlString: String, parentNode: EditNode = js.native, globals: JSArray[String] = js.native, callback: JSFunction = js.native): void
+    def _replaceRefs(item: DrawItem, globals: IscArray[String])
+    def addFromPaletteNode(paletteNode: PaletteNode | DrawPane | DrawItem, parentNode: EditNode = js.native): EditNode
+    def addFromPaletteNodes(paletteNodes: IscArray[PaletteNode] | IscArray[DrawPane]| IscArray[JSObject], parentNode: JSUndefined[EditNode] = js.native): IscArray[EditNode]
+    def addNode(newNode: EditNode, parentNode: EditNode = js.native, index: Int = js.native, parentProperty: String = js.native, skipParentComponentAdd: Boolean = js.native): EditNode
+    def addPaletteNodesFromJS(jsCode: JSAny, parentNode: EditNode = js.native, globals: IscArray[String] = js.native): void
+    def addPaletteNodesFromJSON(jsonString: JSAny, parentNode: EditNode = js.native, globals: IscArray[String] = js.native, callback: JSFunction = js.native): void
+    def addPaletteNodesFromXML(xmlString: String, parentNode: EditNode = js.native, globals: IscArray[String] = js.native, callback: JSFunction = js.native): void
     val allowNestedDrops: Boolean
     var autoEditNewNodes: Boolean
     val canDragGroup: Boolean
@@ -29,21 +32,22 @@ trait EditContext extends Class {
     var defaultPalette: Palette
     var defaultParent: EditNode
     def deselectAllEditNodes(): void
-    def deselectEditNodes(editNodes: JSArray[EditNode]): void
+    def deselectEditNodes(editNodes: IscArray[EditNode]): void
     def destroyAll(): void
     def editMaskClicked(editNode: EditNode, liveObject: JSObject): void
     val editMaskProperties: JSObject
-    var editNodeUpdated: js.Function3[EditNode, EditContext, JSArray[String], _]
+    var editNodeUpdated: js.Function3[EditNode, EditContext, IscArray[String], _]
     def enableEditing(editNode: EditNode): void
     val enableInlineEdit: Boolean
-    var extraPalettes: JSArray[Palette]
+    var extraPalettes: IscArray[Palette]
     def getDefaultPalette(): Palette
+    def getCapturedComponents():JSUndefined[IscArray[JSObject]]
     def getEditNodeTree(): Tree
-    def getPaletteNodesFromJS(jsCode: String, callback: PaletteNodeCallback, globals: JSArray[String] = js.native): void
+    def getPaletteNodesFromJS(jsCode: String, callback: PaletteNodeCallback, globals: IscArray[String] = js.native): void
     def getPaletteNodesFromXML(xmlStrong: String, callback: PaletteNodeCallback): void
     def getRootEditNode(): EditNode
     def getSelectedEditNode(): EditNode
-    def getSelectedEditNodes(): JSArray[EditNode]
+    def getSelectedEditNodes(): IscArray[EditNode]
     def getSelectedLabelText(component: JSObject): HTMLString
     val hideGroupBorderOnDrag: Boolean
     val hoopSelectionMode: HoopSelectionStyle
@@ -55,12 +59,13 @@ trait EditContext extends Class {
     var persistCoordinates: Boolean
     def removeAll(): void
     def removeNode(editNode: EditNode): void
-    def removeNodeProperties(editNode: EditNode, properties: JSArray[String]): void
+    def removeNodeProperties(editNode: EditNode, properties: IscArray[String]): void
+    def requestLiveObject(newNode: EditNode, callback: JSFunction, palette: Palette): void
     val rootComponent: PaletteNode
     def selectAllEditNodes(): void
     val selectedAppearance: SelectedAppearance
     val selectedBorder: String
-    def selectedEditNodesUpdated(editNode: EditNode, editNodeList: JSArray[EditNode]): void
+    def selectedEditNodesUpdated(editNode: EditNode, editNodeList: IscArray[EditNode]): void
     def selectEditNode(editNode: EditNode): void
     val selectedLabelBackgroundColor: String
     val selectedTintColor: CSSColor
@@ -69,11 +74,19 @@ trait EditContext extends Class {
     def selectSingleEditNode(editNode: EditNode): void
     def serializeAllEditNodes(settings: SerializationSettings = js.native): String
     def serializeAllEditNodesAsJSON(settings: SerializationSettings = js.native): String
-    def serializeEditNodes(nodes: JSArray[EditNode], settings: SerializationSettings = js.native): String
-    def serializeEditNodesAsJSON(nodes: JSArray[EditNode], settings: SerializationSettings = js.native): String
+    def serializeEditNodes(nodes: IscArray[EditNode], settings: SerializationSettings = js.native): String
+    def serializeEditNodesAsJSON(nodes: IscArray[EditNode], settings: SerializationSettings = js.native): String
     def setDefaultPalette(palette: Palette): void
     def setEditProxyProperties(editNode: EditNode, properties: EditProxy): void
     def setNodeProperties(editNode: EditNode, properties: JSDictionaryAny, skipLiveObjectUpdate: Boolean = js.native): void
+    def selectSingleComponent(component: Class): void
     val showSelectedLabel: Boolean
     val showSelectedLabelOnSelect: Boolean
 }
+
+@js.native
+abstract trait EditContextCompanion extends AbstractClassCompanion {}
+
+@js.native
+@JSName("EditContext")
+object EditContextStatic extends EditContextCompanion

@@ -1,15 +1,15 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.System.Types.void
-import com.simplesys.System.{JSObject, JSDictionary}
+import com.simplesys.System.{JSDictionaryAny, JSObject}
 
 import scala.scalajs.js
+import scala.scalajs.js.|
 
 @js.native
-object ClassFactory extends JSObject {
-    type ClassFactory = ClassFactory.type
-    def defineClass(className: String, superClass: Class = js.native): Class = js.native
-    def GetClass(): Class = js.native
-    def newInstance(className: String, props: JSDictionary[JSObject] = js.native, props2: JSDictionary[JSObject] = js.native, props3: JSDictionary[JSObject] = js.native): Class = js.native
-    def overwriteClass(): void = js.native
+trait ClassFactoryTrt extends JSObject {
+    def defineClass(className: String, superClass: Class = js.native): Class
+    def GetClass(): Class
+    def newInstance(className: String, props: JSObject | JSDictionaryAny = js.native, props2: JSObject | JSDictionaryAny = js.native, props3: JSObject | JSDictionaryAny = js.native): Class
+    def overwriteClass(): void
 }

@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.Tools
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Foundation.{Canvas, Label}
 import com.simplesys.SmartClient.System.Class
+import com.simplesys.System.JSUndefined
 import com.simplesys.System.Types.InlineEditEvent.InlineEditEvent
 import com.simplesys.System.Types.SelectedAppearance.SelectedAppearance
 import com.simplesys.System.Types.{AutoChild, CSSColor, MultiAutoChild, void}
@@ -14,7 +15,7 @@ trait EditProxy extends Class {
     val allowNestedDrops: Boolean
     val autoMaskChildren: Boolean
     val bringToFrontOnSelect: Boolean
-    val canSelect: Boolean
+    val canSelect: JSUndefined[Boolean]
     val canSelectChildren: Boolean
     val childrenSnapResizeToGrid: Boolean
     val childrenSnapToGrid: Boolean
@@ -36,6 +37,6 @@ trait EditProxy extends Class {
     def setCanSelectChildren(canSelect: Boolean): void
     def setInlineEditText(newValue: String): void
     def showSelectedAppearance(show: Boolean): void
-    def startInlineEditing(appendChar: String = js.native): void
+    //def startInlineEditing(appendChar: String = js.native): void
     val supportsInlineEdit: Boolean
 }

@@ -1,21 +1,20 @@
 package com.simplesys.SmartClient.Control.props
 
 import com.simplesys.SmartClient.Control.Button
-import com.simplesys.SmartClient.Foundation.{Label, Img}
-import com.simplesys.SmartClient.Layout.{Layout, Toolbar}
+import com.simplesys.SmartClient.Foundation.{Img, Label}
 import com.simplesys.SmartClient.Layout.props.WindowProps
-import com.simplesys.System.Types.{HTMLString, CSSStyleName, void, SCImgURL}
-import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.System.JSArray
+import com.simplesys.SmartClient.Layout.{Layout, Toolbar}
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.Types.{CSSStyleName, HTMLString, SCImgURL, void}
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
 class DialogProps extends WindowProps {
     var askIcon: ScOption[SCImgURL] = ScNone
     var autoFocus: ScOption[Boolean] = ScNone
     var buttonClick: ScOption[js.Function2[Button, Int, _]] = ScNone
-    var buttons: ScOption[JSArray[Button]] = ScNone
+    var buttons: ScOption[IscArray[Button]] = ScNone
     var cancelClick: ScOption[js.Function1[void, _]] = ScNone
     var confirmIcon: ScOption[SCImgURL] = ScNone
     var doneClick: ScOption[js.Function1[void, _]] = ScNone
@@ -31,7 +30,7 @@ class DialogProps extends WindowProps {
     var sayIcon: ScOption[SCImgURL] = ScNone
     var showToolbar: ScOption[Boolean] = ScNone
     var toolbar: ScOption[Toolbar] = ScNone
-    var toolbarButtons: ScOption[JSArray[Button]] = ScNone
+    var toolbarButtons: ScOption[IscArray[Button]] = ScNone
     var warnIcon: ScOption[SCImgURL] = ScNone
     var yesClick: ScOption[js.Function1[void, _]] = ScNone
 }

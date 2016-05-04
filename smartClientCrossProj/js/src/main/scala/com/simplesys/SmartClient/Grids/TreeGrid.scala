@@ -3,12 +3,12 @@ package com.simplesys.SmartClient.Grids
 
 import com.simplesys.SmartClient.Control.{Menu, MenuSS}
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeGridField, TreeNode}
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSAny
 import com.simplesys.System.Types.DisplayNodeType.DisplayNodeType
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSAny, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -37,7 +37,7 @@ trait TreeGrid extends Grid[TreeGridField, TreeNode] {
     var folderClick: js.Function3[TreeGrid, TreeNode, Int, void]
     var folderClosed: js.Function1[TreeNode, Boolean]
     var folderContextClick: js.Function3[TreeGrid, TreeNode, Int, Boolean]
-    def folderDrop(nodes: JSArray[TreeNode], folder: TreeNode, index: Int, sourceWidget: Canvas, callback: Callback): void
+    def folderDrop(nodes: IscArray[TreeNode], folder: TreeNode, index: Int, sourceWidget: Canvas, callback: Callback): void
     var folderIcon: SCImgURL
     var folderOpened: js.Function1[TreeNode, Boolean]
     def getAnimateFolderMaxRows(): Int
@@ -53,7 +53,7 @@ trait TreeGrid extends Grid[TreeGridField, TreeNode] {
     var indentRecordComponents: Boolean
     var indentSize: Int
     var funcMenu : MenuSS | Menu
-    val initialData: JSArray[TreeNode]
+    val initialData: IscArray[TreeNode]
     def isOverExtraIcon(): Boolean
     def isOverOpenArea(): Boolean
     val keepParentsOnFilter: Boolean
@@ -77,7 +77,7 @@ trait TreeGrid extends Grid[TreeGridField, TreeNode] {
     val parentAlreadyContainsChildMessage: String
     def recordDrop(): void
     val separateFolders: Boolean
-    val serverFilterFields: JSArray[String]
+    val serverFilterFields: IscArray[String]
     def setData(newData: Tree): void
     def setNodeIcon(node: TreeNode, icon: SCImgURL): void
     def setOpenState(openState: TreeGridOpenState): void
@@ -96,7 +96,7 @@ trait TreeGrid extends Grid[TreeGridField, TreeNode] {
     var showRoot: Boolean
     var sortFoldersBeforeLeaves: Boolean
     def toggleFolder(node: TreeNode): void
-    def transferNodes(nodes: JSArray[TreeNode], folder: TreeNode, index: Int, sourceWidget: Canvas, callback: Callback = js.native): void
+    def transferNodes(nodes: IscArray[TreeNode], folder: TreeNode, index: Int, sourceWidget: Canvas, callback: Callback = js.native): void
     val treeFieldTitle:String
     val treeRootValue:JSAny
     var data: Tree

@@ -2,11 +2,12 @@ package com.simplesys.SmartClient.Grids.props.detailViewer
 
 import com.simplesys.SmartClient.DataBinding.DetailViewer
 import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerRecord
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.{CSSClassName, FormatString, HTMLString}
-import com.simplesys.System.{JSObject, JSArray}
 import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 
@@ -44,7 +45,7 @@ class DetailViewerFieldProps extends AbstractClassProps {
     var name: ScOption[String] = ScNone
     var printCellStyle: ScOption[CSSClassName] = ScNone
     var showFileInline: ScOption[Boolean] = ScNone
-    var showIf: ScOption[js.Function2[DetailViewer, JSArray[DetailViewerRecord], Boolean]] = ScNone
+    var showIf: ScOption[js.Function2[DetailViewer, IscArray[DetailViewerRecord], Boolean]] = ScNone
     var target: ScOption[String] = ScNone
     var timeFormatter: ScOption[TimeDisplayFormat] = ScNone
     var title: ScOption[HTMLString] = ScNone

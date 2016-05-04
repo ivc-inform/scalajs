@@ -6,13 +6,13 @@ import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeNode}
 import com.simplesys.SmartClient.Layout.props.LayoutProps
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSDictionaryAny
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.{MultiAutoChild, SCImgURL}
-import com.simplesys.option.{ScOption, ScNone}
-import com.simplesys.System.{JSArray, JSDictionaryAny, JSDictionary, JSAny}
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
 class ColumnTreeProps extends LayoutProps with DataBoundComponentProps{
     var autoFetchTextMatchStyle: ScOption[TextMatchStyle] = ScNone
@@ -25,7 +25,7 @@ class ColumnTreeProps extends LayoutProps with DataBoundComponentProps{
     var customIconProperty: ScOption[String] = ScNone
     var data: ScOption[Tree] = ScNone
     var dataProperties: ScOption[Tree] = ScNone
-    var fields: ScOption[JSArray[ListGridField]] = ScNone
+    var fields: ScOption[IscArray[ListGridField]] = ScNone
     var firstColumnTitle: ScOption[String] = ScNone
     var folderIcon: ScOption[SCImgURL] = ScNone
     var loadDataOnDemand: ScOption[Boolean] = ScNone

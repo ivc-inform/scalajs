@@ -2,11 +2,12 @@ package com.simplesys.SmartClient.Grids
 
 import com.simplesys.SmartClient.DataBinding.DataBoundComponent
 import com.simplesys.SmartClient.Foundation.Canvas
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.DragDataAction.DragDataAction
 import com.simplesys.System.Types.Orientation.Orientation
 import com.simplesys.System.Types.TileLayoutPolicy.TileLayoutPolicy
 import com.simplesys.System.Types.{AutoChild, Record, void}
-import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -19,7 +20,7 @@ trait TileLayout extends Canvas {
     var dragDataAction: DragDataAction
     val dragLine: Canvas with AutoChild
     val expandMargins: Boolean
-    var getDragData: js.Function1[DataBoundComponent, JSArray[Record]]
+    var getDragData: js.Function1[DataBoundComponent, IscArray[Record]]
     def getTile(index: Int): Canvas
     val layoutMargin: Int
     val layoutPolicy: TileLayoutPolicy
@@ -36,12 +37,12 @@ trait TileLayout extends Canvas {
     val tileHeight: Int
     val tileHMargin: Int
     val tileMargin: Int
-    val tiles: JSArray[Canvas]
+    val tiles: IscArray[Canvas]
     val tileSize: Int
     val tilesPerLine: Int
     val tileVMargin: Int
     val tileWidth: Int
-    def transferDragData(): JSArray[JSObject]
+    def transferDragData(): IscArray[JSObject]
 }
 
 

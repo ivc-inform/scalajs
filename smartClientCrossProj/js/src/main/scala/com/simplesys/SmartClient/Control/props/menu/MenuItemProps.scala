@@ -4,8 +4,7 @@ import com.simplesys.SmartClient.Control.Menu
 import com.simplesys.SmartClient.Control.menu.MenuItem
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.props.listGrid.ListGridRecordProps
-import com.simplesys.SmartClient.System.KeyIdentifier
-import com.simplesys.System.JSArray
+import com.simplesys.SmartClient.System.{IscArray, KeyIdentifier}
 import com.simplesys.System.Types.{HTMLString, SCImgURL, void}
 import com.simplesys.option.{ScNone, ScOption}
 
@@ -25,7 +24,7 @@ class MenuItemProps extends ListGridRecordProps {
     var icon: ScOption[String] = ScNone
     var iconHeight: ScOption[Int] = ScNone
     var iconWidth: ScOption[Int] = ScNone
-    var keys: ScOption[JSArray[KeyIdentifier]] = ScNone
+    var keys: ScOption[IscArray[KeyIdentifier]] = ScNone
     var keyTitle: ScOption[String] = ScNone
     var submenu: ScOption[Menu] = ScNone
     var title: ScOption[HTMLString] = ScNone

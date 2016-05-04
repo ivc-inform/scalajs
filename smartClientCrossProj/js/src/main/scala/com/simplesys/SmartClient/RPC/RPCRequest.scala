@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.RPC
 
-import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class}
+import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class, IscArray}
 import com.simplesys.System.Types.PromptStyle.PromptStyle
 import com.simplesys.System.Types.RPCTransport.RPCTransport
 import com.simplesys.System.Types.{URL, void}
@@ -20,7 +20,7 @@ trait RPCRequest extends Class {
     var clientContext: JSObject
     var containsCredentials: Boolean
     var contentType: String
-    var data:JSObject| JSArray[JSObject]
+    var data:JSObject| IscArray[JSObject]
     var downloadResult: Boolean
     var downloadToNewWindow: Boolean
     var evalResult: Boolean

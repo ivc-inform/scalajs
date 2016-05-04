@@ -1,11 +1,12 @@
 package com.simplesys.SmartClient.DataBinding.props
 
 import com.simplesys.SmartClient.DataBinding.{DSResponse, DataSource, SortSpecifier}
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.SmartClient.System.props.{ClassProps, ListProps}
 import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
 import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.System.Types.{Criteria, Record}
-import com.simplesys.System.{JSObject, JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSObject}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
@@ -22,13 +23,13 @@ class ResultSetProps extends ClassProps with ListProps {
     var fetchDelay: ScOption[Int] = ScNone
     var fetchMode: ScOption[FetchMode] = ScNone
     var fetchOperation: ScOption[String] = ScNone
-    var initialData: ScOption[JSArray[Record]] = ScNone
+    var initialData: ScOption[IscArray[Record]] = ScNone
     var initialLength: ScOption[Int] = ScNone
     var neverDropUpdatedRows: ScOption[Boolean] = ScNone
     var progressiveLoading: ScOption[Boolean] = ScNone
     var resultSize: ScOption[Int] = ScNone
-    var sortSpecifiers: ScOption[JSArray[SortSpecifier]] = ScNone
-    var transformData: ScOption[js.Function2[JSAny, DSResponse, JSArray[JSObject]]] = ScNone
+    var sortSpecifiers: ScOption[IscArray[SortSpecifier]] = ScNone
+    var transformData: ScOption[js.Function2[JSAny, DSResponse, IscArray[JSObject]]] = ScNone
     var updateCacheFromRequest: ScOption[Boolean] = ScNone
     var updatePartialCache: ScOption[Boolean] = ScNone
     var useClientFiltering: ScOption[Boolean] = ScNone

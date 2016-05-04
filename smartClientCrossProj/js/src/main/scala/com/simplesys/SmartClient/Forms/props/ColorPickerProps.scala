@@ -1,15 +1,13 @@
 package com.simplesys.SmartClient.Forms.props
 
-import com.simplesys.SmartClient.System.Class
 import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.Layout.props.WindowProps
+import com.simplesys.SmartClient.System.{Class, IscArray}
 import com.simplesys.System.Types.ColorPickerMode.ColorPickerMode
-import com.simplesys.System.Types.{CSSStyleName, void, SCImgURL, HTMLString}
+import com.simplesys.System.Types.{CSSStyleName, HTMLString, SCImgURL, void}
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.System.JSArray
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
 class ColorPickerProps extends WindowProps {
     var allowComplexMode: ScOption[Boolean] = ScNone
@@ -21,7 +19,7 @@ class ColorPickerProps extends WindowProps {
     var cancelButton: ScOption[IButton] = ScNone
     var cancelButtonConstructor: ScOption[Class] = ScNone
     var cancelButtonTitle: ScOption[HTMLString] = ScNone
-    var colorArray: ScOption[JSArray[String]] = ScNone
+    var colorArray: ScOption[IscArray[String]] = ScNone
     var colorButtonBaseStyle: ScOption[CSSStyleName] = ScNone
     var colorButtonSize: ScOption[Int] = ScNone
     var colorChanged: ScOption[js.Function1[void, _]] = ScNone

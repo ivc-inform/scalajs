@@ -3,8 +3,7 @@ package com.simplesys.SmartClient.Drawing.props
 import com.simplesys.SmartClient.Drawing.DrawItem
 import com.simplesys.SmartClient.Drawing.drawItem.{DrawLabel, DrawSector}
 import com.simplesys.SmartClient.Drawing.gauge.GaugeSector
-import com.simplesys.SmartClient.System.Point
-import com.simplesys.System.JSArray
+import com.simplesys.SmartClient.System.{IscArray, Point}
 import com.simplesys.System.Types.{CSSColor, MultiAutoChild}
 import com.simplesys.option.{ScNone, ScOption}
 
@@ -26,8 +25,8 @@ class GaugeProps extends DrawPaneProps {
     var pivotPoint: ScOption[Point] = ScNone
     var pivotPointHeight: ScOption[Int | String] = ScNone
     var pivotShape: ScOption[DrawItem] = ScNone
-    var sectorColors: ScOption[JSArray[CSSColor]] = ScNone
-    var sectors: ScOption[JSArray[GaugeSector]] = ScNone
+    var sectorColors: ScOption[IscArray[CSSColor]] = ScNone
+    var sectors: ScOption[IscArray[GaugeSector]] = ScNone
     var sectorShape: ScOption[DrawSector with MultiAutoChild] = ScNone
     var tickLine: ScOption[DrawItem with MultiAutoChild] = ScNone
     var value: ScOption[Double] = ScNone

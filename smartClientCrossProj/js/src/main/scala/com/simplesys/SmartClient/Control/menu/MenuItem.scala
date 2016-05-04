@@ -1,11 +1,10 @@
 package com.simplesys.SmartClient.Control.menu
 
-import com.simplesys.SmartClient.Control.{MenuSS, Menu}
+import com.simplesys.SmartClient.Control.Menu
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
-import com.simplesys.SmartClient.System.KeyIdentifier
+import com.simplesys.SmartClient.System.{IscArray, KeyIdentifier}
 import com.simplesys.System.Types.{HTMLString, SCImgURL, void}
-import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 
@@ -25,7 +24,7 @@ trait MenuItem extends ListGridRecord {
     val icon: String
     val iconHeight: Int
     val iconWidth: Int
-    val keys: JSArray[KeyIdentifier]
+    val keys: IscArray[KeyIdentifier]
     val keyTitle: String
     val submenu: Menu
     val title: HTMLString

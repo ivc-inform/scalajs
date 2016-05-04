@@ -8,7 +8,7 @@ import scala.scalajs.js
 trait ColorItem extends TextItem {
     var allowComplexMode: Boolean
     var defaultPickerMode: ColorPickerMode
-    var pickerColorSelected: js.ThisFunction1[String, Int, _]
+    //var pickerColorSelected: js.ThisFunction1[String, Int, _]
     var supportsTransparency: Boolean
 }
 

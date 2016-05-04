@@ -19,7 +19,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSAny, JSArray, JSDictionary, JSObject}
+import com.simplesys.System.{JSAny, JSDictionary, JSObject}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
@@ -102,8 +102,8 @@ trait FormItem extends Class {
     def getDataPath(): DataPath
     def getDisplayFieldName(): String
     def getDisplayValue(value: JSAny): JSAny
-    def getErrorHTML(error: String | JSArray[String]): HTMLString
-    def getErrors(): String | JSArray[String]
+    def getErrorHTML(error: String | IscArray[String]): HTMLString
+    def getErrors(): String | IscArray[String]
     def getFieldName(): String
     def getFullDataPath(): DataPath
     def getGridColNum(): Int
@@ -114,13 +114,13 @@ trait FormItem extends Class {
     def getLeft(): Int
     def getOptionDataSource(): DataSource
     def getPageLeft(): Int
-    def getPageRect(): JSArray[Int]
+    def getPageRect(): IscArray[Int]
     def getPageTop(): Int
     def getPixelHeight(): Int
     def getPixelWidth(): Int
     def getPrintValueIcon(value: JSAny): SCImgURL
     def getPrintValueIconStyle(value: JSAny): CSSClassName
-    def getRect(): JSArray[Int]
+    def getRect(): IscArray[Int]
     def getSelectedRecord(): ListGridRecord
     def getTitle(): HTMLString
     def getTop(): Int
@@ -153,7 +153,7 @@ trait FormItem extends Class {
     var iconHSpace: Int
     var iconKeyPress: js.Function5[String, Char, DynamicForm, FormItem, FormItemIcon, _]
     var iconPrompt: HTMLString
-    var icons: JSArray[FormItemIcon]
+    var icons: IscArray[FormItemIcon]
     var iconVAlign: VerticalAlignment
     var iconWidth: Int
     var ID: String
@@ -218,7 +218,7 @@ trait FormItem extends Class {
     def setCellStyle(newCellStyle: FormItemBaseStyle): void
     def setCriterion(criterion: Criterion): void
     def setDisabled(disabled: Boolean): void
-    def setErrors(errors: JSArray[String] | String): void
+    def setErrors(errors: IscArray[String] | String): void
     def setHint(newHint: HTMLString): void
     def setHintStyle(hintStyle: CSSStyleName): void
     def setIconDisabled(icon: String, disabled: Boolean): void
@@ -232,9 +232,9 @@ trait FormItem extends Class {
     def setTop(): void
     def setValue(newValue: JSAny): void
     def setValueIcons(map: JSObject): void
-    def setValueMap(valueMap: JSArray[JSAny]): void
+    def setValueMap(valueMap: IscArray[JSAny]): void
     @JSName("setValueMap")
-    def setValueMapString(valueMap: JSArray[String]): void
+    def setValueMapString(valueMap: IscArray[String]): void
     def shouldApplyHeightToTextBox(): Boolean
     def shouldFetchMissingValue(newValue: JSAny): Boolean
     def shouldSaveOnEnter(): Boolean
@@ -294,8 +294,8 @@ trait FormItem extends Class {
     def validate(): Boolean
     var validateOnChange: Boolean
     var validateOnExit: Boolean
-    val validators: JSArray[Validator]
-    val validOperators: JSArray[OperatorId]
+    val validators: IscArray[Validator]
+    val validOperators: IscArray[OperatorId]
     var vAlign: VerticalAlignment
     val value: JSAny
     def valueClipped(): Boolean

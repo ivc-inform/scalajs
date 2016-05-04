@@ -1,19 +1,20 @@
 package com.simplesys.SmartClient.Tools.props
 
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.SmartClient.System.props.ClassProps
+import com.simplesys.SmartClient.Tools._
 import com.simplesys.SmartClient.Tools.props.EditContextProps.SelectedUpdated
-import com.simplesys.SmartClient.Tools.{EditContext, EditNode, Palette, PaletteNode}
 import com.simplesys.System.Types.CSSColor
 import com.simplesys.System.Types.HoopSelectionStyle.HoopSelectionStyle
 import com.simplesys.System.Types.SelectedAppearance.SelectedAppearance
-import com.simplesys.System.{JSArray, JSObject, JSUndefined}
+import com.simplesys.System._
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
 import scala.scalajs.js._
 
 object EditContextProps {
-    type SelectedUpdated = Function2[JSUndefined[EditNode], JSArray[EditNode], _]
+    type SelectedUpdated = Function2[JSUndefined[EditNode], IscArray[EditNode], _]
 }
 
 trait EditContextProps extends ClassProps {
@@ -27,9 +28,9 @@ trait EditContextProps extends ClassProps {
     var defaultPalette: ScOption[Palette] = ScNone
     var defaultParent: ScOption[EditNode] = ScNone
     var editMaskProperties: ScOption[JSObject] = ScNone
-    var editNodeUpdated: ScOption[js.Function3[JSUndefined[EditNode], JSUndefined[EditContext], JSArray[String], _]] = ScNone
+    var editNodeUpdated: ScOption[js.Function3[JSUndefined[EditNode], JSUndefined[EditContext], IscArray[String], _]] = ScNone
     var enableInlineEdit: ScOption[Boolean] = ScNone
-    var extraPalettes: ScOption[JSArray[Palette]] = ScNone
+    var extraPalettes: ScOption[IscArray[Palette]] = ScNone
     var hideGroupBorderOnDrag: ScOption[Boolean] = ScNone
     var hoopSelectionMode: ScOption[HoopSelectionStyle] = ScNone
     var hoopSelectorProperties: ScOption[JSObject] = ScNone

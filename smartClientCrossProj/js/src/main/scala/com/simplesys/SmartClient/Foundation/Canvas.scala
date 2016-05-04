@@ -26,7 +26,7 @@ import com.simplesys.System.Types.ProportionalResizeMode._
 import com.simplesys.System.Types.VerticalAlignment._
 import com.simplesys.System.Types.Visibility._
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSArray, JSArrayAny, JSObject, JSUndefined}
+import com.simplesys.System.{JSAny, JSObject, JSUndefined}
 import org.scalajs.dom.DocumentEvent
 import org.scalajs.dom.html.Element
 import org.scalajs.dom.raw.HTMLElement
@@ -93,7 +93,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var canHover: Boolean
     var canSelectText: Boolean
     val canvasItem: CanvasItem
-    val children: JSArray[Canvas]
+    val children: IscArray[Canvas]
     var childrenResizeSnapAlign: Boolean
     var childrenSnapAlign: Boolean
     var childrenSnapCenterAlign: Boolean
@@ -114,7 +114,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var contents: HTMLString
     var contextMenu: MenuSS
     val cursor: Cursor
-    val customEdges: JSArray[String]
+    val customEdges: IscArray[String]
     val dataPath: DataPath
     var defaultHeight: Int
     var defaultWidth: Int
@@ -153,7 +153,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var dropMove: js.ThisFunction0[callbackHandler, Boolean]
     var dropOut: js.ThisFunction0[callbackHandler, Boolean]
     var dropOver: js.ThisFunction0[callbackHandler, Boolean]
-    var dropTypes: JSArray[String] | String
+    var dropTypes: IscArray[String] | String
     var dynamicContents: Boolean
     var dynamicContentsVars: ValueMap
     val edgeBackgroundColor: Color
@@ -171,7 +171,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val editProxyConstructor: SCClassName
     def enable(): void
     def encloses(other: Canvas): Boolean
-    def enclosesRect(left: Int | JSArray[Int], top: Int, width: Int, height: Int): Boolean
+    def enclosesRect(left: Int | IscArray[Int], top: Int, width: Int, height: Int): Boolean
     val extraSpace: Int
     def focus(): void
     var focusChanged: js.ThisFunction1[callbackHandler, Boolean, void]
@@ -205,7 +205,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def getPageTop(): Int
     def getPanelContainer(): Canvas
     def getParentCanvas(): Canvas
-    def getParentElements(): JSArray[Canvas]
+    def getParentElements(): IscArray[Canvas]
     def getPrintHTML(printProperties: PrintProperties = js.native, callback: Callback): HTMLString
     def getRight(): Int
     def getScrollbarSize(): Int
@@ -254,9 +254,9 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val htmlPosition: DrawPosition
     val ID: String
     def imgHTML(src: SCImgURL, width: Int = js.native, height: Int = js.native, name: String = js.native, extraStuff: String = js.native, imgDir: String = js.native): String
-    var initWidget: js.ThisFunction1[callbackHandler, JSArrayAny, _]
+    var initWidget: js.ThisFunction1[callbackHandler, IscArray[JSAny], _]
     def intersects(other: Canvas): Boolean
-    def intersectsRect(left: Int | JSArray[Int], top: Int, width: Int, height: Int): Boolean
+    def intersectsRect(left: Int | IscArray[Int], top: Int, width: Int, height: Int): Boolean
     def isDirty(): Boolean
     def isDisabled(): Boolean
     def isDrawn(): Boolean
@@ -265,7 +265,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val isPrinting: Boolean
     var isSnapAlignCandidate: Boolean
     def isVisible(): Boolean
-    var keepInParentRect: Boolean | JSArray[Int]
+    var keepInParentRect: Boolean | IscArray[Int]
     var keyDown: js.ThisFunction0[callbackHandler, Boolean]
     var keyPress: js.ThisFunction0[callbackHandler, Boolean]
     var keyUp: js.ThisFunction0[callbackHandler, Boolean]
@@ -313,14 +313,14 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val parentCanvas: Canvas
     var parentMoved: js.ThisFunction2[callbackHandler, Int, Int, void]
     def parentResized()
-    val peers: JSArray[Canvas]
+    val peers: IscArray[Canvas]
     val percentBox: PercentBoxModel
     val percentSource: Canvas
     def placeNear(left: Int = js.native, top: Int = js.native): void
     var position: Positioning
     var printChildrenAbsolutelyPositioned: Boolean
     var prompt: HTMLString
-    val proportionalResizeModifiers: JSArray[KeyName]
+    val proportionalResizeModifiers: IscArray[KeyName]
     val proportionalResizing: ProportionalResizeMode
     def redraw(reason: String = js.native): void
     var redrawOnResize: Boolean
@@ -330,7 +330,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val resizeBarTarget: String
     def resizeBy(deltaX: Int = js.native, deltaY: Int = js.native): Boolean
     var resized: js.ThisFunction0[callbackHandler, Boolean]
-    var resizeFrom: JSArray[EdgeName]
+    var resizeFrom: IscArray[EdgeName]
     def resizeTo(width: Int = js.native, height: Int = js.native): Boolean
     def revealChild(child: Canvas | String): void
     var rightMouseDown: js.ThisFunction0[callbackHandler, Boolean]
@@ -398,8 +398,8 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var shouldPrint: Boolean
     def shouldSnapOnDrop(dragTarget: Canvas): Boolean
     def show(): void
-    def showClickMask(clickAction: Callback, mode: ClickMaskMode, unmaskedTargets: Canvas | JSArray[Canvas]): String
-    def showComponentMask(unmaskedChildren: JSArray[Canvas] = js.native): void
+    def showClickMask(clickAction: Callback, mode: ClickMaskMode, unmaskedTargets: Canvas | IscArray[Canvas]): String
+    def showComponentMask(unmaskedChildren: IscArray[Canvas] = js.native): void
     def showContextMenu(): Boolean
     val showCustomScrollbars: Boolean
     var showDragShadow: Boolean
@@ -413,7 +413,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var showSnapGrid: Boolean
     var shrinkElementOnHide: Boolean
     var skinImgDir: URL
-    var snapAlignCandidates: JSArray[Canvas]
+    var snapAlignCandidates: IscArray[Canvas]
     val snapAlignCenterLineStyle: String
     val snapAlignEdgeLineStyle: String
     var snapAxis: String
@@ -436,6 +436,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var tabIndex: Int
     val top: Int | String
     val topElement: Canvas
+    val unserialize: JSUndefined[Boolean]
     def updateEditNode(editContext: EditContext, editNode: EditNode): void
     def updateHover(hoverHTML: HTMLString = js.native): void
     var useBackMask: Boolean
@@ -457,20 +458,20 @@ abstract class AbstractCanvasCompanion extends AbstractClassCompanion {
     var defaultPageSpace: Int = js.native
     def getById(ID: String): Canvas = js.native
     def getEventEdge(edgeMask: EdgeName = js.native): EdgeName = js.native
-    def getPrintHTML(components: JSArray[Canvas], printProperties: PrintProperties, callback: Callback, separator: String = js.native): HTMLString = js.native
-    def getPrintPreview(components: JSArray[Canvas], printProperties: PrintProperties = js.native, previewProperties: Canvas = js.native, callback: Callback = js.native, separator: String = js.native): HTMLString = js.native
-    def getSnapPosition(target: Canvas | JSArray[Int], snapTo: String, snapper: Canvas | JSArray[Int], snapEdge: String = js.native): Point = js.native
+    def getPrintHTML(components: IscArray[Canvas], printProperties: PrintProperties, callback: Callback, separator: String = js.native): HTMLString = js.native
+    def getPrintPreview(components: IscArray[Canvas], printProperties: PrintProperties = js.native, previewProperties: Canvas = js.native, callback: Callback = js.native, separator: String = js.native): HTMLString = js.native
+    def getSnapPosition(target: Canvas | IscArray[Int], snapTo: String, snapper: Canvas | IscArray[Int], snapEdge: String = js.native): Point = js.native
     def hiliteCharacter(string: String, character: Char, hilitePrefix: String = js.native, hiliteSuffix: String = js.native): String = js.native
     def imgHTML(src: SCImgURL, width: Int = js.native, height: Int = js.native, name: String = js.native, extraStuff: String = js.native, imgDir: String = js.native): String = js.native
     var loadingImageSize: Int = js.native
     var loadingImageSrc: SCImgURL = js.native
     val neverUseFilters: Boolean = js.native
     val neverUsePNGWorkaround: Boolean = js.native
-    def printComponents(components: JSArray[Canvas], printProperties: PrintProperties = js.native): void = js.native
+    def printComponents(components: IscArray[Canvas], printProperties: PrintProperties = js.native): void = js.native
     def setAllowExternalFilters(allExternalFilters: Boolean): void = js.native
     def setDefaultPageSpace(newDefaultPageSpace: Int): void = js.native
     def setNeverUseFilters(neverUseFilters: Boolean): void = js.native
-    def showPrintPreview(components: JSArray[Canvas], printProperties: PrintProperties = js.native, printWindowProperties: PrintWindow = js.native, callback: Callback = js.native, separator: String): void = js.native
+    def showPrintPreview(components: IscArray[Canvas], printProperties: PrintProperties = js.native, printWindowProperties: PrintWindow = js.native, callback: Callback = js.native, separator: String): void = js.native
     val TAB_INDEX_FLOOR: Int = js.native
 }
 

@@ -3,9 +3,10 @@ package com.simplesys.SmartClient.Foundation
 import com.simplesys.SmartClient.Forms.FormsItems.SelectItem
 import com.simplesys.SmartClient.Foundation.richTextEditor.ListPropertiesDialog
 import com.simplesys.SmartClient.Layout.{Layout, VLayout}
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.ControlName.ControlName
 import com.simplesys.System.Types.{AutoChild, MultiAutoChild, void}
-import com.simplesys.System.{JSObject, JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSObject}
 
 import scala.scalajs.js
 
@@ -17,23 +18,23 @@ trait RichTextEditor extends VLayout {
     var alignRightPrompt: String
     var backgroundColorPrompt: String
     var boldSelectionPrompt: String
-    val bulletControls: JSArray[ControlName]
-    val colorControls: JSArray[ControlName]
+    val bulletControls: IscArray[ControlName]
+    val colorControls: IscArray[ControlName]
     var colorPrompt: String
-    var controlGroups: JSArray[ControlName]
+    var controlGroups: IscArray[ControlName]
     var copySelectionPrompt: String
     var cutSelectionPrompt: String
     def doWarn(): void
     val editArea: Canvas with AutoChild
     val editAreaBackgroundColor: String
-    var fontControls: JSArray[ControlName]
+    var fontControls: IscArray[ControlName]
     var fontNames: JSObject
     val fontSelectorItem: SelectItem with AutoChild
     var fontSelectorPrompt: String
     val fontSizes: JSObject
     val fontSizeSelectorItem: SelectItem with AutoChild
     var fontSizeSelectorPrompt: String
-    var formatControls: JSArray[ControlName]
+    var formatControls: IscArray[ControlName]
     def getValue(): JSAny
     var indentPrompt: String
     var italicSelectionPrompt: String
@@ -51,7 +52,7 @@ trait RichTextEditor extends VLayout {
     def setMoveFocusOnTab(moveFocusOnTab: Boolean): void
     def setValue(value: String): void
     var strikethroughSelectionPrompt: String
-    val styleControls: JSArray[ControlName]
+    val styleControls: IscArray[ControlName]
     val toolArea: Layout with AutoChild
     val toolbar: Layout with MultiAutoChild
     val toolbarBackgroundColor: String

@@ -1,17 +1,18 @@
 package com.simplesys.SmartClient.System.props
 
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSAny
 import com.simplesys.System.Types.TreeModelType.TreeModelType
 import com.simplesys.System.Types.void
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.System.{JSAny, JSArray}
 
 import scala.scalajs.js._
 
 class TreeProps extends ClassProps {
     var autoOpenRoot: ScOption[Boolean] = ScNone
     var childrenProperty: ScOption[String] = ScNone
-    var data: ScOption[JSArray[TreeNode]] = ScNone
+    var data: ScOption[IscArray[TreeNode]] = ScNone
     var dataChanged: ScOption[ThisFunction0[void, _]] = ScNone
     var defaultIsFolder: ScOption[Boolean] = ScNone
     var defaultNodeTitle: ScOption[String] = ScNone

@@ -7,6 +7,7 @@ import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord, MasterDetailMapping}
 import com.simplesys.SmartClient.Layout.VLayoutSS
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
 import com.simplesys.System.Types.DragDataAction.DragDataAction
 import com.simplesys.System.Types.DragTrackerMode.DragTrackerMode
@@ -59,13 +60,13 @@ trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayo
     def setSelectedState(selectedState: S): void
     def cancelEditing(): void
     var emptyMessage: String
-    def updateData(updatedRecord: R, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
+    def updateData(updatedRecord: JSObject, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     var wrapCells: Boolean
     val autoFetchTextMatchStyle: TextMatchStyle
-    def getSelection(excludePartialSelections: Boolean = js.native): JSArray[R]
+    def getSelection(excludePartialSelections: Boolean = js.native): IscArray[R]
     var fixedRecordHeights: Boolean
     val dragTrackerMode: DragTrackerMode
-    def setData(newData: JSArray[R]): void
+    def setData(newData: IscArray[R]): void
     var autoFitWidthApproach: AutoFitWidthApproach
     def startEditing(rowNum: Int = js.native, colNum: Int = js.native, suppressFocus: Boolean = js.native): Boolean
     def addData(newRecord: Record, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
@@ -73,8 +74,8 @@ trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayo
     var canSelectCells: Boolean
     var useClientFilteringSorting: Boolean
     var selectionAppearance: SelectionAppearance
-    def selectRecords(records: JSArray[R], newState: Boolean = js.native): void
-    def setFields(newFields: JSArray[T] = js.native): void
+    def selectRecords(records: IscArray[R], newState: Boolean = js.native): void
+    def setFields(newFields: IscArray[T] = js.native): void
     def selectRecord(record: R, newState: Boolean = js.native): void
     def selectRecordByKey(keyValue: JSAny, newState: Boolean = js.native): void
     def fullRefresh(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
@@ -82,13 +83,13 @@ trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayo
     def saveViewState(callback: Callback): void
     def getViewState(): ListGridViewState
     var cancelEditingConfirmationMessage: String
-    def getAllRows(): JSArray[R]
+    def getAllRows(): IscArray[R]
     var fetchDelay: Int
     def startEditingNew(newValues: JSObject | R = js.native, suppressFocus: Boolean = js.native): void
     var editEvent: ListGridEditEvent
     def getEditRecord(): R
     def getSelectedRecord(): R
-    def getSelectedRecords(excludePartialSelections: Boolean = js.native): JSArray[R]
+    def getSelectedRecords(excludePartialSelections: Boolean = js.native): IscArray[R]
     def isSelected(): Boolean
     var canSelectTextExpandedField: Boolean
     var showFilterEditor: Boolean
@@ -98,7 +99,7 @@ trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayo
     var dataPageSize: Int
     def getEditorType(field: T, values: JSObject): String
     def deselectRecord(record: R | Int): void
-    def deselectRecords(records: JSArray[R]): void
+    def deselectRecords(records: IscArray[R]): void
     def deselectAllRecords(): void
     def getRowNum(record: R): Int
     var funcMenu: MenuSS
@@ -107,19 +108,19 @@ trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayo
     def getContextMenu(): MenuSS
     def setFuncMenu(menu: MenuSS): void
     def getFuncMenu(): MenuSS
-    var saveItems: JSArray[String | MenuSSItem]
+    var saveItems: IscArray[String | MenuSSItem]
     def setSelectionChanged(func: js.Function2[R, Boolean, _]): void
-    def setSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
+    def setSelectionUpdated(func: js.Function2[R, IscArray[R], _]): void
     def unsetSelectionChanged(func: js.Function2[R, Boolean, _]): void
-    def unsetSelectionUpdated(func: js.Function2[R, JSArray[R], _]): void
-    def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor, pkFieldNames: JSArray[MasterDetailMapping] | MasterDetailMapping = js.native): void
+    def unsetSelectionUpdated(func: js.Function2[R, IscArray[R], _]): void
+    def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor, pkFieldNames: IscArray[MasterDetailMapping] | MasterDetailMapping = js.native): void
     def setForignFieldFields(grid: ListGrid | TreeGrid, masterGrid: UndefOr[ListGrid] | UndefOr[TreeGrid]): void
     var masterGrid: ListGrid | ListGridEditor | TreeGrid | TreeGridEditor
     var canDragRecordsOut: Boolean
     var canReorderRecords: Boolean
     var dragDataAction: DragDataAction
-    def startEditingNewInForm(obj: JSDictionaryAny = js.native, fields: JSArray[FormItem] = js.native, callback: DSCallback = js.native): void
-    def startEditingInForm(obj: JSDictionaryAny = js.native, fields: JSArray[FormItem] = js.native, callback: DSCallback = js.native): void
+    def startEditingNewInForm(obj: JSObject = js.native, fields: IscArray[FormItem] = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
+    def startEditingInForm(obj: JSObject = js.native, fields: IscArray[FormItem] = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
 }
 
 @js.native

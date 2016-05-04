@@ -1,25 +1,26 @@
 package com.simplesys.SmartClient.Forms.props
 
-import com.simplesys.SmartClient.Control.{ImgButton, IButton}
-import com.simplesys.SmartClient.DataBinding.{DataSource, AdvancedCriteria}
-import com.simplesys.SmartClient.Forms.DynamicForm
-import com.simplesys.SmartClient.Forms.FormsItems.{PickList, FormItem, SelectItem}
+import com.simplesys.SmartClient.Control.{IButton, ImgButton}
+import com.simplesys.SmartClient.DataBinding.{AdvancedCriteria, DataSource}
+import com.simplesys.SmartClient.Forms.FormsItems.{FormItem, PickList, SelectItem}
+import com.simplesys.SmartClient.Forms.{DynamicForm, FilterBuilder}
 import com.simplesys.SmartClient.Foundation.{Canvas, Label}
-import com.simplesys.SmartClient.Layout.{VStack, HLayout}
 import com.simplesys.SmartClient.Layout.props.LayoutProps
+import com.simplesys.SmartClient.Layout.{HLayout, VStack}
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.FieldType.FieldType
 import com.simplesys.System.Types.LogicalOperator.LogicalOperator
-import com.simplesys.System.Types.{void, MultiAutoChild}
+import com.simplesys.System.Types.MultiAutoChild
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.TopOperatorAppearance.TopOperatorAppearance
 import com.simplesys.System.Types.ValueItemType.ValueItemType
-import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.System.JSArray
+import com.simplesys.option.{IntString, ScNone, ScOption}
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
 class FilterBuilderProps extends LayoutProps {
+    type callbackHandler <: FilterBuilder
+
     var addButton: ScOption[ImgButton] = ScNone
     var addButtonPrompt: ScOption[String] = ScNone
     var allowEmpty: ScOption[Boolean] = ScNone
@@ -32,7 +33,7 @@ class FilterBuilderProps extends LayoutProps {
     var fieldPicker: ScOption[PickList] = ScNone
     var fieldPickerProperties: ScOption[FormItem] = ScNone
     var fieldPickerTitle: ScOption[String] = ScNone
-    var filterChanged: ScOption[js.Function1[void, _]] = ScNone
+    var filterChanged: ScOption[js.ThisFunction0[callbackHandler, _]] = ScNone
     var getValueFieldProperties: ScOption[js.Function4[FieldType, String, OperatorId, ValueItemType, FormItem]] = ScNone
     var inlineAndNotTitle: ScOption[String] = ScNone
     var inlineAndTitle: ScOption[String] = ScNone
@@ -48,7 +49,7 @@ class FilterBuilderProps extends LayoutProps {
     var operatorPicker: ScOption[SelectItem with MultiAutoChild] = ScNone
     var operatorPickerProperties: ScOption[FormItem] = ScNone
     var operatorPickerTitle: ScOption[String] = ScNone
-    var operatorPickerWidth: ScOption[String | Int] = ScNone
+    var operatorPickerWidth: ScOption[IntString[Int, String]] = ScNone
     var radioOperatorForm: ScOption[DynamicForm] = ScNone
     var radioOperatorLayout: ScOption[HLayout] = ScNone
     var radioOperatorTitle: ScOption[String] = ScNone
@@ -72,9 +73,9 @@ class FilterBuilderProps extends LayoutProps {
     var topOperatorAppearance: ScOption[TopOperatorAppearance] = ScNone
     var topOperatorForm: ScOption[DynamicForm] = ScNone
     var topOperatorItem: ScOption[SelectItem] = ScNone
-    var topOperatorItemWidth: ScOption[String | Int] = ScNone
-    var topOperatorOptions: ScOption[JSArray[OperatorId]] = ScNone
+    var topOperatorItemWidth: ScOption[IntString[Int, String]] = ScNone
+    var topOperatorOptions: ScOption[IscArray[OperatorId]] = ScNone
     var topOperatorTitle: ScOption[String] = ScNone
     var validateOnChange: ScOption[Boolean] = ScNone
-    var valueItemWidth: ScOption[Int | String] = ScNone
+    var valueItemWidth: ScOption[IntString[Int, String]] = ScNone
 }

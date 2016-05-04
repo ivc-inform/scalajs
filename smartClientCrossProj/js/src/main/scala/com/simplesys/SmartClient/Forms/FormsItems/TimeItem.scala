@@ -1,12 +1,11 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TimeUnit.TimeUnit
-import com.simplesys.System.Types.{void, HTMLString, AutoChild}
-import com.simplesys.System.JSArray
+import com.simplesys.System.Types.{AutoChild, HTMLString, void}
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 trait TimeItem extends FormItem {
@@ -17,11 +16,11 @@ trait TimeItem extends FormItem {
     def deselectValue(start: Boolean = js.native): void
     def getDuration(timeUnit: TimeUnit = js.native): Int
     def getEnteredValue(): String
-    def getHourValues(): JSArray[Int]
-    def getMillisecondValues(): JSArray[Int]
-    def getMinuteValues(): JSArray[Int]
-    def getSecondValues(): JSArray[Int]
-    def getSelectionRange(): JSArray[Int]
+    def getHourValues(): IscArray[Int]
+    def getMillisecondValues(): IscArray[Int]
+    def getMinuteValues(): IscArray[Int]
+    def getSecondValues(): IscArray[Int]
+    def getSelectionRange(): IscArray[Int]
     var hourIncrement: Int
     var hourItem: SelectItem with AutoChild
     var hourItemPrompt: HTMLString
@@ -29,7 +28,7 @@ trait TimeItem extends FormItem {
     var hourItemTitle: HTMLString
     var hourMaxValue: Int
     var hourMinValue: Int
-    var hourValues: JSArray[Int]
+    var hourValues: IscArray[Int]
     var invalidTimeStringMessage: HTMLString
     var millisecondIncrement: Int
     var millisecondItem: SelectItem with AutoChild
@@ -38,7 +37,7 @@ trait TimeItem extends FormItem {
     var millisecondItemTitle: HTMLString
     var millisecondMaxValue: Int
     var millisecondMinValue: Int
-    var millisecondValues: JSArray[Int]
+    var millisecondValues: IscArray[Int]
     var minuteIncrement: Int
     var minuteItem: SelectItem with AutoChild
     var minuteItemPrompt: HTMLString
@@ -46,7 +45,7 @@ trait TimeItem extends FormItem {
     var minuteItemTitle: HTMLString
     var minuteMaxValue: Int
     var minuteMinValue: Int
-    var minuteValues: JSArray[Int]
+    var minuteValues: IscArray[Int]
     var secondIncrement: Int
     var secondItem: SelectItem with AutoChild
     var secondItemPrompt: HTMLString
@@ -54,16 +53,16 @@ trait TimeItem extends FormItem {
     var secondItemTitle: HTMLString
     var secondMaxValue: Int
     var secondMinValue: Int
-    var secondValues: JSArray[Int]
+    var secondValues: IscArray[Int]
     def selectValue(): void
     def setHours(hours: Int): void
-    def setHourValues(values: JSArray[Int]): void
+    def setHourValues(values: IscArray[Int]): void
     def setMilliseconds(milliseconds: Int): void
-    def setMillisecondValues(values: JSArray[Int]): void
+    def setMillisecondValues(values: IscArray[Int]): void
     def setsetMinutes(milliseconds: Int): void
-    def setsetMinutesValues(values: JSArray[Int]): void
+    def setsetMinutesValues(values: IscArray[Int]): void
     def setSeconds(milliseconds: Int): void
-    def setSecondValues(values: JSArray[Int]): void
+    def setSecondValues(values: IscArray[Int]): void
     def setSelectionRange(start: Int, end: Int): void
     var showHintInField:Boolean
     var showHourItem:Boolean

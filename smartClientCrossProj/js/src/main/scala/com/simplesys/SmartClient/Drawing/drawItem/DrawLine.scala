@@ -1,10 +1,11 @@
 package com.simplesys.SmartClient.Drawing.drawItem
 
-import com.simplesys.SmartClient.Drawing.DrawItem
-import com.simplesys.SmartClient.System.Point
+import com.simplesys.SmartClient.Drawing.{AbstractDrawItemCompanion, DrawItem}
+import com.simplesys.SmartClient.System.{AbstractClassCompanion, Point}
 import com.simplesys.System.Types.void
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait DrawLine extends DrawItem {
@@ -18,4 +19,12 @@ trait DrawLine extends DrawItem {
     var startPoint: Point
     val startTop: Int
 }
+
+@js.native
+abstract trait AbstractDrawLineCompanion extends AbstractDrawItemCompanion {
+}
+
+@js.native
+@JSName("DrawLine")
+object DrawLineStatic extends AbstractDrawLineCompanion
 

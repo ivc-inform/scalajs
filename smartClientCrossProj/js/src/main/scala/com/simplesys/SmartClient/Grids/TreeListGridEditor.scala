@@ -6,10 +6,11 @@ import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Grids.treeGrid.TreeGridField
 import com.simplesys.SmartClient.Layout.HLayoutSS
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.SelectionStyle.SelectionStyle
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSObject}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -42,7 +43,7 @@ trait TreeListGridEditor extends HLayoutSS {
     var showAllChild: Boolean
     var selectionTypeTree: SelectionStyle
     var selectionTypeList: SelectionStyle
-    def getTreeSelection: JSArray[ListGridRecord]
+    def getTreeSelection: IscArray[ListGridRecord]
     var showTreeFilterEditor: Boolean
     def cancelTreeEditing(): void
     def cancelListEditing(): void
@@ -51,8 +52,8 @@ trait TreeListGridEditor extends HLayoutSS {
     var autoFetchData: Boolean
     def startListEditing(): void
     def startTreeEditing(): void
-    def setTreeFields(fields: JSArray[TreeGridField])
-    def setListFields(fields: JSArray[ListGridField])
+    def setTreeFields(fields: IscArray[TreeGridField])
+    def setListFields(fields: IscArray[ListGridField])
     var showTreeAdvancedFilter: Boolean
     def startTreeEditingNew(): void
     def saveListAllEdits(): void
@@ -115,9 +116,9 @@ trait TreeListGridEditor extends HLayoutSS {
     var wrapTreeCells: Boolean
     def getListGrid(): ListGridEditor
     def getTreeGrid(): TreeGridEditor
-    var fieldsTree : JSArray[TreeGridField]
-    var defaultFieldsTree : JSArray[TreeGridField]
-    var fieldsList : JSArray[ListGridField]
-    var defaultFieldsList : JSArray[ListGridField]
+    var fieldsTree : IscArray[TreeGridField]
+    var defaultFieldsTree : IscArray[TreeGridField]
+    var fieldsList : IscArray[ListGridField]
+    var defaultFieldsList : IscArray[ListGridField]
 }
 

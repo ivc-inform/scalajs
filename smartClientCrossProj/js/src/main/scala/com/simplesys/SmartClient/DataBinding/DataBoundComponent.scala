@@ -4,8 +4,8 @@ import com.simplesys.SmartClient.DataBinding.Callbacks.DSCallback
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.{Hilite, HiliteEditor, ListGridField}
 import com.simplesys.SmartClient.Layout.Window
-import com.simplesys.SmartClient.System.Class
-import com.simplesys.System
+import com.simplesys.SmartClient.System.{Class, IscArray}
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.DragDataAction.DragDataAction
 import com.simplesys.System.Types.FetchMode.FetchMode
@@ -14,7 +14,6 @@ import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
 import com.simplesys.System.Types.RecategorizeMode.RecategorizeMode
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -45,14 +44,14 @@ trait DataBoundComponent extends Class {
     def deselectAllRecords(): void
     def deselectRange(startRow: Int, endRow: Int): void
     def deselectRecord(record: Record | Int): void
-    def deselectRecords(records: JSArray[Record]): void
+    def deselectRecords(records: IscArray[Record]): void
     def disableHilite(hiliteID: String): void
     def disableHiliting(): void
     def dragComplete(): void
     var dragDataAction: DragDataAction
     var dragRecategorize: RecategorizeMode
     var dragTrackerStyle: CSSStyleName
-    def dropComplete(transferredRecords: JSArray[Record]): void
+    def dropComplete(transferredRecords: IscArray[Record]): void
     var dropValues: JSObject
     val duplicateDragMessage: String
     def editFields(): void
@@ -68,29 +67,29 @@ trait DataBoundComponent extends Class {
     def enableHiliting(enable: Boolean = js.native): void
     var exportAll: Boolean
     def exportData(requestProperties: DSRequest = js.native, callback: DSCallback = js.native)
-    var exportFields: JSArray[String]
+    var exportFields: IscArray[String]
     var exportIncludeSummaries: Boolean
     var fetchOperation: String
     val fieldEditorWindow: Window
     var fieldEditorWindowTitle: HTMLString
     var fieldNamingStrategy: FieldNamingStrategy
     def find(advancedCriteria: AdvancedCriteria): JSObject
-    def findAll(advancedCriteria: AdvancedCriteria): JSArray[JSObject]
+    def findAll(advancedCriteria: AdvancedCriteria): IscArray[JSObject]
     def findByKey(keyValue: JSObject): Record
     def findIndex(advancedCriteria: AdvancedCriteria): Int
     def findNextIndex(startIndex: Int, advancedCriteria: AdvancedCriteria, endIndex: Int = js.native): Int
     def getDataPathField(dataPath: DataPath): Field
-    def getDragData(source: DataBoundComponent): JSArray[Record]
+    def getDragData(source: DataBoundComponent): IscArray[Record]
     def getDropValues(record: Record, sourceDS: DataSource, targetRecord: Record, index: Int, sourceWidget: Canvas): JSObject
     def getField(fieldID: String | Int): Field
-    def getFieldAlignments(): JSArray[Alignment]
+    def getFieldAlignments(): IscArray[Alignment]
     def getFieldNum(fieldID: String | Int): Int
     def getFormulaFieldValue(field: Field, record: Record): Double | String
-    def getHilites(): JSArray[Hilite]
+    def getHilites(): IscArray[Hilite]
     def getHiliteState(): String
     def getRecordHiliteCSSText(record: Record, cssText: String, field: Field): String
     def getSelectionLength(): Int
-    def getSort(): JSArray[SortSpecifier]
+    def getSort(): IscArray[SortSpecifier]
     def getSummaryFieldValue(field: Field, record: Record): String
     def getTitleField(): String
     def getTitleFieldValue(record: Record): String
@@ -99,11 +98,11 @@ trait DataBoundComponent extends Class {
     var hiliteIconLeftPadding: Int
     val hiliteIconPosition: HiliteIconPosition
     var hiliteIconRightPadding: Int
-    val hiliteIcons: JSArray[String]
+    val hiliteIcons: IscArray[String]
     var hiliteIconSize: Int
     var hiliteIconWidth: Int
     var hiliteProperty: String
-    var hilites: JSArray[Hilite]
+    var hilites: IscArray[Hilite]
     var hiliteState: String
     val iconField: String
     var includeHilitesInSummaryFields: Boolean
@@ -119,7 +118,7 @@ trait DataBoundComponent extends Class {
     var removeOperation: String
     var removeSummaryFieldText: String
     def selectAllRecords(): void
-    def selectionUpdated(record: Record, recordList: JSArray[Record]): void
+    def selectionUpdated(record: Record, recordList: IscArray[Record]): void
     def selectRange(startRow: Int, endRow: Int, newState: Boolean = js.native): void
     def setHilites(hilites: Hilite): void
     def setHiliteState(hiliteState: String): void
@@ -130,8 +129,8 @@ trait DataBoundComponent extends Class {
     var showHiddenFields: Boolean
     var showOfflineMessage: Boolean
     val titleField: String
-    def transferDragData(): JSArray[JSObject]
-    def transferRecords(dropRecords: JSArray[Record], targetRecord: Record, index: Int, sourceWidget: Canvas, callback: Callback = js.native): void
+    def transferDragData(): IscArray[JSObject]
+    def transferRecords(dropRecords: IscArray[Record], targetRecord: Record, index: Int, sourceWidget: Canvas, callback: Callback = js.native): void
     def transferSelectedData(source: DataBoundComponent, index: Int, callback: Callback = js.native): void
     var unknownErrorMessage: HTMLString
     var updateOperation: String

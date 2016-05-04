@@ -3,15 +3,14 @@ package com.simplesys.SmartClient.Layout
 import com.simplesys.SmartClient.Control.Button
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.Types.CurrentPane.CurrentPane
 import com.simplesys.System.Types.DeviceMode.DeviceMode
 import com.simplesys.System.Types.NavigationDirection.NavigationDirection
 import com.simplesys.System.Types.PageOrientation.PageOrientation
-import com.simplesys.System.Types.{void, HTMLString, AutoChild}
-import com.simplesys.System.Types.CurrentPane.CurrentPane
-import com.simplesys.System.JSArray
+import com.simplesys.System.Types.{AutoChild, HTMLString, void}
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 trait SplitPanel extends Layout {
@@ -24,7 +23,7 @@ trait SplitPanel extends Layout {
     var detailPane: Canvas
     var detailPaneTitleTemplate: HTMLString
     var detailTitle: HTMLString
-    var detailToolButtons: JSArray[Canvas]
+    var detailToolButtons: IscArray[Canvas]
     val detailToolStrip: NavigationBar with AutoChild
     val deviceMode: DeviceMode
     var downClick: js.ThisFunction0[callbackHandler, void]
@@ -48,7 +47,7 @@ trait SplitPanel extends Layout {
     def setDetailPane(pane: Canvas): void
     def setDetailPaneTitleTemplate(template: HTMLString): void
     def setDetailTitle(title: HTMLString): void
-    def setDetailToolButtons(buttons: JSArray[Button]): void
+    def setDetailToolButtons(buttons: IscArray[Button]): void
     def setLeftButtonTitle(newTitle: HTMLString): void
     def setListPane(pane: Canvas): void
     def setListPaneTitleTemplate(template: HTMLString): void

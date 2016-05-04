@@ -1,7 +1,6 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.DataBinding._
-import com.simplesys.System.Types.LogPriority._
 import com.simplesys.System.Types.void
 import com.simplesys.System._
 
@@ -9,30 +8,40 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 
 @js.native
-trait Array extends List {
+@JSName("Array")
+trait IscArray[A] extends IscList[A] {
     def addAt(`object`: JSAny, pos: Int): this.type
     def and(start: Int, end: Int): Boolean
     def clearProperty(property: String): Boolean
     def containsProperty(property: String, value: JSObject = js.native): Boolean
-    def getUniqueItems(): JSArray[JSObject]
+    def getUniqueItems(): IscArray[JSObject]
     def makeIndex(property: String, alwaysMakeArray: Boolean): JSObject
-    def map(method: js.ThisFunction0[_, _], arguments: JSObject*): JSArray[JSObject]
+    @JSName("map")
+    def mapArray(method: js.Function1[_, _], arguments: JSObject*): IscArray[JSObject]
     def max(start: Int = js.native, end: Int = js.native): Int
     def min(start: Int = js.native, end: Int = js.native): Int
     def or(start: Int = js.native, end: Int = js.native): Boolean
-    def setSort(sortSpecifiers: SortSpecifier): JSArrayAny
+    def setSort(sortSpecifiers: SortSpecifier): IscArray[JSAny]
     def slide(start: Int, destination: Int): void
     def slideRange(start: Int, end: Int, destination: Int): void
     def sum(start: Int = js.native, end: Int = js.native): Int
     def unsort(): Boolean
+    def getX(): JSUndefined[A]
+    def setX(x: A): A
+    def getY(): JSUndefined[A]
+    def setY(y: A): A
+    @JSName("addList")
+    def addArray (x: IscArray[A]): this.type
 }
 
 @js.native
 abstract trait AbstractArrayCompanion extends JSObject {
-  var compareAscending: js.Function2[JSAny, JSAny, Int] = js.native
-  var compareDescending: js.Function2[JSAny, JSAny, Int] = js.native
+    var compareAscending: js.Function2[JSAny, JSAny, Int] = js.native
+    var compareDescending: js.Function2[JSAny, JSAny, Int] = js.native
 }
 
 @js.native
 @JSName("Array")
-object ClassArray extends AbstractArrayCompanion
+object IscArray extends AbstractArrayCompanion {
+    def apply[A](items: A*): IscArray[A] = js.native
+}

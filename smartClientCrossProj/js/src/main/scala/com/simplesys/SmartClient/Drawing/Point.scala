@@ -1,8 +1,9 @@
 package com.simplesys.SmartClient.Drawing
 
-import scala.scalajs.js
+import com.simplesys.SmartClient.System.{IscArray, Point}
 
 object Point {
-    def apply(x: Int, y: Int) = js.Array(x, y)
+    def apply(x: Int, y: Int) : Point = IscArray(x,y)
 }
+
 

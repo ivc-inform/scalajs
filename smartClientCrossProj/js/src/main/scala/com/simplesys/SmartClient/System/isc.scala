@@ -2,21 +2,23 @@ package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.DataBinding.AbstractJSONCompanion
+import com.simplesys.SmartClient.Drawing.AbstractDrawItemCompanion
+import com.simplesys.SmartClient.Drawing.drawItem.AbstractDrawLineCompanion
 import com.simplesys.SmartClient.Grids._
+import com.simplesys.SmartClient.Tools.EditContextCompanion
+import com.simplesys.SmartClient.math.AbstractAffineTransformCompanion
 import com.simplesys.System.Types.{Callback, ID, void}
 import com.simplesys.System._
-import com.simplesys.props.AbstractClassProps
 
-import scala.reflect.ClassTag
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSBracketAccess, JSName}
 import scala.scalajs.js.|
 
 @js.native
 @JSName("isc")
-object iscStatic extends JSObject {
+object isc extends JSObject {
     def addDefaults(destination: JSObject, source: JSObject): JSObject = js.native
-    def addProperties(destination: JSObject, propsArray: JSObject*): JSObject = js.native
+    def addProperties(destination: JSObject, propsArray: JSAny*): JSObject = js.native
     def ask(message: String, callback: js.Function1[Boolean, _] = js.native, properties: Dialog = js.native): void = js.native
     def askForValue(message: String, callback: js.Function1[JSAny, _] = js.native, properties: Dialog = js.native): void = js.native
     def clearPrompt(): void = js.native
@@ -30,13 +32,13 @@ object iscStatic extends JSObject {
     def eval(expression: String): JSAny = js.native
     def firstKey(obj: JSObject): String = js.native
     def getIconLeft(icon: JSObject): Int = js.native
-    def getIconPageRect(icon: JSObject): JSArray[Int] = js.native
-    def getIconRect(icon: JSObject): JSArray[Int] = js.native
+    def getIconPageRect(icon: JSObject): IscArray[Int] = js.native
+    def getIconRect(icon: JSObject): IscArray[Int] = js.native
     def getIconTop(icon: JSObject): Int = js.native
     def getKeyForValue(value: Int, valueMap: JSDictionary[JSObject], defaultKey: JSAny): JSAny = js.native
-    def getKeys(obj: JSObject): JSArray[String] = js.native
+    def getKeys(obj: JSObject): IscArray[String] = js.native
     def getValueForKey(value: Int, valueMap: JSDictionary[JSObject], defaultKey: JSAny): JSAny = js.native
-    def getValues(obj: JSObject): JSArrayAny = js.native
+    def getValues(obj: JSObject): IscArray[JSAny] = js.native
     def logEcho(value: JSAny, message: String): void = js.native
     def logEchoAll(value: JSAny, message: String): void = js.native
     def logWarn(message: String, category: String = js.native): void = js.native
@@ -46,7 +48,7 @@ object iscStatic extends JSObject {
     def say(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
     def setAutoDraw(enable: Boolean = js.native): void = js.native
     def setScreenReaderMode(newState: Boolean): void = js.native
-    def shallowClone(obj: JSObject | JSArray[JSObject]): JSObject | JSArray[JSObject] = js.native
+    def shallowClone(obj: JSObject | IscArray[JSObject]): JSObject | IscArray[JSObject] = js.native
     def showFadingPrompt(message: String, duration: Int, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
     def showLoginDialog(loginFunc: js.Function2[JSDictionary[String], js.Function1[Boolean, void], void], properties: LoginDialog = js.native): void = js.native
     def showPrompt(message: String, properties: Dialog = js.native): void = js.native
@@ -59,9 +61,16 @@ object iscStatic extends JSObject {
     val Log: AbstractLogCompanion = js.native
     val Class: AbstractClassCompanion = js.native
     val EventHandler: AbstractEventHandlerCompanion = js.native
+    val EditContext: EditContextCompanion = js.native
     val isA: isAStatic = js.native
+    var captureDefaults: JSUndefined[JSAny] = js.native
+    val ClassFactory: ClassFactoryTrt = js.native
+    val DrawItem: AbstractDrawItemCompanion = js.native
+    val DrawLine: AbstractDrawLineCompanion = js.native
+    val AffineTransform: AbstractAffineTransformCompanion = js.native
 
     def error(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
+    def errorDetail(message: String, detailMessage: String, identifier: ID = js.native, detailIdentifier: ID = js.native): void = js.native
     def info(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
     def ok(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
     def infos(grid: ListGrid, identifier: ID = js.native, callback: Callback = js.native): void = js.native

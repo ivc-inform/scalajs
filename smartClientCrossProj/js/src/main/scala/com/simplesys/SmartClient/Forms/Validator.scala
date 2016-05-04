@@ -5,10 +5,10 @@ import com.simplesys.SmartClient.DataBinding.AdvancedCriteria
 import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.RPC.ServerObject
-import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class}
+import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class, IscArray}
 import com.simplesys.System.Types.ValidatorType.ValidatorType
 import com.simplesys.System.Types.void
-import com.simplesys.System.{JSObject, JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSObject}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -17,7 +17,7 @@ import scala.scalajs.js.|
 trait Validator extends Class {
     def condition(item: DataSourceField | FormItem, validator: Validator, value: JSAny, record: JSObject): Boolean
     val applyWhen: AdvancedCriteria
-    val dependentFields: JSArray[String]
+    val dependentFields: IscArray[String]
     val serverOnly: Boolean
     val precision : JSAny
     val min : JSAny

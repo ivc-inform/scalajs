@@ -2,17 +2,14 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.TextItem
-import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
-import com.simplesys.System.Types.{CSSStyleName, FormItemComponentType, HTMLString}
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
+import com.simplesys.System.Types.{CSSStyleName, FormItemComponentType, HTMLString}
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.System.JSArray
-
-import scala.scalajs.js._
 
 class ComboBoxItemProps extends TextItemProps with PickListProps{
     var addUnknownValues: ScOption[Boolean] = ScNone
@@ -20,7 +17,7 @@ class ComboBoxItemProps extends TextItemProps with PickListProps{
     var autoFetchData: ScOption[Boolean] = ScNone
     var completeOnTab: ScOption[Boolean] = ScNone
     var defaultToFirstOption: ScOption[Boolean] = ScNone
-    var filterFields: ScOption[JSArray[String]] = ScNone
+    var filterFields: ScOption[IscArray[String]] = ScNone
     var filterWithValue: ScOption[Boolean] = ScNone
     var generateExactMatchCriteria: ScOption[Boolean] = ScNone
     var minimumSearchLength: ScOption[Int] = ScNone

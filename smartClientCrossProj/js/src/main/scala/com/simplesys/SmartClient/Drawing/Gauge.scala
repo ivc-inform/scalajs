@@ -2,8 +2,7 @@ package com.simplesys.SmartClient.Drawing
 
 import com.simplesys.SmartClient.Drawing.drawItem.{DrawLabel, DrawSector}
 import com.simplesys.SmartClient.Drawing.gauge.GaugeSector
-import com.simplesys.SmartClient.System.Point
-import com.simplesys.System.JSArray
+import com.simplesys.SmartClient.System.{IscArray, Point}
 import com.simplesys.System.Types.{AutoChild, CSSColor, MultiAutoChild, void}
 
 import scala.scalajs.js
@@ -35,8 +34,8 @@ trait Gauge extends DrawPane {
     val pivotShape: DrawItem with AutoChild
     def reformatLabelContents(): void
     def removeSector(sectorIndex: Int): void
-    val sectorColors: JSArray[CSSColor]
-    val sectors: JSArray[GaugeSector]
+    val sectorColors: IscArray[CSSColor]
+    val sectors: IscArray[GaugeSector]
     val sectorShape: DrawSector with MultiAutoChild
     def setDialRadius(dialRadius: Double): void
     def setDrawnClockwise(drawnClockwise: Boolean): void

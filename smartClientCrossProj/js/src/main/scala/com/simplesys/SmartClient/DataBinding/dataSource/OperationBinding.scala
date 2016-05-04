@@ -2,6 +2,8 @@ package com.simplesys.SmartClient.DataBinding.dataSource
 
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
 import com.simplesys.SmartClient.RPC.ServerObject
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.DSDataFormat.DSDataFormat
 import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.DSProtocol.DSProtocol
@@ -9,8 +11,7 @@ import com.simplesys.System.Types.ExportFormat.ExportFormat
 import com.simplesys.System.Types.RPCTransport.RPCTransport
 import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
 import com.simplesys.System.Types.SQLType.SQLType
-import com.simplesys.System.Types.{XPathExpression, VelocityExpression, URL}
-import com.simplesys.System.{JSObject, JSArray}
+import com.simplesys.System.Types.{URL, VelocityExpression, XPathExpression}
 
 import scala.scalajs.js
 
@@ -23,24 +24,24 @@ trait OperationBinding extends JSObject {
     val callbackParam: String
     val canSyncCache: Boolean
     val creatorOverrides: Boolean
-    val criteria: JSArray[DSRequestModifier]
-    val customCriteriaFields: JSArray[String]
-    val customFields: JSArray[String]
+    val criteria: IscArray[DSRequestModifier]
+    val customCriteriaFields: IscArray[String]
+    val customFields: IscArray[String]
     val customHQL: String
     val customJQL: String
     val customSQL: String
-    val customValueFields: JSArray[String]
+    val customValueFields: IscArray[String]
     val dataFormat: DSDataFormat
     val dataProtocol: DSProtocol
     val dataTransport: RPCTransport
     val dataURL: URL
     val defaultParams: JSObject
-    val excludeCriteriaFields: JSArray[String]
+    val excludeCriteriaFields: IscArray[String]
     val exportAs: ExportFormat
-    val exportFields: JSArray[String]
+    val exportFields: IscArray[String]
     val exportFilename: String
     val exportResults: Boolean
-    val groupBy: JSArray[String]
+    val groupBy: IscArray[String]
     val groupClause: String
     val guestUserId: String
     val invalidateCache: Boolean
@@ -82,7 +83,7 @@ trait OperationBinding extends JSObject {
     val useHttpProxy: Boolean
     val useSpringTransaction: Boolean
     val useSubselectForRowCount: Boolean
-    val values: JSArray[DSRequestModifier]
+    val values: IscArray[DSRequestModifier]
     val valuesClause: String
     val whereClause: String
     val wsOperation: String

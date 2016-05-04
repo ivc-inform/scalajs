@@ -1,16 +1,15 @@
 package com.simplesys.SmartClient.Grids.props
 
 import com.simplesys.SmartClient.DataBinding.DataSource
-import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
+import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
 import com.simplesys.SmartClient.Grids.props.treeGrid.TreeGridFieldProps
-import com.simplesys.SmartClient.Grids.treeGrid.TreeGridField
 import com.simplesys.SmartClient.Layout.props.HLayoutSSProps
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.SelectionStyle.SelectionStyle
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
 import com.simplesys.option.{IntString, ScNone, ScOption}
-import com.simplesys.System.JSArray
 
 class TreeListGridEditorProps extends HLayoutSSProps {
     var widthTree: ScOption[IntString[Int, String]] = ScNone
@@ -25,7 +24,7 @@ class TreeListGridEditorProps extends HLayoutSSProps {
     var showAllChild: ScOption[Boolean] = ScNone
     var selectionTypeTree: ScOption[SelectionStyle] = ScNone
     var selectionTypeList: ScOption[SelectionStyle] = ScNone
-    var getTreeSelection: ScOption[JSArray[ListGridRecord]] = ScNone
+    var getTreeSelection: ScOption[IscArray[ListGridRecord]] = ScNone
     var showTreeFilterEditor: ScOption[Boolean] = ScNone
     var canAcceptDroppedRecordsTree: ScOption[Boolean] = ScNone
     var canAcceptDroppedRecordsList: ScOption[Boolean] = ScNone

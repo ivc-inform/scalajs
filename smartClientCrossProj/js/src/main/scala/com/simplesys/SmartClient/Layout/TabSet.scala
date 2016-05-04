@@ -5,24 +5,24 @@ import com.simplesys.SmartClient.Forms.FormsItems.TextItem
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.TableView
 import com.simplesys.SmartClient.Layout.tabSet.Tab
-import com.simplesys.SmartClient.System.Class
+import com.simplesys.SmartClient.System.{Class, IscArray}
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.Overflow.Overflow
 import com.simplesys.System.Types.Side.Side
 import com.simplesys.System.Types.TabTitleEditEvent.TabTitleEditEvent
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSArray, JSObject}
 
 import scala.scalajs.js
 import scala.scalajs.js.{UndefOr, |}
 
 @js.native
 trait TabSet extends Canvas {
-    def addTabs(tabs: Tab | JSArray[Tab], position: Int): void
+    def addTabs(tabs: Tab | IscArray[Tab], position: Int): void
     var addTabButton: ImgButton with AutoChild
     var animateTabScrolling: Boolean
     var addTabButtonIcon: SCImgURL
-    var addTabs: js.Function2[Tab | JSArray[Tab], Int, _]
+    var addTabs: js.Function2[Tab | IscArray[Tab], Int, _]
     var ariaCloseableSuffix: String
     var bottomEdgeOffsets: EdgeSizes
     var bottomEdgeSizes: EdgeSizes
@@ -34,7 +34,7 @@ trait TabSet extends Canvas {
     var locateTabsBy: String
     def setCanCloseTabs(canCloseTabs: Boolean): void
     var showTabScroller: Boolean
-    var tabs: JSArray[Tab]
+    var tabs: IscArray[Tab]
     var tabsReordered: js.Function0[_]
     var useIOSTabs: Boolean
     var useSimpleTabs: Boolean
@@ -47,7 +47,7 @@ trait TabSet extends Canvas {
     def disableTab(tab: Tab | Int | ID): void
     def editTabTitle(tab: Tab | Int | ID): void
     def enableTab(tab: Tab | Int | ID): void
-    var getPaneContainerEdges: js.Function1[void, JSArray[JSObject]]
+    var getPaneContainerEdges: js.Function1[void, IscArray[JSObject]]
     def getSelectedTab(): Tab
     def getSelectedTabNumber(): Int
     def getTab(tab: Int | ID): Tab
@@ -76,7 +76,7 @@ trait TabSet extends Canvas {
     var pickerButtonVSrc: SCImgURL
     def removeLastTab(): void
     def removeTab(tabs: Tab | ID | Int): void
-    def removeTabs(tabs: Tab | ID | Int | JSArray[Tab]): void
+    def removeTabs(tabs: Tab | ID | Int | IscArray[Tab]): void
     def reorderTab(tab: Tab | ID | Int, moveToPosition: Int = js.native): void
     def revealChild(child: Canvas): void
     var rightEdgeOffsets: EdgeSizes
@@ -108,7 +108,7 @@ trait TabSet extends Canvas {
     var symmetricScroller: Boolean
     val tabBar: TabBar with AutoChild
     var tabBarAlign: Alignment | Side
-    var tabBarControls: JSArray[JSObject]
+    var tabBarControls: IscArray[JSObject]
     var tabBarPosition: Side
     var tabBarProperties: TabBar
     var tabBarThickness: Int

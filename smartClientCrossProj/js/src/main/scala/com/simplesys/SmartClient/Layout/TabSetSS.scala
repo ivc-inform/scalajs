@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Layout.tabSet.Tab
-import com.simplesys.System.JSArray
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.{ID, void}
 
 import scala.scalajs.js
@@ -14,8 +14,8 @@ trait TabSetSS extends TabSet {
     var tabsReorderedSS: js.ThisFunction0[TabSetSS, _]
     var beforeRemoveTabs : js.Function1[Tab, _]
     var afterRemoveTabs : js.Function1[Tab, _]
-    def filter4Visiblity(tabs: JSArray[Tab]): JSArray[Tab]
-    def addTabs(tabs: JSArray[Tab], position: Int = js.native): void
+    def filter4Visiblity(tabs: IscArray[Tab]): IscArray[Tab]
+    def addTabs(tabs: IscArray[Tab], position: Int = js.native): void
     def addTab(tab: Tab, position: Int = js.native): void
     def removeTab(tab: Tab | Int | ID, position: Int = js.native): void
     def removeAllTabs(): void

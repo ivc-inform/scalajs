@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.System.AbstractClassCompanion
+import com.simplesys.SmartClient.System.{AbstractClassCompanion, IscArray}
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.LayoutPolicy.LayoutPolicy
 import com.simplesys.System.Types.LayoutResizeBarPolicy.LayoutResizeBarPolicy
@@ -9,7 +9,6 @@ import com.simplesys.System.Types.LocatorStrategy.LocatorStrategy
 import com.simplesys.System.Types.LocatorTypeStrategy.LocatorTypeStrategy
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types.{AutoChild, MultiAutoChild, void}
-import com.simplesys.System.JSArray
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -17,7 +16,7 @@ import scala.scalajs.js.|
 @js.native
 trait Layout extends Canvas {
     def addMember(newMember: Canvas | String, position: Int = js.native): void
-    def addMembers(newMembers: JSArray[Canvas | String], position: Int = js.native): void
+    def addMembers(newMembers: IscArray[Canvas] | IscArray[String], position: Int = js.native): void
     var align: VerticalAlignment | Alignment
     var animateMembers: Boolean
     var animateMemberTime: Int
@@ -33,8 +32,8 @@ trait Layout extends Canvas {
     def getMemberDefaultBreadth(member: Canvas, defaultBreadth: Int)
     def getMemberNumber(memberID: String | Canvas): Int
     def getMemberOffset(member: Canvas, defaultOffset: Int, alignment: String): void
-    def getMembers(): JSArray[Canvas]
-    def getMemberSizes(): JSArray[Int]
+    def getMembers(): IscArray[Canvas]
+    def getMemberSizes(): IscArray[Int]
     def getMembersLength(): Int
     def hasMember(canvas: Canvas): Boolean
     def hideDropLine(): void
@@ -50,7 +49,7 @@ trait Layout extends Canvas {
     var locateMembersType: LocatorTypeStrategy
     val managePercentBreadth: Boolean
     val memberOverlap: Int
-    val members: JSArray[Canvas | String]
+    val members: IscArray[Canvas | String]
     var membersChanged: js.ThisFunction0[callbackHandler, void]
     var membersMargin: Int
     var minMemberSize: Int
@@ -60,7 +59,7 @@ trait Layout extends Canvas {
     def reflow(reason: String = js.native): void
     def reflowNow(): void
     def removeMember(member: Canvas): void
-    def removeMembers(members: Canvas | JSArray[Canvas]): void
+    def removeMembers(members: Canvas | IscArray[Canvas]): void
     def reorderMember(memberNum: Int, newPosition: Int): void
     def reorderMembers(start: Int, end: Int, newPosition: Int): void
     var resizeBar: Splitbar with MultiAutoChild
@@ -68,7 +67,7 @@ trait Layout extends Canvas {
     var resizeBarSize: Int
     var reverseOrder: Boolean
     def setLayoutMargin(newMargin: Int = js.native): void
-    def setMembers(members: JSArray[Canvas]): void
+    def setMembers(members: IscArray[Canvas]): void
     def setVisibleMember(member: Canvas): void
     var showDragPlaceHolder: Boolean
     var showDropLines: Boolean

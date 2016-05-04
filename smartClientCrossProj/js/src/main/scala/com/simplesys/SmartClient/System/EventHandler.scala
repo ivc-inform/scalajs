@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.Foundation.Canvas
+import com.simplesys.SmartClient.Foundation._
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.{KeyName, SCImgURL, void}
-import com.simplesys.System.{JSArray, JSObject}
 import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js
@@ -17,7 +17,7 @@ abstract trait AbstractEventHandlerCompanion extends AbstractClassCompanion {
     val ALL_EDGES: String = js.native
     def altKeyDown(): Boolean = js.native
     def ctrlKeyDown(): Boolean = js.native
-    def getDragRect(): JSArray[Int] = js.native
+    def getDragRect(): IscArray[Int] = js.native
     def getDragTarget(): Canvas = js.native
     def getKey(): KeyName = js.native
     def getKeyEventCharacter(): String = js.native

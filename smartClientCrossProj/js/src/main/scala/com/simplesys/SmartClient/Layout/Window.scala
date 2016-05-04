@@ -2,19 +2,20 @@ package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Control.ImgButton
 import com.simplesys.SmartClient.Foundation.{Canvas, Img, Label}
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSObject
 import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.System.Types.ContentLayoutPolicy.ContentLayoutPolicy
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSArray}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
 trait Window extends Layout {
-    def addItem(item: Canvas | String): JSArray[Canvas]
-    def addItems(items: JSArray[Canvas | String]): JSArray[Canvas]
+    def addItem(item: Canvas | String): IscArray[Canvas]
+    def addItems(items: IscArray[Canvas] | IscArray[String]): IscArray[Canvas]
     var animateMinimize: Boolean
     var autoCenter: Boolean
     var autoSize: Boolean
@@ -37,11 +38,11 @@ trait Window extends Layout {
     val fillSpaceStyleName: CSSStyleName
     def flash(): void
     val footer: HLayout with AutoChild
-    val footerControls: JSArray[String]
+    val footerControls: IscArray[String]
     val footerHeight: Int
     val header: HLayout with AutoChild
     val headerBackground: Img with AutoChild
-    val headerControls: JSArray[String]
+    val headerControls: IscArray[String]
     val headerIcon: Img with AutoChild
     var headerIconDefaults: JSObject
     val headerLabel: Label with AutoChild
@@ -52,7 +53,7 @@ trait Window extends Layout {
     var hiliteHeaderSrc: SCImgURL
     var hiliteHeaderStyle: CSSStyleName
     var isModal: Boolean
-    val items: JSArray[Canvas | String]
+    val items: IscArray[Canvas | String]
     def maximize(): void
     val maximizeButton: ImgButton with AutoChild
     var maximized: Boolean
@@ -68,8 +69,8 @@ trait Window extends Layout {
     val placement: PanelPlacement
     val printBodyStyle: CSSStyleName
     val printHeaderStyle: CSSStyleName
-    def removeItem(item: Canvas): JSArray[Canvas]
-    def removeItems(items: JSArray[Canvas]): JSArray[Canvas]
+    def removeItem(item: Canvas): IscArray[Canvas]
+    def removeItems(items: IscArray[Canvas]): IscArray[Canvas]
     val resizer: ImgButton with AutoChild
     def restore(): void
     val restoreButton: ImgButton with AutoChild

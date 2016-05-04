@@ -2,6 +2,7 @@ package com.simplesys.SmartClient.DataBinding.dataSource
 
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.Validator
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.FieldImportStrategy.FieldImportStrategy
 import com.simplesys.System.Types.FieldType.FieldType
@@ -12,7 +13,7 @@ import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSAny, JSArray}
+import com.simplesys.System.{JSAny, JSObject}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -121,8 +122,8 @@ trait DataSourceField extends JSObject {
     val updateRequiresAuthentication: Boolean
     val updateRequiresRole: String
     val uploadFieldName: String
-    val validators: JSArray[Validator]
-    val validOperators: JSArray[OperatorId]
+    val validators: IscArray[Validator]
+    val validOperators: IscArray[OperatorId]
     val valueMap: ValueMap
     val valueMapEnum: String
     val valueWriteXPath: XPathExpression

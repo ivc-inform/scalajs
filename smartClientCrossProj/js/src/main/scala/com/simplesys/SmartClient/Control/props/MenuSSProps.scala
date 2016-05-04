@@ -1,19 +1,26 @@
 package com.simplesys.SmartClient.Control.props
 
+import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Control.props.menu.{MenuItemProps, MenuSSItemProps}
 import com.simplesys.SmartClient.Foundation.{Canvas, Img}
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.Grids.props.GridProps
 import com.simplesys.SmartClient.Layout.NavigationBar
-import com.simplesys.System.JSObject
+import com.simplesys.SmartClient.System.{MenuSS, MenuSSItem, isc}
 import com.simplesys.System.Types.PanelPlacement._
 import com.simplesys.System.Types._
+import com.simplesys.System.{JSObject, JSUndefined}
+import com.simplesys.function._
+import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
+import scala.scalajs.js.{Function0, ThisFunction1}
 
 class MenuSSProps extends GridProps[ListGridField, MenuSSItem] {
+    type callbackHandler <: MenuSS
+
     var owner: ScOption[Canvas] = ScNone
     var autoDismiss: ScOption[Boolean] = ScNone
     var autoDismissOnBlur: ScOption[Boolean] = ScNone
@@ -35,6 +42,25 @@ class MenuSSProps extends GridProps[ListGridField, MenuSSItem] {
     var keyFieldDefaults: ScOption[ListGridField] = ScNone
     var keyFieldProperties: ScOption[ListGridField] = ScNone
     var menuButtonWidth: ScOption[Int] = ScNone
+    var merge: ScOption[ThisFunction1[callbackHandler, JSUndefined[MenuSS], MenuSS]] = {
+        (thiz: callbackHandler, menu: JSUndefined[MenuSS]) =>
+
+            if (menu.isDefined) {
+
+                val items = menu.get.items.duplicate()
+                items add MenuSSItem(
+                    new MenuSSItemProps {
+                        isSeparator = true.opt
+                    }
+                )
+                items addArray thiz.items.duplicate()
+                val res = MenuSS.create()
+                res.setData(items)
+                res
+
+            } else
+                thiz
+    }.toThisFunc.opt
     var navigationBar: ScOption[NavigationBar] = ScNone
     var navStack: ScOption[Canvas] = ScNone
     var placement: ScOption[PanelPlacement] = ScNone

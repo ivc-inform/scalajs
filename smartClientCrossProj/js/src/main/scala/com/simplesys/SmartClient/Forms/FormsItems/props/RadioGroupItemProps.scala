@@ -1,14 +1,12 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.FormsItems.radioGroupItem.RadioItem
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.{FormItemComponentType, SCClassName}
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.System.JSArray
-
-import scala.scalajs.js._
 
 class RadioGroupItemProps extends FormItemProps {
-    var disabledValues: ScOption[JSArray[String]] = ScNone
+    var disabledValues: ScOption[IscArray[String]] = ScNone
     var editProxyConstructor: ScOption[SCClassName] = ScNone
     var fillHorizontalSpace: ScOption[Boolean] = ScNone
     var itemProperties: ScOption[RadioItem] = ScNone
