@@ -56,99 +56,97 @@ package object System {
 
     //<editor-fold desc="Control">
     object MenuSS extends SCApply[MenuSS, MenuSSProps]
-    object MenuSSItem extends SCApply4Object[MenuSSItem, MenuSSItemProps]
+//    object MenuSSItem extends SCApply4Object[MenuSSItem, MenuSSItemProps]
     //</editor-fold>
 
     //<editor-fold desc="DataBinding">
-    object DataView extends SCApply[DataView, DataViewProps]
-    object DataSource extends SCApply[DataSource, DataSourceProps]
-    object DataSourceSS extends SCApply[DataSourceSS, DataSourceSSProps]
-    object RestDataSourceSS extends SCApply[RestDataSourceSS, RestDataSourceSSProps]
-    object SimpleType extends SCApply[SimpleType, SimpleTypeProps]
-    object SimpleTile extends SCApply[SimpleTile, SimpleTileProps]
+//    object DataView extends SCApply[DataView, DataViewProps]
+//    object DataSource extends SCApply[DataSource, DataSourceProps]
+//    object DataSourceSS extends SCApply[DataSourceSS, DataSourceSSProps]
+//    object RestDataSourceSS extends SCApply[RestDataSourceSS, RestDataSourceSSProps]
+//    object SimpleType extends SCApply[SimpleType, SimpleTypeProps]
+//    object SimpleTile extends SCApply[SimpleTile, SimpleTileProps]
     //</editor-fold>
 
     //<editor-fold desc="Forms">
-    //    object DynamicForm extends SCApply[DynamicForm, DynamicFormProps]
-    object DynamicFormSS extends SCApply[DynamicFormSS, DynamicFormSSProps]
-    object FilterBuilder extends SCApply[FilterBuilder, FilterBuilderProps]
+//    object DynamicFormSS extends SCApply[DynamicFormSS, DynamicFormSSProps]
+//    object FilterBuilder extends SCApply[FilterBuilder, FilterBuilderProps]
     //</editor-fold>
 
     //<editor-fold desc="FormsItems">
-    object CanvasItem extends SCApply[CanvasItem, CanvasItemProps]
-    object CheckboxItem extends SCApply[CheckboxItem, CheckboxItemProps]
-    object ColorItem extends SCApply[ColorItem, ColorItemProps]
-    object DateItem extends SCApply[DateItem, DateItemProps]
-    object DateTimeItem extends SCApply[DateTimeItem, DateTimeItemProps]
-    object DoubleItem extends SCApply[DoubleItem, DoubleItemProps]
-    object FloatItem extends SCApply[FloatItem, FloatItemProps]
-    object SelectItem extends SCApply[SelectItem, SelectItemProps]
-    object SpinnerItem extends SCApply[SpinnerItem, SpinnerItemProps]
-    object TextAreaItem extends SCApply[TextAreaItem, TextAreaItemProps]
-    object TextItem extends SCApply[TextItem, TextItemProps]
-    object Tab extends SCApply4Object[Tab, TabProps]
+//    object CanvasItem extends SCApply[CanvasItem, CanvasItemProps]
+//    object CheckboxItem extends SCApply[CheckboxItem, CheckboxItemProps]
+//    object ColorItem extends SCApply[ColorItem, ColorItemProps]
+//    object DateItem extends SCApply[DateItem, DateItemProps]
+//    object DateTimeItem extends SCApply[DateTimeItem, DateTimeItemProps]
+//    object DoubleItem extends SCApply[DoubleItem, DoubleItemProps]
+//    object FloatItem extends SCApply[FloatItem, FloatItemProps]
+//    object SelectItem extends SCApply[SelectItem, SelectItemProps]
+//    object SpinnerItem extends SCApply[SpinnerItem, SpinnerItemProps]
+//    object TextAreaItem extends SCApply[TextAreaItem, TextAreaItemProps]
+//    object TextItem extends SCApply[TextItem, TextItemProps]
+//    object Tab extends SCApply4Object[Tab, TabProps]
     //</editor-fold>
 
     //<editor-fold desc="Foundation">
-    object Canvas extends SCApply[Canvas, CanvasProps]
-    object Label extends SCApply[Label, LabelProps]
-    object HTMLFlow extends SCApply[HTMLFlow, HTMLFlowProps]
+//    object Canvas extends SCApply[Canvas, CanvasProps]
+//    object Label extends SCApply[Label, LabelProps]
+//    object HTMLFlow extends SCApply[HTMLFlow, HTMLFlowProps]
     //</editor-fold>
 
     //<editor-fold desc="RPC">
-    object RPCRequest extends SCApply[RPCRequest, RPCRequestProps]
-    object DSRequest extends SCApply[DSRequest, DSRequestProps]
+//    object RPCRequest extends SCApply[RPCRequest, RPCRequestProps]
+//    object DSRequest extends SCApply[DSRequest, DSRequestProps]
     //</editor-fold>
 
     //<editor-fold desc="Grids">
-    object TreeGridEditor extends SCApply[TreeGridEditor, TreeGridEditorProps]
-    object Tree extends SCApply[Tree, TreeProps]
-    object ResultTree extends SCApply[ResultTree, ResultTreeProps]
+//    object TreeGridEditor extends SCApply[TreeGridEditor, TreeGridEditorProps]
+//    object Tree extends SCApply[Tree, TreeProps]
+//    object ResultTree extends SCApply[ResultTree, ResultTreeProps]
     //</editor-fold>
 
     //<editor-fold desc="Layout">
-    object OkCancelPanel extends SCApply[OkCancelPanel, OkCancelPanelProps]
-    object OkPanel extends SCApply[OkPanel, OkPanelProps]
-    object VLayoutSS extends SCApply[VLayoutSS, VLayoutSSProps]
-    object ChainMasterDetail extends SCApply[ChainMasterDetail, ChainMasterDetailProps]
-    object TabSetSS extends SCApply[TabSetSS, TabSetSSProps]
-    object WindowSS extends SCApply[WindowSS, WindowSSProps]
-    object ToolStrip extends SCApply[ToolStrip, ToolStripProps]
-    object ToolStripMenuButton extends SCApply[ToolStripMenuButton, ToolStripMenuButtonProps]
-    object ToolStripSeparator extends SCApply[ToolStripSeparator, ToolStripSeparatorProps]
-    object ToolStripButton extends SCApply[ToolStripButton, ToolStripButtonProps]
-    object SectionStack extends SCApply[SectionStack, SectionStackProps]
-    object SectionStackSS extends SCApply[SectionStackSS, SectionStackSSProps]
+//    object OkCancelPanel extends SCApply[OkCancelPanel, OkCancelPanelProps]
+//    object OkPanel extends SCApply[OkPanel, OkPanelProps]
+//    object VLayoutSS extends SCApply[VLayoutSS, VLayoutSSProps]
+//    object ChainMasterDetail extends SCApply[ChainMasterDetail, ChainMasterDetailProps]
+//    object TabSetSS extends SCApply[TabSetSS, TabSetSSProps]
+//    object WindowSS extends SCApply[WindowSS, WindowSSProps]
+//    object ToolStrip extends SCApply[ToolStrip, ToolStripProps]
+//    object ToolStripMenuButton extends SCApply[ToolStripMenuButton, ToolStripMenuButtonProps]
+//    object ToolStripSeparator extends SCApply[ToolStripSeparator, ToolStripSeparatorProps]
+//    object ToolStripButton extends SCApply[ToolStripButton, ToolStripButtonProps]
+//    object SectionStack extends SCApply[SectionStack, SectionStackProps]
+//    object SectionStackSS extends SCApply[SectionStackSS, SectionStackSSProps]
     //</editor-fold>
 
     //<editor-fold desc="drawing">
-    object DrawPane extends SCApply[DrawPane, DrawPaneProps]
-    object EditProxy extends SCApply[EditProxy, EditProxyProps]
-    object DrawPaneEditProxy extends SCApply[DrawPaneEditProxy, DrawPaneEditProxyProps]
-    object EditContext extends SCApply[EditContext, EditContextProps]
-    object PaletteNode extends SCApply4Object[PaletteNode, PaletteNodeProps]
+//    object DrawPane extends SCApply[DrawPane, DrawPaneProps]
+//    object EditProxy extends SCApply[EditProxy, EditProxyProps]
+//    object DrawPaneEditProxy extends SCApply[DrawPaneEditProxy, DrawPaneEditProxyProps]
+//    object EditContext extends SCApply[EditContext, EditContextProps]
+//    object PaletteNode extends SCApply4Object[PaletteNode, PaletteNodeProps]
 
     //<editor-fold desc="gradient">
-    object SimpleGradient extends SCApply4Object[SimpleGradient, SimpleGradientProps]
+//    object SimpleGradient extends SCApply4Object[SimpleGradient, SimpleGradientProps]
     //</editor-fold>
 
     //<editor-fold desc="Palette">
-    object TilePalette extends SCApply[TilePalette, TilePaletteProps]
+//    object TilePalette extends SCApply[TilePalette, TilePaletteProps]
     //</editor-fold>
 
     //<editor-fold desc="DrawItem">
-    object DrawLine extends SCApply[DrawLine, DrawLineProps]
-    object DrawRect extends SCApply[DrawRect, DrawRectProps]
-    object DrawOval extends SCApply[DrawOval, DrawOvalProps]
-    object DrawLabel extends SCApply[DrawLabel, DrawLabelProps]
-    object DrawCurve extends SCApply[DrawCurve, DrawCurveProps]
-    object DrawLinePath extends SCApply[DrawLinePath, DrawLinePathProps]
+//    object DrawLine extends SCApply[DrawLine, DrawLineProps]
+//    object DrawRect extends SCApply[DrawRect, DrawRectProps]
+//    object DrawOval extends SCApply[DrawOval, DrawOvalProps]
+//    object DrawLabel extends SCApply[DrawLabel, DrawLabelProps]
+//    object DrawCurve extends SCApply[DrawCurve, DrawCurveProps]
+//    object DrawLinePath extends SCApply[DrawLinePath, DrawLinePathProps]
     object DrawLinePathSS extends SCApply[DrawLinePathSS, DrawLinePathSSProps]
-    object DrawKnob extends SCApply[DrawKnob, DrawKnobProps]
-    object Shadow extends SCApply4Object[Shadow, ShadowProps]
+//    object DrawKnob extends SCApply[DrawKnob, DrawKnobProps]
+//    object Shadow extends SCApply4Object[Shadow, ShadowProps]
 
     //</editor-fold>
     //</editor-fold>
-
 }
 
