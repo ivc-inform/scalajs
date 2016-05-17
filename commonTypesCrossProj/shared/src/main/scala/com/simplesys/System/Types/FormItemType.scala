@@ -63,5 +63,8 @@ object FormItemComponentType extends Enumeration {
     TimeItem,
     ToolbarItem,
     UploadItem,
+    ComboboxItemWithButtons,
+    ComboboxItemWithButton,
+    ComboboxItemWithClearButton,
     ViewFileItem = Value
 }
