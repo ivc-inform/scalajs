@@ -61,6 +61,7 @@ object FormItemComponentType extends Enumeration {
     TextAreaItem,
     TextItem,
     TimeItem,
+    TimerItem,
     ToolbarItem,
     UploadItem,
     ComboboxItemWithButtons,
