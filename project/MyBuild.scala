@@ -16,13 +16,13 @@ object MyBuild extends Build with
   UnderscoreJSCrossProj {
 
     override def settings: Seq[Def.Setting[_]] = super.settings ++ Seq(
-        scalaVersion := CommonSettings.scalaVersion,
-        scalacOptions := CommonSettings.scalacOptions,
-        organization := CommonSettings.organization,
+        scalaVersion := CommonSettings.settingValues.scalaVersion,
+        scalacOptions := CommonSettings.settingValues.scalacOptions,
+        organization := CommonSettings.settingValues.organization,
 
-        git.baseVersion := CommonSettings.baseVersion,
-        scalaVersion := CommonSettings.scalaVersion,
-        crossScalaVersions := CommonSettings.crossScalaVersions,
+        git.baseVersion := CommonSettings.settingValues.baseVersion,
+        scalaVersion := CommonSettings.settingValues.scalaVersion,
+        crossScalaVersions := CommonSettings.settingValues.crossScalaVersions,
 
         publishTo <<= version { (v: String) =>
             val corporateRepo = "http://toucan.simplesys.lan/"
