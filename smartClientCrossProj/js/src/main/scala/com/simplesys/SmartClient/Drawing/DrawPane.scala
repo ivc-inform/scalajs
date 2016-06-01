@@ -26,7 +26,7 @@ trait DrawPane extends Canvas {
     def destroyItems(): void
     val drawingHeight: Double
     val drawingWidth: Double
-    val drawItems: IscArray[DrawItem]
+    var drawItems: IscArray[DrawItem]
     def erase(): void
     def getDataURL(callback: DataURLCallback = js.native): String
     def getDrawingPoint(): Point

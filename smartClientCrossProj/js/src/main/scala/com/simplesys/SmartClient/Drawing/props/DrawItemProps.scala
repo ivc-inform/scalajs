@@ -385,7 +385,6 @@ class DrawItemProps extends ClassProps {
         val center = parentDrawItem.getCenter()
         val centerX = center.getX().getOrElse(0.0)
         val centerY = center.getY().getOrElse(0.0)
-        println("moved")
 
         drawItems foreach {
             item =>

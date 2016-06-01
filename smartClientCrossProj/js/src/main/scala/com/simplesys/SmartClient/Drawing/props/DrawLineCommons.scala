@@ -50,6 +50,26 @@ trait DrawItemCommons {
         }
     }
 
+    protected def changeZ(line: DrawItem, figArea: DrawItem): Unit = {
+        line.drawPane.foreach {
+            drawPane =>
+                val indexOfLine = drawPane.drawItems.indexOf(obj = line, comparator = (item1: DrawItem, item2: DrawItem) => item1.ID == item2.ID)
+                val indexOfFigArea = drawPane.drawItems.indexOf(obj = figArea, comparator = (item1: DrawItem, item2: DrawItem) => item1.ID == item2.ID)
+
+                if (indexOfFigArea > indexOfLine) {
+                    val lineItem = drawPane.drawItems(indexOfLine)
+                    drawPane.drawItems(indexOfLine) = drawPane.drawItems(indexOfFigArea)
+                    drawPane.drawItems(indexOfFigArea) = lineItem
+                    drawPane.refreshNow()
+                }
+        }
+    }
+
+    def changeZ(line: DrawItem): Unit = {
+       line.sourceConnect.foreach(changeZ(line, _))
+       line.targetConnect.foreach(changeZ(line, _))
+    }
+
     def removeInDrawItem(drawItem: DrawItem): Unit = {
         removeListRefItemsItem(drawItem)
         drawItem.targetConnect foreach {
@@ -136,6 +156,9 @@ trait DrawLineCommons extends DrawItemCommons {
                                             drawItem.startTop2CentrTop = centerY - drawItem.startTop
 
                                             drawItem.sourceConnect = item
+
+                                            changeZ(drawItem, item)
+
                                             drawItem.canDrag = false
                                             if (item.outConnectedItems.isEmpty)
                                                 item.outConnectedItems = IscArray[DrawItem]()
@@ -175,6 +198,9 @@ trait DrawLineCommons extends DrawItemCommons {
                                             drawItem.endTop2CentrTop = centerY - drawItem.endTop
 
                                             drawItem.targetConnect = item
+
+                                            changeZ(drawItem, item)
+
                                             drawItem.canDrag = false
                                             if (item.inConnectedItems.isEmpty)
                                                 item.inConnectedItems = IscArray[DrawItem]()
@@ -249,10 +275,10 @@ trait DrawLineCommons extends DrawItemCommons {
         (thiz: DrawLine) =>
             thiz._startKnob.foreach {
                 knob =>
-//                    if (thiz.sourceConnect.isEmpty) {
-                        knob.markForDestroy()
-                        thiz._startKnob = jSUndefined
-//                    }
+                    //                    if (thiz.sourceConnect.isEmpty) {
+                    knob.markForDestroy()
+                    thiz._startKnob = jSUndefined
+                //                    }
             }
     }.toThisFunc.opt
 
@@ -291,10 +317,10 @@ trait DrawLineCommons extends DrawItemCommons {
         (thiz: DrawLine) =>
             thiz._endKnob.foreach {
                 knob =>
-//                    if (thiz.targetConnect.isEmpty) {
-                        knob.markForDestroy()
-                        thiz._endKnob = jSUndefined
-//                    }
+                    //                    if (thiz.targetConnect.isEmpty) {
+                    knob.markForDestroy()
+                    thiz._endKnob = jSUndefined
+                //                    }
             }
     }.toThisFunc.opt
 }
