@@ -1,0 +1,6 @@
+name := "SimpleSys"
+
+publish := ()
+
+publishLocal := ()
+
