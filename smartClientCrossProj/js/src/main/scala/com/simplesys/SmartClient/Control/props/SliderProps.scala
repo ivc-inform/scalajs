@@ -1,14 +1,21 @@
 package com.simplesys.SmartClient.Control.props
 
+import com.simplesys.SmartClient.Control.Slider
+import com.simplesys.SmartClient.Drawing.DrawPane
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
-import com.simplesys.System.Types.{void, CSSStyleName}
+import com.simplesys.SmartClient.System.Class
+import com.simplesys.System.JSUndefined
+import com.simplesys.System.Types.{CSSStyleName, void}
 import com.simplesys.System.Types.ImageStyle.ImageStyle
-import com.simplesys.option.{ScOption, ScNone}
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
+import scala.scalajs.js.{ThisFunction1, ThisFunction2}
 
 class SliderProps extends CanvasProps {
+    type classHandler <: Slider
+
     var animateThumb: ScOption[Boolean] = ScNone
     var animateThumbInit: ScOption[Boolean] = ScNone
     var animateThumbTime: ScOption[Int] = ScNone
@@ -40,10 +47,11 @@ class SliderProps extends CanvasProps {
     var trackSrc: ScOption[String] = ScNone
     var trackWidth: ScOption[Int] = ScNone
     var value: ScOption[Double] = ScNone
-    var valueChanged: ScOption[js.Function1[Double, _]] = ScNone
+    var valueChanged: ScOption[ThisFunction1[classHandler, Double, _]] = ScNone
     var valueIsChanging: ScOption[js.Function1[void, Boolean]] = ScNone
     var vertical: ScOption[Boolean] = ScNone
     var vThumbStyle: ScOption[CSSStyleName] = ScNone
     var vTrackStyle: ScOption[CSSStyleName] = ScNone
+    var drawPane : ScOption[JSUndefined[DrawPane]] = ScNone
 
 }

@@ -7,7 +7,7 @@ import com.simplesys.option.{ScNone, ScOption}
 import scala.scalajs.js
 
 class TabSetSSProps extends TabSetProps {
-    type callbackHandler <: TabSetSS
+    type classHandler <: TabSetSS
 
-    var tabsReordered: ScOption[js.ThisFunction0[callbackHandler, _]] = ScNone
+    var tabsReordered: ScOption[js.ThisFunction0[classHandler, _]] = ScNone
 }

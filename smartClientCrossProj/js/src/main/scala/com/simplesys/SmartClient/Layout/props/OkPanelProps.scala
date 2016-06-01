@@ -11,8 +11,8 @@ import com.simplesys.option.{ScNone, ScOption}
 import scala.scalajs.js
 
 class OkPanelProps extends HPanelSSProps {
-    type callbackHandler <: OkPanel
-    var okFunction: ScOption[js.Function1[callbackHandler, _]] = ScNone
+    type classHandler <: OkPanel
+    var okFunction: ScOption[js.Function1[classHandler, _]] = ScNone
     var okCaption: ScOption[String] = ScNone
     var ownerDestroy: ScOption[Boolean] = ScNone
     var ownerHide: ScOption[Boolean] = ScNone

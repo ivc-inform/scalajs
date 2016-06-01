@@ -5,7 +5,21 @@ import com.simplesys.System.Types.void
 import com.simplesys.System._
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
+import scala.scalajs.js.|
+
+@ScalaJSDefined
+trait Rect extends JSObject {
+    val left: Double
+    val top: Double
+    val width: Double
+    val height: Double
+}
+
+@ScalaJSDefined
+trait Rect1 extends Rect {
+    val success: Boolean
+}
 
 @js.native
 @JSName("Array")
@@ -16,6 +30,8 @@ trait IscArray[A] extends IscList[A] {
     def containsProperty(property: String, value: JSObject = js.native): Boolean
     def getUniqueItems(): IscArray[JSObject]
     def makeIndex(property: String, alwaysMakeArray: Boolean): JSObject
+    @JSName("addList")
+    def addArray(list: IscArray[A] | js.Array[A], listStartRow: Int = js.native, listEndRow: Int = js.native): IscArray[A] = js.native
     @JSName("map")
     def mapArray(method: js.Function1[_, _], arguments: JSObject*): IscArray[JSObject]
     def max(start: Int = js.native, end: Int = js.native): Int
@@ -30,8 +46,12 @@ trait IscArray[A] extends IscList[A] {
     def setX(x: A): A
     def getY(): JSUndefined[A]
     def setY(y: A): A
-    @JSName("addList")
-    def addArray (x: IscArray[A]): this.type
+    def getAppex(): IscArray[JSUndefined[Point]]
+    def getBoundingBox(): IscArray[JSUndefined[Point]]
+    def getRect(): Rect
+    def getRect1(): Rect
+    def Exists(index: Int): Boolean
+    def notExists(index: Int): Boolean
 }
 
 @js.native

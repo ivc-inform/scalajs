@@ -21,6 +21,6 @@ class ImgSectionHeaderProps extends HLayoutProps {
     var iconWidth: ScOption[Int] = ScNone
     var showClippedTitleOnHover: ScOption[Boolean] = ScNone
     var title: ScOption[HTMLString] = ScNone
-    var titleClipped: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
-    var titleHover: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
+    var titleClipped: ScOption[js.ThisFunction0[classHandler, Boolean]] = ScNone
+    var titleHover: ScOption[js.ThisFunction0[classHandler, Boolean]] = ScNone
 }

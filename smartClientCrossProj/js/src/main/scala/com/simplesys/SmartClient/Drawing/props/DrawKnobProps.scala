@@ -8,15 +8,15 @@ import com.simplesys.option.{ScNone, ScOption}
 import scala.scalajs.js.{ThisFunction0, ThisFunction5}
 
 class DrawKnobProps extends CanvasProps {
-    type callbackHandler <: DrawKnob
+    type classHandler <: DrawKnob
 
     var drawPane: ScOption[DrawPane] = ScNone
     var knobShape: ScOption[DrawItem] = ScNone
     var knobShapeDefaults: ScOption[DrawItem] = ScNone
-    var resetKnobPosition: ScOption[ThisFunction0[callbackHandler, _]] = ScNone
-    var updatePoints: ScOption[ThisFunction5[callbackHandler, Int, Int, Int, Int, String, _]] = ScNone
-    var x: ScOption[Int] = ScNone
-    var y: ScOption[Int] = ScNone
+    var resetKnobPosition: ScOption[ThisFunction0[classHandler, _]] = ScNone
+    var updatePoints: ScOption[ThisFunction5[classHandler, Double, Double, Double, Double, String, _]] = ScNone
+    var x: ScOption[Double] = ScNone
+    var y: ScOption[Double] = ScNone
 
     _constructor = "DrawKnob".opt
 }

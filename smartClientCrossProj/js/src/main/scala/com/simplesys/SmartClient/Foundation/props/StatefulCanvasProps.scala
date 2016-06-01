@@ -10,7 +10,7 @@ import com.simplesys.System.Types.VerticalAlignment._
 import com.simplesys.System.Types._
 
 class StatefulCanvasProps extends CanvasProps {
-    type callbackHandler <: StatefulCanvas
+    type classHandler <: StatefulCanvas
 
     var actionType: ScOption[SelectionType] = ScNone
     var align: ScOption[Alignment] = ScNone

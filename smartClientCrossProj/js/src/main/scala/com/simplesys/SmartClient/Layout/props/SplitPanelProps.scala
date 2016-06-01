@@ -24,18 +24,18 @@ class SplitPanelProps extends LayoutProps {
     var detailToolButtons: ScOption[Seq[Canvas]] = ScNone
     var detailToolStrip: ScOption[NavigationBar] = ScNone
     var deviceMode: ScOption[DeviceMode] = ScNone
-    var downClick: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone
+    var downClick: ScOption[js.ThisFunction0[classHandler, void]] = ScNone
     var leftButton: ScOption[NavigationButton] = ScNone
     var listPane: ScOption[Canvas] = ScNone
     var listPaneTitleTemplate: ScOption[HTMLString] = ScNone
     var listTitle: ScOption[HTMLString] = ScNone
     var listToolStrip: ScOption[NavigationButton] = ScNone
     var navigationBar: ScOption[NavigationBar] = ScNone
-    var navigationClick: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone
+    var navigationClick: ScOption[js.ThisFunction0[classHandler, void]] = ScNone
     var navigationPane: ScOption[Canvas] = ScNone
     var navigationTitle: ScOption[HTMLString] = ScNone
     var pageOrientation: ScOption[PageOrientation] = ScNone
-    var paneChanged: ScOption[js.ThisFunction1[callbackHandler, CurrentPane, void]] = ScNone
+    var paneChanged: ScOption[js.ThisFunction1[classHandler, CurrentPane, void]] = ScNone
     var showDetailToolStrip: ScOption[Boolean] = ScNone
     var showLeftButton: ScOption[Boolean] = ScNone
     var showListToolStrip: ScOption[Boolean] = ScNone
@@ -43,5 +43,5 @@ class SplitPanelProps extends LayoutProps {
     var showNavigationBar: ScOption[Boolean] = ScNone
     var showResizeBars: ScOption[Boolean] = ScNone
     var showRightButton: ScOption[Boolean] = ScNone
-    var upClick: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone
+    var upClick: ScOption[js.ThisFunction0[classHandler, void]] = ScNone
 }

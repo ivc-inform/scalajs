@@ -1,14 +1,17 @@
 package com.simplesys.SmartClient.Control
 
+import com.simplesys.SmartClient.Drawing.DrawPane
 import com.simplesys.SmartClient.Foundation.{AbstractCanvasCompanion, Canvas}
+import com.simplesys.System.JSUndefined
 import com.simplesys.System.Types.ImageStyle.ImageStyle
-import com.simplesys.System.Types.{void, CSSStyleName}
+import com.simplesys.System.Types.{CSSStyleName, void}
 
 import scala.scalajs.js
 import scala.scalajs.js.|
 
 @js.native
 trait Slider extends Canvas {
+    var drawPane: JSUndefined[DrawPane]
     var animateThumb: Boolean
     var animateThumbInit: Boolean
     var animateThumbTime: Int
@@ -49,7 +52,7 @@ trait Slider extends Canvas {
     def setTrackImageType(newType: String): void
     def setTrackSrc(newSrc: String): void
     def setTrackWidth(newWidth: Int): void
-    def setValue(newValue: Double, noAnimation: Boolean): void
+    def setValue(newValue: Double, noAnimation: Boolean = js.native): void
     def setVertical(isVertical: Boolean): void
     var showRange: Boolean
     var showTitle: Boolean

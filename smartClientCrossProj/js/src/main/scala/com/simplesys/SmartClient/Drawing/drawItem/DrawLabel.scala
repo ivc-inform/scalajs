@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Drawing.drawItem
 
 import com.simplesys.SmartClient.Drawing.{AbstractDrawItemCompanion, DrawItem}
-import com.simplesys.System.Types.{CSSColor, void}
+import com.simplesys.System.Types.void
 
 import scala.scalajs.js
 
@@ -10,13 +10,16 @@ trait DrawLabel extends DrawItem {
     val alignment: String
     var contents: String
     val fontFamily: String
-    var fontSize:Int
+    var fontSize: Int
     val fontStyle: String
     val fontWeight: String
     val left: Int
-    def setContents (contents: String): void
-    def setFontSize (size: Int): void
+    def setContents(contents: String, fromUpdateTitleLabelAndBackground: Boolean = js.native): void
+    def setFontSize(size: Int): void
+    def setRect(left: Double, top: Double, width: Double, height: Double): void
     val top: Int
+    val width: Int
+    val height: Int
 }
 
 @js.native
@@ -28,5 +31,3 @@ abstract trait AbstractDrawLabelCompanion extends AbstractDrawItemCompanion {
     var defaultSerifFont: String = js.native
 }
 
-@js.native
-object DrawLabel extends AbstractDrawLabelCompanion

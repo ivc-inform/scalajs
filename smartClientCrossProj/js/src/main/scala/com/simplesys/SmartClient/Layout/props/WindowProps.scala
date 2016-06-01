@@ -13,7 +13,7 @@ import com.simplesys.option.{ScNone, ScOption}
 import scala.scalajs.js
 
 class WindowProps extends LayoutProps {
-    type callbackHandler <: Window
+    type classHandler <: Window
 
     var animateMinimize: ScOption[Boolean] = ScNone
     var autoCenter: ScOption[Boolean] = ScNone
@@ -26,7 +26,7 @@ class WindowProps extends LayoutProps {
     var bringToFrontOnMouseUp: ScOption[Boolean] = ScNone
     var canFocusInHeaderButtons: ScOption[Boolean] = ScNone
     var closeButton: ScOption[ImgButton] = ScNone
-    var closeClick: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
+    var closeClick: ScOption[js.ThisFunction0[classHandler, Boolean]] = ScNone
     var contentLayout: ScOption[ContentLayoutPolicy] = ScNone
     var contentsType: ScOption[String] = ScNone
     var defaultMinimizeHeight: ScOption[Int] = ScNone

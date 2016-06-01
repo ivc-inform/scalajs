@@ -5,5 +5,5 @@ import com.simplesys.SmartClient.Tools.palette.MenuPalette
 import com.simplesys.SmartClient.Tools.props.PaletteProps
 
 class MenuPaletteProps extends MenuProps with PaletteProps {
-    type callbackHandler <: MenuPalette
+    type classHandler <: MenuPalette
 }

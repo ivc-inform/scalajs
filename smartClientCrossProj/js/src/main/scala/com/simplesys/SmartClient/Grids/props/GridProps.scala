@@ -104,7 +104,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var baseStyle: ScOption[CSSStyleName] = ScNone
     var body: ScOption[GridRenderer with MultiAutoChild] = ScNone
     var bodyBackgroundColor: ScOption[String] = ScNone
-    var bodyKeyPress: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
+    var bodyKeyPress: ScOption[js.ThisFunction0[classHandler, Boolean]] = ScNone
     var bodyOverflow: ScOption[Overflow] = ScNone
     var bodyStyleName: ScOption[CSSStyleName] = ScNone
     var booleanBaseStyle: ScOption[CSSStyleName] = ScNone
@@ -179,8 +179,8 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var confirmCancelEditing: ScOption[Boolean] = ScNone
     var confirmDiscardEdits: ScOption[Boolean] = ScNone
     var confirmDiscardEditsMessage: ScOption[String] = ScNone
-    var createRecordComponent: ScOption[js.ThisFunction2[callbackHandler, R, Int, Canvas]] = ScNone
-    var dataArrived: ScOption[js.ThisFunction2[callbackHandler, Int, Int, void]] = ScNone
+    var createRecordComponent: ScOption[js.ThisFunction2[classHandler, R, Int, Canvas]] = ScNone
+    var dataArrived: ScOption[js.ThisFunction2[classHandler, Int, Int, void]] = ScNone
     var dataProperties: ScOption[ResultSet] = ScNone
     var dateFormatter: ScOption[DateDisplayFormat] = ScNone
     var dateInputFormat: ScOption[DateInputFormat] = ScNone
@@ -193,17 +193,17 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var dragTrackerMode: ScOption[DragTrackerMode] = ScNone
     var drawAheadRatio: ScOption[Double] = ScNone
     var drawAllMaxCells: ScOption[Int] = ScNone
-    var drawAreaChanged: ScOption[js.ThisFunction4[callbackHandler, Int, Int, Int, Int, void]] = ScNone
+    var drawAreaChanged: ScOption[js.ThisFunction4[classHandler, Int, Int, Int, Int, void]] = ScNone
     var editByCell: ScOption[Boolean] = ScNone
-    var editComplete: ScOption[js.ThisFunction6[callbackHandler, Int, Int, Record, Record, EditCompletionEvent, DSResponse, void]] = ScNone
+    var editComplete: ScOption[js.ThisFunction6[classHandler, Int, Int, Record, Record, EditCompletionEvent, DSResponse, void]] = ScNone
     var editEvent: ScOption[ListGridEditEvent] = ScNone
-    var editFailed: ScOption[js.ThisFunction6[callbackHandler, Int, Int, Record, Record, EditCompletionEvent, DSResponse, void]] = ScNone
+    var editFailed: ScOption[js.ThisFunction6[classHandler, Int, Int, Record, Record, EditCompletionEvent, DSResponse, void]] = ScNone
     var editFailedBaseStyle: ScOption[CSSStyleName] = ScNone
     var editFailedCSSText: ScOption[String] = ScNone
     var editOnF2Keypress: ScOption[Boolean] = ScNone
     var editOnFocus: ScOption[Boolean] = ScNone
-    var editorEnter: ScOption[js.ThisFunction4[callbackHandler, R, JSAny, Int, Int, void]] = ScNone
-    var editorExit: ScOption[js.ThisFunction5[callbackHandler, EditCompletionEvent, R, JSAny, Int, Int, Boolean]] = ScNone
+    var editorEnter: ScOption[js.ThisFunction4[classHandler, R, JSAny, Int, Int, void]] = ScNone
+    var editorExit: ScOption[js.ThisFunction5[classHandler, EditCompletionEvent, R, JSAny, Int, Int, Boolean]] = ScNone
     var editPendingBaseStyle: ScOption[CSSStyleName] = ScNone
     var editPendingCSSText: ScOption[String] = ScNone
     var emptyCellValue: ScOption[HTMLString] = ScNone
@@ -256,13 +256,13 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var filterEditor: ScOption[RecordEditor] = ScNone
     var filterEditorHeight: ScOption[Int] = ScNone
     var filterEditorProperties: ScOption[RecordEditor] = ScNone
-    var filterEditorSubmit: ScOption[js.ThisFunction1[callbackHandler, Criteria, Boolean]] = ScNone
+    var filterEditorSubmit: ScOption[js.ThisFunction1[classHandler, Criteria, Boolean]] = ScNone
     var filterLocalData: ScOption[Boolean] = ScNone
     var filterOnKeypress: ScOption[Boolean] = ScNone
     var fixedFieldWidths: ScOption[Boolean] = ScNone
     var fixedRecordHeights: ScOption[Boolean] = ScNone
-    var formatCellValue: ScOption[js.ThisFunction3[callbackHandler, R, Int, Int, HTMLString]] = ScNone
-    var formatEditorValue: ScOption[js.ThisFunction3[callbackHandler, R, Int, Int, JSAny]] = ScNone
+    var formatCellValue: ScOption[js.ThisFunction3[classHandler, R, Int, Int, HTMLString]] = ScNone
+    var formatEditorValue: ScOption[js.ThisFunction3[classHandler, R, Int, Int, JSAny]] = ScNone
     var formulaBuilderSpanTitleSeparator: ScOption[String] = ScNone
     var freezeFieldText: ScOption[HTMLString] = ScNone
     var freezeOnLeftText: ScOption[String] = ScNone
@@ -274,11 +274,11 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var generateClickOnSpace: ScOption[Boolean] = ScNone
     var generateDoubleClickOnEnter: ScOption[Boolean] = ScNone
     var generateDoubleClickOnSpace: ScOption[Boolean] = ScNone
-    var getBaseStyle: ScOption[js.ThisFunction3[callbackHandler, R, Int, Int, CSSStyleName]] = ScNone
-    var getCellHoverComponent: ScOption[js.ThisFunction3[callbackHandler, R, Int, Int, Canvas]] = ScNone
-    var getCellRecord: ScOption[js.ThisFunction1[callbackHandler, Int, R]] = ScNone
-    var getCellStyle: ScOption[js.ThisFunction3[callbackHandler, R, Int, Int, CSSStyleName]] = ScNone
-    var getCellValue: ScOption[js.ThisFunction3[callbackHandler, R, Int, Int, String]] = ScNone
+    var getBaseStyle: ScOption[js.ThisFunction3[classHandler, R, Int, Int, CSSStyleName]] = ScNone
+    var getCellHoverComponent: ScOption[js.ThisFunction3[classHandler, R, Int, Int, Canvas]] = ScNone
+    var getCellRecord: ScOption[js.ThisFunction1[classHandler, Int, R]] = ScNone
+    var getCellStyle: ScOption[js.ThisFunction3[classHandler, R, Int, Int, CSSStyleName]] = ScNone
+    var getCellValue: ScOption[js.ThisFunction3[classHandler, R, Int, Int, String]] = ScNone
     var getEditorProperties: ScOption[js.Function3[T, R, Int, JSObject]] = ScNone
     var getDragData: ScOption[js.Function1[DataBoundComponent, IscArray[R]]] = ScNone
     var getRowHeight: ScOption[js.Function2[Int, Int, Int]] = ScNone
@@ -300,7 +300,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var groupSortDirection: ScOption[SortDirection] = ScNone
     var groupStartOpen: ScOption[Seq[GroupStartOpen]] = ScNone
     var groupState: ScOption[ListGridGroupState] = ScNone
-    var groupStateChanged: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone
+    var groupStateChanged: ScOption[js.ThisFunction0[classHandler, void]] = ScNone
     var groupSummaryRecordProperty: ScOption[String] = ScNone
     var groupSummaryStyle: ScOption[CSSStyleName] = ScNone
     var groupTitleColumnDefaults: ScOption[T] = ScNone
@@ -347,7 +347,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var hiliteHTMLAfterFormat: ScOption[Boolean] = ScNone
     var hiliteReplaceValueFieldTitle: ScOption[String] = ScNone
     var hiliteRowOnFocus: ScOption[Boolean] = ScNone
-    var hilitesChanged: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone
+    var hilitesChanged: ScOption[js.ThisFunction0[classHandler, void]] = ScNone
     var hoverMode: ScOption[HoverMode] = ScNone
     var iconPadding: ScOption[Int] = ScNone
     var imageSize: ScOption[Int] = ScNone
@@ -397,13 +397,13 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var recordBaseStyleProperty: ScOption[String] = ScNone
     var recordCanRemoveProperty: ScOption[String] = ScNone
     var recordCanSelectProperty: ScOption[String] = ScNone
-    var recordClick: ScOption[js.ThisFunction7[callbackHandler, Grid[T, R], R, Int, T, Int, JSAny, JSAny, Boolean]] = ScNone
+    var recordClick: ScOption[js.ThisFunction7[classHandler, Grid[T, R], R, Int, T, Int, JSAny, JSAny, Boolean]] = ScNone
     var recordComponentHeight: ScOption[Int] = ScNone
     var recordComponentPoolingMode: ScOption[RecordComponentPoolingMode] = ScNone
     var recordComponentPosition: ScOption[EmbeddedPosition] = ScNone
     var recordCustomStyleProperty: ScOption[String] = ScNone
     var recordDetailDSProperty: ScOption[String] = ScNone
-    var recordDoubleClick: ScOption[js.ThisFunction7[callbackHandler, Grid[T, R], R, Int, T, Int, JSAny, JSAny, Boolean]] = ScNone
+    var recordDoubleClick: ScOption[js.ThisFunction7[classHandler, Grid[T, R], R, Int, T, Int, JSAny, JSAny, Boolean]] = ScNone
     var recordDropAppearance: ScOption[RecordDropAppearance] = ScNone
     var recordEditProperty: ScOption[String] = ScNone
     var recordEnabledProperty: ScOption[String] = ScNone
@@ -414,7 +414,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var removeFieldTitle: ScOption[String] = ScNone
     var removeIcon: ScOption[SCImgURL] = ScNone
     var removeIconSize: ScOption[Int] = ScNone
-    var removeRecordClick: ScOption[js.ThisFunction1[callbackHandler, Int, void]] = ScNone
+    var removeRecordClick: ScOption[js.ThisFunction1[classHandler, Int, void]] = ScNone
     var reselectOnUpdate: ScOption[Boolean] = ScNone
     var reselectOnUpdateNotifications: ScOption[SelectionNotificationType] = ScNone
     var resizeFieldsInRealTime: ScOption[Boolean] = ScNone
@@ -503,9 +503,9 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var sortDirection: ScOption[SortDirection] = ScNone
     var sortEditorSpanTitleSeparator: ScOption[String] = ScNone
     var sorterButtonTitle: ScOption[String] = ScNone
-    var sorterClick: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
+    var sorterClick: ScOption[js.ThisFunction0[classHandler, Boolean]] = ScNone
     var sorterConstructor: ScOption[Class] = ScNone
-    var sorterContextClick: ScOption[js.ThisFunction0[callbackHandler, Boolean]] = ScNone
+    var sorterContextClick: ScOption[js.ThisFunction0[classHandler, Boolean]] = ScNone
     var sorterDefaults: ScOption[JSObject] = ScNone
     var sorterProperties: ScOption[Button] = ScNone
     var sortField: ScOption[String] = ScNone
@@ -515,7 +515,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var sortNumeralStyle: ScOption[CSSStyleName] = ScNone
     var sortState: ScOption[ListGridSortState] = ScNone
     var spanContextMenu: ScOption[Layout] = ScNone
-    var stopHover: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone
+    var stopHover: ScOption[js.ThisFunction0[classHandler, void]] = ScNone
     var stopOnErrors: ScOption[Boolean] = ScNone
     var summaryRow: ScOption[Grid[T, R]] = ScNone
     var summaryRowCriteria: ScOption[Criteria] = ScNone
@@ -523,7 +523,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var summaryRowFetchRequestProperties: ScOption[DSRequest] = ScNone
     var summaryRowHeight: ScOption[Int] = ScNone
     var summaryRowStyle: ScOption[CSSStyleName] = ScNone
-    var summaryUpdated: ScOption[js.ThisFunction2[callbackHandler, T, UserSummary, void]] = ScNone
+    var summaryUpdated: ScOption[js.ThisFunction2[classHandler, T, UserSummary, void]] = ScNone
     var tallBaseStyle: ScOption[CSSStyleName] = ScNone
     var timeFormatter: ScOption[TimeDisplayFormat] = ScNone
     var trackerImage: ScOption[ImgProperties] = ScNone
@@ -545,7 +545,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var valueIconSize: ScOption[Int] = ScNone
     var valueIconWidth: ScOption[Int] = ScNone
     var viewState: ScOption[Int] = ScNone
-    var viewStateChanged: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone
+    var viewStateChanged: ScOption[js.ThisFunction0[classHandler, void]] = ScNone
     var virtualScrolling: ScOption[Boolean] = ScNone
     var waitForSave: ScOption[Boolean] = ScNone
     var warnOnRemoval: ScOption[Boolean] = ScNone
@@ -556,7 +556,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
 }
 
 class ListGridProps extends GridProps[ListGridField, ListGridRecord] {
-    type callbackHandler <: ListGrid
+    type classHandler <: ListGrid
     var fields: ScOption[Seq[ListGridFieldProps]] = ScNone
     var defaultFields: ScOption[Seq[ListGridFieldProps]] = ScNone
     var data: ScOption[Seq[ListGridRecord]] = ScNone

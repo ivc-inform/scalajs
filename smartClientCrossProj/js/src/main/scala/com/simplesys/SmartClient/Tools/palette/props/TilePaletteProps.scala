@@ -12,10 +12,10 @@ import com.simplesys.function._
 import scala.scalajs.js._
 
 class TilePaletteProps extends TileGridProps with PaletteProps {
-    type callbackHandler <: TilePalette
+    type classHandler <: TilePalette
 
-    var makeEditNode1: ScOption[ThisFunction1[callbackHandler, TileRecord, EditNode]] = {
-        (thiz: callbackHandler, record: TileRecord) =>
+    var makeEditNode1: ScOption[ThisFunction1[classHandler, TileRecord, EditNode]] = {
+        (thiz: classHandler, record: TileRecord) =>
             thiz makeEditNode record
     }.toThisFunc.opt
 }

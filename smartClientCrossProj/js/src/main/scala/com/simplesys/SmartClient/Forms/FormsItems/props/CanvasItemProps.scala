@@ -1,16 +1,21 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.DynamicForm
-import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
+import com.simplesys.SmartClient.Forms.FormsItems.{CanvasItem, FormItem}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.System.Types.FormItemComponentType
+import com.simplesys.System.Types.FormItemComponentType.FormItemComponentType
+import com.simplesys.System.Types.FormItemType.FormItemType
 import com.simplesys.System.Types.Overflow.Overflow
 import com.simplesys.System.{JSAny, JSObject}
-import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.option.{FormItemType_FormItemComponentType, ScNone, ScOption}
 
 import scala.scalajs.js
+import scala.scalajs.js.ThisFunction2
 
 class CanvasItemProps extends FormItemProps {
+    type classHandler <: CanvasItem
+
     var applyPromptToCanvas: ScOption[Boolean] = ScNone
     var autoDestroy: ScOption[Boolean] = ScNone
     var canEditChanged: ScOption[js.Function1[Boolean, Boolean]] = ScNone
@@ -18,7 +23,8 @@ class CanvasItemProps extends FormItemProps {
     var canvasConstructor: ScOption[String] = ScNone
     var canvasDefaults: ScOption[JSObject] = ScNone
     var canvasProperties: ScOption[JSObject] = ScNone
-    var createCanvas: ScOption[js.Function2[DynamicForm, CanvasItem, Canvas]] = ScNone
+    var createCanvas: ScOption[ThisFunction2[classHandler, DynamicForm, CanvasItem, Canvas]] = ScNone
+    var _constructor: ScOption[FormItemType_FormItemComponentType[FormItemType, FormItemComponentType]] = ScNone
     var editCriteriaInInnerForm: ScOption[Boolean] = ScNone
     var multiple: ScOption[Boolean] = ScNone
     var overflow: ScOption[Overflow] = ScNone

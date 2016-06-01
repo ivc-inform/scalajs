@@ -14,7 +14,7 @@ import scala.scalajs.js
 import scala.scalajs.js._
 
 object EditContextProps {
-    type SelectedUpdated = Function2[JSUndefined[EditNode], IscArray[EditNode], _]
+    type SelectedUpdated = ThisFunction2[JSObject, JSUndefined[EditNode], IscArray[EditNode], _]
 }
 
 trait EditContextProps extends ClassProps {
@@ -36,6 +36,7 @@ trait EditContextProps extends ClassProps {
     var hoopSelectorProperties: ScOption[JSObject] = ScNone
     var persistCoordinates: ScOption[Boolean] = ScNone
     var rootComponent: ScOption[PaletteNode] = ScNone
+    var selectSingleEditNode: ScOption[ThisFunction1[classHandler, EditNode, _]] = ScNone
     var selectedAppearance: ScOption[SelectedAppearance] = ScNone
     var selectedBorder: ScOption[String] = ScNone
     var selectedLabelBackgroundColor: ScOption[String] = ScNone

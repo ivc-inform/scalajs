@@ -7,6 +7,7 @@ import com.simplesys.SmartClient.Forms.ValuesManager
 import com.simplesys.SmartClient.Layout.PrintWindow
 import com.simplesys.SmartClient.System._
 import com.simplesys.SmartClient.Tools.{EditContext, EditNode}
+import com.simplesys.SmartClient.math.AffineTransform
 import com.simplesys.System.Types.Alignment._
 import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.System.Types.BackgroundRepeat._
@@ -39,6 +40,8 @@ import scala.scalajs.js.annotation.JSName
 trait Canvas extends com.simplesys.SmartClient.System.Class {
     type callbackHandler <: this.type
 
+    def _getGlobalTransform(): AffineTransform
+    def _getInverseGlobalTransform(): AffineTransform
     val accessKey: String
     def addChild(newChild: Canvas, name: String = js.native, autoDraw: Boolean = js.native): Canvas
     def addPeer(newChild: Canvas, name: String = js.native, autoDraw: Boolean = js.native, preDraw: Boolean = js.native): Canvas
@@ -86,7 +89,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var canDrag: Boolean
     var canDragReposition: Boolean
     var canDragResize: Boolean
-    val canDragScroll: Boolean
+    var canDragScroll: Boolean
     var canDrop: Boolean
     var canDropBefore: Boolean
     val canFocus: Boolean
@@ -120,7 +123,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var defaultWidth: Int
     def deparent(): void
     def depeer(): void
-    val destroyed: Boolean
+    val destroyed: JSUndefined[Boolean]
     val destroying: Boolean
     def disable(): void
     val disabled: Boolean
@@ -166,8 +169,8 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val edgeShowCenter: Boolean
     val edgeSize: Int
     var editContext: JSUndefined[EditContext]
-    val editNode: EditNode
-    var editProxy: EditNode with AutoChild
+    val editNode: JSUndefined[EditNode]
+    var editProxy: EditNode
     val editProxyConstructor: SCClassName
     def enable(): void
     def encloses(other: Canvas): Boolean
@@ -330,6 +333,8 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val resizeBarTarget: String
     def resizeBy(deltaX: Int = js.native, deltaY: Int = js.native): Boolean
     var resized: js.ThisFunction0[callbackHandler, Boolean]
+    var resized1: JSUndefined[js.ThisFunction2[callbackHandler, Double, Double, Boolean]]
+    def _resized(): Boolean
     var resizeFrom: IscArray[EdgeName]
     def resizeTo(width: Int = js.native, height: Int = js.native): Boolean
     def revealChild(child: Canvas | String): void
@@ -339,6 +344,8 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def scrollBy(dX: Int, dY: Int): void
     def scrollByPercent(dX: Int, dY: Int): void
     var scrolled: js.ThisFunction0[callbackHandler, Boolean]
+    val scrollLeft: Double
+    val scrollTop: Double
     def scrollTo(left: Int = js.native, top: Int = js.native): Int
     def scrollToBottom(): void
     def scrollToLeft(): void
@@ -437,7 +444,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val top: Int | String
     val topElement: Canvas
     val unserialize: JSUndefined[Boolean]
-    def updateEditNode(editContext: EditContext, editNode: EditNode): void
+    val updateEditNode: JSUndefined[js.Function2[EditContext, EditNode, _]]
     def updateHover(hoverHTML: HTMLString = js.native): void
     var useBackMask: Boolean
     var useDragMask: Boolean
@@ -456,6 +463,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
 abstract class AbstractCanvasCompanion extends AbstractClassCompanion {
     var allowExternalFilters: Boolean = js.native
     var defaultPageSpace: Int = js.native
+    def ariaEnabled(): Boolean = js.native
     def getById(ID: String): Canvas = js.native
     def getEventEdge(edgeMask: EdgeName = js.native): EdgeName = js.native
     def getPrintHTML(components: IscArray[Canvas], printProperties: PrintProperties, callback: Callback, separator: String = js.native): HTMLString = js.native
@@ -473,6 +481,18 @@ abstract class AbstractCanvasCompanion extends AbstractClassCompanion {
     def setNeverUseFilters(neverUseFilters: Boolean): void = js.native
     def showPrintPreview(components: IscArray[Canvas], printProperties: PrintProperties = js.native, printWindowProperties: PrintWindow = js.native, callback: Callback = js.native, separator: String): void = js.native
     val TAB_INDEX_FLOOR: Int = js.native
+    val AUTO: String = js.native
+    val ABSOLUTE: String = js.native
+    val RELATIVE: String = js.native
+    val INHERIT: String = js.native
+    val VISIBLE: String = js.native
+    val HIDDEN: String = js.native
+    val COMPLETE: String = js.native
+    val DRAWN: String = js.native
+    val DRAWING_HANDLE: String = js.native
+    val HANDLE_DRAWN: String = js.native
+    val UNDRAWN: String = js.native
+    def _getEditProxyPassThruProperties(editContext: JSObject): JSObject = js.native
 }
 
 @js.native

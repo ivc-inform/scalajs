@@ -5,5 +5,5 @@ import com.simplesys.SmartClient.Tools.palette.TreePalette
 import com.simplesys.SmartClient.Tools.props.PaletteProps
 
 class TreePaletteProps extends TreeGridProps with PaletteProps{
-    type callbackHandler <: TreePalette
+    type classHandler <: TreePalette
 }

@@ -7,7 +7,7 @@ import com.simplesys.System.Types.LoadState.LoadState
 import com.simplesys.System.Types.TreeFilterMode.TreeFilterMode
 import com.simplesys.System.Types.TreeModelType.TreeModelType
 import com.simplesys.System.Types.{Callback, Criteria, void}
-import com.simplesys.System.{JSAny, JSObject}
+import com.simplesys.System.{JSAny, JSObject, JSUndefined}
 
 import scala.scalajs.js
 import scala.scalajs.js.{ThisFunction0, |}
@@ -30,7 +30,7 @@ trait Tree extends Class {
     def find(fieldNameOrPath: String, value: JSAny = js.native): JSObject
     def findById(id: String): JSObject
     def getAllNodes(node: TreeNode = js.native): IscArray[TreeNode]
-    def getChildren(node: TreeNode | EditNode): IscArray[TreeNode]
+    def getChildren(node: TreeNode | EditNode): JSUndefined[IscArray[TreeNode]]
     def getChildrenResultSet(node: TreeNode): ResultSet
     def getDescendantFolders(node: TreeNode = js.native): IscArray[TreeNode]
     def getDescendantLeaves(node: TreeNode = js.native): IscArray[TreeNode]

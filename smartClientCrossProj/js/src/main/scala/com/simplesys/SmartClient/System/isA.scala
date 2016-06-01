@@ -26,4 +26,14 @@ trait isAStatic extends JSAny {
     def String(`object`: JSAny): Boolean
     def Palette(`object`: JSAny): Boolean
     def DrawPane(`object`: JSAny): Boolean
+    def StopState(`object`: JSAny): Boolean
+    def StartState(`object`: JSAny): Boolean
+    def DrawLinePath(`object`: JSAny): Boolean
+    def DrawPath(`object`: JSAny): Boolean
+    def DrawItem(`object`: JSAny): Boolean
+    def DrawLine(`object`: JSAny): Boolean
+    def DrawLinePathSS(`object`: JSAny): Boolean
+    def DrawRect(`object`: JSAny): Boolean
+    def EditContext(`object`: JSAny): Boolean
+    def EditContextSS(`object`: JSAny): Boolean
 }

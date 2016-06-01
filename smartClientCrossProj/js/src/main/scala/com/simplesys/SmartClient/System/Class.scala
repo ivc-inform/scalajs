@@ -17,7 +17,7 @@ trait Class extends JSObject {
     var addPropertiesOnCreate: Boolean
     def addPropertyList(list: IscArray[JSDictionary[JSObject]]): JSObject
     def clearLogPriority(category: String): void
-    def createAutoChild[T <: Class](childName: String, defaults: JSObject): T
+    def createAutoChild[T <: Class](childName: String, passedDynamicDefaults: JSObject, defaultConstructor: String = js.native, assignToSlot: Boolean = js.native): T
     var creator : classHandler
     @JSName("destroy")
     var destroy1: js.ThisFunction0[classHandler, _]
@@ -33,13 +33,13 @@ trait Class extends JSObject {
     def GetClass(): AbstractClassCompanion
     def getClassName(): String
     def getDefaultLogPriority(): LogPriority
-    def getID(): String
+    def getID(): ID
     def getIdentifier(): String
     def getStackTrace(): String
     def getSuperClass(): String
     def ignore(`object`: JSObject, methodName: String): Boolean
     var identifier: ID
-    var init: js.ThisFunction1[classHandler, IscArray[JSAny], _]
+    //var init: js.ThisFunction1[classHandler, IscArray[JSAny], _]
     def isA(className: String): Boolean
     def isObserving(`object`: JSObject, methodName: String): Boolean
     def logDebug(message: String, category: String = js.native): void
@@ -65,13 +65,14 @@ trait Class extends JSObject {
 
 @js.native
 abstract trait AbstractClassCompanion extends JSObject {
-    def addClassProperties(arguments: JSDictionary[JSObject]): JSObject = js.native
-    def addMethods(arguments: JSDictionary[JSObject]): JSObject = js.native
-    def addProperties(arguments: JSDictionaryAny): JSObject = js.native
+    def addClassProperties(arguments: JSObject): JSObject = js.native
+    def addMethods(arguments: JSObject): JSObject = js.native
+    def addInterfaceMethods(arguments: JSObject): JSObject = js.native
+    def addProperties(arguments: JSObject): JSObject = js.native
     def addPropertyList(list: IscArray[JSDictionary[JSObject]]): JSObject = js.native
     def changeDefaults(defaultsName: String, newDefaults: JSObject): void = js.native
     def clearLogPriority(category: String): void = js.native
-    def create(arguments: JSAny): JSObject = js.native
+    def create[T](arguments: JSAny*): T = js.native
     def delayCall(methodName: String, arrayArgs: IscArray[JSAny] = js.native, time: Int = js.native, target: JSObject = js.native): String = js.native
     def echo(obj: JSAny): String = js.native
     def echoAll(obj: JSAny): String = js.native

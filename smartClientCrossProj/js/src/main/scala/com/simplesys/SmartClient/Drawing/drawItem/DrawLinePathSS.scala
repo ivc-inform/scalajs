@@ -11,42 +11,36 @@ import scala.scalajs.js
 
 @js.native
 trait DrawLinePathSS extends DrawPath {
-    def setControlPoint(id: ID, left: Int, top: Int, fireMovedAndResized: Boolean = js.native, cx0: Int = js.native, cy0: Int = js.native): void
+    def setControlPoint(index: Int, left: Double, top: Double, fireMovedAndResized: Boolean = js.native, cx0: Double = js.native, cy0: Double = js.native): void
 
-    def _getSegmentPoints(controlPoint1: JSUndefined[Point], controlPoint2: JSUndefined[Point]): IscArray[Point]
-    def getConnectorOrientationState(): ConnectorOrientation
+    def _getSegmentPoints(): IscArray[Point]
     def getCenter(p1: JSUndefined[Point], p2: JSUndefined[Point]): Point
     def updateStartPointKnob(): void
     def updateEndPointKnob(): void
-    def updateControlPoint1Knob(): void
-    def updateControlPoint2Knob(): void
-    var _segmentPoints: IscArray[Point]
+    def updateControlPointsKnob(): void
+    def showControlPointsKnobs(): void
+    def hideControlPointsKnobs(): void
+    def refresh(): void
+    def removeControlPointKnob(lnob: DrawKnob): void
+    def insertControlPointKnob(): void
 
-    var _c1Knob: JSUndefined[DrawKnob]
-    var _c2Knob: JSUndefined[DrawKnob]
+    var cKnobs: IscArray[JSUndefined[DrawKnob]]
+    var controlPoints: IscArray[JSUndefined[Point]]
 
-    var _cKnobs: IscArray[DrawKnob]
-    var controlPoints: IscArray[Point]
+    val connectorOrientation: JSUndefined[ConnectorOrientation]
+    val connectorStyle: JSUndefined[ConnectorStyle]
 
-    val connectorOrientation: ConnectorOrientation
-    val connectorStyle: ConnectorStyle
-
-    var controlPoint1: JSUndefined[Point]
-    var controlPoint2: JSUndefined[Point]
-
-    var endLeft: JSUndefined[Int]
     var endPoint: Point
-    var endTop: JSUndefined[Int]
-
-    def moveStartPointTo(left: Int, top: Int): void
-    def moveEndPointTo(left: Int, top: Int): void
-    def setControlPoint1(left: Int, top: Int, fireMovedAndResized: Boolean = js.native, cx0: Int = js.native, cy0: Int = js.native): void
-    def setControlPoint2(left: Int, top: Int, fireMovedAndResized: Boolean = js.native, cx0: Int = js.native, cy0: Int = js.native): void
-    def setEndPoint(left: Int, top: Int): void
-    def setStartPoint(left: Int, top: Int): void
-
-    var startLeft: JSUndefined[Int]
     var startPoint: Point
-    var startTop: JSUndefined[Int]
-    val tailSize: Int
+
+    var endLeft: Double
+    var endTop: Double
+
+    var startLeft: Double
+    var startTop: Double
+
+    def moveStartPointTo(left: Double, top: Double): void
+    def moveEndPointTo(left: Double, top: Double): void
+    def setEndPoint(left: Double, top: Double): void
+    def setStartPoint(left: Double, top: Double): void
 }

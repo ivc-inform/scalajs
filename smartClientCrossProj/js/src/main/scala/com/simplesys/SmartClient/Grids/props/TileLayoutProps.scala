@@ -13,7 +13,7 @@ import com.simplesys.option.{ScNone, ScOption}
 import scala.scalajs.js
 
 class TileLayoutProps extends CanvasProps {
-    type callbackHandler <: TileLayout
+    type classHandler <: TileLayout
 
     var animateTileChange: ScOption[Boolean] = ScNone
     var autoWrapLines: ScOption[Boolean] = ScNone

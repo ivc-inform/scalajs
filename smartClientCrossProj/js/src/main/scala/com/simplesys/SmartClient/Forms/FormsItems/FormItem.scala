@@ -316,4 +316,7 @@ trait FormItem extends Class {
     var wrapTitle: Boolean
 }
 
+@js.native
+abstract class AbstractFormItemCompanion extends AbstractClassCompanion
+
 

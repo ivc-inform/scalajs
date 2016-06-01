@@ -1,8 +1,10 @@
 package com.simplesys.SmartClient.math
 
-import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class}
+import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class, IscArray, Point}
+import com.simplesys.System.Types.void
 
 import scala.scalajs.js
+import scala.scalajs.js.|
 
 @js.native
 trait AffineTransform extends Class {
@@ -18,6 +20,9 @@ trait AffineTransform extends Class {
     def getDeterminant(): Double
     def rightMultiply(transform: AffineTransform): AffineTransform
     def leftMultiply(transform: AffineTransform): AffineTransform
+    def transform(v0: Double | IscArray[Double], v1: Double, output: Point): Point
+    def preTranslate(dx:Double, dy:Double): this.type
+    def translate(dx:Double, dy:Double): this.type
 }
 
 @js.native

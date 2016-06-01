@@ -14,7 +14,7 @@ class SCApply[T <: Class, P <: AbstractClassProps](implicit classTag_T: ClassTag
 
     def apply(propsClass: P): T = propsToDictionary.getDictionary(propsClass).asInstanceOf[T]
     def jsonString(propsClass: P): String = propsToDictionary.getMap(propsClass).toMap.toJsonString()
-
+    def GetClass: T = js.Dynamic.global.isc.selectDynamic(classTag_T.runtimeClass.getSimpleName).`getClass()`.asInstanceOf[T]
 }
 
 class SCApply4Object[T <: JSObject, P <: AbstractClassProps](implicit classTag_T: ClassTag[T], propsToDictionary: PropsToDictionary[P]) {
@@ -24,3 +24,8 @@ class SCApply4Object[T <: JSObject, P <: AbstractClassProps](implicit classTag_T
 class SCApply4Props[P <: AbstractClassProps](implicit propsToDictionary: PropsToDictionary[P]) {
     def apply(propsClass: P): JSDictionaryAny = propsToDictionary.getDictionary(propsClass)
 }
+
+//class SCDefine[S <: Class, T <: Class, P <: AbstractClassProps](implicit classTag_S: ClassTag[S], classTag_T: ClassTag[T], propsToDictionary: PropsToDictionary[P]) {
+//    def defineClass(propsClass: P): Unit = js.Dynamic.global.isc.applyDynamic("defineClass")(classTag_T.runtimeClass.getSimpleName.dblQuoted, s"isc.${classTag_S.runtimeClass.getSimpleName}").addProperties(propsToDictionary.getDictionary(propsClass))
+//    def apply(propsClass: P): T = propsToDictionary.getDictionary(propsClass).asInstanceOf[T]
+//}

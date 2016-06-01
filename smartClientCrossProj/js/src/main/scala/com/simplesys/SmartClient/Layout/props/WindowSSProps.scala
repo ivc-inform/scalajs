@@ -6,7 +6,7 @@ import com.simplesys.option.{ScNone, ScOption}
 import scala.scalajs.js._
 
 class WindowSSProps extends WindowProps {
-    type callbackHandler <: WindowSS
+    type classHandler <: WindowSS
     var headerIconPath: ScOption[String] = ScNone
     var autoPosition: ScOption[Boolean] = ScNone
 }

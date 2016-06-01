@@ -13,14 +13,14 @@ class NavigationBarProps extends HLayoutProps {
     var alwaysShowLeftButtonTitle: ScOption[Boolean] = ScNone
     var animateStateChanges: ScOption[Boolean] = ScNone
     var customNavControl: ScOption[Canvas] = ScNone
-    var downClick: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone
+    var downClick: ScOption[js.ThisFunction0[classHandler, void]] = ScNone
     var leftButton: ScOption[NavigationButton] = ScNone
     var leftButtonIcon: ScOption[SCImgURL] = ScNone
     var leftButtonTitle: ScOption[HTMLString] = ScNone
     var maxCenterOffset: ScOption[Int] = ScNone
     var miniNavAlign: ScOption[Alignment] = ScNone
     var miniNavControl: ScOption[MiniNavControl] = ScNone
-    var navigationClick: ScOption[js.ThisFunction1[callbackHandler, NavigationDirection, void]] = ScNone
+    var navigationClick: ScOption[js.ThisFunction1[classHandler, NavigationDirection, void]] = ScNone
     var rightButton: ScOption[NavigationButton] = ScNone
     var rightButtonIcon: ScOption[SCImgURL] = ScNone
     var rightButtonTitle: ScOption[HTMLString] = ScNone
@@ -30,5 +30,5 @@ class NavigationBarProps extends HLayoutProps {
     var showRightButton: ScOption[Boolean] = ScNone
     var title: ScOption[HTMLString] = ScNone
     var titleLabel: ScOption[Label] = ScNone
-    var upClick: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone
+    var upClick: ScOption[js.ThisFunction0[classHandler, void]] = ScNone
 }

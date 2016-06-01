@@ -3,9 +3,8 @@ package com.simplesys.SmartClient.Forms.props
 import com.simplesys.SmartClient.DataBinding.props.DataBoundComponentProps
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
-import com.simplesys.SmartClient.Forms.FormsItems.props.FormItemProps
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
-import com.simplesys.SmartClient.System.KeyIdentifier
+import com.simplesys.SmartClient.System.{Class, KeyIdentifier}
 import com.simplesys.SmartClient.Workdlow.UserTask
 import com.simplesys.System.JSObject
 import com.simplesys.System.Types.Alignment.Alignment
@@ -19,14 +18,14 @@ import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppea
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
-import com.simplesys.System.Types.{CSSStyleName, FormItemBaseStyle, HTMLString, URL}
 import com.simplesys.System.Types.VisibilityMode.VisibilityMode
+import com.simplesys.System.Types.{CSSStyleName, FormItemBaseStyle, HTMLString, URL}
 import com.simplesys.option.{IntString, ScNone, ScOption}
 
 import scala.scalajs.js._
 
 class DynamicFormProps extends CanvasProps with DataBoundComponentProps{
-    type callbackHandler <: DynamicForm
+    type classHandler <: DynamicForm
 
     var action: ScOption[URL] = ScNone
     var allowExpressions: ScOption[Boolean] = ScNone
@@ -85,6 +84,7 @@ class DynamicFormProps extends CanvasProps with DataBoundComponentProps{
     var numCols: ScOption[Int] = ScNone
     var operator: ScOption[OperatorId] = ScNone
     var originalValueMessage: ScOption[HTMLString] = ScNone
+    var owner: ScOption[Class] = ScNone
     var readOnlyDisplay: ScOption[ReadOnlyDisplayAppearance] = ScNone
     var readOnlyTextBoxStyle: ScOption[FormItemBaseStyle] = ScNone
     var rejectInvalidValueOnChange: ScOption[Boolean] = ScNone
@@ -126,6 +126,6 @@ class DynamicFormProps extends CanvasProps with DataBoundComponentProps{
     var validateOnExit: ScOption[Boolean] = ScNone
     var validationURL: ScOption[URL] = ScNone
     var values: ScOption[JSObject] = ScNone
-    var valuesChanged: ScOption[ThisFunction0[callbackHandler, _]] = ScNone
+    var valuesChanged: ScOption[ThisFunction0[classHandler, _]] = ScNone
     var wrapItemTitles: ScOption[Boolean] = ScNone
 }

@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.option.{ScNone, ScOption}
 
 class DeckProps extends LayoutProps {
-    type callbackHandler <: Deck
+    type classHandler <: Deck
     var currentPane: ScOption[Canvas] = ScNone
     var panes: ScOption[IscArray[Canvas]] = ScNone
 }

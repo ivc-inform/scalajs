@@ -3,24 +3,30 @@ package com.simplesys.SmartClient.DataBinding
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
 import com.simplesys.SmartClient.RPC.{AbstractRPCRequestCompanion, RPCRequest}
 import com.simplesys.SmartClient.System.IscArray
-import com.simplesys.System.JSObject
+import com.simplesys.System.{JSFunction, JSObject, JSUndefined}
 import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.DSProtocol.DSProtocol
 import com.simplesys.System.Types.ExportDisplay.ExportDisplay
 import com.simplesys.System.Types.ExportFormat.ExportFormat
 import com.simplesys.System.Types.ExportImageFormat.ExportImageFormat
 import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
-import com.simplesys.System.Types.Record
+import com.simplesys.System.Types.{Callback, Record}
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.ValidationMode.ValidationMode
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
 import scala.scalajs.js.|
+
+@ScalaJSDefined
+trait InternalClientContext extends JSObject {
+  var _callback: JSUndefined[Callback]
+}
 
 @js.native
 trait DSRequest extends RPCRequest {
     val additionalOutputs: String
+    val internalClientContext: InternalClientContext
     val componentId: String
     val dataProtocol: DSProtocol
     val dataSource: String

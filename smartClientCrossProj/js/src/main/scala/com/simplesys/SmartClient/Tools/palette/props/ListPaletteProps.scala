@@ -5,5 +5,5 @@ import com.simplesys.SmartClient.Tools.palette.ListPalette
 import com.simplesys.SmartClient.Tools.props.PaletteProps
 
 class ListPaletteProps extends ListGridProps with PaletteProps{
-    type callbackHandler <: ListPalette
+    type classHandler <: ListPalette
 }

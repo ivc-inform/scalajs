@@ -14,7 +14,7 @@ class ToolbarProps extends LayoutProps {
     var buttons: ScOption[Seq[Button]] = ScNone
     var canReorderItems: ScOption[Boolean] = ScNone
     var canResizeItems: ScOption[Boolean] = ScNone
-    var itemClick: ScOption[js.ThisFunction2[callbackHandler, Button, Int, void]] = ScNone
-    var itemDoubleClick: ScOption[js.ThisFunction2[callbackHandler, Button, Int, void]] = ScNone
-    var itemDragResized: ScOption[js.ThisFunction2[callbackHandler, Int, Int, void]] = ScNone
+    var itemClick: ScOption[js.ThisFunction2[classHandler, Button, Int, void]] = ScNone
+    var itemDoubleClick: ScOption[js.ThisFunction2[classHandler, Button, Int, void]] = ScNone
+    var itemDragResized: ScOption[js.ThisFunction2[classHandler, Int, Int, void]] = ScNone
 }

@@ -1,30 +1,35 @@
 package com.simplesys.SmartClient.System
 
 import com.simplesys.SmartClient.Control._
-import com.simplesys.SmartClient.DataBinding.AbstractJSONCompanion
-import com.simplesys.SmartClient.Drawing.AbstractDrawItemCompanion
-import com.simplesys.SmartClient.Drawing.drawItem.AbstractDrawLineCompanion
+import com.simplesys.SmartClient.DataBinding.{AbstractDataSourceSSCompanion, AbstractJSONCompanion, AbstractOfflineSSCompanion}
+import com.simplesys.SmartClient.Drawing.{AbstractDrawItemCompanion, AbstractDrawPaneCompanion}
+import com.simplesys.SmartClient.Drawing.drawItem.{AbstractDrawLineCompanion, AbstractDrawRectCompanion}
+import com.simplesys.SmartClient.Forms.FormsItems.AbstractPickListCompanion
+import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
 import com.simplesys.SmartClient.Grids._
+import com.simplesys.SmartClient.RPC.AbstractRPCManagerCompanion
 import com.simplesys.SmartClient.Tools.EditContextCompanion
 import com.simplesys.SmartClient.math.AbstractAffineTransformCompanion
 import com.simplesys.System.Types.{Callback, ID, void}
 import com.simplesys.System._
+import com.simplesys.js.com.simplesys.SmartClient.Forms.FormsItems.AbstractTimerItemCompanion
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSBracketAccess, JSName}
 import scala.scalajs.js.|
 
 @js.native
-@JSName("isc")
 object isc extends JSObject {
     def addDefaults(destination: JSObject, source: JSObject): JSObject = js.native
-    def addProperties(destination: JSObject, propsArray: JSAny*): JSObject = js.native
+    def addProperties[T](destination: JSObject, propsArray: JSAny*): T = js.native
+    @JSName("addProperties")
+    def addPropertiesDyn(destination: JSObject, propsArray: JSAny*): js.Dynamic = js.native
     def ask(message: String, callback: js.Function1[Boolean, _] = js.native, properties: Dialog = js.native): void = js.native
     def askForValue(message: String, callback: js.Function1[JSAny, _] = js.native, properties: Dialog = js.native): void = js.native
     def clearPrompt(): void = js.native
-    def clone[T <: JSObject](obj: T): T = js.native
+    def clone[T](obj: T): T = js.native
     def confirm(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
-    def defineClass(className: String, superClass: String): void = js.native
+    def defineClass[T <: Class](className: String, superClass: String): T = js.native
     def dismissCurrentDialog(): void = js.native
     def echo(value: JSAny): String = js.native
     def echoAll(value: JSAny): String = js.native
@@ -60,23 +65,36 @@ object isc extends JSObject {
     val params: com.simplesys.SmartClient.System.params.type = js.native
     val Log: AbstractLogCompanion = js.native
     val Class: AbstractClassCompanion = js.native
+    val PickList: AbstractPickListCompanion = js.native
+    val Canvas: AbstractCanvasCompanion = js.native
     val EventHandler: AbstractEventHandlerCompanion = js.native
     val EditContext: EditContextCompanion = js.native
     val isA: isAStatic = js.native
     var captureDefaults: JSUndefined[JSAny] = js.native
     val ClassFactory: ClassFactoryTrt = js.native
     val DrawItem: AbstractDrawItemCompanion = js.native
+    val TimerItem: AbstractTimerItemCompanion = js.native
     val DrawLine: AbstractDrawLineCompanion = js.native
+    val DrawRect: AbstractDrawRectCompanion = js.native
+    val DrawPane: AbstractDrawPaneCompanion = js.native
     val AffineTransform: AbstractAffineTransformCompanion = js.native
+    val OfflineSS: AbstractOfflineSSCompanion = js.native
+    val RPCManager: AbstractRPCManagerCompanion = js.native
+    val DataSourceSS: AbstractDataSourceSSCompanion = js.native
 
     def error(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
     def errorDetail(message: String, detailMessage: String, identifier: ID = js.native, detailIdentifier: ID = js.native): void = js.native
     def info(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
     def ok(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
-    def infos(grid: ListGrid, identifier: ID = js.native, callback: Callback = js.native): void = js.native
-    def errors(grid: ListGrid, identifier: ID = js.native, callback: Callback = js.native): void = js.native
+    def infos(gridProperties: ListGrid, identifier: ID = js.native, callback: Callback = js.native): void = js.native
+    def errors(gridproperties: ListGrid, identifier: ID = js.native, callback: Callback = js.native): void = js.native
     val JSON: AbstractJSONCompanion = js.native
-    def debugTrap[T](obj: T): T = js.native
+    def debugTrap[T](obj: T*): T = js.native
+    def getPropValue[T](obj: JSObject, name: String): JSUndefined[T] = js.native
+    def setPropValue[T](obj: JSObject, name: String, value: T): JSUndefined[T] = js.native
+    def getWindowObject[T](name: String): JSUndefined[T] = js.native
+    def setArrayItem[A](array: IscArray[A], index: Int, value: JSAny): void = js.native
+    def deleteProp(obj: JSObject, propName: String): void = js.native
 
     @JSBracketAccess
     def apply(name: String): JSUndefined[AbstractClassCompanion] = js.native

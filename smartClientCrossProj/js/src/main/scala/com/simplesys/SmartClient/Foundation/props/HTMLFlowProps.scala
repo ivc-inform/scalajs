@@ -13,11 +13,11 @@ import org.scalajs.dom.raw.HTMLElement
 import scala.scalajs.js
 
 class HTMLFlowProps extends CanvasProps with DataBoundComponentProps{
-    type callbackHandler <: HTMLFlow
+    type classHandler <: HTMLFlow
 
     var allowCaching: ScOption[Boolean] = ScNone
     var captureSCComponents: ScOption[Boolean] = ScNone
-    var contentLoaded: ScOption[js.ThisFunction0[callbackHandler, _]] = ScNone
+    var contentLoaded: ScOption[js.ThisFunction0[classHandler, _]] = ScNone
     var contentsType: ScOption[ContentsType] = ScNone
     var contentsURL: ScOption[URL] = ScNone
     var contentsURLParams: ScOption[JSObject] = ScNone

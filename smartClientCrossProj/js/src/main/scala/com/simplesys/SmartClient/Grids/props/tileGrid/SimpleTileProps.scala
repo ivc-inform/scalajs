@@ -9,7 +9,7 @@ import com.simplesys.option.{ScNone, ScOption}
 import scala.scalajs.js._
 
 class SimpleTileProps extends StatefulCanvasProps {
-    type callbackHandler <: SimpleTile
+    type classHandler <: SimpleTile
 
     var creator: ScOption[TileGrid] = ScNone
     var tileGrid: ScOption[TileGrid] = ScNone

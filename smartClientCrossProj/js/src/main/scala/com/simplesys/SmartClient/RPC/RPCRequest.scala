@@ -3,24 +3,29 @@ package com.simplesys.SmartClient.RPC
 import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class, IscArray}
 import com.simplesys.System.Types.PromptStyle.PromptStyle
 import com.simplesys.System.Types.RPCTransport.RPCTransport
-import com.simplesys.System.Types.{URL, void}
+import com.simplesys.System.Types.{ID, URL, void}
 import com.simplesys.System._
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
 import scala.scalajs.js.|
+
+@ScalaJSDefined
+trait ClientContext extends JSObject {
+    val fetchID: ID
+}
 
 @js.native
 trait RPCRequest extends Class {
     var actionURL: URL
     val allowIE9Leak: Boolean
     var bypassCache: Boolean
-    var callback: js.Function3[RPCResponse,JSDictionaryAny, RPCRequest, void]
+    var callback: js.Function3[RPCResponse, JSDictionaryAny, RPCRequest, void]
     var callbackParam: String
-    var clientContext: JSObject
+    var clientContext: JSUndefined[ClientContext]
     var containsCredentials: Boolean
     var contentType: String
-    var data:JSObject| IscArray[JSObject]
+    var data: JSObject | IscArray[JSObject]
     var downloadResult: Boolean
     var downloadToNewWindow: Boolean
     var evalResult: Boolean

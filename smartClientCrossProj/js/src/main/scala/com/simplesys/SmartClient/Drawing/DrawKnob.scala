@@ -10,10 +10,10 @@ trait DrawKnob extends Canvas {
     val drawPane: DrawPane
     val knobShape: DrawItem with AutoChild
     val knobShapeDefaults: DrawItem
-    def setCenterPoint(x: Int, y: Int, viewboxCoords: Boolean = js.native): void
+    def setCenterPoint(x: Double, y: Double, viewboxCoords: Boolean = js.native): void
     def resetKnobPosition(): void
-    var updatePoints: js.Function5[Int, Int, Int, Int, String, _]
-    val x: Int
-    val y: Int
+    var updatePoints: js.Function5[Double, Double, Double, Double, String, _]
+    val x: Double
+    val y: Double
 }
 

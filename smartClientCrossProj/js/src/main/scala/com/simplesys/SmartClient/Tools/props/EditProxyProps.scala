@@ -10,7 +10,7 @@ import com.simplesys.System.Types._
 import com.simplesys.System._
 import com.simplesys.option.{ScNone, ScOption}
 
-import scala.scalajs.js
+import scala.scalajs.js.ThisFunction1
 
 class EditProxyProps extends ClassProps {
     type classHandler <: EditProxy
@@ -36,5 +36,5 @@ class EditProxyProps extends ClassProps {
     var selectedTintColor: ScOption[CSSColor] = ScNone
     var selectedTintOpacity: ScOption[Int] = ScNone
     var supportsInlineEdit: ScOption[Boolean] = ScNone
-    var startInlineEditing: ScOption[js.Function1[JSUndefined[String], _]] = ScNone
+    var startInlineEditing: ScOption[ThisFunction1[classHandler, JSUndefined[String], _]] = ScNone
 }

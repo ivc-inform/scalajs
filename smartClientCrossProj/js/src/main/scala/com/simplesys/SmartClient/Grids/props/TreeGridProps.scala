@@ -14,7 +14,7 @@ import com.simplesys.option.{ScNone, ScOption}
 import scala.scalajs.js
 
 class TreeGridProps extends GridProps[TreeGridField, ListGridRecord] {
-    type callbackHandler <: TreeGrid
+    type classHandler <: TreeGrid
 
     var alwaysShowOpener: ScOption[Boolean] = ScNone
     var autoPreserveOpenState: ScOption[PreserveOpenState] = ScNone

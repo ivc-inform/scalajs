@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Forms.FormsItems
 
-import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.SmartClient.System.{AbstractClassCompanion, IscArray}
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TimeUnit.TimeUnit
 import com.simplesys.System.Types.{AutoChild, HTMLString, void}
@@ -79,5 +79,6 @@ trait TimeItem extends FormItem {
     var useTextField:Boolean
 }
 
-
+@js.native
+abstract class AbstractTimeItemCompanion extends AbstractFormItemCompanion
 

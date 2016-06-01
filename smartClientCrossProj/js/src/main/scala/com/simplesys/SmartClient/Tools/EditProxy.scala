@@ -13,6 +13,7 @@ import scala.scalajs.js
 @js.native
 trait EditProxy extends Class {
     val allowNestedDrops: Boolean
+    def setEditMode(editingOn: Boolean):void
     val autoMaskChildren: Boolean
     val bringToFrontOnSelect: Boolean
     val canSelect: JSUndefined[Boolean]

@@ -5,5 +5,5 @@ import com.simplesys.SmartClient.Layout.{HLayoutSS, HLayout}
 import scala.scalajs.js._
 
 class HLayoutSSProps extends HLayoutProps {
-    type callbackHandler <: HLayoutSS
+    type classHandler <: HLayoutSS
 }

@@ -16,6 +16,7 @@ import com.simplesys.System.Types.DSProtocol.DSProtocol
 import com.simplesys.System.Types.DSServerType.DSServerType
 import com.simplesys.System.Types.EnumTranslateStrategy.EnumTranslateStrategy
 import com.simplesys.System.Types.FieldType.FieldType
+import com.simplesys.System.Types.FormItemComponentType.FormItemComponentType
 import com.simplesys.System.Types.MultiUpdatePolicy.MultiUpdatePolicy
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.OperatorValueType.OperatorValueType
@@ -24,7 +25,7 @@ import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
 import com.simplesys.System.Types.SequenceMode.SequenceMode
 import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types._
+import com.simplesys.System.Types.{FormItemComponentType, _}
 import com.simplesys.System.{JSAny, JSObject}
 
 import scala.scalajs.js
@@ -278,7 +279,7 @@ abstract trait AbstractDataSourceCompanion extends AbstractClassCompanion {
     def saveValueViaDataPath(field: DataSourceField | ListGridField | DetailViewerField | FormItem, dataPath: DataPath, value: JSAny, values: Record, reason: String): void = js.native
     var serializeTimeAsDatetime: Boolean = js.native
     def setLoaderURL(url: URL): void = js.native
-    def setTypeOperators(typeName: String | FieldType, operators: IscArray[OperatorId]): void = js.native
+    def setTypeOperators(typeName: String | FieldType | FormItemComponentType, operators: IscArray[OperatorId]| IscArray[String]): void = js.native
     def removeData(data: Record, fieldName: String = js.native, requestProperties: DSRequest = js.native): void = js.native
 }
 

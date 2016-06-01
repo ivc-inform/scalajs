@@ -19,7 +19,7 @@ import com.simplesys.option.{IntString, ScNone, ScOption}
 import scala.scalajs.js
 
 class FilterBuilderProps extends LayoutProps {
-    type callbackHandler <: FilterBuilder
+    type classHandler <: FilterBuilder
 
     var addButton: ScOption[ImgButton] = ScNone
     var addButtonPrompt: ScOption[String] = ScNone
@@ -33,7 +33,7 @@ class FilterBuilderProps extends LayoutProps {
     var fieldPicker: ScOption[PickList] = ScNone
     var fieldPickerProperties: ScOption[FormItem] = ScNone
     var fieldPickerTitle: ScOption[String] = ScNone
-    var filterChanged: ScOption[js.ThisFunction0[callbackHandler, _]] = ScNone
+    var filterChanged: ScOption[js.ThisFunction0[classHandler, _]] = ScNone
     var getValueFieldProperties: ScOption[js.Function4[FieldType, String, OperatorId, ValueItemType, FormItem]] = ScNone
     var inlineAndNotTitle: ScOption[String] = ScNone
     var inlineAndTitle: ScOption[String] = ScNone

@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
+import com.simplesys.SmartClient.Forms.FormsItems.{PickList, SelectItem}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
@@ -13,6 +14,8 @@ import com.simplesys.option.{ScNone, ScOption}
 import scala.scalajs.js._
 
 class SelectItemProps extends FormItemProps with PickListProps{
+    type classHandler <: SelectItem
+
     var addUnknownValues: ScOption[Boolean] = ScNone
     var allowEmptyValue: ScOption[Boolean] = ScNone
     var autoFetchData: ScOption[Boolean] = ScNone

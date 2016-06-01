@@ -16,13 +16,13 @@ import com.simplesys.option.{ScNone, ScOption}
 import scala.scalajs.js
 
 class TileGridProps extends TileLayoutProps with DataBoundComponentProps{
-    type callbackHandler <: TileGrid
+    type classHandler <: TileGrid
 
     var autoFetchTextMatchStyle: ScOption[TextMatchStyle] = ScNone
     var canAcceptDroppedRecords: ScOption[Boolean] = ScNone
     var canDragTilesOut: ScOption[Boolean] = ScNone
     var canReorderTiles: ScOption[Boolean] = ScNone
-    var createTile: ScOption[js.ThisFunction2[callbackHandler, TileRecord, Int, Canvas]] = ScNone
+    var createTile: ScOption[js.ThisFunction2[classHandler, TileRecord, Int, Canvas]] = ScNone
     var data: ScOption[Seq[Record]] = ScNone
     var dataArrived: ScOption[js.Function2[Int, Int, void]] = ScNone
     var detailViewer: ScOption[DetailViewer] = ScNone

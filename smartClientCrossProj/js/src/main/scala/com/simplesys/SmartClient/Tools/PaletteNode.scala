@@ -11,7 +11,7 @@ import scala.scalajs.js
 trait PaletteNode extends JSObject {
     val defaults: JSObject
     val editNodeProperties: EditNode
-    val editProxyProperties: EditProxy
+    val editProxyProperties: JSUndefined[EditProxy]
     val contextMenu: JSUndefined[MenuSS]
     val icon: SCImgURL
     val idPrefix: String

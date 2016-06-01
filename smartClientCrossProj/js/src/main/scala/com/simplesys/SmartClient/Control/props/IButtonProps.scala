@@ -4,6 +4,6 @@ import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.System.SCApply
 
 class IButtonProps extends ButtonProps{
-    type callbackHandler <: IButton
+    type classHandler <: IButton
 }
 

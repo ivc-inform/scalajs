@@ -32,12 +32,13 @@ trait IscList[A] extends js.Array[A] with Class {
     def getProperty(property: String): IscArray[JSAny] = js.native
     def getRange(start: Int, end: Int): IscArray[JSAny] = js.native
     def getValueMap(idField: String, displayField: String): JSObject = js.native
-    def indexOf(obj: JSObject, pos: Int = js.native, endPos: Int = js.native): Int = js.native
-    def lastIndexOf(obj: JSObject, pos: Int = js.native, endPos: Int = js.native): Int = js.native
+    def indexOf[T](obj: JSObject, pos: Int = js.native, endPos: Int = js.native, comparator: js.Function2[T, T, Boolean] = js.native): Int = js.native
+    def lastIndexOf[T](obj: JSObject, pos: Int = js.native, endPos: Int = js.native, comparator: js.Function2[T, T, Boolean] = js.native): Int = js.native
     def intersect(lists: this.type): this.type = js.native
     def removeList(lists: this.type): this.type = js.native
     def isEmpty(): Boolean = js.native
-    def remove(obj: JSObject, pos:Int = js.native, endPos: Int = js.native, comparator : js.Function2[JSAny, JSAny, Boolean] = js.native): Boolean = js.native
+    //@JSName("remove")
+    def remove[T](obj: JSAny, pos: Int = js.native, endPos: Int = js.native, comparator: js.Function2[T, T, Boolean] = js.native): Boolean = js.native
     def removeAt(pos: Int): JSObject = js.native
     def set(pos: Int, obj: JSObject): JSObject = js.native
     def setLength(length: Int): void = js.native

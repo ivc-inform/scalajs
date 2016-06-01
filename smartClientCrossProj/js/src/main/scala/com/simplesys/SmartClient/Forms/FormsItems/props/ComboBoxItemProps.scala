@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.DynamicForm
-import com.simplesys.SmartClient.Forms.FormsItems.TextItem
+import com.simplesys.SmartClient.Forms.FormsItems.{ComboBoxItem, SelectItem, TextItem}
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.NavigationBar
@@ -12,6 +12,8 @@ import com.simplesys.System.Types.{CSSStyleName, FormItemComponentType, HTMLStri
 import com.simplesys.option.{ScNone, ScOption}
 
 class ComboBoxItemProps extends TextItemProps with PickListProps{
+    type classHandler <: ComboBoxItem
+
     var addUnknownValues: ScOption[Boolean] = ScNone
     var allowEmptyValue: ScOption[Boolean] = ScNone
     var autoFetchData: ScOption[Boolean] = ScNone

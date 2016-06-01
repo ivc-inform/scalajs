@@ -15,7 +15,7 @@ import com.simplesys.option.{DoubleAlignment, ScNone, ScOption}
 import scala.scalajs.js
 
 class LayoutProps extends CanvasProps {
-    type callbackHandler <: Layout
+    type classHandler <: Layout
 
     var align: ScOption[DoubleAlignment[Alignment, VerticalAlignment]] = ScNone
     var animateMembers: ScOption[Boolean] = ScNone
@@ -37,7 +37,7 @@ class LayoutProps extends CanvasProps {
     var managePercentBreadth: ScOption[Boolean] = ScNone
     var memberOverlap: ScOption[Int] = ScNone
     var members: ScOption[Seq[Canvas]] = ScNone
-    var membersChanged: ScOption[js.ThisFunction0[callbackHandler, void]] = ScNone
+    var membersChanged: ScOption[js.ThisFunction0[classHandler, void]] = ScNone
     var membersMargin: ScOption[Int] = ScNone
     var minMemberSize: ScOption[Int] = ScNone
     var paddingAsLayoutMargin: ScOption[Boolean] = ScNone

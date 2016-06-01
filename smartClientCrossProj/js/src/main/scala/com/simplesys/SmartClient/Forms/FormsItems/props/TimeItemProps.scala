@@ -1,12 +1,14 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
-import com.simplesys.SmartClient.Forms.FormsItems.{SelectItem, TextItem}
+import com.simplesys.SmartClient.Forms.FormsItems.{FormItem, SelectItem, TextItem, TimeItem}
 import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.{FormItemComponentType, HTMLString}
 import com.simplesys.option.{ScNone, ScOption}
 
 class TimeItemProps extends FormItemProps {
+    type classHandler <: TimeItem
+
     var ampmItem: ScOption[SelectItem ] = ScNone
     var ampmItemProperties: ScOption[SelectItem] = ScNone
     var ampmItemTitle: ScOption[HTMLString] = ScNone

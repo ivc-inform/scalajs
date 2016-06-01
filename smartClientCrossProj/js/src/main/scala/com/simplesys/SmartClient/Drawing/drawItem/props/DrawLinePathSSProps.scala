@@ -5,37 +5,42 @@ import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Control.props.MenuSSProps
 import com.simplesys.SmartClient.Control.props.menu.MenuSSItemProps
 import com.simplesys.SmartClient.Drawing.drawItem.DrawLinePathSS
-import com.simplesys.SmartClient.Drawing.props.DrawKnobProps
+import com.simplesys.SmartClient.Drawing.props.{DrawKnobProps, DrawLineCommons}
 import com.simplesys.SmartClient.Drawing.{DrawKnob, Point}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System._
 import com.simplesys.SmartClient.math.AffineTransform
-import com.simplesys.System.Types.ConnectorOrientation._
+import com.simplesys.System.Types.ConnectorOrientation.ConnectorOrientation
 import com.simplesys.System.Types.ConnectorStyle.ConnectorStyle
-import com.simplesys.System.Types.{ConnectorOrientation, ConnectorStyle, TitleRotationMode}
+import com.simplesys.System.Types.{ArrowStyle, ConnectorOrientation, ConnectorStyle, TitleRotationMode}
 import com.simplesys.System.{JSAny, JSObject, JSUndefined, jSUndefined}
 import com.simplesys.function._
-import com.simplesys.option.ScOption
+import com.simplesys.js.com.simplesys.SmartClient.System.Common
 import com.simplesys.option.ScOption._
+import com.simplesys.option.{ScOption, ScSome}
 
 import scala.scalajs.js._
 
-class DrawLinePathSSProps extends DrawPathProps {
+class DrawLinePathSSProps extends DrawPathProps with DrawLineCommons{
     type classHandler <: DrawLinePathSS
-
-    var connectorOrientation: ScOption[ConnectorOrientation] = ConnectorOrientation.auto.opt
 
     var connectorStyle: ScOption[ConnectorStyle] = ConnectorStyle.diagonal.opt
 
-    titleRotationMode = TitleRotationMode.withItemAlwaysUp.opt
+    var connectorOrientation: ScOption[ConnectorOrientation] = ConnectorOrientation.auto.opt
+    var _editModeKnobs: ScOption[IscArray[String]] = ScSome(IscArray("startPoint", "endPoint", "controlPoints"))
 
     showTitleLabelBackground = true.opt
+
+    var showResizeKnobs: ScOption[ThisFunction0[classHandler, _]] = ((emptyFunc _).toThisFunc).opt
+    var hideResizeKnobs: ScOption[ThisFunction0[classHandler, _]] = ((emptyFunc _).toThisFunc).opt
+    var showMoveKnobs: ScOption[ThisFunction0[classHandler, _]] = ((emptyFunc _).toThisFunc).opt
+    var hideMoveKnobs: ScOption[ThisFunction0[classHandler, _]] = ((emptyFunc _).toThisFunc).opt
 
     var startPoint: ScOption[Point] = Point(0, 0).opt
 
     var endPoint: ScOption[Point] = Point(100, 100).opt
 
-    var tailSize: ScOption[Int] = 30.opt
+    endArrow = ArrowStyle.open.opt
 
     contextMenu = MenuSS.create(
         new MenuSSProps {
@@ -44,10 +49,10 @@ class DrawLinePathSSProps extends DrawPathProps {
                 new MenuSSItemProps {
                     title = "Установить контрольную точку".ellipsis.opt
                     identifier = "controlPoint".opt
-                    icon = "insert.png".opt
+                    icon = Common.insert.opt
                     click = {
                         (target: Canvas, item: MenuSSItem, menu: MenuSS, colNum: JSUndefined[Int]) =>
-
+                            target.asInstanceOf[DrawLinePathSS].insertControlPointKnob()
 
                     }.toFunc.opt
                 }
@@ -56,150 +61,75 @@ class DrawLinePathSSProps extends DrawPathProps {
 
     init = {
         (thiz: classHandler, arguments: IscArray[JSAny]) =>
+            //println("init")
 
-            isc debugTrap 0
+            //thiz.startPoint = thiz.startPoint.duplicate()
+            //thiz.endPoint = thiz.endPoint.duplicate()
 
-            thiz.startPoint = thiz.startPoint.duplicate()
-            thiz.endPoint = thiz.endPoint.duplicate()
+            thiz.startLeft = thiz.startPoint.getX().get
+            thiz.startTop = thiz.startPoint.getY().get
 
-            if (thiz.startLeft.isEmpty)
-                thiz.startLeft = thiz.startPoint.getX()
+            thiz.endLeft = thiz.endPoint.getX().get
+            thiz.endTop = thiz.endPoint.getY().get
 
-            if (thiz.startTop.isEmpty)
-                thiz.startTop = thiz.startPoint.getY()
+            thiz.titleRotationMode = TitleRotationMode.withLineAlwaysUp
 
-            if (thiz.endLeft.isEmpty)
-                thiz.endLeft = thiz.endPoint.getX()
-
-            if (thiz.endTop.isEmpty)
-                thiz.endTop = thiz.endPoint.getY()
-
-            thiz.points = IscArray(Point(thiz.startLeft.get, thiz.startTop.get), Point(thiz.startLeft.get, thiz.startTop.get))
-
-            isc debugTrap thiz.points
+            thiz.cKnobs = IscArray()
+            thiz.controlPoints = IscArray(thiz.points.slice(1, thiz.points.length - 1).map(item => UndefOr.any2undefOrA(item)):_*)
+            //isc debugTrap thiz.controlPoints
+            thiz.points = thiz._getSegmentPoints()
 
             thiz.Super("init", arguments)
 
     }.toThisFunc.opt
 
-    var getConnectorOrientationState: ScOption[ThisFunction0[classHandler, ConnectorOrientation]] = {
+    var _getSegmentPoints: ScOption[ThisFunction0[classHandler, IscArray[Point]]] = {
         (thiz: classHandler) =>
-          isc.debugTrap("getConnectorOrientationState")
-            if (thiz.connectorOrientation == ConnectorOrientation.auto) {
-                val width = Math.abs(thiz.endLeft.get - thiz.startLeft.get)
-                val height = Math.abs(thiz.endTop.get - thiz.startTop.get)
-                if (width >= height) ConnectorOrientation.horizontal else ConnectorOrientation.vertical
-            } else
-                thiz.connectorOrientation
-    }.toThisFunc.opt
-
-    var _getSegmentPoints: ScOption[ThisFunction2[classHandler, JSUndefined[Point], JSUndefined[Point], IscArray[Point]]] = {
-        (thiz: classHandler, leader: JSUndefined[Point], trailer: JSUndefined[Point]) =>
-
-            var _leader = leader
-            var _trailer = trailer
-
-            val p1 = Point(thiz.startLeft.get, thiz.startTop.get)
-            val p2 = Point(thiz.endLeft.get, thiz.endTop.get)
-
-            val orientation = thiz.getConnectorOrientationState()
-            val style = thiz.connectorStyle
-
-            var tailSize = thiz.tailSize
-
-            // draw horizontal tail segments
-            if (orientation == ConnectorOrientation.horizontal) {
-
-                // find the length of the leading tail segment and draw the tail segment at the same
-                // point on the x axis, making a right angle
-                if (style == ConnectorStyle.rightAngle) {
-
-                    if (thiz.controlPoint1.isEmpty)
-                        tailSize = if (thiz.startLeft.get <= thiz.endLeft.get) -thiz.tailSize else thiz.tailSize
-                    else
-                        tailSize = thiz.startLeft.get - thiz.controlPoint1.get.getX().get
 
 
-                    _leader = IscArray(thiz.startLeft.get - tailSize, thiz.startTop.get)
-                    _trailer = IscArray(thiz.startLeft.get - tailSize, thiz.endTop.get)
+            val startPoint = Point(thiz.startLeft, thiz.startTop)
+            val endPoint = Point(thiz.endLeft, thiz.endTop)
 
-                } else {
+            thiz._segmentPoints = IscArray(startPoint)
+            thiz._segmentPoints addArray thiz.controlPoints.filter(_.isDefined).map(_.get)
+            thiz._segmentPoints add endPoint
 
-                    if (thiz.startLeft.get <= thiz.endLeft.get)
-                        tailSize = -tailSize
-
-                    // don't change any point explicitly provided by the end user (as in move, etc)
-                    if (_leader.isEmpty)
-                        _leader = IscArray(thiz.startLeft.get - tailSize, thiz.startTop.get)
-
-                    if (_trailer.isEmpty)
-                        _trailer = IscArray(thiz.endLeft.get + tailSize, thiz.endTop.get)
-                }
-            }
-
-            if (orientation == ConnectorOrientation.vertical) {
-
-                // find the length of the leading tail segment and draw the tail segment at the same
-                // point on the y axis, making a right angle
-                if (style == ConnectorStyle.rightAngle) {
-
-                    if (thiz.controlPoint1.isEmpty)
-                        tailSize = if (thiz.startTop.get <= thiz.endTop.get) -thiz.tailSize else thiz.tailSize
-                    else
-                        tailSize = thiz.startTop.get - thiz.controlPoint1.get.getY().get
-
-
-                    _leader = IscArray(thiz.startLeft.get, thiz.startTop.get - tailSize)
-                    _trailer = IscArray(thiz.endLeft.get, thiz.startTop.get - tailSize)
-
-                } else {
-
-                    if (thiz.startTop.get <= thiz.endTop.get)
-                        tailSize = -tailSize
-
-                    // don't change any point explicitly provided by the end user (as in move, etc)
-                    if (_leader.isEmpty)
-                        _leader = IscArray(thiz.startLeft.get, thiz.startTop.get - tailSize)
-
-                    if (_trailer.isEmpty)
-                        _trailer = IscArray(thiz.endLeft.get, thiz.endTop.get + tailSize)
-                }
-            }
-
-            if (style == ConnectorStyle.rightAngle) {
-                thiz.controlPoint1 = thiz.getCenter(leader, trailer)
-            } else {
-                thiz.controlPoint1 = _leader
-                thiz.controlPoint2 = _trailer
-            }
-
-            thiz._segmentPoints = IscArray(p1, _leader.get, _trailer.get, p2)
-
-            isc.debugTrap("_getSegmentPoints")
+            //println(s"class: ${thiz.getClassName()} _getSegmentPoints: ${thiz._segmentPoints}")
             thiz._segmentPoints
 
     }.toThisFunc.opt
 
     var getCenter: ScOption[ThisFunction2[classHandler, JSUndefined[Point], JSUndefined[Point], Point]] = {
         (thiz: classHandler, p1: JSUndefined[Point], p2: JSUndefined[Point]) =>
+            //println("getCenter begin")
 
-            val startPoint = p1.getOrElse(thiz.startPoint)
-            val endPoint = p2.getOrElse(thiz.endPoint)
+            val startPoint: Point = p1 getOrElse thiz.startPoint
+            val endPoint: Point = p2 getOrElse thiz.endPoint
 
-            isc.debugTrap("getCenter")
-            Point(startPoint.getX().get + isc.DrawItem._makeCoordinate((endPoint.getX().get - startPoint.getX().get) / 2), startPoint.getY().get + isc.DrawItem._makeCoordinate((endPoint.getY().get - startPoint.getY().get) / 2))
+            val startPointX = startPoint.getX().get
+            val endPointX = endPoint.getX().get
+            val startPointY = startPoint.getY().get
+            val endPointY = endPoint.getY().get
+
+            val res = Point(startPointX + isc.DrawItem._makeCoordinate((endPointX - startPointX) / 2), startPointY + isc.DrawItem._makeCoordinate((endPointY - startPointY) / 2))
+            res
     }.toThisFunc.opt
 
     var _drawLineStartArrow: ScOption[ThisFunction0[classHandler, Boolean]] = {
-        (thiz: classHandler) => false
+        (thiz: classHandler) =>
+            //println("_drawLineStartArrow")
+            false
     }.toThisFunc.opt
 
     var _drawLineEndArrow: ScOption[ThisFunction0[classHandler, Boolean]] = {
-        (thiz: classHandler) => false
+        (thiz: classHandler) =>
+            //println("_drawLineEndArrow")
+            false
     }.toThisFunc.opt
 
-    var setStartPoint: ScOption[ThisFunction5[classHandler, Int, Int, JSUndefined[Boolean], JSUndefined[Int], JSUndefined[Int], _]] = {
-        (thiz: classHandler, left: Int, top: Int, fireMovedAndResized: JSUndefined[Boolean], cx: JSUndefined[Int], cy: JSUndefined[Int]) =>
+    var setStartPoint: ScOption[ThisFunction5[classHandler, Double, Double, JSUndefined[Boolean], JSUndefined[Double], JSUndefined[Double], _]] = {
+        (thiz: classHandler, left: Double, top: Double, fireMovedAndResized: JSUndefined[Boolean], cx: JSUndefined[Double], cy: JSUndefined[Double]) =>
+            //println("setStartPoint")
 
             thiz.startLeft = left
             thiz.startPoint setX left
@@ -207,15 +137,14 @@ class DrawLinePathSSProps extends DrawPathProps {
             thiz.startTop = top
             thiz.startPoint setY top
 
-            // regenerate points
+            thiz.setPoints(thiz._getSegmentPoints(), cx, cy)
 
-            thiz.setPoints(thiz._getSegmentPoints(jSUndefined, thiz.controlPoint2), cx, cy)
-            isc.debugTrap("setStartPoint")
     }.toThisFunc.opt
 
 
-    var setEndPoint: ScOption[ThisFunction5[classHandler, Int, Int, JSUndefined[Boolean], JSUndefined[Int], JSUndefined[Int], _]] = {
-        (thiz: classHandler, left: Int, top: Int, fireMovedAndResized: JSUndefined[Boolean], cx: JSUndefined[Int], cy: JSUndefined[Int]) =>
+    var setEndPoint: ScOption[ThisFunction5[classHandler, Double, Double, JSUndefined[Boolean], JSUndefined[Double], JSUndefined[Double], _]] = {
+        (thiz: classHandler, left: Double, top: Double, fireMovedAndResized: JSUndefined[Boolean], cx: JSUndefined[Double], cy: JSUndefined[Double]) =>
+            //println(s"setEndPoint X: $left, Y: $top")
 
             thiz.endLeft = left
             thiz.endPoint setX left
@@ -223,37 +152,29 @@ class DrawLinePathSSProps extends DrawPathProps {
             thiz.endTop = top
             thiz.endPoint setY top
 
-            // regenerate points
+            thiz.setPoints(thiz._getSegmentPoints(), cx, cy)
 
-            thiz.setPoints(thiz._getSegmentPoints(thiz.controlPoint1, jSUndefined), cx, cy)
-            isc.debugTrap("setEndPoint")
     }.toThisFunc.opt
 
-    var setControlPoint1: ScOption[ThisFunction5[classHandler, Int, Int, JSUndefined[Boolean], JSUndefined[Int], JSUndefined[Int], _]] = {
-        (thiz: classHandler, left: Int, top: Int, fireMovedAndResized: JSUndefined[Boolean], cx: JSUndefined[Int], cy: JSUndefined[Int]) =>
+    var setControlPoint: ScOption[ThisFunction6[classHandler, Int, Double, Double, JSUndefined[Boolean], JSUndefined[Double], JSUndefined[Double], _]] = {
+        (thiz: classHandler, index: Int, left: Double, top: Double, fireMovedAndResized: JSUndefined[Boolean], cx: JSUndefined[Double], cy: JSUndefined[Double]) =>
 
-            thiz.controlPoint1.get setX left
-            thiz.controlPoint1.get setY top
+            thiz.controlPoints(index).foreach {
+                cp =>
+                    cp setX left
+                    cp setY top
 
-            // regenerate points so that the line gets dragged along with the knob
-            thiz.setPoints(thiz._getSegmentPoints(thiz.controlPoint1, thiz.controlPoint2), cx, cy)
+                //println(s"setControlPoint$index, left: $left, top: $top")
+            }
 
-            isc.debugTrap("setControlPoint1")
+            thiz.setPoints(thiz._getSegmentPoints(), cx, cy)
+
     }.toThisFunc.opt
 
-    var setControlPoint2: ScOption[ThisFunction5[classHandler, Int, Int, JSUndefined[Boolean], JSUndefined[Int], JSUndefined[Int], _]] = {
-        (thiz: classHandler, left: Int, top: Int, fireMovedAndResized: JSUndefined[Boolean], cx: JSUndefined[Int], cy: JSUndefined[Int]) =>
+    var getBoundingBox: ScOption[ThisFunction2[classHandler, Boolean, JSUndefined[IscArray[Double]], IscArray[Double]]] = {
+        (thiz: classHandler, includeStroke: Boolean, outputBox: JSUndefined[IscArray[Double]]) =>
+            //println("getBoundingBox")
 
-            thiz.controlPoint2.get setX left
-            thiz.controlPoint2.get setY top
-
-            // regenerate points so that the line gets dragged along with the knob
-            thiz.setPoints(thiz._getSegmentPoints(thiz.controlPoint1, thiz.controlPoint2), cx, cy)
-            isc.debugTrap("setControlPoint1")
-    }.toThisFunc.opt
-
-    var getBoundingBox: ScOption[ThisFunction2[classHandler, Boolean, JSUndefined[IscArray[Int]], IscArray[Int]]] = {
-        (thiz: classHandler, includeStroke: Boolean, outputBox: JSUndefined[IscArray[Int]]) =>
             val x1 = thiz.startPoint.getX().get
             val y1 = thiz.startPoint.getY().get
             val x2 = thiz.endPoint.getX().get
@@ -266,202 +187,194 @@ class DrawLinePathSSProps extends DrawPathProps {
             bbox(2) = Math.max(x1, x2)
             bbox(3) = Math.max(y1, y2)
 
-            isc.debugTrap("getBoundingBox")
             if (includeStroke) bbox else thiz._adjustBoundingBox(true, false, bbox)
     }.toThisFunc.opt
 
-    var showStartPointKnobs: ScOption[ThisFunction0[classHandler, _]] = isc.DrawLine.getPrototype().showStartPointKnobs.asInstanceOf[ThisFunction0[classHandler, _]].opt
-    var hideStartPointKnobs: ScOption[ThisFunction0[classHandler, _]] = isc.DrawLine.getPrototype().hideStartPointKnobs.asInstanceOf[ThisFunction0[classHandler, _]].opt
-    var showEndPointKnobs: ScOption[ThisFunction0[classHandler, _]] = isc.DrawLine.getPrototype().showEndPointKnobs.asInstanceOf[ThisFunction0[classHandler, _]].opt
-    var hideEndPointKnobs: ScOption[ThisFunction0[classHandler, _]] = isc.DrawLine.getPrototype().hideEndPointKnobs.asInstanceOf[ThisFunction0[classHandler, _]].opt
-
-    var showControlPoint1Knobs: ScOption[ThisFunction0[classHandler, _]] = {
+    var refresh: ScOption[ThisFunction0[classHandler, _]] = {
         (thiz: classHandler) =>
-            if (thiz._c1Knob.isEmpty || thiz._c1Knob.get.destroyed) {
+            thiz._movePointToPoint(thiz.startLeft + 1, thiz.startTop + 1, thiz.startLeft, thiz.startTop)
+            thiz._movePointToPoint(thiz.startLeft - 1, thiz.startTop - 1, thiz.startLeft, thiz.startTop)
+    }.toThisFunc.opt
 
-                val v = thiz._normalize(thiz.controlPoint1.get.getX().get, thiz.controlPoint1.get.getY().get, "local", "global")
+    var removeControlPointKnob: ScOption[ThisFunction1[classHandler, DrawKnob, _]] = {
+        (thiz: classHandler, knob: DrawKnob) =>
+            if (thiz.controlPoints.remove(obj = Point(knob.x, knob.y), comparator = {
+                (item1: Point, item2: Point) =>
+                    item1.getX().get == item2.getX().get && item1.getY().get == item2.getY().get
+            })) {
+                thiz.clickedPoint = jSUndefined
+                thiz.setPoints(thiz._getSegmentPoints())
+                thiz.hideControlPointsKnobs()
+                thiz.refresh()
+                thiz.showControlPointsKnobs()
+            }
+    }.toThisFunc.opt
 
-                thiz._c1Knob = thiz.createAutoChild(
-                    "c1Knob", DrawKnob(
-                        new DrawKnobProps {
-                            x = v.getX().get.opt
-                            y = v.getY().get.opt
-                            drawPane = thiz.drawPane.opt
-
-                            resetKnobPosition = {
-                                (thiz: DrawKnob) =>
-                                    val drawItem = thiz.creator.asInstanceOf[DrawLinePathSS]
-                                    val v = drawItem._normalize(drawItem.controlPoint1.get.getX().get, drawItem.controlPoint1.get.getY().get, "local", "global")
-                                    thiz.setCenterPoint(v.getX().get, v.getY().get, false)
-
-                            }.toThisFunc.opt
-
-                            updatePoints = {
-                                (thiz: DrawKnob, x: Int, y: Int, dx: Int, dy: Int, state: String) =>
-
-                                    val drawItem = thiz.creator.asInstanceOf[DrawLinePathSS]
-                                    val orientation = drawItem.getConnectorOrientationState()
-
-                                    val v = drawItem._normalize(x, y, "global", "local")
-                                    val w = drawItem._normalize(dx, dy, "global", "local")
-                                    val z = drawItem._normalize(0, 0, "global", "local")
-
-                                    var _x = v.getX().get
-                                    var _y = v.getY().get
-
-                                    val _dx = w.getX().get - z.getX().get
-                                    val _dy = w.getY().get - z.getY().get
-
-                                    // Restrict movement to the axis appropriate for a given orientation.
-                                    if (orientation == ConnectorOrientation.horizontal) {
-                                        _y -= _dy
-                                    } else {
-                                        _x -= _dx
+    var insertControlPointKnob: ScOption[ThisFunction0[classHandler, _]] = {
+        (thiz: classHandler) =>
+            thiz.clickedPoint foreach {
+                clickedPoint =>
+                    var indexAt = 0
+                    thiz.points.zipWithIndex.foreach {
+                        case (item, index) if indexAt == 0 =>
+                            if (index + 2 <= thiz.points.length) {
+                                val line = DrawLine.create(
+                                    new DrawLineProps {
+                                        startPoint = item.opt
+                                        endPoint = thiz.points(index + 1).opt
                                     }
+                                )
+                                if (line.isPointInPath(clickedPoint.getX().get, clickedPoint.getY().get))
+                                    indexAt = index
+                                line.destroy()
+                            }
 
-                                    var center = drawItem._getRotationCenter()
-                                    drawItem.setControlPoint1(isc.DrawItem._makeCoordinate(_x), isc.DrawItem._makeCoordinate(_y), false, center.cx, center.cy)
+                        case _ =>
+                    }
 
-                            }.toThisFunc.opt
+                    thiz.controlPoints addAt(clickedPoint, indexAt)
+                    thiz.setPoints(thiz._getSegmentPoints())
+                    thiz.showControlPointsKnobs()
+            }
+    }.toThisFunc.opt
+
+    var showControlPointsKnobs: ScOption[ThisFunction0[classHandler, _]] = {
+        (thiz: classHandler) =>
+            val topThiz = thiz
+            thiz.controlPoints.zipWithIndex.foreach {
+                case (controlPoint, index) =>
+                    if (thiz.cKnobs(index).isEmpty || thiz.cKnobs(index).get.destroyed.getOrElse(false)) {
+                        controlPoint foreach {
+                            controlPoint =>
+                                val v = thiz._normalize(controlPoint.getX().get, controlPoint.getY().get, "local", "global")
+
+                                thiz.drawPane.foreach {
+                                    _drawPane =>
+                                        thiz.cKnobs(index) = thiz.createAutoChild(
+                                            s"c${index}Knob", DrawKnob(
+                                                new DrawKnobProps {
+                                                    _constructor = "DrawKnob".opt
+                                                    x = v.getX().get.opt
+                                                    y = v.getY().get.opt
+                                                    click = {
+                                                        (thiz: DrawKnob) =>
+                                                            if (isc.EventHandler.ctrlKeyDown())
+                                                                topThiz removeControlPointKnob thiz
+                                                            false
+                                                    }.toThisFunc.opt
+                                                    drawPane = _drawPane.opt
+                                                    contextMenu = MenuSS.create(
+                                                        new MenuSSProps {
+                                                            unserialize = true.opt
+                                                            items = Seq(
+                                                                new MenuSSItemProps {
+                                                                    title = "Удалить контрольную точку".ellipsis.opt
+                                                                    identifier = "deleteControlPoint".opt
+                                                                    icon = Common.Delete_icon.opt
+                                                                    click = {
+                                                                        (target: Canvas, item: MenuSSItem, menu: MenuSS, colNum: JSUndefined[Int]) =>
+                                                                            thiz removeControlPointKnob target.asInstanceOf[DrawKnob]
+                                                                    }.toFunc.opt
+                                                                }
+                                                            ).opt
+                                                        }).opt
+
+                                                    resetKnobPosition = {
+                                                        (thiz: DrawKnob) =>
+                                                            val drawItem = thiz.creator.asInstanceOf[DrawLinePathSS]
+                                                            drawItem.controlPoints(index).foreach {
+                                                                controlPoint =>
+
+                                                                    val v = drawItem._normalize(controlPoint.getX().get, controlPoint.getY().get, "local", "global")
+                                                                    thiz.setCenterPoint(v.getX().get, v.getY().get, false)
+                                                            }
+
+                                                    }.toThisFunc.opt
+
+                                                    updatePoints = {
+                                                        (thiz: DrawKnob, x: Double, y: Double, dx: Double, dy: Double, state: String) =>
+                                                            val drawItem = thiz.creator.asInstanceOf[DrawLinePathSS]
+                                                            val v = drawItem._normalize(x, y, "global", "local")
+
+                                                            val center = drawItem._getRotationCenter()
+
+                                                            drawItem.setControlPoint(index, isc.DrawItem _makeCoordinate v.getX().get, isc.DrawItem _makeCoordinate v.getY().get, false, center.cx, center.cy)
+
+                                                    }.toThisFunc.opt
+                                                }
+                                            )
+                                        )
+                                }
+
+                            //println(s"showControlPoint${index}Knobs")
                         }
-                    )
-                )
-                isc.debugTrap("showControlPoint1Knobs")
+                    }
             }
     }.toThisFunc.opt
 
-    var hideControlPoint1Knobs: ScOption[ThisFunction0[classHandler, _]] = {
+    var hideControlPointsKnobs: ScOption[ThisFunction0[classHandler, _]] = {
         (thiz: classHandler) =>
-            if (thiz._c1Knob.isDefined) {
-                thiz._c1Knob.get.destroy()
-                thiz._c1Knob = jSUndefined
-                isc.debugTrap("hideControlPoint1Knobs")
+            thiz.cKnobs.filter(_.isDefined).map(_.get).zipWithIndex.foreach {
+                case (cKnob, index) =>
+                    //println(s"hideControlPoint${index}Knobs")
+                    cKnob.markForDestroy()
             }
-    }.toThisFunc.opt
-
-    var showControlPoint2Knobs: ScOption[ThisFunction0[classHandler, _]] = {
-        (thiz: classHandler) =>
-            if ((thiz.connectorStyle == ConnectorStyle.diagonal) && (thiz._c2Knob.isEmpty || thiz._c1Knob.get.destroyed)) {
-
-                val v = thiz._normalize(thiz.controlPoint2.get.getX().get, thiz.controlPoint2.get.getY().get, "local", "global")
-
-                thiz._c1Knob = thiz.createAutoChild(
-                    "c2Knob", DrawKnob(
-                        new DrawKnobProps {
-                            x = v.getX().get.opt
-                            y = v.getY().get.opt
-                            drawPane = thiz.drawPane.opt
-
-                            resetKnobPosition = {
-                                (thiz: DrawKnob) =>
-                                    val drawItem = thiz.creator.asInstanceOf[DrawLinePathSS]
-                                    val v = drawItem._normalize(drawItem.controlPoint2.get.getX().get, drawItem.controlPoint2.get.getY().get, "local", "global")
-                                    thiz.setCenterPoint(v.getX().get, v.getY().get, false)
-
-                            }.toThisFunc.opt
-
-                            updatePoints = {
-                                (thiz: DrawKnob, x: Int, y: Int, dx: Int, dy: Int, state: String) =>
-
-                                    val drawItem = thiz.creator.asInstanceOf[DrawLinePathSS]
-                                    val orientation = drawItem.getConnectorOrientationState()
-
-                                    val v = drawItem._normalize(x, y, "global", "local")
-                                    val w = drawItem._normalize(dx, dy, "global", "local")
-                                    val z = drawItem._normalize(0, 0, "global", "local")
-
-                                    var _x = v.getX().get
-                                    var _y = v.getY().get
-
-                                    val _dx = w.getX().get - z.getX().get
-                                    val _dy = w.getY().get - z.getY().get
-
-                                    // Restrict movement to the axis appropriate for a given orientation.
-                                    if (orientation == ConnectorOrientation.horizontal) {
-                                        _y -= _dy
-                                    } else {
-                                        _x -= _dx
-                                    }
-
-                                    var center = drawItem._getRotationCenter()
-                                    drawItem.setControlPoint2(isc.DrawItem._makeCoordinate(_x), isc.DrawItem._makeCoordinate(_y), false, center.cx, center.cy)
-
-                            }.toThisFunc.opt
-                        }
-                    )
-                )
-                isc.debugTrap("showControlPoint2Knobs")
-            }
-    }.toThisFunc.opt
-
-    var hideControlPoint2Knobs: ScOption[ThisFunction0[classHandler, _]] = {
-        (thiz: classHandler) =>
-            if (thiz._c2Knob.isDefined) {
-                thiz._c2Knob.get.destroy()
-                thiz._c2Knob = jSUndefined
-                isc.debugTrap("hideControlPoint1Knobs")
-            }
+            thiz.cKnobs = IscArray()
     }.toThisFunc.opt
 
     var updateStartPointKnob: ScOption[ThisFunction0[classHandler, _]] = {
         (thiz: classHandler) =>
-            if (thiz._startKnob.isDefined) {
-                val v = thiz._normalize(thiz.startLeft.get, thiz.startTop.get, "local", "global")
-                thiz.setCenterPoint(v.getX().get, v.getY().get)
-                isc.debugTrap("updateStartPointKnob")
+            //println("updateStartPointKnob")
+            thiz._startKnob.foreach {
+                knob =>
+                    val v = thiz._normalize(thiz.startLeft, thiz.startTop, "local", "global")
+                    knob.setCenterPoint(v.getX().get, v.getY().get)
             }
     }.toThisFunc.opt
 
     var updateEndPointKnob: ScOption[ThisFunction0[classHandler, _]] = {
         (thiz: classHandler) =>
-            if (thiz._startKnob.isDefined) {
-                val v = thiz._normalize(thiz.endLeft.get, thiz.endTop.get, "local", "global")
-                thiz.setCenterPoint(v.getX().get, v.getY().get)
-                isc.debugTrap("updateEndPointKnob")
+            thiz._endKnob.foreach {
+                knob =>
+                    //println("updateEndPointKnob")
+                    val v = thiz._normalize(thiz.endLeft, thiz.endTop, "local", "global")
+                    knob.setCenterPoint(v.getX().get, v.getY().get)
             }
     }.toThisFunc.opt
 
-    var updateControlPoint1Knob: ScOption[ThisFunction0[classHandler, _]] = {
+    var updateControlPointsKnob: ScOption[ThisFunction0[classHandler, _]] = {
         (thiz: classHandler) =>
-            if (thiz._c1Knob.isDefined) {
-                val v = thiz._normalize(thiz.controlPoint1.get.getX().get, thiz.controlPoint1.get.getY().get, "local", "global")
-                thiz._c1Knob.get.setCenterPoint(v.getX().get, v.getY().get)
-                isc.debugTrap("updateControlPoint1Knob")
+            thiz.cKnobs.filter(_.isDefined).map(_.get).zipWithIndex.foreach {
+                case (knob, index) =>
+                    thiz.controlPoints(index).foreach {
+                        controlPoint =>
+                            //println(s"updateControlPoint${index}Knob")
+                            val v = thiz._normalize(controlPoint.getX().get, controlPoint.getY().get, "local", "global")
+                            knob.setCenterPoint(v.getX().get, v.getY().get)
+                    }
             }
     }.toThisFunc.opt
 
-
-    var updateControlPoint2Knob: ScOption[ThisFunction0[classHandler, _]] = {
-        (thiz: classHandler) =>
-            if (thiz._c2Knob.isDefined) {
-                val v = thiz._normalize(thiz.controlPoint2.get.getX().get, thiz.controlPoint2.get.getY().get, "local", "global")
-                thiz._c2Knob.get.setCenterPoint(v.getX().get, v.getY().get)
-                isc.debugTrap("updateControlPoint2Knob")
-            }
-    }.toThisFunc.opt
 
     var updateControlKnobs: ScOption[ThisFunction1[classHandler, IscArray[JSAny], _]] = {
         (thiz: classHandler, arguments: IscArray[JSAny]) =>
-            isc.debugTrap("updateControlKnobs begin")
+            //println("updateControlKnobs")
             thiz.Super("updateControlKnobs", arguments)
             thiz.updateStartPointKnob()
             thiz.updateEndPointKnob()
-            thiz.updateControlPoint1Knob()
-            thiz.updateControlPoint2Knob()
-            isc.debugTrap("updateControlKnobs end")
+            thiz.updateControlPointsKnob()
     }.toThisFunc.opt
 
-    var moveStartPointTo: ScOption[ThisFunction2[classHandler, Int, Int, _]] = {
-        (thiz: classHandler, left: Int, top: Int) =>
-            thiz._movePointToPoint(left, top, thiz.startLeft.get, thiz.startTop.get)
-            isc.debugTrap("moveStartPointTo")
+    var moveStartPointTo: ScOption[ThisFunction2[classHandler, Double, Double, _]] = {
+        (thiz: classHandler, left: Double, top: Double) =>
+            //println(s"moveStartPointTo")
+            thiz._movePointToPoint(left, top, thiz.startLeft, thiz.startTop)
     }.toThisFunc.opt
 
-    var _updateLocalTransform: ScOption[ThisFunction7[classHandler, AffineTransform, Int, Int, JSObject, Boolean, Boolean, IscArray[JSAny], _]] = {
-        (thiz: classHandler, transform: AffineTransform, cx: Int, cy: Int, initialShape: JSObject, fireReshaped: Boolean, viaLocalTransformOnly: Boolean, arguments: IscArray[JSAny]) =>
+    var _updateLocalTransform: ScOption[ThisFunction7[classHandler, AffineTransform, Double, Double, JSObject, Boolean, Boolean, IscArray[JSAny], _]] = {
+        (thiz: classHandler, transform: AffineTransform, cx: Double, cy: Double, initialShape: JSObject, fireReshaped: Boolean, viaLocalTransformOnly: Boolean, arguments: IscArray[JSAny]) =>
 
-            isc.debugTrap("_updateLocalTransform")
-
+            //println(s"_updateLocalTransform")
             if (viaLocalTransformOnly)
                 thiz.Super("_updateLocalTransform", IscArray(transform, cx, cy, initialShape, fireReshaped, true), arguments)
             else {
@@ -469,41 +382,37 @@ class DrawLinePathSSProps extends DrawPathProps {
 
                 val det = transform.getDeterminant()
                 if (Math.abs(det) > epsilon) {
+
                     val dx = isc.DrawItem._makeCoordinate(transform.m02 * transform.m11 - transform.m12 * transform.m01)
                     val dy = isc.DrawItem._makeCoordinate(transform.m12 * transform.m00 - transform.m02 * transform.m10)
 
                     thiz.Super("_updateLocalTransform", IscArray(transform.duplicate().rightMultiply(isc.AffineTransform.getTranslateTransform(-dx, -dy)), cx, cy, initialShape, false, true), arguments)
 
-                    var startLeft = thiz.startLeft.get
-                    startLeft += dx
+                    thiz.startLeft = thiz.startLeft + dx
+                    thiz.startPoint setX (thiz.startPoint.getX().get + dx)
 
-                    thiz.startPoint setX dx
+                    thiz.startTop = thiz.startTop + dy
+                    thiz.startPoint setY (thiz.startPoint.getY().get + dy)
 
-                    var startTop = thiz.startTop.get
-                    startTop += dy
+                    thiz.endLeft = thiz.endLeft + dx
+                    thiz.endPoint setX (thiz.endPoint.getX().get + dx)
 
-                    thiz.startPoint setY dy
+                    thiz.endTop = thiz.endTop + dy
+                    thiz.endPoint setY (thiz.endPoint.getY().get + dy)
 
-                    var endLeft = thiz.endLeft.get
-                    endLeft += dx
+                    thiz.controlPoints.foreach {
+                        cp =>
+                            cp.foreach {
+                                cp =>
+                                    cp setX (cp.getX().get + dx)
+                                    cp setY (cp.getY().get + dy)
+                            }
+                    }
 
-                    thiz.endPoint setX dx
-                    var endTop = thiz.endTop.get
-                    endTop += dy
-
-                    thiz.endPoint setY dy
-
-                    thiz.controlPoint1.get setX dx
-                    thiz.controlPoint1.get setY dy
-
-                    thiz.controlPoint2.get setX dx
-                    thiz.controlPoint2.get setY dy
-
-                    var center = thiz._getRotationCenter()
+                    val center = thiz._getRotationCenter()
                     thiz._updateRotationCenter(cx, cy, center.cx, center.cy)
 
-                    // regenerate points
-                    thiz.setPoints(thiz._getSegmentPoints(thiz.controlPoint1, thiz.controlPoint2))
+                    thiz.setPoints(thiz._getSegmentPoints())
 
                 } else
                     thiz.Super("_updateLocalTransform", IscArray(transform, cx, cy, initialShape, fireReshaped, true), arguments)
