@@ -11,7 +11,7 @@ trait CommonDomainsCrossProj {
     lazy val commonDomainsCrossProj = crossProject.dependsOn(smartClientCrossProj).
       settings(
           name := "common-domains",
-          version := "1.1-SNAPSHOT",
+          version := CommonSettings.settingValues.version,
 
           libraryDependencies ++= Seq(
               //CommonDeps.uTest.value,

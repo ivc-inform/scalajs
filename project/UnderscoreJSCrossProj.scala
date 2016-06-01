@@ -10,7 +10,7 @@ trait UnderscoreJSCrossProj {
     lazy val underscoreJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).
       settings(
           name := "underscore-js",
-          version := "1.1-SNAPSHOT",
+          version := CommonSettings.settingValues.version,
 
           libraryDependencies ++= Seq(
               CommonDeps.scalaTest.value

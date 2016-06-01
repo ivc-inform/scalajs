@@ -10,7 +10,7 @@ trait SmartClientCrossProj {
     lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
       settings(
           name := "smartclient-wrapper",
-          version := "1.1-SNAPSHOT",
+          version := CommonSettings.settingValues.version,
           libraryDependencies ++= {
               Seq(
                   CommonDeps.xmlExtender.value,

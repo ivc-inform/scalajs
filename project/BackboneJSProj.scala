@@ -10,7 +10,7 @@ trait BackboneJSProj {
     lazy val backboneJSCrossProj = crossProject.dependsOn(underscoreJSCrossProj).
       settings(
           name := "backbone-js",
-          version := "1.1-SNAPSHOT",
+          version := CommonSettings.settingValues.version,
 
           libraryDependencies ++= Seq(
 //              CommonDeps.scalaTest.value,
