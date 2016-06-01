@@ -26,6 +26,7 @@ object CommonSettings {
         val scalajsJQueryVersion = "0.9.0"
     }
 
+
     val defaultSettings = {
         import sbt.Keys._
         Seq(
