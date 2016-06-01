@@ -11,7 +11,7 @@ trait commonTypesCrossProj {
     lazy val commonTypesCrossProj = crossProject.
       settings(
           name := "common-types",
-          version := "1.0-SNAPSHOT",
+//          version := "1.0-SNAPSHOT",
           libraryDependencies ++= Seq(
               //CommonDeps.uTest.value,
               CommonDeps.xmlExtender.value,
