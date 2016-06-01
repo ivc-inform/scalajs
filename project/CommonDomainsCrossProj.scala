@@ -14,7 +14,7 @@ trait CommonDomainsCrossProj {
           version := "1.1-SNAPSHOT",
 
           libraryDependencies ++= Seq(
-              CommonSettings.cmnDependencies.uTest.value,
+              //CommonSettings.cmnDependencies.uTest.value,
               CommonSettings.cmnDependencies.logbackWrapper.value
           ),
 

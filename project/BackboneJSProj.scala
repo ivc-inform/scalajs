@@ -13,8 +13,8 @@ trait BackboneJSProj {
           version := "1.1-SNAPSHOT",
 
           libraryDependencies ++= Seq(
-              CommonSettings.cmnDependencies.scalaTest.value,
-              CommonSettings.cmnDependencies.uTest.value
+//              CommonSettings.cmnDependencies.scalaTest.value,
+//              CommonSettings.cmnDependencies.uTest.value
           ),
 
           testFrameworks += new TestFramework("utest.runner.Framework"),

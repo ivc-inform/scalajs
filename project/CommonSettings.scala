@@ -50,13 +50,13 @@ object CommonSettings {
         val scalaReflection = Def.setting("org.scala-lang" % "scala-reflection" % settingValues.scalaVersion)
         val scalaTest = Def.setting("org.scalatest" %% "scalatest" % versions.scalaTestVersion % "test")
         val spray = Def.setting("io.spray" % "spray-json_2.11" % versions.scalaTestVersion % "test")
-        val uTest = Def.setting("com.lihaoyi" %%% "utest" % versions.uTestVersion % "test")
     }
 
     object jsDependencies {
         val scalajsDOM = Def.setting("org.scala-js" %%% "scalajs-dom" % versions.scalajsDOMVersion)
         val scalajsJQuey = Def.setting("be.doeraene" %%% "scalajs-jquery" % versions.scalajsJQueryVersion)
         val scalaTest = Def.setting("org.scalatest" %%% "scalatest" % versions.scalaTestVersion % "test")
+        val uTest = Def.setting("com.lihaoyi" %%% "utest" % versions.uTestVersion % "test")
     }
 
     object jvmDependencies {}

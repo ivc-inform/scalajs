@@ -13,7 +13,7 @@ trait commonTypesCrossProj {
           name := "common-types",
           version := "1.1-SNAPSHOT",
           libraryDependencies ++= Seq(
-              CommonSettings.cmnDependencies.uTest.value,
+              //CommonSettings.cmnDependencies.uTest.value,
               CommonSettings.cmnDependencies.xmlExtender.value,
               CommonSettings.cmnDependencies.common.value,
               CommonSettings.cmnDependencies.logbackWrapper.value
