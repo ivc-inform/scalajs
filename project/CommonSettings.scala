@@ -1,34 +1,31 @@
 package com.simplesys.build
 
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
-import sbt.Keys._
 import sbt._
 
 object CommonSettings {
-    object settingValues {
-        val baseVersion = "10.1"
+    val baseVersion = "10.1"
 
-        val scalaVersion = "2.11.8"
-        val scalaOldVersion = "2.10.6"
-        val crossScalaVersions = Seq(scalaVersion, scalaOldVersion)
-        val organization = "com.simplesys"
-        val scalacOptions = Seq(
-            "-feature",
-            "-language:higherKinds",
-            "-language:implicitConversions",
-            "-language:postfixOps",
-            "-deprecation",
-            "-unchecked")
-    }
+    val scalaVersion = "2.11.8"
+    val scalaOldVersion = "2.10.6"
+    val crossScalaVersions = Seq(scalaVersion, scalaOldVersion)
+    val organization = "com.simplesys"
+    val scalacOptions = Seq(
+        "-feature",
+        "-language:higherKinds",
+        "-language:implicitConversions",
+        "-language:postfixOps",
+        "-deprecation",
+        "-unchecked")
 
-    val defaultSettings = {
-        import sbt.Keys._
-        Seq(
-            scalaVersion := settingValues.scalaVersion,
-            scalacOptions := settingValues.scalacOptions,
-            organization := settingValues.organization
-        )
-    }
+    //    val defaultSettings = {
+    //        import sbt.Keys._
+    //        Seq(
+    //            scalaVersion := settingValues.scalaVersion,
+    //            scalacOptions := settingValues.scalacOptions,
+    //            organization := settingValues.organization
+    //        )
+    //    }
 
     object versions {
         val sprayVersion = "1.3.2"
