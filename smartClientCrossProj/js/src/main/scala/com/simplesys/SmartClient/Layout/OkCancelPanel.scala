@@ -7,8 +7,8 @@ import scala.scalajs.js
 
 @js.native
 trait OkCancelPanel extends HPanelSS {
-    var okFunction: js.Function1[callbackHandler, _]
-    var cancelFunction: js.Function1[callbackHandler, _]
+    var okFunction: js.Function1[classHandler, _]
+    var cancelFunction: js.Function1[classHandler, _]
     var okBtn: IButton
     var cancelButton: IButton
     def setDisabledOk(value: Boolean): this.type

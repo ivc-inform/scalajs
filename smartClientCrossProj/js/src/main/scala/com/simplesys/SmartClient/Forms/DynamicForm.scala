@@ -200,7 +200,7 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     def valueHoverHTML(item: FormItem): void
     var values: JSObject
     def valuesAreValid(validateHiddenFields: Boolean, returnErrors: Boolean): Boolean | JSObject
-    var valuesChanged: js.ThisFunction0[callbackHandler, _]
+    var valuesChanged: js.ThisFunction0[classHandler, _]
     def valuesHaveChanged(): Boolean
     var wrapItemTitles: Boolean
 }

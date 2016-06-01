@@ -29,7 +29,7 @@ trait Window extends Layout {
     def centerInPage(): void
     def close(): void
     val closeButton: ImgButton with AutoChild
-    var closeClick: js.ThisFunction0[callbackHandler, Boolean]
+    var closeClick: js.ThisFunction0[classHandler, Boolean]
     var contentLayout: ContentLayoutPolicy
     val contentsType: String
     var defaultMinimizeHeight: Int

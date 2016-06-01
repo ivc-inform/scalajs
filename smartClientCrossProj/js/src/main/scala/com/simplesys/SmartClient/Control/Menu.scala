@@ -42,7 +42,7 @@ trait Menu extends Grid[ListGridField, MenuItem] {
     val navigationBar: NavigationBar with AutoChild
     val navStack: Canvas with AutoChild
     val placement: PanelPlacement
-    def setData(items: IscArray[MenuItem]): callbackHandler
+    def setData(items: IscArray[MenuItem]): classHandler
     def setItemChecked(item: MenuItem | Int, newState: Boolean = js.native): Boolean
     def setItemEnabled(item: MenuItem | Int, newState: Boolean = js.native): Boolean
     def setItemIcon(item: MenuItem | Int, newIcon: SCImgURL, newDisabledIcon: SCImgURL = js.native): Boolean

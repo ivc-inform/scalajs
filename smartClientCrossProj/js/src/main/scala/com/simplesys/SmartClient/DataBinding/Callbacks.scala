@@ -11,15 +11,15 @@ import scala.scalajs.js
 import scala.scalajs.js.{ThisFunction0, ThisFunction1, ThisFunction2}
 
 object Callbacks {
-    type AnimationCallback = ThisFunction1[Canvas#callbackHandler, Boolean, _]
+    type AnimationCallback = ThisFunction1[Canvas#classHandler, Boolean, _]
 
-    type CollapseSectionCallback = ThisFunction0[SectionStack#callbackHandler, _]
+    type CollapseSectionCallback = ThisFunction0[SectionStack#classHandler, _]
 
-    type ExpandSectionCallback = ThisFunction0[SectionStack#callbackHandler, _]
+    type ExpandSectionCallback = ThisFunction0[SectionStack#classHandler, _]
 
-    type HideSectionCallback = ThisFunction0[SectionStack#callbackHandler, _]
+    type HideSectionCallback = ThisFunction0[SectionStack#classHandler, _]
 
-    type ShowSectionCallback = ThisFunction0[SectionStack#callbackHandler, _]
+    type ShowSectionCallback = ThisFunction0[SectionStack#classHandler, _]
 
     type ClientOnlyDataSourceCallback = ThisFunction0[DataSource, _]
 

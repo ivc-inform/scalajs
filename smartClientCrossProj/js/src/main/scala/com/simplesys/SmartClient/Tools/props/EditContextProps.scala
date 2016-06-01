@@ -7,6 +7,7 @@ import com.simplesys.SmartClient.Tools.props.EditContextProps.SelectedUpdated
 import com.simplesys.System.Types.CSSColor
 import com.simplesys.System.Types.HoopSelectionStyle.HoopSelectionStyle
 import com.simplesys.System.Types.SelectedAppearance.SelectedAppearance
+import com.simplesys.System.Types.SelectionStyle.SelectionStyle
 import com.simplesys.System._
 import com.simplesys.option.{ScNone, ScOption}
 
@@ -46,4 +47,5 @@ trait EditContextProps extends ClassProps {
     var showSelectedLabel: ScOption[Boolean] = ScNone
     var showSelectedLabelOnSelect: ScOption[Boolean] = ScNone
     var selectedEditNodesUpdated: ScOption[SelectedUpdated] = ScNone
+    var selectionType : ScOption[SelectionStyle] = ScNone
 }

@@ -19,7 +19,7 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VisibilityMode.VisibilityMode
-import com.simplesys.System.Types.{CSSStyleName, FormItemBaseStyle, HTMLString, URL}
+import com.simplesys.System.Types._
 import com.simplesys.option.{IntString, ScNone, ScOption}
 
 import scala.scalajs.js._
@@ -41,6 +41,10 @@ class DynamicFormProps extends CanvasProps with DataBoundComponentProps{
     var canTabToSectionHeaders: ScOption[Boolean] = ScNone
     var cellBorder: ScOption[Int] = ScNone
     var cellPadding: ScOption[Int] = ScNone
+    var clearValues : ScOption[ThisFunction0[classHandler, _]] = ScNone
+    var clearValue : ScOption[ThisFunction1[classHandler, ID, _]] = ScNone
+    var clearErrors : ScOption[ThisFunction1[classHandler, Boolean, _]] = ScNone
+    var clearFieldErrors : ScOption[ThisFunction2[classHandler, String, Boolean, _]] = ScNone
     var clipItemTitles: ScOption[Boolean] = ScNone
     var clipStaticValue: ScOption[Boolean] = ScNone
     var colWidths: ScOption[Seq[Any]] = ScNone

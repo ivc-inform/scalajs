@@ -32,8 +32,8 @@ trait PortalLayout extends Layout {
     def portletMinimized(portlet: Portlet): void
     def portletRestored(portlet: Portlet): void
     val portlets: IscArray[Portlet] | Portlet
-    var portletsChanged: js.ThisFunction0[callbackHandler, void]
-    var portletsResized: js.ThisFunction0[callbackHandler, void]
+    var portletsChanged: js.ThisFunction0[classHandler, void]
+    var portletsResized: js.ThisFunction0[classHandler, void]
     var preventColumnUnderflow: Boolean
     var preventRowUnderflow: Boolean
     var preventUnderflow: Boolean
@@ -56,9 +56,9 @@ trait PortalLayout extends Layout {
     var showColumnMenus: Boolean
     var stretchColumnWidthsProportionally: Boolean
     def willAcceptPortletDrop(dragTarget: Int, colNum: Int, rowNum: Int, dropPosition: Int = js.native): Boolean
-    var willMaximizePortlet: js.ThisFunction1[callbackHandler, Portlet, Boolean]
-    var willMinimizePortlet: js.ThisFunction1[callbackHandler, Portlet, Boolean]
-    var willRestorePortlet: js.ThisFunction1[callbackHandler, Portlet, Boolean]
+    var willMaximizePortlet: js.ThisFunction1[classHandler, Portlet, Boolean]
+    var willMinimizePortlet: js.ThisFunction1[classHandler, Portlet, Boolean]
+    var willRestorePortlet: js.ThisFunction1[classHandler, Portlet, Boolean]
 }
 
 

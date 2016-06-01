@@ -18,7 +18,7 @@ trait HTMLFlow extends Canvas with DataBoundComponent {
 
     val allowCaching: Boolean
     val captureSCComponents: Boolean
-    var contentLoaded: js.ThisFunction0[callbackHandler , _]
+    var contentLoaded: js.ThisFunction0[classHandler , _]
     var contentsType: ContentsType
     var contentsURL: URL
     var contentsURLParams: JSObject

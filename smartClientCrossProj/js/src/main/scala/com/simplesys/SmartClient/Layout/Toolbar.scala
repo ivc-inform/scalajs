@@ -20,9 +20,9 @@ trait Toolbar extends Layout {
     def deselectButton(buttonID: Int | String | JSObject | Canvas): void
     def getButton(index: Int): Button
     def getButtonNumber(button: Int | String | Button | JSObject): Int
-    var itemClick: js.ThisFunction2[callbackHandler, Button, Int, void]
-    var itemDoubleClick: js.ThisFunction2[callbackHandler, Button, Int, void]
-    var itemDragResized: js.ThisFunction2[callbackHandler, Int, Int, void]
+    var itemClick: js.ThisFunction2[classHandler, Button, Int, void]
+    var itemDoubleClick: js.ThisFunction2[classHandler, Button, Int, void]
+    var itemDragResized: js.ThisFunction2[classHandler, Int, Int, void]
     def removeButtons(buttons: IscArray[Button] = js.native): void
     def selectButton(buttonID: Int | String | JSObject | Canvas): void
     def setButtons(buttons: IscArray[Button] = js.native): void

@@ -12,7 +12,7 @@ import scala.scalajs.js.|
 trait IconButton extends Button {
     var largeIcon: SCImgURL
     var largeIconSize: Int
-    var menuIconClick: js.ThisFunction0[callbackHandler, Boolean]
+    var menuIconClick: js.ThisFunction0[classHandler, Boolean]
     var menuIconHeight: Int
     var menuIconSrc: SCImgURL
     var menuIconWidth: Int

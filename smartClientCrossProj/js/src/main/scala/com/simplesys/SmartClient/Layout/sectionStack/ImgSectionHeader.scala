@@ -26,8 +26,8 @@ trait ImgSectionHeader extends HLayout {
     def setPrompt(prompt: HTMLString): void
     var showClippedTitleOnHover: Boolean
     var title: HTMLString
-    var titleClipped: js.ThisFunction0[callbackHandler, Boolean]
-    var titleHover: js.ThisFunction0[callbackHandler, Boolean]
+    var titleClipped: js.ThisFunction0[classHandler, Boolean]
+    var titleHover: js.ThisFunction0[classHandler, Boolean]
     def titleHoverHTML(defaultHTML: HTMLString): HTMLString
 }
 

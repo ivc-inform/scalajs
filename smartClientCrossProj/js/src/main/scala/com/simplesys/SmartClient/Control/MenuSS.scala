@@ -56,7 +56,7 @@ trait MenuSS extends Grid[ListGridField, MenuSSItem] {
     val navigationBar: NavigationBar with AutoChild
     val navStack: Canvas with AutoChild
     val placement: PanelPlacement
-    def setData(items: IscArray[MenuSSItem]): callbackHandler
+    def setData(items: IscArray[MenuSSItem]): classHandler
     def setItemChecked(item: MenuSSItem | Int, newState: Boolean = js.native): Boolean
     def setItemEnabled(item: MenuSSItem | Int, newState: Boolean = js.native): Boolean
     def setItemIcon(item: MenuSSItem | Int, newIcon: SCImgURL, newDisabledIcon: SCImgURL = js.native): Boolean

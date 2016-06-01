@@ -37,7 +37,7 @@ trait Layout extends Canvas {
     def getMembersLength(): Int
     def hasMember(canvas: Canvas): Boolean
     def hideDropLine(): void
-    def hideMember(member: Canvas, callback: js.ThisFunction0[callbackHandler, void] = js.native): void
+    def hideMember(member: Canvas, callback: js.ThisFunction0[classHandler, void] = js.native): void
     var hPolicy: LayoutPolicy
     var layoutBottomMargin: Int
     def layoutIsDirty(): Boolean
@@ -50,7 +50,7 @@ trait Layout extends Canvas {
     val managePercentBreadth: Boolean
     val memberOverlap: Int
     val members: IscArray[Canvas | String]
-    var membersChanged: js.ThisFunction0[callbackHandler, void]
+    var membersChanged: js.ThisFunction0[classHandler, void]
     var membersMargin: Int
     var minMemberSize: Int
     var paddingAsLayoutMargin: Boolean
@@ -71,7 +71,7 @@ trait Layout extends Canvas {
     def setVisibleMember(member: Canvas): void
     var showDragPlaceHolder: Boolean
     var showDropLines: Boolean
-    def showMember(member: Canvas, callback: js.ThisFunction0[callbackHandler, void] = js.native): void
+    def showMember(member: Canvas, callback: js.ThisFunction0[classHandler, void] = js.native): void
     val stackZIndex: String
     var vertical: Boolean
     var vPolicy: LayoutPolicy

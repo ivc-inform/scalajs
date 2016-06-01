@@ -9,7 +9,7 @@ import scala.scalajs.js.|
 
 @js.native
 trait OkPanel extends HPanelSS {
-    var okFunction: js.Function1[callbackHandler, _]
+    var okFunction: js.Function1[classHandler, _]
     var okBtn: IButton
     def setDisabledOk(value: Boolean): this.type
     def setOwner(owner: Canvas): this.type

@@ -8,9 +8,9 @@ import scala.scalajs.js
 @js.native
 trait MiniNavControl extends StretchImgButton {
     val downButtonSrc: SCImgURL
-    var downClick: js.ThisFunction0[callbackHandler, void]
+    var downClick: js.ThisFunction0[classHandler, void]
     val upButtonSrc: SCImgURL
-    var upClick: js.ThisFunction0[callbackHandler, void]
+    var upClick: js.ThisFunction0[classHandler, void]
 }
 
 

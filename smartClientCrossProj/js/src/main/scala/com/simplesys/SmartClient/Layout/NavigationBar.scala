@@ -15,14 +15,14 @@ trait NavigationBar extends HLayout {
     var alwaysShowLeftButtonTitle: Boolean
     val animateStateChanges: Boolean
     var customNavControl: Canvas
-    var downClick: js.ThisFunction0[callbackHandler, void]
+    var downClick: js.ThisFunction0[classHandler, void]
     val leftButton: NavigationButton with AutoChild
     var leftButtonIcon: SCImgURL
     var leftButtonTitle: HTMLString
     val maxCenterOffset: Int
     val miniNavAlign: Alignment
     val miniNavControl: MiniNavControl with AutoChild
-    var navigationClick: js.ThisFunction1[callbackHandler, NavigationDirection, void]
+    var navigationClick: js.ThisFunction1[classHandler, NavigationDirection, void]
     val rightButton: NavigationButton with AutoChild
     var rightButtonIcon: SCImgURL
     var rightButtonTitle: HTMLString
@@ -43,7 +43,7 @@ trait NavigationBar extends HLayout {
     var showRightButton: Boolean
     var title: HTMLString
     val titleLabel: Label with AutoChild
-    var upClick: js.ThisFunction0[callbackHandler, void]
+    var upClick: js.ThisFunction0[classHandler, void]
 }
 
 

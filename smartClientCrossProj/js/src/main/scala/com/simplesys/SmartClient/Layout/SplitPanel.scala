@@ -26,7 +26,7 @@ trait SplitPanel extends Layout {
     var detailToolButtons: IscArray[Canvas]
     val detailToolStrip: NavigationBar with AutoChild
     val deviceMode: DeviceMode
-    var downClick: js.ThisFunction0[callbackHandler, void]
+    var downClick: js.ThisFunction0[classHandler, void]
     val leftButton: NavigationButton with AutoChild
     var listPane: Canvas
     var listPaneTitleTemplate: HTMLString
@@ -36,11 +36,11 @@ trait SplitPanel extends Layout {
     def navigateListPane(title: HTMLString = js.native): void
     def navigatePane(target: CurrentPane = js.native, title: HTMLString = js.native, source: CurrentPane = js.native): void
     val navigationBar: NavigationBar with AutoChild
-    var navigationClick: js.ThisFunction0[callbackHandler, void]
+    var navigationClick: js.ThisFunction0[classHandler, void]
     var navigationPane: Canvas
     var navigationTitle: HTMLString
     var pageOrientation: PageOrientation
-    var paneChanged: js.ThisFunction1[callbackHandler, CurrentPane, void]
+    var paneChanged: js.ThisFunction1[classHandler, CurrentPane, void]
     def setAddHistoryEntries(addHistoryEntries: Boolean): void
     def setCurrentPane(newPane: CurrentPane): void
     def setDetailNavigationControl(control: Canvas): void
@@ -68,7 +68,7 @@ trait SplitPanel extends Layout {
     def showNavigationPane(direction: NavigationDirection = js.native): void
     val showResizeBars:Boolean
     var showRightButton:Boolean
-    var upClick: js.ThisFunction0[callbackHandler, void]
+    var upClick: js.ThisFunction0[classHandler, void]
 }
 
 @js.native
