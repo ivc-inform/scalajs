@@ -1,6 +1,8 @@
-//import com.simplesys.build.CommonSettings
+//package com.simplesys.build
+//
 //import com.typesafe.sbt.GitVersioning
 //import com.typesafe.sbt.SbtGit.git
+//import org.scalajs.sbtplugin.ScalaJSPlugin
 //import sbt._
 //
 //object PluginsBuild extends Build {
@@ -8,6 +10,6 @@
 //        git.baseVersion := CommonSettings.settingValues.baseVersion
 //    )
 //
-//    lazy val root = Project(id = "buildPlugins", base = file(".")).enablePlugins(GitVersioning)
+//    lazy val root = Project(id = "buildPlugins", base = file(".")).enablePlugins(GitVersioning).enablePlugins(ScalaJSPlugin)
 //
 //}
