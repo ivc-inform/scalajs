@@ -13,10 +13,10 @@ trait commonTypesCrossProj {
           name := "common-types",
           version := "1.1-SNAPSHOT",
           libraryDependencies ++= Seq(
-              //CommonSettings.cmnDependencies.uTest.value,
-              CommonSettings.cmnDependencies.xmlExtender.value,
-              CommonSettings.cmnDependencies.common.value,
-              CommonSettings.cmnDependencies.logbackWrapper.value
+              //CommonDeps.uTest.value,
+              CommonDeps.xmlExtender.value,
+              CommonDeps.common.value,
+              CommonDeps.logbackWrapper.value
           ),
           testFrameworks += new TestFramework("utest.runner.Framework"),
           publishArtifact in(Compile, packageDoc) := false

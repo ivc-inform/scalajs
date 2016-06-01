@@ -13,8 +13,8 @@ trait BackboneJSProj {
           version := "1.1-SNAPSHOT",
 
           libraryDependencies ++= Seq(
-//              CommonSettings.cmnDependencies.scalaTest.value,
-//              CommonSettings.cmnDependencies.uTest.value
+//              CommonDeps.scalaTest.value,
+//              CommonDeps.uTest.value
           ),
 
           testFrameworks += new TestFramework("utest.runner.Framework"),
@@ -23,8 +23,8 @@ trait BackboneJSProj {
       jvmSettings().
       jsSettings(
           libraryDependencies ++= Seq(
-              CommonSettings.jsDependencies.scalajsDOM.value,
-              CommonSettings.jsDependencies.scalajsJQuey.value
+              CommonDepsScalaJS.scalajsDOM.value,
+              CommonDepsScalaJS.scalajsJQuey.value
           )
       ).dependsOn().jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
 

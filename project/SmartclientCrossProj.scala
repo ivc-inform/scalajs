@@ -13,10 +13,10 @@ trait SmartClientCrossProj {
           version := "1.1-SNAPSHOT",
           libraryDependencies ++= {
               Seq(
-                  CommonSettings.cmnDependencies.xmlExtender.value,
-                  CommonSettings.cmnDependencies.scalaIOExtender.value,
-                  CommonSettings.cmnDependencies.scalaTest.value/*,
-                  CommonSettings.cmnDependencies.uTest.value*/
+                  CommonDeps.xmlExtender.value,
+                  CommonDeps.scalaIOExtender.value,
+                  CommonDeps.scalaTest.value/*,
+                  CommonDeps.uTest.value*/
               )
           },
           testFrameworks += new TestFramework("utest.runner.Framework"),
@@ -28,8 +28,8 @@ trait SmartClientCrossProj {
           }).
       jsSettings(
           libraryDependencies ++= Seq(
-              CommonSettings.jsDependencies.scalajsDOM.value,
-              CommonSettings.jsDependencies.scalajsJQuey.value
+              CommonDepsScalaJS.scalajsDOM.value,
+              CommonDepsScalaJS.scalajsJQuey.value
           )
       ).dependsOn().jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
 

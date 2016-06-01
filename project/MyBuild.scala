@@ -42,7 +42,7 @@ object MyBuild extends Build with
           publishArtifact in(Compile, packageSrc) := false,
           persistLauncher := true,
           libraryDependencies ++= Seq(
-              //CommonSettings.cmnDependencies.uTest.value
+              //CommonDeps.uTest.value
           ),
           testFrameworks += new TestFramework("utest.runner.Framework")
       ): _*

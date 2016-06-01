@@ -14,7 +14,7 @@ trait JointJSCrossProj {
           version := "1.1-SNAPSHOT",
 
           libraryDependencies ++= Seq(
-              CommonSettings.cmnDependencies.scalaTest.value
+              CommonDeps.scalaTest.value
           ),
 
           testFrameworks += new TestFramework("utest.runner.Framework"),
@@ -23,8 +23,8 @@ trait JointJSCrossProj {
       jvmSettings().
       jsSettings(
           libraryDependencies ++= Seq(
-              CommonSettings.jsDependencies.scalajsDOM.value,
-              CommonSettings.jsDependencies.scalajsJQuey.value
+              CommonDepsScalaJS.scalajsDOM.value,
+              CommonDepsScalaJS.scalajsJQuey.value
           )
       )//.dependsOn().jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
 
