@@ -1,3 +1,4 @@
+
 publishTo <<= version { (v: String) =>
   val corporateRepo = "http://toucan.simplesys.lan/"
   if (v.trim.endsWith("SNAPSHOT"))

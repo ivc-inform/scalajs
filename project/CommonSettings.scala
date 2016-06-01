@@ -1,22 +1,34 @@
 package com.simplesys.build
 
-import sbt._
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
+import sbt.Keys._
+import sbt._
 
 object CommonSettings {
-    val baseVersion = "10.1"
+    object settingValues {
+        val baseVersion = "10.1"
 
-    val scalaVersion = "2.11.8"
-    val scalaOldVersion = "2.10.6"
-    val crossScalaVersions = Seq(scalaVersion, scalaOldVersion)
-    val organization = "com.simplesys"
-    val scalacOptions = Seq(
-        "-feature",
-        "-language:higherKinds",
-        "-language:implicitConversions",
-        "-language:postfixOps",
-        "-deprecation",
-        "-unchecked")
+        val scalaVersion = "2.11.8"
+        val scalaOldVersion = "2.10.6"
+        val crossScalaVersions = Seq(scalaVersion, scalaOldVersion)
+        val organization = "com.simplesys"
+        val scalacOptions = Seq(
+            "-feature",
+            "-language:higherKinds",
+            "-language:implicitConversions",
+            "-language:postfixOps",
+            "-deprecation",
+            "-unchecked")
+    }
+
+    val defaultSettings = {
+        import sbt.Keys._
+        Seq(
+            scalaVersion := settingValues.scalaVersion,
+            scalacOptions := settingValues.scalacOptions,
+            organization := settingValues.organization
+        )
+    }
 
     object versions {
         val sprayVersion = "1.3.2"
@@ -36,7 +48,7 @@ object CommonSettings {
         val scalaReflect = Def.setting("org.scala-lang" % "scala-reflect" % scalaVersion)
         val scalaCompiler = Def.setting("org.scala-lang" % "scala-compiler" % scalaVersion)
         val scalaReflection = Def.setting("org.scala-lang" % "scala-reflection" % scalaVersion)
-        val scalaTest = Def.setting("org.scalatest" %% "scalatest" %  versions.scalaTestVersion % "test")
+        val scalaTest = Def.setting("org.scalatest" %% "scalatest" % versions.scalaTestVersion % "test")
         val spray = Def.setting("io.spray" % "spray-json_2.11" % versions.scalaTestVersion % "test")
         val uTest = Def.setting("com.lihaoyi" %%% "utest" % versions.uTestVersion % "test")
     }
@@ -44,7 +56,7 @@ object CommonSettings {
     object jsDependencies {
         val scalajsDOM = Def.setting("org.scala-js" %%% "scalajs-dom" % versions.scalajsDOMVersion)
         val scalajsJQuey = Def.setting("be.doeraene" %%% "scalajs-jquery" % versions.scalajsJQueryVersion)
-        val scalaTest = Def.setting("org.scalatest" %%% "scalatest" %  versions.scalaTestVersion % "test")
+        val scalaTest = Def.setting("org.scalatest" %%% "scalatest" % versions.scalaTestVersion % "test")
     }
 
     object jvmDependencies {}
