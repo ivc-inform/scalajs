@@ -1,5 +1,6 @@
 package com.simplesys.build
 
+import com.typesafe.sbt.GitVersioning
 import com.typesafe.sbt.SbtGit.git
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
 import sbt.Keys._
@@ -35,7 +36,7 @@ object MyBuild extends Build with
         credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
     )
 
-    lazy val root = Project("scalajs", file(".")) settings (
+    lazy val root = Project("scalajs", file(".")).enablePlugins(GitVersioning) settings (
       Seq(
           publishArtifact in(Compile, packageBin) := false,
           publishArtifact in(Compile, packageDoc) := false,

@@ -3,6 +3,15 @@ package com.simplesys.build
 import com.simplesys.build.CommonSettings.{settingValues, versions}
 import sbt._
 
+object PluginDeps {
+  object versions {
+    val scalaJSPluginVersion = "0.6.9"
+  }
+
+  val scalaJSPlugin = addSbtPlugin("org.scala-js" % "sbt-scalajs" % versions.scalaJSPluginVersion)
+}
+
+
 object CommonDeps {
 
     val common = Def.setting("com.simplesys.core" %% "common" % versions.ssysCoreVersion)
