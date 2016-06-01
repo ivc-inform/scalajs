@@ -22,7 +22,7 @@ object CommonSettings {
         val sprayVersion = "1.3.2"
         val uTestVersion = "0.3.1"
         val scalaTestVersion = "3.0.0-M15"
-        val ssysCoreVersion = "1.2-SNAPSHOT"
+        val ssysCoreVersion = "1.2.81"
         val scalajsDOMVersion = "0.9.0"
         val scalajsJQueryVersion = "0.9.0"
     }
