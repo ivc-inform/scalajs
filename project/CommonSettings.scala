@@ -2,7 +2,6 @@ package com.simplesys.build
 
 object CommonSettings {
     object settingValues {
-        val version = "1.1-SNAPSHOT"
         val baseVersion = "1.0"
 
         val scalaVersion = "2.11.8"
