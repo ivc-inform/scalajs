@@ -148,6 +148,7 @@ trait DrawLineCommons extends DrawItemCommons {
                     kindOfRefs match {
                         case OutcomingRefs =>
                             if (item.isInBounds(_x, _y) && drawItem.sourceConnect.isEmpty && !isc.isA.StopState(item)) {
+                                changeZ(drawItem, item)
                                 isc.ask(s"Привязать ${drawItem.title} к ${item.title} ?", {
                                     (res: Boolean) =>
                                         if (res) {
@@ -156,9 +157,6 @@ trait DrawLineCommons extends DrawItemCommons {
                                             drawItem.startTop2CentrTop = centerY - drawItem.startTop
 
                                             drawItem.sourceConnect = item
-
-                                            changeZ(drawItem, item)
-
                                             drawItem.canDrag = false
                                             if (item.outConnectedItems.isEmpty)
                                                 item.outConnectedItems = IscArray[DrawItem]()
@@ -192,15 +190,13 @@ trait DrawLineCommons extends DrawItemCommons {
                         case IncomingRefs =>
                             if (item.isInBounds(_x, _y) && drawItem.targetConnect.isEmpty && !isc.isA.StartState(item)) {
                                 isc.ask(s"Привязать ${drawItem.title} к ${item.title} ?", {
+                                    changeZ(drawItem, item)
                                     (res: Boolean) =>
                                         if (res) {
                                             drawItem.endLeft2CentrLeft = centerX - drawItem.endLeft
                                             drawItem.endTop2CentrTop = centerY - drawItem.endTop
 
                                             drawItem.targetConnect = item
-
-                                            changeZ(drawItem, item)
-
                                             drawItem.canDrag = false
                                             if (item.inConnectedItems.isEmpty)
                                                 item.inConnectedItems = IscArray[DrawItem]()
