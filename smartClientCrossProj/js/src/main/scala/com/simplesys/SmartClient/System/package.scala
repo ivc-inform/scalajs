@@ -42,8 +42,8 @@ import com.simplesys.js.com.simplesys.SmartClient.Control.IButtonSS
 import com.simplesys.js.com.simplesys.SmartClient.Control.props.IButtonSSProps
 import com.simplesys.js.com.simplesys.SmartClient.Forms.FormsItems.{ComboboxItemWithButtons, ComboboxItemWithClearButton, FormItemWithButton, TimerItem}
 import com.simplesys.js.com.simplesys.SmartClient.Forms.FormsItems.props.{ComboboxItemWithButtonsProps, ComboboxItemWithClearButtonProps, FormItemWithButtonProps, TimerItemProps}
-import com.simplesys.js.com.simplesys.SmartClient.Layout.props.{OkPanelProps, SectionStackSSProps}
-import com.simplesys.js.com.simplesys.SmartClient.Layout.{OkPanel, SectionStackSS}
+import com.simplesys.js.com.simplesys.SmartClient.Layout.props.{OkPanelProps, RibbonGroupSSProps, SectionStackSSProps}
+import com.simplesys.js.com.simplesys.SmartClient.Layout.{OkPanel, RibbonGroupSS, SectionStackSS}
 
 //import com.simplesys.macros.PropsToDictionary
 import com.simplesys.macros.PropsToDictionary
@@ -271,6 +271,10 @@ package object System {
     object DrawKnob extends SCApply[DrawKnob, DrawKnobProps]
     //    object DrawShape extends SCApplyDrawItem[DrawShape, DrawShapeProps]
     object Shadow extends SCApply4Object[Shadow, ShadowProps]
+
+    object RibbonBar extends SCApply[RibbonBar, RibbonBarProps]
+    object RibbonGroup extends SCApply[RibbonGroup, RibbonGroupProps]
+    object RibbonGroupSS extends SCApply[RibbonGroupSS, RibbonGroupSSProps]
 
     //</editor-fold>
     //</editor-fold>
