@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.DynamicForm
-import com.simplesys.SmartClient.Forms.FormsItems.{ComboBoxItem, SelectItem, TextItem}
+import com.simplesys.SmartClient.Forms.FormsItems.{ComboBoxItem, TextItem}
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.NavigationBar

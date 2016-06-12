@@ -69,7 +69,6 @@ trait TreeListGridEditor extends HLayoutSS {
     def startListEditingNew
     def startListEditingNew(newValues: JSObject | ListGridRecord = js.native, suppressFocus: Boolean = js.native): void
     def setFuncMenu(menu: MenuSS): void
-    def getFuncMenu(): MenuSS
     var showResizeBarList: Boolean
     def fullTreeRefresh(): void
     def fullListRefresh(): void
@@ -120,5 +119,9 @@ trait TreeListGridEditor extends HLayoutSS {
     var defaultFieldsTree : IscArray[TreeGridField]
     var fieldsList : IscArray[ListGridField]
     var defaultFieldsList : IscArray[ListGridField]
+    val treeGrid: TreeGridEditor
+    val listGrid: ListGridEditor
+    val contextMenuListGridEditor: MenuSS
+    val contextMenuTreeGridEditor: MenuSS
 }
 

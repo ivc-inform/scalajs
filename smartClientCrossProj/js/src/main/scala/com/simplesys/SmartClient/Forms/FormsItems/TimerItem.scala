@@ -1,4 +1,4 @@
-package com.simplesys.js.com.simplesys.SmartClient.Forms.FormsItems
+package com.simplesys.SmartClient.Forms.FormsItems
 
 import com.simplesys.SmartClient.Forms.FormsItems._
 

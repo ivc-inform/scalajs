@@ -20,7 +20,6 @@ import com.simplesys.System.Types.TitleRotationMode.TitleRotationMode
 import com.simplesys.System.Types._
 import com.simplesys.System._
 import com.simplesys.function._
-import com.simplesys.js.com.simplesys.SmartClient.Drawing.Rectangle
 import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
 

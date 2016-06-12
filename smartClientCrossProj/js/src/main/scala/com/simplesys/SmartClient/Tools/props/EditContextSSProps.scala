@@ -4,10 +4,9 @@ import com.simplesys.SmartClient.Drawing.drawItem.DrawPath
 import com.simplesys.SmartClient.Drawing.{DrawItem, DrawPane}
 import com.simplesys.SmartClient.RPC.RPCManager
 import com.simplesys.SmartClient.System.{IscArray, Point, isc}
-import com.simplesys.SmartClient.Tools.{EditContext, EditContextSS, EditNode}
+import com.simplesys.SmartClient.Tools._
 import com.simplesys.System._
 import com.simplesys.function._
-import com.simplesys.js.com.simplesys.SmartClient.Tools.AddedProps
 import com.simplesys.option.ScOption
 import com.simplesys.option.ScOption._
 

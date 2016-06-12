@@ -1,18 +1,15 @@
-package com.simplesys.js.com.simplesys.SmartClient.Forms.FormsItems.props
+package com.simplesys.SmartClient.Forms.FormsItems.props
 
+import com.simplesys.SmartClient.Control.IButtonSS
+import com.simplesys.SmartClient.Control.props.IButtonSSProps
 import com.simplesys.SmartClient.Forms.DynamicForm
-import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
-import com.simplesys.SmartClient.Forms.FormsItems.props.{CanvasItemProps, TextItemProps}
+import com.simplesys.SmartClient.Forms.FormsItems.{CanvasItem, FormItemWithButton}
 import com.simplesys.SmartClient.Forms.props.DynamicFormSSProps
 import com.simplesys.SmartClient.Layout.props.HLayoutSSProps
-import com.simplesys.SmartClient.System.{DynamicFormSS, HLayoutSS, IButtonSS, IscArray, TextItem}
+import com.simplesys.SmartClient.System.{Common, DynamicFormSS, HLayoutSS, IButtonSS, IscArray, TextItem}
 import com.simplesys.System.JSAny
 import com.simplesys.System.Types._
 import com.simplesys.function._
-import com.simplesys.js.com.simplesys.SmartClient.Control.IButtonSS
-import com.simplesys.js.com.simplesys.SmartClient.Control.props.IButtonSSProps
-import com.simplesys.js.com.simplesys.SmartClient.Forms.FormsItems.FormItemWithButton
-import com.simplesys.js.com.simplesys.SmartClient.System.Common
 import com.simplesys.option.DoubleType._
 import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}

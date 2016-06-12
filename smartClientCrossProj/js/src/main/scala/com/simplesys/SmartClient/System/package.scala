@@ -1,9 +1,11 @@
 package com.simplesys.SmartClient
 
+import com.simplesys.SmartClient.App.props.{Editoradmin_UserProps, SettingsEditorProps, User_ComponentMenuProps}
+import com.simplesys.SmartClient.App.{Editoradmin_User, SettingsEditor, User_ComponentMenu}
 import com.simplesys.SmartClient.Control._
-import com.simplesys.SmartClient.Control.menu.MenuSSItem
+import com.simplesys.SmartClient.Control.menu.{MenuItem, MenuSSItem}
 import com.simplesys.SmartClient.Control.props._
-import com.simplesys.SmartClient.Control.props.menu.MenuSSItemProps
+import com.simplesys.SmartClient.Control.props.menu.{MenuItemProps, MenuSSItemProps}
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.DataBinding.props._
 import com.simplesys.SmartClient.Drawing._
@@ -19,10 +21,13 @@ import com.simplesys.SmartClient.Forms.props._
 import com.simplesys.SmartClient.Foundation._
 import com.simplesys.SmartClient.Foundation.props._
 import com.simplesys.SmartClient.Grids._
+import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.Grids.props._
+import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
 import com.simplesys.SmartClient.Grids.props.tileGrid.SimpleTileProps
+import com.simplesys.SmartClient.Grids.props.treeGrid.TreeGridFieldProps
 import com.simplesys.SmartClient.Grids.tileGrid.SimpleTile
-import com.simplesys.SmartClient.Grids.treeGrid.Tree
+import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeGridField}
 import com.simplesys.SmartClient.Layout._
 import com.simplesys.SmartClient.Layout.props._
 import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
@@ -38,12 +43,6 @@ import com.simplesys.SmartClient.Tools.palette.props._
 import com.simplesys.SmartClient.Tools.props._
 import com.simplesys.SmartClient.Tools.props.editProxy.DrawPaneEditProxyProps
 import com.simplesys.SmartClient.Tools.{EditContext, EditProxy, PaletteNode}
-import com.simplesys.js.com.simplesys.SmartClient.Control.IButtonSS
-import com.simplesys.js.com.simplesys.SmartClient.Control.props.IButtonSSProps
-import com.simplesys.js.com.simplesys.SmartClient.Forms.FormsItems.{ComboboxItemWithButtons, ComboboxItemWithClearButton, FormItemWithButton, TimerItem}
-import com.simplesys.js.com.simplesys.SmartClient.Forms.FormsItems.props.{ComboboxItemWithButtonsProps, ComboboxItemWithClearButtonProps, FormItemWithButtonProps, TimerItemProps}
-import com.simplesys.js.com.simplesys.SmartClient.Layout.props.{OkPanelProps, RibbonGroupSSProps, SectionStackSSProps}
-import com.simplesys.js.com.simplesys.SmartClient.Layout.{OkPanel, RibbonGroupSS, SectionStackSS}
 
 //import com.simplesys.macros.PropsToDictionary
 import com.simplesys.macros.PropsToDictionary
@@ -108,6 +107,7 @@ package object System {
     object CanvasItem extends SCApply[CanvasItem, CanvasItemProps]
     object CheckboxItem extends SCApply[CheckboxItem, CheckboxItemProps]
     object ColorItem extends SCApply[ColorItem, ColorItemProps]
+    object SkinBoxItem extends SCApply[SkinBoxItem, SkinBoxItemProps]
     //    object ComboBoxItem extends SCApply[ComboBoxItem, ComboBoxItemProps]
     //    object CycleItem extends SCApply[CycleItem, CycleItemProps]
     //    object DataPathItem extends SCApply[DataPathItem, DataPathItemProps]
@@ -181,7 +181,7 @@ package object System {
 
     //<editor-fold desc="Grids">
     object ListGrid extends SCApply[ListGrid, ListGridProps]
-    //    object ListGridEditor extends SCApply[ListGridEditor, ListGridEditorProps]
+    object ListGridEditor extends SCApply[ListGridEditor, ListGridEditorProps]
     //    object TreeGrid extends SCApply[TreeGrid, TreeGridProps]
     //    object TileGrid extends SCApply[TileGrid, TileGridProps]
     object TreeGridEditor extends SCApply[TreeGridEditor, TreeGridEditorProps]
@@ -195,8 +195,9 @@ package object System {
     //    object HLayout extends SCApply[HLayout, HLayoutProps]
     object HLayoutSS extends SCApply[HLayoutSS, HLayoutSSProps]
     //    object HStack extends SCApply[HStack, HStackProps]
-    //    object IconButton extends SCApply[IconButton, IconButtonProps]
-    //    object IconMenuButton extends SCApply[IconMenuButton, IconMenuButtonProps]
+    object IconButton extends SCApply[IconButton, IconButtonProps]
+    object IconMenuButton extends SCApply[IconMenuButton, IconMenuButtonProps]
+    object IconMenuButtonSS extends SCApply[IconMenuButtonSS, IconMenuButtonSSProps]
     //    object ImgSplitbar extends SCApply[ImgSplitbar, ImgSplitbarProps]
     //    object Layout extends SCApply[Layout, LayoutProps]
     //    object LayoutSS extends SCApply[LayoutSS, LayoutSSProps]
@@ -222,6 +223,7 @@ package object System {
     //    object ToolStripResizer extends SCApply[ToolStripResizer, ToolStripResizerProps]
     object SectionStack extends SCApply[SectionStack, SectionStackProps]
     object SectionStackSS extends SCApply[SectionStackSS, SectionStackSSProps]
+    object LayoutSpacer extends SCApply[LayoutSpacer, LayoutSpacerProps]
     //</editor-fold>
 
     //<editor-fold desc="drawing">
@@ -278,6 +280,16 @@ package object System {
 
     //</editor-fold>
     //</editor-fold>
+
+    object SettingsEditor extends SCApply[SettingsEditor, SettingsEditorProps]
+    object ListGridContextMenu extends SCApply[ListGridContextMenu, ListGridContextMenuProps]
+    object TreeGridContextMenu extends SCApply[TreeGridContextMenu, TreeGridContextMenuProps]
+    object User_ComponentMenu extends SCApply[User_ComponentMenu, User_ComponentMenuProps]
+    object Editoradmin_User extends SCApply[Editoradmin_User, Editoradmin_UserProps]
+
+    object MenuItem extends SCApply4Object[MenuItem, MenuItemProps]
+    object TreeGridField extends SCApply4Object[TreeGridField, TreeGridFieldProps]
+    object ListGridField extends SCApply4Object[ListGridField, ListGridFieldProps]
 
 }
 

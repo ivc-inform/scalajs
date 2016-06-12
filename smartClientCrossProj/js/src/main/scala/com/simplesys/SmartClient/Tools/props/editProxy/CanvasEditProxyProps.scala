@@ -1,4 +1,4 @@
-package com.simplesys.js.com.simplesys.SmartClient.Tools.props.editProxy
+package com.simplesys.SmartClient.Tools.props.editProxy
 
 import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.SmartClient.Tools.editProxy.CanvasEditProxy

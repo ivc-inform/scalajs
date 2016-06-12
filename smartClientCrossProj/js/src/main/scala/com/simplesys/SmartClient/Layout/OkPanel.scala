@@ -1,11 +1,9 @@
-package com.simplesys.js.com.simplesys.SmartClient.Layout
+package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.Layout.HPanelSS
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 trait OkPanel extends HPanelSS {
