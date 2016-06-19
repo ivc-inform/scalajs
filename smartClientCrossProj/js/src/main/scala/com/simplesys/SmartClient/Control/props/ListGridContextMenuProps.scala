@@ -10,21 +10,8 @@ import com.simplesys.System._
 import com.simplesys.function._
 import com.simplesys.option.ScOption._
 
-object ListGridContextMenuProps {
-    val newWithForm = Seq(
-        new MenuSSItemProps {
-            title = "Новый".ellipsis.opt
-            identifier = "new".opt
-            icon = Common.iconAdd.opt
-            click = {
-                (target: Canvas, item: MenuSSItem, menu: MenuSS, colNum: JSUndefined[Int]) =>
-                    val owner = item.owner.asInstanceOf[ListGridEditor]
-                    simpleSyS checkOwner owner
-                    owner.startEditingNewInForm()
-            }.toFunc.opt
-        })
-
-    val newInLine = Seq(
+class ListGridContextMenuProps extends MenuSSProps {
+    items = Seq(
         new MenuSSItemProps {
             title = "Новый".ellipsis.opt
             identifier = "new".opt
@@ -35,9 +22,7 @@ object ListGridContextMenuProps {
                     simpleSyS checkOwner owner
                     owner.startEditingNew()
             }.toFunc.opt
-        })
-
-    val otherItems = Seq(
+        },
         new MenuSSItemProps {
             title = "Изменить".opt
             identifier = "edit".opt
@@ -53,7 +38,7 @@ object ListGridContextMenuProps {
                 (target: Canvas, menu: MenuSS, item: MenuSSItem) =>
                     val owner = item.owner.asInstanceOf[ListGridEditor]
                     simpleSyS checkOwner owner
-                    owner.getSelectedRecords().length == 1
+                    owner.getSelectedRecords().length == 0
             }.toFunc.opt
         },
         new MenuSSItemProps {
@@ -130,14 +115,5 @@ object ListGridContextMenuProps {
                     owner.hasChanges()
             }.toFunc.opt
         }
-    )
+    ).opt
 }
-
-class ListGridContextMenuProps extends MenuSSProps {
-    items = (ListGridContextMenuProps.newInLine ++ ListGridContextMenuProps.otherItems).opt
-}
-
-class ListGridContextMenuWithFormProps extends MenuSSProps {
-    items = (ListGridContextMenuProps.newWithForm ++ ListGridContextMenuProps.otherItems).opt
-}
-

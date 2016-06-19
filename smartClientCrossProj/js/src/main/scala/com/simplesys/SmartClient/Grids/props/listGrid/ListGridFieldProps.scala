@@ -7,7 +7,6 @@ import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord, UserFormula, UserSummary}
 import com.simplesys.SmartClient.System.IscArray
-import com.simplesys.SmartClient.System.Types.FormItemComponentType.FormItemComponentType
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AutoComplete.AutoComplete
 import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
@@ -15,8 +14,8 @@ import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.EditCompletionEvent.EditCompletionEvent
 import com.simplesys.System.Types.EnterKeyEditAction.EnterKeyEditAction
 import com.simplesys.System.Types.EscapeKeyEditAction.EscapeKeyEditAction
+import com.simplesys.System.Types.FormItemComponentType.FormItemComponentType
 import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
-import com.simplesys.System.Types.ListGridFieldType._
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.RecordSummaryFunction.RecordSummaryFunction
 import com.simplesys.System.Types.SortDirection.SortDirection
@@ -180,7 +179,6 @@ class ListGridFieldProps extends AbstractClassProps {
     var summaryValueTitle: ScOption[String] = ScNone
     var suppressValueIcon: ScOption[Boolean] = ScNone
     var target: ScOption[String] = ScNone
-    var `type`: ScOption[ListGridFieldType] = ScNone
     var timeFormatter: ScOption[TimeDisplayFormat] = ScNone
     var title: ScOption[String] = ScNone
     var userFormula: ScOption[UserFormula] = ScNone

@@ -68,7 +68,10 @@ object PropsToDictionary extends Logging {
                     }
                     typeDef.baseType(tsAbstractClassProps) match {
                         case TypeRef(tp, symb, listTp) =>
-                            Some(q"$valueAccess")
+//                            if (parentArgs > 0)
+                                Some(q"$valueAccess")
+//                            else
+//                                Some(q"(new SCApply4Props[$typeDef]).apply($valueAccess)")
 
                         case NoType =>
                             typeDef.baseType(tsJSObject) match {
@@ -83,7 +86,10 @@ object PropsToDictionary extends Logging {
                                                 case None =>
                                                     getTree4DoubleType(typeOf[IntString[_, _]].typeSymbol, q"IntFRomIntString", q"StringFRomIntString") match {
                                                         case None => getTree4DoubleType(typeOf[DoubleAlignment[_, _]].typeSymbol, q"AlignmentfromDoubleAlignment", q"VerticalAlignmentfromDoubleAlignment") match {
-                                                            case None => getTree4DoubleType(typeOf[Function1_String[_, _]].typeSymbol, q"Function1CanvasClickfromFunction1_String", q"StringfromFunction1_String")
+                                                            case None => getTree4DoubleType(typeOf[FormItemType_FormItemComponentType[_, _]].typeSymbol, q"FormItemTypefromFormItemType_FormItemComponentType", q"FormItemComponentTypefromFormItemType_FormItemComponentType") match {
+                                                                case None => getTree4DoubleType(typeOf[Function1_String[_, _]].typeSymbol, q"Function1CanvasClickfromFunction1_String", q"StringfromFunction1_String")
+                                                                case some => some
+                                                            }
                                                             case some => some
                                                         }
                                                         case some => some

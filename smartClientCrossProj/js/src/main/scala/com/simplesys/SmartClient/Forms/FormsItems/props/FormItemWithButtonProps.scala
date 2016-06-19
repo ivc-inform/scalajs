@@ -6,7 +6,6 @@ import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.{CanvasItem, FormItemWithButton}
 import com.simplesys.SmartClient.Forms.props.DynamicFormSSProps
 import com.simplesys.SmartClient.Layout.props.HLayoutSSProps
-import com.simplesys.SmartClient.System.Types.FormItemComponentType
 import com.simplesys.SmartClient.System.{Common, DynamicFormSS, HLayoutSS, IButtonSS, IscArray, TextItem}
 import com.simplesys.System.JSAny
 import com.simplesys.System.Types._
@@ -81,5 +80,5 @@ class FormItemWithButtonProps extends CanvasItemProps {
 
     }.toThisFunc.opt
 
-    `type` = FormItemComponentType.FormItemWithButton.opt
+    `type` = FormItemComponentType.FormItemWithButton
 }

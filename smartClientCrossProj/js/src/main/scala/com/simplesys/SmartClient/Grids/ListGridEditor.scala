@@ -19,12 +19,12 @@ import com.simplesys.System.Types._
 import com.simplesys.System._
 
 import scala.scalajs.js
-import scala.scalajs.js.{Function4, UndefOr, |}
+import scala.scalajs.js.{UndefOr, |}
 
 @js.native
 trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayoutSS {
     var canDragSelectText: Boolean
-    var canAcceptDroppedRecords: JSUndefined[Boolean]
+    var canAcceptDroppedRecords: Boolean
     var autoFitFieldWidth: Boolean
     var canResizeFields: Boolean
     def findByKey(keyValue: JSAny): R
@@ -102,6 +102,7 @@ trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayo
     def deselectRecords(records: IscArray[R]): void
     def deselectAllRecords(): void
     def getRowNum(record: R): Int
+    var funcMenu: MenuSS
     var dataSource: DataSource
     def setContextMenu(menu: MenuSS): void
     def getContextMenu(): MenuSS
@@ -118,12 +119,7 @@ trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayo
     var canReorderRecords: Boolean
     var dragDataAction: DragDataAction
     def startEditingNewInForm(obj: JSObject = js.native, fields: IscArray[FormItem] = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    //var startEditingNewInForm: JSUndefined[Function4[JSObject, IscArray[FormItem], DSCallback, DSRequest, _]]
     def startEditingInForm(obj: JSObject = js.native, fields: IscArray[FormItem] = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    //var startEditingInForm: JSUndefined[Function4[JSObject, IscArray[FormItem], DSCallback, DSRequest, _]]
-    var newRequestProperties: JSUndefined[js.Function0[DSRequest]]
-    var editRequestProperties: JSUndefined[js.Function0[DSRequest]]
-    var editingFields  : JSUndefined[IscArray[FormItem]]
 }
 
 @js.native

@@ -7,11 +7,9 @@ import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Layout.NavigationBar
 import com.simplesys.SmartClient.Layout.navigationBar.NavigationButton
 import com.simplesys.SmartClient.System.IscArray
-import com.simplesys.SmartClient.System.Types.FormItemComponentType
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
-import com.simplesys.System.Types.{CSSStyleName, HTMLString}
+import com.simplesys.System.Types.{CSSStyleName, FormItemComponentType, HTMLString}
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.option.ScOption._
 
 class ComboBoxItemProps extends TextItemProps with PickListProps{
     type classHandler <: ComboBoxItem
@@ -40,5 +38,5 @@ class ComboBoxItemProps extends TextItemProps with PickListProps{
     var separateSpecialValues: ScOption[Boolean] = ScNone
     var separateValuesList: ScOption[Grid[ListGridField, ListGridRecord]] = ScNone
     var showPickListOnKeypress: ScOption[Boolean] = ScNone
-    `type` = FormItemComponentType.ComboBoxItem.opt
+    `type` = FormItemComponentType.ComboBoxItem
 }

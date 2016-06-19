@@ -7,7 +7,6 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerField
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.RPC.ServerObject
-import com.simplesys.SmartClient.System.Types.FormItemComponentType
 import com.simplesys.SmartClient.System._
 import com.simplesys.System.Types.CriteriaCombineOperator.CriteriaCombineOperator
 import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
@@ -17,17 +16,17 @@ import com.simplesys.System.Types.DSProtocol.DSProtocol
 import com.simplesys.System.Types.DSServerType.DSServerType
 import com.simplesys.System.Types.EnumTranslateStrategy.EnumTranslateStrategy
 import com.simplesys.System.Types.FieldType.FieldType
+import com.simplesys.System.Types.FormItemComponentType.FormItemComponentType
 import com.simplesys.System.Types.MultiUpdatePolicy.MultiUpdatePolicy
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.OperatorValueType.OperatorValueType
 import com.simplesys.System.Types.RPCTransport.RPCTransport
-import com.simplesys.System.Types._
 import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
 import com.simplesys.System.Types.SequenceMode.SequenceMode
 import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.Types.{FormItemComponentType, _}
 import com.simplesys.System.{JSAny, JSObject}
-import FormItemComponentType.FormItemComponentType
 
 import scala.scalajs.js
 import scala.scalajs.js.|

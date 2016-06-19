@@ -1,12 +1,14 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
-import com.simplesys.SmartClient.Forms.FormsItems.TextItem
-import com.simplesys.SmartClient.System.Types.FormItemComponentType
-import com.simplesys.System.JSAny
+import com.simplesys.SmartClient.Forms.FormsItems.{FormItem, TextItem}
+import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.System.Types.CharacterCasing.CharacterCasing
-import com.simplesys.System.Types.SCClassName
+import com.simplesys.System.Types.{FormItemComponentType, SCClassName}
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.option.ScOption._
+import com.simplesys.System.JSAny
+
+import scala.scalajs.js
+import scala.scalajs.js._
 
 class TextItemProps extends FormItemProps {
     type classHandler <: TextItem
@@ -31,5 +33,5 @@ class TextItemProps extends FormItemProps {
     var printFullText: ScOption[Boolean] = ScNone
     var showHintInField: ScOption[Boolean] = ScNone
     var usePlaceholderForHint: ScOption[Boolean] = ScNone
-    `type` = FormItemComponentType.TextItem.opt
+    `type` = FormItemComponentType.TextItem
 }

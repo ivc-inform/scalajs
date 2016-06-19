@@ -1,6 +1,5 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
-import com.simplesys.SmartClient.DataBinding.props.SortSpecifierProps
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DSResponse, ResultSet, SortSpecifier}
 import com.simplesys.SmartClient.Forms.FormsItems.PickList
 import com.simplesys.SmartClient.Grids.Grid
@@ -31,7 +30,7 @@ trait PickListProps extends ClassProps {
     var fetchDisplayedFieldsOnly: ScOption[Boolean] = ScNone
     var hideEmptyPickList: ScOption[Boolean] = ScNone
     var iconPlacement: ScOption[PickListItemIconPlacement] = ScNone
-    var initialSort: ScOption[Seq[SortSpecifierProps]] = ScNone
+    var initialSort: ScOption[IscArray[SortSpecifier]] = ScNone
     var pickListApplyRowNumberStyle: ScOption[Boolean] = ScNone
     var pickListBaseStyle: ScOption[CSSStyleName] = ScNone
     var pickListCellHeight: ScOption[Int] = ScNone

@@ -106,7 +106,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def clear(): void
     var click: js.ThisFunction0[classHandler, Boolean] | String
     @JSName("click")
-    def clickProc(): Boolean
+    def clickProc (): Boolean
     def clickMaskUp(ID: String = js.native): Boolean
     val componentMask: Canvas with AutoChild
     val componentMaskDefaults: Canvas
@@ -197,6 +197,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def getInnerHeight(): Int
     def getInnerHTML(): HTMLString
     def getInnerWidth(): Int
+    val getFuncMenu: JSUndefined[Function0[MenuSS]]
     def getLeft(): Int
     def getMasterCanvas(): Canvas
     def getOffsetX(): Int
@@ -256,7 +257,6 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val htmlElement: HTMLElement
     val htmlPosition: DrawPosition
     val ID: String
-    var funcMenu: JSUndefined[MenuSS]
     def imgHTML(src: SCImgURL, width: Int = js.native, height: Int = js.native, name: String = js.native, extraStuff: String = js.native, imgDir: String = js.native): String
     var initWidget: js.ThisFunction1[classHandler, IscArray[JSAny], _]
     def intersects(other: Canvas): Boolean
@@ -457,7 +457,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var visibilityChanged: js.ThisFunction1[classHandler, Boolean, void]
     def visibleAtPoint(x: Int, y: Int, withinViewport: Boolean = js.native, ignoreWidgets: Canvas = js.native, upToParent: Canvas = js.native): Boolean
     val width: Int | String
-    var willAcceptDrop: js.ThisFunction0[classHandler, Boolean]
+    var willAcceptDrop : js.ThisFunction0[classHandler, Boolean]
 }
 
 @js.native

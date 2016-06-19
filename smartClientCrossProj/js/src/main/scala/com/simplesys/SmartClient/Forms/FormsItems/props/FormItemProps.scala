@@ -8,11 +8,11 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.RPC.RPCRequest
 import com.simplesys.SmartClient.System.IscArray
-import com.simplesys.SmartClient.System.Types.FormItemComponentType.FormItemComponentType
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AutoComplete.AutoComplete
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.FormItemComponentType.FormItemComponentType
 import com.simplesys.System.Types.FormItemType.FormItemType
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.ReadOnlyDisplayAppearance.ReadOnlyDisplayAppearance
@@ -21,7 +21,7 @@ import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types.{SCImgURL, _}
 import com.simplesys.System._
-import com.simplesys.option.{IntString, ScNone, ScOption}
+import com.simplesys.option.{FormItemType_FormItemComponentType, IntString, ScNone, ScOption}
 
 import scala.scalajs.js
 
@@ -68,7 +68,7 @@ class FormItemProps extends ClassProps {
     var doubleClick: ScOption[js.Function2[DynamicForm, FormItem, Boolean]] = ScNone
     var editorEnter: ScOption[js.Function3[DynamicForm, FormItem, JSAny, _]] = ScNone
     var editorExit: ScOption[js.Function3[DynamicForm, FormItem, JSAny, _]] = ScNone
-    var editorType: ScOption[FormItemBaseType] = ScNone
+    var editorType: ScOption[FormItemComponentType] = ScNone
     var editPendingCSSText: ScOption[CSSText] = ScNone
     var emptyDisplayValue: ScOption[String] = ScNone
     var emptyValueIcon: ScOption[String] = ScNone
@@ -222,5 +222,5 @@ class FormItemProps extends ClassProps {
     var visible: ScOption[Boolean] = ScNone
     var width: ScOption[IntString[Int, String]] = ScNone
     var wrapTitle: ScOption[Boolean] = ScNone
-    var `type`: ScOption[FormItemComponentType] = ScNone
+    var `type`: ScOption[FormItemType_FormItemComponentType[FormItemType, FormItemComponentType]] = ScNone
 }

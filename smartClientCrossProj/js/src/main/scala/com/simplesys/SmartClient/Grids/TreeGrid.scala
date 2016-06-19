@@ -5,7 +5,7 @@ import com.simplesys.SmartClient.Control.{Menu, MenuSS}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeGridField, TreeNode}
 import com.simplesys.SmartClient.System.IscArray
-import com.simplesys.System.{JSAny, JSUndefined}
+import com.simplesys.System.JSAny
 import com.simplesys.System.Types.DisplayNodeType.DisplayNodeType
 import com.simplesys.System.Types.PreserveOpenState.PreserveOpenState
 import com.simplesys.System.Types._
@@ -19,7 +19,7 @@ trait TreeGrid extends Grid[TreeGridField, TreeNode] {
     var autoPreserveOpenState: PreserveOpenState
     var canDropOnLeaves: Boolean
     def canEditCell(): Boolean
-    var canReparentNodes: JSUndefined[Boolean]
+    var canReparentNodes: Boolean
     var cantDragIntoChildMessage: String
     val cantDragIntoSelfMessage: String
     val cascadeSelection: Boolean
@@ -52,6 +52,7 @@ trait TreeGrid extends Grid[TreeGridField, TreeNode] {
     var iconSize: Int
     var indentRecordComponents: Boolean
     var indentSize: Int
+    var funcMenu : MenuSS | Menu
     val initialData: IscArray[TreeNode]
     def isOverExtraIcon(): Boolean
     def isOverOpenArea(): Boolean
