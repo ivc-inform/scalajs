@@ -64,7 +64,6 @@ package object System {
     }
 
     //<editor-fold desc="Control">
-
     object IButtonSS extends SCApply[IButtonSS, IButtonSSProps]
     object Slider extends SCApply[Slider, SliderProps]
     object Menu extends SCApply[Menu, MenuProps]
