@@ -7,6 +7,7 @@ import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord, UserFormula, UserSummary}
 import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.SmartClient.System.Types.FormItemComponentType.FormItemComponentType
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AutoComplete.AutoComplete
 import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
@@ -14,7 +15,6 @@ import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.EditCompletionEvent.EditCompletionEvent
 import com.simplesys.System.Types.EnterKeyEditAction.EnterKeyEditAction
 import com.simplesys.System.Types.EscapeKeyEditAction.EscapeKeyEditAction
-import com.simplesys.System.Types.FormItemComponentType.FormItemComponentType
 import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
 import com.simplesys.System.Types.ListGridFieldType._
 import com.simplesys.System.Types.OperatorId.OperatorId

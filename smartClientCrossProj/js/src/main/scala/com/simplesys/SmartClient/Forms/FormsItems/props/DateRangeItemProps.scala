@@ -2,11 +2,11 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.System.Types.FormItemComponentType
 import com.simplesys.System.Types.DateFieldLayout.DateFieldLayout
-import com.simplesys.System.Types.{FormItemComponentType, RelativeDateString}
-import com.simplesys.System.Types.TimeUnit.TimeUnit
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.option.ScOption._
 
 import scala.scalajs.js._
 
@@ -26,5 +26,5 @@ class DateRangeItemProps extends CanvasItemProps {
     var toField: ScOption[FormItem ] = ScNone
     var toTitle: ScOption[String] = ScNone
     var validateCriteria: ScOption[Boolean] = ScNone
-    `type` = FormItemComponentType.DateRangeItem
+    `type` = FormItemComponentType.DateRangeItem.opt
 }

@@ -1,9 +1,8 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
-import com.simplesys.System.Types.FormItemComponentType
-
-import scala.scalajs.js._
+import com.simplesys.SmartClient.System.Types.FormItemComponentType
+import com.simplesys.option.ScOption._
 
 class PresetDateRangeItemProps extends PresetCriteriaItemProps {
-    `type` = FormItemComponentType.PresetDateRangeItem
+    `type` = FormItemComponentType.PresetDateRangeItem.opt
 }

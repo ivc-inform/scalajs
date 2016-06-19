@@ -1,8 +1,6 @@
 package com.simplesys.option
 
 import com.simplesys.System.Types.Alignment._
-import com.simplesys.System.Types.FormItemComponentType.FormItemComponentType
-import com.simplesys.System.Types.FormItemType.FormItemType
 import com.simplesys.System.Types.VerticalAlignment._
 import com.simplesys.System._
 
@@ -36,18 +34,6 @@ case class VerticalAlignmentfromDoubleAlignment(a: VerticalAlignment) extends Do
 object DoubleAlignment {
     implicit def Alignment2DoubleAlignment(x: Alignment) = ScSome(AlignmentfromDoubleAlignment(x))
     implicit def VerticalAlignment2DoubleAlignment(x: VerticalAlignment) = ScSome(VerticalAlignmentfromDoubleAlignment(x))
-}
-//</editor-fold>
-
-//<editor-fold desc="FormItemType_String">
-sealed abstract class FormItemType_FormItemComponentType[+A, +B]
-
-case class FormItemTypefromFormItemType_FormItemComponentType(a: FormItemType) extends FormItemType_FormItemComponentType[FormItemType, FormItemComponentType]
-case class FormItemComponentTypefromFormItemType_FormItemComponentType(a: FormItemComponentType) extends FormItemType_FormItemComponentType[FormItemType, FormItemComponentType]
-
-object FormItemType_FormItemComponentType {
-    implicit def FormItemType2FormItemType_FormItemComponentType(x: FormItemType) = ScSome(FormItemTypefromFormItemType_FormItemComponentType(x))
-    implicit def FormItemComponentType2FormItemType_FormItemComponentType(x: FormItemComponentType) = ScSome(FormItemComponentTypefromFormItemType_FormItemComponentType(x))
 }
 //</editor-fold>
 

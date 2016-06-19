@@ -1,10 +1,12 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
-import com.simplesys.SmartClient.Forms.FormsItems.{FormItem, SelectItem, TextItem, TimeItem}
+import com.simplesys.SmartClient.Forms.FormsItems.{SelectItem, TextItem, TimeItem}
 import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.SmartClient.System.Types.FormItemComponentType
+import com.simplesys.System.Types.HTMLString
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
-import com.simplesys.System.Types.{FormItemComponentType, HTMLString}
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.option.ScOption._
 
 class TimeItemProps extends FormItemProps {
     type classHandler <: TimeItem
@@ -59,5 +61,5 @@ class TimeItemProps extends FormItemProps {
     var useMask: ScOption[Boolean] = ScNone
     var usePlaceholderForHint: ScOption[Boolean] = ScNone
     var useTextField: ScOption[Boolean] = ScNone
-    `type` = FormItemComponentType.TimeItem
+    `type` = FormItemComponentType.TimeItem.opt
 }

@@ -2,12 +2,10 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.Class
-import com.simplesys.System.Types.FormItemComponentType
+import com.simplesys.SmartClient.System.Types.FormItemComponentType
+import com.simplesys.System.JSDictionaryAny
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.System.{JSAny, JSDictionary, JSDictionaryAny}
-
-import scala.scalajs.js
-import scala.scalajs.js._
+import com.simplesys.option.ScOption._
 
 class SliderItemProps extends CanvasItemProps {
     var changeOnDrag: ScOption[Boolean] = ScNone
@@ -20,5 +18,5 @@ class SliderItemProps extends CanvasItemProps {
     var sliderConstructor: ScOption[Class] = ScNone
     var sliderProperties: ScOption[JSDictionaryAny] = ScNone
     var vertical: ScOption[Boolean] = ScNone
-    `type` = FormItemComponentType.SliderItem
+    `type` = FormItemComponentType.SliderItem.opt
 }

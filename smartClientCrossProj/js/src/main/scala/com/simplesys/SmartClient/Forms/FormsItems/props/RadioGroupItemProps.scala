@@ -2,8 +2,10 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.FormsItems.radioGroupItem.RadioItem
 import com.simplesys.SmartClient.System.IscArray
-import com.simplesys.System.Types.{FormItemComponentType, SCClassName}
+import com.simplesys.SmartClient.System.Types.FormItemComponentType
+import com.simplesys.System.Types.SCClassName
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.option.ScOption._
 
 class RadioGroupItemProps extends FormItemProps {
     var disabledValues: ScOption[IscArray[String]] = ScNone
@@ -12,5 +14,5 @@ class RadioGroupItemProps extends FormItemProps {
     var itemProperties: ScOption[RadioItem] = ScNone
     var vertical: ScOption[Boolean] = ScNone
     var wrap: ScOption[Boolean] = ScNone
-    `type` = FormItemComponentType.RadioGroupItem
+    `type` = FormItemComponentType.RadioGroupItem.opt
 }

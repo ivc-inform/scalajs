@@ -1,11 +1,10 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
-import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Foundation.StatefulCanvas
-import com.simplesys.System.Types.{FormItemComponentType, HTMLString}
+import com.simplesys.SmartClient.System.Types.FormItemComponentType
+import com.simplesys.System.Types.HTMLString
 import com.simplesys.option.{ScNone, ScOption}
-
-import scala.scalajs.js._
+import com.simplesys.option.ScOption._
 
 class MultiFileItemProps extends RelationItemProps {
     var editButton: ScOption[StatefulCanvas] = ScNone
@@ -18,5 +17,5 @@ class MultiFileItemProps extends RelationItemProps {
     var pickerUploadProgressLabel: ScOption[HTMLString] = ScNone
     var removeButton: ScOption[StatefulCanvas] = ScNone
     var removeButtonPrompt: ScOption[String] = ScNone
-    `type` = FormItemComponentType.MultiFileItem
+    `type` = FormItemComponentType.MultiFileItem.opt
 }

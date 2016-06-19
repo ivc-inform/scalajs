@@ -2,12 +2,12 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.FormsItems.{BlurbItem, SpinnerItem, TimeItem}
+import com.simplesys.SmartClient.System.Types.FormItemComponentType
 import com.simplesys.System.JSObject
-import com.simplesys.System.Types.FormItemComponentType
 import com.simplesys.System.Types.RelativeDateRangePosition.RelativeDateRangePosition
 import com.simplesys.option.{IntString, ScNone, ScOption}
+import com.simplesys.option.ScOption._
 
-import scala.scalajs.js
 import scala.scalajs.js._
 
 class RelativeDateItemProps extends CanvasItemProps {
@@ -38,5 +38,5 @@ class RelativeDateItemProps extends CanvasItemProps {
     var weeksFromNowTitle: ScOption[String] = ScNone
     var yearsAgoTitle: ScOption[String] = ScNone
     var yearsFromNowTitle: ScOption[String] = ScNone
-    `type` = FormItemComponentType.RelativeDateItem
+    `type` = FormItemComponentType.RelativeDateItem.opt
 }
