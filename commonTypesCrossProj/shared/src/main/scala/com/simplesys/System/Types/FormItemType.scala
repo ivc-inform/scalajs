@@ -68,5 +68,6 @@ object FormItemComponentType extends Enumeration {
     FormItemWithButton,
     ComboboxItemWithClearButton,
     SkinBoxItem,
+    TextItemWithFormEdit,
     ViewFileItem = Value
 }
