@@ -2,21 +2,34 @@ package com.simplesys.SmartClient.Grids.props
 
 import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Control.props.menu.MenuSSItemProps
-import com.simplesys.SmartClient.DataBinding.DataSource
-import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.DataBinding.Callbacks.DSCallback
+import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
+import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Forms.FormsItems.props.FormItemProps
+import com.simplesys.SmartClient.Grids.{ListGrid, ListGridEditor}
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.props.listGrid.{ListGridFieldProps, ListGridRecordProps}
+import com.simplesys.SmartClient.Layout.WindowSS
 import com.simplesys.SmartClient.Layout.props.VLayoutSSProps
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.{JSObject, JSUndefined}
 import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
 import com.simplesys.System.Types.DragDataAction._
 import com.simplesys.System.Types.DragTrackerMode.DragTrackerMode
+import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.System.Types.ListGridEditEvent.ListGridEditEvent
 import com.simplesys.System.Types.SelectionAppearance.SelectionAppearance
 import com.simplesys.System.Types.SelectionStyle._
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.option.{ScNone, ScOption}
 
+import scala.scalajs.js
+import scala.scalajs.js.ThisFunction0
+
 class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends VLayoutSSProps {
+    var closedIconSuffix: ScOption[String] = ScNone
+    var dropIconSuffix: ScOption[String] = ScNone
+    var openIconSuffix: ScOption[String] = ScNone
     var canDragSelectText: ScOption[Boolean] = ScNone
     var canAcceptDroppedRecords: ScOption[Boolean] = ScNone
     var autoFitFieldWidth: ScOption[Boolean] = ScNone
@@ -57,9 +70,19 @@ class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends
     var canDragRecordsOut: ScOption[Boolean] = ScNone
     var canReorderRecords: ScOption[Boolean] = ScNone
     var dragDataAction: ScOption[DragDataAction] = ScNone
+    var startEditingNewInForm: ScOption[Function4[JSObject, Seq[FormItem], DSCallback, DSRequest, _]] = ScNone
+    var startEditingInForm: ScOption[Function4[JSObject, Seq[FormItem], DSCallback, DSRequest, _]] = ScNone
+    var newRequestProperties: ScOption[ThisFunction0[classHandler, DSRequest]] = ScNone
+    var editRequestProperties: ScOption[ThisFunction0[classHandler, DSRequest]] = ScNone
+    var editingFields  : ScOption[Seq[FormItemProps]] = ScNone
+    var saveByCell : ScOption[Boolean] = ScNone
+    var dataFetchMode : ScOption[FetchMode] = ScNone
+    var editWindowProperties: ScOption[WindowSS] = ScNone
 }
 
 class ListGridEditorProps extends GridEditorProps[ListGridFieldProps, ListGridRecordProps] {
+    type classHandler <: ListGridEditor
+
     var fields: ScOption[Seq[ListGridFieldProps]] = ScNone
     var defaultFields: ScOption[Seq[ListGridFieldProps]] = ScNone
     var data: ScOption[Seq[ListGridRecord]] = ScNone

@@ -1,16 +1,22 @@
 package com.simplesys.SmartClient.Grids.props
 
-import com.simplesys.SmartClient.DataBinding.DataSource
+import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
+import com.simplesys.SmartClient.Forms.FormsItems.props.FormItemProps
 import com.simplesys.SmartClient.Grids.TreeListGridEditor
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
 import com.simplesys.SmartClient.Grids.props.treeGrid.TreeGridFieldProps
+import com.simplesys.SmartClient.Grids.treeGrid.Tree
+import com.simplesys.SmartClient.Layout.WindowSS
 import com.simplesys.SmartClient.Layout.props.HLayoutSSProps
 import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.System.Types.SelectionStyle.SelectionStyle
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
 import com.simplesys.option.{IntString, ScNone, ScOption}
+
+import scala.scalajs.js.ThisFunction0
 
 class TreeListGridEditorProps extends HLayoutSSProps {
     type classHandler <: TreeListGridEditor
@@ -74,4 +80,17 @@ class TreeListGridEditorProps extends HLayoutSSProps {
     var defaultFieldsTree: ScOption[Seq[TreeGridFieldProps]] = ScNone
     var fieldsList: ScOption[Seq[ListGridFieldProps]] = ScNone
     var defaultFieldsList: ScOption[Seq[ListGridFieldProps]] = ScNone
+    var newTreeRequestProperties: ScOption[ThisFunction0[classHandler, DSRequest]] = ScNone
+    var editTreeRequestProperties: ScOption[ThisFunction0[classHandler, DSRequest]] = ScNone
+    var newListRequestProperties: ScOption[ThisFunction0[classHandler, DSRequest]] = ScNone
+    var editListRequestProperties: ScOption[ThisFunction0[classHandler, DSRequest]] = ScNone
+    var editingListFields: ScOption[Seq[FormItemProps]] = ScNone
+    var editingTreeFields: ScOption[Seq[FormItemProps]] = ScNone
+    var saveByTreeCell : ScOption[Boolean] = ScNone
+    var saveByListCell : ScOption[Boolean] = ScNone
+    var dataFetchModeList: ScOption[FetchMode] = ScNone
+    var dataFetchModeTree: ScOption[FetchMode] = ScNone
+    var dataTree: ScOption[Tree] = ScNone
+    var editWindowPropertiesTree: ScOption[WindowSS] = ScNone
+    var editWindowPropertiesList: ScOption[WindowSS] = ScNone
 }

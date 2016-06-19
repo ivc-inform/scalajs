@@ -1,7 +1,9 @@
 package com.simplesys.SmartClient
 
-import com.simplesys.SmartClient.App.props.{Editoradmin_UserProps, SettingsEditorProps, User_ComponentMenuProps}
-import com.simplesys.SmartClient.App.{Editoradmin_User, SettingsEditor, User_ComponentMenu}
+import com.simplesys.SmartClient.App.props._
+import com.simplesys.SmartClient.App._
+import com.simplesys.SmartClient.App.formItems.TextItemWithFormEdit
+import com.simplesys.SmartClient.App.formItems.props.TextItemWithFormEditProps
 import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.Control.menu.{MenuItem, MenuSSItem}
 import com.simplesys.SmartClient.Control.props._
@@ -44,7 +46,10 @@ import com.simplesys.SmartClient.Tools.props._
 import com.simplesys.SmartClient.Tools.props.editProxy.DrawPaneEditProxyProps
 import com.simplesys.SmartClient.Tools.{EditContext, EditProxy, PaletteNode}
 
+
+//Должны быть
 //import com.simplesys.macros.PropsToDictionary
+//
 import com.simplesys.macros.PropsToDictionary
 
 package object System {
@@ -67,7 +72,7 @@ package object System {
     object Slider extends SCApply[Slider, SliderProps]
     //    object RangeSlider extends SCApply[RangeSlider, RangeSliderProps]
     //    object Hover extends SCApply[Hover, HoverProps]
-    //    object Menu extends SCApply[Menu, MenuProps]
+    object Menu extends SCApply[Menu, MenuProps]
     object MenuSS extends SCApply[MenuSS, MenuSSProps]
     object MenuSSItem extends SCApply4Object[MenuSSItem, MenuSSItemProps]
     //    object MenuButton extends SCApply[MenuButton, MenuButtonProps]
@@ -158,6 +163,7 @@ package object System {
     object FormItemWithButton extends SCApply[FormItemWithButton, FormItemWithButtonProps]
     object ComboboxItemWithButtons extends SCApply[ComboboxItemWithButtons, ComboboxItemWithButtonsProps]
     object ComboboxItemWithClearButton extends SCApply[ComboboxItemWithClearButton, ComboboxItemWithClearButtonProps]
+    object TextItemWithFormEdit extends SCApply[TextItemWithFormEdit, TextItemWithFormEditProps]
     //</editor-fold>
 
     //<editor-fold desc="Foundation">
@@ -283,13 +289,19 @@ package object System {
 
     object SettingsEditor extends SCApply[SettingsEditor, SettingsEditorProps]
     object ListGridContextMenu extends SCApply[ListGridContextMenu, ListGridContextMenuProps]
+    object ListGridContextMenuWithForm extends SCApply[ListGridContextMenu, ListGridContextMenuWithFormProps]
     object TreeGridContextMenu extends SCApply[TreeGridContextMenu, TreeGridContextMenuProps]
-    object User_ComponentMenu extends SCApply[User_ComponentMenu, User_ComponentMenuProps]
-    object Editoradmin_User extends SCApply[Editoradmin_User, Editoradmin_UserProps]
+    object UserComponentMenu extends SCApply[UserComponentMenu, UserComponentMenuProps]
+    object EditorUsers extends SCApply[EditorUsers, EditorUsersProps]
+    object EditorUserGroups extends SCApply[EditorUserGroups, EditorUserGroupsProps]
+    object TreeListGridEditor extends SCApply[TreeListGridEditor, TreeListGridEditorProps]
 
     object MenuItem extends SCApply4Object[MenuItem, MenuItemProps]
     object TreeGridField extends SCApply4Object[TreeGridField, TreeGridFieldProps]
     object ListGridField extends SCApply4Object[ListGridField, ListGridFieldProps]
+
+    object CommonListGridEditorComponent extends SCApply[CommonListGridEditorComponent, CommonListGridEditorComponentProps]
+    object CommonTreeGridEditorComponent extends SCApply[CommonTreeGridEditorComponent, CommonTreeGridEditorComponentProps]
 
 }
 
