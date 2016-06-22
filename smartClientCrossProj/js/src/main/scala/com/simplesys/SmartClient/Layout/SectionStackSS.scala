@@ -1,9 +1,6 @@
-package com.simplesys.js.com.simplesys.SmartClient.Layout
-
-import com.simplesys.SmartClient.Layout.SectionStack
+package com.simplesys.SmartClient.Layout
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 trait SectionStackSS extends SectionStack {

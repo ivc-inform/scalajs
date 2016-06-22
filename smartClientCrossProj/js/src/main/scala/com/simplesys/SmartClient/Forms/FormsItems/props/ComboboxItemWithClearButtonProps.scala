@@ -1,4 +1,4 @@
-package com.simplesys.js.com.simplesys.SmartClient.Forms.FormsItems.props
+package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.System.Types.FormItemComponentType
 

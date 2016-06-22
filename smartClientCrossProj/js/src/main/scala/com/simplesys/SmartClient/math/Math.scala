@@ -1,7 +1,6 @@
-package com.simplesys.js.com.simplesys.SmartClient.math
+package com.simplesys.SmartClient.math
 
-import com.simplesys.SmartClient.System.{IscArray, Point}
-import com.simplesys.SmartClient.math.AffineTransform
+import com.simplesys.SmartClient.System.Point
 import com.simplesys.System.JSObject
 
 import scala.scalajs.js

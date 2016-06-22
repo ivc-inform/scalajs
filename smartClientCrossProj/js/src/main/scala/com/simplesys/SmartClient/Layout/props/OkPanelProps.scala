@@ -1,11 +1,7 @@
-package com.simplesys.js.com.simplesys.SmartClient.Layout.props
+package com.simplesys.SmartClient.Layout.props
 
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.Layout.OkCancelPanel
-import com.simplesys.SmartClient.Layout.props.HPanelSSProps
-import com.simplesys.js.com.simplesys.SmartClient.Layout.OkPanel
-
-import scala.scalajs.js._
+import com.simplesys.SmartClient.Layout.OkPanel
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js

@@ -4,11 +4,9 @@ import com.simplesys.SmartClient.Control.IButton
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Layout.Layout
 import com.simplesys.System.Types.MultiComboBoxLayoutStyle.MultiComboBoxLayoutStyle
-import com.simplesys.System.Types._
-import com.simplesys.System.Types.void
+import com.simplesys.System.Types.{void, _}
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 trait MultiComboBoxItem extends CanvasItem {

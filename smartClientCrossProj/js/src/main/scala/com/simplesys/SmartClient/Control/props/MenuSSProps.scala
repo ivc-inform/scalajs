@@ -1,13 +1,13 @@
 package com.simplesys.SmartClient.Control.props
 
 import com.simplesys.SmartClient.Control.MenuSS
-import com.simplesys.SmartClient.Control.menu.MenuSSItem
+import com.simplesys.SmartClient.Control.menu.{MenuItem, MenuSSItem}
 import com.simplesys.SmartClient.Control.props.menu.{MenuItemProps, MenuSSItemProps}
 import com.simplesys.SmartClient.Foundation.{Canvas, Img}
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.Grids.props.GridProps
 import com.simplesys.SmartClient.Layout.NavigationBar
-import com.simplesys.SmartClient.System.{MenuSS, MenuSSItem, isc}
+import com.simplesys.SmartClient.System.{MenuSS, MenuSSItem}
 import com.simplesys.System.Types.PanelPlacement._
 import com.simplesys.System.Types._
 import com.simplesys.System.{JSObject, JSUndefined}
@@ -16,7 +16,7 @@ import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
-import scala.scalajs.js.{Function0, ThisFunction1}
+import scala.scalajs.js.ThisFunction1
 
 class MenuSSProps extends GridProps[ListGridField, MenuSSItem] {
     type classHandler <: MenuSS

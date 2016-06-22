@@ -1,4 +1,4 @@
-package com.simplesys.js.com.simplesys.SmartClient.Tools
+package com.simplesys.SmartClient.Tools
 
 import com.simplesys.SmartClient.Foundation.Canvas
 

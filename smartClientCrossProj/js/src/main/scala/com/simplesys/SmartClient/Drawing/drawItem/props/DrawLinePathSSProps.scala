@@ -15,13 +15,12 @@ import com.simplesys.System.Types.ConnectorStyle.ConnectorStyle
 import com.simplesys.System.Types.{ArrowStyle, ConnectorOrientation, ConnectorStyle, TitleRotationMode}
 import com.simplesys.System.{JSAny, JSObject, JSUndefined, jSUndefined}
 import com.simplesys.function._
-import com.simplesys.js.com.simplesys.SmartClient.System.Common
 import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScOption, ScSome}
 
 import scala.scalajs.js._
 
-class DrawLinePathSSProps extends DrawPathProps with DrawLineCommons{
+class DrawLinePathSSProps extends DrawPathProps with DrawLineCommons {
     type classHandler <: DrawLinePathSS
 
     var connectorStyle: ScOption[ConnectorStyle] = ConnectorStyle.diagonal.opt
@@ -75,7 +74,7 @@ class DrawLinePathSSProps extends DrawPathProps with DrawLineCommons{
             thiz.titleRotationMode = TitleRotationMode.withLineAlwaysUp
 
             thiz.cKnobs = IscArray()
-            thiz.controlPoints = IscArray(thiz.points.slice(1, thiz.points.length - 1).map(item => UndefOr.any2undefOrA(item)):_*)
+            thiz.controlPoints = IscArray(thiz.points.slice(1, thiz.points.length - 1).map(item => UndefOr.any2undefOrA(item)): _*)
             //isc debugTrap thiz.controlPoints
             thiz.points = thiz._getSegmentPoints()
 
@@ -270,7 +269,7 @@ class DrawLinePathSSProps extends DrawPathProps with DrawLineCommons{
                                                                 new MenuSSItemProps {
                                                                     title = "Удалить контрольную точку".ellipsis.opt
                                                                     identifier = "deleteControlPoint".opt
-                                                                    icon = Common.Delete_icon.opt
+                                                                    icon = Common.delete_icon.opt
                                                                     click = {
                                                                         (target: Canvas, item: MenuSSItem, menu: MenuSS, colNum: JSUndefined[Int]) =>
                                                                             thiz removeControlPointKnob target.asInstanceOf[DrawKnob]

@@ -1,6 +1,5 @@
 package com.simplesys.SmartClient.Layout
 
-
 import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.SmartClient.System.{IscArray, KeyIdentifier}
 import com.simplesys.System.Types.{SCImgURL, void}
