@@ -60,21 +60,22 @@ class EditorUsersProps extends TreeListGridEditorProps {
             )
 
     }.toThisFunc.opt
+
     editingTreeFields = Seq(
-        new CheckboxItemProps {
+        CheckboxItem(new CheckboxItemProps {
             name = "active".opt
-            width = "100%"
-        },
-        new TextItemProps {
+        }),
+        TextItem(new TextItemProps {
             name = "codeGroup".opt
-        },
-        new TextItemProps {
+        }),
+        TextItem(new TextItemProps {
             name = "captionGroup".opt
-        },
-        new TextAreaItemProps {
+        }),
+        TextAreaItem(new TextAreaItemProps {
             name = "descriptionGroup".opt
-        }
+        })
     ).opt
+
     initWidget = {
         (thiz: classHandler, arguments: IscArray[JSAny]) =>
 
@@ -132,7 +133,7 @@ class EditorUsersProps extends TreeListGridEditorProps {
                                 new SelectItemProps {
                                     optionDataSource = thiz.treeGrid.dataSource.opt
                                     displayField = "captionGroup".opt
-                                    valueField = "di".asInstanceOf[JSAny].opt
+                                    valueField = "di".opt
                                     initialSort = Seq(
                                         new SortSpecifierProps {
                                             property = "captionGroup".opt

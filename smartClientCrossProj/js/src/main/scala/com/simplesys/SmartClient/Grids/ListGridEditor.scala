@@ -36,7 +36,7 @@ trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayo
     def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def hasChanges(): Boolean
     def getDataLength(): Int
-    var showRecordComponentsByCel: Boolean
+    var showRecordComponentsByCell: Boolean
     var showRecordComponents: Boolean
     var filterOnKeypress: Boolean
     var drawAheadRatio: Double
@@ -101,6 +101,7 @@ trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayo
     def deselectRecord(record: R | Int): void
     def deselectRecords(records: IscArray[R]): void
     def deselectAllRecords(): void
+    def selectRecordsByKey(keyValues: JSObject, newState: Boolean = js.native): R
     def getRowNum(record: R): Int
     var dataSource: DataSource
     def setContextMenu(menu: MenuSS): void
@@ -124,6 +125,10 @@ trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayo
     var newRequestProperties: JSUndefined[js.Function0[DSRequest]]
     var editRequestProperties: JSUndefined[js.Function0[DSRequest]]
     var editingFields  : JSUndefined[IscArray[FormItem]]
+    def getFieldName(colNum: Int | ID): String
+    var selectFirstRecordAfterFetch: Boolean
+    var fields: JSUndefined[IscArray[ListGridField]]
+    val replacingfields: JSUndefined[IscArray[ListGridField]]
 }
 
 @js.native

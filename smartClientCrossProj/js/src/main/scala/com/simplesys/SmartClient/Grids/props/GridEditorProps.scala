@@ -5,26 +5,29 @@ import com.simplesys.SmartClient.Control.props.menu.MenuSSItemProps
 import com.simplesys.SmartClient.DataBinding.Callbacks.DSCallback
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
-import com.simplesys.SmartClient.Forms.FormsItems.props.FormItemProps
-import com.simplesys.SmartClient.Grids.{ListGrid, ListGridEditor}
-import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
+import com.simplesys.SmartClient.Foundation.Canvas
+import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Grids.props.listGrid.{ListGridFieldProps, ListGridRecordProps}
+import com.simplesys.SmartClient.Grids.{ListGrid, ListGridEditor}
 import com.simplesys.SmartClient.Layout.WindowSS
 import com.simplesys.SmartClient.Layout.props.VLayoutSSProps
-import com.simplesys.SmartClient.System.IscArray
-import com.simplesys.System.{JSObject, JSUndefined}
+import com.simplesys.SmartClient.System.{IscArray, isc}
 import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
 import com.simplesys.System.Types.DragDataAction._
 import com.simplesys.System.Types.DragTrackerMode.DragTrackerMode
 import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.System.Types.ListGridEditEvent.ListGridEditEvent
+import com.simplesys.System.Types.RecordComponentPoolingMode.RecordComponentPoolingMode
 import com.simplesys.System.Types.SelectionAppearance.SelectionAppearance
 import com.simplesys.System.Types.SelectionStyle._
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.System.{JSAny, JSObject, JSUndefined}
+import com.simplesys.function._
+import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
-import scala.scalajs.js.ThisFunction0
+import scala.scalajs.js.{ThisFunction0, ThisFunction2, ThisFunction4}
 
 class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends VLayoutSSProps {
     var closedIconSuffix: ScOption[String] = ScNone
@@ -35,7 +38,7 @@ class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends
     var autoFitFieldWidth: ScOption[Boolean] = ScNone
     var canResizeFields: ScOption[Boolean] = ScNone
     var showAllRecords: ScOption[Boolean] = ScNone
-    var showRecordComponentsByCel: ScOption[Boolean] = ScNone
+    var showRecordComponentsByCell: ScOption[Boolean] = ScNone
     var showRecordComponents: ScOption[Boolean] = ScNone
     var filterOnKeypress: ScOption[Boolean] = ScNone
     var drawAheadRatio: ScOption[Double] = ScNone
@@ -74,16 +77,26 @@ class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends
     var startEditingInForm: ScOption[Function4[JSObject, Seq[FormItem], DSCallback, DSRequest, _]] = ScNone
     var newRequestProperties: ScOption[ThisFunction0[classHandler, DSRequest]] = ScNone
     var editRequestProperties: ScOption[ThisFunction0[classHandler, DSRequest]] = ScNone
-    var editingFields  : ScOption[Seq[FormItemProps]] = ScNone
-    var saveByCell : ScOption[Boolean] = ScNone
-    var dataFetchMode : ScOption[FetchMode] = ScNone
+    var editingFields: ScOption[Seq[FormItem]] = ScNone
+    var saveByCell: ScOption[Boolean] = ScNone
+    var dataFetchMode: ScOption[FetchMode] = ScNone
     var editWindowProperties: ScOption[WindowSS] = ScNone
+    var recordComponentPoolingMode: ScOption[RecordComponentPoolingMode] = ScNone
+
+    var createRecordComponent: ScOption[ThisFunction2[classHandler, ListGridRecord, Int, Canvas]] = ScNone
+    var updateRecordComponent: ScOption[ThisFunction4[classHandler, ListGridRecord, Int, Canvas, Boolean, Canvas]] = ScNone
+
+    var selectFirstRecordAfterFetch: ScOption[Boolean] = ScNone
+
+    var replacingfields: ScOption[Seq[ListGridFieldProps]] = ScNone
 }
 
 class ListGridEditorProps extends GridEditorProps[ListGridFieldProps, ListGridRecordProps] {
     type classHandler <: ListGridEditor
 
     var fields: ScOption[Seq[ListGridFieldProps]] = ScNone
+
     var defaultFields: ScOption[Seq[ListGridFieldProps]] = ScNone
     var data: ScOption[Seq[ListGridRecord]] = ScNone
+
 }

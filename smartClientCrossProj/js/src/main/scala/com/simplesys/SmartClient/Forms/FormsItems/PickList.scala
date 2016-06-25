@@ -22,7 +22,6 @@ trait PickList extends Class {
     var animationTime: Int
     var cachePickListResults: Boolean
     var dataArrived: js.Function3[Int, Int, ResultSet, _]
-    var displayField: String
     var emptyPickListHeight: Int
     var emptyPickListMessage: String
     def fetchData(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
@@ -64,7 +63,6 @@ trait PickList extends Class {
     val specialValues: ValueMap
     var textMatchStyle: TextMatchStyle
     val useClientFiltering: Boolean
-    val valueField: JSAny
     var valueIconField: String
     var _processingFilterComplete: Boolean
     def clearAriaState(state:String):void

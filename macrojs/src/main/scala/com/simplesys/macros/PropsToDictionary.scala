@@ -155,6 +155,7 @@ object PropsToDictionary extends Logging {
                 import com.simplesys.option._
                 import scala.scalajs.js
                 import scala.scalajs.js.JSConverters._
+                import com.simplesys.System.NameStrong
                 import com.simplesys.System.{JSAny, JSDictionaryAny}
 
                 new PropsToDictionary[$tpeAbstractPropsClass] {

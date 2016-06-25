@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.DataBinding.{Criterion, DataSource}
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Foundation.Canvas
+import com.simplesys.SmartClient.Grids.ListGridEditor
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.RPC.RPCRequest
 import com.simplesys.SmartClient.System._
@@ -19,7 +20,7 @@ import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.TitleOrientation.TitleOrientation
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSAny, JSDictionary, JSObject}
+import com.simplesys.System._
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
@@ -27,6 +28,9 @@ import scala.scalajs.js.|
 
 @js.native
 trait FormItem extends Class {
+    val lookup: JSUndefined[Boolean]
+    val captionClassLookup: JSUndefined[String]
+    val foreignField: JSUndefined[String]
     var accessKey: Char
     var align: Alignment
     var allowExpressions: Boolean
@@ -69,12 +73,13 @@ trait FormItem extends Class {
     var disabled: Boolean
     def disableIcon(icon: String): void
     var disableIconsOnReadOnly: Boolean
-    var displayField: String
+    var displayField:  JSUndefined[String]
     var doubleClick: js.Function2[DynamicForm, FormItem, Boolean]
     var editorEnter: js.Function3[DynamicForm, FormItem, JSAny, _]
     var editorExit: js.Function3[DynamicForm, FormItem, JSAny, _]
     var editorType: FormItem
     var editPendingCSSText: CSSText
+    var listGridEditor: JSUndefined[ListGridEditor]
     var emptyDisplayValue: String
     var emptyValueIcon: String
     def enable()
@@ -179,7 +184,9 @@ trait FormItem extends Class {
     def mapDisplayToValue(value: String): JSObject
     def mapValueToDisplay(value: JSObject): String
     val multipleValueSeparator: String
+    @deprecated(message = "Use nameStrong instead.", since = "")
     val name: String
+    val nameStrong: NameStrong
     val operator: OperatorId
     val optionCriteria: Criteria
     val optionDataSource: String | DataSource
@@ -205,6 +212,7 @@ trait FormItem extends Class {
     var prompt: HTMLString
     var readOnlyDisplay: ReadOnlyDisplayAppearance
     var readOnlyTextBoxStyle: FormItemBaseStyle
+    val record: JSUndefined[ListGridRecord]
     def redraw(reason: String): void
     var redrawOnChange: Boolean
     var rejectInvalidValueOnChange: Boolean
@@ -300,7 +308,7 @@ trait FormItem extends Class {
     val value: JSAny
     def valueClipped(): Boolean
     val valueDeselectedCSSText: CSSText
-    val valueField: JSAny
+    val valueField: JSUndefined[String]
     var valueHover: js.Function2[FormItem, DynamicForm, _]
     var valueHoverHTML: js.Function2[FormItem, DynamicForm, HTMLString]
     var valueIconClick: js.Function3[FormItem, DynamicForm, JSAny, Boolean]

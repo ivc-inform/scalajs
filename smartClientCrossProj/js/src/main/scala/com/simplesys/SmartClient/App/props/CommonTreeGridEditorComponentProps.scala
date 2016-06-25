@@ -8,11 +8,14 @@ import com.simplesys.System.Types.{FetchMode, SelectionStyle}
 import com.simplesys.System._
 import com.simplesys.function._
 import com.simplesys.option.ScOption._
+import com.simplesys.option.DoubleType._
 
 trait CommonTreeGridEditorComponentProps extends TreeGridEditorProps {
 
     type classHandler <: CommonTreeGridEditorComponent
 
+    height = "100%"
+    width = "100%"
     drawAheadRatio = simpleSyS.config.drawAheadRatio.getOrElse(2.0).opt
     dataPageSize = simpleSyS.config.dataPageSize.getOrElse(75).opt
     canEdit = true.opt
@@ -25,6 +28,7 @@ trait CommonTreeGridEditorComponentProps extends TreeGridEditorProps {
     openIconSuffix = "".opt
     dropIconSuffix = "".opt
     closedIconSuffix = "".opt
+    selectFirstRecordAfterFetch = false.opt
 
     initWidget = {
         (thiz: classHandler, arguments: IscArray[JSAny]) =>

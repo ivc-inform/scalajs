@@ -1,9 +1,9 @@
 package com.simplesys.SmartClient
 
-import com.simplesys.SmartClient.App.props._
 import com.simplesys.SmartClient.App._
-import com.simplesys.SmartClient.App.formItems.TextItemWithFormEdit
-import com.simplesys.SmartClient.App.formItems.props.TextItemWithFormEditProps
+import com.simplesys.SmartClient.App.formItems.LookupListGridEditorItem
+import com.simplesys.SmartClient.App.formItems.props.LookupListGridEditorItemProps
+import com.simplesys.SmartClient.App.props._
 import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.Control.menu.{MenuItem, MenuSSItem}
 import com.simplesys.SmartClient.Control.props._
@@ -49,8 +49,8 @@ import com.simplesys.SmartClient.Tools.{EditContext, EditProxy, PaletteNode}
 
 //Должны быть
 //import com.simplesys.macros.PropsToDictionary
-//
 import com.simplesys.macros.PropsToDictionary
+//
 
 package object System {
 
@@ -94,6 +94,7 @@ package object System {
     //    object DateRangeItem extends SCApply[DateRangeItem, DateRangeItemProps]
     object DateTimeItem extends SCApply[DateTimeItem, DateTimeItemProps]
     object DoubleItem extends SCApply[DoubleItem, DoubleItemProps]
+    object IntegerItem extends SCApply[IntegerItem, IntegerItemProps]
     object FloatItem extends SCApply[FloatItem, FloatItemProps]
     object PickList extends SCApply[PickList, PickListProps]
     object SelectItem extends SCApply[SelectItem, SelectItemProps]
@@ -106,7 +107,7 @@ package object System {
     object FormItemWithButton extends SCApply[FormItemWithButton, FormItemWithButtonProps]
     object ComboboxItemWithButtons extends SCApply[ComboboxItemWithButtons, ComboboxItemWithButtonsProps]
     object ComboboxItemWithClearButton extends SCApply[ComboboxItemWithClearButton, ComboboxItemWithClearButtonProps]
-    object TextItemWithFormEdit extends SCApply[TextItemWithFormEdit, TextItemWithFormEditProps]
+    object LookupListGridEditorItem extends SCApply[LookupListGridEditorItem, LookupListGridEditorItemProps]
     //</editor-fold>
 
     //<editor-fold desc="Foundation">

@@ -19,7 +19,6 @@ trait RelativeDateItem extends CanvasItem {
     var daysAgoTitle: String
     var daysFromNowTitle: String
     val defaultQuantity: Int
-    val defaultValue: Date
     var endDate: Date
     def getCriterion(absolute: Boolean = js.native): Criterion
     def getEnteredValue(): String
@@ -41,7 +40,6 @@ trait RelativeDateItem extends CanvasItem {
     var quartersFromNowTitle: String
     val rangePosition: RelativeDateRangePosition
     val useSharedPicker: Boolean
-    val valueField: ComboBoxItem with AutoChild
     val valueFieldWidth: Int | String
     val weeksAgoTitle: String
     val weeksFromNowTitle: String

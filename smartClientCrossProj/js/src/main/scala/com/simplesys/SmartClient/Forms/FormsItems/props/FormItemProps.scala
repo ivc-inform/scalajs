@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Forms.FormsItems.props
 import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.FormsItems.{CanvasItem, FormItem}
-import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
+import com.simplesys.SmartClient.Forms.{DynamicForm, DynamicFormSS, Validator}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.RPC.RPCRequest
@@ -22,8 +22,10 @@ import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types.{SCImgURL, _}
 import com.simplesys.System._
 import com.simplesys.option.{FormItemType_FormItemComponentType, IntString, ScNone, ScOption}
+import com.simplesys.option.DoubleType._
 
 import scala.scalajs.js
+import scala.scalajs.js.{ThisFunction0, ThisFunction1}
 
 class FormItemProps extends ClassProps {
     type classHandler <: FormItem
@@ -80,12 +82,12 @@ class FormItemProps extends ClassProps {
     var errorOrientation: ScOption[Alignment] = ScNone
     var exportFormat: ScOption[FormatString] = ScNone
     var filterLocally: ScOption[Boolean] = ScNone
-    var focus: ScOption[js.Function2[DynamicForm, FormItem, _]] = ScNone
+    var focus: ScOption[js.Function2[DynamicFormSS, FormItem, _]] = ScNone
     var foreignDisplayField: ScOption[String] = ScNone
     var form: ScOption[DynamicForm] = ScNone
     var format: ScOption[FormatString] = ScNone
-    var formatEditorValue: ScOption[js.Function4[JSAny, ListGridRecord, DynamicForm, FormItem, String]] = ScNone
-    var formatValue: ScOption[js.Function4[JSAny, ListGridRecord, DynamicForm, FormItem, String]] = ScNone
+    var formatEditorValue: ScOption[js.Function4[JSAny, ListGridRecord, DynamicFormSS, FormItem, String]] = ScNone
+    var formatValue: ScOption[js.Function4[JSAny, ListGridRecord, DynamicFormSS, FormItem, String]] = ScNone
     var globalTabIndex: ScOption[Int] = ScNone
     var height: ScOption[IntString[Int, String]] = ScNone
     var hidden: ScOption[Boolean] = ScNone
@@ -121,7 +123,9 @@ class FormItemProps extends ClassProps {
     var loadingDisplayValue: ScOption[String] = ScNone
     var locateItemBy: ScOption[String] = ScNone
     var multipleValueSeparator: ScOption[String] = ScNone
+    @deprecated(message = "Use nameStrong instead.", since = "")
     var name: ScOption[String] = ScNone
+    //var nameStrong: ScOption[NameStrong] = ScNone
     var operator: ScOption[OperatorId] = ScNone
     var optionCriteria: ScOption[Criteria] = ScNone
     var optionDataSource: ScOption[DataSource] = ScNone
@@ -155,6 +159,7 @@ class FormItemProps extends ClassProps {
     var saveOnEnter: ScOption[Boolean] = ScNone
     var selectOnClick: ScOption[Boolean] = ScNone
     var selectOnFocus: ScOption[Boolean] = ScNone
+    var setValue: ScOption[ThisFunction1[classHandler, JSAny, _]] = ScNone
     var shouldSaveValue: ScOption[Boolean] = ScNone
     var shouldStopKeyPressBubbling: ScOption[js.Function2[String, Int, Boolean]] = ScNone
     var showClippedTitleOnHover: ScOption[Boolean] = ScNone
@@ -208,7 +213,7 @@ class FormItemProps extends ClassProps {
     var vAlign: ScOption[VerticalAlignment] = ScNone
     var value: ScOption[JSAny] = ScNone
     var valueDeselectedCSSText: ScOption[CSSText] = ScNone
-    var valueField: ScOption[JSAny] = ScNone
+    var valueField: ScOption[String] = ScNone
     var valueHover: ScOption[js.Function2[FormItem, DynamicForm, _]] = ScNone
     var valueHoverHTML: ScOption[js.Function2[FormItem, DynamicForm, HTMLString]] = ScNone
     var valueIconClick: ScOption[js.Function3[FormItem, DynamicForm, JSAny, Boolean]] = ScNone
@@ -220,7 +225,7 @@ class FormItemProps extends ClassProps {
     var valueIcons: ScOption[JSDictionary[String]] = ScNone
     var valueMap: ScOption[ValueMap] = ScNone
     var visible: ScOption[Boolean] = ScNone
-    var width: ScOption[IntString[Int, String]] = ScNone
+    var width: ScOption[IntString[Int, String]] = "100%"
     var wrapTitle: ScOption[Boolean] = ScNone
     var `type`: ScOption[FormItemType_FormItemComponentType[FormItemType, FormItemComponentType]] = ScNone
 }
