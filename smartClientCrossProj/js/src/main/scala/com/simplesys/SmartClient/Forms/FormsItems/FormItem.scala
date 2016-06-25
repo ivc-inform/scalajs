@@ -186,7 +186,7 @@ trait FormItem extends Class {
     val multipleValueSeparator: String
     @deprecated(message = "Use nameStrong instead.", since = "")
     val name: String
-    val nameStrong: NameStrong
+    val nameStrong: JSUndefined[JSObject]
     val operator: OperatorId
     val optionCriteria: Criteria
     val optionDataSource: String | DataSource
