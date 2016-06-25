@@ -7,6 +7,6 @@ import scala.scalajs.js
   */
 
 @js.native
-abstract trait NameStrong extends JSAny {
+abstract trait NameStrong extends JSObject {
     val name: String
 }
