@@ -1,5 +1,6 @@
 package com.simplesys
 
+import com.simplesys.option.{ScOption, ScSome}
 import scala.scalajs.js
 
 package object System {
@@ -14,4 +15,15 @@ package object System {
     type JSArrayAny = JSArray[JSAny]
     type JSDictionaryAny = JSDictionary[JSAny]
     val jSUndefined = js.undefined
+
+    implicit class StringOpts(string: String) {
+        def nameStrong: NameStrong = new NameStrong {
+            override val name = string
+        }
+
+        def nameStrongOpt: ScOption[NameStrong] = ScSome(new NameStrong {
+            override val name = string
+        })
+    }
+
 }
