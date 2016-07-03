@@ -23,6 +23,7 @@ object FormItemComponentType extends Enumeration {
     DataPathItem,
     DateItem,
     DateRangeItem,
+    DateTimeItemSS,
     DateTimeItem,
     DoubleItem,
     FileItem,
