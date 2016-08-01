@@ -1,10 +1,10 @@
 package com.simplesys.SmartClient.Control.props
 
-import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Control.props.menu.MenuSSItemProps
+import com.simplesys.SmartClient.Control.{MenuSS, TreeGridContextMenu}
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.Grids.TreeGridEditor
+import com.simplesys.SmartClient.Grids.{ListGridEditor, TreeGridEditor}
 import com.simplesys.SmartClient.System.{Common, simpleSyS, _}
 import com.simplesys.System.Types.Visibility
 import com.simplesys.System._
@@ -12,7 +12,9 @@ import com.simplesys.function._
 import com.simplesys.option.ScOption._
 
 class TreeGridContextMenuProps extends MenuSSProps {
-    items = Seq(
+    type classHandler <: TreeGridContextMenu
+
+    val newRootMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Новый корневой узел".ellipsis.opt
             identifier = "new".opt
@@ -23,19 +25,21 @@ class TreeGridContextMenuProps extends MenuSSProps {
                     val owner = item.owner.asInstanceOf[TreeGridEditor]
                     simpleSyS checkOwner owner
                     owner.deselectAllRecords()
-                    if (owner.grid.newRequestProperties.isEmpty)
+                    if (owner.treeGrid.newRequestProperties.isEmpty)
                         isc error "Нет функции newRequestProperties."
                     else {
-                        if (owner.grid.newRequestProperties.isDefined)
+                        if (owner.treeGrid.newRequestProperties.isDefined)
                             owner.startEditingInForm(
-                                requestProperties = (owner.grid.newRequestProperties.get) ()
+                                requestProperties = (owner.treeGrid.newRequestProperties.get) ()
                             )
                         else
                             owner.startEditingInForm()
                     }
 
             }.toFunc.opt
-        },
+        })
+
+    val newMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Новый".ellipsis.opt
             identifier = "new".opt
@@ -44,14 +48,14 @@ class TreeGridContextMenuProps extends MenuSSProps {
                 (target: Canvas, item: MenuSSItem, menu: MenuSS, colNum: JSUndefined[Int]) =>
                     val owner = item.owner.asInstanceOf[TreeGridEditor]
                     //simpleSyS checkOwner owner
-                    if (owner.grid.newRequestProperties.isEmpty)
+                    if (owner.treeGrid.newRequestProperties.isEmpty)
                         isc error "Нет функции newRequestProperties."
                     else {
-                        val parentIdField = owner.grid.data.parentIdField
-                        val idField = owner.grid.data.idField
+                        val parentIdField = owner.treeGrid.data.parentIdField
+                        val idField = owner.treeGrid.data.idField
 
-                        if (owner.grid.newRequestProperties.isDefined) {
-                            val request = (owner.grid.newRequestProperties.get) ()
+                        if (owner.treeGrid.newRequestProperties.isDefined) {
+                            val request = (owner.treeGrid.newRequestProperties.get) ()
                             val idValue = owner.getSelectedRecord().asInstanceOf[JSDynamic].selectDynamic(idField)
 
                             request.data.asInstanceOf[JSDynamic].updateDynamic(parentIdField)(idValue)
@@ -61,8 +65,6 @@ class TreeGridContextMenuProps extends MenuSSProps {
                             )
                         } else
                             owner.startEditingInForm()
-
-
                     }
             }.toFunc.opt
             enableIf = {
@@ -71,7 +73,29 @@ class TreeGridContextMenuProps extends MenuSSProps {
                     simpleSyS checkOwner owner
                     owner.getSelectedRecords().length == 1
             }.toFunc.opt
-        },
+        })
+
+    val copyMenuItem = MenuSSItem(
+        new MenuSSItemProps {
+            title = "Копировать".opt
+            identifier = "copy".opt
+            icon = Common.copy_icon.opt
+            click = {
+                (target: Canvas, item: MenuSSItem, menu: MenuSS, colNum: JSUndefined[Int]) =>
+                    val owner = item.owner.asInstanceOf[TreeGridEditor]
+                    simpleSyS checkOwner owner
+                    owner.getSelectedRecords().foreach(record => owner.dataSource.addData(isc.deletePrivateProps(record)))
+                    false
+            }.toFunc.opt
+            enableIf = {
+                (target: Canvas, menu: MenuSS, item: MenuSSItem) =>
+                    val owner = item.owner.asInstanceOf[ListGridEditor]
+                    simpleSyS checkOwner owner
+                    owner.getSelectedRecords().length > 0
+            }.toFunc.opt
+        })
+
+    val editMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Изменить".ellipsis.opt
             identifier = "edit".opt
@@ -88,7 +112,9 @@ class TreeGridContextMenuProps extends MenuSSProps {
                     simpleSyS checkOwner owner
                     owner.getSelectedRecords().length == 1
             }.toFunc.opt
-        },
+        })
+
+    val enableReparentMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Разрешить перемещение групп".ellipsis.opt
             identifier = "enableReparent".opt
@@ -96,7 +122,7 @@ class TreeGridContextMenuProps extends MenuSSProps {
                 (target: Canvas, menu: MenuSS, item: MenuSSItem) =>
                     val owner = item.owner.asInstanceOf[TreeGridEditor]
                     //simpleSyS checkOwner owner
-                    owner.grid.canReparentNodes.getOrElse(false)
+                    owner.treeGrid.canReparentNodes.getOrElse(false)
 
             }.toFunc.opt
             click = {
@@ -104,11 +130,13 @@ class TreeGridContextMenuProps extends MenuSSProps {
                     val owner = item.owner.asInstanceOf[TreeGridEditor]
                     simpleSyS checkOwner owner
                     //isc debugTrap owner.canReparentNodes.getOrElse(false)
-                    val x: Boolean = !owner.grid.canReparentNodes.getOrElse(false)
+                    val x: Boolean = !owner.treeGrid.canReparentNodes.getOrElse(false)
                     //isc debugTrap x
-                    owner.grid.canReparentNodes = x
+                    owner.treeGrid.canReparentNodes = x
             }.toFunc.opt
-        },
+        })
+
+    val deleteMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Удалить".opt
             identifier = "remove".opt
@@ -127,7 +155,9 @@ class TreeGridContextMenuProps extends MenuSSProps {
                 (target: Canvas, menu: MenuSS, item: MenuSSItem) =>
                     simpleSyS _enableDeleteFromTree item
             }.toFunc.opt
-        },
+        })
+
+    val refreshMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Обновить".opt
             identifier = "refresh".opt
@@ -138,7 +168,9 @@ class TreeGridContextMenuProps extends MenuSSProps {
                     simpleSyS checkOwner owner
                     owner.fullRefresh()
             }.toFunc.opt
-        },
+        })
+
+    val openFolderMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Развернуть узел".opt
             identifier = "openFolder".opt
@@ -154,7 +186,14 @@ class TreeGridContextMenuProps extends MenuSSProps {
                     simpleSyS checkOwner owner
                     owner.getSelectedRecords().length > 0
             }.toFunc.opt
-        },
+        })
+
+    val separatorMenuItem = MenuSSItem(
+        new MenuSSItemProps {
+            isSeparator = true.opt
+        })
+
+    val saveMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Сохранить изменения".opt
             identifier = "saveAll".opt
@@ -173,11 +212,13 @@ class TreeGridContextMenuProps extends MenuSSProps {
                     simpleSyS checkOwner owner
                     owner.hasChanges() && !owner.hasErrors()
             }.toFunc.opt
-        },
+        })
+
+    val cancelMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Отменить изменения".opt
             identifier = "discardAll".opt
-            icon = Common.delete_icon.opt
+            icon = Common.cancel.opt
             click = {
                 (target: Canvas, item: MenuSSItem, menu: MenuSS, colNum: JSUndefined[Int]) =>
                     val owner = item.owner.asInstanceOf[TreeGridEditor]
@@ -192,6 +233,28 @@ class TreeGridContextMenuProps extends MenuSSProps {
                     simpleSyS checkOwner owner
                     owner.hasChanges()
             }.toFunc.opt
-        }
-    ).opt
+        })
+
+    initWidget = {
+        (thiz: classHandler, args: IscArray[JSAny]) =>
+            isc debugTrac(thiz.getClassName(), thiz.getIdentifier())
+            val items = Seq(
+                newRootMenuItem,
+                newMenuItem,
+                copyMenuItem,
+                editMenuItem,
+                enableReparentMenuItem,
+                deleteMenuItem,
+                refreshMenuItem,
+                openFolderMenuItem,
+                separatorMenuItem,
+                saveMenuItem,
+                cancelMenuItem
+            )
+
+            thiz.items = IscArray(items: _*)
+            thiz.Super("initWidget", args)
+    }.toThisFunc.opt
+
+
 }

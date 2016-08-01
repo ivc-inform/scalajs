@@ -19,7 +19,8 @@ import com.simplesys.System.Types._
 import com.simplesys.System._
 
 import scala.scalajs.js
-import scala.scalajs.js.{Function4, UndefOr, |}
+import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.{UndefOr, |}
 
 @js.native
 trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayoutSS {
@@ -41,7 +42,7 @@ trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayo
     var filterOnKeypress: Boolean
     var drawAheadRatio: Double
     var autoSaveEdits: Boolean
-    var selectionType: SelectionStyle
+    var selectionType: JSUndefined[SelectionStyle]
     var canEdit: Boolean
     var showRollOver: Boolean
     var autoFetchData: Boolean
@@ -101,7 +102,7 @@ trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayo
     def deselectRecord(record: R | Int): void
     def deselectRecords(records: IscArray[R]): void
     def deselectAllRecords(): void
-    def selectRecordsByKey(keyValues: JSObject, newState: Boolean = js.native): R
+    def selectRecordsByKey(keyValues: JSAny, newState: Boolean = js.native): R
     def getRowNum(record: R): Int
     var dataSource: DataSource
     def setContextMenu(menu: MenuSS): void
@@ -124,14 +125,20 @@ trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayo
     //var startEditingInForm: JSUndefined[Function4[JSObject, IscArray[FormItem], DSCallback, DSRequest, _]]
     var newRequestProperties: JSUndefined[js.Function0[DSRequest]]
     var editRequestProperties: JSUndefined[js.Function0[DSRequest]]
-    var editingFields  : JSUndefined[IscArray[FormItem]]
+    var editingFields: JSUndefined[IscArray[FormItem]]
     def getFieldName(colNum: Int | ID): String
     var selectFirstRecordAfterFetch: Boolean
     var fields: JSUndefined[IscArray[ListGridField]]
-    val replacingfields: JSUndefined[IscArray[ListGridField]]
+    val replacingFields: JSUndefined[IscArray[ListGridField]]
+    def setSelectionAppearance(selectionAppearance: SelectionAppearance): void
+    def setSelectionType(selectionType: SelectionStyle): void
+    var simpleTable: JSUndefined[Boolean]
+    @JSName("grid")
+    var listGrid: ListGrid
+    @JSName("grid")
+    var treeGrid: TreeGrid
 }
 
 @js.native
 trait ListGridEditor extends VLayoutSS with GridEditor[ListGridField, ListGridRecord, ListGridSelectedState] {
-    var grid: ListGrid
 }

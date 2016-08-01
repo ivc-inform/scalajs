@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient
 
 import com.simplesys.SmartClient.App._
-import com.simplesys.SmartClient.App.formItems.LookupListGridEditorItem
-import com.simplesys.SmartClient.App.formItems.props.LookupListGridEditorItemProps
+import com.simplesys.SmartClient.App.formItems.{LookupListGridEditorItem, LookupTreeGridEditorItem}
+import com.simplesys.SmartClient.App.formItems.props.{LookupListGridEditorItemProps, LookupTreeGridEditorItemProps}
 import com.simplesys.SmartClient.App.props._
 import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.Control.menu.{MenuItem, MenuSSItem}
@@ -21,7 +21,9 @@ import com.simplesys.SmartClient.Forms.FormsItems.props._
 import com.simplesys.SmartClient.Forms._
 import com.simplesys.SmartClient.Forms.props._
 import com.simplesys.SmartClient.Foundation._
+import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Foundation.props._
+import com.simplesys.SmartClient.Foundation.props.canvas.ImgPropertiesProps
 import com.simplesys.SmartClient.Grids._
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.Grids.props._
@@ -38,6 +40,8 @@ import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.SmartClient.Layout.toolStrip.{ToolStripButton, ToolStripMenuButton, ToolStripSeparator}
 import com.simplesys.SmartClient.RPC.RPCRequest
 import com.simplesys.SmartClient.RPC.props.RPCRequestProps
+import com.simplesys.SmartClient.System.date.Date
+import com.simplesys.SmartClient.System.date.props.DateProps
 import com.simplesys.SmartClient.System.props.TreeProps
 import com.simplesys.SmartClient.Tools.editProxy.DrawPaneEditProxy
 import com.simplesys.SmartClient.Tools.palette._
@@ -49,19 +53,22 @@ import com.simplesys.SmartClient.Tools.{EditContext, EditProxy, PaletteNode}
 
 //Должны быть
 //import com.simplesys.macros.PropsToDictionary
-import com.simplesys.macros.PropsToDictionary
 //
+
+import com.simplesys.macros.PropsToDictionary
 
 package object System {
 
     type Point = IscArray[Double]
     type Rectangle = IscArray[Point]
 
-    implicit class StringOpts(x: String) {
+    implicit class String1Opts(x: String) {
         def ellipsis = s"$x..."
         def fromSkinPath = s"[SKIN]$x"
         def dblQuoted: String = "\"" + x + "\""
     }
+
+    object Date extends SCApply4Object[Date, DateProps]
 
     //<editor-fold desc="Control">
     object IButtonSS extends SCApply[IButtonSS, IButtonSSProps]
@@ -86,13 +93,15 @@ package object System {
     //</editor-fold>
 
     //<editor-fold desc="FormsItems">
+    object FormItem extends SCApply[FormItem, FormItemProps]
     object CanvasItem extends SCApply[CanvasItem, CanvasItemProps]
     object CheckboxItem extends SCApply[CheckboxItem, CheckboxItemProps]
     object ColorItem extends SCApply[ColorItem, ColorItemProps]
     object SkinBoxItem extends SCApply[SkinBoxItem, SkinBoxItemProps]
     object DateItem extends SCApply[DateItem, DateItemProps]
-    //    object DateRangeItem extends SCApply[DateRangeItem, DateRangeItemProps]
+    object DateRangeItem extends SCApply[DateRangeItem, DateRangeItemProps]
     object DateTimeItem extends SCApply[DateTimeItem, DateTimeItemProps]
+    object DateTimeItemSS extends SCApply[DateTimeItemSS, DateTimeItemSSProps]
     object DoubleItem extends SCApply[DoubleItem, DoubleItemProps]
     object IntegerItem extends SCApply[IntegerItem, IntegerItemProps]
     object FloatItem extends SCApply[FloatItem, FloatItemProps]
@@ -101,19 +110,24 @@ package object System {
     object SpinnerItem extends SCApply[SpinnerItem, SpinnerItemProps]
     object TextAreaItem extends SCApply[TextAreaItem, TextAreaItemProps]
     object TextItem extends SCApply[TextItem, TextItemProps]
+    object TextItemSS extends SCApply[TextItemSS, TextItemSSProps]
+    object StaticTextItem extends SCApply[StaticTextItem, StaticTextItemProps]
     object TimeItem extends SCApply[TimeItem, TimeItemProps]
     object TimerItem extends SCApply[TimerItem, TimerItemProps]
     object Tab extends SCApply4Object[Tab, TabProps]
+    object DateChooser extends SCApply4Object[DateChooser, DateChooserProps]
     object FormItemWithButton extends SCApply[FormItemWithButton, FormItemWithButtonProps]
     object ComboboxItemWithButtons extends SCApply[ComboboxItemWithButtons, ComboboxItemWithButtonsProps]
     object ComboboxItemWithClearButton extends SCApply[ComboboxItemWithClearButton, ComboboxItemWithClearButtonProps]
     object LookupListGridEditorItem extends SCApply[LookupListGridEditorItem, LookupListGridEditorItemProps]
+    object LookupTreeGridEditorItem extends SCApply[LookupTreeGridEditorItem, LookupTreeGridEditorItemProps]
     //</editor-fold>
 
     //<editor-fold desc="Foundation">
     object Canvas extends SCApply[Canvas, CanvasProps]
     object Label extends SCApply[Label, LabelProps]
     object HTMLFlow extends SCApply[HTMLFlow, HTMLFlowProps]
+    object ImgProperties extends SCApply4Object[ImgProperties, ImgPropertiesProps]
     //</editor-fold>
 
     //<editor-fold desc="RPC">
@@ -132,6 +146,7 @@ package object System {
     //<editor-fold desc="Layout">
     object HLayoutSS extends SCApply[HLayoutSS, HLayoutSSProps]
     object IconButton extends SCApply[IconButton, IconButtonProps]
+    object IconButtonSS extends SCApply[IconButtonSS, IconButtonSSProps]
     object IconMenuButton extends SCApply[IconMenuButton, IconMenuButtonProps]
     object IconMenuButtonSS extends SCApply[IconMenuButtonSS, IconMenuButtonSSProps]
     object OkCancelPanel extends SCApply[OkCancelPanel, OkCancelPanelProps]
@@ -141,6 +156,7 @@ package object System {
     object TabSetSS extends SCApply[TabSetSS, TabSetSSProps]
     object WindowSS extends SCApply[WindowSS, WindowSSProps]
     object ToolStrip extends SCApply[ToolStrip, ToolStripProps]
+    object WindowListGridEditorToolStrip extends SCApply[WindowListGridEditorToolStrip, WindowListGridEditorToolStripProps]
     object ToolStripMenuButton extends SCApply[ToolStripMenuButton, ToolStripMenuButtonProps]
     object ToolStripSeparator extends SCApply[ToolStripSeparator, ToolStripSeparatorProps]
     object ToolStripButton extends SCApply[ToolStripButton, ToolStripButtonProps]
@@ -189,9 +205,7 @@ package object System {
     object ListGridContextMenu extends SCApply[ListGridContextMenu, ListGridContextMenuProps]
     object ListGridContextMenuWithForm extends SCApply[ListGridContextMenu, ListGridContextMenuWithFormProps]
     object TreeGridContextMenu extends SCApply[TreeGridContextMenu, TreeGridContextMenuProps]
-    object UserComponentMenu extends SCApply[UserComponentMenu, UserComponentMenuProps]
-    object EditorUsers extends SCApply[EditorUsers, EditorUsersProps]
-    object EditorUserGroups extends SCApply[EditorUserGroups, EditorUserGroupsProps]
+    object TreeListGridContextMenu extends SCApply[TreeListGridContextMenu, TreeListGridContextMenuProps]
     object TreeListGridEditor extends SCApply[TreeListGridEditor, TreeListGridEditorProps]
 
     object MenuItem extends SCApply4Object[MenuItem, MenuItemProps]
@@ -200,6 +214,9 @@ package object System {
 
     object CommonListGridEditorComponent extends SCApply[CommonListGridEditorComponent, CommonListGridEditorComponentProps]
     object CommonTreeGridEditorComponent extends SCApply[CommonTreeGridEditorComponent, CommonTreeGridEditorComponentProps]
+    object CommonTreeListGridEditorComponent extends SCApply[CommonTreeListGridEditorComponent, CommonTreeListGridEditorComponentProps]
 
+    object EditorUsers extends SCApply[EditorUsers, EditorUsersProps]
+    object EditorUserGroups extends SCApply[EditorUserGroups, EditorUserGroupsProps]
 }
 

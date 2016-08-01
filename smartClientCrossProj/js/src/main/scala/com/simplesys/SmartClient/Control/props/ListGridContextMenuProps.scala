@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.Control.props
 
-import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Control.props.menu.MenuSSItemProps
+import com.simplesys.SmartClient.Control.{ListGridContextMenu, MenuSS}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.ListGridEditor
 import com.simplesys.SmartClient.System.{Common, simpleSyS, _}
@@ -10,8 +10,10 @@ import com.simplesys.System._
 import com.simplesys.function._
 import com.simplesys.option.ScOption._
 
+trait IDMenu
+
 object ListGridContextMenuProps {
-    val newWithForm = Seq(
+    val newMenuItemWithForm = MenuSSItem(
         new MenuSSItemProps {
             title = "Новый".ellipsis.opt
             identifier = "new".opt
@@ -24,7 +26,7 @@ object ListGridContextMenuProps {
             }.toFunc.opt
         })
 
-    val newInLine = Seq(
+    val newMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Новый".ellipsis.opt
             identifier = "new".opt
@@ -37,7 +39,27 @@ object ListGridContextMenuProps {
             }.toFunc.opt
         })
 
-    val otherItems = Seq(
+    val copyMenuItem = MenuSSItem(
+        new MenuSSItemProps {
+            title = "Копировать".opt
+            identifier = "copy".opt
+            icon = Common.copy_icon.opt
+            click = {
+                (target: Canvas, item: MenuSSItem, menu: MenuSS, colNum: JSUndefined[Int]) =>
+                    val owner = item.owner.asInstanceOf[ListGridEditor]
+                    simpleSyS checkOwner owner
+                    owner.getSelectedRecords().foreach(owner.dataSource.addData(_))
+                    false
+            }.toFunc.opt
+            enableIf = {
+                (target: Canvas, menu: MenuSS, item: MenuSSItem) =>
+                    val owner = item.owner.asInstanceOf[ListGridEditor]
+                    simpleSyS checkOwner owner
+                    owner.getSelectedRecords().length > 0
+            }.toFunc.opt
+        })
+
+    val editMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Изменить".opt
             identifier = "edit".opt
@@ -55,7 +77,9 @@ object ListGridContextMenuProps {
                     simpleSyS checkOwner owner
                     owner.getSelectedRecords().length == 1
             }.toFunc.opt
-        },
+        })
+
+    val deleteMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Удалить".opt
             identifier = "remove".opt
@@ -77,7 +101,9 @@ object ListGridContextMenuProps {
                     simpleSyS checkOwner owner
                     owner.getSelectedRecords().length > 0
             }.toFunc.opt
-        },
+        })
+
+    val refreshMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Обновить".opt
             identifier = "refresh".opt
@@ -88,10 +114,21 @@ object ListGridContextMenuProps {
                     simpleSyS checkOwner owner
                     owner.fullRefresh()
             }.toFunc.opt
-        },
+        })
+
+    val separetorMenuItem = MenuSSItem(
         new MenuSSItemProps {
             isSeparator = true.opt
-        },
+        })
+
+    val otherItems = Seq(
+        copyMenuItem,
+        editMenuItem,
+        deleteMenuItem,
+        refreshMenuItem
+    )
+
+    val saveMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Сохранить изменения".opt
             identifier = "saveAll".opt
@@ -110,11 +147,13 @@ object ListGridContextMenuProps {
                     simpleSyS checkOwner owner
                     owner.hasChanges() && !owner.hasErrors()
             }.toFunc.opt
-        },
+        })
+
+    val cancelMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Отменить изменения".opt
             identifier = "discardAll".opt
-            icon = Common.delete_icon.opt
+            icon = Common.cancel.opt
             click = {
                 (target: Canvas, item: MenuSSItem, menu: MenuSS, colNum: JSUndefined[Int]) =>
                     val owner = item.owner.asInstanceOf[ListGridEditor]
@@ -129,15 +168,35 @@ object ListGridContextMenuProps {
                     simpleSyS checkOwner owner
                     owner.hasChanges()
             }.toFunc.opt
-        }
+        })
+
+    val otherItems1 = Seq(
+        separetorMenuItem,
+        saveMenuItem,
+        cancelMenuItem
     )
 }
 
 class ListGridContextMenuProps extends MenuSSProps {
-    items = (ListGridContextMenuProps.newInLine ++ ListGridContextMenuProps.otherItems).opt
+    type classHandler <: ListGridContextMenu
+    initWidget = {
+        (thiz: classHandler, args: IscArray[JSAny]) =>
+            isc debugTrac(thiz.getClassName(), thiz.getIdentifier())
+
+            val items = Seq(ListGridContextMenuProps.newMenuItem) ++ ListGridContextMenuProps.otherItems ++ ListGridContextMenuProps.otherItems1
+            thiz.items = IscArray(items: _*)
+            thiz.Super("initWidget", args)
+    }.toThisFunc.opt
 }
 
 class ListGridContextMenuWithFormProps extends MenuSSProps {
-    items = (ListGridContextMenuProps.newWithForm ++ ListGridContextMenuProps.otherItems).opt
+    initWidget = {
+        (thiz: classHandler, args: IscArray[JSAny]) =>
+            isc debugTrac(thiz.getClassName(), thiz.getIdentifier())
+
+            val items = Seq(ListGridContextMenuProps.newMenuItemWithForm) ++ ListGridContextMenuProps.otherItems ++ ListGridContextMenuProps.otherItems1
+            thiz.items = IscArray(items: _*)
+            thiz.Super("initWidget", args)
+    }.toThisFunc.opt
 }
 

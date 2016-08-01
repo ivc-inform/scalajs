@@ -3,6 +3,8 @@ package com.simplesys.SmartClient.Grids.props
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Forms.FormsItems.props.FormItemProps
+import com.simplesys.SmartClient.Foundation.Img
+import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Grids.TreeListGridEditor
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
@@ -38,6 +40,7 @@ class TreeListGridEditorProps extends HLayoutSSProps {
     var showTreeFilterEditor: ScOption[Boolean] = ScNone
     var canAcceptDroppedRecordsTree: ScOption[Boolean] = ScNone
     var canAcceptDroppedRecordsList: ScOption[Boolean] = ScNone
+    var canDragSelectText: ScOption[Boolean] = ScNone
     var autoFetchData: ScOption[Boolean] = ScNone
     var showTreeAdvancedFilter: ScOption[Boolean] = ScNone
     var cancelEditingConfirmationMessageList: ScOption[String] = ScNone
@@ -77,7 +80,7 @@ class TreeListGridEditorProps extends HLayoutSSProps {
     var dataSourceList: ScOption[DataSource] = ScNone
     var dataSourceTree: ScOption[DataSource] = ScNone
     var wrapListCells: ScOption[Boolean] = ScNone
-    var fieldsTree: ScOption[Seq[TreeGridFieldProps]] = ScNone
+    var fieldsTree: ScOption[Seq[ListGridFieldProps]] = ScNone
     var defaultFieldsTree: ScOption[Seq[TreeGridFieldProps]] = ScNone
     var fieldsList: ScOption[Seq[ListGridFieldProps]] = ScNone
     var defaultFieldsList: ScOption[Seq[ListGridFieldProps]] = ScNone
@@ -94,4 +97,8 @@ class TreeListGridEditorProps extends HLayoutSSProps {
     var dataTree: ScOption[Tree] = ScNone
     var editWindowPropertiesTree: ScOption[WindowSS] = ScNone
     var editWindowPropertiesList: ScOption[WindowSS] = ScNone
+    var canDragRecordsOutList: ScOption[Boolean] = ScNone
+    var canDragRecordsOutTree: ScOption[Boolean] = ScNone
+    var trackerImageList : ScOption[ImgProperties] = ScNone
+    var trackerImageTree : ScOption[ImgProperties] = ScNone
 }
