@@ -49,7 +49,7 @@ trait Layout extends Canvas {
     var locateMembersType: LocatorTypeStrategy
     val managePercentBreadth: Boolean
     val memberOverlap: Int
-    val members: IscArray[_ <: Canvas]
+    var members: IscArray[_ <: Canvas]
     var membersChanged: js.ThisFunction0[classHandler, void]
     var membersMargin: Int
     var minMemberSize: Int
@@ -81,6 +81,4 @@ trait Layout extends Canvas {
 abstract trait AbstractLayoutCompanion extends AbstractCanvasCompanion {
 }
 
-@js.native
-object Layout extends AbstractLayoutCompanion
 

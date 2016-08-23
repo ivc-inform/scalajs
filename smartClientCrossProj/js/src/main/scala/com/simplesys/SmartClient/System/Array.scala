@@ -64,4 +64,5 @@ abstract trait AbstractArrayCompanion extends JSObject {
 @JSName("Array")
 object IscArray extends AbstractArrayCompanion {
     def apply[A](items: A*): IscArray[A] = js.native
+    def empty[A]: IscArray[A] = js.native
 }

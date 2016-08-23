@@ -204,6 +204,7 @@ class CanvasProps extends ClassProps {
     var noDoubleClicks: ScOption[Boolean] = ScNone
     var opacity: ScOption[Int] = ScNone
     var overflow: ScOption[Overflow] = ScNone
+    var owner: ScOption[Canvas] = ScNone
     var padding: ScOption[Int] = ScNone
     var parentCanvas: ScOption[Canvas] = ScNone
     var parentMoved: ScOption[ThisFunction2[classHandler, Int, Int, void]] = ScNone

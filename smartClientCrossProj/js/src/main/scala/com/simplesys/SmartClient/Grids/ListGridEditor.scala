@@ -5,10 +5,12 @@ import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord, MasterDetailMapping}
 import com.simplesys.SmartClient.Layout.VLayoutSS
 import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
+import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.DragDataAction.DragDataAction
 import com.simplesys.System.Types.DragTrackerMode.DragTrackerMode
 import com.simplesys.System.Types.ListGridEditEvent.ListGridEditEvent
@@ -18,12 +20,13 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
 import com.simplesys.System._
 
+import scala.reflect.ClassTag
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.{UndefOr, |}
 
 @js.native
-trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayoutSS {
+trait GridEditor[T <: ListGridField, R <: JSAny, S <: JSAny] extends VLayoutSS {
     var canDragSelectText: Boolean
     var canAcceptDroppedRecords: JSUndefined[Boolean]
     var autoFitFieldWidth: Boolean
@@ -137,8 +140,11 @@ trait GridEditor[T <: ListGridField, R <: JSObject, S <: JSObject] extends VLayo
     var listGrid: ListGrid
     @JSName("grid")
     var treeGrid: TreeGrid
+    val datetimeFormatter: DateDisplayFormat
+    val dateFormatter: DateDisplayFormat
 }
 
 @js.native
 trait ListGridEditor extends VLayoutSS with GridEditor[ListGridField, ListGridRecord, ListGridSelectedState] {
+
 }

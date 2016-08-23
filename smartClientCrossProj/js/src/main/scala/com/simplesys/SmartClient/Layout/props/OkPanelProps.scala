@@ -13,5 +13,4 @@ class OkPanelProps extends HPanelSSProps {
     var ownerDestroy: ScOption[Boolean] = ScNone
     var ownerHide: ScOption[Boolean] = ScNone
     var timeoutClose: ScOption[Int] = ScNone
-    var owner: ScOption[Canvas] = ScNone
 }

@@ -12,7 +12,6 @@ import com.simplesys.SmartClient.Foundation.{Canvas, GridRenderer, HTMLFlow, Sta
 import com.simplesys.SmartClient.Grids.listGrid._
 import com.simplesys.SmartClient.Grids.treeGrid.Tree
 import com.simplesys.SmartClient.Layout.{HLayout, Layout, VLayout}
-import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
 import com.simplesys.SmartClient.System.selection.CellSelection
 import com.simplesys.SmartClient.System.{Class, IscArray, Selection}
 import com.simplesys.System.Types.Alignment.Alignment
@@ -61,7 +60,7 @@ import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.{UndefOr, |}
 
 @js.native
-trait Grid[T <: ListGridField, R <: JSObject] extends VLayout with DataBoundComponent {
+trait Grid[T <: ListGridField, R <: JSAny] extends VLayout with DataBoundComponent {
     def addData(newRecord: Record, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def addEmbeddedComponent(component: Canvas, record: Record, rowNum: Int = js.native, colNum: Int = js.native, position: Int = js.native): void
     def addSort(sortSpecifier: SortSpecifier): void

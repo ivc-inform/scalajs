@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
-import com.simplesys.SmartClient.Layout.PrintWindow
+import com.simplesys.SmartClient.Layout.{PrintWindow, TabSetSS}
 import com.simplesys.SmartClient.System._
 import com.simplesys.SmartClient.Tools.{EditContext, EditNode}
 import com.simplesys.SmartClient.math.AffineTransform
@@ -236,7 +236,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def handleHover(): void
     val height: String | Int
     def hide(): void
-    def hide1(): Canvas
+    def hide1[T](): T
     def hideClickMask(ID: String = js.native): void
     def hideComponentMask(): void
     def hideContextMenu(): void
@@ -311,6 +311,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var noDoubleClicks: Boolean
     val opacity: Int
     val overflow: Overflow
+    var owner: JSUndefined[Canvas]
     val padding: Int
     def pageScrollDown(): void
     def pageScrollUp(): void
@@ -441,6 +442,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var snapVDirection: String
     var snapVGap: Int
     var styleName: CSSStyleName
+    var tabSet: JSUndefined[TabSetSS]
     var tabIndex: Int
     val top: Int | String
     val topElement: Canvas
@@ -456,7 +458,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var visibility: Visibility
     var visibilityChanged: js.ThisFunction1[classHandler, Boolean, void]
     def visibleAtPoint(x: Int, y: Int, withinViewport: Boolean = js.native, ignoreWidgets: Canvas = js.native, upToParent: Canvas = js.native): Boolean
-    val width: Int | String
+    var width: Int | String
     var willAcceptDrop: js.ThisFunction0[classHandler, Boolean]
 }
 

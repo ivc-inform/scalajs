@@ -38,8 +38,8 @@ import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
 import com.simplesys.SmartClient.Layout.props.toolStrip.{ToolStripButtonProps, ToolStripMenuButtonProps, ToolStripSeparatorProps}
 import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.SmartClient.Layout.toolStrip.{ToolStripButton, ToolStripMenuButton, ToolStripSeparator}
-import com.simplesys.SmartClient.RPC.RPCRequest
-import com.simplesys.SmartClient.RPC.props.RPCRequestProps
+import com.simplesys.SmartClient.RPC.{RPCRequest, RequestParams}
+import com.simplesys.SmartClient.RPC.props.{RPCRequestProps, RequestParamsProps}
 import com.simplesys.SmartClient.System.date.Date
 import com.simplesys.SmartClient.System.date.props.DateProps
 import com.simplesys.SmartClient.System.props.TreeProps
@@ -49,13 +49,13 @@ import com.simplesys.SmartClient.Tools.palette.props._
 import com.simplesys.SmartClient.Tools.props._
 import com.simplesys.SmartClient.Tools.props.editProxy.DrawPaneEditProxyProps
 import com.simplesys.SmartClient.Tools.{EditContext, EditProxy, PaletteNode}
+import com.simplesys.System.Types.Criteria
 
 
 //Должны быть
 //import com.simplesys.macros.PropsToDictionary
-//
-
 import com.simplesys.macros.PropsToDictionary
+//
 
 package object System {
 
@@ -85,9 +85,12 @@ package object System {
     object RestDataSourceSS extends SCApply[RestDataSourceSS, RestDataSourceSSProps]
     object SimpleType extends SCApply[SimpleType, SimpleTypeProps]
     object SimpleTile extends SCApply[SimpleTile, SimpleTileProps]
+    object AdvancedCriteria extends SCApply4Object[AdvancedCriteria, AdvancedCriteriaProps]
+    object Criterion extends SCApply4Object[Criterion, CriterionProps]
     //</editor-fold>
 
     //<editor-fold desc="Forms">
+    object DynamicForm extends SCApply[DynamicForm, DynamicFormProps]
     object DynamicFormSS extends SCApply[DynamicFormSS, DynamicFormSSProps]
     object FilterBuilder extends SCApply[FilterBuilder, FilterBuilderProps]
     //</editor-fold>
@@ -127,6 +130,7 @@ package object System {
     object Canvas extends SCApply[Canvas, CanvasProps]
     object Label extends SCApply[Label, LabelProps]
     object HTMLFlow extends SCApply[HTMLFlow, HTMLFlowProps]
+    object HTMLPane extends SCApply[HTMLPane, HTMLPaneProps]
     object ImgProperties extends SCApply4Object[ImgProperties, ImgPropertiesProps]
     //</editor-fold>
 
@@ -193,6 +197,8 @@ package object System {
     object DrawLinePathSS extends SCApply[DrawLinePathSS, DrawLinePathSSProps]
     object DrawKnob extends SCApply[DrawKnob, DrawKnobProps]
     object Shadow extends SCApply4Object[Shadow, ShadowProps]
+    object SortSpecifier extends SCApply4Object[SortSpecifier, SortSpecifierProps]
+    object RequestParams extends SCApply4Object[RequestParams, RequestParamsProps]
 
     object RibbonBar extends SCApply[RibbonBar, RibbonBarProps]
     object RibbonGroup extends SCApply[RibbonGroup, RibbonGroupProps]

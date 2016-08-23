@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.App.props
 
 import com.simplesys.SmartClient.App.CommonListGridEditorComponent
+import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Control.props.{ListGridContextMenuProps, ListGridContextMenuWithFormProps}
 import com.simplesys.SmartClient.Grids.props.ListGridEditorProps
 import com.simplesys.SmartClient.System._
@@ -29,6 +30,8 @@ trait CommonListGridEditorComponentProps extends ListGridEditorProps with Initia
     selectFirstRecordAfterFetch = false.opt
     saveByCell = true.opt
 
+    var customMenu: ScOption[Seq[MenuSSItem]] = ScNone
+
     initWidget = {
         (thiz: classHandler, arguments: IscArray[JSAny]) =>
             isc debugTrac (thiz.getClassName(), thiz.getIdentifier())
@@ -43,12 +46,14 @@ trait CommonListGridEditorComponentProps extends ListGridEditorProps with Initia
                 ListGridContextMenu.create(
                     new ListGridContextMenuProps {
                         owner = thiz.opt
+                        thiz.customMenu.foreach(menu ⇒ customMenu = menu.opt)
                     }
                 )
             else
                 ListGridContextMenuWithForm.create(
                     new ListGridContextMenuWithFormProps {
                         owner = thiz.opt
+                        thiz.customMenu.foreach(menu ⇒ customMenu = menu.opt)
                     }
                 )
 

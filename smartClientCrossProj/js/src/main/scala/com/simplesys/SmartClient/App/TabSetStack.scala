@@ -45,6 +45,8 @@ trait TabSetsStack {
 
             val tab = Tab(
                 new TabProps {
+                    canvas.tabSet = tabSet
+                    //isc debugTrap canvas
                     pane = canvas.opt
                     tabSelected = {
                         (tabSet: TabSet, tabNum: Int, tabPane: Canvas, ID: JSUndefined[ID], tab: Tab, name: JSUndefined[String]) =>
@@ -159,6 +161,18 @@ trait TabSetStack extends TabSetsStack {
                             pane = checkInnerTabSet(groupButton.getIdentifier(), canvas, menuItem).opt
                             name = groupButton.getIdentifier().opt
                             title = _title.opt
+                            tabSelected = {
+                                (tabSet: TabSet, tabNum: Int, tabPane: Canvas, ID: JSUndefined[ID], tab: Tab, name: JSUndefined[String]) =>
+                                    tabPane.asInstanceOf[TabSetSS].getSelectedTab().foreach {
+                                        _.pane.foreach {
+                                            pane ⇒
+                                                val funcMenu = pane.funcMenu
+                                                //isc debugTrap(functionButton.menu, funcMenu)
+                                                if (functionButton.menu.isDefined && funcMenu.isDefined && functionButton.menu.get.getID() != funcMenu.get.getID())
+                                                    functionButton.menu = funcMenu
+                                        }
+                                    }
+                            }.toFunc.opt
                         }
                     )
 

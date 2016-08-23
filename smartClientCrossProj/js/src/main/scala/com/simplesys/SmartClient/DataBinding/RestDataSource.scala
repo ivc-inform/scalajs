@@ -1,8 +1,22 @@
 package com.simplesys.SmartClient.DataBinding
 
 import com.simplesys.System.Types.void
+import com.simplesys.System._
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.ScalaJSDefined
+
+@ScalaJSDefined
+trait ErrorStruct extends JSObject {
+    val errorMessage: JSUndefined[String]
+    val stackTrace: JSUndefined[String]
+    val status: JSUndefined[Int]
+}
+
+@ScalaJSDefined
+trait ResponseData extends JSObject {
+    val data: JSUndefined[JSObject]
+}
 
 @js.native
 trait RestDataSource extends DataSource {
@@ -17,6 +31,7 @@ trait RestDataSource extends DataSource {
     var transformRequest: js.Function1[void, _]
     var updateDataURL: String
     val xmlRecordXPath: String
+    def getError(data: JSObject): ErrorStruct
 }
 
 

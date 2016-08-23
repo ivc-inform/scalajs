@@ -53,7 +53,7 @@ trait Window extends Layout {
     var hiliteHeaderSrc: SCImgURL
     var hiliteHeaderStyle: CSSStyleName
     var isModal: Boolean
-    val items: IscArray[Canvas | String]
+    val items: IscArray[Canvas]
     def maximize(): void
     val maximizeButton: ImgButton with AutoChild
     var maximized: Boolean

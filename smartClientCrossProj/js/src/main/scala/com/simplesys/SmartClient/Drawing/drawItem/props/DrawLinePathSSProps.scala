@@ -5,8 +5,8 @@ import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Control.props.MenuSSProps
 import com.simplesys.SmartClient.Control.props.menu.MenuSSItemProps
 import com.simplesys.SmartClient.Drawing.drawItem.DrawLinePathSS
-import com.simplesys.SmartClient.Drawing.props.{DrawKnobProps, DrawLineCommons}
-import com.simplesys.SmartClient.Drawing.{DrawKnob, Point}
+import com.simplesys.SmartClient.Drawing.props.DrawKnobProps
+import com.simplesys.SmartClient.Drawing.{DrawKnob, DrawLineCommons, Point}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System._
 import com.simplesys.SmartClient.math.AffineTransform

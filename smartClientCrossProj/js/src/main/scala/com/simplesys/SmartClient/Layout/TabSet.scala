@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.TableView
 import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.SmartClient.System.{Class, IscArray}
-import com.simplesys.System.JSObject
+import com.simplesys.System.{JSObject, JSUndefined}
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.Overflow.Overflow
 import com.simplesys.System.Types.Side.Side
@@ -48,7 +48,7 @@ trait TabSet extends Canvas {
     def editTabTitle(tab: Tab | Int | ID): void
     def enableTab(tab: Tab | Int | ID): void
     var getPaneContainerEdges: js.Function1[void, IscArray[JSObject]]
-    def getSelectedTab(): Tab
+    def getSelectedTab(): JSUndefined[Tab]
     def getSelectedTabNumber(): Int
     def getTab(tab: Int | ID): Tab
     def getTabNumber(tab: Int | ID): Int

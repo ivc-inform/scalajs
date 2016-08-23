@@ -8,7 +8,7 @@ import com.simplesys.SmartClient.Foundation.Img
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Grids.treeGrid.TreeGridField
-import com.simplesys.SmartClient.Layout.HLayoutSS
+import com.simplesys.SmartClient.Layout.{HLayoutSS, TabSetSS}
 import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.SelectionStyle.SelectionStyle
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
@@ -129,6 +129,7 @@ trait TreeListGridEditor extends HLayoutSS {
     val contextMenuListGridEditor: MenuSS
     val contextMenuTreeGridEditor: MenuSS
     def getViewState(): void
+    def setTabSet(tabSet: TabSetSS): TabSetSS
     var newTreeRequestProperties: JSUndefined[DSRequest]
     var editTreeRequestProperties: JSUndefined[DSRequest]
     var newListRequestProperties: JSUndefined[DSRequest]

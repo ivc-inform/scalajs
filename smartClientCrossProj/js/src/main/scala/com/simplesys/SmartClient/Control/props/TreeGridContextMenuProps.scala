@@ -9,12 +9,15 @@ import com.simplesys.SmartClient.System.{Common, simpleSyS, _}
 import com.simplesys.System.Types.Visibility
 import com.simplesys.System._
 import com.simplesys.function._
+import com.simplesys.option.{ScNone, ScOption}
 import com.simplesys.option.ScOption._
 
 class TreeGridContextMenuProps extends MenuSSProps {
     type classHandler <: TreeGridContextMenu
 
-    val newRootMenuItem = MenuSSItem(
+    var customMenu: ScOption[Seq[MenuSSItem]] = ScNone
+
+    def newRootMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Новый корневой узел".ellipsis.opt
             identifier = "new".opt
@@ -29,17 +32,17 @@ class TreeGridContextMenuProps extends MenuSSProps {
                         isc error "Нет функции newRequestProperties."
                     else {
                         if (owner.treeGrid.newRequestProperties.isDefined)
-                            owner.startEditingInForm(
+                            owner.startEditingNewInForm(
                                 requestProperties = (owner.treeGrid.newRequestProperties.get) ()
                             )
                         else
-                            owner.startEditingInForm()
+                            owner.startEditingNewInForm()
                     }
 
             }.toFunc.opt
         })
 
-    val newMenuItem = MenuSSItem(
+    def newMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Новый".ellipsis.opt
             identifier = "new".opt
@@ -60,11 +63,11 @@ class TreeGridContextMenuProps extends MenuSSProps {
 
                             request.data.asInstanceOf[JSDynamic].updateDynamic(parentIdField)(idValue)
 
-                            owner.startEditingInForm(
+                            owner.startEditingNewInForm(
                                 requestProperties = request
                             )
                         } else
-                            owner.startEditingInForm()
+                            owner.startEditingNewInForm()
                     }
             }.toFunc.opt
             enableIf = {
@@ -75,7 +78,7 @@ class TreeGridContextMenuProps extends MenuSSProps {
             }.toFunc.opt
         })
 
-    val copyMenuItem = MenuSSItem(
+    def copyMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Копировать".opt
             identifier = "copy".opt
@@ -84,7 +87,7 @@ class TreeGridContextMenuProps extends MenuSSProps {
                 (target: Canvas, item: MenuSSItem, menu: MenuSS, colNum: JSUndefined[Int]) =>
                     val owner = item.owner.asInstanceOf[TreeGridEditor]
                     simpleSyS checkOwner owner
-                    owner.getSelectedRecords().foreach(record => owner.dataSource.addData(isc.deletePrivateProps(record)))
+                    owner.getSelectedRecords().foreach(record => owner.dataSource.addData(ListGridContextMenuProps.deletePKField(owner.dataSource,isc.deletePrivateProps(record))))
                     false
             }.toFunc.opt
             enableIf = {
@@ -95,7 +98,7 @@ class TreeGridContextMenuProps extends MenuSSProps {
             }.toFunc.opt
         })
 
-    val editMenuItem = MenuSSItem(
+    def editMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Изменить".ellipsis.opt
             identifier = "edit".opt
@@ -114,7 +117,7 @@ class TreeGridContextMenuProps extends MenuSSProps {
             }.toFunc.opt
         })
 
-    val enableReparentMenuItem = MenuSSItem(
+    def enableReparentMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Разрешить перемещение групп".ellipsis.opt
             identifier = "enableReparent".opt
@@ -136,7 +139,7 @@ class TreeGridContextMenuProps extends MenuSSProps {
             }.toFunc.opt
         })
 
-    val deleteMenuItem = MenuSSItem(
+    def deleteMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Удалить".opt
             identifier = "remove".opt
@@ -157,7 +160,7 @@ class TreeGridContextMenuProps extends MenuSSProps {
             }.toFunc.opt
         })
 
-    val refreshMenuItem = MenuSSItem(
+    def refreshMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Обновить".opt
             identifier = "refresh".opt
@@ -170,7 +173,7 @@ class TreeGridContextMenuProps extends MenuSSProps {
             }.toFunc.opt
         })
 
-    val openFolderMenuItem = MenuSSItem(
+    def openFolderMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Развернуть узел".opt
             identifier = "openFolder".opt
@@ -188,12 +191,12 @@ class TreeGridContextMenuProps extends MenuSSProps {
             }.toFunc.opt
         })
 
-    val separatorMenuItem = MenuSSItem(
+    def separatorMenuItem = MenuSSItem(
         new MenuSSItemProps {
             isSeparator = true.opt
         })
 
-    val saveMenuItem = MenuSSItem(
+    def saveMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Сохранить изменения".opt
             identifier = "saveAll".opt
@@ -214,7 +217,7 @@ class TreeGridContextMenuProps extends MenuSSProps {
             }.toFunc.opt
         })
 
-    val cancelMenuItem = MenuSSItem(
+    def cancelMenuItem = MenuSSItem(
         new MenuSSItemProps {
             title = "Отменить изменения".opt
             identifier = "discardAll".opt
@@ -237,7 +240,7 @@ class TreeGridContextMenuProps extends MenuSSProps {
 
     initWidget = {
         (thiz: classHandler, args: IscArray[JSAny]) =>
-            isc debugTrac(thiz.getClassName(), thiz.getIdentifier())
+            //isc debugTrac(thiz.getClassName(), thiz.getIdentifier())
             val items = Seq(
                 newRootMenuItem,
                 newMenuItem,
@@ -246,8 +249,9 @@ class TreeGridContextMenuProps extends MenuSSProps {
                 enableReparentMenuItem,
                 deleteMenuItem,
                 refreshMenuItem,
-                openFolderMenuItem,
-                separatorMenuItem,
+                openFolderMenuItem) ++
+                ListGridContextMenuProps.getCustomMenuItems(thiz.customMenu) ++
+                Seq(separatorMenuItem,
                 saveMenuItem,
                 cancelMenuItem
             )

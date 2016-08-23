@@ -89,7 +89,6 @@ class DynamicFormProps extends CanvasProps with DataBoundComponentProps{
     var numCols: ScOption[Int] = ScNone
     var operator: ScOption[OperatorId] = ScNone
     var originalValueMessage: ScOption[HTMLString] = ScNone
-    var owner: ScOption[Class] = ScNone
     var readOnlyDisplay: ScOption[ReadOnlyDisplayAppearance] = ScNone
     var readOnlyTextBoxStyle: ScOption[FormItemBaseStyle] = ScNone
     var rejectInvalidValueOnChange: ScOption[Boolean] = ScNone

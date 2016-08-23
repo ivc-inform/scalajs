@@ -61,6 +61,8 @@ trait Class extends JSObject {
     def setProperties(arguments: JSDictionary[JSObject]): void
     def setProperty(propertyName: String, newValue: JSAny): void
     def Super(methodName: String, args: IscArray[JSAny] = js.native, nativeArgs: IscArray[JSAny] = js.native): JSAny
+    @JSName("Super")
+    def Super1(methodName: String, args: JSUndefined[IscArray[JSAny]] = js.native, nativeArgs: IscArray[JSAny] = js.native): JSAny
 }
 
 @js.native

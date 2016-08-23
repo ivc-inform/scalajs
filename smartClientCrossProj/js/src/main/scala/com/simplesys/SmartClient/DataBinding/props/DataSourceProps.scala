@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.DataBinding.props
 import com.simplesys.SmartClient.DataBinding.props.dataSource.{DataSourceFieldProps, OperationBindingProps, WildRecordColumnProps}
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DSResponse, DataSource, JSON}
 import com.simplesys.SmartClient.RPC.ServerObject
+import com.simplesys.SmartClient.System.Class
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
 import com.simplesys.System.Types.DSDataFormat.DSDataFormat
@@ -16,13 +17,15 @@ import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
 import com.simplesys.System.Types.SequenceMode.SequenceMode
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSObject, JSAny}
+import com.simplesys.System.{JSAny, JSObject}
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
 import scala.scalajs.js._
 
 class DataSourceProps extends ClassProps {
+    type classHandler <: DataSource
+
     var addGlobalId: ScOption[Boolean] = ScNone
     var allowAdvancedCriteria: ScOption[Boolean] = ScNone
     var allowClientRequestedSummaries: ScOption[Boolean] = ScNone
@@ -147,7 +150,7 @@ class DataSourceProps extends ClassProps {
     var titleField: ScOption[String] = ScNone
     var transformMultipleFields: ScOption[Boolean] = ScNone
     var transformReques: ScOption[js.Function1[DSRequest, JSAny]] = ScNone
-    var transformResponse: ScOption[js.Function3[DSResponse, DSRequest, JSON, DSResponse]] = ScNone
+    var transformResponse: ScOption[js.ThisFunction3[classHandler, DSResponse, DSRequest, JSON, DSResponse]] = ScNone
     var translatePatternOperators: ScOption[Boolean] = ScNone
     var trimMilliseconds: ScOption[Boolean] = ScNone
     var useAnsiJoins: ScOption[Boolean] = ScNone

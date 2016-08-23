@@ -24,7 +24,6 @@ trait MenuSS extends Grid[ListGridField, MenuSSItem] {
     def filter4Visiblity(items: IscArray[MenuSSItem]): void
     def replaceItems(oldItems: IscArray[MenuSSItem| ID], newItems: IscArray[MenuSSItem]): void
     def setData(data: JSAny): void
-    val owner: Canvas
     def setOwner(owner: Canvas): MenuSS
     def setTabSet(tabSet: TabSet): MenuSS
 
@@ -49,7 +48,7 @@ trait MenuSS extends Grid[ListGridField, MenuSSItem] {
     val iconHeight: Int
     val iconWidth: Int
     var itemClick: js.Function2[JSObject, Int, Boolean]
-    var items: IscArray[MenuSSItem]
+    var items: JSUndefined[IscArray[MenuSSItem]]
     val keyFieldDefaults: ListGridField
     val keyFieldProperties: ListGridField
     val menuButtonWidth: Int

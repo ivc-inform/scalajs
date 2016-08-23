@@ -13,6 +13,7 @@ import com.simplesys.function._
 import com.simplesys.option.DoubleType._
 import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.SmartClient.Foundation.Canvas
 
 import scala.scalajs.js.ThisFunction0
 
@@ -33,15 +34,20 @@ class FormItemWithButtonProps extends CanvasItemProps {
                         DynamicFormSS.create(
                             new DynamicFormSSProps {
                                 cellPadding = 0.opt
-                                owner = thiz.opt
+                                owner = thiz.asInstanceOf[Canvas].opt
                                 width = "*"
                                 minColWidth = 0.opt
                                 colWidths = Seq[JSAny](0, "*").opt
                                 items = Seq(
                                     TextItem(
                                         new TextItemProps {
+
+                                            import com.simplesys.System.NameStrong
+
                                             colSpan = 2.opt
-                                            name = thiz.name.opt
+                                            nameStrong = (if (thiz.nameStrong.isDefined) thiz.nameStrong.get else new NameStrong {
+                                                override val name: String = thiz._name
+                                            }).opt
                                             width = "*"
                                             showTitle = false.opt
                                         }

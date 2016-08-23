@@ -1,7 +1,7 @@
-package com.simplesys.SmartClient.Drawing.props
+package com.simplesys.SmartClient.Drawing
 
 import com.simplesys.SmartClient.Drawing.drawItem.DrawLine
-import com.simplesys.SmartClient.Drawing.{DrawItem, DrawKnob}
+import com.simplesys.SmartClient.Drawing.props.DrawKnobProps
 import com.simplesys.SmartClient.System.{IscArray, isc, _}
 import com.simplesys.System._
 import com.simplesys.function._
@@ -66,8 +66,8 @@ trait DrawItemCommons {
     }
 
     def changeZ(line: DrawItem): Unit = {
-       line.sourceConnect.foreach(changeZ(line, _))
-       line.targetConnect.foreach(changeZ(line, _))
+        line.sourceConnect.foreach(changeZ(line, _))
+        line.targetConnect.foreach(changeZ(line, _))
     }
 
     def removeInDrawItem(drawItem: DrawItem): Unit = {
@@ -240,6 +240,7 @@ trait DrawLineCommons extends DrawItemCommons {
     var showStartPointKnobs: ScOption[ThisFunction0[DrawLine, _]] = {
         (thiz: DrawLine) =>
             if (thiz._startKnob.isEmpty || thiz._startKnob.get.destroyed.getOrElse(false)) {
+                import com.simplesys.SmartClient.Drawing.props.DrawKnobProps
 
                 val v = thiz._normalize(thiz.startLeft, thiz.startTop, "local", "global")
                 thiz._startKnob = thiz.createAutoChild(
@@ -271,10 +272,14 @@ trait DrawLineCommons extends DrawItemCommons {
         (thiz: DrawLine) =>
             thiz._startKnob.foreach {
                 knob =>
-                    //                    if (thiz.sourceConnect.isEmpty) {
+                    /*if (thiz.sourceConnect.isEmpty) {
+                        knob.markForDestroy()
+                        thiz._startKnob = jSUndefined
+                    }*/
+
                     knob.markForDestroy()
                     thiz._startKnob = jSUndefined
-                //                    }
+
             }
     }.toThisFunc.opt
 
@@ -313,10 +318,13 @@ trait DrawLineCommons extends DrawItemCommons {
         (thiz: DrawLine) =>
             thiz._endKnob.foreach {
                 knob =>
-                    //                    if (thiz.targetConnect.isEmpty) {
+//                    if (thiz.targetConnect.isEmpty) {
+//                        knob.markForDestroy()
+//                        thiz._endKnob = jSUndefined
+//                    }
+
                     knob.markForDestroy()
                     thiz._endKnob = jSUndefined
-                //                    }
             }
     }.toThisFunc.opt
 }
