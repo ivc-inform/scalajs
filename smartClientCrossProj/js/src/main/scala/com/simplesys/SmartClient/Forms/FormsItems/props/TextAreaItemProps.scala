@@ -7,10 +7,13 @@ import com.simplesys.option.{ScNone, ScOption}
 import scala.scalajs.js._
 
 class TextAreaItemProps extends FormItemProps {
+
+    import com.simplesys.System.JSAny
+
     var browserAutoCapitalize: ScOption[Boolean] = ScNone
     var browserAutoCorrect: ScOption[Boolean] = ScNone
     var editProxyConstructor: ScOption[SCClassName] = ScNone
-    var emptyStringValue: ScOption[Any] = ScNone
+    var emptyStringValue: ScOption[JSAny] = ScNone
     var enforceLength: ScOption[Boolean] = ScNone
     var formatOnBlur: ScOption[Boolean] = ScNone
     var length: ScOption[Int] = ScNone

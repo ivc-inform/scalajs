@@ -15,7 +15,8 @@ trait ErrorStruct extends JSObject {
 
 @ScalaJSDefined
 trait ResponseData extends JSObject {
-    val data: JSUndefined[JSObject]
+    val data: JSUndefined[ErrorStruct]
+    val status: JSUndefined[Int]
 }
 
 @js.native
@@ -31,7 +32,6 @@ trait RestDataSource extends DataSource {
     var transformRequest: js.Function1[void, _]
     var updateDataURL: String
     val xmlRecordXPath: String
-    def getError(data: JSObject): ErrorStruct
 }
 
 

@@ -6,6 +6,7 @@ import com.simplesys.SmartClient.Forms.FormsItems.FormItem
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.detailViewer.DetailViewerField
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField
+import com.simplesys.SmartClient.Layout.WindowProgressDialog
 import com.simplesys.SmartClient.RPC.ServerObject
 import com.simplesys.SmartClient.System._
 import com.simplesys.SmartClient.System.date.Date
@@ -26,7 +27,7 @@ import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
 import com.simplesys.System.Types.SequenceMode.SequenceMode
 import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
-import com.simplesys.System.Types.{FormItemComponentType, _}
+import com.simplesys.System.Types._
 import com.simplesys.System.{JSAny, JSObject, JSUndefined}
 
 import scala.scalajs.js
@@ -34,7 +35,10 @@ import scala.scalajs.js.|
 
 @js.native
 trait DataSource extends Class {
+
     def addData(newRecord: Record, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
+    def addDatas(newRecords: IscArray[Record], callback: RPCQueueCallback = js.native, requestProperties: DSRequest = js.native): void
+    def performDSOperation(operationType: String, newRecord: Record | IscArray[Record], callback: JSUndefined[DSCallback] = js.native, requestProperties: DSRequest = js.native): void
     val addGlobalId: Boolean
     def addSearchOperator(operator: Operator, types: IscArray[FieldType]): void
     var allowAdvancedCriteria: Boolean
@@ -54,6 +58,7 @@ trait DataSource extends Class {
     val autoDeriveTitles: Boolean
     val autoJoinTransactions: Boolean
     val beanClassName: String
+    val break: Boolean
     val cacheAcrossOperationIds: Boolean
     val cacheAllData: Boolean
     val cacheAllOperationId: String
@@ -68,6 +73,7 @@ trait DataSource extends Class {
     def compareCriteria(newCriteria: Criteria, oldCriteria: Criteria, requestProperties: DSRequest = js.native, policy: CriteriaPolicy = js.native): Int
     def compareDates(date1: Date, date2: Date, fieldName: String): Int
     val configBean: String
+    def contactsServer(): Boolean
     def convertDataSourceCriteria(criteria: Criteria, textMatchStyle: TextMatchStyle = js.native): AdvancedCriteria
     def convertRelativeDates(criteria: Criteria, timezoneOffset: String = js.native, firstDayOfWeek: Int = js.native, baseDate: Date = js.native): Criteria
     def copyRecord(record: Record): Record
@@ -118,7 +124,7 @@ trait DataSource extends Class {
     def getField(fieldName: String): JSUndefined[DataSourceField]
     def getFieldCriterion(criterion: Criteria, fieldName: String): Criteria
     def getFieldForDataPath(dataPath: DataPath): DataSourceField
-    def getFieldNames(excludeHidden: Boolean): IscArray[String]
+    def getFieldNames(excludeHidden: Boolean = js.native): IscArray[String]
     def getFieldOperatorMap(field: String | DataSourceField, includeHidden: Boolean = js.native, valueType: OperatorValueType = js.native, omitValueType: Boolean = js.native): ValueMap
     def getFieldOperators(field: String | DataSourceField): IscArray[OperatorId]
     def getFile(fileSpec: FileSpec | String, callback: GetFileCallback)
@@ -280,7 +286,7 @@ abstract trait AbstractDataSourceCompanion extends AbstractClassCompanion {
     def saveValueViaDataPath(field: DataSourceField | ListGridField | DetailViewerField | FormItem, dataPath: DataPath, value: JSAny, values: Record, reason: String): void = js.native
     var serializeTimeAsDatetime: Boolean = js.native
     def setLoaderURL(url: URL): void = js.native
-    def setTypeOperators(typeName: String | FieldType | FormItemComponentType, operators: IscArray[OperatorId]| IscArray[String]): void = js.native
+    def setTypeOperators(typeName: String | FieldType | FormItemComponentType, operators: IscArray[OperatorId] | IscArray[String]): void = js.native
     def removeData(data: Record, fieldName: String = js.native, requestProperties: DSRequest = js.native): void = js.native
 }
 

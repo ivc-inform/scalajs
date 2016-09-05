@@ -9,7 +9,9 @@ import com.simplesys.SmartClient.Control.menu.{MenuItem, MenuSSItem}
 import com.simplesys.SmartClient.Control.props._
 import com.simplesys.SmartClient.Control.props.menu.{MenuItemProps, MenuSSItemProps}
 import com.simplesys.SmartClient.DataBinding._
+import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
 import com.simplesys.SmartClient.DataBinding.props._
+import com.simplesys.SmartClient.DataBinding.props.dataSource.DataSourceFieldProps
 import com.simplesys.SmartClient.Drawing._
 import com.simplesys.SmartClient.Drawing.drawItem._
 import com.simplesys.SmartClient.Drawing.drawItem.props._
@@ -43,13 +45,16 @@ import com.simplesys.SmartClient.RPC.props.{RPCRequestProps, RequestParamsProps}
 import com.simplesys.SmartClient.System.date.Date
 import com.simplesys.SmartClient.System.date.props.DateProps
 import com.simplesys.SmartClient.System.props.TreeProps
-import com.simplesys.SmartClient.Tools.editProxy.DrawPaneEditProxy
+import com.simplesys.SmartClient.Tools.editProxy.props.DrawItemEditProxyProps
+import com.simplesys.SmartClient.Tools.editProxy.{DrawItemEditProxy, DrawPaneEditProxy}
 import com.simplesys.SmartClient.Tools.palette._
 import com.simplesys.SmartClient.Tools.palette.props._
 import com.simplesys.SmartClient.Tools.props._
 import com.simplesys.SmartClient.Tools.props.editProxy.DrawPaneEditProxyProps
 import com.simplesys.SmartClient.Tools.{EditContext, EditProxy, PaletteNode}
 import com.simplesys.System.Types.Criteria
+import com.simplesys.js.components.WindowListEditor
+import com.simplesys.js.components.props.WindowListEditorProps
 
 
 //Должны быть
@@ -78,15 +83,19 @@ package object System {
     object MenuSSItem extends SCApply4Object[MenuSSItem, MenuSSItemProps]
     //</editor-fold>
 
+    object JSONEncoder extends SCApply4Object[JSONEncoder, JSONEncoderProps]
+
     //<editor-fold desc="DataBinding">
     object DataView extends SCApply[DataView, DataViewProps]
     object DataSource extends SCApply[DataSource, DataSourceProps]
     object DataSourceSS extends SCApply[DataSourceSS, DataSourceSSProps]
+    object DataBoundComponent extends SCApply4Object[DataBoundComponent, DataBoundComponentProps]
     object RestDataSourceSS extends SCApply[RestDataSourceSS, RestDataSourceSSProps]
     object SimpleType extends SCApply[SimpleType, SimpleTypeProps]
     object SimpleTile extends SCApply[SimpleTile, SimpleTileProps]
     object AdvancedCriteria extends SCApply4Object[AdvancedCriteria, AdvancedCriteriaProps]
     object Criterion extends SCApply4Object[Criterion, CriterionProps]
+    object DataSourceField extends SCApply4Object[DataSourceField, DataSourceFieldProps]
     //</editor-fold>
 
     //<editor-fold desc="Forms">
@@ -96,34 +105,37 @@ package object System {
     //</editor-fold>
 
     //<editor-fold desc="FormsItems">
-    object FormItem extends SCApply[FormItem, FormItemProps]
-    object CanvasItem extends SCApply[CanvasItem, CanvasItemProps]
-    object CheckboxItem extends SCApply[CheckboxItem, CheckboxItemProps]
-    object ColorItem extends SCApply[ColorItem, ColorItemProps]
-    object SkinBoxItem extends SCApply[SkinBoxItem, SkinBoxItemProps]
-    object DateItem extends SCApply[DateItem, DateItemProps]
-    object DateRangeItem extends SCApply[DateRangeItem, DateRangeItemProps]
-    object DateTimeItem extends SCApply[DateTimeItem, DateTimeItemProps]
-    object DateTimeItemSS extends SCApply[DateTimeItemSS, DateTimeItemSSProps]
-    object DoubleItem extends SCApply[DoubleItem, DoubleItemProps]
-    object IntegerItem extends SCApply[IntegerItem, IntegerItemProps]
-    object FloatItem extends SCApply[FloatItem, FloatItemProps]
-    object PickList extends SCApply[PickList, PickListProps]
-    object SelectItem extends SCApply[SelectItem, SelectItemProps]
-    object SpinnerItem extends SCApply[SpinnerItem, SpinnerItemProps]
-    object TextAreaItem extends SCApply[TextAreaItem, TextAreaItemProps]
-    object TextItem extends SCApply[TextItem, TextItemProps]
-    object TextItemSS extends SCApply[TextItemSS, TextItemSSProps]
-    object StaticTextItem extends SCApply[StaticTextItem, StaticTextItemProps]
-    object TimeItem extends SCApply[TimeItem, TimeItemProps]
-    object TimerItem extends SCApply[TimerItem, TimerItemProps]
+    object FormItem extends SCApply4Object[FormItem, FormItemProps]
+    object CanvasItem extends SCApply4Object[CanvasItem, CanvasItemProps]
+    object CheckboxItem extends SCApply4Object[CheckboxItem, CheckboxItemProps]
+    object ColorItem extends SCApply4Object[ColorItem, ColorItemProps]
+    object SkinBoxItem extends SCApply4Object[SkinBoxItem, SkinBoxItemProps]
+    object DateItem extends SCApply4Object[DateItem, DateItemProps]
+    object DateRangeItem extends SCApply4Object[DateRangeItem, DateRangeItemProps]
+    object DateTimeItem extends SCApply4Object[DateTimeItem, DateTimeItemProps]
+    object DateTimeItemSS extends SCApply4Object[DateTimeItemSS, DateTimeItemSSProps]
+    object DoubleItem extends SCApply4Object[DoubleItem, DoubleItemProps]
+    object IntegerItem extends SCApply4Object[IntegerItem, IntegerItemProps]
+    object FloatItem extends SCApply4Object[FloatItem, FloatItemProps]
+    object PickList extends SCApply4Object[PickList, PickListProps]
+    object SelectItem extends SCApply4Object[SelectItem, SelectItemProps]
+    object SpinnerItem extends SCApply4Object[SpinnerItem, SpinnerItemProps]
+    object TextAreaItem extends SCApply4Object[TextAreaItem, TextAreaItemProps]
+    object TextItem extends SCApply4Object[TextItem, TextItemProps]
+    object TextItemSS extends SCApply4Object[TextItemSS, TextItemSSProps]
+    object TextAreaItemSS extends SCApply4Object[TextAreaItemSS, TextAreaItemSSProps]
+    object StaticTextItem extends SCApply4Object[StaticTextItem, StaticTextItemProps]
+    object TimeItem extends SCApply4Object[TimeItem, TimeItemProps]
+    object TimerItem extends SCApply4Object[TimerItem, TimerItemProps]
     object Tab extends SCApply4Object[Tab, TabProps]
     object DateChooser extends SCApply4Object[DateChooser, DateChooserProps]
-    object FormItemWithButton extends SCApply[FormItemWithButton, FormItemWithButtonProps]
-    object ComboboxItemWithButtons extends SCApply[ComboboxItemWithButtons, ComboboxItemWithButtonsProps]
-    object ComboboxItemWithClearButton extends SCApply[ComboboxItemWithClearButton, ComboboxItemWithClearButtonProps]
-    object LookupListGridEditorItem extends SCApply[LookupListGridEditorItem, LookupListGridEditorItemProps]
-    object LookupTreeGridEditorItem extends SCApply[LookupTreeGridEditorItem, LookupTreeGridEditorItemProps]
+    object FormItemWithButton extends SCApply4Object[FormItemWithButton, FormItemWithButtonProps]
+    object GradientItem extends SCApply4Object[GradientItem, GradientItemProps]
+    object ComboboxItemWithButtons extends SCApply4Object[ComboboxItemWithButtons, ComboboxItemWithButtonsProps]
+    object ComboboxItemWithClearButton extends SCApply4Object[ComboboxItemWithClearButton, ComboboxItemWithClearButtonProps]
+    object LookupListGridEditorItem extends SCApply4Object[LookupListGridEditorItem, LookupListGridEditorItemProps]
+    object LookupTreeGridEditorItem extends SCApply4Object[LookupTreeGridEditorItem, LookupTreeGridEditorItemProps]
+    object Validator extends SCApply4Object[Validator, ValidatorProps]
     //</editor-fold>
 
     //<editor-fold desc="Foundation">
@@ -131,6 +143,7 @@ package object System {
     object Label extends SCApply[Label, LabelProps]
     object HTMLFlow extends SCApply[HTMLFlow, HTMLFlowProps]
     object HTMLPane extends SCApply[HTMLPane, HTMLPaneProps]
+    object Progressbar extends SCApply[Progressbar, ProgressbarProps]
     object ImgProperties extends SCApply4Object[ImgProperties, ImgPropertiesProps]
     //</editor-fold>
 
@@ -159,6 +172,9 @@ package object System {
     object ChainMasterDetail extends SCApply[ChainMasterDetail, ChainMasterDetailProps]
     object TabSetSS extends SCApply[TabSetSS, TabSetSSProps]
     object WindowSS extends SCApply[WindowSS, WindowSSProps]
+    object WindowSSDialog extends SCApply[WindowSSDialog, WindowSSDialogProps]
+    object WindowListEditor extends SCApply[WindowListEditor, WindowListEditorProps]
+    object WindowProgressDialog extends SCApply[WindowProgressDialog, WindowProgressDialogProps]
     object ToolStrip extends SCApply[ToolStrip, ToolStripProps]
     object WindowListGridEditorToolStrip extends SCApply[WindowListGridEditorToolStrip, WindowListGridEditorToolStripProps]
     object ToolStripMenuButton extends SCApply[ToolStripMenuButton, ToolStripMenuButtonProps]
@@ -173,6 +189,7 @@ package object System {
     object DrawPane extends SCApply[DrawPane, DrawPaneProps]
     object EditProxy extends SCApply[EditProxy, EditProxyProps]
     object DrawPaneEditProxy extends SCApply[DrawPaneEditProxy, DrawPaneEditProxyProps]
+    object DrawItemEditProxy extends SCApply[DrawItemEditProxy, DrawItemEditProxyProps]
     object EditContext extends SCApply[EditContext, EditContextProps]
     object PaletteNode extends SCApply4Object[PaletteNode, PaletteNodeProps]
 

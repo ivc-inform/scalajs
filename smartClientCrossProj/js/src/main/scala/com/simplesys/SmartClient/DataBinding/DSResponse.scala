@@ -20,6 +20,7 @@ trait DSResponse extends RPCResponse {
     val dataSource: String
     val endRow: Int
     val errors: JSObject
+    val data: JSUndefined[IscArray[Record]]
     val error: JSUndefined[Error]
     val fromOfflineCache: Boolean
     val offlineTimestamp: Int

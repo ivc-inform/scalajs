@@ -264,7 +264,6 @@ class CanvasProps extends ClassProps {
     var tabIndex: ScOption[Int] = ScNone
     var top: ScOption[IntString[Int, String]] = ScNone
     var topElement: ScOption[Canvas] = ScNone
-    var unserialize: ScOption[Boolean] = ScNone
     var useBackMask: ScOption[Boolean] = ScNone
     var useDragMask: ScOption[Boolean] = ScNone
     var useNativeDrag: ScOption[Boolean] = ScNone

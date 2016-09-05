@@ -71,7 +71,8 @@ class DrawLinePathSSProps extends DrawPathProps with DrawLineCommons {
             thiz.endLeft = thiz.endPoint.getX().get
             thiz.endTop = thiz.endPoint.getY().get
 
-            thiz.titleRotationMode = TitleRotationMode.withLineAlwaysUp
+            //isc debugTrap thiz.titleRotationMode
+            //thiz.titleRotationMode = TitleRotationMode.withLineAlwaysUp
 
             thiz.cKnobs = IscArray()
             thiz.controlPoints = IscArray(thiz.points.slice(1, thiz.points.length - 1).map(item => UndefOr.any2undefOrA(item)): _*)
@@ -79,6 +80,8 @@ class DrawLinePathSSProps extends DrawPathProps with DrawLineCommons {
             thiz.points = thiz._getSegmentPoints()
 
             thiz.Super("init", arguments)
+
+            //isc debugTrap(thiz)
 
     }.toThisFunc.opt
 

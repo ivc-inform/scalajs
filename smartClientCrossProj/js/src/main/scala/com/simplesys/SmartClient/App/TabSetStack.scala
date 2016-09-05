@@ -7,8 +7,8 @@ import com.simplesys.SmartClient.Layout.props.TabSetSSProps
 import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
 import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.SmartClient.System.{Tab, TabSetSS, isc}
-import com.simplesys.System.JSUndefined
 import com.simplesys.System.Types.ID
+import com.simplesys.System.{JSUndefined, jSUndefined}
 import com.simplesys.function._
 import com.simplesys.option.ScOption._
 
@@ -137,10 +137,17 @@ trait TabSetStack extends TabSetsStack {
     )
 
     def addTab(canvas: Canvas, menuItem: MenuSSItem): Unit = {
-        if (canvas.identifier.isEmpty)
+        if (canvas.funcMenu.isEmpty)
+            isc warn s"Отсутствует FuncMenu у компонента: ${canvas.getClassName()} c ID: ${canvas.getID()}, поэтом не будет работать кнопка 'Операции' для этого компонента."
+
+        if (canvas.identifier.isEmpty) {
             isc.error(s"Компонент ${canvas.getIdentifier()} не имеет постоянного identifier, поэтому не может быть добавлен.")
-        else if (menuItem.owner1.map(_.asInstanceOf[IconMenuButtonSS]).isEmpty)
+            canvas.markForDestroy()
+        }
+        else if (menuItem.owner1.map(_.asInstanceOf[IconMenuButtonSS]).isEmpty) {
             isc.error(s"Нет привязки к owner1: IconMenuButtonSS")
+            canvas.markForDestroy()
+        }
         else {
             val groupButton = menuItem.owner1.map(_.asInstanceOf[IconMenuButtonSS]).get
             if (groupButton.identifier.isEmpty)
@@ -163,14 +170,15 @@ trait TabSetStack extends TabSetsStack {
                             title = _title.opt
                             tabSelected = {
                                 (tabSet: TabSet, tabNum: Int, tabPane: Canvas, ID: JSUndefined[ID], tab: Tab, name: JSUndefined[String]) =>
+                                    if (tabPane.asInstanceOf[TabSetSS].getSelectedTab().isEmpty)
+                                        functionButton.menu = jSUndefined
+
                                     tabPane.asInstanceOf[TabSetSS].getSelectedTab().foreach {
-                                        _.pane.foreach {
-                                            pane ⇒
-                                                val funcMenu = pane.funcMenu
-                                                //isc debugTrap(functionButton.menu, funcMenu)
-                                                if (functionButton.menu.isDefined && funcMenu.isDefined && functionButton.menu.get.getID() != funcMenu.get.getID())
-                                                    functionButton.menu = funcMenu
-                                        }
+                                        tab ⇒
+                                            if (tab.pane.isEmpty)
+                                                functionButton.menu = jSUndefined
+                                            else
+                                                functionButton.menu = tab.pane.get.funcMenu
                                     }
                             }.toFunc.opt
                         }
@@ -185,11 +193,15 @@ trait TabSetStack extends TabSetsStack {
     }
 
     def addTab(canvas: Canvas, button: IconButtonSS): Unit = {
-        if (canvas.identifier.isEmpty)
+        if (canvas.identifier.isEmpty) {
             isc.error(s"Компонент ${canvas.getIdentifier()} не имеет постоянного identifier, поэтому не может быть добавлен.")
+            canvas.markForDestroy()
+        }
         else {
-            if (button.identifier.isEmpty)
+            if (button.identifier.isEmpty) {
                 isc.error(s"Компонент ${button.getIdentifier()} не имеет постоянного identifier.")
+                canvas.markForDestroy()
+            }
             else {
                 val tabGroup = tabGroupSet.findTab(button.getIdentifier())
                 if (tabGroup.isDefined) {

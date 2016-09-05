@@ -21,7 +21,6 @@ trait DateRangeItem extends CanvasItem {
     var fromDate: Date | RelativeDateString | TimeUnit
     val fromField: FormItem with AutoChild
     var fromTitle: String
-    def getValue(): DateRange
     val innerTitleOrientation: TitleOrientation
     val invalidRangeErrorMessage: String
     val relativeItemConstructor: String

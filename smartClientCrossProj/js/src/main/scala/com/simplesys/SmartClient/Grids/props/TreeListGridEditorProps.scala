@@ -2,25 +2,23 @@ package com.simplesys.SmartClient.Grids.props
 
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
-import com.simplesys.SmartClient.Forms.FormsItems.props.FormItemProps
-import com.simplesys.SmartClient.Foundation.Img
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Grids.TreeListGridEditor
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
 import com.simplesys.SmartClient.Grids.props.treeGrid.TreeGridFieldProps
 import com.simplesys.SmartClient.Grids.treeGrid.Tree
-import com.simplesys.SmartClient.Layout.{TabSetSS, WindowSS}
+import com.simplesys.SmartClient.Layout.WindowSS
 import com.simplesys.SmartClient.Layout.props.HLayoutSSProps
 import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.FetchMode.FetchMode
+import com.simplesys.System.Types.SelectionAppearance._
 import com.simplesys.System.Types.SelectionStyle.SelectionStyle
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
 import com.simplesys.option.{IntString, ScNone, ScOption}
 
-import scala.scalajs.js
-import scala.scalajs.js.{Function1, ThisFunction0}
+import scala.scalajs.js.ThisFunction0
 
 class TreeListGridEditorProps extends HLayoutSSProps {
     type classHandler <: TreeListGridEditor
@@ -102,4 +100,8 @@ class TreeListGridEditorProps extends HLayoutSSProps {
     var canDragRecordsOutTree: ScOption[Boolean] = ScNone
     var trackerImageList : ScOption[ImgProperties] = ScNone
     var trackerImageTree : ScOption[ImgProperties] = ScNone
+    var selectionAppearanceList: ScOption[SelectionAppearance] = ScNone
+    var selectionAppearanceTree: ScOption[SelectionAppearance] = ScNone
+    var selectFirstRecordAfterFetchList: ScOption[Boolean] = ScNone
+    var selectFirstRecordAfterFetchTree: ScOption[Boolean] = ScNone
 }

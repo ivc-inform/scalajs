@@ -5,9 +5,8 @@ import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
 import com.simplesys.SmartClient.Forms.FormsItems.FormItem
-import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord, MasterDetailMapping}
-import com.simplesys.SmartClient.Layout.VLayoutSS
+import com.simplesys.SmartClient.Layout.{AbstractVLayoutSSCompanion, VLayoutSS}
 import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
@@ -20,7 +19,6 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
 import com.simplesys.System._
 
-import scala.reflect.ClassTag
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.{UndefOr, |}
@@ -36,7 +34,7 @@ trait GridEditor[T <: ListGridField, R <: JSAny, S <: JSAny] extends VLayoutSS {
     def saveAllEdits(): void
     def selectAllRecords(visibleNodesOnly: Boolean): void
     val showAllRecords: Boolean
-    def selectSingleRecordByKey(keyValue: JSAny, newStyle: Boolean): R
+    def selectSingleRecordByKey(keyValue: JSAny, newStyle: Boolean = js.native, callback: Callback = js.native): R
     def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def hasChanges(): Boolean
     def getDataLength(): Int
@@ -118,7 +116,7 @@ trait GridEditor[T <: ListGridField, R <: JSAny, S <: JSAny] extends VLayoutSS {
     def unsetSelectionUpdated(func: js.Function2[R, IscArray[R], _]): void
     def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor, pkFieldNames: IscArray[MasterDetailMapping] | MasterDetailMapping = js.native): void
     def setForignFieldFields(grid: ListGrid | TreeGrid, masterGrid: UndefOr[ListGrid] | UndefOr[TreeGrid]): void
-    var masterGrid: ListGrid | ListGridEditor | TreeGrid | TreeGridEditor
+    var masterGrid: JSUndefined[ListGrid | ListGridEditor | TreeGrid | TreeGridEditor]
     var canDragRecordsOut: Boolean
     var canReorderRecords: Boolean
     var dragDataAction: DragDataAction
@@ -146,5 +144,8 @@ trait GridEditor[T <: ListGridField, R <: JSAny, S <: JSAny] extends VLayoutSS {
 
 @js.native
 trait ListGridEditor extends VLayoutSS with GridEditor[ListGridField, ListGridRecord, ListGridSelectedState] {
+}
 
+@js.native
+abstract trait AbstractListGridEditorCompanion extends AbstractVLayoutSSCompanion {
 }

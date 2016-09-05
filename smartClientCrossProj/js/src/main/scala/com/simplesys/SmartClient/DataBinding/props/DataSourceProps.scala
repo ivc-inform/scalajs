@@ -1,9 +1,11 @@
 package com.simplesys.SmartClient.DataBinding.props
 
 import com.simplesys.SmartClient.DataBinding.props.dataSource.{DataSourceFieldProps, OperationBindingProps, WildRecordColumnProps}
-import com.simplesys.SmartClient.DataBinding.{DSRequest, DSResponse, DataSource, JSON}
+import com.simplesys.SmartClient.DataBinding.{DSRequest, DSResponse, DataSource}
+import com.simplesys.SmartClient.Layout.WindowProgressDialog
+import com.simplesys.SmartClient.Layout.props.WindowProgressDialogProps
+import com.simplesys.SmartClient.Messaging.MessageJS
 import com.simplesys.SmartClient.RPC.ServerObject
-import com.simplesys.SmartClient.System.Class
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.CriteriaPolicy.CriteriaPolicy
 import com.simplesys.System.Types.DSDataFormat.DSDataFormat
@@ -17,15 +19,72 @@ import com.simplesys.System.Types.SQLPagingStrategy.SQLPagingStrategy
 import com.simplesys.System.Types.SequenceMode.SequenceMode
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSAny, JSObject}
+import com.simplesys.System.{JSAny, JSObject, jSUndefined}
+import com.simplesys.function._
+import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
 import scala.scalajs.js._
 
 class DataSourceProps extends ClassProps {
+
+    import com.simplesys.SmartClient.DataBinding.Callbacks.RPCQueueCallback
+    import com.simplesys.SmartClient.DataBinding.ResponseData
+    import com.simplesys.SmartClient.System.{IscArray, _}
+    import com.simplesys.System.JSUndefined
+
     type classHandler <: DataSource
 
+    var break: ScOption[Boolean] = false.opt
+    var addDatas: ScOption[ThisFunction3[classHandler, IscArray[Record], RPCQueueCallback, DSRequest, _]] = {
+        import com.simplesys.SmartClient.DataBinding.Callbacks.RPCQueueCallback
+        (thiz: classHandler, newRecords: IscArray[Record], callback: RPCQueueCallback, requestProperties: DSRequest) ⇒
+            import com.simplesys.SmartClient.System.isc
+
+            var progressBar: JSUndefined[WindowProgressDialog] = jSUndefined
+
+            if (newRecords.length > 1)
+                progressBar = WindowProgressDialog.create(
+                    new WindowProgressDialogProps {
+                        maxValue = newRecords.length.toDouble.opt
+                        title = "Запись данных".ellipsis.opt
+                        headerIconPath = Common.insert.opt
+                    }
+                )
+
+            val wasAlreadyQueuing = isc.RPCManager.startQueue()
+
+            newRecords.foreach(thiz addData _)
+
+            val transactionID = isc.RPCManager.getQueueTransactionId()
+            val _channelMessage4AddOperation = s"ListElements_Add_$transactionID"
+            val _channelMessage4EndAddOperation = s"ListElements_EndAdd_$transactionID"
+
+            transactionID.foreach {
+                transactionID ⇒
+
+                    isc.MessagingSS.subscribe(_channelMessage4AddOperation, {
+                        (e: MessageJS) ⇒
+                            println(s"Insert data: ${e.data.toString}")
+                            progressBar.foreach(_.nextStep())
+                    })
+
+                    isc.MessagingSS.subscribe(
+                        _channelMessage4EndAddOperation, {
+                            (e: MessageJS) ⇒
+                                isc.MessagingSS unsubscribe _channelMessage4AddOperation
+                                isc.MessagingSS unsubscribe _channelMessage4EndAddOperation
+
+                                progressBar.foreach(_.markForDestroy())
+                        }
+                    )
+
+                    //isc debugTrap wasAlreadyQueuing
+                    if (!wasAlreadyQueuing)
+                        isc.RPCManager sendQueue(callback = callback, delay = 100)
+            }
+    }.toThisFunc.opt
     var addGlobalId: ScOption[Boolean] = ScNone
     var allowAdvancedCriteria: ScOption[Boolean] = ScNone
     var allowClientRequestedSummaries: ScOption[Boolean] = ScNone
@@ -150,7 +209,7 @@ class DataSourceProps extends ClassProps {
     var titleField: ScOption[String] = ScNone
     var transformMultipleFields: ScOption[Boolean] = ScNone
     var transformReques: ScOption[js.Function1[DSRequest, JSAny]] = ScNone
-    var transformResponse: ScOption[js.ThisFunction3[classHandler, DSResponse, DSRequest, JSON, DSResponse]] = ScNone
+    var transformResponse: ScOption[js.ThisFunction3[classHandler, DSResponse, DSRequest, JSUndefined[ResponseData], DSResponse]] = ScNone
     var translatePatternOperators: ScOption[Boolean] = ScNone
     var trimMilliseconds: ScOption[Boolean] = ScNone
     var useAnsiJoins: ScOption[Boolean] = ScNone

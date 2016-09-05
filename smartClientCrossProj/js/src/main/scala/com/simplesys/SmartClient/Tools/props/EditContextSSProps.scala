@@ -5,6 +5,7 @@ import com.simplesys.SmartClient.Drawing.{DrawItem, DrawPane}
 import com.simplesys.SmartClient.RPC.RPCManager
 import com.simplesys.SmartClient.System.{IscArray, Point, isc}
 import com.simplesys.SmartClient.Tools._
+import com.simplesys.System.Types.TitleRotationMode
 import com.simplesys.System._
 import com.simplesys.function._
 import com.simplesys.option.ScOption
@@ -68,8 +69,8 @@ class EditContextSSProps extends EditContextProps {
 
     }.toThisFunc.opt
 
-    var addPaletteNodesFromJSON1: ScOption[ThisFunction5[classHandler, JSAny, JSUndefined[EditNode], JSUndefined[IscArray[String]], JSUndefined[JSFunction], JSUndefined[JSObject], _]] = {
-        (thiz: classHandler, jsonString: JSAny, parentNode: JSUndefined[EditNode], globals: JSUndefined[IscArray[String]], callback: JSUndefined[JSFunction], addedProps: JSUndefined[JSObject]) =>
+    var addPaletteNodesFromJSON1: ScOption[ThisFunction6[classHandler, Map[String, DrawItem], JSAny, JSUndefined[EditNode], JSUndefined[IscArray[String]], JSUndefined[JSFunction], JSUndefined[JSObject], _]] = {
+        (thiz: classHandler, components: Map[String, DrawItem], jsonString: JSAny, parentNode: JSUndefined[EditNode], globals: JSUndefined[IscArray[String]], callback: JSUndefined[JSFunction], addedProps: JSUndefined[JSObject]) =>
 
             isc.captureDefaults = true.asInstanceOf[JSAny]
 
@@ -94,6 +95,14 @@ class EditContextSSProps extends EditContextProps {
                                     js.Dictionary[JSAny]())
 
                             case _ =>
+                                val props = components.get(className) match {
+                                    case None ⇒
+                                        js.Dictionary()
+                                    case Some(component) ⇒
+                                        js.Dictionary("fieldDataSource" → js.UndefOr.any2undefOrA(component.asInstanceOf[JSDynamic].selectDynamic("fieldDataSource")))
+                                }
+
+                                //isc debugTrap item
                                 isc.ClassFactory.newInstance(className, item, if (addedProps.isDefined)
                                     js.Dictionary[JSAny](
                                         "contextMenu" -> addedProps.asInstanceOf[AddedProps].contextMenu,
@@ -106,10 +115,10 @@ class EditContextSSProps extends EditContextProps {
                                         "outConnectedItems" -> item.outConnectedItems,
                                         "sourceGlue" -> item.sourceGlue,
                                         "targetGlue" -> item.targetGlue,
-                                        "canDrag" -> item.canDrag
+                                        "canDrag" → item.canDrag
                                     )
                                 else
-                                    js.Dictionary[JSAny]())
+                                    js.Dictionary.empty[JSAny], props)
                         }
                 }
             }

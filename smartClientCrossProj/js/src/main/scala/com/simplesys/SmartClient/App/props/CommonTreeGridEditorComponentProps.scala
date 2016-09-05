@@ -49,7 +49,7 @@ trait CommonTreeGridEditorComponentProps extends TreeGridEditorProps with Initia
             val funcMenu = TreeGridContextMenu.create(
                 new TreeGridContextMenuProps {
                     owner = thiz.opt
-                    thiz.customMenu.foreach(menu ⇒ customMenu = menu.opt)
+                    customMenu = if (thiz.customMenu.isEmpty) ScNone else thiz.customMenu.get.toSeq.opt
                 }
             )
 

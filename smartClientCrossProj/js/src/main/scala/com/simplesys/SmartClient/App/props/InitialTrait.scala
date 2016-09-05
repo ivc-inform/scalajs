@@ -39,7 +39,7 @@ trait InitialTrait {
 
                     }
                     else
-                        thiz.logError("Field not have nameStrong, error #77")
+                        thiz.logError("Field not have nameStrong, error #42")
             }
         }
 

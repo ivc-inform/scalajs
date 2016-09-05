@@ -8,7 +8,6 @@ import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.ListGridEditor
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.RPC.RPCRequest
-import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AutoComplete.AutoComplete
@@ -26,8 +25,8 @@ import com.simplesys.option.DoubleType._
 import com.simplesys.option.{FormItemType_FormItemComponentType, IntString, ScNone, ScOption}
 
 import scala.scalajs.js
-import scala.scalajs.js.{ThisFunction1, ThisFunction4}
 import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.{ThisFunction1, ThisFunction4}
 
 class FormItemProps extends ClassProps {
     type classHandler <: FormItem
@@ -107,7 +106,7 @@ class FormItemProps extends ClassProps {
     var iconHSpace: ScOption[Int] = ScNone
     var iconKeyPress: ScOption[js.Function5[String, Char, DynamicFormSS, FormItem, FormItemIcon, _]] = ScNone
     var iconPrompt: ScOption[HTMLString] = ScNone
-    var icons: ScOption[IscArray[FormItemIcon]] = ScNone
+    var icons: ScOption[Seq[FormItemIcon]] = ScNone
     var iconVAlign: ScOption[VerticalAlignment] = ScNone
     var iconWidth: ScOption[Int] = ScNone
     var ID: ScOption[String] = ScNone
@@ -212,8 +211,8 @@ class FormItemProps extends ClassProps {
     var useDisabledHintStyleForReadOnly: ScOption[Boolean] = ScNone
     var validateOnChange: ScOption[Boolean] = ScNone
     var validateOnExit: ScOption[Boolean] = ScNone
-    var validators: ScOption[IscArray[Validator]] = ScNone
-    var validOperators: ScOption[IscArray[OperatorId]] = ScNone
+    var validators: ScOption[Seq[Validator]] = ScNone
+    var validOperators: ScOption[Seq[OperatorId]] = ScNone
     var vAlign: ScOption[VerticalAlignment] = ScNone
     var value: ScOption[JSAny] = ScNone
     var valueDeselectedCSSText: ScOption[CSSText] = ScNone
@@ -227,7 +226,7 @@ class FormItemProps extends ClassProps {
     var valueIconSize: ScOption[Int] = ScNone
     var valueIconWidth: ScOption[Int] = ScNone
     var valueIcons: ScOption[JSDictionary[String]] = ScNone
-    var valueMap: ScOption[ValueMap] = ScNone
+    var valueMap: ScOption[JSAny] = ScNone
     var visible: ScOption[Boolean] = ScNone
     var width: ScOption[IntString[Int, String]] = "100%"
     var wrapTitle: ScOption[Boolean] = ScNone

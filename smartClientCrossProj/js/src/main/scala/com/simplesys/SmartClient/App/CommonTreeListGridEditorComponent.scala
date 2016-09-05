@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.App
 
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
-import com.simplesys.SmartClient.Grids.TreeListGridEditor
+import com.simplesys.SmartClient.Grids.{AbstractTreeListGridEditorCompanion, TreeListGridEditor}
 import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System._
 
@@ -19,7 +19,7 @@ trait CommonTreeListGridEditorComponent extends TreeListGridEditor {
     var customMenuList: JSUndefined[IscArray[MenuSSItem]]
 }
 
-//@js.native
-//abstract trait AbstractEditoradmin_UserCompanion extends AbstractTreeListGridEditorCompanion {
-//}
+@js.native
+abstract trait AbstractCommonTreeListGridEditorComponentCompanion extends AbstractTreeListGridEditorCompanion {
+}
 

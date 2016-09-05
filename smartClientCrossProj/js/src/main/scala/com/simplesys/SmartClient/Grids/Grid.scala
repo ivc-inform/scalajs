@@ -11,7 +11,7 @@ import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Foundation.{Canvas, GridRenderer, HTMLFlow, StatefulCanvas}
 import com.simplesys.SmartClient.Grids.listGrid._
 import com.simplesys.SmartClient.Grids.treeGrid.Tree
-import com.simplesys.SmartClient.Layout.{HLayout, Layout, VLayout}
+import com.simplesys.SmartClient.Layout._
 import com.simplesys.SmartClient.System.selection.CellSelection
 import com.simplesys.SmartClient.System.{Class, IscArray, Selection}
 import com.simplesys.System.Types.Alignment.Alignment
@@ -864,6 +864,10 @@ trait Grid[T <: ListGridField, R <: JSAny] extends VLayout with DataBoundCompone
 @js.native
 trait ListGrid extends Grid[ListGridField, ListGridRecord] {
     var data: IscArray[ListGridRecord]
+}
+
+@js.native
+abstract trait AbstractListGridCompanion extends AbstractVLayoutCompanion {
 }
 
 

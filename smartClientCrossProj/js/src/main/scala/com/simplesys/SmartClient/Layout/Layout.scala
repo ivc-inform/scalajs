@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Layout
 
+import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Foundation.{AbstractCanvasCompanion, Canvas}
 import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.Alignment.Alignment

@@ -16,7 +16,7 @@ import scala.scalajs.js.|
 @js.native
 trait MenuSS extends Grid[ListGridField, MenuSSItem] {
     def _showOffscreen(): void
-    def addItem(item: MenuSSItem, pos: Int): void
+    def addItem(item: MenuSSItem, pos: Int= js.native): void
     def addItems(items: IscArray[MenuSSItem], pos: Int = js.native): void
     def addItemProperties(identifier: ID, properties: MenuSS): void
     def removeItem(item: MenuSSItem | ID): void
@@ -80,5 +80,9 @@ trait MenuSS extends Grid[ListGridField, MenuSSItem] {
     val titleFieldDefaults: ListGridField
     val titleFieldProperties: ListGridField
     var useKeys: Boolean
+}
+
+@js.native
+abstract trait AbstractMenuSSCompanion extends AbstractMenuCompanion {
 }
 

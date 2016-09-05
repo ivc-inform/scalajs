@@ -10,12 +10,15 @@ import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait RPCResponse extends Class {
+
+    import com.simplesys.System.JSAny
+
     val clientContext: JSObject
-    val data: JSObject
+    val data: JSUndefined[JSAny]
     val httpHeaders: JSObject
     val httpResponseCode: Int
     val httpResponseText: String
-    val status: Int
+    var status: Int
     val transactionNum: Int
     var errorStruct: JSUndefined[ErrorStruct]
 }

@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.App.props
 
 import com.simplesys.SmartClient.App.TreeListGridContextMenu
+import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Control.props.menu.MenuSSItemProps
 import com.simplesys.SmartClient.Control.props.{ListGridContextMenuProps, ListGridContextMenuWithFormProps, MenuSSProps, TreeGridContextMenuProps}
@@ -23,6 +24,8 @@ class TreeListGridContextMenuProps extends MenuSSProps {
     var customMenuTree: ScOption[Seq[MenuSSItem]] = ScNone
     var customMenuList: ScOption[Seq[MenuSSItem]] = ScNone
 
+    var customSubMenuItem: ScOption[MenuSSItem] = ScNone
+
     initWidget = {
         (thiz: TreeListGridContextMenu, arguments: IscArray[JSAny]) =>
             //isc debugTrac(thiz.getClassName(), thiz.getIdentifier())
@@ -31,19 +34,21 @@ class TreeListGridContextMenuProps extends MenuSSProps {
 
             val topOwner = thiz.owner.asInstanceOf[TreeListGridEditor]
 
-            val listGridEditorMenu = ListGridContextMenu.create(
+            def listGridEditorMenu = ListGridContextMenu.create(
                 new ListGridContextMenuProps {
                     customMenu = if (thiz.customMenuList.isEmpty) ScNone else thiz.customMenuList.get.toSeq.opt
                     owner = topOwner.listGrid.opt
                 }
             )
 
-            val listGridEditorMenuWithForm = ListGridContextMenuWithForm.create(
+            def listGridEditorMenuWithForm = ListGridContextMenuWithForm.create(
                 new ListGridContextMenuWithFormProps {
                     customMenu = if (thiz.customMenuList.isEmpty) ScNone else thiz.customMenuList.get.toSeq.opt
                     owner = topOwner.listGrid.opt
                 }
             )
+
+            //isc debugTrap(listGridEditorMenu, listGridEditorMenuWithForm)
 
             if (thiz.simpleTableList)
                 topOwner setContextMenuListGridEditor listGridEditorMenu
@@ -77,6 +82,8 @@ class TreeListGridContextMenuProps extends MenuSSProps {
                     )
                 )
             )
+
+            thiz.customSubMenuItem.foreach(thiz addItem _)
 
     }.toThisFunc.opt
 }

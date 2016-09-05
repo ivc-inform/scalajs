@@ -12,11 +12,14 @@ import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait LoginDialog extends Window {
+
+    import com.simplesys.SmartClient.System.IscArray
+
     val allowBlankPassword: Boolean
     val dismissable: Boolean
     val errorMessage: String
     val errorStyle: String
-    val formFields: Seq[FormItem]
+    val formFields: IscArray[FormItem]
     val loginButton: IButton with AutoChild
     val loginButtonTitle: String
     val loginFailureItem: BlurbItem with AutoChild

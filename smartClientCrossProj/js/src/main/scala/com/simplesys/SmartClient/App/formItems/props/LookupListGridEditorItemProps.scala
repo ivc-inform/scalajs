@@ -35,7 +35,7 @@ class LookupListGridEditorItemProps extends CanvasItemProps {
     setValue = {
         (thiz: classHandler, value: JSUndefined[JSAny]) =>
             thiz.Super("setValue", IscArray(value))
-            thiz.textItem setValue value
+            thiz.textItem setValue (value)
 
             if (value.isDefined) {
 
@@ -213,7 +213,7 @@ class LookupListGridEditorItemProps extends CanvasItemProps {
                                                                                         else
                                                                                             formItem.filteredGridList.foreach(_.fetchData(criteria = advancedCriteria))
 
-                                                                                        formItem setValue res
+                                                                                        formItem setValue (res)
 
                                                                                     } else {
                                                                                         if (editor.getSelectedRecords().length != 1)

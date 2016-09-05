@@ -86,6 +86,7 @@ trait EditContext extends Class {
     @JSName("setNodeProperties")
     def setNodeProperties1(editNode: EditNode, properties: JSObject, skipLiveObjectUpdate: Boolean = js.native): void
     def selectSingleComponent(component: Class): void
+    def selectComponent(component: Class): void
     val showSelectedLabel: Boolean
     val showSelectedLabelOnSelect: Boolean
     def serializeChildData(parentData : JSObject| JSDynamic, childNodes: IscArray[TreeNode]):void

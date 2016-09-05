@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.Drawing
 
 import com.simplesys.SmartClient.Control.MenuSS
+import com.simplesys.SmartClient.DataBinding.DataSource
 import com.simplesys.SmartClient.Drawing.drawItem.{DrawGroup, DrawLabel, DrawRect}
 import com.simplesys.SmartClient.Drawing.gradient.Gradient
 import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class, IscArray, Point, Rect1}
@@ -42,6 +43,7 @@ trait CalculateTitleLabelPositionInfo extends JSObject {
 @ScalaJSDefined
 trait LiveObject extends JSObject {
     var canDrag: Boolean
+    val fieldDataSource: JSUndefined[DataSource]
 }
 
 @js.native
@@ -221,6 +223,8 @@ trait DrawItem extends Class {
 
     var startLeft2CentrLeft: JSUndefined[Double]
     var startTop2CentrTop: JSUndefined[Double]
+
+    val fieldDataSource: JSUndefined[DataSource]
 }
 
 @js.native

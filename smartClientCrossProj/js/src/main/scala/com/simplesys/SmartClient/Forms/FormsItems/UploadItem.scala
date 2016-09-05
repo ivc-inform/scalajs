@@ -10,7 +10,6 @@ trait UploadItem extends TextItem {
     val accept:String
     val multiple:Boolean
     def  setSelectionRange ():void
-    def  setValue ():void
 }
 
 

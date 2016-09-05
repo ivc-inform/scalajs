@@ -8,11 +8,14 @@ import scala.scalajs.js
 
 @js.native
 trait TextAreaItem extends FormItem {
+
+    import com.simplesys.System.JSAny
+
     var browserAutoCapitalize: Boolean
     var browserAutoCorrect: Boolean
     def deselectValue(start: Boolean = js.native): void
     var editProxyConstructor: SCClassName
-    var emptyStringValue: Any
+    var emptyStringValue: JSAny
     var enforceLength: Boolean
     var formatOnBlur: Boolean
     def getEnteredValue(): String
@@ -26,6 +29,9 @@ trait TextAreaItem extends FormItem {
     var usePlaceholderForHint: Boolean
     var wrap: TEXTAREA_WRAP
 }
+
+@js.native
+abstract class AbstractTextAreaItemCompanion extends AbstractFormItemCompanion
 
 
 

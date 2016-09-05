@@ -20,7 +20,6 @@ trait MiniDateRangeItem extends StaticTextItem {
     var fromDate: Date | RelativeDateString | TimeUnit
     val fromDateOnlyPrefix: String
     def getCriterion(): Criterion
-    def getValue(): DateRange
     val pickerIcon: FormItemIcon
     val rangeDialog: DateRangeDialog with AutoChild
     def setAutoValidate(autoValidate: Boolean): void

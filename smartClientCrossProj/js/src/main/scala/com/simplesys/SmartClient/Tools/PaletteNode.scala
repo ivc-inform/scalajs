@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.Tools
 
 import com.simplesys.SmartClient.Control.MenuSS
+import com.simplesys.SmartClient.Drawing.DrawItem
 import com.simplesys.System.Types.{SCClassName, SCImgURL}
 import com.simplesys.System.{JSDictionaryAny, JSObject, JSUndefined}
 import com.simplesys.SmartClient.System.Class
@@ -15,7 +16,7 @@ trait PaletteNode extends JSObject {
     val contextMenu: JSUndefined[MenuSS]
     val icon: SCImgURL
     val idPrefix: String
-    val liveObject: Class
+    val liveObject: DrawItem
     val title: String
     val `type`: SCClassName
 }

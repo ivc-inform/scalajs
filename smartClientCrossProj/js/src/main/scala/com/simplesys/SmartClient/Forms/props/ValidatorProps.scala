@@ -11,14 +11,17 @@ import com.simplesys.option.{ScNone, ScOption}
 import scala.scalajs.js._
 
 class ValidatorProps extends ClassProps {
+
+    import com.simplesys.System.JSAny
+
     var applyWhen: ScOption[AdvancedCriteria] = ScNone
     var dependentFields: ScOption[IscArray[String]] = ScNone
     var serverOnly: ScOption[Boolean] = ScNone
     var stopOnError: ScOption[Boolean] = ScNone
     var validateOnChange: ScOption[Boolean] = ScNone
     var caseSensitive: ScOption[Boolean] = ScNone
-    var precision: ScOption[Any] = ScNone
-    var min: ScOption[Any] = ScNone
+    var precision: ScOption[JSAny] = ScNone
+    var min: ScOption[JSAny] = ScNone
     var stopIfFalse: ScOption[Boolean] = ScNone
     var clientOnly: ScOption[Boolean] = ScNone
     var resultingValue: ScOption[JSObject] = ScNone

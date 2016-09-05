@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.App
 
-import com.simplesys.SmartClient.Control.MenuSS
+import com.simplesys.SmartClient.Control.{AbstractMenuSSCompanion, MenuSS}
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.JSUndefined
@@ -17,10 +17,12 @@ trait TreeListGridContextMenu extends MenuSS {
 
     var customMenuTree: JSUndefined[IscArray[MenuSSItem]]
     var customMenuList: JSUndefined[IscArray[MenuSSItem]]
+
+    var customSubMenuItem: JSUndefined[MenuSSItem]
 }
 
-//@js.native
-//abstract trait AbstractUser_ComponentMenuCompanion extends AbstractMenuSSCompanion {
-//}
+@js.native
+abstract trait AbstractUser_ComponentMenuCompanion extends AbstractMenuSSCompanion {
+}
 
 

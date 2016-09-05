@@ -4,13 +4,14 @@ import com.simplesys.SmartClient.DataBinding.{Criterion, DataSource}
 import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.{DynamicForm, DynamicFormSS, Validator}
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.Grids.{ListGrid, ListGridEditor, TreeGridEditor}
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
+import com.simplesys.SmartClient.Grids.{ListGrid, ListGridEditor, TreeGridEditor}
 import com.simplesys.SmartClient.RPC.RPCRequest
 import com.simplesys.SmartClient.System._
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AutoComplete.AutoComplete
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
+import com.simplesys.System.Types.FormItemComponentType.FormItemComponentType
 import com.simplesys.System.Types.FormItemElementType.FormItemElementType
 import com.simplesys.System.Types.FormItemType.FormItemType
 import com.simplesys.System.Types.OperatorId.OperatorId
@@ -246,7 +247,8 @@ trait FormItem extends Class {
     def setShowDisabled(showDisabled: Boolean): void
     def setTabIndex(): void
     def setTop(): void
-    def setValue(newValue: JSAny): void
+    //var setValue: ThisFunction1[FormItem, JSAny, _]
+    def setValue(value: JSAny): void
     def setValueIcons(map: JSObject): void
     def setValueMap[T <: JSAny](valueMap: IscArray[T]): void
     @JSName("setValueMap")
@@ -304,7 +306,12 @@ trait FormItem extends Class {
     var titleVAlign: VerticalAlignment
     var top: Int
     var transformInput: js.Function4[DynamicForm, FormItem, JSAny, JSAny, JSAny]
-    var `type`: FormItemType | String
+    var `type`: JSUndefined[FormItemType]
+    @JSName("type")
+    var type1: JSUndefined[FormItemComponentType]
+    @JSName("type")
+    var type2: JSUndefined[String]
+    var typeEditorField: JSUndefined[FormItemComponentType]
     def updateState(): void
     var useDisabledHintStyleForReadOnly: Boolean
     def validate(): Boolean
@@ -313,6 +320,7 @@ trait FormItem extends Class {
     val validators: JSUndefined[IscArray[Validator]]
     val validOperators: JSUndefined[IscArray[OperatorId]]
     var vAlign: VerticalAlignment
+    @deprecated("Use getValue()", "v1.0.15")
     val value: JSAny
     def valueClipped(): Boolean
     val valueDeselectedCSSText: CSSText

@@ -1,19 +1,14 @@
 package com.simplesys.SmartClient.Forms.FormsItems.props
 
 import com.simplesys.SmartClient.Control.IButtonSS
-import com.simplesys.SmartClient.Control.props.IButtonSSProps
-import com.simplesys.SmartClient.Forms.DynamicForm
-import com.simplesys.SmartClient.Forms.FormsItems.{CanvasItem, FormItemWithButton}
-import com.simplesys.SmartClient.Forms.props.DynamicFormSSProps
-import com.simplesys.SmartClient.Layout.props.HLayoutSSProps
-import com.simplesys.SmartClient.System.{Common, DynamicFormSS, HLayoutSS, IButtonSS, IscArray, TextItem}
-import com.simplesys.System.JSAny
+import com.simplesys.SmartClient.Forms.FormsItems.{FormItem, FormItemWithButton}
+import com.simplesys.System.Types.FormItemComponentType.FormItemComponentType
+import com.simplesys.System.Types.FormItemType._
 import com.simplesys.System.Types._
+import com.simplesys.System._
 import com.simplesys.function._
-import com.simplesys.option.DoubleType._
 import com.simplesys.option.ScOption._
-import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.SmartClient.Foundation.Canvas
+import com.simplesys.option.{FormItemType_FormItemComponentType, ScNone, ScOption}
 
 import scala.scalajs.js.ThisFunction0
 
@@ -22,69 +17,16 @@ class FormItemWithButtonProps extends CanvasItemProps {
 
     var iconButton: ScOption[SCImgURL] = ScNone
     var button: ScOption[IButtonSS] = ScNone
+    var editingItem: ScOption[FormItem] = ScNone
 
-    var clickButton: ScOption[ThisFunction0[IButtonSS, Boolean]] = ScNone
+    var clickButton: ScOption[ThisFunction0[classHandler, Boolean]] = ScNone
+    var typeEditorField: ScOption[FormItemType_FormItemComponentType[FormItemType, FormItemComponentType]] = FormItemComponentType.TextItem
 
-    createCanvas = {
-        (thiz: classHandler, form: DynamicForm, item: CanvasItem) =>
-            val res = HLayoutSS.create(
-                new HLayoutSSProps {
-                    height = 20
-                    members = Seq(
-                        DynamicFormSS.create(
-                            new DynamicFormSSProps {
-                                cellPadding = 0.opt
-                                owner = thiz.asInstanceOf[Canvas].opt
-                                width = "*"
-                                minColWidth = 0.opt
-                                colWidths = Seq[JSAny](0, "*").opt
-                                items = Seq(
-                                    TextItem(
-                                        new TextItemProps {
-
-                                            import com.simplesys.System.NameStrong
-
-                                            colSpan = 2.opt
-                                            nameStrong = (if (thiz.nameStrong.isDefined) thiz.nameStrong.get else new NameStrong {
-                                                override val name: String = thiz._name
-                                            }).opt
-                                            width = "*"
-                                            showTitle = false.opt
-                                        }
-                                    )
-                                ).opt
-                            }
-                        )
-                    ).opt
-                }
-            )
-
-
-            thiz.button.foreach(res addMember _)
-            res
+    var getValue: ScOption[ThisFunction0[classHandler, JSAny]] = {
+        (thiz: classHandler) ⇒
+            thiz.Super("getValue")
     }.toThisFunc.opt
 
-
-    init = {
-        (thiz: classHandler, arguments: IscArray[JSAny]) =>
-            val _icon: SCImgURL = thiz.iconButton.getOrElse(Common.ellipsis)
-            thiz.iconButton = _icon
-
-            val defaultButton = IButtonSS.create(
-                new IButtonSSProps {
-                    width = 20
-                    icon = _icon.opt
-                    click = {
-                        (thiz1: IButtonSS) =>
-                           if (thiz.clickButton.isDefined) thiz.clickButton.get(thiz1) else false
-                    }.toThisFunc.opt
-                })
-
-            val button: IButtonSS = thiz.button.getOrElse(defaultButton)
-            thiz.button = button
-            thiz.Super("init", arguments)
-
-    }.toThisFunc.opt
 
     `type` = FormItemComponentType.FormItemWithButton
 }

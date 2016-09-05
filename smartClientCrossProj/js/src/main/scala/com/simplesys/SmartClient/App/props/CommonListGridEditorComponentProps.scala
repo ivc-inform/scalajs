@@ -34,7 +34,7 @@ trait CommonListGridEditorComponentProps extends ListGridEditorProps with Initia
 
     initWidget = {
         (thiz: classHandler, arguments: IscArray[JSAny]) =>
-            isc debugTrac (thiz.getClassName(), thiz.getIdentifier())
+            //isc debugTrac (thiz.getClassName(), thiz.getIdentifier())
 
             val res = initWidget(thiz, thiz.fields, thiz.replacingFields, thiz.editingFields)
             thiz.fields = res._1
@@ -42,20 +42,24 @@ trait CommonListGridEditorComponentProps extends ListGridEditorProps with Initia
 
             thiz.Super("initWidget", arguments)
 
-            val funcMenu = if (thiz.simpleTable.getOrElse(false))
+            val _customMenu = if (thiz.customMenu.isEmpty) ScNone else thiz.customMenu.get.toSeq.opt
+
+            val funcMenu = if (thiz.simpleTable.getOrElse(false)) {
                 ListGridContextMenu.create(
                     new ListGridContextMenuProps {
                         owner = thiz.opt
-                        thiz.customMenu.foreach(menu ⇒ customMenu = menu.opt)
+                        customMenu = _customMenu
                     }
                 )
-            else
+            }
+            else {
                 ListGridContextMenuWithForm.create(
                     new ListGridContextMenuWithFormProps {
                         owner = thiz.opt
-                        thiz.customMenu.foreach(menu ⇒ customMenu = menu.opt)
+                        customMenu = _customMenu
                     }
                 )
+            }
 
             thiz setFuncMenu funcMenu
             thiz setContextMenu funcMenu

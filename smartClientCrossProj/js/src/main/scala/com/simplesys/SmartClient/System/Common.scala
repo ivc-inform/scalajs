@@ -29,6 +29,7 @@ object Common {
     val node = "node.png"
     val admin_User = "admin_User.png"
     val data = "data.png"
+    val filter = "filter.png"
     val Help_icon = "Help-icon.png"
     val login = "login.png"
     val tools = "tools.png"

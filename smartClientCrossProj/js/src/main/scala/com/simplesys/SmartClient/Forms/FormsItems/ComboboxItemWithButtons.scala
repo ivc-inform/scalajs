@@ -10,3 +10,6 @@ trait ComboboxItemWithButtons extends CanvasItem {
     val buttonsProperties:IscArray[IButtonSS]
 }
 
+@js.native
+abstract class AbstractComboboxItemWithButtonsCompanion extends AbstractCanvasItemCompanion
+

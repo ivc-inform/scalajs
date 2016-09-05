@@ -102,7 +102,7 @@ trait WebApp {
         aboutDS setCacheData simpleSyS.aboutData
 
         isc.infos(
-            ListGrid(
+            ListGrid.create(
                 new ListGridProps {
                     dataSource = aboutDS.opt
                     fields = Seq(

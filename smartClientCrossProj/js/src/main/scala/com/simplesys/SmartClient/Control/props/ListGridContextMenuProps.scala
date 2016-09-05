@@ -30,8 +30,12 @@ object ListGridContextMenuProps {
             click = {
                 (target: Canvas, item: MenuSSItem, menu: MenuSS, colNum: JSUndefined[Int]) =>
                     val owner = item.owner.asInstanceOf[ListGridEditor]
-                    simpleSyS checkOwner owner
                     owner.startEditingNewInForm()
+            }.toFunc.opt
+            enableIf = {
+                (target: Canvas, menu: MenuSS, item: MenuSSItem) =>
+                    true
+
             }.toFunc.opt
         })
 
@@ -45,6 +49,10 @@ object ListGridContextMenuProps {
                     val owner = item.owner.asInstanceOf[ListGridEditor]
                     simpleSyS checkOwner owner
                     owner.startEditingNew()
+            }.toFunc.opt
+            enableIf = {
+                (target: Canvas, menu: MenuSS, item: MenuSSItem) =>
+                    true
             }.toFunc.opt
         })
 
@@ -122,6 +130,10 @@ object ListGridContextMenuProps {
                     val owner = item.owner.asInstanceOf[ListGridEditor]
                     simpleSyS checkOwner owner
                     owner.fullRefresh()
+            }.toFunc.opt
+            enableIf = {
+                (target: Canvas, menu: MenuSS, item: MenuSSItem) =>
+                    true
             }.toFunc.opt
         })
 
@@ -208,6 +220,8 @@ class ListGridContextMenuProps extends MenuSSProps {
         (thiz: classHandler, args: IscArray[JSAny]) =>
             //isc debugTrac(thiz.getClassName(), thiz.getIdentifier())
 
+            //isc debugTrap thiz.customMenu
+
             val items = Seq(ListGridContextMenuProps.newMenuItem) ++
               ListGridContextMenuProps.otherItems ++
               ListGridContextMenuProps.getCustomMenuItems(thiz.customMenu) ++
@@ -225,6 +239,8 @@ class ListGridContextMenuWithFormProps extends MenuSSProps {
     initWidget = {
         (thiz: classHandler, args: IscArray[JSAny]) =>
             //isc debugTrac(thiz.getClassName(), thiz.getIdentifier())
+
+            isc debugTrap thiz.customMenu
 
             val items = Seq(ListGridContextMenuProps.newMenuItemWithForm) ++
               ListGridContextMenuProps.otherItems ++
