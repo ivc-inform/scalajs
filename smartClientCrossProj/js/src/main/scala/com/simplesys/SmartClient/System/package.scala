@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient
 
 import com.simplesys.SmartClient.App._
-import com.simplesys.SmartClient.App.formItems.{LookupListGridEditorItem, LookupTreeGridEditorItem}
 import com.simplesys.SmartClient.App.formItems.props.{LookupListGridEditorItemProps, LookupTreeGridEditorItemProps}
+import com.simplesys.SmartClient.App.formItems.{LookupListGridEditorItem, LookupTreeGridEditorItem}
 import com.simplesys.SmartClient.App.props._
 import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.Control.menu.{MenuItem, MenuSSItem}
@@ -40,8 +40,8 @@ import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
 import com.simplesys.SmartClient.Layout.props.toolStrip.{ToolStripButtonProps, ToolStripMenuButtonProps, ToolStripSeparatorProps}
 import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.SmartClient.Layout.toolStrip.{ToolStripButton, ToolStripMenuButton, ToolStripSeparator}
-import com.simplesys.SmartClient.RPC.{RPCRequest, RequestParams}
 import com.simplesys.SmartClient.RPC.props.{RPCRequestProps, RequestParamsProps}
+import com.simplesys.SmartClient.RPC.{RPCRequest, RequestParams}
 import com.simplesys.SmartClient.System.date.Date
 import com.simplesys.SmartClient.System.date.props.DateProps
 import com.simplesys.SmartClient.System.props.TreeProps
@@ -52,9 +52,6 @@ import com.simplesys.SmartClient.Tools.palette.props._
 import com.simplesys.SmartClient.Tools.props._
 import com.simplesys.SmartClient.Tools.props.editProxy.DrawPaneEditProxyProps
 import com.simplesys.SmartClient.Tools.{EditContext, EditProxy, PaletteNode}
-import com.simplesys.System.Types.Criteria
-import com.simplesys.js.components.WindowListEditor
-import com.simplesys.js.components.props.WindowListEditorProps
 
 
 //Должны быть
@@ -173,7 +170,6 @@ package object System {
     object TabSetSS extends SCApply[TabSetSS, TabSetSSProps]
     object WindowSS extends SCApply[WindowSS, WindowSSProps]
     object WindowSSDialog extends SCApply[WindowSSDialog, WindowSSDialogProps]
-    object WindowListEditor extends SCApply[WindowListEditor, WindowListEditorProps]
     object WindowProgressDialog extends SCApply[WindowProgressDialog, WindowProgressDialogProps]
     object ToolStrip extends SCApply[ToolStrip, ToolStripProps]
     object WindowListGridEditorToolStrip extends SCApply[WindowListGridEditorToolStrip, WindowListGridEditorToolStripProps]

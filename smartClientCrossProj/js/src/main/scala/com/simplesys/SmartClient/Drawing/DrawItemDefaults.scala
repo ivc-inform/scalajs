@@ -7,10 +7,7 @@ import com.simplesys.SmartClient.Drawing.gradient.SimpleGradient
 import com.simplesys.SmartClient.System.{IscArray, Point}
 import com.simplesys.System.Types.ArrowStyle.ArrowStyle
 import com.simplesys.System.Types.LinePattern.LinePattern
-import com.simplesys.System.Types.Record
-import com.simplesys.System.Types.TitleRotationMode.TitleRotationMode
 import com.simplesys.System.{JSObject, JSUndefined}
-import com.simplesys.json.JsonObject
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.ScalaJSDefined
@@ -140,7 +137,6 @@ trait DrawPaneDefaults extends DrawItemDefaults {
 trait PropEditorLiveObject extends JSObject {
 
     import com.simplesys.SmartClient.Drawing.gradient.Gradient
-    import ru.simplesys.defs.app.scala.container.ListsDataRecord
 
     var ID: JSUndefined[String]
     var serializeID: JSUndefined[String]
@@ -163,5 +159,5 @@ trait PropEditorLiveObject extends JSObject {
     val rounding: JSUndefined[Double]
     val keepInParentRect: JSUndefined[Boolean]
     val multiline: JSUndefined[Boolean]
-    val listRefs: JSUndefined[ListsDataRecord]
+    val listRefs: JSUndefined[JSObject]
 }
