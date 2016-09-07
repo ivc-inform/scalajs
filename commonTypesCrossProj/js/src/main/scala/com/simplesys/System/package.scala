@@ -1,6 +1,7 @@
 package com.simplesys
 
-import com.simplesys.option.{ScOption, ScSome}
+import com.simplesys.option.{ScNone, ScOption, ScSome}
+
 import scala.scalajs.js
 
 package object System {
@@ -24,6 +25,12 @@ package object System {
         def nameStrongOpt: ScOption[NameStrong] = ScSome(new NameStrong {
             override val name = string
         })
+    }
+
+    object FontItemProps {
+        implicit class UndefinedOpts[T](x: js.UndefOr[T]) {
+            def optUndef: ScOption[T] = if (x.isDefined) ScSome(x.get) else ScNone
+        }
     }
 
 }
