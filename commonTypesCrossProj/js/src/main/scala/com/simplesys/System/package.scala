@@ -29,7 +29,7 @@ package object System {
 
     object FontItemProps {
         implicit class UndefinedOpts[T](x: js.UndefOr[T]) {
-            def optUndef: ScOption[T] = if (x.isDefined) ScSome(x.get) else ScNone
+            def opt: ScOption[T] = if (x.isDefined) ScSome(x.get) else ScNone
         }
     }
 
