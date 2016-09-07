@@ -30,5 +30,6 @@ package object System {
 
     implicit class UndefinedOpts[T](x: js.UndefOr[T]) {
         def opt: ScOption[T] = if (x.isDefined) ScSome(x.get) else ScNone
+        def opt(defValue:T): ScOption[T] = if (x.isDefined) ScSome(x.get) else ScSome(defValue)
     }
 }
