@@ -27,10 +27,8 @@ package object System {
         })
     }
 
-    object FontItemProps {
-        implicit class UndefinedOpts[T](x: js.UndefOr[T]) {
-            def opt: ScOption[T] = if (x.isDefined) ScSome(x.get) else ScNone
-        }
-    }
 
+    implicit class UndefinedOpts[T](x: js.UndefOr[T]) {
+        def opt: ScOption[T] = if (x.isDefined) ScSome(x.get) else ScNone
+    }
 }
