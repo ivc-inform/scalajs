@@ -3,6 +3,7 @@ package com.simplesys
 import com.simplesys.option.{ScNone, ScOption, ScSome}
 
 import scala.scalajs.js
+import scala.scalajs.js._
 
 package object System {
     type JSAny = js.Any
@@ -32,4 +33,8 @@ package object System {
         def opt: ScOption[T] = if (x.isDefined) ScSome(x.get) else ScNone
         def opt(defValue:T): ScOption[T] = if (x.isDefined) ScSome(x.get) else ScSome(defValue)
     }
+
+    implicit class anyToUndef[T](x: T) {
+           def undef: JSUndefined[T] = js.UndefOr.any2undefOrA(x)
+       }
 }
