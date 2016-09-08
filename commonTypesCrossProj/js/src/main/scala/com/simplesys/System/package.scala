@@ -35,6 +35,6 @@ package object System {
     }
 
     implicit class anyToUndef[T](x: T) {
-           def undef: JSUndefined[T] = js.UndefOr.any2undefOrA(x)
+           def undef: UndefOr[T] = js.UndefOr.any2undefOrA(x)
        }
 }
