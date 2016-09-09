@@ -7,6 +7,7 @@ import scala.scalajs.js._
 
 package object System {
     type JSAny = js.Any
+    type JSAnyPlus <: js.Any
     type JSFunction = js.Function
     type JSDynamic = js.Dynamic
     type JSObject = js.Object
@@ -31,6 +32,7 @@ package object System {
 
     implicit class UndefinedOpts[T](x: js.UndefOr[T]) {
         def opt: ScOption[T] = if (x.isDefined) ScSome(x.get) else ScNone
+        def optAny: ScOption[JSAny] = if (x.isDefined) ScSome(x.get.asInstanceOf[JSAny]) else ScNone
         def opt(defValue:T): ScOption[T] = if (x.isDefined) ScSome(x.get) else ScSome(defValue)
     }
 
