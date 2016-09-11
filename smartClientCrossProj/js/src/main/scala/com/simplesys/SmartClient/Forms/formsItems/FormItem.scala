@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Forms.formsItems
 
 import com.simplesys.SmartClient.DataBinding.{Criterion, DataSource}
 import com.simplesys.SmartClient.Forms.formsItems.formItem.FormItemIcon
-import com.simplesys.SmartClient.Forms.{DynamicForm, DynamicFormSS, Validator}
+import com.simplesys.SmartClient.Forms.{DynamicFormSS, Validator}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.{ListGrid, ListGridEditor, TreeGridEditor}
@@ -43,7 +43,7 @@ trait FormItem extends Class {
     var ariaRole: String
     var ariaState: JSObject
     var autoComplete: AutoComplete
-    var blur: js.Function2[DynamicForm, FormItem, _]
+    var blur: js.Function2[DynamicFormSS, FormItem, _]
     def blurItem(): void
     var browserSpellCheck: Boolean
     var canEdit: Boolean
@@ -53,12 +53,12 @@ trait FormItem extends Class {
     var canSelectText: Boolean
     var cellHeight: Int
     var cellStyle: FormItemBaseStyle
-    var change: JSUndefined[Function4[DynamicForm, FormItem, JSAny, JSAny, Boolean]]
-    var changed: JSUndefined[Function3[DynamicForm, FormItem, JSAny, _]]
+    var change: JSUndefined[Function4[DynamicFormSS, FormItem, JSAny, JSAny, Boolean]]
+    var changed: JSUndefined[Function3[DynamicFormSS, FormItem, JSAny, _]]
     var changeOnKeypress: Boolean
     def clearErrors(): void
     def clearValue(): void
-    var click: js.Function2[DynamicForm, FormItem, Boolean]
+    var click: js.Function2[DynamicFormSS, FormItem, Boolean]
     var clipStaticValue: Boolean
     var clipTitle: Boolean
     var colSpan: Int
@@ -69,7 +69,7 @@ trait FormItem extends Class {
     var dateFormatter: DateDisplayFormat
     var decimalPad: Int
     var decimalPrecision: Int
-    var defaultDynamicValue: js.Function3[FormItem, DynamicForm, JSObject, _]
+    var defaultDynamicValue: js.Function3[FormItem, DynamicFormSS, JSObject, _]
     var defaultIconSrc: SCImgURL
     var defaultValue: JSAny
     def disable(): void
@@ -77,9 +77,9 @@ trait FormItem extends Class {
     def disableIcon(icon: String): void
     var disableIconsOnReadOnly: Boolean
     var displayField: JSUndefined[String]
-    var doubleClick: js.Function2[DynamicForm, FormItem, Boolean]
-    var editorEnter: js.Function3[DynamicForm, FormItem, JSAny, _]
-    var editorExit: js.Function3[DynamicForm, FormItem, JSAny, _]
+    var doubleClick: js.Function2[DynamicFormSS, FormItem, Boolean]
+    var editorEnter: js.Function3[DynamicFormSS, FormItem, JSAny, _]
+    var editorExit: js.Function3[DynamicFormSS, FormItem, JSAny, _]
     var editorType: FormItem
     var editPendingCSSText: CSSText
     var listGridEditor: JSUndefined[ListGridEditor]
@@ -96,13 +96,13 @@ trait FormItem extends Class {
     var errorOrientation: Alignment
     var exportFormat: FormatString
     var filterLocally: Boolean
-    var focus: js.Function2[DynamicForm, FormItem, _]
+    var focus: js.Function2[DynamicFormSS, FormItem, _]
     def focusInItem(): void
     val foreignDisplayField: String
-    val form: JSUndefined[DynamicForm]
+    val form: JSUndefined[DynamicFormSS]
     val format: FormatString
-    var formatEditorValue: js.Function4[JSAny, ListGridRecord, DynamicForm, FormItem, String]
-    var formatValue: js.Function4[JSAny, ListGridRecord, DynamicForm, FormItem, String]
+    var formatEditorValue: js.Function4[JSAny, ListGridRecord, DynamicFormSS, FormItem, String]
+    var formatValue: js.Function4[JSAny, ListGridRecord, DynamicFormSS, FormItem, String]
     def getCanEdit(): Boolean
     def getCanFocus(): Boolean
     def getCriterion(textMatchStyle: TextMatchStyle): Criterion
@@ -157,10 +157,10 @@ trait FormItem extends Class {
     var hoverStyle: CSSStyleName
     var hoverVAlign: VerticalAlignment
     var hoverWidth: Int
-    var iconClick: js.Function3[DynamicForm, FormItem, FormItemIcon, _]
+    var iconClick: js.Function3[DynamicFormSS, FormItem, FormItemIcon, _]
     var iconHeight: Int
     var iconHSpace: Int
-    var iconKeyPress: js.Function5[String, Char, DynamicForm, FormItem, FormItemIcon, _]
+    var iconKeyPress: js.Function5[String, Char, DynamicFormSS, FormItem, FormItemIcon, _]
     var iconPrompt: HTMLString
     var icons: IscArray[FormItemIcon]
     var iconVAlign: VerticalAlignment
@@ -180,11 +180,11 @@ trait FormItem extends Class {
     def isFocused(): Boolean
     def isInGrid(): Boolean
     def isVisible(): Boolean
-    var itemHover: js.Function2[FormItem, DynamicForm, _]
-    var itemHoverHTML: js.Function2[FormItem, DynamicForm, HTMLString]
-    var keyDown: js.Function3[FormItem, DynamicForm, String, Boolean]
-    var keyPress: js.Function3[FormItem, DynamicForm, Char, Boolean]
-    var keyUp: js.Function3[FormItem, DynamicForm, KeyName, Boolean]
+    var itemHover: js.Function2[FormItem, DynamicFormSS, _]
+    var itemHoverHTML: js.Function2[FormItem, DynamicFormSS, HTMLString]
+    var keyDown: js.Function3[FormItem, DynamicFormSS, String, Boolean]
+    var keyPress: js.Function3[FormItem, DynamicFormSS, Char, Boolean]
+    var keyUp: js.Function3[FormItem, DynamicFormSS, KeyName, Boolean]
     var left: Int
     var loadingDisplayValue: String
     var locateItemBy: String
@@ -202,11 +202,11 @@ trait FormItem extends Class {
     var optionFilterContext: RPCRequest
     var optionOperationId: String
     var originalValueMessage: HTMLString
-    var parseEditorValue: js.Function3[String, DynamicForm, FormItem, JSAny]
-    var pendingStatusChanged: js.Function5[DynamicForm, FormItem, Boolean, JSAny, JSAny, Boolean]
+    var parseEditorValue: js.Function3[String, DynamicFormSS, FormItem, JSAny]
+    var pendingStatusChanged: js.Function5[DynamicFormSS, FormItem, Boolean, JSAny, JSAny, Boolean]
     var picker: Canvas with AutoChild
     var pickerConstructor: SCClassName
-    var pickerIconClick: js.Function3[DynamicForm, FormItem, FormItemIcon, _]
+    var pickerIconClick: js.Function3[DynamicFormSS, FormItem, FormItemIcon, _]
     var pickerIconDefaults: FormItemIcon
     var pickerIconHeight: Int
     var pickerIconName: String
@@ -273,7 +273,7 @@ trait FormItem extends Class {
     var showHint: Boolean
     def showIcon(icon: String): void
     var showIcons: Boolean
-    var showIf: js.Function4[FormItem, JSAny, DynamicForm, JSObject, Boolean]
+    var showIf: js.Function4[FormItem, JSAny, DynamicFormSS, JSObject, Boolean]
     var showOldValueInHover: Boolean
     var showOverIcons: Boolean
     var showPending: Boolean
@@ -296,16 +296,16 @@ trait FormItem extends Class {
     var title: String
     var titleAlign: Alignment
     var titleClassName: CSSStyleName
-    var titleClick: js.Function2[DynamicForm, FormItem, Boolean]
+    var titleClick: js.Function2[DynamicFormSS, FormItem, Boolean]
     var titleColSpan: Int
-    var titleDoubleClick: js.Function2[DynamicForm, FormItem, Boolean]
-    var titleHover: js.Function2[DynamicForm, FormItem, Boolean]
-    var titleHoverHTML: js.Function2[DynamicForm, FormItem, HTMLString]
+    var titleDoubleClick: js.Function2[DynamicFormSS, FormItem, Boolean]
+    var titleHover: js.Function2[DynamicFormSS, FormItem, Boolean]
+    var titleHoverHTML: js.Function2[DynamicFormSS, FormItem, HTMLString]
     var titleOrientation: TitleOrientation
     var titleStyle: FormItemBaseStyle
     var titleVAlign: VerticalAlignment
     var top: Int
-    var transformInput: js.Function4[DynamicForm, FormItem, JSAny, JSAny, JSAny]
+    var transformInput: js.Function4[DynamicFormSS, FormItem, JSAny, JSAny, JSAny]
     var `type`: JSUndefined[FormItemType]
     @JSName("type")
     var type1: JSUndefined[FormItemComponentType]
@@ -325,9 +325,9 @@ trait FormItem extends Class {
     def valueClipped(): Boolean
     val valueDeselectedCSSText: CSSText
     val valueField: JSUndefined[String]
-    var valueHover: js.Function2[FormItem, DynamicForm, _]
-    var valueHoverHTML: js.Function2[FormItem, DynamicForm, HTMLString]
-    var valueIconClick: js.Function3[FormItem, DynamicForm, JSAny, Boolean]
+    var valueHover: js.Function2[FormItem, DynamicFormSS, _]
+    var valueHoverHTML: js.Function2[FormItem, DynamicFormSS, HTMLString]
+    var valueIconClick: js.Function3[FormItem, DynamicFormSS, JSAny, Boolean]
     var valueIconHeight: Int
     var valueIconLeftPadding: Int
     var valueIconRightPadding: Int

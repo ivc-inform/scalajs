@@ -9,7 +9,6 @@ import com.simplesys.SmartClient.System._
 import com.simplesys.System.Types.FormItemComponentType
 import com.simplesys.System.{JSAny, _}
 import com.simplesys.function._
-import com.simplesys.js.components.PropertyEditorDynamicForm
 import com.simplesys.option.DoubleType._
 import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
@@ -90,7 +89,7 @@ class ShadowItemProps extends FormItemWithButtonsProps {
     }.toThisFunc.opt
 
     changed = {
-        (form: PropertyEditorDynamicForm, formItem: ShadowItem, value: Shadow) ⇒
+        (form: DynamicFormSS, formItem: ShadowItem, value: Shadow) ⇒
             //isc debugTrap(form, value)
             form.setPropertyOnSelection("shadow", value)
 
@@ -164,12 +163,10 @@ class ShadowItemProps extends FormItemWithButtonsProps {
                               (thiz: classHandler) =>
                                   thisTop.form.foreach {
                                       form ⇒
-                                          val propertyEditorDynamicForm = form.asInstanceOf[PropertyEditorDynamicForm]
-
                                           thisTop.nameStrong.foreach {
                                               nameStrong ⇒
-                                                  propertyEditorDynamicForm.setPropertyOnSelection(nameStrong.name, jSUndefined)
-                                                  propertyEditorDynamicForm.setValue(nameStrong.name, null)
+                                                  form.setPropertyOnSelection(nameStrong.name, jSUndefined)
+                                                  form.setValue(nameStrong.name, null)
                                           }
                                   }
                                   true
