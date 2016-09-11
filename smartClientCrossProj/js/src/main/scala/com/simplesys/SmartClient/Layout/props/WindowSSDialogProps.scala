@@ -1,5 +1,7 @@
 package com.simplesys.SmartClient.Layout.props
 
+import com.simplesys.SmartClient.Layout.OkCancelPanel
+import com.simplesys.SmartClient.System.isc
 import com.simplesys.System.Types.HTMLString
 import com.simplesys.function._
 import com.simplesys.option.DoubleType._
@@ -31,6 +33,7 @@ class WindowSSDialogProps extends WindowSSProps {
     var okFunction: ScOption[ThisFunction0[classHandler, _]] = ScNone
     var cancelFunction: ScOption[ThisFunction0[classHandler, _]] = ScNone
     var cancelCaption: ScOption[HTMLString] = ScNone
+    var okCancelPanel: ScOption[OkCancelPanel] = ScNone
 
     initWidget = {
         import com.simplesys.SmartClient.System.IscArray
@@ -38,11 +41,13 @@ class WindowSSDialogProps extends WindowSSProps {
         (thisTop: classHandler, args: IscArray[JSAny]) ⇒
 
             thisTop.Super("initWidget", args)
-            //isc debugTrap thizTop.wrapCanvas
-
             thisTop.wrapCanvas.foreach(thisTop addItem _)
-            val okCancelPanel = OkCancelPanel.create(
+
+            //isc debugTrap thisTop.okCancelPanel
+
+            thisTop.okCancelPanel = OkCancelPanel.create(
                 new OkCancelPanelProps {
+                    identifier = "56EA8234-06D5-27B6-034B-4070B9FB0F59".opt
                     owner = thisTop.opt
                     okCaption = if (thisTop.okCaption.isEmpty) ScNone else thisTop.okCaption.get.opt
                     cancelCaption = if (thisTop.cancelCaption.isEmpty) ScNone else thisTop.cancelCaption.get.opt
@@ -51,17 +56,23 @@ class WindowSSDialogProps extends WindowSSProps {
                     cancelFunction =
                       if (thisTop.cancelFunction.isDefined) {
                           (thiz: classHandler) ⇒
-                              thisTop.cancelFunction.get()
+                              (thisTop.cancelFunction.get) (thisTop.asInstanceOf[thisTop.classHandler])
                       }.toThisFunc.opt
                       else {
                           (thiz: classHandler) ⇒
                               thisTop.markForDestroy()
                       }.toThisFunc.opt
-                }
-            )
+                    okFunction =
+                      if (thisTop.okFunction.isDefined) {
+                          (thiz: classHandler) ⇒
+                              (thisTop.okFunction.get) (thisTop.asInstanceOf[thisTop.classHandler])
+                      }.toThisFunc.opt
+                      else {
+                          (thiz: classHandler) ⇒
+                      }.toThisFunc.opt
+                })
 
-            thisTop addItem okCancelPanel
-
+            thisTop addItem thisTop.okCancelPanel.get
 
     }.toThisFunc.opt
 }

@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Control.{ImgButton, StretchImgButton}
-import com.simplesys.SmartClient.Forms.FormsItems.TextItem
+import com.simplesys.SmartClient.Forms.formsItems.TextItem
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.TableView
 import com.simplesys.SmartClient.Layout.tabSet.Tab

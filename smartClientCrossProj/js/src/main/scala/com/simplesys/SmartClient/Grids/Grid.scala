@@ -6,7 +6,7 @@ import com.simplesys.SmartClient.Control.{Button, IButton}
 import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.Forms.DynamicForm
-import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Forms.formsItems.FormItem
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Foundation.{Canvas, GridRenderer, HTMLFlow, StatefulCanvas}
 import com.simplesys.SmartClient.Grids.listGrid._

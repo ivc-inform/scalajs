@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.DataBinding.props.dataSource
 
-import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Forms.formsItems.FormItem
 import com.simplesys.SmartClient.Forms.props.ValidatorProps
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat
 import com.simplesys.System.Types.FieldImportStrategy.FieldImportStrategy

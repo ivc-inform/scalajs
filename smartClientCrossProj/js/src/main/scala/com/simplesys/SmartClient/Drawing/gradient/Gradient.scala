@@ -13,7 +13,6 @@ trait Gradient extends JSObject {
 
     var colorStops: JSUndefined[IscArray[ColorStop]]
     var endColor: JSUndefined[CSSColor]
-    var id: JSUndefined[ID]
     var startColor: JSUndefined[CSSColor]
 }
 

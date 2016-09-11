@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Control
 
 import com.simplesys.SmartClient.Forms.DynamicForm
-import com.simplesys.SmartClient.Forms.FormsItems._
+import com.simplesys.SmartClient.Forms.formsItems._
 import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
 import com.simplesys.SmartClient.Layout.Window
 import com.simplesys.System.JSObject

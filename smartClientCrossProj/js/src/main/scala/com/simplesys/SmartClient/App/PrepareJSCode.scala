@@ -1,13 +1,20 @@
 package com.simplesys.SmartClient.App
 
-import com.simplesys.SmartClient.Forms.FormsItems.props.{DateTimeItemProps, FormItemProps}
+import com.simplesys.SmartClient.DataBinding.props.DataSourceProps
+import com.simplesys.SmartClient.Drawing.drawItem.DrawLinePathSS
+import com.simplesys.SmartClient.Drawing.drawItem.props.{DrawLinePathSSProps, DrawLineProps, DrawRectProps}
+import com.simplesys.SmartClient.Drawing.props.{DrawItemProps, DrawPaneProps}
+import com.simplesys.SmartClient.Forms.formsItems.PickList
+import com.simplesys.SmartClient.Forms.formsItems.props.{DateTimeItemProps, FormItemProps, PickListProps}
 import com.simplesys.SmartClient.Forms.props.DateChooserProps
 import com.simplesys.SmartClient.Grids.props.ListGridProps
+import com.simplesys.SmartClient.Layout.WindowSSDialog
+import com.simplesys.SmartClient.Layout.props.{WindowSSDialogProps, WindowSSProps}
 import com.simplesys.SmartClient.System._
 import com.simplesys.SmartClient.System.date.props.DateProps
 import com.simplesys.SmartClient.Tools.editProxy.props.DrawItemEditProxyProps
-import com.simplesys.SmartClient.Tools.props.editProxy.DrawPaneEditProxyProps
 import com.simplesys.System.Types.DateDisplayFormat
+import com.simplesys.app.{DrawItemTile, EditContextSS, FormItemList}
 import com.simplesys.option.ScOption._
 
 import scala.scalajs.js.annotation.JSExport
@@ -16,6 +23,8 @@ import scala.scalajs.js.annotation.JSExport
 class PrepareJSCode extends StaticJSCode {
 
     @JSExport override def createJS(): Unit = {
+        isc.WindowSS.addProperties(WindowSS(new WindowSSProps))
+
         isc.defineClass(RibbonGroupSS.getClass.getSimpleName, RibbonGroup.getClass.getSimpleName)
         isc.defineClass(SettingsEditor.getClass.getSimpleName, WindowSS.getClass.getSimpleName)
         isc.defineClass(ListGridContextMenu.getClass.getSimpleName, MenuSS.getClass.getSimpleName)
@@ -33,10 +42,35 @@ class PrepareJSCode extends StaticJSCode {
         isc.defineClass(EditorUsers.getClass.getSimpleName, CommonTreeListGridEditorComponent.getClass.getSimpleName)
         isc.defineClass(EditorUserGroups.getClass.getSimpleName, CommonTreeGridEditorComponent.getClass.getSimpleName)
         isc.defineClass(WindowListGridEditorToolStrip.getClass.getSimpleName, ToolStrip.getClass.getSimpleName)
+        isc.defineClass[WindowSSDialog](WindowSSDialog.getClass.getSimpleName, WindowSS.getClass.getSimpleName).addProperties(WindowSSDialog(new WindowSSDialogProps))
+        isc.defineClass[DrawLinePathSS](DrawLinePathSS.getClass.getSimpleName, DrawPath.getClass.getSimpleName).addProperties(DrawLinePathSS(new DrawLinePathSSProps))
+
+        isc.defineClass(DrawItemTile.getClass.getSimpleName, SimpleTile.getClass.getSimpleName)
+        isc.defineClass(EditContextSS.getClass.getSimpleName, EditContext.getClass.getSimpleName)
+        isc.defineClass(SectionStackSS.getClass.getSimpleName, SectionStack.getClass.getSimpleName)
+        isc.defineClass(FormItemWithButtons.getClass.getSimpleName, CanvasItem.getClass.getSimpleName)
+        isc.defineClass(FormItemList.getClass.getSimpleName, FormItemWithButtons.getClass.getSimpleName)
+        isc.defineClass(GradientItem.getClass.getSimpleName, FormItemWithButtons.getClass.getSimpleName)
+        isc.defineClass(ShadowItem.getClass.getSimpleName, FormItemWithButtons.getClass.getSimpleName)
+        isc.defineClass(FontItem.getClass.getSimpleName, FormItemWithButtons.getClass.getSimpleName)
+        isc.defineClass(PointItem.getClass.getSimpleName, CanvasItem.getClass.getSimpleName)
+        isc.defineClass(DurationItem.getClass.getSimpleName, CanvasItem.getClass.getSimpleName)
+        isc.defineClass(CancelButton.getClass.getSimpleName, IButtonSS.getClass.getSimpleName)
+
+        isc.defineClass(WindowProgressDialog.getClass.getSimpleName, WindowSS.getClass.getSimpleName)
 
         isc.ListGrid.addProperties(ListGrid(new ListGridProps))
         isc.FormItem.addProperties(FormItem(new FormItemProps))
         isc.DrawItemEditProxy.addProperties(DrawItemEditProxy(new DrawItemEditProxyProps))
+
+        isc.DataSource.addProperties(DataSource(new DataSourceProps))
+        isc.DrawItem.addProperties(DrawItem(new DrawItemProps))
+        isc.DrawLine.addProperties(DrawLine(new DrawLineProps))
+        isc.DrawRect.addProperties(DrawRect(new DrawRectProps))
+        isc.DrawPane.addProperties(DrawPane(new DrawPaneProps))
+        isc.PickList.addInterfaceMethods(PickList(new PickListProps {
+            override type classHandler = PickList
+        }))
 
         isc.addMethods(
             isc.Date.prototype,

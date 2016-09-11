@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.Grids
 import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.DataBinding.Callbacks.DSCallback
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
-import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Forms.formsItems.FormItem
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Grids.treeGrid.TreeGridField

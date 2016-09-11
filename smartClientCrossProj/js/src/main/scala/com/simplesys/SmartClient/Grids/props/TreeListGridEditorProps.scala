@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Grids.props
 
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
-import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Forms.formsItems.FormItem
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Grids.TreeListGridEditor
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord

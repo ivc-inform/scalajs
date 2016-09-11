@@ -136,7 +136,7 @@ trait DrawPaneDefaults extends DrawItemDefaults {
 @ScalaJSDefined
 trait PropEditorLiveObject extends JSObject {
 
-    import com.simplesys.SmartClient.Drawing.gradient.Gradient
+    import com.simplesys.js.components.TimerU
 
     var ID: JSUndefined[String]
     var serializeID: JSUndefined[String]
@@ -144,7 +144,7 @@ trait PropEditorLiveObject extends JSObject {
     var cursor: JSUndefined[String]
     var endArrow: JSUndefined[String]
     var fillColor: JSUndefined[String]
-    var fillGradient: JSUndefined[Gradient]
+    var fillGradient: JSUndefined[JSObject]
     var fillOpacity: JSUndefined[Double]
     val lineCap: JSUndefined[String]
     val lineColor: JSUndefined[String]
@@ -160,4 +160,7 @@ trait PropEditorLiveObject extends JSObject {
     val keepInParentRect: JSUndefined[Boolean]
     val multiline: JSUndefined[Boolean]
     val listRefs: JSUndefined[JSObject]
+    val titleLabelProperties: JSUndefined[DrawLabel]
+    val messageSMS: JSUndefined[String]
+    val timerProps: JSUndefined[TimerU]
 }

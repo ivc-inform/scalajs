@@ -99,7 +99,7 @@ class EditContextSSProps extends EditContextProps {
                                     case None ⇒
                                         js.Dictionary()
                                     case Some(component) ⇒
-                                        js.Dictionary("fieldDataSource" → js.UndefOr.any2undefOrA(component.asInstanceOf[JSDynamic].selectDynamic("fieldDataSource")))
+                                        js.Dictionary("fieldDataSource" → component.asInstanceOf[JSDynamic].selectDynamic("fieldDataSource").undef)
                                 }
 
                                 //isc debugTrap item
@@ -279,7 +279,7 @@ class EditContextSSProps extends EditContextProps {
             val editTree = thiz.getEditNodeTree()
             val rootNode = thiz.getRootEditNode()
             val childNodes = editTree.getChildren(rootNode)
-            if (childNodes.isDefined && childNodes.get.length > 0) js.UndefOr.any2undefOrA(childNodes.get(0).asInstanceOf[EditNode]) else jSUndefined
+            if (childNodes.isDefined && childNodes.get.length > 0) childNodes.get(0).asInstanceOf[EditNode].undef else jSUndefined
     }.toThisFunc.opt
 
     var fireSelectedEditNodesUpdated: ScOption[ThisFunction0[classHandler, _]] = {

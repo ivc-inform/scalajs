@@ -1,8 +1,10 @@
 package com.simplesys.SmartClient.Layout
 
 import com.simplesys.System.Types.HTMLString
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
+import scala.scalajs.js.ThisFunction0
 
 @js.native
 trait WindowSSDialog extends WindowSS {
@@ -12,11 +14,12 @@ trait WindowSSDialog extends WindowSS {
 
     var wrapCanvas: JSUndefined[Canvas]
 
-    var okFunction: JSUndefined[js.ThisFunction0[classHandler, _]]
-    var cancelFunction: JSUndefined[js.Function0[_]]
+    var okFunction: JSUndefined[ThisFunction0[classHandler, _]]
+    var cancelFunction: JSUndefined[ThisFunction0[classHandler, _]]
 
     val okCaption: JSUndefined[HTMLString]
     val cancelCaption: JSUndefined[HTMLString]
+    var okCancelPanel: JSUndefined[OkCancelPanel]
 }
 
 @js.native

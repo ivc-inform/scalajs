@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Foundation.props
 
 import com.simplesys.SmartClient.Control.MenuSS
-import com.simplesys.SmartClient.Forms.FormsItems.CanvasItem
+import com.simplesys.SmartClient.Forms.formsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.IscArray

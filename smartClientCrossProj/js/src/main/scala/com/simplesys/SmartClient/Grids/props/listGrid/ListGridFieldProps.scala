@@ -1,8 +1,8 @@
 package com.simplesys.SmartClient.Grids.props.listGrid
 
 import com.simplesys.SmartClient.DataBinding.DSRequest
-import com.simplesys.SmartClient.Forms.FormsItems.FormItem
-import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
+import com.simplesys.SmartClient.Forms.formsItems.FormItem
+import com.simplesys.SmartClient.Forms.formsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord, UserFormula, UserSummary}
 import com.simplesys.SmartClient.Grids.{Grid, ListGrid}

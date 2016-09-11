@@ -18,6 +18,7 @@ import com.simplesys.function._
 import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScOption, ScSome}
 
+import scala.scalajs.js
 import scala.scalajs.js._
 
 class DrawLinePathSSProps extends DrawPathProps with DrawLineCommons {
@@ -75,7 +76,7 @@ class DrawLinePathSSProps extends DrawPathProps with DrawLineCommons {
             //thiz.titleRotationMode = TitleRotationMode.withLineAlwaysUp
 
             thiz.cKnobs = IscArray()
-            thiz.controlPoints = IscArray(thiz.points.slice(1, thiz.points.length - 1).map(item => UndefOr.any2undefOrA(item)): _*)
+            thiz.controlPoints = IscArray(thiz.points.slice(1, thiz.points.length - 1).map(item => js.UndefOr.any2undefOrA(item)): _*)
             //isc debugTrap thiz.controlPoints
             thiz.points = thiz._getSegmentPoints()
 

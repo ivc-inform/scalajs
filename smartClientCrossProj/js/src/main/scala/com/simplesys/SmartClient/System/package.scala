@@ -18,9 +18,9 @@ import com.simplesys.SmartClient.Drawing.drawItem.props._
 import com.simplesys.SmartClient.Drawing.gradient._
 import com.simplesys.SmartClient.Drawing.gradient.props._
 import com.simplesys.SmartClient.Drawing.props._
-import com.simplesys.SmartClient.Forms.FormsItems._
-import com.simplesys.SmartClient.Forms.FormsItems.props._
 import com.simplesys.SmartClient.Forms._
+import com.simplesys.SmartClient.Forms.formsItems._
+import com.simplesys.SmartClient.Forms.formsItems.props._
 import com.simplesys.SmartClient.Forms.props._
 import com.simplesys.SmartClient.Foundation._
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
@@ -74,6 +74,8 @@ package object System {
 
     //<editor-fold desc="Control">
     object IButtonSS extends SCApply[IButtonSS, IButtonSSProps]
+    object CancelButton extends SCApply[CancelButton, CancelButtonProps]
+    object IMenuButton extends SCApply[IMenuButton, IMenuButtonProps]
     object Slider extends SCApply[Slider, SliderProps]
     object Menu extends SCApply[Menu, MenuProps]
     object MenuSS extends SCApply[MenuSS, MenuSSProps]
@@ -123,11 +125,14 @@ package object System {
     object TextAreaItemSS extends SCApply4Object[TextAreaItemSS, TextAreaItemSSProps]
     object StaticTextItem extends SCApply4Object[StaticTextItem, StaticTextItemProps]
     object TimeItem extends SCApply4Object[TimeItem, TimeItemProps]
-    object TimerItem extends SCApply4Object[TimerItem, TimerItemProps]
     object Tab extends SCApply4Object[Tab, TabProps]
     object DateChooser extends SCApply4Object[DateChooser, DateChooserProps]
-    object FormItemWithButton extends SCApply4Object[FormItemWithButton, FormItemWithButtonProps]
+    object FormItemWithButtons extends SCApply4Object[FormItemWithButtons, FormItemWithButtonsProps]
     object GradientItem extends SCApply4Object[GradientItem, GradientItemProps]
+    object ShadowItem extends SCApply4Object[ShadowItem, ShadowItemProps]
+    object FontItem extends SCApply4Object[FontItem, FontItemProps]
+    object PointItem extends SCApply4Object[PointItem, PointItemProps]
+    object DurationItem extends SCApply4Object[DurationItem, DurationItemProps]
     object ComboboxItemWithButtons extends SCApply4Object[ComboboxItemWithButtons, ComboboxItemWithButtonsProps]
     object ComboboxItemWithClearButton extends SCApply4Object[ComboboxItemWithClearButton, ComboboxItemWithClearButtonProps]
     object LookupListGridEditorItem extends SCApply4Object[LookupListGridEditorItem, LookupListGridEditorItemProps]
@@ -158,14 +163,15 @@ package object System {
     //</editor-fold>
 
     //<editor-fold desc="Layout">
+    object LayoutSS extends SCApply[LayoutSS, LayoutSSProps]
     object HLayoutSS extends SCApply[HLayoutSS, HLayoutSSProps]
+    object VLayoutSS extends SCApply[VLayoutSS, VLayoutSSProps]
     object IconButton extends SCApply[IconButton, IconButtonProps]
     object IconButtonSS extends SCApply[IconButtonSS, IconButtonSSProps]
     object IconMenuButton extends SCApply[IconMenuButton, IconMenuButtonProps]
     object IconMenuButtonSS extends SCApply[IconMenuButtonSS, IconMenuButtonSSProps]
     object OkCancelPanel extends SCApply[OkCancelPanel, OkCancelPanelProps]
     object OkPanel extends SCApply[OkPanel, OkPanelProps]
-    object VLayoutSS extends SCApply[VLayoutSS, VLayoutSSProps]
     object ChainMasterDetail extends SCApply[ChainMasterDetail, ChainMasterDetailProps]
     object TabSetSS extends SCApply[TabSetSS, TabSetSSProps]
     object WindowSS extends SCApply[WindowSS, WindowSSProps]
@@ -217,7 +223,6 @@ package object System {
     object RibbonGroup extends SCApply[RibbonGroup, RibbonGroupProps]
     object RibbonGroupSS extends SCApply[RibbonGroupSS, RibbonGroupSSProps]
 
-    //</editor-fold>
     //</editor-fold>
 
     object SettingsEditor extends SCApply[SettingsEditor, SettingsEditorProps]

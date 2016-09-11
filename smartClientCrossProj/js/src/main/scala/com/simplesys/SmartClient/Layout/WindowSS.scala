@@ -1,5 +1,8 @@
 package com.simplesys.SmartClient.Layout
 
+import com.simplesys.SmartClient.Foundation.Canvas
+import com.simplesys.SmartClient.System.IscArray
+
 import scala.scalajs.js
 
 @js.native

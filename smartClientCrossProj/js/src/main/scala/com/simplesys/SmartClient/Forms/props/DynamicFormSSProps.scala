@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Forms.props
 
 import com.simplesys.SmartClient.Forms.DynamicFormSS
-import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Forms.formsItems.FormItem
 import com.simplesys.SmartClient.System.{IscArray, isc}
 import com.simplesys.System.JSAny
 import com.simplesys.System.Types.FormItemType

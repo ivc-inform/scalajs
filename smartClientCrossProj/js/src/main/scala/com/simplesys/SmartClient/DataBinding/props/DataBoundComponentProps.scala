@@ -76,9 +76,8 @@ trait DataBoundComponentProps extends ClassProps {
             //isc debugTrap(keyFieldNames, fieldNames, wasAlreadyQueuing)
             records.foreach {
                 record ⇒
-                    //isc debugTrap(js.UndefOr.any2undefOrA(record.asInstanceOf[js.Dynamic]._isGroup))
 
-                    if (js.UndefOr.any2undefOrA(record.asInstanceOf[js.Dynamic]._isGroup).isEmpty) {
+                    if (record.asInstanceOf[js.Dynamic]._isGroup.undef.isEmpty) {
 
                         val recordKeys = isc.applyMask[JSObject](record, keyFieldNames)
                         context.oldValues = isc.applyMask[JSObject](record, fieldNames)

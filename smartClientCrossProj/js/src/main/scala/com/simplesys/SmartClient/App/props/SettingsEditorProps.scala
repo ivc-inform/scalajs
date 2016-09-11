@@ -2,8 +2,8 @@ package com.simplesys.SmartClient.App.props
 
 import com.simplesys.SmartClient.App.SettingsEditor
 import com.simplesys.SmartClient.Forms.DynamicForm
-import com.simplesys.SmartClient.Forms.FormsItems.FormItem
-import com.simplesys.SmartClient.Forms.FormsItems.props.{CheckboxItemProps, SkinBoxItemProps}
+import com.simplesys.SmartClient.Forms.formsItems.FormItem
+import com.simplesys.SmartClient.Forms.formsItems.props.{CheckboxItemProps, SkinBoxItemProps}
 import com.simplesys.SmartClient.Forms.props.DynamicFormSSProps
 import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
 import com.simplesys.SmartClient.Layout.props.{OkCancelPanelProps, TabSetSSProps, WindowSSProps}

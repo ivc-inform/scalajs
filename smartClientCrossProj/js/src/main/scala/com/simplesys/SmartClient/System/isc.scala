@@ -5,10 +5,11 @@ import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.DataBinding.{AbstractDataBoundComponentCompanion, AbstractDataSourceSSCompanion, AbstractJSONCompanion, AbstractOfflineSSCompanion}
 import com.simplesys.SmartClient.Drawing.drawItem.{AbstractDrawLineCompanion, AbstractDrawRectCompanion}
 import com.simplesys.SmartClient.Drawing.{AbstractDrawItemCompanion, AbstractDrawPaneCompanion}
-import com.simplesys.SmartClient.Forms.FormsItems.{AbstractDateTimeItemCompanion, AbstractFormItemCompanion, AbstractPickListCompanion, AbstractTimerItemCompanion}
+import com.simplesys.SmartClient.Forms.formsItems.{AbstractDateTimeItemCompanion, AbstractFormItemCompanion, AbstractPickListCompanion}
 import com.simplesys.SmartClient.Forms.{AbstractDateChooserCompanion, AbstractDynamicFormCompanion}
 import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
 import com.simplesys.SmartClient.Grids._
+import com.simplesys.SmartClient.Layout.AbstractWindowSSCompanion
 import com.simplesys.SmartClient.Messaging.AbstractMessagingSSCompanion
 import com.simplesys.SmartClient.RPC.AbstractRPCManagerCompanion
 import com.simplesys.SmartClient.System.date.{AbstractDateCompanion, AbstractTimeCompanion}
@@ -18,6 +19,7 @@ import com.simplesys.SmartClient.Tools.editProxy.{AbstractDrawItemEditProxyCompa
 import com.simplesys.SmartClient.math.AbstractAffineTransformCompanion
 import com.simplesys.System.Types.{Callback, ID, void}
 import com.simplesys.System._
+import com.simplesys.js.components.formItems.AbstractTimerItemCompanion
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSBracketAccess, JSName}
@@ -98,6 +100,7 @@ object isc extends JSObject {
     val RPCManager: AbstractRPCManagerCompanion = js.native
     val DataSourceSS: AbstractDataSourceSSCompanion = js.native
     val DateTimeItem: AbstractDateTimeItemCompanion = js.native
+    val WindowSS: AbstractWindowSSCompanion = js.native
     val Date: AbstractDateCompanion = js.native
     val DateUtil: AbstractDateUtilCompanion = js.native
     val DynamicForm: AbstractDynamicFormCompanion = js.native

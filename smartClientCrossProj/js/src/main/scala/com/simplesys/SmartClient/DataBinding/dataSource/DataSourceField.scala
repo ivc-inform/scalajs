@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.DataBinding.dataSource
 
-import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Forms.formsItems.FormItem
 import com.simplesys.SmartClient.Forms.Validator
 import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.DateDisplayFormat.DateDisplayFormat

@@ -4,7 +4,7 @@ import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
-import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Forms.formsItems.FormItem
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord, MasterDetailMapping}
 import com.simplesys.SmartClient.Layout.{AbstractVLayoutSSCompanion, VLayoutSS}
 import com.simplesys.SmartClient.System.IscArray

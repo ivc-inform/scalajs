@@ -3,8 +3,8 @@ package com.simplesys.SmartClient.App.formItems.props
 import com.simplesys.SmartClient.App.formItems.LookupTreeGridEditorItem
 import com.simplesys.SmartClient.Control.props.IButtonSSProps
 import com.simplesys.SmartClient.Forms.DynamicFormSS
-import com.simplesys.SmartClient.Forms.FormsItems.props.{CanvasItemProps, TextItemSSProps}
-import com.simplesys.SmartClient.Forms.FormsItems.{CanvasItem, TextItem}
+import com.simplesys.SmartClient.Forms.formsItems.props.{CanvasItemProps, TextItemSSProps}
+import com.simplesys.SmartClient.Forms.formsItems.{CanvasItem, TextItem}
 import com.simplesys.SmartClient.Forms.props.DynamicFormSSProps
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord

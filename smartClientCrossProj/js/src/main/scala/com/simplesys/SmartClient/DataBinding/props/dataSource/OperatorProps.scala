@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.DataBinding.props.dataSource
 
 import com.simplesys.SmartClient.DataBinding.Criterion
 import com.simplesys.SmartClient.DataBinding.dataSource.Operator
-import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Forms.formsItems.FormItem
 import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.JSAny
 import com.simplesys.System.Types.FieldType.FieldType

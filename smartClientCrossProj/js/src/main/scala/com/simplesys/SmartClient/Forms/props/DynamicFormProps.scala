@@ -2,7 +2,7 @@ package com.simplesys.SmartClient.Forms.props
 
 import com.simplesys.SmartClient.DataBinding.props.DataBoundComponentProps
 import com.simplesys.SmartClient.Forms.DynamicForm
-import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Forms.formsItems.FormItem
 import com.simplesys.SmartClient.Foundation.props.CanvasProps
 import com.simplesys.SmartClient.System.KeyIdentifier
 import com.simplesys.SmartClient.Workdlow.UserTask

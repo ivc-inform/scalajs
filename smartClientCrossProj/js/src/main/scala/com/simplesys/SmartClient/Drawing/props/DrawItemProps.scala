@@ -42,6 +42,8 @@ class DrawItemProps extends ClassProps {
             //isc debugTrap title
 
             var titleLabel = thiz.titleLabel
+            //thiz.updateFont()
+
             val showTitleLabelBackground: Boolean = thiz.showTitleLabelBackground
             var titleLabelBackground = thiz.titleLabelBackground
             val drawPane = thiz.drawPane
