@@ -1,9 +1,8 @@
 package com.simplesys.SmartClient.Messaging
 
 import com.simplesys.SmartClient.System.{AbstractClassCompanion, IscArray}
-import com.simplesys.System._
 import com.simplesys.System.Types.void
-import com.simplesys.messages.Message
+import com.simplesys.System._
 
 import scala.scalajs.js
 import scala.scalajs.js.|

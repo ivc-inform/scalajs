@@ -1,6 +1,5 @@
 package com.simplesys.SmartClient.Forms.formsItems.props
 
-import com.simplesys.SmartClient.Drawing.DrawItem
 import com.simplesys.SmartClient.Forms.DynamicFormSS
 import com.simplesys.SmartClient.Forms.formsItems.{FontItem, FormItem}
 import com.simplesys.SmartClient.Forms.props.DynamicFormSSProps
@@ -8,7 +7,6 @@ import com.simplesys.SmartClient.System._
 import com.simplesys.System.Types.{CSSColor, FormItemComponentType}
 import com.simplesys.System._
 import com.simplesys.function._
-import com.simplesys.js.components.PropertyEditorDynamicForm
 import com.simplesys.option.DoubleType._
 import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
@@ -97,25 +95,6 @@ class FontItemProps extends FormItemWithButtonsProps {
                     }
                 ).undef
     }.toThisFunc.opt
-
-    changed = {
-        import com.simplesys.SmartClient.Drawing.drawItem.DrawLabel
-        (form: PropertyEditorDynamicForm, formItem: FontItem, value: DrawLabel) ⇒
-
-            form.setPropertyOnSelection("titleLabelProperties", value)
-
-            //isc debugTrap(form, form.getDrawItem(), formItem, value)
-            form.getDrawItem().foreach {
-                drawItem ⇒
-
-                    val _drawItem = drawItem.liveObject.asInstanceOf[DrawItem]
-                    _drawItem.titleLabel.foreach(item ⇒ _drawItem.titleLabel = isc.addProperties(item, _drawItem.titleLabelProperties))
-
-                    _drawItem.moveBy(1, 0)
-                    _drawItem.moveBy(-1, 0)
-            }
-
-    }.toFunc.opt
 
     var fontFamily: ScOption[String] = ScNone
     var fontSize: ScOption[Int] = ScNone

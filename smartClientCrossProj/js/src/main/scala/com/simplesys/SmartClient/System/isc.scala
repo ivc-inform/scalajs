@@ -13,13 +13,12 @@ import com.simplesys.SmartClient.Layout.AbstractWindowSSCompanion
 import com.simplesys.SmartClient.Messaging.AbstractMessagingSSCompanion
 import com.simplesys.SmartClient.RPC.AbstractRPCManagerCompanion
 import com.simplesys.SmartClient.System.date.{AbstractDateCompanion, AbstractTimeCompanion}
-import com.simplesys.SmartClient.System.{ListGrid ⇒ _, ListGridEditor ⇒ _, _}
+import com.simplesys.SmartClient.System.{ListGrid ⇒ _, ListGridEditor ⇒ _}
 import com.simplesys.SmartClient.Tools.EditContextCompanion
 import com.simplesys.SmartClient.Tools.editProxy.{AbstractDrawItemEditProxyCompanion, AbstractDrawPaneEditProxyCompanion}
 import com.simplesys.SmartClient.math.AbstractAffineTransformCompanion
 import com.simplesys.System.Types.{Callback, ID, void}
 import com.simplesys.System._
-import com.simplesys.js.components.formItems.AbstractTimerItemCompanion
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSBracketAccess, JSName}
@@ -87,7 +86,6 @@ object isc extends JSObject {
     val ClassFactory: ClassFactoryTrt = js.native
     val DrawItem: AbstractDrawItemCompanion = js.native
     val DataSource: AbstractDataSourceCompanion = js.native
-    val TimerItem: AbstractTimerItemCompanion = js.native
     val Time: AbstractTimeCompanion = js.native
     val Timer: AbstractTimerCompanion = js.native
     val DrawLine: AbstractDrawLineCompanion = js.native

@@ -83,14 +83,6 @@ class GradientItemProps extends FormItemWithButtonsProps {
                 ).undef
     }.toThisFunc.opt
 
-    changed = {
-        import com.simplesys.SmartClient.Drawing.gradient.SimpleGradient
-        (form: PropertyEditorDynamicForm, formItem: GradientItem, value: SimpleGradient) ⇒
-            //isc debugTrap(form, value)
-            form.setPropertyOnSelection("fillGradient", value)
-
-    }.toFunc.opt
-
     var startColor: ScOption[CSSColor] = ScNone
     var endColor: ScOption[CSSColor] = ScNone
     var direction: ScOption[Double] = ScNone
