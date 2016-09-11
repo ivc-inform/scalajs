@@ -14,7 +14,6 @@ import com.simplesys.SmartClient.System._
 import com.simplesys.SmartClient.System.date.props.DateProps
 import com.simplesys.SmartClient.Tools.editProxy.props.DrawItemEditProxyProps
 import com.simplesys.System.Types.DateDisplayFormat
-import com.simplesys.app.{DrawItemTile, EditContextSS, FormItemList}
 import com.simplesys.option.ScOption._
 
 import scala.scalajs.js.annotation.JSExport
@@ -49,7 +48,6 @@ class PrepareJSCode extends StaticJSCode {
         isc.defineClass(EditContextSS.getClass.getSimpleName, EditContext.getClass.getSimpleName)
         isc.defineClass(SectionStackSS.getClass.getSimpleName, SectionStack.getClass.getSimpleName)
         isc.defineClass(FormItemWithButtons.getClass.getSimpleName, CanvasItem.getClass.getSimpleName)
-        isc.defineClass(FormItemList.getClass.getSimpleName, FormItemWithButtons.getClass.getSimpleName)
         isc.defineClass(GradientItem.getClass.getSimpleName, FormItemWithButtons.getClass.getSimpleName)
         isc.defineClass(ShadowItem.getClass.getSimpleName, FormItemWithButtons.getClass.getSimpleName)
         isc.defineClass(FontItem.getClass.getSimpleName, FormItemWithButtons.getClass.getSimpleName)

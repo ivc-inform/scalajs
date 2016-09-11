@@ -30,9 +30,9 @@ import com.simplesys.SmartClient.Grids._
 import com.simplesys.SmartClient.Grids.listGrid.ListGridField
 import com.simplesys.SmartClient.Grids.props._
 import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
-import com.simplesys.SmartClient.Grids.props.tileGrid.SimpleTileProps
+import com.simplesys.SmartClient.Grids.props.tileGrid.{DrawItemTileProps, SimpleTileProps}
 import com.simplesys.SmartClient.Grids.props.treeGrid.TreeGridFieldProps
-import com.simplesys.SmartClient.Grids.tileGrid.SimpleTile
+import com.simplesys.SmartClient.Grids.tileGrid.{DrawItemTile, SimpleTile}
 import com.simplesys.SmartClient.Grids.treeGrid.{Tree, TreeGridField}
 import com.simplesys.SmartClient.Layout._
 import com.simplesys.SmartClient.Layout.props._
@@ -51,7 +51,7 @@ import com.simplesys.SmartClient.Tools.palette._
 import com.simplesys.SmartClient.Tools.palette.props._
 import com.simplesys.SmartClient.Tools.props._
 import com.simplesys.SmartClient.Tools.props.editProxy.DrawPaneEditProxyProps
-import com.simplesys.SmartClient.Tools.{EditContext, EditProxy, PaletteNode}
+import com.simplesys.SmartClient.Tools.{EditContext, EditContextSS, EditProxy, PaletteNode}
 
 
 //Должны быть
@@ -60,6 +60,7 @@ import com.simplesys.macros.PropsToDictionary
 //
 
 package object System {
+
 
     type Point = IscArray[Double]
     type Rectangle = IscArray[Point]
@@ -218,6 +219,17 @@ package object System {
     object Shadow extends SCApply4Object[Shadow, ShadowProps]
     object SortSpecifier extends SCApply4Object[SortSpecifier, SortSpecifierProps]
     object RequestParams extends SCApply4Object[RequestParams, RequestParamsProps]
+    object DrawItemTile extends SCApply[DrawItemTile, DrawItemTileProps]
+    object EditContextSS extends SCApply[EditContextSS, EditContextSSProps]
+
+    object DrawGroupDefaults extends SCApply4Object[DrawGroupDefaults, DrawGroupDefaultsProps]
+    object DrawRectDefaults extends SCApply4Object[DrawRectDefaults, DrawRectDefaultsProps]
+    object DrawLineDefaults extends SCApply4Object[DrawLineDefaults, DrawLineDefaultsProps]
+    object DrawPathDefaults extends SCApply4Object[DrawPathDefaults, DrawPathDefaultsProps]
+    object DrawLinePathDefaults extends SCApply4Object[DrawLinePathDefaults, DrawLinePathDefaultsProps]
+    object DrawOvalDefaults extends SCApply4Object[DrawOvalDefaults, DrawOvalDefaultsProps]
+    object DrawPaneDefaults extends SCApply4Object[DrawPaneDefaults, DrawPaneDefaultsProps]
+    object DrawCurveDefaults extends SCApply4Object[DrawCurveDefaults, DrawCurveDefaultsProps]
 
     object RibbonBar extends SCApply[RibbonBar, RibbonBarProps]
     object RibbonGroup extends SCApply[RibbonGroup, RibbonGroupProps]

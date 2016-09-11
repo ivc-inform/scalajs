@@ -15,6 +15,7 @@ import scala.scalajs.js.{ThisFunction0, ThisFunction2, |}
 
 @js.native
 trait DrawItemDefaults extends JSObject {
+
     var title: String
     var keepInParentRect: Boolean
     var lineWidth: Int
@@ -39,6 +40,7 @@ trait DrawGroupDefaults extends DrawItemDefaults {
 
 @js.native
 trait DrawRectDefaults extends DrawItemDefaults {
+
     var top: Int
     var left: Int
     var width: Int
@@ -90,6 +92,7 @@ trait DrawLinePathDefaults extends DrawItemDefaults {
 
 @js.native
 trait DrawOvalDefaults extends DrawItemDefaults {
+
     var top: Int
     var left: Int
     var width: Int
@@ -100,6 +103,7 @@ trait DrawOvalDefaults extends DrawItemDefaults {
 
 @js.native
 trait DrawDiamondDefaults extends DrawItemDefaults {
+
     var top: Int
     var left: Int
     var width: Int
@@ -110,6 +114,7 @@ trait DrawDiamondDefaults extends DrawItemDefaults {
 
 @js.native
 trait DrawTriangleDefaults extends DrawItemDefaults {
+
     var points: IscArray[Point]
     var fillGradient: SimpleGradient
     var shadow: Shadow
@@ -117,6 +122,7 @@ trait DrawTriangleDefaults extends DrawItemDefaults {
 
 @js.native
 trait DrawLabelDefaults extends DrawItemDefaults {
+
     var top: Int
     var left: Int
     var contents: String
@@ -135,8 +141,6 @@ trait DrawPaneDefaults extends DrawItemDefaults {
 
 @ScalaJSDefined
 trait PropEditorLiveObject extends JSObject {
-
-    import com.simplesys.js.components.TimerU
 
     var ID: JSUndefined[String]
     var serializeID: JSUndefined[String]
@@ -162,5 +166,5 @@ trait PropEditorLiveObject extends JSObject {
     val listRefs: JSUndefined[JSObject]
     val titleLabelProperties: JSUndefined[DrawLabel]
     val messageSMS: JSUndefined[String]
-    val timerProps: JSUndefined[TimerU]
+    val timerProps: JSUndefined[JSObject]
 }
