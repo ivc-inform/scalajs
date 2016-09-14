@@ -7,7 +7,6 @@ import scala.scalajs.js._
 
 package object System {
     type JSAny = js.Any
-    type JSAnyPlus <: js.Any
     type JSFunction = js.Function
     type JSDynamic = js.Dynamic
     type JSObject = js.Object
@@ -29,14 +28,14 @@ package object System {
         })
     }
 
-
-    implicit class UndefinedOpts[T](x: js.UndefOr[T]) {
-        def opt: ScOption[T] = if (x.isDefined) ScSome(x.get) else ScNone
-        def optAny: ScOption[JSAny] = if (x.isDefined) ScSome(x.get.asInstanceOf[JSAny]) else ScNone
-        def opt(defValue:T): ScOption[T] = if (x.isDefined) ScSome(x.get) else ScSome(defValue)
+    implicit class UndefinedOpts[T](value: JSUndefined[T]) {
+        def opt: ScOption[T] = if (value.isDefined) ScSome(value.get) else ScNone
+        def optAny: ScOption[JSAny] = if (value.isDefined) ScSome(value.get.asInstanceOf[JSAny]) else ScNone
+        def opt(defValue: T): ScOption[T] = if (value.isDefined) ScSome(value.get) else ScSome(defValue)
+        def undefAny: JSUndefined[JSAny] = if (value.isEmpty) jSUndefined else value.get.asInstanceOf[JSAny].undef
     }
 
     implicit class anyToUndef[T](x: T) {
-           def undef: js.UndefOr[T] = x.asInstanceOf[js.UndefOr[T]]
-       }
+        def undef: JSUndefined[T] = x.asInstanceOf[JSUndefined[T]]
+    }
 }
