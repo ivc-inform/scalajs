@@ -261,7 +261,7 @@ class DrawLinePathSSProps extends DrawPathProps with DrawLineCommons {
                                                     y = v.getY().get.opt
                                                     click = {
                                                         (thiz: DrawKnob) =>
-                                                            if (isc.EventHandler.ctrlKeyDown())
+                                                            if (isc.EventHandler.shiftKeyDown())
                                                                 topThiz removeControlPointKnob thiz
                                                             false
                                                     }.toThisFunc.opt

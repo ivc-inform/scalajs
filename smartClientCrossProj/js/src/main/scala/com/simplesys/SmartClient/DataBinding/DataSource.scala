@@ -63,6 +63,7 @@ trait DataSource extends Class {
     val cacheAllData: Boolean
     val cacheAllOperationId: String
     val cacheData: IscArray[Record]
+    val cacheData1: IscArray[Record]
     val cacheMaxAge: Int
     val callbackParam: String
     val canMultiSort: Boolean
@@ -116,6 +117,7 @@ trait DataSource extends Class {
     def filterData(criteria: Criteria = js.native, requestProperties: DSRequest = js.native, callback: DSCallback = js.native): void
     def getAutoTitle(identifier: ID): String
     def getCacheData(): IscArray[Record]
+    def getCacheData1(): IscArray[Record]
     def getClientOnlyDataSource(criteria: Criteria, callback: ClientOnlyDataSourceCallback, requestProperties: DSRequest = js.native, dataSourceProperties: DataSource = js.native): void
     def getClientOnlyResponse(request: DSRequest, serverData: IscArray[Record]): DSResponse
     def getDataProtocol(dsRequest: DSRequest): DSProtocol

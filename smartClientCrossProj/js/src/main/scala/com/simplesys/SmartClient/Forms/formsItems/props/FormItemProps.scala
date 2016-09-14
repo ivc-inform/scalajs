@@ -22,6 +22,7 @@ import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types.{SCImgURL, _}
 import com.simplesys.System._
 import com.simplesys.option.DoubleType._
+import com.simplesys.option.ScOption._
 import com.simplesys.option.{FormItemType_FormItemComponentType, IntString, ScNone, ScOption}
 
 import scala.scalajs.js
@@ -49,7 +50,7 @@ class FormItemProps extends ClassProps {
     var cellHeight: ScOption[Int] = ScNone
     var cellStyle: ScOption[FormItemBaseStyle] = ScNone
     var change: ScOption[js.Function4[DynamicFormSS, FormItem, JSAny, _ <: JSAny, Boolean]] = ScNone
-    var changed: ScOption[js.Function3[ _ <: DynamicForm, _ <: FormItem, _ <: JSAny, _]] = ScNone
+    var changed: ScOption[js.Function3[_ <: DynamicForm, _ <: FormItem, _ <: JSAny, _]] = ScNone
     var changeOnKeypress: ScOption[Boolean] = ScNone
     var clearValue: ScOption[ThisFunction0[classHandler, _]] = ScNone
     var click: ScOption[js.Function2[DynamicFormSS, FormItem, Boolean]] = ScNone
@@ -90,7 +91,7 @@ class FormItemProps extends ClassProps {
     var format: ScOption[FormatString] = ScNone
     var formatEditorValue: ScOption[js.Function4[JSAny, ListGridRecord, DynamicFormSS, FormItem, String]] = ScNone
     var formatValue: ScOption[js.Function4[JSAny, ListGridRecord, DynamicFormSS, FormItem, String]] = ScNone
-    var getValue : ScOption[ThisFunction0[classHandler, JSUndefined[JSAny]]] = ScNone
+    var getValue: ScOption[ThisFunction0[classHandler, JSUndefined[JSAny]]] = ScNone
     var globalTabIndex: ScOption[Int] = ScNone
     var height: ScOption[IntString[Int, String]] = ScNone
     var hidden: ScOption[Boolean] = ScNone
@@ -211,8 +212,8 @@ class FormItemProps extends ClassProps {
     var top: ScOption[Int] = ScNone
     var transformInput: ScOption[js.Function4[DynamicFormSS, FormItem, JSAny, JSAny, JSAny]] = ScNone
     var useDisabledHintStyleForReadOnly: ScOption[Boolean] = ScNone
-    var validateOnChange: ScOption[Boolean] = ScNone
-    var validateOnExit: ScOption[Boolean] = ScNone
+    var validateOnChange: ScOption[Boolean] = true.opt
+    var validateOnExit: ScOption[Boolean] = true.opt
     var validators: ScOption[Seq[Validator]] = ScNone
     var validOperators: ScOption[Seq[OperatorId]] = ScNone
     var vAlign: ScOption[VerticalAlignment] = ScNone

@@ -102,6 +102,7 @@ package object System {
     object DynamicForm extends SCApply[DynamicForm, DynamicFormProps]
     object DynamicFormSS extends SCApply[DynamicFormSS, DynamicFormSSProps]
     object FilterBuilder extends SCApply[FilterBuilder, FilterBuilderProps]
+    object FilterBuilderSS extends SCApply[FilterBuilderSS, FilterBuilderSSProps]
     //</editor-fold>
 
     //<editor-fold desc="FormsItems">

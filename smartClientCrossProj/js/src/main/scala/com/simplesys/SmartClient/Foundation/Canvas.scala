@@ -276,7 +276,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var layoutAlign: Alignment | VerticalAlignment
     def layoutChildren(reason: String): void
     val leavePageSpace: Int
-    val left: String | Int
+    var left:  Int
     def linkHTML(href: String, text: HTMLString = js.native, target: String = js.native, ID: String = js.native, tabIndex: Int = js.native, accessKey: String = js.native): HTMLString
     var locateChildrenBy: LocatorStrategy
     var locateChildrenType: LocatorTypeStrategy
@@ -444,7 +444,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     var styleName: CSSStyleName
     var tabSet: JSUndefined[TabSetSS]
     var tabIndex: Int
-    val top: Int | String
+    val top: Int
     val topElement: Canvas
     val unserialize: JSUndefined[Boolean]
     val updateEditNode: JSUndefined[js.Function2[EditContext, EditNode, _]]

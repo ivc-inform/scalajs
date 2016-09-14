@@ -1,13 +1,17 @@
 package com.simplesys.SmartClient.Forms.props
 
 import com.simplesys.SmartClient.DataBinding.AdvancedCriteria
+import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
+import com.simplesys.SmartClient.Forms.Validator
 import com.simplesys.SmartClient.RPC.ServerObject
 import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.System.JSObject
+import com.simplesys.System.Types.Record
 import com.simplesys.System.Types.ValidatorType._
 import com.simplesys.option.{ScNone, ScOption}
 
+import scala.scalajs.js
 import scala.scalajs.js._
 
 class ValidatorProps extends ClassProps {
@@ -15,6 +19,7 @@ class ValidatorProps extends ClassProps {
     import com.simplesys.System.JSAny
 
     var applyWhen: ScOption[AdvancedCriteria] = ScNone
+    var condition : ScOption[Function4[DataSourceField, Validator, _ <: JSAny, _ <: Record, Boolean]] = ScNone
     var dependentFields: ScOption[IscArray[String]] = ScNone
     var serverOnly: ScOption[Boolean] = ScNone
     var stopOnError: ScOption[Boolean] = ScNone

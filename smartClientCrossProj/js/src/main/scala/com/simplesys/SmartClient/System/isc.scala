@@ -39,6 +39,7 @@ object isc extends JSObject {
     def askForValue(message: String, callback: js.Function1[JSAny, _] = js.native, properties: Dialog = js.native): void = js.native
     def clearPrompt(): void = js.native
     def clone[T](obj: T): T = js.native
+    def shallowClone[T](obj: T): T = js.native
     def confirm(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
     def defineClass[T <: Class](className: String, superClass: String): T = js.native
     def dismissCurrentDialog(): void = js.native
