@@ -9,12 +9,9 @@ import com.simplesys.System.Types.HoopSelectionStyle.HoopSelectionStyle
 import com.simplesys.System.Types.SelectedAppearance.SelectedAppearance
 import com.simplesys.System.Types.{CSSColor, HTMLString, void}
 import com.simplesys.System._
-import com.simplesys.option.{ScNone, ScOption}
 
-import scala.collection.mutable.ArrayBuffer
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
-import scala.scalajs.js.dom.experimental.JSIterable
 import scala.scalajs.js.|
 
 @js.native

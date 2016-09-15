@@ -40,6 +40,7 @@ trait DrawItemDefaults extends JSObject {
     val startArrow: JSUndefined[String]
     val titleRotationMode: JSUndefined[String]
     var title: JSUndefined[String]
+    var description: JSUndefined[String]
     val rounding: JSUndefined[Double]
     val keepInParentRect: JSUndefined[Boolean]
     val multiline: JSUndefined[Boolean]

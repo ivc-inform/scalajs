@@ -1,7 +1,6 @@
 package com.simplesys.SmartClient.Layout.props
 
 import com.simplesys.SmartClient.Layout.OkCancelPanel
-import com.simplesys.SmartClient.System.isc
 import com.simplesys.System.Types.HTMLString
 import com.simplesys.function._
 import com.simplesys.option.DoubleType._
