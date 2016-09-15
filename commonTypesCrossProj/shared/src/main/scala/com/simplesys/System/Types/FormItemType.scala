@@ -71,6 +71,7 @@ object FormItemComponentType extends Enumeration {
     FormItemWithButtons,
     FormItemList,
     GradientItem,
+    GroupItem,
     ShadowItem,
     FontItem,
     ComboboxItemWithClearButton,
