@@ -14,6 +14,7 @@ trait DrawPath extends DrawItem {
     def setPoints(points: IscArray[Point], cx0: JSUndefined[Double] = js.native, cy0: JSUndefined[Double] = js.native): void
 }
 
+@js.native
 abstract trait AbstractDrawPathCompanion extends AbstractDrawItemCompanion
 
 
