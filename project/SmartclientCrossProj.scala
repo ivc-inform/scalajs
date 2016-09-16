@@ -15,7 +15,7 @@ trait SmartClientCrossProj {
               Seq(
                   CommonDeps.xmlExtender.value,
                   CommonDeps.scalaIOExtender.value,
-                  CommonDeps.scalaTest.value/*,
+                  CommonDeps.scalaTest.value % "test"/*,
                   CommonDeps.uTest.value*/
               )
           },
