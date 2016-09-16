@@ -14,9 +14,8 @@ trait SmartClientCrossProj {
           libraryDependencies ++= {
               Seq(
                   CommonDeps.xmlExtender.value,
-                  CommonDeps.scalaIOExtender.value,
-                  CommonDeps.scalaTest.value % "test"/*,
-                  CommonDeps.uTest.value*/
+                  CommonDeps.scalaIOExtender.value
+                  /*CommonDeps.uTest.value*/
               )
           },
           testFrameworks += new TestFramework("utest.runner.Framework"),
