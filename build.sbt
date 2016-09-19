@@ -1,4 +1,4 @@
-name := "SimpleSys"
+name := "scalajs"
 
 publish := ()
 
