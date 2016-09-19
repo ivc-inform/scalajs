@@ -1,6 +1,6 @@
 package com.simplesys.SmartClient.Forms.formsItems.props
 
-import com.simplesys.SmartClient.Drawing.Point
+import com.simplesys.SmartClient.Drawing.{Point, Shadow}
 import com.simplesys.SmartClient.Forms.DynamicFormSS
 import com.simplesys.SmartClient.Forms.formsItems.{FormItem, PointItem}
 import com.simplesys.SmartClient.Forms.props.DynamicFormSSProps
@@ -12,6 +12,9 @@ import com.simplesys.function._
 import com.simplesys.option.DoubleType._
 import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
+
+import scala.scalajs.js
+import scala.scalajs.js.ThisFunction0
 
 class PointItemProps extends CanvasItemProps {
     type classHandler <: PointItem
@@ -45,6 +48,11 @@ class PointItemProps extends CanvasItemProps {
             }
     }.toThisFunc.opt
 
+    var checkPointUndefined: ScOption[ThisFunction0[classHandler, _]] = {
+        (thiz: classHandler) ⇒
+            if (thiz.point.isEmpty || (thiz.point.isDefined && thiz.point == null)) thiz.point = js.Object().asInstanceOf[Point]
+    }.toThisFunc.opt
+
     createCanvas = {
         (thisTop: classHandler, form: DynamicFormSS, item: PointItem) =>
             thisTop.innerForm = DynamicFormSS.create(
@@ -67,8 +75,9 @@ class PointItemProps extends CanvasItemProps {
                                 step = item.step.opt
                                 changed = {
                                     (form: DynamicFormSS, formItem: FormItem, value: Double) ⇒
-                                        thisTop.x.foreach(_ ⇒ thisTop.x = value)
-                                        thisTop.point = Point(thisTop.x.get, thisTop.y.get)
+                                        thisTop.x = value
+                                        thisTop.checkPointUndefined()
+                                        thisTop.point = Point(thisTop.x.get, thisTop.y.getOrElse(0))
                                         thisTop.changed.foreach(_ (form, formItem, thisTop.getValue()))
 
                                 }.toFunc.opt
@@ -86,8 +95,9 @@ class PointItemProps extends CanvasItemProps {
                                 step = item.step.opt
                                 changed = {
                                     (form: DynamicFormSS, formItem: FormItem, value: Double) ⇒
-                                        thisTop.x.foreach(_ ⇒ thisTop.y = value)
-                                        thisTop.point = Point(thisTop.x.get, thisTop.y.get)
+                                        thisTop.y = value
+                                        thisTop.checkPointUndefined()
+                                        thisTop.point = Point(thisTop.x.getOrElse(0), thisTop.y.get)
                                         thisTop.changed.foreach(_ (form, formItem, thisTop.getValue()))
                                 }.toFunc.opt
                             }
@@ -111,7 +121,7 @@ class PointItemProps extends CanvasItemProps {
                                 val _value = value.asInstanceOf[Point]
 
                                 innerForm.setValue("x", _value.getX())
-                                innerForm.setValue("y", _value.getX())
+                                innerForm.setValue("y", _value.getY())
 
                                 thiz.x = _value.getX()
                                 thiz.y = _value.getY()
@@ -127,7 +137,7 @@ class PointItemProps extends CanvasItemProps {
             if (thiz.x.isEmpty && thiz.y.isEmpty && thiz.point.isEmpty)
                 jSUndefined
             else
-                Point(thiz.x.get, thiz.y.get).undef
+                Point(thiz.x.getOrElse(0), thiz.y.getOrElse(0)).undef
     }.toThisFunc.opt
 
     init = {

@@ -54,6 +54,7 @@ class PrepareJSCode extends StaticJSCode {
         isc.defineClass(PointItem.getClass.getSimpleName, CanvasItem.getClass.getSimpleName)
         isc.defineClass(DurationItem.getClass.getSimpleName, CanvasItem.getClass.getSimpleName)
         isc.defineClass(CancelButton.getClass.getSimpleName, IButtonSS.getClass.getSimpleName)
+        isc.defineClass(FilterBuilderSS.getClass.getSimpleName, FilterBuilder.getClass.getSimpleName)
 
         isc.defineClass(WindowProgressDialog.getClass.getSimpleName, WindowSS.getClass.getSimpleName)
 

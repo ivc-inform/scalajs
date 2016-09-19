@@ -57,6 +57,4 @@ abstract trait AbstractValidatorCompanion extends AbstractClassCompanion {
     val requiredField: String = js.native
 }
 
-@js.native
-   object Validator extends AbstractValidatorCompanion
 

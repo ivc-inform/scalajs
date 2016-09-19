@@ -3,8 +3,7 @@ package com.simplesys.SmartClient.Tools
 import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Drawing.DrawItem
 import com.simplesys.System.Types.{SCClassName, SCImgURL}
-import com.simplesys.System.{JSDictionaryAny, JSObject, JSUndefined}
-import com.simplesys.SmartClient.System.Class
+import com.simplesys.System.{JSObject, JSUndefined}
 
 import scala.scalajs.js
 

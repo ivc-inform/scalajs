@@ -106,6 +106,7 @@ class DataSourceProps extends ClassProps {
     var cacheAllData: ScOption[Boolean] = ScNone
     var cacheAllOperationId: ScOption[String] = ScNone
     var cacheData: ScOption[Seq[Record]] = ScNone
+    var cacheData1: ScOption[Seq[Record]] = ScNone
     var cacheMaxAge: ScOption[Int] = ScNone
     var callbackParam: ScOption[String] = ScNone
     var canMultiSort: ScOption[Boolean] = ScNone

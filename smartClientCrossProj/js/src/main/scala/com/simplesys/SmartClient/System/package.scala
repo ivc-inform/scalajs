@@ -102,6 +102,7 @@ package object System {
     object DynamicForm extends SCApply[DynamicForm, DynamicFormProps]
     object DynamicFormSS extends SCApply[DynamicFormSS, DynamicFormSSProps]
     object FilterBuilder extends SCApply[FilterBuilder, FilterBuilderProps]
+    object FilterBuilderSS extends SCApply[FilterBuilderSS, FilterBuilderSSProps]
     //</editor-fold>
 
     //<editor-fold desc="FormsItems">
@@ -186,6 +187,7 @@ package object System {
     object SectionStack extends SCApply[SectionStack, SectionStackProps]
     object SectionStackSS extends SCApply[SectionStackSS, SectionStackSSProps]
     object LayoutSpacer extends SCApply[LayoutSpacer, LayoutSpacerProps]
+    object RichTextEditor extends SCApply[RichTextEditor, RichTextEditorProps]
     //</editor-fold>
 
     //<editor-fold desc="drawing">

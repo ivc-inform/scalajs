@@ -80,11 +80,12 @@ class DurationItemProps extends CanvasItemProps {
                     override val mins: JSUndefined[Int] = thiz.mins
                     override val days: JSUndefined[Int] = thiz.days
                     override val secs: JSUndefined[Int] = thiz.secs
-                }).undef
+                }).asInstanceOf[JSAny].undef
     }.toThisFunc.opt
 
     createCanvas = {
         (thisTop: classHandler, form: DynamicFormSS, item: DurationItem) =>
+
             thisTop.innerForm =
               DynamicFormSS.create(
                   new DynamicFormSSProps {

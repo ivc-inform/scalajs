@@ -23,6 +23,7 @@ trait PointItem extends CanvasItem {
 
     var step: JSUndefined[Double]
     var titleGroup: JSUndefined[HTMLString]
+    def checkPointUndefined(): void
 }
 
 @js.native

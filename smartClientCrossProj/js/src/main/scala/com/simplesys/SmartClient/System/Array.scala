@@ -24,7 +24,7 @@ trait Rect1 extends Rect {
 @js.native
 @JSName("Array")
 trait IscArray[A] extends IscList[A] {
-    def addAt(`object`: JSAny, pos: Int): this.type
+    def addAt(`object`: JSAny, pos: Int = js.native): this.type
     def and(start: Int, end: Int): Boolean
     def clearProperty(property: String): Boolean
     def containsProperty(property: String, value: JSObject = js.native): Boolean
