@@ -45,4 +45,5 @@ trait DrawLinePathSS extends DrawPath {
     def setStartPoint(left: Double, top: Double): void
 }
 
+@js.native
 abstract trait AbstractDrawLinePathSSCompanion extends AbstractDrawPathCompanion

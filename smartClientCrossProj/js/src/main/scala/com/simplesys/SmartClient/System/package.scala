@@ -107,6 +107,7 @@ package object System {
 
     //<editor-fold desc="FormsItems">
     object FormItem extends SCApply4Object[FormItem, FormItemProps]
+    object ComboBoxItem extends SCApply4Object[ComboBoxItem, ComboBoxItemProps]
     object CanvasItem extends SCApply4Object[CanvasItem, CanvasItemProps]
     object CheckboxItem extends SCApply4Object[CheckboxItem, CheckboxItemProps]
     object ColorItem extends SCApply4Object[ColorItem, ColorItemProps]
