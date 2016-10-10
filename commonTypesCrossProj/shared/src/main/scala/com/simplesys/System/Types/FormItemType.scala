@@ -9,6 +9,7 @@ object FormItemType extends Enumeration {
 
 object FormItemComponentType extends Enumeration {
     type FormItemComponentType = Value
+
     val AutoFitTextAreaItem,
     BlurbItem,
     BooleanItem,
@@ -25,6 +26,7 @@ object FormItemComponentType extends Enumeration {
     DateRangeItem,
     DateTimeItemSS,
     DateTimeItem,
+    DrawKnob,
     DoubleItem,
     FileItem,
     FloatItem,
