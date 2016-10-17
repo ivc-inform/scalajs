@@ -10,7 +10,6 @@ import com.simplesys.SmartClient.System.{Tab, TabSetSS, isc}
 import com.simplesys.System.Types.ID
 import com.simplesys.System.{JSUndefined, jSUndefined}
 import com.simplesys.function._
-import com.simplesys.js.components.WebTabSetApp
 import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
 
