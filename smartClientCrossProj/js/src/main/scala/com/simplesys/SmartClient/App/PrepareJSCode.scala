@@ -1,11 +1,12 @@
 package com.simplesys.SmartClient.App
 
+import com.simplesys.SmartClient.App.props.{CommonListGridEditorComponentProps, CommonTreeListGridEditorComponentProps}
 import com.simplesys.SmartClient.DataBinding.props.DataSourceProps
 import com.simplesys.SmartClient.Drawing.drawItem.DrawLinePathSS
 import com.simplesys.SmartClient.Drawing.drawItem.props.{DrawLinePathSSProps, DrawLineProps, DrawRectProps}
 import com.simplesys.SmartClient.Drawing.props.{DrawItemProps, DrawPaneProps}
 import com.simplesys.SmartClient.Forms.formsItems.PickList
-import com.simplesys.SmartClient.Forms.formsItems.props.{DateTimeItemProps, FormItemProps, PickListProps}
+import com.simplesys.SmartClient.Forms.formsItems.props.{DateTimeItemProps, FormItemProps, FormItemWithButtonsProps, PickListProps}
 import com.simplesys.SmartClient.Forms.props.DateChooserProps
 import com.simplesys.SmartClient.Grids.props.ListGridProps
 import com.simplesys.SmartClient.Layout.WindowSSDialog
@@ -22,6 +23,7 @@ import scala.scalajs.js.annotation.JSExport
 class PrepareJSCode extends StaticJSCode {
 
     @JSExport override def createJS(): Unit = {
+
         isc.WindowSS.addProperties(WindowSS(new WindowSSProps))
 
         isc.defineClass(RibbonGroupSS.getClass.getSimpleName, RibbonGroup.getClass.getSimpleName)
@@ -30,7 +32,12 @@ class PrepareJSCode extends StaticJSCode {
         isc.defineClass(ListGridContextMenuWithForm.getClass.getSimpleName, MenuSS.getClass.getSimpleName)
         isc.defineClass(TreeGridContextMenu.getClass.getSimpleName, MenuSS.getClass.getSimpleName)
         isc.defineClass(TreeListGridContextMenu.getClass.getSimpleName, MenuSS.getClass.getSimpleName)
+
         isc.defineClass(CommonListGridEditorComponent.getClass.getSimpleName, ListGridEditor.getClass.getSimpleName)
+        isc.CommonListGridEditorComponent.addClassProperties(CommonListGridEditorComponent(new CommonListGridEditorComponentProps {
+            override type classHandler = CommonListGridEditorComponent
+        }))
+
         isc.defineClass(CommonTreeGridEditorComponent.getClass.getSimpleName, TreeGridEditor.getClass.getSimpleName)
         isc.defineClass(CommonTreeListGridEditorComponent.getClass.getSimpleName, TreeListGridEditor.getClass.getSimpleName)
         isc.defineClass(LookupListGridEditorItem.getClass.getSimpleName, CanvasItem.getClass.getSimpleName)
@@ -48,7 +55,9 @@ class PrepareJSCode extends StaticJSCode {
         isc.defineClass(EditContextSS.getClass.getSimpleName, EditContext.getClass.getSimpleName)
         isc.defineClass(SectionStackSS.getClass.getSimpleName, SectionStack.getClass.getSimpleName)
         isc.defineClass(FormItemWithButtons.getClass.getSimpleName, CanvasItem.getClass.getSimpleName)
+        isc.FormItemWithButtons.addProperties(FormItemWithButtons(new FormItemWithButtonsProps))
         isc.defineClass(GradientItem.getClass.getSimpleName, FormItemWithButtons.getClass.getSimpleName)
+        isc.defineClass(ComboboxItemWithButtonsJS.getClass.getSimpleName, FormItemWithButtons.getClass.getSimpleName)
         isc.defineClass(ShadowItem.getClass.getSimpleName, FormItemWithButtons.getClass.getSimpleName)
         isc.defineClass(FontItem.getClass.getSimpleName, FormItemWithButtons.getClass.getSimpleName)
         isc.defineClass(PointItem.getClass.getSimpleName, CanvasItem.getClass.getSimpleName)
@@ -61,12 +70,14 @@ class PrepareJSCode extends StaticJSCode {
         isc.ListGrid.addProperties(ListGrid(new ListGridProps))
         isc.FormItem.addProperties(FormItem(new FormItemProps))
         isc.DrawItemEditProxy.addProperties(DrawItemEditProxy(new DrawItemEditProxyProps))
+        isc.CommonTreeListGridEditorComponent.addProperties(CommonTreeListGridEditorComponent(new CommonTreeListGridEditorComponentProps))
 
         isc.DataSource.addProperties(DataSource(new DataSourceProps))
         isc.DrawItem.addProperties(DrawItem(new DrawItemProps))
         isc.DrawLine.addProperties(DrawLine(new DrawLineProps))
         isc.DrawRect.addProperties(DrawRect(new DrawRectProps))
         isc.DrawPane.addProperties(DrawPane(new DrawPaneProps))
+
         isc.PickList.addInterfaceMethods(PickList(new PickListProps {
             override type classHandler = PickList
         }))
@@ -75,6 +86,7 @@ class PrepareJSCode extends StaticJSCode {
             isc.Date.prototype,
             Date(new DateProps)
         )
+
         isc.DateTimeItem.addProperties(
             DateTimeItem(
                 new DateTimeItemProps {

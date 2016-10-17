@@ -93,7 +93,7 @@ class FontItemProps extends FormItemWithButtonsProps {
                         lineColor = thiz.lineColor.opt
                         fontFamily = thiz.fontFamily.opt
                     }
-                ).undef
+                ).asInstanceOf[JSAny].undef
     }.toThisFunc.opt
 
     var fontFamily: ScOption[String] = ScNone
@@ -136,7 +136,7 @@ class FontItemProps extends FormItemWithButtonsProps {
                                     "Verdana",
                                     "Webdings").opt
                                 changed = {
-                                    (form: DynamicFormSS, formItem: FormItem, value: String) ⇒
+                                    (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[String]) ⇒
                                         thisTop.fontFamily = value
                                         thisTop.form.foreach(form ⇒ thisTop.changed.foreach(_ (form, thisTop, thisTop.getValue())))
 
@@ -152,7 +152,7 @@ class FontItemProps extends FormItemWithButtonsProps {
                                 max = 38.0.opt
                                 step = 1.0.opt
                                 changed = {
-                                    (form: DynamicFormSS, formItem: FormItem, value: Int) ⇒
+                                    (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[Int]) ⇒
                                         thisTop.fontSize = value
                                         thisTop.form.foreach(form ⇒ thisTop.changed.foreach(_ (form, thisTop, thisTop.getValue())))
                                 }.toFunc.opt
@@ -165,7 +165,7 @@ class FontItemProps extends FormItemWithButtonsProps {
                                 defaultValue = thisTop.fontStyle.optAny
                                 valueMap = IscArray("normal", "italic", "oblique").opt
                                 changed = {
-                                    (form: DynamicFormSS, formItem: FormItem, value: String) ⇒
+                                    (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[String]) ⇒
                                         thisTop.fontStyle = value
                                         thisTop.form.foreach(form ⇒ thisTop.changed.foreach(_ (form, thisTop, thisTop.getValue())))
                                 }.toFunc.opt
@@ -178,7 +178,7 @@ class FontItemProps extends FormItemWithButtonsProps {
                                 defaultValue = thisTop.fontWeight.optAny
                                 valueMap = IscArray("bold", "bolder", "lighter", "normal", "100", "200", "300", "400", "500", "600", "700", "800", "900").opt
                                 changed = {
-                                    (form: DynamicFormSS, formItem: FormItem, value: String) ⇒
+                                    (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[String]) ⇒
                                         thisTop.fontWeight = value
                                         thisTop.form.foreach(form ⇒ thisTop.changed.foreach(_ (form, thisTop, thisTop.getValue())))
                                 }.toFunc.opt
@@ -190,7 +190,7 @@ class FontItemProps extends FormItemWithButtonsProps {
                                 title = "Font Color".opt
                                 defaultValue = thisTop.lineColor.optAny
                                 changed = {
-                                    (form: DynamicFormSS, formItem: FormItem, value: CSSColor) ⇒
+                                    (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[CSSColor]) ⇒
                                         thisTop.lineColor = value
                                         thisTop.form.foreach(form ⇒ thisTop.changed.foreach(_ (form, thisTop, thisTop.getValue())))
                                 }.toFunc.opt
@@ -205,7 +205,7 @@ class FontItemProps extends FormItemWithButtonsProps {
                                 max = 360.0.opt
                                 step = 1.0.opt
                                 changed = {
-                                    (form: DynamicFormSS, formItem: FormItem, value: Double) ⇒
+                                    (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[Double]) ⇒
                                         thisTop.rotation = value
                                         thisTop.form.foreach(form ⇒ thisTop.changed.foreach(_ (form, thisTop, thisTop.getValue())))
                                 }.toFunc.opt

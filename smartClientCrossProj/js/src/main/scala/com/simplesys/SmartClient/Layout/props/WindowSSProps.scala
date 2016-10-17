@@ -34,4 +34,5 @@ class WindowSSProps extends WindowProps {
 
                 }
     }.toThisFunc.opt
+    var autoDestroy: ScOption[Boolean] = ScNone
 }

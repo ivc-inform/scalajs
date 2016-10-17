@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.Forms.formsItems.props
 
 import com.simplesys.SmartClient.Control.Button
+import com.simplesys.SmartClient.Drawing.props.ShadowProps
 import com.simplesys.SmartClient.Drawing.{Point, Shadow}
 import com.simplesys.SmartClient.Forms.DynamicFormSS
 import com.simplesys.SmartClient.Forms.formsItems.{FormItem, ShadowItem}
@@ -47,6 +48,8 @@ class ShadowItemProps extends FormItemWithButtonsProps {
         (thiz: classHandler, value: JSUndefined[JSAny]) ⇒
             value.foreach {
                 value ⇒
+                    //isc debugTrap value
+
                     if (value == null)
                         thiz.clearValue()
                     else {
@@ -70,19 +73,17 @@ class ShadowItemProps extends FormItemWithButtonsProps {
                                 }
                         }
                     }
-            }
-            thiz.Super("setValue", IscArray(value))
 
+                    thiz.Super("setValue", IscArray(value))
+            }
     }.toThisFunc.opt
 
     getValue = {
         (thiz: classHandler) ⇒
-            import com.simplesys.SmartClient.Drawing.props.ShadowProps
-            //isc debugTrap (thiz.shadow, 1)
 
             if (thiz.shadow.isDefined && thiz.shadow == null) thiz.shadow = jSUndefined
 
-            if (thiz.shadow.isEmpty || (thiz.shadow.get.blur.isEmpty && thiz.shadow.get.color.isEmpty && thiz.shadow.get.offset.isEmpty))
+           val value = if (thiz.shadow.isEmpty || (thiz.shadow.get.blur.isEmpty && thiz.shadow.get.color.isEmpty && thiz.shadow.get.offset.isEmpty))
                 jSUndefined
             else {
                 val res = Shadow(
@@ -92,17 +93,17 @@ class ShadowItemProps extends FormItemWithButtonsProps {
                         offset = thiz.shadow.get.offset opt Point(0, 0)
                     }
                 )
-                //isc debugTrap(res, thiz.shadow)
-
                 res
-            }.undef
+            }.asInstanceOf[JSAny].undef
+
+            thiz.updateCancelButton(if (value.isEmpty) null else value)
+            value
     }.toThisFunc.opt
 
     changed = {
-        (form: DynamicFormSS, formItem: ShadowItem, value: Shadow) ⇒
+        (form: DynamicFormSS, formItem: ShadowItem, value: JSUndefined[Shadow]) ⇒
             //isc debugTrap(form, value)
             form.setPropertyOnSelection("shadow", value)
-
     }.toFunc.opt
 
     var checkShadowUndefined: ScOption[ThisFunction0[classHandler, _]] = {
@@ -127,7 +128,7 @@ class ShadowItemProps extends FormItemWithButtonsProps {
                                 defaultValue = if (thisTop.shadow.isEmpty) ScNone else thisTop.shadow.get.color.optAny
                                 changed = {
                                     import com.simplesys.System.Types.CSSColor
-                                    (form: DynamicFormSS, formItem: FormItem, value: CSSColor) ⇒
+                                    (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[CSSColor]) ⇒
                                         thisTop.checkShadowUndefined()
                                         thisTop.shadow.foreach(_.color = value)
                                         thisTop.form.foreach(form ⇒ thisTop.changed.foreach(_ (form, formItem, thisTop.getValue())))
@@ -143,7 +144,7 @@ class ShadowItemProps extends FormItemWithButtonsProps {
                                 max = 20.0.opt
                                 step = 1.0.opt
                                 changed = {
-                                    (form: DynamicFormSS, formItem: FormItem, value: Int) ⇒
+                                    (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[Int]) ⇒
                                         thisTop.checkShadowUndefined()
                                         thisTop.shadow.foreach(_.blur = value)
                                         thisTop.form.foreach(form ⇒ thisTop.changed.foreach(_ (form, formItem, thisTop.getValue())))
@@ -160,7 +161,7 @@ class ShadowItemProps extends FormItemWithButtonsProps {
                                 nameStrong = "offset".nameStrongOpt
                                 title = "Смещение".opt
                                 changed = {
-                                    (form: DynamicFormSS, formItem: FormItem, value: Point) ⇒
+                                    (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[Point]) ⇒
                                         //isc debugTrap value
                                         thisTop.checkShadowUndefined()
                                         thisTop.shadow.foreach(_.offset = value)
@@ -177,6 +178,7 @@ class ShadowItemProps extends FormItemWithButtonsProps {
               IscArray[Button](
                   CancelButton.create(
                       new CancelButtonProps {
+                          identifier = thisTop.cancelButtonName.opt
                           width = 20
                           click = {
                               (thiz: classHandler) =>

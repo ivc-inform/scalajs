@@ -75,12 +75,12 @@ class DurationItemProps extends CanvasItemProps {
             if (thiz.hours.isEmpty && thiz.mins.isEmpty && thiz.days.isEmpty && thiz.secs.isEmpty)
                 jSUndefined
             else
-                (new DurationValue {
+                new DurationValue {
                     override val hours: JSUndefined[Int] = thiz.hours
                     override val mins: JSUndefined[Int] = thiz.mins
                     override val days: JSUndefined[Int] = thiz.days
                     override val secs: JSUndefined[Int] = thiz.secs
-                }).asInstanceOf[JSAny].undef
+                }.asInstanceOf[JSAny].undef
     }.toThisFunc.opt
 
     createCanvas = {
@@ -105,7 +105,7 @@ class DurationItemProps extends CanvasItemProps {
                                   min = 0.0.opt
                                   step = 1.0.opt
                                   changed = {
-                                      (form: DynamicFormSS, formItem: FormItem, value: Int) ⇒
+                                      (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[Int]) ⇒
                                           thisTop.days = value
                                           thisTop.changed.foreach(_ (form, formItem, thisTop.getValue()))
                                   }.toFunc.opt
@@ -122,7 +122,7 @@ class DurationItemProps extends CanvasItemProps {
                                   max = 23.0.opt
                                   step = 1.0.opt
                                   changed = {
-                                      (form: DynamicFormSS, formItem: FormItem, value: Int) ⇒
+                                      (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[Int]) ⇒
                                           thisTop.hours = value
                                           thisTop.changed.foreach(_ (form, formItem, thisTop.getValue()))
 
@@ -140,7 +140,7 @@ class DurationItemProps extends CanvasItemProps {
                                   max = 59.0.opt
                                   step = 1.0.opt
                                   changed = {
-                                      (form: DynamicFormSS, formItem: FormItem, value: Int) ⇒
+                                      (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[Int]) ⇒
                                           thisTop.mins = value
                                           thisTop.changed.foreach(_ (form, formItem, thisTop.getValue()))
                                   }.toFunc.opt
@@ -157,7 +157,7 @@ class DurationItemProps extends CanvasItemProps {
                                   max = 59.0.opt
                                   step = 1.0.opt
                                   changed = {
-                                      (form: DynamicFormSS, formItem: FormItem, value: Int) ⇒
+                                      (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[Int]) ⇒
                                           thisTop.secs = value
                                           thisTop.changed.foreach(_ (form, formItem, thisTop.getValue()))
                                   }.toFunc.opt

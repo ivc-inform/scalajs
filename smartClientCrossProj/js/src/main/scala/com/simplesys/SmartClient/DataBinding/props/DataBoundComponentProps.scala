@@ -94,7 +94,7 @@ trait DataBoundComponentProps extends ClassProps {
 
                     isc.MessagingSS.subscribe(_channelMessage4RemoveOperation, {
                         (e: MessageJS) ⇒
-                            println(s"remove data: ${e.data.toString}")
+                            //println(s"remove data: ${e.data.toString}")
                             progressBar.foreach(_.nextStep())
                     }
                     )

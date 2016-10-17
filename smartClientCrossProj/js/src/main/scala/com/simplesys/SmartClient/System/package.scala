@@ -9,9 +9,9 @@ import com.simplesys.SmartClient.Control.menu.{MenuItem, MenuSSItem}
 import com.simplesys.SmartClient.Control.props._
 import com.simplesys.SmartClient.Control.props.menu.{MenuItemProps, MenuSSItemProps}
 import com.simplesys.SmartClient.DataBinding._
-import com.simplesys.SmartClient.DataBinding.dataSource.DataSourceField
+import com.simplesys.SmartClient.DataBinding.dataSource.{DataSourceField, Operator}
 import com.simplesys.SmartClient.DataBinding.props._
-import com.simplesys.SmartClient.DataBinding.props.dataSource.DataSourceFieldProps
+import com.simplesys.SmartClient.DataBinding.props.dataSource.{DataSourceFieldProps, OperatorProps}
 import com.simplesys.SmartClient.Drawing._
 import com.simplesys.SmartClient.Drawing.drawItem._
 import com.simplesys.SmartClient.Drawing.drawItem.props._
@@ -19,8 +19,8 @@ import com.simplesys.SmartClient.Drawing.gradient._
 import com.simplesys.SmartClient.Drawing.gradient.props._
 import com.simplesys.SmartClient.Drawing.props._
 import com.simplesys.SmartClient.Forms._
-import com.simplesys.SmartClient.Forms.formsItems._
 import com.simplesys.SmartClient.Forms.formsItems.props._
+import com.simplesys.SmartClient.Forms.formsItems.{FormItemWithButtons, _}
 import com.simplesys.SmartClient.Forms.props._
 import com.simplesys.SmartClient.Foundation._
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
@@ -57,10 +57,10 @@ import com.simplesys.SmartClient.Tools.{EditContext, EditContextSS, EditProxy, P
 //Должны быть
 //import com.simplesys.macros.PropsToDictionary
 import com.simplesys.macros.PropsToDictionary
+
 //
 
 package object System {
-
 
     type Point = IscArray[Double]
     type Rectangle = IscArray[Point]
@@ -106,6 +106,7 @@ package object System {
     //</editor-fold>
 
     //<editor-fold desc="FormsItems">
+    object Operator extends SCApply4Object[Operator, OperatorProps]
     object FormItem extends SCApply4Object[FormItem, FormItemProps]
     object ComboBoxItem extends SCApply4Object[ComboBoxItem, ComboBoxItemProps]
     object CanvasItem extends SCApply4Object[CanvasItem, CanvasItemProps]
@@ -130,7 +131,11 @@ package object System {
     object TimeItem extends SCApply4Object[TimeItem, TimeItemProps]
     object Tab extends SCApply4Object[Tab, TabProps]
     object DateChooser extends SCApply4Object[DateChooser, DateChooserProps]
+    object BooleanItem extends SCApply4Object[BooleanItem, BooleanItemProps]
+
     object FormItemWithButtons extends SCApply4Object[FormItemWithButtons, FormItemWithButtonsProps]
+    object ComboboxItemWithButtonsJS extends SCApply4Object[ComboboxItemWithButtonsJS, ComboboxItemWithButtonsJSProps]
+
     object GradientItem extends SCApply4Object[GradientItem, GradientItemProps]
     object ShadowItem extends SCApply4Object[ShadowItem, ShadowItemProps]
     object FontItem extends SCApply4Object[FontItem, FontItemProps]

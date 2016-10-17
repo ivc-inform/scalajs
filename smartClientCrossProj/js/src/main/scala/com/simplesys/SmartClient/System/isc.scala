@@ -1,11 +1,11 @@
 package com.simplesys.SmartClient.System
 
-import com.simplesys.SmartClient.App.AbstractSettingsEditorCompanion
+import com.simplesys.SmartClient.App.{AbstractCommonTreeListGridEditorComponentCompanion, AbstractSettingsEditorCompanion}
 import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.DataBinding.{AbstractDataBoundComponentCompanion, AbstractDataSourceSSCompanion, AbstractJSONCompanion, AbstractOfflineSSCompanion}
 import com.simplesys.SmartClient.Drawing.drawItem.{AbstractDrawLineCompanion, AbstractDrawRectCompanion}
 import com.simplesys.SmartClient.Drawing.{AbstractDrawItemCompanion, AbstractDrawPaneCompanion}
-import com.simplesys.SmartClient.Forms.formsItems.{AbstractDateTimeItemCompanion, AbstractFormItemCompanion, AbstractPickListCompanion}
+import com.simplesys.SmartClient.Forms.formsItems._
 import com.simplesys.SmartClient.Forms.{AbstractDateChooserCompanion, AbstractDynamicFormCompanion}
 import com.simplesys.SmartClient.Foundation.AbstractCanvasCompanion
 import com.simplesys.SmartClient.Grids._
@@ -27,6 +27,7 @@ import scala.scalajs.js.|
 @js.native
 object isc extends JSObject {
 
+    import com.simplesys.SmartClient.App.AbstractCommonListGridEditorComponentCompanion
     import com.simplesys.SmartClient.DataBinding.{AbstractDataSourceCompanion, AbstractOfflineCompanion}
 
     def applyMask[T](input: JSObject, mask: IscArray[String]): T = js.native
@@ -111,6 +112,10 @@ object isc extends JSObject {
     val FormItem: AbstractFormItemCompanion = js.native
     val DrawPaneEditProxy: AbstractDrawPaneEditProxyCompanion = js.native
     val DrawItemEditProxy: AbstractDrawItemEditProxyCompanion = js.native
+    val CommonTreeListGridEditorComponent: AbstractCommonTreeListGridEditorComponentCompanion = js.native
+    val FormItemWithButtons: AbstractFormItemWithButtonsCompanion = js.native
+    val CommonListGridEditorComponent: AbstractCommonListGridEditorComponentCompanion = js.native
+
 
     def error(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
     def errorDetail(message: String, detailMessage: String, identifier: ID = js.native, detailIdentifier: ID = js.native): void = js.native
@@ -126,7 +131,7 @@ object isc extends JSObject {
     def setPropValue[T](obj: JSObject, name: String, value: T): JSUndefined[T] = js.native
     def getWindowObject[T](name: String): JSUndefined[T] = js.native
     def setArrayItem[A](array: IscArray[A], index: Int, value: JSAny): void = js.native
-    def deleteProp(obj: JSObject, propName: String): void = js.native
+    def deleteProp(obj: JSObject | JSDynamic, propName: String): void = js.native
 
     @JSBracketAccess
     def apply(name: String): JSUndefined[AbstractClassCompanion] = js.native
@@ -135,6 +140,7 @@ object isc extends JSObject {
     def update(name: String, value: Class | JSObject): Unit = js.native
 
     def js_beautify(str: String): String = js.native
+    var copiedJoson: JSUndefined[String] = js.native
 }
 
 

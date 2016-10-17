@@ -17,6 +17,9 @@ trait Config extends JSObject {
 
 @js.native
 object simpleSyS extends JSObject {
+
+    import com.simplesys.System._
+
     def checkOwner(canvas: Canvas): Canvas = js.native
     def _enableDeleteFromTree(menu: MenuSSItem): Boolean = js.native
     def _openFolders(menu: MenuSS): void = js.native
@@ -26,4 +29,5 @@ object simpleSyS extends JSObject {
     var skin: JSUndefined[String] = js.native
     var expertMode: JSUndefined[Boolean] = js.native
     val simpleSysContextPath: URL = js.native
+    var qtyGraphCopies: JSUndefined[Int] = js.native
 }

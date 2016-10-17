@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Forms.formsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
 import com.simplesys.SmartClient.Foundation.Canvas
+import com.simplesys.SmartClient.Layout.WindowSS
 import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.SmartClient.System.props.ClassProps
 import com.simplesys.SmartClient.Tools.{EditContext, EditNode, EditProxy}
@@ -165,6 +166,7 @@ class CanvasProps extends ClassProps {
     var hoverWrap: ScOption[Boolean] = ScNone
     var htmlElement: ScOption[HTMLElement] = ScNone
     var htmlPosition: ScOption[DrawPosition] = ScNone
+    var funcMenu: ScOption[MenuSS] = ScNone
     var ID: ScOption[String] = ScNone
     var initWidget: ScOption[ThisFunction1[classHandler, IscArray[JSAny], _]] = ScNone
     var isGroup: ScOption[Boolean] = ScNone

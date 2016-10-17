@@ -34,7 +34,7 @@ package object Types {
     type DetailViewerViewState = JSObject
 
     type Callback = js.Function | js.ThisFunction | CallbackObject
-    type ValueMap = JSDictionaryAny
+    type ValueMap = JSAny
     type XMLDocument = JSObject
     type XMLElement = JSObject
     type XMLNode = JSObject

@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.Forms.formsItems.props
 
 import com.simplesys.SmartClient.Control.Button
+import com.simplesys.SmartClient.Drawing.gradient.props.SimpleGradientProps
 import com.simplesys.SmartClient.Forms.DynamicFormSS
 import com.simplesys.SmartClient.Forms.formsItems.{FormItem, GradientItem}
 import com.simplesys.SmartClient.Forms.props.DynamicFormSSProps
@@ -61,16 +62,14 @@ class GradientItemProps extends FormItemWithButtonsProps {
                                 thiz.direction = _value.direction
                         }
                     }
+                    thiz.Super("setValue", IscArray(value))
             }
-            thiz.Super("setValue", IscArray(value))
 
     }.toThisFunc.opt
 
     getValue = {
         (thiz: classHandler) ⇒
-
-            import com.simplesys.SmartClient.Drawing.gradient.props.SimpleGradientProps
-            if (thiz.startColor.isEmpty && thiz.endColor.isEmpty && thiz.direction.isEmpty)
+            val value = if (thiz.startColor.isEmpty && thiz.endColor.isEmpty && thiz.direction.isEmpty)
                 jSUndefined
             else
                 SimpleGradient(
@@ -79,7 +78,11 @@ class GradientItemProps extends FormItemWithButtonsProps {
                         endColor = thiz.endColor.opt
                         direction = thiz.direction.opt
                     }
-                ).undef
+                ).asInstanceOf[JSAny].undef
+
+            thiz.updateCancelButton(if (value.isEmpty) null else value)
+
+            value
     }.toThisFunc.opt
 
     var startColor: ScOption[CSSColor] = ScNone
@@ -102,7 +105,7 @@ class GradientItemProps extends FormItemWithButtonsProps {
                                 title = "Начальный цвет".opt
                                 defaultValue = thisTop.startColor.optAny
                                 changed = {
-                                    (form: DynamicFormSS, formItem: FormItem, value: CSSColor) ⇒
+                                    (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[CSSColor]) ⇒
                                         thisTop.startColor = value
                                         thisTop.form.foreach(form ⇒ thisTop.changed.foreach(_ (form, formItem, thisTop.getValue())))
                                 }.toFunc.opt
@@ -114,7 +117,7 @@ class GradientItemProps extends FormItemWithButtonsProps {
                                 title = "Конечный цвет".opt
                                 defaultValue = thisTop.endColor.optAny
                                 changed = {
-                                    (form: DynamicFormSS, formItem: FormItem, value: CSSColor) ⇒
+                                    (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[CSSColor]) ⇒
                                         thisTop.endColor = value
                                         thisTop.form.foreach(form ⇒ thisTop.changed.foreach(_ (form, formItem, thisTop.getValue())))
                                 }.toFunc.opt
@@ -129,7 +132,7 @@ class GradientItemProps extends FormItemWithButtonsProps {
                                 max = 360.0.opt
                                 step = 1.0.opt
                                 changed = {
-                                    (form: DynamicFormSS, formItem: FormItem, value: Double) ⇒
+                                    (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[Double]) ⇒
                                         thisTop.direction = value
                                         thisTop.form.foreach(form ⇒ thisTop.changed.foreach(_ (form, formItem, thisTop.getValue())))
                                 }.toFunc.opt
@@ -144,6 +147,7 @@ class GradientItemProps extends FormItemWithButtonsProps {
                   CancelButton.create(
                       new CancelButtonProps {
                           width = 20
+                          identifier = thisTop.cancelButtonName.opt
                           click = {
                               (thiz: classHandler) =>
                                   thisTop.form.foreach {

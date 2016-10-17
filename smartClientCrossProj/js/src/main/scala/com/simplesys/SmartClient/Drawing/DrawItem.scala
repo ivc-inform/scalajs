@@ -18,6 +18,7 @@ import com.simplesys.System.Types.ResizeKnobPoint.ResizeKnobPoint
 import com.simplesys.System.Types.TitleRotationMode.TitleRotationMode
 import com.simplesys.System.Types._
 import com.simplesys.System._
+import com.simplesys.js.components.TemplateObject
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
@@ -225,6 +226,11 @@ trait DrawItem extends Class {
     var startTop2CentrTop: JSUndefined[Double]
 
     val fieldDataSource: JSUndefined[DataSource]
+    val variableProps: JSUndefined[JSObject]
+    val subProgramProps: JSUndefined[JSObject]
+    val listRefs: JSUndefined[JSObject]
+    val timerProps: JSUndefined[JSObject]
+    val groupProps: JSUndefined[JSObject]
 }
 
 @js.native

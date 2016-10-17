@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.DataBinding.props
 
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DSResponse, ResponseData}
+import com.simplesys.SmartClient.System.isc
 import com.simplesys.System.Types.void
 import com.simplesys.function._
 import com.simplesys.option.ScOption._
@@ -58,6 +59,8 @@ class RestDataSourceProps extends DataSourceProps {
 
                 //isc debugTrap resp
             }
+
+            //isc debugTrap (status)
 
             if (resp.errorStruct.isDefined && resp.status != status) {
                 //isc debugTrap (resp)

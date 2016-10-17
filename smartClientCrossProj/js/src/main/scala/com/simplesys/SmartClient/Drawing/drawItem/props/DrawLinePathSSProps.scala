@@ -256,7 +256,6 @@ class DrawLinePathSSProps extends DrawPathProps with DrawLineCommons {
                                         thiz.cKnobs(index) = thiz.createAutoChild(
                                             s"c${index}Knob", DrawKnob(
                                                 new DrawKnobProps {
-                                                    _constructor = "DrawKnob".opt
                                                     x = v.getX().get.opt
                                                     y = v.getY().get.opt
                                                     click = {

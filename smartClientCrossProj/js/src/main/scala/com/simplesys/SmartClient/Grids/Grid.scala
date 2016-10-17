@@ -214,7 +214,7 @@ trait Grid[T <: ListGridField, R <: JSAny] extends VLayout with DataBoundCompone
     var confirmCancelEditing: Boolean
     var confirmDiscardEdits: Boolean
     var confirmDiscardEditsMessage: String
-    var createRecordComponent: js.ThisFunction2[classHandler, R, Int, Canvas]
+    def createRecordComponent(record: R, colNum: Int): JSUndefined[Canvas]
     var dataArrived: js.ThisFunction2[classHandler, Int, Int, void]
     var dataProperties: ResultSet
     var dateFormatter: DateDisplayFormat
@@ -644,7 +644,7 @@ trait Grid[T <: ListGridField, R <: JSAny] extends VLayout with DataBoundCompone
     var saveRequestProperties: DSRequest
     var newRequestProperties: JSUndefined[js.Function0[DSRequest]]
     var editRequestProperties: JSUndefined[js.Function0[DSRequest]]
-    var editingFields  : JSUndefined[IscArray[FormItem]]
+    var editingFields: JSUndefined[IscArray[FormItem]]
     val screenReaderCellSeparator: HTMLString
     val screenReaderRowSeparator: HTMLString
     var scrollRedrawDelay: Int
@@ -823,7 +823,7 @@ trait Grid[T <: ListGridField, R <: JSAny] extends VLayout with DataBoundCompone
     def unsort(): void
     val unspannedHeaderVAlign: VerticalAlignment
     def updateData(updatedRecord: R, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    var updateRecordComponent: js.Function4[R, Int, Canvas, Boolean, Canvas]
+    def updateRecordComponent(record: R, colNum: Int, component: Canvas, recordChanged: Boolean): JSUndefined[Canvas]
     val useAdvancedFieldPicker: Boolean
     var useCellRollOvers: Boolean
     var useCopyPasteShortcuts: Boolean

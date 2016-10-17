@@ -74,7 +74,7 @@ class PointItemProps extends CanvasItemProps {
                                 max = item.maxX.opt
                                 step = item.step.opt
                                 changed = {
-                                    (form: DynamicFormSS, formItem: FormItem, value: Double) ⇒
+                                    (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[Double]) ⇒
                                         thisTop.x = value
                                         thisTop.checkPointUndefined()
                                         thisTop.point = Point(thisTop.x.get, thisTop.y.getOrElse(0))
@@ -94,7 +94,7 @@ class PointItemProps extends CanvasItemProps {
                                 max = item.maxY.opt
                                 step = item.step.opt
                                 changed = {
-                                    (form: DynamicFormSS, formItem: FormItem, value: Double) ⇒
+                                    (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[Double]) ⇒
                                         thisTop.y = value
                                         thisTop.checkPointUndefined()
                                         thisTop.point = Point(thisTop.x.getOrElse(0), thisTop.y.get)
@@ -137,7 +137,7 @@ class PointItemProps extends CanvasItemProps {
             if (thiz.x.isEmpty && thiz.y.isEmpty && thiz.point.isEmpty)
                 jSUndefined
             else
-                Point(thiz.x.getOrElse(0), thiz.y.getOrElse(0)).undef
+                Point(thiz.x.getOrElse(0), thiz.y.getOrElse(0)).asInstanceOf[JSAny].undef
     }.toThisFunc.opt
 
     init = {

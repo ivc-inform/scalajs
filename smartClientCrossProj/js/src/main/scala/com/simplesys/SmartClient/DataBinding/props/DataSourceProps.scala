@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.DataBinding.props
 
+import com.simplesys.SmartClient.DataBinding.dataSource.Operator
 import com.simplesys.SmartClient.DataBinding.props.dataSource.{DataSourceFieldProps, OperationBindingProps, WildRecordColumnProps}
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DSResponse, DataSource}
 import com.simplesys.SmartClient.Layout.WindowProgressDialog
@@ -182,6 +183,12 @@ class DataSourceProps extends ClassProps {
     var requires: ScOption[VelocityExpression] = ScNone
     var requiresAuthentication: ScOption[Boolean] = ScNone
     var requiresRole: ScOption[String] = ScNone
+    var removeSearchOperator: ScOption[ThisFunction1[classHandler, Operator, _]] = {
+        (thiz: classHandler, operator: Operator) ⇒
+            //isc debugTrap (isc.DataSource._operators, operator)
+            isc.deleteProp(isc.DataSource._operators, operator.ID)
+
+    }.toThisFunc.opt
     var resultBatchSize: ScOption[Int] = ScNone
     var resultSetClass: ScOption[JSObject] = ScNone
     var resultTreeClass: ScOption[JSObject] = ScNone

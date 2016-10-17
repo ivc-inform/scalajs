@@ -1,14 +1,10 @@
 package com.simplesys.SmartClient.Forms.formsItems.props
 
-import com.simplesys.SmartClient.Forms.formsItems.{FormItem, TextItem}
-import com.simplesys.SmartClient.Forms.formsItems.formItem.FormItemIcon
+import com.simplesys.SmartClient.Forms.formsItems.TextItem
+import com.simplesys.System.JSAny
 import com.simplesys.System.Types.CharacterCasing.CharacterCasing
 import com.simplesys.System.Types.{FormItemComponentType, SCClassName}
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.System.JSAny
-
-import scala.scalajs.js
-import scala.scalajs.js._
 
 class TextItemProps extends FormItemProps {
     type classHandler <: TextItem

@@ -188,7 +188,7 @@ trait DrawLineCommons extends DrawItemCommons {
                             }
 
                         case IncomingRefs =>
-                            if (item.isInBounds(_x, _y) && drawItem.targetConnect.isEmpty && !isc.isA.StartState(item)) {
+                            if (item.isInBounds(_x, _y) && drawItem.targetConnect.isEmpty) {
                                 isc.ask(s"Привязать ${drawItem.title} к ${item.title} ?", {
                                     changeZ(drawItem, item)
                                     (res: Boolean) =>

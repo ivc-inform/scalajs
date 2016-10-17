@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Layout.props
 
+import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Layout.OkCancelPanel
 import com.simplesys.System.Types.SCImgURL
 import com.simplesys.option.{ScNone, ScOption}
@@ -7,6 +8,7 @@ import com.simplesys.option.{ScNone, ScOption}
 import scala.scalajs.js.ThisFunction0
 
 class OkCancelPanelProps extends HPanelSSProps {
+
     type classHandler <: OkCancelPanel
 
     var okFunction: ScOption[ThisFunction0[classHandler, _]] = ScNone

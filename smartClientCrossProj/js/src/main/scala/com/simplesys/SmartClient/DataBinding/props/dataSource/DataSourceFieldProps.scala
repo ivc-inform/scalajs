@@ -61,6 +61,7 @@ class DataSourceFieldProps extends AbstractClassProps {
     var group: ScOption[String] = ScNone
     var hidden: ScOption[Boolean] = ScNone
     var ignore: ScOption[Boolean] = ScNone
+    var identifier: ScOption[ID] = ScNone
     var ignoreTextMatchStyle: ScOption[Boolean] = ScNone
     var imageHeight: ScOption[IntString[Int, String]] = ScNone
     var imageSize: ScOption[IntString[Int, String]] = ScNone

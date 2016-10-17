@@ -4,11 +4,13 @@ import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.DataBinding.Callbacks.DSCallback
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
 import com.simplesys.SmartClient.Forms.formsItems.FormItem
+import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Grids.treeGrid.TreeGridField
 import com.simplesys.SmartClient.Layout.{AbstractHLayoutSSCompanion, HLayoutSS, TabSetSS}
 import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.Types.RecordComponentPoolingMode._
 import com.simplesys.System.Types.SelectionAppearance.SelectionAppearance
 import com.simplesys.System.Types.SelectionStyle.SelectionStyle
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
@@ -145,6 +147,15 @@ trait TreeListGridEditor extends HLayoutSS {
     var selectionAppearanceTree: JSUndefined[SelectionAppearance]
     var selectFirstRecordAfterFetchList: JSUndefined[Boolean]
     var selectFirstRecordAfterFetchTree: JSUndefined[Boolean]
+
+    def createListRecordComponent(record: ListGridRecord, colNum: Int): JSUndefined[Canvas]
+    def createTreeRecordComponent(record: ListGridRecord, colNum: Int): JSUndefined[Canvas]
+
+    def updateListRecordComponent(record: ListGridRecord, colNum: Int, component: Canvas, recordChanged: Boolean): JSUndefined[Canvas]
+    def updateTreeRecordComponent(record: ListGridRecord, colNum: Int, component: Canvas, recordChanged: Boolean): JSUndefined[Canvas]
+
+    val recordListComponentPoolingMode: RecordComponentPoolingMode
+    val recordTreeComponentPoolingMode: RecordComponentPoolingMode
 }
 
 @js.native

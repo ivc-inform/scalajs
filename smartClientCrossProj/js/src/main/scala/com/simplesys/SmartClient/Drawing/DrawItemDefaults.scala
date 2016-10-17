@@ -23,7 +23,7 @@ trait DrawItemDefaults extends JSObject {
     val _constructor: String
 
     var ID: JSUndefined[String]
-    var serializeID: JSUndefined[String]
+    //var serializeID: JSUndefined[String]
     var canDrag: JSUndefined[Boolean]
     var cursor: JSUndefined[String]
     var endArrow: JSUndefined[String]

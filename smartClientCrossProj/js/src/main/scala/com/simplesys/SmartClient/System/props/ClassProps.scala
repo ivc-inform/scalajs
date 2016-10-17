@@ -13,6 +13,7 @@ class ClassProps extends AbstractClassProps {
 
     var addPropertiesOnCreate: ScOption[Boolean] = ScNone
     var identifier: ScOption[ID] = ScNone
+    var identifier1: ScOption[ID] = ScNone
     var init: ScOption[ThisFunction1[classHandler, IscArray[JSAny], _]] = ScNone
     var unserialize: ScOption[Boolean] = ScNone
 }

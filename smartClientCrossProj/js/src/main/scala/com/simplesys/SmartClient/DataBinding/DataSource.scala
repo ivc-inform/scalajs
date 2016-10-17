@@ -40,7 +40,7 @@ trait DataSource extends Class {
     def addDatas(newRecords: IscArray[Record], callback: RPCQueueCallback = js.native, requestProperties: DSRequest = js.native): void
     def performDSOperation(operationType: String, newRecord: Record | IscArray[Record], callback: JSUndefined[DSCallback] = js.native, requestProperties: DSRequest = js.native): void
     val addGlobalId: Boolean
-    def addSearchOperator(operator: Operator, types: IscArray[FieldType]): void
+    def addSearchOperator(operator: Operator, types: IscArray[FieldType] = js.native): void
     var allowAdvancedCriteria: Boolean
     var allowClientRequestedSummaries: Boolean
     def applyFilter(data: IscArray[Record], criteria: Criteria, requestProperties: DSRequest = js.native): IscArray[Record]
@@ -194,6 +194,7 @@ trait DataSource extends Class {
     def removeFile(fileSpec: FileSpec | String, callback: DSCallback = js.native): void
     def removeFileVersion(fileSpec: FileSpec | String, version: Date, callback: DSCallback = js.native): void
     def renameFile(oldFileSpec: FileSpec | String, newFileSpec: FileSpec | String, callback: DSCallback = js.native): void
+    def removeSearchOperator(operator: Operator): void
     val requestProperties: DSRequest
     val requiredMessage: String
     val requires: VelocityExpression
@@ -260,6 +261,7 @@ trait DataSource extends Class {
 
 @js.native
 abstract trait AbstractDataSourceCompanion extends AbstractClassCompanion {
+    var _operators: JSObject = js.native
     def addSearchOperator(operator: Operator): void = js.native
     def applyRecordSummaryFunction(summaryFunction: SummaryFunction, record: DataSourceRecord, fields: IscArray[DataSourceField], summaryField: DataSourceField): JSAny = js.native
     def canFlattenCriteria(criteria: AdvancedCriteria): Boolean = js.native

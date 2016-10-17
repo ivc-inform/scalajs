@@ -28,9 +28,10 @@ class SettingsEditorProps extends WindowSSProps {
     headerIconPath = Common.settings.opt
     autoPosition = false.opt
 
+
     initWidget = {
         (thiz: classHandler, arguments: IscArray[JSAny]) =>
-            isc debugTrac (thiz.getClassName(), thiz.getIdentifier())
+            isc debugTrac(thiz.getClassName(), thiz.getIdentifier())
 
             thiz.Super("initWidget", arguments)
 
@@ -40,6 +41,9 @@ class SettingsEditorProps extends WindowSSProps {
 
             val commons = DynamicFormSS.create(
                 new DynamicFormSSProps {
+
+                    import com.simplesys.SmartClient.Forms.formsItems.props.SpinnerItemProps
+
                     fields = Seq(
                         CheckboxItem(
                             new CheckboxItemProps {
@@ -48,8 +52,8 @@ class SettingsEditorProps extends WindowSSProps {
                                 value = simpleSyS.expertMode.getOrElse(false).asInstanceOf[JSAny].opt
                                 disabled = true.opt
                                 changed = {
-                                    (form: DynamicForm, item: FormItem, value: JSAny) =>
-                                        simpleSyS.expertMode = value.asInstanceOf[Boolean]
+                                    (form: DynamicForm, item: FormItem, value: JSUndefined[Boolean]) =>
+                                        simpleSyS.expertMode = value
 
                                 }.toFunc.opt
                             }
@@ -59,8 +63,22 @@ class SettingsEditorProps extends WindowSSProps {
                                 title = "Темы оформления (Skins)".opt
                                 value = simpleSyS.skin.getOrElse(Skin.Enterprise.toString).asInstanceOf[JSAny].opt
                                 changed = {
-                                    (form: DynamicForm, item: FormItem, value: JSAny) =>
-                                        skin = value.toString
+                                    (form: DynamicForm, item: FormItem, value: JSUndefined[String]) =>
+                                        skin = value
+                                }.toFunc.opt
+                            }
+                        ),
+                        SpinnerItem(
+                            new SpinnerItemProps {
+                                disabled = true.opt
+                                title = "Количество копий графа состояний".opt
+                                defaultValue = (if (simpleSyS.qtyGraphCopies.isEmpty) 100 else simpleSyS.qtyGraphCopies get).asInstanceOf[JSAny].opt
+                                min = 0.0.opt
+                                step = 1.0.opt
+                                changed = {
+                                    import com.simplesys.SmartClient.Forms.DynamicFormSS
+                                    (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[Int]) ⇒
+                                        simpleSyS.qtyGraphCopies = value
                                 }.toFunc.opt
                             }
                         )

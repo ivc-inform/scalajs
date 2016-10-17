@@ -49,8 +49,8 @@ class FormItemProps extends ClassProps {
     var canSelectText: ScOption[Boolean] = ScNone
     var cellHeight: ScOption[Int] = ScNone
     var cellStyle: ScOption[FormItemBaseStyle] = ScNone
-    var change: ScOption[js.Function4[DynamicFormSS, FormItem, JSAny, _ <: JSAny, Boolean]] = ScNone
-    var changed: ScOption[js.Function3[_ <: DynamicForm, _ <: FormItem, _ <: JSAny, _]] = ScNone
+    var change: ScOption[js.Function4[_ <: DynamicFormSS, FormItem, _ <:  JSUndefined[JSAny], _ <: JSUndefined[JSAny], Boolean]] = ScNone
+    var changed: ScOption[js.Function3[_ <: DynamicForm, _ <: FormItem, _ <: JSUndefined[JSAny], _]] = ScNone
     var changeOnKeypress: ScOption[Boolean] = ScNone
     var clearValue: ScOption[ThisFunction0[classHandler, _]] = ScNone
     var click: ScOption[js.Function2[DynamicFormSS, FormItem, Boolean]] = ScNone
@@ -229,7 +229,7 @@ class FormItemProps extends ClassProps {
     var valueIconSize: ScOption[Int] = ScNone
     var valueIconWidth: ScOption[Int] = ScNone
     var valueIcons: ScOption[JSDictionary[String]] = ScNone
-    var valueMap: ScOption[JSAny] = ScNone
+    var valueMap: ScOption[ValueMap] = ScNone
     var visible: ScOption[Boolean] = ScNone
     var width: ScOption[IntString[Int, String]] = "100%"
     var wrapTitle: ScOption[Boolean] = ScNone

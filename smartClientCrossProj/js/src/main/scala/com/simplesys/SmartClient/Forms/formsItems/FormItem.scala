@@ -142,6 +142,7 @@ trait FormItem extends Class {
     def getVisibleWidth(): Int
     def getWidth(): Int
     var globalTabIndex: Int
+    def handleChanged(value: JSAny): void
     def hasAdvancedCriteria(): Boolean
     def hasErrors(): Boolean
     var height: String | Int
@@ -345,7 +346,7 @@ trait FormItem extends Class {
     val _$rowSpan: String
     def _convertRawToMeasure(value: String): JSAny
     def onInit(): void
-    var _value: JSAny
+    var _value: JSUndefined[JSAny]
     def getDefaultValue(): JSAny
     var _setToDefault: Boolean
     def _setUpIcons(): void
