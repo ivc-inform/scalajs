@@ -20,7 +20,7 @@ trait RPCRequest extends Class {
     var actionURL: URL
     val allowIE9Leak: Boolean
     var bypassCache: Boolean
-    var callback: js.Function3[RPCResponse, JSDictionaryAny, RPCRequest, void]
+    var callback: js.Function3[RPCResponse, JSAny, RPCRequest, _]
     var callbackParam: String
     var clientContext: JSUndefined[ClientContext]
     var containsCredentials: Boolean
@@ -36,7 +36,7 @@ trait RPCRequest extends Class {
     var ignoreTimeout: Boolean
     var omitNullMapValuesInResponse: Boolean
     var params: JSObject
-    var prompt: String
+    var prompt: JSUndefined[String]
     var promptCursor: String
     var promptDelay: Int
     var promptStyle: PromptStyle

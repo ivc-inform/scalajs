@@ -2,11 +2,11 @@ package com.simplesys.SmartClient.Forms
 
 import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.DataBinding._
-import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Forms.formsItems.FormItem
 import com.simplesys.SmartClient.Forms.dynamicForm.FormItemEventInfo
-import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.Grids.Grid
+import com.simplesys.SmartClient.Foundation.{AbstractCanvasCompanion, Canvas}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
+import com.simplesys.SmartClient.Grids.{Grid, ListGrid}
 import com.simplesys.SmartClient.System.{IscArray, KeyIdentifier}
 import com.simplesys.SmartClient.Workdlow.UserTask
 import com.simplesys.System.Types.Alignment.Alignment
@@ -26,6 +26,7 @@ import com.simplesys.System.{JSAny, JSObject, JSUndefined}
 
 import scala.scalajs.js
 import scala.scalajs.js._
+import scala.scalajs.js.annotation.JSName
 
 @js.native
 trait DynamicForm extends Canvas with DataBoundComponent {
@@ -82,11 +83,11 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     def getErrorsHTML(errors: JSObject): HTMLString
     def getEventItem(): FormItem
     def getEventItemInfo(): FormItemEventInfo
-    def getField(itemName: String): FormItem
+    def getField(itemName: String): JSUndefined[FormItem]
     def getFieldErrors(fieldName: String): IscArray[String]
     def getFields(): IscArray[FormItem]
     def getFocusItem(): FormItem
-    def getItem(itemName: String): FormItem
+    def getItem(itemName: String | Int): FormItem
     def getItemErrorHTML(item: FormItem, error: IscArray[String]): void
     def getItems(): JSUndefined[IscArray[FormItem]]
     def getOldValues(): JSObject
@@ -97,6 +98,7 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     def getValue(fieldName: String): JSAny
     def getValues(): JSObject
     def getValuesAsAdvancedCriteria(textMatchStyle: TextMatchStyle = js.native): AdvancedCriteria
+    val grid: JSUndefined[ListGrid]
     def getValuesAsCriteria(advanced: Boolean, textMatchStyle: TextMatchStyle = js.native): Criteria | AdvancedCriteria
     def handleAsyncValidationReply(success: Boolean, errors: JSObject): void
     var handleHiddenValidationErrors: js.ThisFunction1[DynamicForm, JSObject, Boolean]
@@ -162,6 +164,8 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     def setTarget(target: String): void
     def setTitleOrientation(titleOrientation: TitleOrientation): void
     def setValue(fieldName: String, value: JSAny): void
+    @JSName("setValue")
+    def setValueString(fieldName: String, value: String): void
     def setValueMap(itemName: String, valueMap: ValueMap): void
     def setValues(newData: JSObject = js.native): void
     def setValuesAsCriteria(criteria: Criterion): void
@@ -176,7 +180,7 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     def showItem(fieldName: String): void
     var showOldValueInHover: Boolean
     var showTitlesWithErrorMessages: Boolean
-    val stopOnError: Boolean
+    val stopOnError: JSUndefined[Boolean]
     def submit(callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def submitForm(): void
     var submitValues: js.Function2[JSObject, DynamicForm, _]
@@ -203,5 +207,10 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     var valuesChanged: js.ThisFunction0[classHandler, _]
     def valuesHaveChanged(): Boolean
     var wrapItemTitles: Boolean
+}
+
+@js.native
+abstract class AbstractDynamicFormCompanion extends AbstractCanvasCompanion {
+    val _instancePrototype: FormItem = js.native
 }
 

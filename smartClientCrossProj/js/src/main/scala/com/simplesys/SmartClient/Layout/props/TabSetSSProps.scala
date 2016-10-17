@@ -10,13 +10,16 @@ import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
-import scala.scalajs.js.ThisFunction1
+import scala.scalajs.js.{ThisFunction0, ThisFunction1}
 import scala.scalajs.js.UndefOr._
 
 class TabSetSSProps extends TabSetProps {
     type classHandler <: TabSetSS
 
+    var tabSet: ScOption[TabSetSS] = ScNone
     var tabsReordered: ScOption[js.ThisFunction0[classHandler, _]] = ScNone
+    var afterRemoveTabs : ScOption[ThisFunction0[classHandler, _]] = ScNone
+    var beforeRemoveTabs : ScOption[ThisFunction1[classHandler, Tab, _]] = ScNone
     var findTab: ScOption[ThisFunction1[classHandler, JSAny, JSUndefined[Tab]]] = {
         (thiz: classHandler, tab: JSAny) =>
             var res: JSUndefined[Tab] = jSUndefined
@@ -36,4 +39,7 @@ class TabSetSSProps extends TabSetProps {
 
             res
     }.toThisFunc.opt
+
+    canCloseTabs = true.opt
+    canReorderTabs = true.opt
 }

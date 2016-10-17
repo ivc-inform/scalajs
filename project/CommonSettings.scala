@@ -20,7 +20,7 @@ object CommonSettings {
     object versions {
         val sprayVersion = "1.3.2"
         val uTestVersion = "0.3.1"
-        val scalaTestVersion = "3.0.0-M15"
+        val scalaTestVersion = "3.0.0"
         //val ssysCoreVersion = "1.2.81"
         val ssysCoreVersion = "1.2-SNAPSHOT"
         val scalajsDOMVersion = "0.9.0"
@@ -31,6 +31,7 @@ object CommonSettings {
     val defaultSettings = {
         import sbt.Keys._
         Seq(
+            crossScalaVersions := settingValues.crossScalaVersions,
             scalacOptions := settingValues.scalacOptions,
             organization := settingValues.organization
         )

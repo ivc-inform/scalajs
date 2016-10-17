@@ -1,28 +1,43 @@
 package com.simplesys.SmartClient.Grids.props
 
-import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Control.props.menu.MenuSSItemProps
-import com.simplesys.SmartClient.DataBinding.DataSource
-import com.simplesys.SmartClient.Grids.ListGrid
+import com.simplesys.SmartClient.DataBinding.Callbacks.DSCallback
+import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource, SortSpecifier}
+import com.simplesys.SmartClient.Forms.formsItems.FormItem
+import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Grids.props.listGrid.{ListGridFieldProps, ListGridRecordProps}
+import com.simplesys.SmartClient.Grids.{ListGrid, ListGridEditor}
+import com.simplesys.SmartClient.Layout.WindowSS
 import com.simplesys.SmartClient.Layout.props.VLayoutSSProps
+import com.simplesys.System.{JSObject, JSUndefined}
 import com.simplesys.System.Types.AutoFitWidthApproach.AutoFitWidthApproach
+import com.simplesys.System.Types.{Criteria, DateDisplayFormat}
+import com.simplesys.System.Types.DateDisplayFormat._
 import com.simplesys.System.Types.DragDataAction._
 import com.simplesys.System.Types.DragTrackerMode.DragTrackerMode
+import com.simplesys.System.Types.FetchMode.FetchMode
 import com.simplesys.System.Types.ListGridEditEvent.ListGridEditEvent
+import com.simplesys.System.Types.RecordComponentPoolingMode.RecordComponentPoolingMode
 import com.simplesys.System.Types.SelectionAppearance.SelectionAppearance
 import com.simplesys.System.Types.SelectionStyle._
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
+import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
 
+import scala.scalajs.js._
+
 class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends VLayoutSSProps {
+
+    var closedIconSuffix: ScOption[String] = ScNone
+    var dropIconSuffix: ScOption[String] = ScNone
+    var openIconSuffix: ScOption[String] = ScNone
     var canDragSelectText: ScOption[Boolean] = ScNone
     var canAcceptDroppedRecords: ScOption[Boolean] = ScNone
     var autoFitFieldWidth: ScOption[Boolean] = ScNone
     var canResizeFields: ScOption[Boolean] = ScNone
     var showAllRecords: ScOption[Boolean] = ScNone
-    var showRecordComponentsByCel: ScOption[Boolean] = ScNone
+    var showRecordComponentsByCell: ScOption[Boolean] = ScNone
     var showRecordComponents: ScOption[Boolean] = ScNone
     var filterOnKeypress: ScOption[Boolean] = ScNone
     var drawAheadRatio: ScOption[Double] = ScNone
@@ -49,7 +64,6 @@ class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends
     var canSelectTextExpandedField: ScOption[Boolean] = ScNone
     var showFilterEditor: ScOption[Boolean] = ScNone
     var dataPageSize: ScOption[Int] = ScNone
-    var funcMenu: ScOption[MenuSS] = ScNone
     var dataSource: ScOption[DataSource] = ScNone
     var saveItems: ScOption[Seq[MenuSSItemProps]] = ScNone
     var selectionType: ScOption[SelectionStyle] = ScNone
@@ -57,10 +71,33 @@ class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends
     var canDragRecordsOut: ScOption[Boolean] = ScNone
     var canReorderRecords: ScOption[Boolean] = ScNone
     var dragDataAction: ScOption[DragDataAction] = ScNone
+    var startEditingNewInForm: ScOption[Function4[JSObject, Seq[FormItem], DSCallback, DSRequest, _]] = ScNone
+    var startEditingInForm: ScOption[Function4[JSObject, Seq[FormItem], DSCallback, DSRequest, _]] = ScNone
+    var newRequestProperties: ScOption[ThisFunction0[classHandler, DSRequest]] = ScNone
+    var editRequestProperties: ScOption[ThisFunction0[classHandler, DSRequest]] = ScNone
+    var editingFields: ScOption[Seq[FormItem]] = ScNone
+    var saveByCell: ScOption[Boolean] = ScNone
+    var dataFetchMode: ScOption[FetchMode] = ScNone
+    var editWindowProperties: ScOption[WindowSS] = ScNone
+    var recordComponentPoolingMode: ScOption[RecordComponentPoolingMode] = ScNone
+    var initialSort: ScOption[Seq[SortSpecifier]] = ScNone
+    var initialCriteria: ScOption[Criteria] = ScNone
+
+    var createRecordComponent: ScOption[ThisFunction2[classHandler, ListGridRecord, Int, JSUndefined[Canvas]]] = ScNone
+    var updateRecordComponent: ScOption[ThisFunction4[classHandler, ListGridRecord, Int, Canvas, Boolean, JSUndefined[Canvas]]] = ScNone
+
+    var selectFirstRecordAfterFetch: ScOption[Boolean] = ScNone
+    var replacingFields: ScOption[Seq[ListGridFieldProps]] = ScNone
+
+    var fields: ScOption[Seq[ListGridFieldProps]] = ScNone
+    var defaultFields: ScOption[Seq[ListGridFieldProps]] = ScNone
+
+    var datetimeFormatter: ScOption[DateDisplayFormat] = DateDisplayFormat.toEuropeanDatetime.opt
+    var dateFormatter: ScOption[DateDisplayFormat] = ScNone
+
 }
 
 class ListGridEditorProps extends GridEditorProps[ListGridFieldProps, ListGridRecordProps] {
-    var fields: ScOption[Seq[ListGridFieldProps]] = ScNone
-    var defaultFields: ScOption[Seq[ListGridFieldProps]] = ScNone
+    type classHandler <: ListGridEditor
     var data: ScOption[Seq[ListGridRecord]] = ScNone
 }
