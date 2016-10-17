@@ -21,11 +21,9 @@ import com.simplesys.SmartClient.System._
 import com.simplesys.SmartClient.Tools.WindowsStack
 import com.simplesys.System.Types._
 import com.simplesys.System._
-import com.simplesys.app
 import com.simplesys.function._
 import com.simplesys.option.DoubleType._
 import com.simplesys.option.ScOption._
-import ru.simplesys.defs.app.gen.scala.ScalaJSGen.admin_User_codeGroup_NameStrong
 
 import scala.scalajs.js.annotation.JSExport
 
@@ -48,10 +46,12 @@ trait WebTabSetApp extends TabSetStack {
     protected val formItemsJS_admin_UserGroup_FRMITM: Seq[FormItem]
     protected val formItemsJS_admin_User_FRMITM: Seq[FormItem]
 
+    protected val admin_User_codeGroup_NameStrong: NameStrong
+
     protected val functionButton = IconMenuButtonSS.create(
         new IconMenuButtonSSProps {
             title = "Операции".ellipsis.opt
-            icon = app.iconConstructor.opt
+            icon = Common.iconConstructor.opt
             identifier = "33EE1839-8D4D-FFA0-E491-22B54F212772A".opt
         }
     )
@@ -190,14 +190,14 @@ trait WebTabSetApp extends TabSetStack {
                     IconMenuButtonSS.create(
                         new IconMenuButtonSSProps {
                             title = "Администрирование".ellipsis.opt
-                            icon = app.ref.opt
+                            icon = Common.ref.opt
                             identifier = "33EE1839-8D4D-FFA0-E491-22B54F2C772A".opt
                             menu = MenuSS.create(
                                 new MenuSSProps {
                                     items = Seq(
                                         new MenuSSItemProps {
                                             name = "groups".opt
-                                            icon = app.admin_UserGroup.opt
+                                            icon = Common.admin_UserGroup.opt
                                             title = "Группы".ellipsis.opt
                                             click = {
                                                 (target: Canvas, item: MenuSSItem, menu: MenuSS, colNum: JSUndefined[Int]) =>
@@ -212,7 +212,7 @@ trait WebTabSetApp extends TabSetStack {
                                         },
                                         new MenuSSItemProps {
                                             name = "users".opt
-                                            icon = app.admin_User.opt
+                                            icon = Common.admin_User.opt
                                             title = "Пользователи".ellipsis.opt
                                             click = {
                                                 (target: Canvas, item: MenuSSItem, menu: MenuSS, colNum: JSUndefined[Int]) =>
@@ -269,7 +269,7 @@ trait WebTabSetApp extends TabSetStack {
                 IconButtonSS.create(
                     new IconButtonSSProps {
                         title = "Информация".ellipsis.opt
-                        icon = app.info.opt
+                        icon = Common.info.opt
                         click = {
                             (thiz: classHandler) =>
                                 getAbout()
@@ -280,7 +280,7 @@ trait WebTabSetApp extends TabSetStack {
                 IconButtonSS.create(
                     new IconButtonSSProps {
                         title = "Настройки".ellipsis.opt
-                        icon = app.settings.opt
+                        icon = Common.settings.opt
                         click = {
                             (thiz: classHandler) =>
                                 getSetting()
@@ -304,7 +304,7 @@ trait WebTabSetApp extends TabSetStack {
                     IconButtonSS.create(
                         new IconButtonSSProps {
                             title = "GUID".opt
-                            icon = app.guid.opt
+                            icon = Common.guid.opt
                             orientation = "gorizontal".opt
                             click = {
                                 (thiz: classHandler) =>
@@ -326,7 +326,7 @@ trait WebTabSetApp extends TabSetStack {
         new LabelProps {
             showEdges = true.opt
             contents = "Иванов Иван Иванович".opt
-            icon = app.approved.opt
+            icon = Common.approved.opt
             wrap = true.opt
             visibility = Visibility.hidden.opt
         }
@@ -386,7 +386,7 @@ trait WebTabSetApp extends TabSetStack {
                                                                                 LoggedGroup.logged = true
 
                                                                                 thiz setTitle "Выход"
-                                                                                thiz setIcon app.closeProgram
+                                                                                thiz setIcon Common.closeProgram
                                                                             } else {
                                                                                 managedUsersGroups.foreach(_.hide())
                                                                                 managedAdminsGroups.foreach(_.hide())
@@ -397,14 +397,14 @@ trait WebTabSetApp extends TabSetStack {
 
                                                                                 LoggedGroup.logged = false
                                                                                 thiz setTitle "Вход".ellipsis
-                                                                                thiz setIcon app.login
+                                                                                thiz setIcon Common.login
                                                                             }
                                                                     }.toFunc)
 
                                                                 } else {
                                                                     RPCManagerSS.logoutRequired()
                                                                     thiz setTitle "Вход".ellipsis
-                                                                    thiz setIcon app.login
+                                                                    thiz setIcon Common.login
                                                                     LoggedGroup.logged = false
                                                                     managedUsersGroups.foreach(_.hide())
                                                                     managedAdminsGroups.foreach(_.hide())
@@ -419,7 +419,7 @@ trait WebTabSetApp extends TabSetStack {
                                                         }.toThisFunc.opt
                                                         title = "Войти".ellipsis.opt
                                                         iconOrientation = IconOrientation.center.opt
-                                                        icon = app.login.opt
+                                                        icon = Common.login.opt
                                                     }
                                                 ),
                                                 captionUserLabel
