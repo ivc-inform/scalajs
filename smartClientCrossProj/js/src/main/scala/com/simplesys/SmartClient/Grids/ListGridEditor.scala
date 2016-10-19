@@ -140,6 +140,7 @@ trait GridEditor[T <: ListGridField, R <: JSAny, S <: JSAny] extends VLayoutSS {
     var treeGrid: TreeGrid
     val datetimeFormatter: DateDisplayFormat
     val dateFormatter: DateDisplayFormat
+    def refreshData(callBack: DSCallback = js.native): void
 }
 
 @js.native
