@@ -67,7 +67,7 @@ class DataSourceProps extends ClassProps {
 
                     isc.MessagingSS.subscribe(_channelMessage4AddOperation, {
                         (e: MessageJS) ⇒
-                            println(s"Insert data: ${e.data.toString}")
+                            //println(s"Insert data: ${e.data.toString}")
                             progressBar.foreach(_.nextStep())
                     })
 

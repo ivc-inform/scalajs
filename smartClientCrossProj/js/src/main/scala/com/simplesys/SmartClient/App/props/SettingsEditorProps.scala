@@ -13,6 +13,7 @@ import com.simplesys.System.{JSAny, JSUndefined, jSUndefined}
 import com.simplesys.function._
 import com.simplesys.option.DoubleType._
 import com.simplesys.option.ScOption._
+import com.simplesys.SmartClient.Forms.formsItems.props.SpinnerItemProps
 
 import scala.scalajs.js
 
@@ -42,8 +43,6 @@ class SettingsEditorProps extends WindowSSProps {
             val commons = DynamicFormSS.create(
                 new DynamicFormSSProps {
 
-                    import com.simplesys.SmartClient.Forms.formsItems.props.SpinnerItemProps
-
                     fields = Seq(
                         CheckboxItem(
                             new CheckboxItemProps {
@@ -54,6 +53,18 @@ class SettingsEditorProps extends WindowSSProps {
                                 changed = {
                                     (form: DynamicForm, item: FormItem, value: JSUndefined[Boolean]) =>
                                         simpleSyS.expertMode = value
+
+                                }.toFunc.opt
+                            }
+                        ),
+                        CheckboxItem(
+                            new CheckboxItemProps {
+                                title = "Тестовый режим генерации сценариев".opt
+                                height = 25
+                                value = simpleSyS.scenarioTestMode.getOrElse(false).asInstanceOf[JSAny].opt
+                                changed = {
+                                    (form: DynamicForm, item: FormItem, value: JSUndefined[Boolean]) =>
+                                        simpleSyS.scenarioTestMode = value
 
                                 }.toFunc.opt
                             }
@@ -108,7 +119,9 @@ class SettingsEditorProps extends WindowSSProps {
                         (thiz: classHandler) =>
                             if (oldSkin != skin) {
                                 simpleSyS.skin = skin
+
                                 isc.OfflineSS.put(s"Skin$identifierApp", skin)
+                                isc.OfflineSS.putBoolean(s"ScenarioTestMode$identifierApp", simpleSyS.scenarioTestMode.getOrElse(false))
                                 js.Dynamic.global.window.location.reload(false)
                             }
 
