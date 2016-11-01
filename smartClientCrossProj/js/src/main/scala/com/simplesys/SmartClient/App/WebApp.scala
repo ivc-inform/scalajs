@@ -1,15 +1,13 @@
 package com.simplesys.SmartClient.App
 
-import com.simplesys.SmartClient.App.props.SettingsEditorProps
 import com.simplesys.SmartClient.DataBinding.props.dataSource.DataSourceFieldProps
 import com.simplesys.SmartClient.DataBinding.props.{DataSourceProps, DataViewProps}
 import com.simplesys.SmartClient.DataBinding.{DataSource, DataSourceSSstatic}
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.Grids.props.ListGridEditorProps
+import com.simplesys.SmartClient.Grids.props.ListGridProps
 import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
-import com.simplesys.SmartClient.System._
+import com.simplesys.SmartClient.System.{DataSource, DataView, FileLoader, Page, isc, simpleSyS, _}
 import com.simplesys.SmartClient.Tools.WindowsStack
-import com.simplesys.System.Types.Skin.Skin
 import com.simplesys.System.Types._
 import com.simplesys.System._
 import com.simplesys.option.DoubleType._
@@ -19,12 +17,8 @@ import scala.scalajs.js.annotation.JSExport
 
 trait WebApp {
 
-    self =>
-
     protected val windowsStack = new WindowsStack
-
-    val loadSchemas: Boolean
-    val identifier: ID
+    protected val loadSchemas: Boolean
 
     //Можно при наследование объявлять как lazy val
     protected def mainCanvas: Canvas
@@ -36,12 +30,7 @@ trait WebApp {
 
                 isc.params.locale = "ru_RU"
 
-                val skin: String = simpleSyS.skin.toOption match {
-                    case Some(skin) => skin
-                    case None => isc.OfflineSS.get(s"Skin$identifier", Skin.Enterprise.toString)
-                }
-
-                simpleSyS.skin = skin
+                val skin = Skin.Enterprise
 
                 Page setAppImgDir "managed/images/common-webapp/app/"
 
@@ -94,14 +83,14 @@ trait WebApp {
                     new DataSourceFieldProps {
                         required = true.opt
                         `type` = FieldType.sCode_SimpleType.opt
-                        title = "Наименование".opt
+                        title = "\u041D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435".opt
                         primaryKey = true.opt
                         name = "libName".opt
                     },
                     new DataSourceFieldProps {
                         required = true.opt
                         `type` = FieldType.sCode_SimpleType.opt
-                        title = "Версия".opt
+                        title = "\u0412\u0435\u0440\u0441\u0438\u044F".opt
                         primaryKey = true.opt
                         name = "libVersion".opt
                     }
@@ -110,35 +99,24 @@ trait WebApp {
         )
 
     protected def getAbout(): Unit = {
-        //isc debugTrap simpleSyS.aboutData
         aboutDS setCacheData simpleSyS.aboutData
 
         isc.infos(
-            ListGridEditor(
-                new ListGridEditorProps {
-                    identifier = "544C01DA-5F30-0126-8546-00F31AC35541".opt
-                    autoFetchData = true.opt
+            ListGrid.create(
+                new ListGridProps {
                     dataSource = aboutDS.opt
                     fields = Seq(
                         new ListGridFieldProps {
-                            name = "libName".opt
+                            nameStrong = "libName".nameStrongOpt
                         },
                         new ListGridFieldProps {
-                            name = "libVersion".opt
+                            nameStrong = "libVersion".nameStrongOpt
                             align = Alignment.center.opt
                         }
                     ).opt
                 }
             ),
             "544C01DA-5F30-0126-8546-00F31AC36341"
-        )
-    }
-
-    protected def getSetting(): Unit = {
-        SettingsEditor.create(
-            new SettingsEditorProps {
-                identifier = self.identifier.opt
-            }
         )
     }
 }

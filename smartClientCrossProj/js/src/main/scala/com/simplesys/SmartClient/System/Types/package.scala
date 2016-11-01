@@ -1,5 +1,6 @@
 package com.simplesys.System
 
+import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.xml.Elem
 
 import scala.scalajs.js
@@ -9,7 +10,7 @@ package object Types {
 
     type Field = JSObject
 
-    type Criteria = JSDictionary[JSObject]
+    type Criteria = JSObject
 
     trait CallbackObject {
         val target: JSObject
@@ -33,7 +34,7 @@ package object Types {
     type DetailViewerViewState = JSObject
 
     type Callback = js.Function | js.ThisFunction | CallbackObject
-    type ValueMap = JSDictionaryAny
+    type ValueMap = JSAny
     type XMLDocument = JSObject
     type XMLElement = JSObject
     type XMLNode = JSObject

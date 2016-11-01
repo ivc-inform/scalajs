@@ -1,11 +1,11 @@
 package com.simplesys.SmartClient.Grids.props.listGrid
 
 import com.simplesys.SmartClient.DataBinding.DSRequest
-import com.simplesys.SmartClient.Forms.FormsItems.FormItem
-import com.simplesys.SmartClient.Forms.FormsItems.formItem.FormItemIcon
+import com.simplesys.SmartClient.Forms.formsItems.FormItem
+import com.simplesys.SmartClient.Forms.formsItems.formItem.FormItemIcon
 import com.simplesys.SmartClient.Forms.{DynamicForm, Validator}
-import com.simplesys.SmartClient.Grids.Grid
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord, UserFormula, UserSummary}
+import com.simplesys.SmartClient.Grids.{Grid, ListGrid}
 import com.simplesys.SmartClient.System.IscArray
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AutoComplete.AutoComplete
@@ -15,7 +15,9 @@ import com.simplesys.System.Types.EditCompletionEvent.EditCompletionEvent
 import com.simplesys.System.Types.EnterKeyEditAction.EnterKeyEditAction
 import com.simplesys.System.Types.EscapeKeyEditAction.EscapeKeyEditAction
 import com.simplesys.System.Types.FormItemComponentType.FormItemComponentType
+import com.simplesys.System.Types.FormItemType._
 import com.simplesys.System.Types.HiliteIconPosition.HiliteIconPosition
+import com.simplesys.System.Types.ListGridFieldType._
 import com.simplesys.System.Types.OperatorId.OperatorId
 import com.simplesys.System.Types.RecordSummaryFunction.RecordSummaryFunction
 import com.simplesys.System.Types.SortDirection.SortDirection
@@ -23,13 +25,15 @@ import com.simplesys.System.Types.SummaryFunction.SummaryFunction
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSAny, JSDictionary, JSObject}
-import com.simplesys.option.{ScNone, ScOption}
+import com.simplesys.System.{JSAny, JSDictionary, JSObject, NameStrong}
+import com.simplesys.option.{FormItemType_FormItemComponentType, ScNone, ScOption}
 import com.simplesys.props.AbstractClassProps
 
 import scala.scalajs.js
+import scala.scalajs.js.Function5
 
 class ListGridFieldProps extends AbstractClassProps {
+    type classHandler <: ListGridField
     var align: ScOption[Alignment] = ScNone
     var applyAfterSummary: ScOption[Boolean] = ScNone
     var autoComplete: ScOption[AutoComplete] = ScNone
@@ -76,7 +80,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var editorImageURLPrefix: ScOption[String] = ScNone
     var editorImageURLSuffix: ScOption[String] = ScNone
     var editorProperties: ScOption[FormItem] = ScNone
-    var editorType: ScOption[FormItemComponentType] = ScNone
+    var editorType: ScOption[FormItemType_FormItemComponentType[FormItemType, FormItemComponentType]] = ScNone
     var editorValueIconHeight: ScOption[Int] = ScNone
     var editorValueIcons: ScOption[JSObject] = ScNone
     var editorValueIconWidth: ScOption[Int] = ScNone
@@ -89,13 +93,15 @@ class ListGridFieldProps extends AbstractClassProps {
     var exportFormat: ScOption[FormatString] = ScNone
     var exportRawValues: ScOption[Boolean] = ScNone
     var filterEditorProperties: ScOption[FormItem] = ScNone
-    var filterEditorType: ScOption[FormItemComponentType] = ScNone
+    var filterEditorType: ScOption[FormItemType_FormItemComponentType[FormItemType, FormItemComponentType]] = ScNone
     var filterEditorValueMap: ScOption[JSObject] = ScNone
     var filterOnKeypress: ScOption[Boolean] = ScNone
     var filterOperator: ScOption[OperatorId] = ScNone
     var format: ScOption[FormatString] = ScNone
+    var formatCellValue: ScOption[Function5[JSAny, ListGridRecord, Int, Int, ListGrid, HTMLString]] = ScNone
     var formatGridSummary: ScOption[String] = ScNone
     var formatGroupSummary: ScOption[String] = ScNone
+    var formatEditorValue: ScOption[Function5[JSAny, ListGridRecord, Int, Int, ListGrid, JSAny]] = ScNone
     var frozen: ScOption[Boolean] = ScNone
     var groupGranularity: ScOption[Int] = ScNone
     var groupingMode: ScOption[String] = ScNone
@@ -143,7 +149,9 @@ class ListGridFieldProps extends AbstractClassProps {
     var linkURLPrefix: ScOption[String] = ScNone
     var linkURLSuffix: ScOption[String] = ScNone
     var multiple: ScOption[Boolean] = ScNone
+    @deprecated(message = "Use nameStrong instead.", since = "")
     var name: ScOption[String] = ScNone
+    var nameStrong: ScOption[NameStrong] = ScNone
     var optionCriteria: ScOption[Criteria] = ScNone
     var optionDataSource: ScOption[String] = ScNone
     var optionFilterContext: ScOption[DSRequest] = ScNone
@@ -179,8 +187,10 @@ class ListGridFieldProps extends AbstractClassProps {
     var summaryValueTitle: ScOption[String] = ScNone
     var suppressValueIcon: ScOption[Boolean] = ScNone
     var target: ScOption[String] = ScNone
+    var `type`: ScOption[ListGridFieldType] = ScNone
     var timeFormatter: ScOption[TimeDisplayFormat] = ScNone
     var title: ScOption[String] = ScNone
+    var treeField: ScOption[Boolean] = ScNone
     var userFormula: ScOption[UserFormula] = ScNone
     var userSummary: ScOption[UserSummary] = ScNone
     var validateOnChange: ScOption[Boolean] = ScNone

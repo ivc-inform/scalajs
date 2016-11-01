@@ -3,8 +3,7 @@ package com.simplesys.SmartClient.System
 import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.Control.menu._
 import com.simplesys.SmartClient.Foundation._
-import com.simplesys.System.Types.Skin.Skin
-import com.simplesys.System.Types.{Record, void}
+import com.simplesys.System.Types.{Record, URL, void}
 import com.simplesys.System.{JSObject, JSUndefined}
 
 import scala.scalajs.js
@@ -18,6 +17,9 @@ trait Config extends JSObject {
 
 @js.native
 object simpleSyS extends JSObject {
+
+    import com.simplesys.System._
+
     def checkOwner(canvas: Canvas): Canvas = js.native
     def _enableDeleteFromTree(menu: MenuSSItem): Boolean = js.native
     def _openFolders(menu: MenuSS): void = js.native
@@ -26,4 +28,7 @@ object simpleSyS extends JSObject {
     val aboutData: IscArray[Record] = js.native
     var skin: JSUndefined[String] = js.native
     var expertMode: JSUndefined[Boolean] = js.native
+    var scenarioTestMode: JSUndefined[Boolean] = js.native
+    val simpleSysContextPath: URL = js.native
+    var qtyGraphCopies: JSUndefined[Int] = js.native
 }

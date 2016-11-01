@@ -4,8 +4,8 @@ import com.simplesys.SmartClient.DataBinding.Callbacks.DSCallback
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.{Hilite, HiliteEditor, ListGridField}
 import com.simplesys.SmartClient.Layout.Window
-import com.simplesys.SmartClient.System.{Class, IscArray}
-import com.simplesys.System.JSObject
+import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class, IscArray}
+import com.simplesys.System.{JSAny, JSObject, JSUndefined}
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.DragDataAction.DragDataAction
 import com.simplesys.System.Types.FetchMode.FetchMode
@@ -38,7 +38,7 @@ trait DataBoundComponent extends Class {
     val dataFetchMode: FetchMode
     val dataField: String
     var dataPageSize: Int
-    var dataSource: DataSource | String
+    var dataSource: JSUndefined[DataSource]
     var deepCloneOnEdit: Boolean
     var descriptionField: String
     def deselectAllRecords(): void
@@ -75,7 +75,7 @@ trait DataBoundComponent extends Class {
     var fieldNamingStrategy: FieldNamingStrategy
     def find(advancedCriteria: AdvancedCriteria): JSObject
     def findAll(advancedCriteria: AdvancedCriteria): IscArray[JSObject]
-    def findByKey(keyValue: JSObject): Record
+    def findByKey(keyValue: JSAny): Record
     def findIndex(advancedCriteria: AdvancedCriteria): Int
     def findNextIndex(startIndex: Int, advancedCriteria: AdvancedCriteria, endIndex: Int = js.native): Int
     def getDataPathField(dataPath: DataPath): Field
@@ -139,5 +139,8 @@ trait DataBoundComponent extends Class {
     def userAddedField(field: ListGridField): Boolean
     def willFetchData(newCriteria: Criteria, textMatchStyle: TextMatchStyle = js.native): Boolean
 }
+
+@js.native
+abstract trait AbstractDataBoundComponentCompanion extends AbstractClassCompanion
 
 
