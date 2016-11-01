@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.Forms.formsItems.props
 
 import com.simplesys.SmartClient.Control.Button
+import com.simplesys.SmartClient.Drawing.gradient.SimpleGradient
 import com.simplesys.SmartClient.Drawing.gradient.props.SimpleGradientProps
 import com.simplesys.SmartClient.Forms.DynamicFormSS
 import com.simplesys.SmartClient.Forms.formsItems.{FormItem, GradientItem}
@@ -9,11 +10,9 @@ import com.simplesys.SmartClient.System._
 import com.simplesys.System.Types._
 import com.simplesys.System._
 import com.simplesys.function._
-import com.simplesys.js.components.PropertyEditorDynamicForm
 import com.simplesys.option.DoubleType._
 import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
-import com.simplesys.SmartClient.Drawing.gradient.SimpleGradient
 
 class GradientItemProps extends FormItemWithButtonsProps {
     type classHandler <: GradientItem
@@ -88,7 +87,7 @@ class GradientItemProps extends FormItemWithButtonsProps {
     var direction: ScOption[Double] = ScNone
 
     changed = {
-        (form: PropertyEditorDynamicForm, formItem: GradientItem, value: SimpleGradient) ⇒
+        (form: DynamicFormSS, formItem: GradientItem, value: SimpleGradient) ⇒
             isc debugTrap(form, value)
             form.setPropertyOnSelection("fillGradient", value)
 
