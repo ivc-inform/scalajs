@@ -3,7 +3,7 @@ package com.simplesys.SmartClient.App.props
 import com.simplesys.SmartClient.App.SettingsEditor
 import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.formsItems.FormItem
-import com.simplesys.SmartClient.Forms.formsItems.props.{CheckboxItemProps, SkinBoxItemProps}
+import com.simplesys.SmartClient.Forms.formsItems.props.{CheckboxItemProps, SkinBoxItemProps, SpinnerItemProps}
 import com.simplesys.SmartClient.Forms.props.DynamicFormSSProps
 import com.simplesys.SmartClient.Layout.props.tabSet.TabProps
 import com.simplesys.SmartClient.Layout.props.{OkCancelPanelProps, TabSetSSProps, WindowSSProps}
@@ -13,7 +13,7 @@ import com.simplesys.System.{JSAny, JSUndefined, jSUndefined}
 import com.simplesys.function._
 import com.simplesys.option.DoubleType._
 import com.simplesys.option.ScOption._
-import com.simplesys.SmartClient.Forms.formsItems.props.SpinnerItemProps
+import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
 
@@ -29,6 +29,8 @@ class SettingsEditorProps extends WindowSSProps {
     headerIconPath = Common.settings.opt
     autoPosition = false.opt
 
+    var customSettingItems: ScOption[Seq[FormItem]] = ScNone
+
 
     initWidget = {
         (thiz: classHandler, arguments: IscArray[JSAny]) =>
@@ -40,10 +42,12 @@ class SettingsEditorProps extends WindowSSProps {
             val oldSkin = simpleSyS.skin
             var skin: JSUndefined[String] = jSUndefined
 
+            //isc debugTrap thiz.customSettingItems
+
             val commons = DynamicFormSS.create(
                 new DynamicFormSSProps {
 
-                    fields = Seq(
+                    fields = (Seq(
                         CheckboxItem(
                             new CheckboxItemProps {
                                 title = "Показать дерево виджетов".opt
@@ -57,18 +61,6 @@ class SettingsEditorProps extends WindowSSProps {
                                 }.toFunc.opt
                             }
                         ),
-                        CheckboxItem(
-                            new CheckboxItemProps {
-                                title = "Тестовый режим генерации сценариев".opt
-                                height = 25
-                                value = simpleSyS.scenarioTestMode.getOrElse(false).asInstanceOf[JSAny].opt
-                                changed = {
-                                    (form: DynamicForm, item: FormItem, value: JSUndefined[Boolean]) =>
-                                        simpleSyS.scenarioTestMode = value
-
-                                }.toFunc.opt
-                            }
-                        ),
                         SkinBoxItem(
                             new SkinBoxItemProps {
                                 title = "Темы оформления (Skins)".opt
@@ -78,22 +70,9 @@ class SettingsEditorProps extends WindowSSProps {
                                         skin = value
                                 }.toFunc.opt
                             }
-                        ),
-                        SpinnerItem(
-                            new SpinnerItemProps {
-                                disabled = true.opt
-                                title = "Количество копий графа состояний".opt
-                                defaultValue = (if (simpleSyS.qtyGraphCopies.isEmpty) 100 else simpleSyS.qtyGraphCopies get).asInstanceOf[JSAny].opt
-                                min = 0.0.opt
-                                step = 1.0.opt
-                                changed = {
-                                    import com.simplesys.SmartClient.Forms.DynamicFormSS
-                                    (form: DynamicFormSS, formItem: FormItem, value: JSUndefined[Int]) ⇒
-                                        simpleSyS.qtyGraphCopies = value
-                                }.toFunc.opt
-                            }
                         )
-                    ).opt
+                    ) ++ (if (thiz.customSettingItems.isDefined) thiz.customSettingItems.get else Seq.empty)).opt
+
                 }
             )
 
