@@ -156,6 +156,9 @@ trait TreeListGridEditor extends HLayoutSS {
 
     val recordListComponentPoolingMode: RecordComponentPoolingMode
     val recordTreeComponentPoolingMode: RecordComponentPoolingMode
+
+    def refreshDataList(callBack: DSCallback = js.native): void
+    def refreshDataTree(callBack: DSCallback = js.native): void
 }
 
 @js.native

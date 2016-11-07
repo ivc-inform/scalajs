@@ -507,6 +507,7 @@ class DrawItemProps extends ClassProps {
     var fillGradient: ScOption[Gradient] = ScNone
     var fillOpacity: ScOption[Double] = ScNone
     var keepInParentRect: ScOption[Boolean] = ScNone
+    var palette: ScOption[JSObject] = ScNone
     var knobs: ScOption[Seq[KnobType]] = ScNone
     var lineCap: ScOption[LineCap] = ScNone
     var lineColor: ScOption[CSSColor] = ScNone

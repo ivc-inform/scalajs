@@ -5,7 +5,7 @@ import sbt._
 
 object PluginDeps {
   object versions {
-    val scalaJSPluginVersion = "0.6.12"
+    val scalaJSPluginVersion = "0.6.13"
   }
 
   val scalaJSPlugin = addSbtPlugin("org.scala-js" % "sbt-scalajs" % versions.scalaJSPluginVersion)
