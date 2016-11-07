@@ -6,20 +6,25 @@ import sbt.Keys._
 import sbt._
 
 trait TestStend {
-    self: Build with SmartClientCrossProj=>
+    self: Build with SmartClientCrossProj =>
 
 
     lazy val testStend = crossProject.dependsOn(smartClientCrossProj).
       settings(
-          name := "empty",
+          name := "test-stend",
           libraryDependencies ++= {
-              Seq()
+              Seq(
+              )
           },
           publishArtifact in(Compile, packageDoc) := false
       ).
       jvmSettings(
           libraryDependencies ++= {
-              Seq()
+              Seq(
+                  CommonDeps.jettyWebapp.value,
+                  CommonDeps.jettyAnnotations.value,
+                  CommonDeps.jettyPlus.value
+              )
           }).
       jsSettings(
           libraryDependencies ++= Seq(
