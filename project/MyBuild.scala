@@ -64,7 +64,6 @@ object MyBuild extends Build with
       backboneJSCrossJS,
       underscoreJSCrossJS,
       underscoreJSCrossJVM,
-      testStendJS,
-      testStendJVM)
+      testStend)
 }
 

@@ -1,38 +1,39 @@
 package ru.simplesys.sbprocessingui.sbtbuild
 
-import com.simplesys.build.{CommonDeps, SmartClientCrossProj}
+import com.simplesys.build.{CommonDeps, CommonSettings, SmartClientCrossProj}
+import org.scalajs.sbtplugin.ScalaJSPlugin
 import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport._
 import sbt.Keys._
 import sbt._
 
+
 trait TestStend {
     self: Build with SmartClientCrossProj =>
 
+    lazy val testStend = Project(id = "test-stend", base = file("test-stend")).enablePlugins(
+        ScalaJSPlugin
+    ).dependsOn(
+        smartClientCrossProj.jvm, smartClientCrossProj.js
+    ).settings(
 
-    lazy val testStend = crossProject.dependsOn(smartClientCrossProj).
-      settings(
-          name := "test-stend",
-          libraryDependencies ++= {
-              Seq(
-              )
-          },
-          publishArtifact in(Compile, packageDoc) := false
-      ).
-      jvmSettings(
-          libraryDependencies ++= {
-              Seq(
-                  CommonDeps.jettyWebapp.value,
-                  CommonDeps.jettyAnnotations.value,
-                  CommonDeps.jettyPlus.value
-              )
-          }).
-      jsSettings(
-          libraryDependencies ++= Seq(
+        libraryDependencies ++= Seq(
 
-          )
-      ).dependsOn().jsConfigure(x => x.dependsOn()).jvmConfigure(x => x.dependsOn())
+            CommonDeps.jettyWebapp.value % "container",
+            CommonDeps.jettyAnnotations.value % "container",
+            CommonDeps.jettyPlus.value % "container",
 
-    // Needed, so sbt finds the projects
-    lazy val testStendJVM = testStend.jvm
-    lazy val testStendJS = testStend.js
+            CommonDeps.scalaTest.value % "test"
+
+        )
+
+    ).settings({
+
+        Seq(
+            //scala.js
+            crossTarget in fastOptJS := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
+            crossTarget in fullOptJS := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
+            crossTarget in packageJSDependencies := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents"
+        )
+    }).settings(CommonSettings.defaultSettings)
 }
+

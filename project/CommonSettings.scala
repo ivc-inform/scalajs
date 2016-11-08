@@ -28,6 +28,7 @@ object CommonSettings {
         val jettyVersion = "9.3.14.v20161028"
         val akkaVersion = "2.4.12"
         val akkaExperimintalVersion = "2.4.11"
+        val smartclientVersion = "11.0-v20160805.10"
     }
 
 
