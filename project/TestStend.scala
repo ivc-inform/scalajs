@@ -6,8 +6,6 @@ import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport._
 import sbt.Keys._
 import sbt._
 
-
-
 trait TestStend {
     self: Build with SmartClientCrossProj =>
 
@@ -19,9 +17,9 @@ trait TestStend {
 
         libraryDependencies ++= Seq(
 
-            CommonDeps.jettyWebapp.value % "container",
+            /*CommonDeps.jettyWebapp.value % "container",
             CommonDeps.jettyAnnotations.value % "container",
-            CommonDeps.jettyPlus.value % "container"
+            CommonDeps.jettyPlus.value % "container"*/
         )
 
     ).settings({
