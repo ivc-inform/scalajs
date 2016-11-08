@@ -17,6 +17,9 @@ trait TestStend {
           name := "test-stend",
           libraryDependencies ++= {
               Seq(
+                  CommonDeps.jettyWebapp.value,
+                  CommonDeps.jettyAnnotations.value,
+                  CommonDeps.jettyPlus.value
               )
           },
           publishArtifact in(Compile, packageDoc) := false
@@ -24,9 +27,7 @@ trait TestStend {
       jvmSettings(
           libraryDependencies ++= {
               Seq(
-                  CommonDeps.jettyWebapp.value,
-                  CommonDeps.jettyAnnotations.value,
-                  CommonDeps.jettyPlus.value
+
               )
           }).
       jsSettings(

@@ -6,9 +6,11 @@ import sbt._
 object PluginDeps {
     object versions {
         val scalaJSPluginVersion = "0.6.13"
+        val xsbtWebVersion = "0.9.1"
     }
 
     val scalaJSPlugin = addSbtPlugin("org.scala-js" % "sbt-scalajs" % versions.scalaJSPluginVersion)
+    val xsbtWeb = addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % versions.xsbtWebVersion)
 }
 
 
