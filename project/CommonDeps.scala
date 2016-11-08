@@ -14,6 +14,7 @@ object PluginDeps {
 
 object CommonDeps {
 
+
     val common = Def.setting("com.simplesys.core" %% "common" % versions.ssysCoreVersion)
     val coreUtils = Def.setting("com.simplesys.core" %% "core-utils" % versions.ssysCoreVersion)
     val xmlExtender = Def.setting("com.simplesys.core" %% "xml-extender" % versions.ssysCoreVersion)
