@@ -20,10 +20,7 @@ trait TestStend {
 
             CommonDeps.jettyWebapp.value % "container",
             CommonDeps.jettyAnnotations.value % "container",
-            CommonDeps.jettyPlus.value % "container",
-
-            CommonDeps.scalaTest.value % "test"
-
+            CommonDeps.jettyPlus.value % "container"
         )
 
     ).settings({
