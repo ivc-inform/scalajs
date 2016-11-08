@@ -7,6 +7,7 @@ import sbt.Keys._
 import sbt._
 
 
+
 trait TestStend {
     self: Build with SmartClientCrossProj =>
 
