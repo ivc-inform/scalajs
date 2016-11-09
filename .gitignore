@@ -75,4 +75,4 @@ src/main/webapp/javascript/IncludeModules
 .scala_dependencies
 .worksheet
 target/
-
+isomorphic/
