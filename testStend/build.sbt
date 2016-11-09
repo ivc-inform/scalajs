@@ -4,7 +4,7 @@ webSettings
 
 webInfIncludeJarPattern in Compile := Some( """.*com\.simplesys.*/*\.jar$|.*ru\.simplesys.*/*\.jar$|.*/classes/.*""")
 
-container.deploy("/scalajs-testStend" -> testStend)
+container.deploy("/scalajs-testStend" -> testStendJVM)
 
 port in container.Configuration := 8084
 
