@@ -1,0 +1,11 @@
+webapp/isomorphic/$modulesDir/ISC_Core.js
+webapp/isomorphic/$modulesDir/ISC_Foundation.js
+webapp/isomorphic/$modulesDir/ISC_Containers.js
+webapp/isomorphic/$modulesDir/ISC_Grids.js
+webapp/isomorphic/$modulesDir/ISC_Forms.js
+webapp/isomorphic/$modulesDir/ISC_DataBinding.js
+webapp/isomorphic/$modulesDir/ISC_Calendar.js
+webapp/isomorphic/$modulesDir/ISC_RichTextEditor.js
+webapp/isomorphic/$modulesDir/ISC_History.js
+webapp/isomorphic/$modulesDir/ISC_Workflow.js
+webapp/isomorphic/$modulesDir/ISC_FileLoader.js

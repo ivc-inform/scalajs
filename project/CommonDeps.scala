@@ -4,11 +4,15 @@ import com.simplesys.build.CommonSettings.{settingValues, versions}
 import sbt._
 
 object PluginDeps {
-  object versions {
-    val scalaJSPluginVersion = "0.6.13"
-  }
+    object versions {
+        val scalaJSPluginVersion = "0.6.13"
+        val xsbtWebVersion = "2.1.0"
+        val mergeJSVersion = "1.0.6"
+    }
 
-  val scalaJSPlugin = addSbtPlugin("org.scala-js" % "sbt-scalajs" % versions.scalaJSPluginVersion)
+    val scalaJSPlugin = addSbtPlugin("org.scala-js" % "sbt-scalajs" % versions.scalaJSPluginVersion)
+    val xsbtWeb = addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % versions.xsbtWebVersion)
+    val mergeJS = addSbtPlugin("ru.simplesys" % "merge-js" % versions.mergeJSVersion)
 }
 
 
@@ -24,6 +28,20 @@ object CommonDeps {
     val scalaReflect = Def.setting(DepsHelper.moduleIdOpt(settingValues.scalaVersion, Some("org.scala-lang" % "scala-reflect" % settingValues.scalaVersion), Some("org.scala-lang" % "scala-reflect" % settingValues.scalaVersion)))
     val scalaCompiler = Def.setting(DepsHelper.moduleIdOpt(settingValues.scalaVersion, Some("org.scala-lang" % "scala-compiler" % settingValues.scalaVersion), Some("org.scala-lang" % "scala-compiler" % settingValues.scalaVersion)))
     val scalaReflection = Def.setting(DepsHelper.moduleIdOpt(settingValues.scalaVersion, Some("org.scala-lang" % "scala-reflection" % settingValues.scalaVersion), Some("org.scala-lang" % "scala-reflection" % settingValues.scalaVersion)))
+
+    val servletAPI = Def.setting("javax.servlet" % "javax.servlet-api" % versions.servletAPIVersion)
+    val jettyWebapp = Def.setting("org.eclipse.jetty" % "jetty-webapp" % versions.jettyVersion)
+    val jettyAnnotations = Def.setting("org.eclipse.jetty" % "jetty-annotations" % versions.jettyVersion)
+    val jettyPlus = Def.setting("org.eclipse.jetty" % "jetty-plus" % versions.jettyVersion)
+
+    val akkaActor = Def.setting("com.typesafe.akka" %% "akka-actor" % versions.akkaVersion)
+    val akkaSLF4J = Def.setting("com.typesafe.akka" %% "akka-slf4j" % versions.akkaVersion)
+    val akkaPersistence = Def.setting("com.typesafe.akka" %% "akka-persistence" % versions.akkaVersion)
+    val akkaTestKit = Def.setting("com.typesafe.akka" %% "akka-testkit" % versions.akkaVersion)
+    val akkaHTTPCore = Def.setting("com.typesafe.akka" %% "akka-http-core" % versions.akkaVersion)
+    val akkaHttp = Def.setting("com.typesafe.akka" %% "akka-http-xml-experimental" % versions.akkaExperimintalVersion)
+    val akkaQuery = Def.setting("com.typesafe.akka" %% "akka-persistence-query-experimental" % versions.akkaVersion)
+    val smartclient = Def.setting("com.simplesys" % "smartclient-js" % versions.smartclientVersion)
 
     val scalaTest = Def.setting("org.scalatest" %% "scalatest" % versions.scalaTestVersion % "test")
     val spray = Def.setting("io.spray" % "spray-json_2.11" % versions.scalaTestVersion % "test")

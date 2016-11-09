@@ -21,14 +21,20 @@ object CommonSettings {
         val sprayVersion = "1.3.2"
         val uTestVersion = "0.3.1"
         val scalaTestVersion = "3.0.0"
-        //val ssysCoreVersion = "1.2.81"
-        val ssysCoreVersion = "1.2-SNAPSHOT"
+        val ssysCoreVersion = "1.2.94"
+        //val ssysCoreVersion = "1.2-SNAPSHOT"
         val scalajsDOMVersion = "0.9.0"
         val scalajsJQueryVersion = "0.9.0"
+        val jettyVersion = "9.3.14.v20161028"
+        val servletAPIVersion = "3.1.0"
+        val akkaVersion = "2.4.12"
+        val akkaExperimintalVersion = "2.4.11"
+        val smartclientVersion = "11.0-v20160805.10"
     }
 
 
-    val defaultSettings = {
+    val
+    defaultProjectSettings = {
         import sbt.Keys._
         Seq(
             crossScalaVersions := settingValues.crossScalaVersions,
