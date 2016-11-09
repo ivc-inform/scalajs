@@ -16,7 +16,7 @@ trait TestStend {
 
 
     lazy val testStend = crossProject.dependsOn(smartClientCrossProj).enablePlugins(
-        ScalaJSPlugin, JettyPlugin
+        JettyPlugin
     ).
       settings(
           name := "test-stend",
@@ -53,7 +53,7 @@ trait TestStend {
           currentProjectCoffeeDevelopedDirPath in MergeWebappConfig := (sourceDirectory in Compile).value / "webapp" / "coffeescript" / "developed",
 
           libraryDependencies ++= Seq()
-      ).dependsOn(smartClientCrossProj).jsConfigure(x => x.dependsOn(smartClientJS).enablePlugins(MergeWebappPlugin)).jvmConfigure(x => x.dependsOn(smartClientJVM))
+      ).dependsOn(smartClientCrossProj).jsConfigure(x => x.dependsOn(smartClientJS).enablePlugins(MergeWebappPlugin, ScalaJSPlugin)).jvmConfigure(x => x.dependsOn(smartClientJVM))
 
     // Needed, so sbt finds the projects
     lazy val testStendJVM = testStend.jvm
