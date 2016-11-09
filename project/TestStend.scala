@@ -30,7 +30,7 @@ trait TestStend {
           publishArtifact in(Compile, packageDoc) := false,
           containerPort := 8084,
           webappWebInfClasses := true,
-          containerArgs := Seq("--path", "/test-stend"),
+          //containerArgs := Seq("--path", "/test-stend"),
           containerLibs in Jetty := Seq(("org.eclipse.jetty" % "jetty-runner" % versions.jettyVersion).intransitive())
       ).
       jvmSettings(

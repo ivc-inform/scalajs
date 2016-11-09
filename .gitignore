@@ -76,3 +76,4 @@ src/main/webapp/javascript/IncludeModules
 .worksheet
 target/
 isomorphic/
+generatedComponents/

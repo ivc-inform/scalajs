@@ -25,7 +25,7 @@ class PrepareJSCode extends StaticJSCode {
 
     @JSExport override def createJS(): Unit = {
 
-        isc.WindowSS.addProperties(WindowSS(new WindowSSProps))
+        //isc.WindowSS.addProperties(WindowSS(new WindowSSProps))
 
         isc.defineClass(RibbonGroupSS.getClass.getSimpleName, RibbonGroup.getClass.getSimpleName)
         isc.defineClass(SettingsEditor.getClass.getSimpleName, WindowSS.getClass.getSimpleName)
