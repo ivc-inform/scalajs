@@ -23,7 +23,7 @@ class TestApp {
                     isc.params.locale = "ru_RU"
                     //isc.params.locale = "en"
 
-                    isc debugTrap 0
+                    isc debugTrap simpleSyS.skin
 
                     val skin: String = simpleSyS.skin.toOption match {
                         case Some(skin) => skin
