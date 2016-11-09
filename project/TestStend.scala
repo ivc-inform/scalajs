@@ -31,11 +31,6 @@ trait TestStend {
           containerArgs := Seq("--path", "/test-stend"),
           containerLibs in Jetty := Seq(("org.eclipse.jetty" % "jetty-runner" % versions.jettyVersion).intransitive()),
 
-          //scala.js
-          crossTarget in fastOptJS := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
-          crossTarget in fullOptJS := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
-          crossTarget in packageJSDependencies := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
-
           //merger
           mergeMapping in MergeWebappConfig := Seq(
               ("com.simplesys", "smartclient-js") -> Seq(
@@ -52,6 +47,7 @@ trait TestStend {
           }
       ).
       jsSettings(
+          //scala.js
           crossTarget in fastOptJS := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
           crossTarget in fullOptJS := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
           crossTarget in packageJSDependencies := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
