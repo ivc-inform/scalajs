@@ -30,6 +30,7 @@ object CommonDeps {
     val scalaCompiler = Def.setting(DepsHelper.moduleIdOpt(settingValues.scalaVersion, Some("org.scala-lang" % "scala-compiler" % settingValues.scalaVersion), Some("org.scala-lang" % "scala-compiler" % settingValues.scalaVersion)))
     val scalaReflection = Def.setting(DepsHelper.moduleIdOpt(settingValues.scalaVersion, Some("org.scala-lang" % "scala-reflection" % settingValues.scalaVersion), Some("org.scala-lang" % "scala-reflection" % settingValues.scalaVersion)))
 
+    val servletAPI = Def.setting("javax.servlet" % "javax.servlet-api" % versions.servletAPIVersion)
     val jettyWebapp = Def.setting("org.eclipse.jetty" % "jetty-webapp" % versions.jettyVersion)
     val jettyAnnotations = Def.setting("org.eclipse.jetty" % "jetty-annotations" % versions.jettyVersion)
     val jettyPlus = Def.setting("org.eclipse.jetty" % "jetty-plus" % versions.jettyVersion)
