@@ -4,6 +4,8 @@ import com.simplesys.SmartClient.Control.{Button, IButton}
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.DataBinding.props.{DataBoundComponentProps, SortSpecifierProps}
 import com.simplesys.SmartClient.Forms.DynamicForm
+import com.simplesys.SmartClient.Forms.formsItems.FormItem
+import com.simplesys.SmartClient.Forms.formsItems.props.FormItemProps
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Foundation.{Canvas, GridRenderer, HTMLFlow, StatefulCanvas}
 import com.simplesys.SmartClient.Grids.listGrid._
@@ -11,7 +13,7 @@ import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
 import com.simplesys.SmartClient.Grids.treeGrid.Tree
 import com.simplesys.SmartClient.Grids.{Grid, ListGrid}
 import com.simplesys.SmartClient.Layout.props.VLayoutProps
-import com.simplesys.SmartClient.Layout.{HLayout, Layout, VLayout}
+import com.simplesys.SmartClient.Layout._
 import com.simplesys.SmartClient.System.{Class, IscArray, Selection}
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
@@ -48,10 +50,11 @@ import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.TimeDisplayFormat.TimeDisplayFormat
 import com.simplesys.System.Types.VerticalAlignment.VerticalAlignment
 import com.simplesys.System.Types._
-import com.simplesys.System.{JSAny, JSObject}
+import com.simplesys.System._
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
+import scala.scalajs.js.{ThisFunction0, ThisFunction4}
 
 class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps with DataBoundComponentProps {
     var advancedFieldPickerThreshold: ScOption[Int] = ScNone
@@ -531,7 +534,7 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var ungroupText: ScOption[String] = ScNone
     var unremoveIcon: ScOption[SCImgURL] = ScNone
     var unspannedHeaderVAlign: ScOption[VerticalAlignment] = ScNone
-    var updateRecordComponent: ScOption[js.Function4[R, Int, Canvas, Boolean, Canvas]] = ScNone
+    var updateRecordComponent: ScOption[ThisFunction4[classHandler, R, Int, Canvas, Boolean, Canvas]] = ScNone
     var useAdvancedFieldPicker: ScOption[Boolean] = ScNone
     var useCellRollOvers: ScOption[Boolean] = ScNone
     var useCopyPasteShortcuts: ScOption[Boolean] = ScNone
@@ -553,6 +556,10 @@ class GridProps[T <: ListGridField, R <: ListGridRecord] extends VLayoutProps wi
     var warnOnUnmappedValueFieldChange: ScOption[Boolean] = ScNone
     var wrapCells: ScOption[Boolean] = ScNone
     var wrapHeaderTitles: ScOption[Boolean] = ScNone
+    var newRequestProperties: ScOption[ThisFunction0[classHandler, DSRequest]] = ScNone
+    var editRequestProperties: ScOption[ThisFunction0[classHandler, DSRequest]] = ScNone
+    var editingFields  : ScOption[Seq[FormItem]] = ScNone
+    var editWindowProperties: ScOption[WindowSS] = ScNone
 }
 
 class ListGridProps extends GridProps[ListGridField, ListGridRecord] {

@@ -1,11 +1,11 @@
-package com.simplesys.js.com.simplesys.SmartClient.Control
-
-import com.simplesys.SmartClient.Control.IButton
+package com.simplesys.SmartClient.Control
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 trait IButtonSS extends IButton {
 }
+
+@js.native
+abstract class AbstractIButtonSSCompanion extends AbstractIButtonCompanion
 

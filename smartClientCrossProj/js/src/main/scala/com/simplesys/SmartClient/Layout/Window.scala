@@ -1,9 +1,9 @@
 package com.simplesys.SmartClient.Layout
 
 import com.simplesys.SmartClient.Control.ImgButton
-import com.simplesys.SmartClient.Foundation.{Canvas, Img, Label}
+import com.simplesys.SmartClient.Foundation.{AbstractCanvasCompanion, Canvas, Img, Label}
 import com.simplesys.SmartClient.System.IscArray
-import com.simplesys.System.JSObject
+import com.simplesys.System.{JSObject, JSUndefined}
 import com.simplesys.System.Types.AnimationAcceleration.AnimationAcceleration
 import com.simplesys.System.Types.ContentLayoutPolicy.ContentLayoutPolicy
 import com.simplesys.System.Types.PanelPlacement.PanelPlacement
@@ -53,7 +53,7 @@ trait Window extends Layout {
     var hiliteHeaderSrc: SCImgURL
     var hiliteHeaderStyle: CSSStyleName
     var isModal: Boolean
-    val items: IscArray[Canvas | String]
+    val items: JSUndefined[IscArray[Canvas]]
     def maximize(): void
     val maximizeButton: ImgButton with AutoChild
     var maximized: Boolean
@@ -104,6 +104,10 @@ trait Window extends Layout {
     var status: String
     val statusBar: Canvas with AutoChild
     var title: HTMLString
+}
+
+@js.native
+abstract trait AbstractWindowCompanion extends AbstractLayoutCompanion {
 }
 
 

@@ -1,6 +1,5 @@
 
 import com.simplesys.build.{CommonSettings, PluginDeps}
-import com.typesafe.sbt.GitVersioning
 import com.typesafe.sbt.SbtGit.git
 import sbt._
 
@@ -10,7 +9,7 @@ object PluginsBuild extends Build {
     )
 
     lazy val root = Project(id = "buildPlugins", base = file(".")).settings(
-        PluginDeps.scalaJSPlugin
+        PluginDeps.scalaJSPlugin,
+        PluginDeps.xsbtWeb
     )
-
 }

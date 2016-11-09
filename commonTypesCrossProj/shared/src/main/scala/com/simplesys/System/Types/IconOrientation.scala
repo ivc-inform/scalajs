@@ -5,9 +5,9 @@ import scala.language.implicitConversions
 object IconOrientation extends Enumeration {
     type IconOrientation = Value
 
-    val left, right = Value
+    val left, center, right = Value
 
-    implicit def IconOrientation2String (io:IconOrientation):String = io.toString
+    implicit def IconOrientation2String(io: IconOrientation): String = io.toString
 }
 
 

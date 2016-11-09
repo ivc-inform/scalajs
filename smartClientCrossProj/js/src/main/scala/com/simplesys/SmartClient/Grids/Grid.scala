@@ -6,13 +6,12 @@ import com.simplesys.SmartClient.Control.{Button, IButton}
 import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.DataBinding._
 import com.simplesys.SmartClient.Forms.DynamicForm
-import com.simplesys.SmartClient.Forms.FormsItems.FormItem
+import com.simplesys.SmartClient.Forms.formsItems.FormItem
 import com.simplesys.SmartClient.Foundation.canvas.ImgProperties
 import com.simplesys.SmartClient.Foundation.{Canvas, GridRenderer, HTMLFlow, StatefulCanvas}
 import com.simplesys.SmartClient.Grids.listGrid._
 import com.simplesys.SmartClient.Grids.treeGrid.Tree
-import com.simplesys.SmartClient.Layout.{HLayout, Layout, VLayout}
-import com.simplesys.SmartClient.System.SortSpecifier.SortSpecifier
+import com.simplesys.SmartClient.Layout._
 import com.simplesys.SmartClient.System.selection.CellSelection
 import com.simplesys.SmartClient.System.{Class, IscArray, Selection}
 import com.simplesys.System.Types.Alignment.Alignment
@@ -61,7 +60,7 @@ import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.{UndefOr, |}
 
 @js.native
-trait Grid[T <: ListGridField, R <: JSObject] extends VLayout with DataBoundComponent {
+trait Grid[T <: ListGridField, R <: JSAny] extends VLayout with DataBoundComponent {
     def addData(newRecord: Record, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def addEmbeddedComponent(component: Canvas, record: Record, rowNum: Int = js.native, colNum: Int = js.native, position: Int = js.native): void
     def addSort(sortSpecifier: SortSpecifier): void
@@ -215,7 +214,7 @@ trait Grid[T <: ListGridField, R <: JSObject] extends VLayout with DataBoundComp
     var confirmCancelEditing: Boolean
     var confirmDiscardEdits: Boolean
     var confirmDiscardEditsMessage: String
-    var createRecordComponent: js.ThisFunction2[classHandler, R, Int, Canvas]
+    def createRecordComponent(record: R, colNum: Int): JSUndefined[Canvas]
     var dataArrived: js.ThisFunction2[classHandler, Int, Int, void]
     var dataProperties: ResultSet
     var dateFormatter: DateDisplayFormat
@@ -643,6 +642,9 @@ trait Grid[T <: ListGridField, R <: JSObject] extends VLayout with DataBoundComp
     def saveEdits(editCompletionEvent: EditCompletionEvent = js.native, callback: js.Function4[Int, Int, EditCompletionEvent, Boolean, void] = js.native, rowNum: Int = js.native): void
     val saveLocally: Boolean
     var saveRequestProperties: DSRequest
+    var newRequestProperties: JSUndefined[js.Function0[DSRequest]]
+    var editRequestProperties: JSUndefined[js.Function0[DSRequest]]
+    var editingFields: JSUndefined[IscArray[FormItem]]
     val screenReaderCellSeparator: HTMLString
     val screenReaderRowSeparator: HTMLString
     var scrollRedrawDelay: Int
@@ -716,7 +718,7 @@ trait Grid[T <: ListGridField, R <: JSObject] extends VLayout with DataBoundComp
     def setRecordComponentHeight(height: Int): void
     def setRowErrors(rowNum: Int, errors: JSAny): void
     def setSelectedState(selectedState: ListGridSelectedState): void
-    def setSelectionAppearance(selectionAppearance: String): void
+    def setSelectionAppearance(selectionAppearance: SelectionAppearance): void
     def setSelectionType(selectionType: SelectionStyle): void
     def setShowCollapsedGroupSummary(showCollapsedGroupSummary: Boolean): void
     def setShowFilterEditor(value: Boolean): void
@@ -821,7 +823,7 @@ trait Grid[T <: ListGridField, R <: JSObject] extends VLayout with DataBoundComp
     def unsort(): void
     val unspannedHeaderVAlign: VerticalAlignment
     def updateData(updatedRecord: R, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
-    var updateRecordComponent: js.Function4[R, Int, Canvas, Boolean, Canvas]
+    def updateRecordComponent(record: R, colNum: Int, component: Canvas, recordChanged: Boolean): JSUndefined[Canvas]
     val useAdvancedFieldPicker: Boolean
     var useCellRollOvers: Boolean
     var useCopyPasteShortcuts: Boolean
@@ -852,7 +854,7 @@ trait Grid[T <: ListGridField, R <: JSObject] extends VLayout with DataBoundComp
     def unsetSelectionChanged(func: js.Function2[R, Boolean, _]): void
     def unsetSelectionUpdated(func: js.Function2[R, IscArray[R], _]): void
     def setMasterGrid(grid: ListGrid | TreeGrid | ListGridEditor | TreeGridEditor, pkFieldNames: IscArray[MasterDetailMapping] | MasterDetailMapping = js.native): void
-    def selectRecordsByKey(keyValues: JSObject, newState: Boolean): R
+    def selectRecordsByKey(keyValues: JSObject, newState: Boolean = js.native): R
     @JSName("masterGrid")
     var masterListGrid: UndefOr[ListGrid]
     @JSName("masterGrid")
@@ -862,6 +864,10 @@ trait Grid[T <: ListGridField, R <: JSObject] extends VLayout with DataBoundComp
 @js.native
 trait ListGrid extends Grid[ListGridField, ListGridRecord] {
     var data: IscArray[ListGridRecord]
+}
+
+@js.native
+abstract trait AbstractListGridCompanion extends AbstractVLayoutCompanion {
 }
 
 

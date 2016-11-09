@@ -4,11 +4,13 @@ import com.simplesys.build.CommonSettings.{settingValues, versions}
 import sbt._
 
 object PluginDeps {
-  object versions {
-    val scalaJSPluginVersion = "0.6.9"
-  }
+    object versions {
+        val scalaJSPluginVersion = "0.6.13"
+        val xsbtWebVersion = "0.9.1"
+    }
 
-  val scalaJSPlugin = addSbtPlugin("org.scala-js" % "sbt-scalajs" % versions.scalaJSPluginVersion)
+    val scalaJSPlugin = addSbtPlugin("org.scala-js" % "sbt-scalajs" % versions.scalaJSPluginVersion)
+    val xsbtWeb = addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % versions.xsbtWebVersion)
 }
 
 
@@ -19,9 +21,38 @@ object CommonDeps {
     val xmlExtender = Def.setting("com.simplesys.core" %% "xml-extender" % versions.ssysCoreVersion)
     val logbackWrapper = Def.setting("com.simplesys.core" %% "logback-wrapper" % versions.ssysCoreVersion)
     val scalaIOExtender = Def.setting("com.simplesys.core" %% "scala-io-extender" % versions.ssysCoreVersion)
-    val scalaReflect = Def.setting("org.scala-lang" % "scala-reflect" % settingValues.scalaVersion)
-    val scalaCompiler = Def.setting("org.scala-lang" % "scala-compiler" % settingValues.scalaVersion)
-    val scalaReflection = Def.setting("org.scala-lang" % "scala-reflection" % settingValues.scalaVersion)
+
+    val scalaReflect = Def.setting(DepsHelper.moduleIdOpt(settingValues.scalaVersion, Some("org.scala-lang" % "scala-reflect" % settingValues.scalaVersion), Some("org.scala-lang" % "scala-reflect" % settingValues.scalaVersion)))
+    val scalaCompiler = Def.setting(DepsHelper.moduleIdOpt(settingValues.scalaVersion, Some("org.scala-lang" % "scala-compiler" % settingValues.scalaVersion), Some("org.scala-lang" % "scala-compiler" % settingValues.scalaVersion)))
+    val scalaReflection = Def.setting(DepsHelper.moduleIdOpt(settingValues.scalaVersion, Some("org.scala-lang" % "scala-reflection" % settingValues.scalaVersion), Some("org.scala-lang" % "scala-reflection" % settingValues.scalaVersion)))
+
+    val jettyWebapp = Def.setting("org.eclipse.jetty" % "jetty-webapp" % versions.jettyVersion)
+    val jettyAnnotations = Def.setting("org.eclipse.jetty" % "jetty-annotations" % versions.jettyVersion)
+    val jettyPlus = Def.setting("org.eclipse.jetty" % "jetty-plus" % versions.jettyVersion)
+
+    val akkaActor = Def.setting("com.typesafe.akka" %% "akka-actor" % versions.akkaVersion)
+    val akkaSLF4J = Def.setting("com.typesafe.akka" %% "akka-slf4j" % versions.akkaVersion)
+    val akkaPersistence = Def.setting("com.typesafe.akka" %% "akka-persistence" % versions.akkaVersion)
+    val akkaTestKit = Def.setting("com.typesafe.akka" %% "akka-testkit" % versions.akkaVersion)
+    val akkaHTTPCore = Def.setting("com.typesafe.akka" %% "akka-http-core" % versions.akkaVersion)
+    val akkaHttp = Def.setting("com.typesafe.akka" %% "akka-http-xml-experimental" % versions.akkaExperimintalVersion)
+    val akkaQuery = Def.setting("com.typesafe.akka" %% "akka-persistence-query-experimental" % versions.akkaVersion)
+    val smartclient = Def.setting("com.simplesys" % "smartclient-js" % versions.smartclientVersion)
+
     val scalaTest = Def.setting("org.scalatest" %% "scalatest" % versions.scalaTestVersion % "test")
     val spray = Def.setting("io.spray" % "spray-json_2.11" % versions.scalaTestVersion % "test")
+}
+
+object DepsHelper {
+    def moduleIdOpt(scalaVer: String, moduleId_2_11: Option[ModuleID], moduleId_2_10: Option[ModuleID]): Option[ModuleID] =
+        CrossVersion.partialVersion(scalaVer) match {
+            case Some((2, scalaMajor)) if scalaMajor >= 11 => moduleId_2_11
+            case _ => moduleId_2_10
+        }
+
+    def moduleId(scalaVer: String, moduleId_2_11: ModuleID, moduleId_2_10: ModuleID): ModuleID =
+        CrossVersion.partialVersion(scalaVer) match {
+            case Some((2, scalaMajor)) if scalaMajor >= 11 => moduleId_2_11
+            case _ => moduleId_2_10
+        }
 }
