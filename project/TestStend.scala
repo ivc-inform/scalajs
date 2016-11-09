@@ -36,7 +36,7 @@ trait TestStend {
           libraryDependencies ++= Seq(
 
           )
-      ).dependsOn().jsConfigure(x => x.dependsOn()).jvmConfigure(x => x.dependsOn())
+      ).dependsOn(smartClientCrossProj).jsConfigure(x => x.dependsOn(smartClientJS)).jvmConfigure(x => x.dependsOn(smartClientJVM))
 
     // Needed, so sbt finds the projects
     lazy val testStendJVM = testStend.jvm
