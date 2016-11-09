@@ -1,6 +1,5 @@
 
 import com.simplesys.build.{CommonSettings, PluginDeps}
-import com.typesafe.sbt.GitVersioning
 import com.typesafe.sbt.SbtGit.git
 import sbt._
 
@@ -13,5 +12,4 @@ object PluginsBuild extends Build {
         PluginDeps.scalaJSPlugin,
         PluginDeps.xsbtWeb
     )
-
 }
