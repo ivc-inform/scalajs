@@ -3,7 +3,6 @@ package com.simplesys.build
 import com.typesafe.sbt.GitVersioning
 import com.typesafe.sbt.SbtGit.git
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
-import ru.simplesys.sbprocessingui.sbtbuild.TestStend
 import sbt.Keys._
 import sbt._
 
@@ -15,8 +14,7 @@ object MyBuild extends Build with
   CommonDomainsCrossProj with
   JointJSCrossProj with
   BackboneJSProj with
-  UnderscoreJSCrossProj with
-  TestStend {
+  UnderscoreJSCrossProj {
 
     override def settings: Seq[Def.Setting[_]] = super.settings ++ Seq(
         scalaVersion := CommonSettings.settingValues.scalaVersion,
@@ -63,8 +61,6 @@ object MyBuild extends Build with
       backboneJSCrossJVM,
       backboneJSCrossJS,
       underscoreJSCrossJS,
-      underscoreJSCrossJVM,
-      testStendJS,
-      testStendJVM)
+      underscoreJSCrossJVM)
 }
 
