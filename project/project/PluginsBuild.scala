@@ -10,6 +10,7 @@ object PluginsBuild extends Build {
 
     lazy val root = Project(id = "buildPlugins", base = file(".")).settings(
         PluginDeps.scalaJSPlugin,
-        PluginDeps.xsbtWeb
+        PluginDeps.xsbtWeb,
+        PluginDeps.mergeJS
     )
 }

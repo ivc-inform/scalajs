@@ -1,11 +1,13 @@
 package com.simplesys.build
 
-import com.earldouglas.xwp.{ContainerPlugin, JettyPlugin}
 import com.earldouglas.xwp.ContainerPlugin.autoImport._
+import com.earldouglas.xwp.JettyPlugin
 import com.earldouglas.xwp.JettyPlugin.autoImport._
 import com.simplesys.build.CommonSettings.versions
 import org.scalajs.sbtplugin.ScalaJSPlugin
 import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport._
+//import com.simplesys.mergewebapp.MergeWebappPlugin
+//import com.simplesys.mergewebapp.MergeWebappPlugin._
 import sbt.Keys._
 import sbt._
 
@@ -14,13 +16,14 @@ trait TestStend {
 
 
     lazy val testStend = crossProject.dependsOn(smartClientCrossProj).enablePlugins(
-        ScalaJSPlugin, JettyPlugin//, ContainerPlugin
+        ScalaJSPlugin, JettyPlugin//, MergeWebappPlugin
     ).
       settings(
           name := "test-stend",
           libraryDependencies ++= {
               Seq(
-                  CommonDeps.servletAPI.value
+                  CommonDeps.servletAPI.value,
+                  CommonDeps.smartclient.value
               )
           },
           publishArtifact in(Compile, packageDoc) := false,

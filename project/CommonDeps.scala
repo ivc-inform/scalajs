@@ -7,14 +7,12 @@ object PluginDeps {
     object versions {
         val scalaJSPluginVersion = "0.6.13"
         val xsbtWebVersion = "2.1.0"
-        val sbtPackVersion = "0.7.7"
-        val sbtNativePackagerVersion = "1.1.4"
+        val mergeJSVersion = "1.0.6"
     }
 
     val scalaJSPlugin = addSbtPlugin("org.scala-js" % "sbt-scalajs" % versions.scalaJSPluginVersion)
     val xsbtWeb = addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % versions.xsbtWebVersion)
-    /*val sbtPack = addSbtPlugin("org.xerial.sbt" % "sbt-pack" % versions.sbtPackVersion)
-    val sbtNativePackager = addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % versions.sbtNativePackagerVersion)*/
+    val mergeJS = addSbtPlugin("ru.simplesys" % "merge-js" % versions.mergeJSVersion)
 }
 
 
