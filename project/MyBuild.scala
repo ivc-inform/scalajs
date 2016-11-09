@@ -3,7 +3,6 @@ package com.simplesys.build
 import com.typesafe.sbt.GitVersioning
 import com.typesafe.sbt.SbtGit.git
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
-import ru.simplesys.sbprocessingui.sbtbuild.TestStend
 import sbt.Keys._
 import sbt._
 
