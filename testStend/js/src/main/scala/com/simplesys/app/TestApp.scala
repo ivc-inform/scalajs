@@ -41,6 +41,7 @@ class TestApp {
 
                                 FileLoader.loadJSFiles(localeFile, {
                                     () =>
+                                        isc debugTrap 0
                                         DataView.create(
                                             new DataViewProps {
                                                 height = "100%"
