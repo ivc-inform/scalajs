@@ -3,6 +3,7 @@ package com.simplesys.build
 import com.earldouglas.xwp.ContainerPlugin.autoImport._
 import com.earldouglas.xwp.JettyPlugin
 import com.earldouglas.xwp.JettyPlugin.autoImport._
+import com.earldouglas.xwp.WebappPlugin.autoImport._
 import com.simplesys.build.CommonSettings.versions
 import com.simplesys.mergewebapp.MergeWebappPlugin
 import com.simplesys.mergewebapp.MergeWebappPlugin._
@@ -28,6 +29,7 @@ trait TestStend {
           },
           publishArtifact in(Compile, packageDoc) := false,
           containerPort := 8084,
+          webappWebInfClasses := true,
           containerArgs := Seq("--path", "/test-stend"),
           containerLibs in Jetty := Seq(("org.eclipse.jetty" % "jetty-runner" % versions.jettyVersion).intransitive())
       ).
