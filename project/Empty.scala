@@ -18,6 +18,7 @@ trait Empty {
       ).
       jvmSettings(
           libraryDependencies ++= {
+              Seq()
           }).
       jsSettings(
           libraryDependencies ++= Seq(
