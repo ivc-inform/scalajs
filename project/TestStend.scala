@@ -4,10 +4,10 @@ import com.earldouglas.xwp.ContainerPlugin.autoImport._
 import com.earldouglas.xwp.JettyPlugin
 import com.earldouglas.xwp.JettyPlugin.autoImport._
 import com.simplesys.build.CommonSettings.versions
+import com.simplesys.mergewebapp.MergeWebappPlugin
+import com.simplesys.mergewebapp.MergeWebappPlugin._
 import org.scalajs.sbtplugin.ScalaJSPlugin
 import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport._
-//import com.simplesys.mergewebapp.MergeWebappPlugin
-//import com.simplesys.mergewebapp.MergeWebappPlugin._
 import sbt.Keys._
 import sbt._
 
@@ -16,7 +16,7 @@ trait TestStend {
 
 
     lazy val testStend = crossProject.dependsOn(smartClientCrossProj).enablePlugins(
-        ScalaJSPlugin, JettyPlugin//, MergeWebappPlugin
+        ScalaJSPlugin, JettyPlugin, MergeWebappPlugin
     ).
       settings(
           name := "test-stend",
@@ -29,7 +29,17 @@ trait TestStend {
           publishArtifact in(Compile, packageDoc) := false,
           containerPort := 8084,
           containerArgs := Seq("--path", "/test-stend"),
-          containerLibs in Jetty := Seq(("org.eclipse.jetty" % "jetty-runner" % versions.jettyVersion).intransitive())
+          containerLibs in Jetty := Seq(("org.eclipse.jetty" % "jetty-runner" % versions.jettyVersion).intransitive()),
+
+          //merger
+          mergeMapping in MergeWebappConfig := Seq(
+              ("com.simplesys", "smartclient-js") -> Seq(
+                  Seq("isomorphic") -> Some(Seq("webapp", "isomorphic"))
+              )
+          ),
+          currentProjectGenerationDirPath in MergeWebappConfig := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
+          currentProjectDevelopedDirPath in MergeWebappConfig := (sourceDirectory in Compile).value / "webapp" / "javascript" / "developed",
+          currentProjectCoffeeDevelopedDirPath in MergeWebappConfig := (sourceDirectory in Compile).value / "webapp" / "coffeescript" / "developed"
       ).
       jvmSettings(
           libraryDependencies ++= {
