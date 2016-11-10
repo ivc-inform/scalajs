@@ -77,3 +77,4 @@ src/main/webapp/javascript/IncludeModules
 target/
 isomorphic/
 generatedComponents/
+managed/

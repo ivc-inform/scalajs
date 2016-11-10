@@ -27,8 +27,6 @@ trait TestStend {
           name := "test-stend",
           libraryDependencies ++= {
               Seq(
-                  CommonDeps.servletAPI.value,
-                  CommonDeps.smartclient.value
               )
           },
           publishArtifact in(Compile, packageDoc) := false,
@@ -39,7 +37,9 @@ trait TestStend {
       ).
       jvmSettings(
           libraryDependencies ++= {
-              Seq()
+              Seq(
+                  CommonDeps.servletAPI.value
+              )
           }
       ).
       jsSettings(
@@ -57,6 +57,12 @@ trait TestStend {
 
           //merger
           mergeMapping in MergeWebappConfig := Seq(
+              ("com.simplesys.core", "isc-components") -> Seq(
+                  Seq("webapp", "javascript", "generated", "generatedComponents") -> Some(Seq("webapp", "managed", "javascript", "isc-components", "generated", "generatedComponents")),
+                  Seq("webapp", "javascript", "generated", "generatedComponents", "coffeescript") -> Some(Seq("webapp", "managed", "javascript", "isc-components", "generated", "generatedComponents", "coffeescript")),
+                  Seq("javascript", "com", "simplesys") -> Some(Seq("webapp", "managed", "javascript", "isc-components", "developed", "developedComponents")),
+                  Seq("coffeescript") -> Some(Seq("webapp", "managed", "coffeescript", "isc-components", "developed", "developedComponents"))
+              ),
               ("com.simplesys", "smartclient-js") -> Seq(
                   Seq("isomorphic") -> Some(Seq("webapp", "isomorphic"))
               )
@@ -66,7 +72,10 @@ trait TestStend {
           currentProjectCoffeeDevelopedDirPath in MergeWebappConfig := (sourceDirectory in Compile).value / "webapp" / "coffeescript" / "developed",
           merge in MergeWebappConfig <<= (merge in MergeWebappConfig).dependsOn(CoffeeScriptKeys.csTranspile in Assets),
 
-          libraryDependencies ++= Seq()
+          libraryDependencies ++= Seq(
+              CommonDeps.ssysIscComponents.value,
+              CommonDeps.smartclient.value
+          )
       ).dependsOn(smartClientCrossProj).jsConfigure(x => x.dependsOn(smartClientJS).enablePlugins(MergeWebappPlugin, ScalaJSPlugin, TranspileCoffeeScript)).jvmConfigure(x => x.dependsOn(smartClientJVM))
 
     // Needed, so sbt finds the projects

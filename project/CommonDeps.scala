@@ -43,6 +43,7 @@ object CommonDeps {
     val akkaHttp = Def.setting("com.typesafe.akka" %% "akka-http-xml-experimental" % versions.akkaExperimintalVersion)
     val akkaQuery = Def.setting("com.typesafe.akka" %% "akka-persistence-query-experimental" % versions.akkaVersion)
     val smartclient = Def.setting("com.simplesys" % "smartclient-js" % versions.smartclientVersion)
+    val ssysIscComponents = Def.setting("com.simplesys.core" %% "isc-components" % versions.ssysCoreVersion)
 
     val scalaTest = Def.setting("org.scalatest" %% "scalatest" % versions.scalaTestVersion % "test")
     val spray = Def.setting("io.spray" % "spray-json_2.11" % versions.scalaTestVersion % "test")
