@@ -23,6 +23,8 @@ class TestApp {
                     isc.params.locale = "ru_RU"
                     //isc.params.locale = "en"
 
+                    isc debugTrap simpleSyS.skin
+
                     val skin: String = simpleSyS.skin.toOption match {
                         case Some(skin) => skin
                         case None => isc.OfflineSS.get(s"Skin$identifier", Skin.Enterprise.toString)
@@ -41,6 +43,7 @@ class TestApp {
 
                                 FileLoader.loadJSFiles(localeFile, {
                                     () =>
+                                        isc debugTrap 0
                                         DataView.create(
                                             new DataViewProps {
                                                 height = "100%"

@@ -8,11 +8,13 @@ object PluginDeps {
         val scalaJSPluginVersion = "0.6.13"
         val xsbtWebVersion = "2.1.0"
         val mergeJSVersion = "1.0.6"
+        val transpileCoffeScriptVersion = "1.0.12-2.11.1"
     }
 
     val scalaJSPlugin = addSbtPlugin("org.scala-js" % "sbt-scalajs" % versions.scalaJSPluginVersion)
     val xsbtWeb = addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % versions.xsbtWebVersion)
     val mergeJS = addSbtPlugin("ru.simplesys" % "merge-js" % versions.mergeJSVersion)
+    val transpileCoffeeScript = addSbtPlugin("ru.simplesys" % "transpile-coffeescript" % versions.transpileCoffeScriptVersion)
 }
 
 
@@ -42,6 +44,7 @@ object CommonDeps {
     val akkaHttp = Def.setting("com.typesafe.akka" %% "akka-http-xml-experimental" % versions.akkaExperimintalVersion)
     val akkaQuery = Def.setting("com.typesafe.akka" %% "akka-persistence-query-experimental" % versions.akkaVersion)
     val smartclient = Def.setting("com.simplesys" % "smartclient-js" % versions.smartclientVersion)
+    val ssysIscComponents = Def.setting("com.simplesys.core" %% "isc-components" % versions.ssysCoreVersion)
 
     val scalaTest = Def.setting("org.scalatest" %% "scalatest" % versions.scalaTestVersion % "test")
     val spray = Def.setting("io.spray" % "spray-json_2.11" % versions.scalaTestVersion % "test")

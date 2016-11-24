@@ -5,7 +5,8 @@ import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Control.props.{ListGridContextMenuProps, ListGridContextMenuWithFormProps}
 import com.simplesys.SmartClient.Grids.props.ListGridEditorProps
 import com.simplesys.SmartClient.System._
-import com.simplesys.System.Types.SelectionStyle
+import com.simplesys.System.Types.TextMatchStyle._
+import com.simplesys.System.Types.{FetchMode, SelectionStyle, TextMatchStyle}
 import com.simplesys.System._
 import com.simplesys.function._
 import com.simplesys.option.DoubleType._
@@ -29,6 +30,8 @@ trait CommonListGridEditorComponentProps extends ListGridEditorProps with Initia
     selectionType = SelectionStyle.single.opt
     selectFirstRecordAfterFetch = false.opt
     saveByCell = true.opt
+    fetchDelay = 500.opt
+    autoFetchTextMatchStyle = TextMatchStyle.substring.opt
 
     var customMenu: ScOption[Seq[MenuSSItem]] = ScNone
 

@@ -72,7 +72,7 @@ object isc extends JSObject {
     def showPrompt(message: String, properties: Dialog = js.native): void = js.native
     def sortObject(obj: JSObject, comparator: js.Function): JSObject = js.native
     def sortObjectByProperties(obj: JSObject, comparator: js.Function): JSObject = js.native
-    def timeStamp(): Int = js.native
+    def timeStamp(): Double = js.native
     def warn(message: String, callback: Callback = js.native, properties: Dialog = js.native): void = js.native
     def createClass[T](className: String, args: IscArray[JSAny] = js.native): T = js.native
 
@@ -119,7 +119,7 @@ object isc extends JSObject {
 
 
     def error(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
-    def errorDetail(message: String, detailMessage: String, identifier: ID = js.native, detailIdentifier: ID = js.native): void = js.native
+    def errorDetail(message: String , detailMessage: String , identifier: ID = js.native, detailIdentifier: ID = js.native): void = js.native
     def info(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
     def ok(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
     def infos(gridProperties: ListGrid | ListGridEditor, identifier: ID = js.native, callback: Callback = js.native): void = js.native
