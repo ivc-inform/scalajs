@@ -1,6 +1,7 @@
 package com.simplesys.SmartClient.App.props
 
 import com.simplesys.SmartClient.App.CommonListGridEditorComponent
+import com.simplesys.SmartClient.App.props.MenuItemType.MenuItemType
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Control.props.{ListGridContextMenuProps, ListGridContextMenuWithFormProps}
 import com.simplesys.SmartClient.Grids.props.ListGridEditorProps
@@ -17,7 +18,7 @@ trait CommonListGridEditorComponentProps extends ListGridEditorProps with Initia
 
     type classHandler <: CommonListGridEditorComponent
 
-    var simpleTable: ScOption[Boolean] = true.opt
+    var simpleTable: ScOption[Boolean] = false.opt
 
     canDragSelectText = false.opt
     height = "100%"
@@ -34,6 +35,7 @@ trait CommonListGridEditorComponentProps extends ListGridEditorProps with Initia
     autoFetchTextMatchStyle = TextMatchStyle.substring.opt
 
     var customMenu: ScOption[Seq[MenuSSItem]] = ScNone
+    var itemsType: ScOption[Seq[MenuItemType]] = Seq(MenuItemType.miCopy, MenuItemType.miDelete, MenuItemType.miEdit, MenuItemType.miRefresh).opt
 
     initWidget = {
         (thiz: classHandler, arguments: IscArray[JSAny]) =>
@@ -50,6 +52,7 @@ trait CommonListGridEditorComponentProps extends ListGridEditorProps with Initia
             val funcMenu = if (thiz.simpleTable.getOrElse(false)) {
                 ListGridContextMenu.create(
                     new ListGridContextMenuProps {
+                        itemsType = if (thiz.itemsType.isDefined) thiz.itemsType.get.toSeq.opt else ScNone
                         owner = thiz.opt
                         customMenu = _customMenu
                     }
@@ -58,6 +61,7 @@ trait CommonListGridEditorComponentProps extends ListGridEditorProps with Initia
             else {
                 ListGridContextMenuWithForm.create(
                     new ListGridContextMenuWithFormProps {
+                        itemsType = if (thiz.itemsType.isDefined) thiz.itemsType.get.toSeq.opt else ScNone
                         owner = thiz.opt
                         customMenu = _customMenu
                     }
