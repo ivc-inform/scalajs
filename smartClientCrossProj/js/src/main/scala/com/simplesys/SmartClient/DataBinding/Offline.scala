@@ -1,10 +1,12 @@
 package com.simplesys.SmartClient.DataBinding
 
-import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class}
-import com.simplesys.System.JSUndefined
+import com.simplesys.SmartClient.System.AbstractClassCompanion
+import com.simplesys.SmartClient.System.Class
 import com.simplesys.System.Types.void
+import com.simplesys.System.{JSAny, JSUndefined}
 
 import scala.scalajs.js
+import scala.scalajs.js.|
 
 @js.native
 trait Offline extends Class {
