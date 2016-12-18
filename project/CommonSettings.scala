@@ -32,8 +32,7 @@ object CommonSettings {
     }
 
 
-    val
-    defaultProjectSettings = {
+    val defaultProjectSettings = {
         import sbt.Keys._
         Seq(
             crossScalaVersions := settingValues.crossScalaVersions,
