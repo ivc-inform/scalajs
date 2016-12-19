@@ -5,8 +5,7 @@ object CommonSettings {
         val baseVersion = "1.0"
 
         val scalaVersion = "2.11.8"
-        val scalaOldVersion = "2.10.6"
-        val crossScalaVersions = Seq(scalaVersion, scalaOldVersion)
+        val crossScalaVersions = Seq(scalaVersion)
         val organization = "com.simplesys"
         val scalacOptions = Seq(
             "-feature",
@@ -33,8 +32,7 @@ object CommonSettings {
     }
 
 
-    val
-    defaultProjectSettings = {
+    val defaultProjectSettings = {
         import sbt.Keys._
         Seq(
             crossScalaVersions := settingValues.crossScalaVersions,
