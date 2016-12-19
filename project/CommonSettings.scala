@@ -21,14 +21,14 @@ object CommonSettings {
         val sprayVersion = "1.3.2"
         val uTestVersion = "0.3.1"
         val scalaTestVersion = "3.0.0"
-        val ssysCoreVersion = "1.2.98"
+        val ssysCoreVersion = "1.2.100"
         //val ssysCoreVersion = "1.2-SNAPSHOT"
         val scalajsDOMVersion = "0.9.0"
         val scalajsJQueryVersion = "0.9.0"
-        val jettyVersion = "9.3.14.v20161028"
+        val jettyVersion = "9.4.0.v20161208"
         val servletAPIVersion = "3.1.0"
-        val akkaVersion = "2.4.12"
-        val akkaExperimintalVersion = "2.4.11"
+        val akkaVersion = "2.4.14"
+        val akkaHttpVersion = "10.0.0"
         val smartclientVersion = "11.0-v20160805.10"
     }
 

@@ -40,7 +40,7 @@ object CommonDeps {
     val akkaPersistence = Def.setting("com.typesafe.akka" %% "akka-persistence" % versions.akkaVersion)
     val akkaTestKit = Def.setting("com.typesafe.akka" %% "akka-testkit" % versions.akkaVersion)
     val akkaHTTPCore = Def.setting("com.typesafe.akka" %% "akka-http-core" % versions.akkaVersion)
-    val akkaHttp = Def.setting("com.typesafe.akka" %% "akka-http-xml-experimental" % versions.akkaExperimintalVersion)
+    val akkaHttp = Def.setting("com.typesafe.akka" %% "akka-http-xml-experimental" % versions.akkaHttpVersion)
     val akkaQuery = Def.setting("com.typesafe.akka" %% "akka-persistence-query-experimental" % versions.akkaVersion)
     val smartclient = Def.setting("com.simplesys" % "smartclient-js" % versions.smartclientVersion)
     val ssysIscComponents = Def.setting("com.simplesys.core" %% "isc-components" % versions.ssysCoreVersion)
