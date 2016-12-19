@@ -7,7 +7,7 @@ object PluginDeps {
     object versions {
         val scalaJSPluginVersion = "0.6.13"
         val xsbtWebVersion = "2.1.0"
-        val mergeJSVersion = "1.0.7"
+        val mergeJSVersion = "1.0.9"
         val transpileCoffeScriptVersion = "1.0.12-2.11.1"
     }
 
