@@ -44,7 +44,7 @@ object CommonDeps {
     val ssysIscComponents = Def.setting("com.simplesys.core" %% "isc-components" % versions.ssysCoreVersion)
 
     val scalaTest = Def.setting("org.scalatest" %% "scalatest" % versions.scalaTestVersion % "test")
-    val spray = Def.setting("io.spray" % "spray-json_2.11" % versions.scalaTestVersion % "test")
+    val spray = Def.setting("io.spray" %% "spray-json" % versions.scalaTestVersion % "test")
 }
 
 object DepsHelper {
