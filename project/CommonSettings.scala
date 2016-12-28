@@ -2,9 +2,9 @@ package com.simplesys.build
 
 object CommonSettings {
     object settingValues {
-        val baseVersion = "1.0"
+        val baseVersion = "1.1"
 
-        val scalaVersion = "2.11.8"
+        val scalaVersion = "2.12.1"
         val crossScalaVersions = Seq(scalaVersion)
         val organization = "com.simplesys"
         val scalacOptions = Seq(
@@ -20,8 +20,8 @@ object CommonSettings {
         val sprayVersion = "1.3.2"
         val uTestVersion = "0.3.1"
         val scalaTestVersion = "3.0.1"
-        val ssysCoreVersion = "1.2.100"
-        //val ssysCoreVersion = "1.2-SNAPSHOT"
+        //val ssysCoreVersion = "1.2.100"
+        val ssysCoreVersion = "1.3-SNAPSHOT"
         val scalajsDOMVersion = "0.9.0"
         val scalajsJQueryVersion = "0.9.0"
         val jettyVersion = "9.4.0.v20161208"
