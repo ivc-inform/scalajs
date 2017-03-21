@@ -24,10 +24,8 @@ object CommonSettings {
         val ssysCoreVersion = "1.3-SNAPSHOT"
         val scalajsDOMVersion = "0.9.1"
         val scalajsJQueryVersion = "0.9.1"
-        val jettyVersion = "9.4.0.v20161208"
-        val servletAPIVersion = "3.1.0"
-        val akkaVersion = "2.4.16"
-        val akkaHttpVersion = "10.0.2"
+        val akkaVersion = "2.4.17"
+        val akkaHttpVersion = "10.0.5"
         val smartclientVersion = "11.0-v20160805.10"
     }
 

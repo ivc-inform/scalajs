@@ -5,7 +5,7 @@ import sbt._
 
 object PluginDeps {
     object versions {
-        val scalaJSPluginVersion = "0.6.14"
+        val scalaJSPluginVersion = "0.6.15"
         val xsbtWebVersion = "2.1.0"
         val mergeJSVersion = "1.0.9"
         val transpileCoffeScriptVersion = "1.0.12-2.11.1"
@@ -29,11 +29,6 @@ object CommonDeps {
     val scalaReflect = Def.setting(DepsHelper.moduleIdOpt(settingValues.scalaVersion, Some("org.scala-lang" % "scala-reflect" % settingValues.scalaVersion), Some("org.scala-lang" % "scala-reflect" % settingValues.scalaVersion)))
     val scalaCompiler = Def.setting(DepsHelper.moduleIdOpt(settingValues.scalaVersion, Some("org.scala-lang" % "scala-compiler" % settingValues.scalaVersion), Some("org.scala-lang" % "scala-compiler" % settingValues.scalaVersion)))
     val scalaReflection = Def.setting(DepsHelper.moduleIdOpt(settingValues.scalaVersion, Some("org.scala-lang" % "scala-reflection" % settingValues.scalaVersion), Some("org.scala-lang" % "scala-reflection" % settingValues.scalaVersion)))
-
-    val servletAPI = Def.setting("javax.servlet" % "javax.servlet-api" % versions.servletAPIVersion)
-    val jettyWebapp = Def.setting("org.eclipse.jetty" % "jetty-webapp" % versions.jettyVersion)
-    val jettyAnnotations = Def.setting("org.eclipse.jetty" % "jetty-annotations" % versions.jettyVersion)
-    val jettyPlus = Def.setting("org.eclipse.jetty" % "jetty-plus" % versions.jettyVersion)
 
     val akkaActor = Def.setting("com.typesafe.akka" %% "akka-actor" % versions.akkaVersion)
     val akkaSLF4J = Def.setting("com.typesafe.akka" %% "akka-slf4j" % versions.akkaVersion)

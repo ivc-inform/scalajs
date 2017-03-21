@@ -38,7 +38,7 @@ trait TestStend {
       jvmSettings(
           libraryDependencies ++= {
               Seq(
-                  CommonDeps.servletAPI.value
+                  //CommonDeps.servletAPI.value
               )
           }
       ).
