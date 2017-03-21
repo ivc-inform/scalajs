@@ -1,10 +1,5 @@
 package com.simplesys.build
 
-import com.earldouglas.xwp.ContainerPlugin.autoImport._
-import com.earldouglas.xwp.JettyPlugin
-import com.earldouglas.xwp.JettyPlugin.autoImport._
-import com.earldouglas.xwp.WebappPlugin.autoImport._
-import com.simplesys.build.CommonSettings.versions
 import com.simplesys.mergewebapp.MergeWebappPlugin
 import com.simplesys.mergewebapp.MergeWebappPlugin._
 import com.typesafe.sbt.coffeescript.Import.CoffeeScriptKeys
@@ -20,26 +15,18 @@ trait TestStend {
     self: Build with SmartClientCrossProj =>
 
 
-    lazy val testStend = crossProject.dependsOn(smartClientCrossProj).enablePlugins(
-        JettyPlugin
-    ).
+    lazy val testStend = crossProject.dependsOn(smartClientCrossProj).
       settings(
           name := "test-stend",
           libraryDependencies ++= {
               Seq(
               )
           },
-          publishArtifact in(Compile, packageDoc) := false,
-          containerPort := 8084,
-          webappWebInfClasses := true,
-          containerArgs := Seq("--path", "/test-stend"),
-          containerLibs in Jetty := Seq(("org.eclipse.jetty" % "jetty-runner" % versions.jettyVersion).intransitive())
+          publishArtifact in(Compile, packageDoc) := false
       ).
       jvmSettings(
           libraryDependencies ++= {
-              Seq(
-                  //CommonDeps.servletAPI.value
-              )
+              Seq()
           }
       ).
       jsSettings(
