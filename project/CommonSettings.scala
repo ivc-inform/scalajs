@@ -2,7 +2,7 @@ package com.simplesys.build
 
 object CommonSettings {
     object settingValues {
-        val baseVersion = "1.1"
+        val baseVersion = "1.2"
 
         val scalaVersion = "2.12.1"
         val crossScalaVersions = Seq(scalaVersion)
