@@ -1,6 +1,5 @@
 package com.simplesys.build
 
-import org.scalajs.sbtplugin.ScalaJSPlugin
 import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport._
 import sbt.Keys._
 import sbt._
@@ -11,9 +10,7 @@ trait commonTypesCrossProj {
     lazy val commonTypesCrossProj = crossProject.
       settings(
           name := "common-types",
-//          version := "1.0-SNAPSHOT",
           libraryDependencies ++= Seq(
-              //CommonDeps.uTest.value,
               CommonDeps.xmlExtender.value,
               CommonDeps.common.value,
               CommonDeps.logbackWrapper.value
