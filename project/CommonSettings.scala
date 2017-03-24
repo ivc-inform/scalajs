@@ -26,7 +26,7 @@ object CommonSettings {
         val scalajsJQueryVersion = "0.9.1"
         val akkaVersion = "2.4.17"
         val akkaHttpVersion = "10.0.5"
-        val smartclientVersion = "11.0-v20160805.10"
+        val smartclientVersion = "11.0-v20160805.11"
     }
 
 
