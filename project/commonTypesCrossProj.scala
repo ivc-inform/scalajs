@@ -19,9 +19,7 @@ trait commonTypesCrossProj {
           publishArtifact in(Compile, packageDoc) := false
       ).
       jvmSettings().
-      jsSettings(
-          //jsDependencies += "org.example" %% "js-thing" % "0.1" / "foo.js"
-      )
+      jsSettings()
 
     // Needed, so sbt finds the projects
     lazy val commonTypesJVM = commonTypesCrossProj.jvm

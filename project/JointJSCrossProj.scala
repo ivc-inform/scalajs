@@ -11,7 +11,6 @@ trait JointJSCrossProj {
     lazy val jointJSCrossProj = crossProject.dependsOn(backboneJSCrossProj).
       settings(
           name := "joint-js",
-//          version := "1.0-SNAPSHOT",
 
           libraryDependencies ++= Seq(
               CommonDeps.scalaTest.value

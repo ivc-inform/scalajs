@@ -20,10 +20,9 @@ trait Empty {
           libraryDependencies ++= {
               Seq()
           }).
-      jsSettings(
-          libraryDependencies ++= Seq(
-          )
-      ).dependsOn().jsConfigure(x => x.dependsOn()).jvmConfigure(x => x.dependsOn())
+      jsSettings(libraryDependencies ++= Seq()).
+      dependsOn().
+      jsConfigure(x => x.dependsOn()).jvmConfigure(x => x.dependsOn())
 
     // Needed, so sbt finds the projects
     lazy val uPickleJVM = uPickleProj.jvm

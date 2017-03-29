@@ -10,12 +10,8 @@ trait BackboneJSProj {
     lazy val backboneJSCrossProj = crossProject.dependsOn(underscoreJSCrossProj).
       settings(
           name := "backbone-js",
-//          version := "1.0-SNAPSHOT",
 
-          libraryDependencies ++= Seq(
-//              CommonDeps.scalaTest.value,
-//              CommonDeps.uTest.value
-          ),
+          libraryDependencies ++= Seq(),
 
           testFrameworks += new TestFramework("utest.runner.Framework"),
           publishArtifact in(Compile, packageDoc) := false
