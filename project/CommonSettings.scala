@@ -4,7 +4,7 @@ object CommonSettings {
     object settingValues {
         val baseVersion = "1.3"
 
-        val scalaVersion = "2.12.1"
+        val scalaVersion = "2.12.2"
         val crossScalaVersions = Seq(scalaVersion)
         val organization = "com.simplesys"
         val scalacOptions = Seq(
@@ -20,12 +20,12 @@ object CommonSettings {
         val sprayVersion = "1.3.2"
         val uTestVersion = "0.3.1"
         val scalaTestVersion = "3.0.1"
-        //val ssysCoreVersion = "1.3.3"
-        val ssysCoreVersion = "1.3-SNAPSHOT"
+        val ssysCoreVersion = "1.3.1"
+        //val ssysCoreVersion = "1.3-SNAPSHOT"
         val scalajsDOMVersion = "0.9.1"
         val scalajsJQueryVersion = "0.9.1"
-        val akkaVersion = "2.4.17"
-        val akkaHttpVersion = "10.0.5"
+        val akkaVersion = "2.4.18"
+        val akkaHttpVersion = "10.0.6"
         val smartclientVersion = "11.0-v20160805.11"
     }
 
