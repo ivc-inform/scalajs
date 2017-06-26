@@ -49,7 +49,6 @@ lazy val root = (project in file(".")).
 lazy val commonDomainsCrossProj = crossProject.dependsOn(smartClientCrossProj).
   settings(
       name := "common-domains",
-      scalacOptions += "-P:scalajs:sjsDefinedByDefault",
       libraryDependencies ++= Seq(
           CommonDeps.logbackWrapper.value
       ),
@@ -59,6 +58,7 @@ lazy val commonDomainsCrossProj = crossProject.dependsOn(smartClientCrossProj).
   ).
   jvmSettings().
   jsSettings(
+      scalacOptions += "-P:scalajs:sjsDefinedByDefault",
       libraryDependencies ++= Seq()
   ).jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
 
@@ -69,7 +69,6 @@ lazy val commonDomainJS = commonDomainsCrossProj.js
 lazy val commonTypesCrossProj = crossProject.
   settings(
       name := "common-types",
-      scalacOptions += "-P:scalajs:sjsDefinedByDefault",
       libraryDependencies ++= Seq(
           CommonDeps.xmlExtender.value,
           CommonDeps.common.value,
@@ -98,6 +97,7 @@ lazy val jointJSCrossProj = crossProject.dependsOn(backboneJSCrossProj).
   ).
   jvmSettings().
   jsSettings(
+      scalacOptions += "-P:scalajs:sjsDefinedByDefault",
       libraryDependencies ++= Seq(
           CommonDepsScalaJS.scalajsDOM.value,
           CommonDepsScalaJS.scalajsJQuey.value
@@ -120,7 +120,6 @@ lazy val macroJVM = Project("macrojvm", file("macrojvm")).settings(
 lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
   settings(
       name := "smartclient-wrapper",
-      scalacOptions += "-P:scalajs:sjsDefinedByDefault",
       libraryDependencies ++= {
           Seq(
               CommonDeps.xmlExtender.value,
@@ -136,6 +135,7 @@ lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
           Seq()
       }).
   jsSettings(
+      scalacOptions += "-P:scalajs:sjsDefinedByDefault",
       libraryDependencies ++= Seq(
           CommonDepsScalaJS.scalajsDOM.value,
           CommonDepsScalaJS.scalajsJQuey.value
@@ -149,7 +149,6 @@ lazy val smartClientJS = smartClientCrossProj.js
 lazy val testStend = crossProject.dependsOn(smartClientCrossProj).
   settings(
       name := "test-stend",
-      scalacOptions += "-P:scalajs:sjsDefinedByDefault",
       libraryDependencies ++= {
           Seq(
           )
