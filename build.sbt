@@ -31,9 +31,9 @@ lazy val root = (project in file(".")).
       scalaVersion := CommonSettings.settingValues.scalaVersion,
       scalacOptions := CommonSettings.settingValues.scalacOptions,
       organization := CommonSettings.settingValues.organization,
-      publishTo <<= version { (v: String) =>
+      publishTo := {
           val corporateRepo = "http://toucan.simplesys.lan/"
-          if (v.trim.endsWith("SNAPSHOT"))
+          if (isSnapshot.value)
               Some("snapshots" at corporateRepo + "artifactory/libs-snapshot-local")
           else
               Some("releases" at corporateRepo + "artifactory/libs-release-local")
@@ -116,7 +116,7 @@ lazy val macroJVM = Project("macrojvm", file("macrojvm")).settings(
     libraryDependencies <++= (scalaVersion) (v => Seq(("org.scala-lang" % "scala-compiler" % v), ("org.scala-lang" % "scala-reflect" % v)))
 ).dependsOn(commonTypesJVM)
 
-lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
+lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).enablePlugins(ScalaJSPlugin).
   settings(
       name := "smartclient-wrapper",
       libraryDependencies ++= {

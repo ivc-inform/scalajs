@@ -10,11 +10,9 @@ package com.simplesys {
     package backbone {
 
         import com.simplesys.System._
-        import com.simplesys.option.{ScNone, ScOption}
-
-        import scala.scalajs.js.{Function1, Function3, |}
 
         @js.native
+        @JSGlobal
         class BackboneObject extends JSObject
 
         @js.native
@@ -85,7 +83,7 @@ package com.simplesys {
         }
 
         @js.native
-        @JSName("Backbone.Events")
+        @JSGlobal("Backbone.Events")
         class Events extends BackboneObject {
             def on(eventName: String, callback: js.Function = js.native, context: JSAny = js.native): JSDynamic = js.native
             def off(eventName: String = js.native, callback: js.Function = js.native, context: JSAny = js.native): JSDynamic = js.native
@@ -99,7 +97,7 @@ package com.simplesys {
         }
 
         @js.native
-        @JSName("Backbone.ModelBase")
+        @JSGlobal("Backbone.ModelBase")
         class ModelBase extends Events {
             var url: JSAny = js.native
             def parse(response: JSAny, options: JSAny = js.native): JSDynamic = js.native
@@ -108,7 +106,7 @@ package com.simplesys {
         }
 
         @js.native
-        @JSName("Backbone.Model")
+        @JSGlobal("Backbone.Model")
         class Model protected() extends ModelBase {
             def this(attributes: JSAny = js.native, options: JSAny = js.native) = this()
             var attributes: JSAny = js.native
@@ -152,7 +150,7 @@ package com.simplesys {
         }
 
         @js.native
-        @JSName("Backbone.Collection")
+        @JSGlobal("Backbone.Collection")
         class Collection[TModel <: Model] protected() extends ModelBase {
 
             import com.simplesys.underscore.__.List
@@ -238,7 +236,7 @@ package com.simplesys {
         }
 
         @js.native
-        @JSName("Backbone.Router")
+        @JSGlobal("Backbone.Router")
         class Router protected() extends Events {
 
             def this(options: RouterOptions = js.native) = this()
@@ -251,7 +249,7 @@ package com.simplesys {
         }
 
         @js.native
-        @JSName("Backbone.History")
+        @JSGlobal("Backbone.History")
         class History extends Events {
             var handlers: JSArrayAny = js.native
             var interval: Double = js.native
@@ -280,7 +278,7 @@ package com.simplesys {
         }
 
         @js.native
-        @JSName("Backbone.View")
+        @JSGlobal("Backbone.View")
         class View[TModel <: Model] protected() extends Events {
 
             def this(options: ViewOptions[TModel] = js.native) = this()
@@ -307,7 +305,7 @@ package com.simplesys {
         }
 
         @js.native
-        @JSName("Backbone.LocalStorage")
+        @JSGlobal("Backbone.LocalStorage")
         class LocalStorage[TModel <: Model](name: String) extends BackboneObject {
             def save(): Unit = js.native
             def create(model: TModel): TModel = js.native

@@ -12,7 +12,6 @@ import com.simplesys.option.ScOption._
 
 import scala.scalajs.js
 import scala.scalajs.js._
-import scala.scalajs.js.annotation.ScalaJSDefined
 
 class EditContextSSProps extends EditContextProps {
     type classHandler <: EditContextSS
@@ -160,12 +159,13 @@ class EditContextSSProps extends EditContextProps {
 
     }.toThisFunc.opt
 
-    @ScalaJSDefined
+
+    @js.native
     trait DrawPathProps extends JSObject {
         val points: IscArray[Point]
     }
 
-    @ScalaJSDefined
+    @js.native
     trait DrawItemProps extends JSObject {
         val shapeData: JSObject
     }

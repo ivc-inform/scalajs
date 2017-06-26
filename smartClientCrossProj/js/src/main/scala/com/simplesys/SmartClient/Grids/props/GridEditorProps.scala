@@ -29,6 +29,7 @@ import com.simplesys.function._
 import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
 
+import scala.scalajs.js
 import scala.scalajs.js._
 import scala.scalajs.js.annotation.ScalaJSDefined
 
@@ -102,7 +103,7 @@ class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends
 
 }
 
-@ScalaJSDefined
+@js.native
 trait EmptyCriteria extends JSObject {
     val ts: Double
 }
@@ -119,6 +120,8 @@ class ListGridEditorProps extends GridEditorProps[ListGridFieldProps, ListGridRe
             }
 
             def getGriteria(): Criteria = if (criteria.isEmpty) thiz.getCriteria() else criteria.get
+
+            //isc debugTrap 0
 
             thiz.fetchData(
                 isc.addProperties(getGriteria(), timestamProp), {

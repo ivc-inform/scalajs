@@ -18,7 +18,7 @@ package com.simplesys {
             }
 
             @js.native
-            @JSName("joint.dia.Graph")
+            @JSGlobal("joint.dia.Graph")
             class Graph extends Model {
                 def addCell(cell: Cell): Unit = js.native
                 def addCells(cells: JSArray[Cell]): Unit = js.native
@@ -33,7 +33,7 @@ package com.simplesys {
             }
 
             @js.native
-            @JSName("joint.dia.Cell")
+            @JSGlobal("joint.dia.Cell")
             class Cell extends Model {
                 def toJSON(): JSObject = js.native
                 def remove(options: JSAny = js.native): Unit = js.native
@@ -48,7 +48,7 @@ package com.simplesys {
             }
 
             @js.native
-            @JSName("joint.dia.Element")
+            @JSGlobal("joint.dia.Element")
             class Element extends Cell {
                 def position(x: Double, y: Double): Element = js.native
                 def translate(tx: Double, ty: Double = js.native): Element = js.native
@@ -63,7 +63,7 @@ package com.simplesys {
             }
 
             @js.native
-            @JSName("joint.dia.Link")
+            @JSGlobal("joint.dia.Link")
             class Link extends Cell {
                 @JSName("defaults")
                 def diaDefaults(): IDefaults = js.native
@@ -73,7 +73,7 @@ package com.simplesys {
             }
 
             @js.native
-            @JSName("joint.dia.Paper")
+            @JSGlobal("joint.dia.Paper")
             class Paper extends View[Model] {
                 var options: JSDictionaryAny = js.native
                 def setDimensions(width: Double, height: Double): Unit = js.native
@@ -87,13 +87,13 @@ package com.simplesys {
             }
 
             @js.native
-            @JSName("joint.dia.ElementView")
+            @JSGlobal("joint.dia.ElementView")
             class ElementView extends CellView {
                 def scale(sx: Double, sy: Double): Unit = js.native
             }
 
             @js.native
-            @JSName("joint.dia.CellView")
+            @JSGlobal("joint.dia.CellView")
             class CellView extends View[Cell] {
                 def getBBox(): JSAny = js.native
                 def highlight(el: JSAny = js.native): Unit = js.native
@@ -108,7 +108,7 @@ package com.simplesys {
             }
 
             @js.native
-            @JSName("joint.dia.LinkView")
+            @JSGlobal("joint.dia.LinkView")
             class LinkView extends CellView {
                 def getConnectionLength(): Double = js.native
                 def getPointAtLength(length: Double): JSAny = js.native
@@ -123,29 +123,29 @@ package com.simplesys {
                 import com.simplesys.System.JSAny
 
                 @js.native
-                @JSName("joint.shapes.basic.Generic")
+                @JSGlobal("joint.shapes.basic.Generic")
                 class Generic[T] extends joint.dia.Element {
                     @JSName("clone")
                     def cloneSHP(opt: JSAny = js.native): T = js.native
                 }
 
                 @js.native
-                @JSName("joint.shapes.basic.Rect")
+                @JSGlobal("joint.shapes.basic.Rect")
                 class Rect extends Generic[Rect] {
                 }
 
                 @js.native
-                @JSName("joint.shapes.basic.Text")
+                @JSGlobal("joint.shapes.basic.Text")
                 class Text extends Generic[Text] {
                 }
 
                 @js.native
-                @JSName("joint.shapes.basic.Circle")
+                @JSGlobal("joint.shapes.basic.Circle")
                 class Circle extends Generic[Circle] {
                 }
 
                 @js.native
-                @JSName("joint.shapes.basic.Image")
+                @JSGlobal("joint.shapes.basic.Image")
                 class Image extends Generic[Image] {
                 }
 
@@ -158,7 +158,7 @@ package com.simplesys {
             import com.simplesys.System._
 
             @js.native
-            @JSName("joint.util")
+            @JSGlobal("joint.util")
             object Util extends JSObject {
                 def uuid(): String = js.native
                 def guid(obj: JSAny): String = js.native

@@ -8,9 +8,9 @@ import com.simplesys.function._
 import com.simplesys.option.DoubleType._
 import com.simplesys.option.ScOption._
 
-import scala.scalajs.js.annotation.ScalaJSDefined
+import scala.scalajs.js
 
-@ScalaJSDefined
+@js.native
 trait NewDSRequestData extends JSObject {
     val active: Boolean
 }
