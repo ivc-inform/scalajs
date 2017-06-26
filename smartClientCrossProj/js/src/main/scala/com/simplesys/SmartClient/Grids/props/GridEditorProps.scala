@@ -103,7 +103,7 @@ class GridEditorProps[T <: ListGridFieldProps, R <: ListGridRecordProps] extends
 
 }
 
-@js.native
+@ScalaJSDefined
 trait EmptyCriteria extends JSObject {
     val ts: Double
 }

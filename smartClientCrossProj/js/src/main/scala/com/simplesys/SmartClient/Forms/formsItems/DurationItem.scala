@@ -4,9 +4,9 @@ import com.simplesys.System.Types.HTMLString
 import com.simplesys.System._
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.ScalaJSDefined
 
-
-@js.native
+@ScalaJSDefined
 trait DurationValue extends JSObject {
     val days: JSUndefined[Int]
     val hours: JSUndefined[Int]

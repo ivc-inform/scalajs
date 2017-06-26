@@ -49,7 +49,7 @@ lazy val root = (project in file(".")).
 lazy val commonDomainsCrossProj = crossProject.dependsOn(smartClientCrossProj).
   settings(
       name := "common-domains",
-
+      scalacOptions += "-P:scalajs:sjsDefinedByDefault",
       libraryDependencies ++= Seq(
           CommonDeps.logbackWrapper.value
       ),
@@ -69,6 +69,7 @@ lazy val commonDomainJS = commonDomainsCrossProj.js
 lazy val commonTypesCrossProj = crossProject.
   settings(
       name := "common-types",
+      scalacOptions += "-P:scalajs:sjsDefinedByDefault",
       libraryDependencies ++= Seq(
           CommonDeps.xmlExtender.value,
           CommonDeps.common.value,
@@ -116,9 +117,10 @@ lazy val macroJVM = Project("macrojvm", file("macrojvm")).settings(
     libraryDependencies <++= (scalaVersion) (v => Seq(("org.scala-lang" % "scala-compiler" % v), ("org.scala-lang" % "scala-reflect" % v)))
 ).dependsOn(commonTypesJVM)
 
-lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).enablePlugins(ScalaJSPlugin).
+lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
   settings(
       name := "smartclient-wrapper",
+      scalacOptions += "-P:scalajs:sjsDefinedByDefault",
       libraryDependencies ++= {
           Seq(
               CommonDeps.xmlExtender.value,
@@ -138,7 +140,7 @@ lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).ena
           CommonDepsScalaJS.scalajsDOM.value,
           CommonDepsScalaJS.scalajsJQuey.value
       )
-  ).dependsOn().jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
+  ).dependsOn().jsConfigure(x => x.dependsOn(macroJS).enablePlugins(ScalaJSPlugin)).jvmConfigure(x => x.dependsOn(macroJVM))
 
 // Needed, so sbt finds the projects
 lazy val smartClientJVM = smartClientCrossProj.jvm
@@ -147,6 +149,7 @@ lazy val smartClientJS = smartClientCrossProj.js
 lazy val testStend = crossProject.dependsOn(smartClientCrossProj).
   settings(
       name := "test-stend",
+      scalacOptions += "-P:scalajs:sjsDefinedByDefault",
       libraryDependencies ++= {
           Seq(
           )

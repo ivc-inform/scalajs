@@ -29,7 +29,7 @@ trait RotationCenter extends JSObject {
     val cy: Double
 }
 
-@js.native
+@ScalaJSDefined
 trait CalculateTitleLabelPositionInfo extends JSObject {
     // in drawing coordinates
     val topLeftPoint: Point
