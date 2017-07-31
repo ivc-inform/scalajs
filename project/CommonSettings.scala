@@ -4,7 +4,7 @@ object CommonSettings {
     object settingValues {
         val baseVersion = "1.3"
 
-        val scalaVersion = "2.12.2"
+        val scalaVersion = "2.12.3"
         val crossScalaVersions = Seq(scalaVersion)
         val organization = "com.simplesys"
         val scalacOptions = Seq(
