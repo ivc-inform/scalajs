@@ -109,12 +109,12 @@ lazy val jointJSCrossJS = jointJSCrossProj.js
 
 lazy val macroJS = Project("macrojs", file("macrojs")).settings(
     name := "macrojs",
-    libraryDependencies <++= (scalaVersion) (v => Seq(("org.scala-lang" % "scala-compiler" % v), ("org.scala-lang" % "scala-reflect" % v)))
+    libraryDependencies := Seq(("org.scala-lang" % "scala-compiler" % scalaVersion.value), ("org.scala-lang" % "scala-reflect" % scalaVersion.value))
 ).dependsOn(commonTypesJS).enablePlugins(ScalaJSPlugin)
 
 lazy val macroJVM = Project("macrojvm", file("macrojvm")).settings(
     name := "macrojvm",
-    libraryDependencies <++= (scalaVersion) (v => Seq(("org.scala-lang" % "scala-compiler" % v), ("org.scala-lang" % "scala-reflect" % v)))
+    libraryDependencies := Seq(("org.scala-lang" % "scala-compiler" % scalaVersion.value), ("org.scala-lang" % "scala-reflect" % scalaVersion.value))
 ).dependsOn(commonTypesJVM)
 
 lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
@@ -187,7 +187,7 @@ lazy val testStend = crossProject.dependsOn(smartClientCrossProj).
       currentProjectGenerationDirPath in MergeWebappConfig := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
       currentProjectDevelopedDirPath in MergeWebappConfig := (sourceDirectory in Compile).value / "webapp" / "javascript" / "developed",
       currentProjectCoffeeDevelopedDirPath in MergeWebappConfig := (sourceDirectory in Compile).value / "webapp" / "coffeescript" / "developed",
-      merge in MergeWebappConfig <<= (merge in MergeWebappConfig).dependsOn(CoffeeScriptKeys.csTranspile in Assets),
+      merge in MergeWebappConfig ++= (merge in MergeWebappConfig).dependsOn(CoffeeScriptKeys.csTranspile in Assets).value,
 
       libraryDependencies ++= Seq(
           CommonDeps.ssysIscComponents,
