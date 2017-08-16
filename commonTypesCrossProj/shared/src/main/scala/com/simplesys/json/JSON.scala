@@ -10,7 +10,8 @@ object JSON extends {
     private val defaultFormatter: funcFormatter = (in: Any) => {
         in match {
             case s: String => s /*.dblQuoted*/
-            case jsonObject: Map[String, Any] => jsonObject toJsonString()
+            case jsonObject: Map[String, Any] =>
+                jsonObject toJsonString()
             case jsonList: GenSeq[Any] => jsonList toJsonString()
             case other if other.toString.indexOf("function") > -1 => "undefined"
             case other =>

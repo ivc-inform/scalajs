@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.Drawing
 
 import com.simplesys.SmartClient.Control.MenuSS
-import com.simplesys.SmartClient.DataBinding.DataSource
+import com.simplesys.SmartClient.DataBinding.{AdvancedCriteria, DataSource}
 import com.simplesys.SmartClient.Drawing.drawItem.{DrawGroup, DrawLabel, DrawRect}
 import com.simplesys.SmartClient.Drawing.gradient.Gradient
 import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class, IscArray, Point, Rect1}
@@ -20,10 +20,10 @@ import com.simplesys.System.Types._
 import com.simplesys.System._
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
+import scala.scalajs.js.annotation.{JSGlobal, JSName, ScalaJSDefined}
 import scala.scalajs.js.|
 
-@ScalaJSDefined
+@js.native
 trait RotationCenter extends JSObject {
     val cx: Double
     val cy: Double
@@ -40,7 +40,7 @@ trait CalculateTitleLabelPositionInfo extends JSObject {
     val dims: DrawLabel
 }
 
-@ScalaJSDefined
+@js.native
 trait LiveObject extends JSObject {
     var canDrag: Boolean
     val fieldDataSource: JSUndefined[DataSource]
@@ -74,6 +74,7 @@ trait DrawItem extends Class {
     var _constructor: JSUndefined[String]
     var contextMenu: JSUndefined[MenuSS]
     var cornerResizeKnob: DrawKnob with MultiAutoChild
+    val criteria: JSUndefined[AdvancedCriteria]
     var cursor: Cursor
     val defaults: DrawItemDefaults
     def deleteGlueItems(): void
@@ -243,5 +244,5 @@ abstract trait AbstractDrawItemCompanion extends AbstractClassCompanion {
 }
 
 @js.native
-@JSName("DrawItem")
+@JSGlobal("DrawItem")
 object DrawItemStatic extends AbstractDrawItemCompanion

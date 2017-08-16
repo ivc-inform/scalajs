@@ -160,6 +160,7 @@ class EditContextSSProps extends EditContextProps {
 
     }.toThisFunc.opt
 
+
     @ScalaJSDefined
     trait DrawPathProps extends JSObject {
         val points: IscArray[Point]

@@ -2,11 +2,10 @@ package com.simplesys.build
 
 object CommonSettings {
     object settingValues {
-        val baseVersion = "1.0"
+        val baseVersion = "1.3"
 
-        val scalaVersion = "2.11.8"
-        val scalaOldVersion = "2.10.6"
-        val crossScalaVersions = Seq(scalaVersion, scalaOldVersion)
+        val scalaVersion = "2.12.3"
+        val crossScalaVersions = Seq(scalaVersion)
         val organization = "com.simplesys"
         val scalacOptions = Seq(
             "-feature",
@@ -20,20 +19,18 @@ object CommonSettings {
     object versions {
         val sprayVersion = "1.3.2"
         val uTestVersion = "0.3.1"
-        val scalaTestVersion = "3.0.0"
-        val ssysCoreVersion = "1.2.94"
-        //val ssysCoreVersion = "1.2-SNAPSHOT"
-        val scalajsDOMVersion = "0.9.0"
-        val scalajsJQueryVersion = "0.9.0"
-        val jettyVersion = "9.3.14.v20161028"
-        val akkaVersion = "2.4.12"
-        val akkaExperimintalVersion = "2.4.11"
-        val smartclientVersion = "11.0-v20160805.10"
+        val scalaTestVersion = "3.0.1"
+        //val sbtssysCoreVersion = "1.3.1"
+        val ssysCoreVersion = "1.3-SNAPSHOT"
+        val scalajsDOMVersion = "0.9.1"
+        val scalajsJQueryVersion = "0.9.1"
+        val akkaVersion = "2.5.3"
+        val akkaHttpVersion = "10.0.9"
+        val smartclientVersion = "11.1-v20170703"
     }
 
 
-    val
-    defaultSettings = {
+    val defaultSettings = {
         import sbt.Keys._
         Seq(
             crossScalaVersions := settingValues.crossScalaVersions,

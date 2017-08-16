@@ -3,7 +3,6 @@ package com.simplesys
 import com.simplesys.option.{ScNone, ScOption, ScSome}
 
 import scala.scalajs.js
-import scala.scalajs.js._
 
 package object System {
     type JSAny = js.Any
