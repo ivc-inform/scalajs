@@ -50,7 +50,7 @@ lazy val commonDomainsCrossProj = crossProject.dependsOn(smartClientCrossProj).
   settings(
       name := "common-domains",
       libraryDependencies ++= Seq(
-          CommonDeps.logbackWrapper.value
+          CommonDeps.logbackWrapper
       ),
 
       testFrameworks += new TestFramework("utest.runner.Framework"),
@@ -70,9 +70,9 @@ lazy val commonTypesCrossProj = crossProject.
   settings(
       name := "common-types",
       libraryDependencies ++= Seq(
-          CommonDeps.xmlExtender.value,
-          CommonDeps.common.value,
-          CommonDeps.logbackWrapper.value
+          CommonDeps.xmlExtender,
+          CommonDeps.common,
+          CommonDeps.logbackWrapper
       ),
       testFrameworks += new TestFramework("utest.runner.Framework"),
       publishArtifact in(Compile, packageDoc) := false
@@ -89,7 +89,7 @@ lazy val jointJSCrossProj = crossProject.dependsOn(backboneJSCrossProj).
       name := "joint-js",
 
       libraryDependencies ++= Seq(
-          CommonDeps.scalaTest.value
+          CommonDeps.scalaTest
       ),
 
       testFrameworks += new TestFramework("utest.runner.Framework"),
@@ -122,9 +122,8 @@ lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
       name := "smartclient-wrapper",
       libraryDependencies ++= {
           Seq(
-              CommonDeps.xmlExtender.value,
-              CommonDeps.scalaIOExtender.value
-              /*CommonDeps.uTest.value*/
+              CommonDeps.xmlExtender,
+              CommonDeps.scalaIOExtender
           )
       },
       testFrameworks += new TestFramework("utest.runner.Framework"),
@@ -191,8 +190,8 @@ lazy val testStend = crossProject.dependsOn(smartClientCrossProj).
       merge in MergeWebappConfig <<= (merge in MergeWebappConfig).dependsOn(CoffeeScriptKeys.csTranspile in Assets),
 
       libraryDependencies ++= Seq(
-          CommonDeps.ssysIscComponents.value,
-          CommonDeps.smartclient.value
+          CommonDeps.ssysIscComponents,
+          CommonDeps.smartclient
       )
   ).dependsOn(smartClientCrossProj).jsConfigure(x => x.dependsOn(smartClientJS).enablePlugins(MergeWebappPlugin, ScalaJSPlugin, TranspileCoffeeScript)).jvmConfigure(x => x.dependsOn(smartClientJVM))
 
@@ -205,7 +204,7 @@ lazy val underscoreJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).
       name := "underscore-js",
 
       libraryDependencies ++= Seq(
-          CommonDeps.scalaTest.value
+          CommonDeps.scalaTest
       ),
 
       testFrameworks += new TestFramework("utest.runner.Framework"),
