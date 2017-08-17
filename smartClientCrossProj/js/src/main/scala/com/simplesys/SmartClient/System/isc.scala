@@ -9,7 +9,7 @@ import com.simplesys.SmartClient.Forms.formsItems._
 import com.simplesys.SmartClient.Forms.{AbstractDateChooserCompanion, AbstractDynamicFormCompanion}
 import com.simplesys.SmartClient.Foundation.{AbstractCanvasCompanion, AbstractRichTextEditorCompanion}
 import com.simplesys.SmartClient.Grids._
-import com.simplesys.SmartClient.Layout.AbstractWindowSSCompanion
+import com.simplesys.SmartClient.Layout.{AbstractWindowSSCompanion, WindowSS}
 import com.simplesys.SmartClient.Messaging.AbstractMessagingSSCompanion
 import com.simplesys.SmartClient.RPC.AbstractRPCManagerCompanion
 import com.simplesys.SmartClient.System.date.{AbstractDateCompanion, AbstractTimeCompanion}
@@ -21,10 +21,11 @@ import com.simplesys.System.Types.{Callback, ID, void}
 import com.simplesys.System._
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{JSBracketAccess, JSName}
+import scala.scalajs.js.annotation.{JSBracketAccess, JSGlobal, JSName}
 import scala.scalajs.js.|
 
 @js.native
+@JSGlobal
 object isc extends JSObject {
 
     import com.simplesys.SmartClient.App.AbstractCommonListGridEditorComponentCompanion
@@ -118,12 +119,12 @@ object isc extends JSObject {
     val CommonListGridEditorComponent: AbstractCommonListGridEditorComponentCompanion = js.native
 
 
-    def error(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
-    def errorDetail(message: String , detailMessage: String , identifier: ID = js.native, detailIdentifier: ID = js.native): void = js.native
-    def info(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
-    def ok(message: String, identifier: ID = js.native, callback: Callback = js.native): void = js.native
-    def infos(gridProperties: ListGrid | ListGridEditor, identifier: ID = js.native, callback: Callback = js.native): void = js.native
-    def errors(gridproperties: ListGrid | ListGridEditor, identifier: ID = js.native, callback: Callback = js.native): void = js.native
+    def error(message: String, identifier: ID = js.native, callback: Callback = js.native): WindowSS = js.native
+    def errorDetail(message: String , detailMessage: String , identifier: ID = js.native, detailIdentifier: ID = js.native): WindowSS = js.native
+    def info(message: String, identifier: ID = js.native, callback: Callback = js.native): WindowSS = js.native
+    def ok(message: String, identifier: ID = js.native, callback: Callback = js.native): WindowSS = js.native
+    def infos(gridProperties: ListGrid | ListGridEditor, identifier: ID = js.native, callback: Callback = js.native): WindowSS = js.native
+    def errors(gridproperties: ListGrid | ListGridEditor, identifier: ID = js.native, callback: Callback = js.native): WindowSS = js.native
     val JSON: AbstractJSONCompanion = js.native
     def debugTrac[T](obj: T*): T = js.native
     def debugTrap[T](obj: T*): T = js.native

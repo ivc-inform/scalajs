@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Forms.formsItems
 
+import com.simplesys.System.Types.HTMLString
 import com.simplesys.System._
 
 import scala.scalajs.js
@@ -15,9 +16,6 @@ trait DurationValue extends JSObject {
 
 @js.native
 trait DurationItem extends CanvasItem {
-
-    import com.simplesys.System.JSUndefined
-    import com.simplesys.System.Types._
 
     var days: JSUndefined[Int]
     var hours: JSUndefined[Int]

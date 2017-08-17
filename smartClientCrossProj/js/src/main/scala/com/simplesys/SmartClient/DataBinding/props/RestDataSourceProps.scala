@@ -1,14 +1,10 @@
 package com.simplesys.SmartClient.DataBinding.props
 
-import com.simplesys.SmartClient.DataBinding.{DSRequest, DSResponse, ResponseData}
+import com.simplesys.SmartClient.DataBinding.RestDataSource
 import com.simplesys.System.Types.void
-import com.simplesys.function._
-import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
 
 import scala.scalajs.js
-import scala.scalajs.js.UndefOr._
-import com.simplesys.SmartClient.DataBinding.RestDataSource
 
 class RestDataSourceProps extends DataSourceProps {
 

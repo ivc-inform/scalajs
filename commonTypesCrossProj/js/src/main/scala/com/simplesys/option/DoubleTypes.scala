@@ -1,6 +1,7 @@
 package com.simplesys.option
 
 import com.simplesys.System.Types.Alignment._
+import com.simplesys.System.Types.FieldType.FieldType
 import com.simplesys.System.Types.FormItemComponentType.FormItemComponentType
 import com.simplesys.System.Types.FormItemType.FormItemType
 import com.simplesys.System.Types.VerticalAlignment._
@@ -72,6 +73,18 @@ case class DictfromArrayAny_DictAny(a: JSDictionaryAny) extends ArrayAny_DictAny
 object ArrayAny_DictAny {
     implicit def ArrayAny2ArrayAny_DictAny(x: JSArrayAny) = ScSome(ArrayAnyfromArrayAny_DictAny(x))
     implicit def Dict2ArrayAny_DictAny(x: JSDictionaryAny) = ScSome(DictfromArrayAny_DictAny(x))
+}
+//</editor-fold>
+
+//<editor-fold desc="FieldType_String">
+sealed abstract class FieldType_FormItemComponentType[+A, +B]
+
+case class FieldTypefromFieldType_FormItemComponentType(a: FieldType) extends FieldType_FormItemComponentType[FieldType, FormItemComponentType]
+case class FormItemComponentTypefromFieldType_FormItemComponentType(a: FormItemComponentType) extends FieldType_FormItemComponentType[FieldType, FormItemComponentType]
+
+object FieldType_FormItemComponentType {
+    implicit def FieldType2FieldType_FormItemComponentType(x: FieldType) = ScSome(FieldTypefromFieldType_FormItemComponentType(x))
+    implicit def FormItemComponentType2FieldType_FormItemComponentType(x: FormItemComponentType) = ScSome(FormItemComponentTypefromFieldType_FormItemComponentType(x))
 }
 //</editor-fold>
 

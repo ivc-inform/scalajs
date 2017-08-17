@@ -69,7 +69,7 @@ trait WebTabSetApp extends TabSetStack {
     protected def managedUsersGroups: Seq[RibbonGroupSS]
     protected def progectManagedDevsGroups: Seq[RibbonGroupSS]
 
-    @JSExport
+    //@JSExport
     def getUIContent() {
         Page.setEvent(
             PageEvent.load, {
@@ -103,9 +103,7 @@ trait WebTabSetApp extends TabSetStack {
                                                         new DataViewProps {
                                                             height = "100%"
                                                             width = "100%"
-                                                            members = Seq(
-                                                                mainCanvas
-                                                            ).opt
+                                                            members = Seq(mainCanvas).opt
                                                         }
                                                     )
                                             )
@@ -114,9 +112,7 @@ trait WebTabSetApp extends TabSetStack {
                                                 new DataViewProps {
                                                     height = "100%"
                                                     width = "100%"
-                                                    members = Seq(
-                                                        mainCanvas
-                                                    ).opt
+                                                    members = Seq(mainCanvas).opt
                                                 }
                                             )
                                 })
@@ -135,14 +131,14 @@ trait WebTabSetApp extends TabSetStack {
                 fields = Seq(
                     new DataSourceFieldProps {
                         required = true.opt
-                        `type` = FieldType.sCode_SimpleType.opt
+                        `type` = FieldType.sCode_SimpleType
                         title = "Наименование".opt
                         primaryKey = true.opt
                         name = "libName".opt
                     },
                     new DataSourceFieldProps {
                         required = true.opt
-                        `type` = FieldType.sCode_SimpleType.opt
+                        `type` = FieldType.sCode_SimpleType
                         title = "Версия".opt
                         primaryKey = true.opt
                         name = "libVersion".opt
@@ -303,6 +299,24 @@ trait WebTabSetApp extends TabSetStack {
                             click = {
                                 (thiz: classHandler) =>
                                     isc info(simpleSyS.guid, "163B7F9E-576B-7EFA-8F3C-E536055508B4")
+                                    false
+                            }.toThisFunc.opt
+                        }
+                    )
+                ).opt
+            }
+        ),
+        RibbonGroupSS.create(
+            new RibbonGroupSSProps {
+                title = "Разработчики".ellipsis.opt
+                controls = Seq(
+                    IconButtonSS.create(
+                        new IconButtonSSProps {
+                            title = "Upload Test".opt
+                            icon = Common.upload.opt
+                            orientation = "gorizontal".opt
+                            click = {
+                                (thiz: classHandler) =>                                   
                                     false
                             }.toThisFunc.opt
                         }

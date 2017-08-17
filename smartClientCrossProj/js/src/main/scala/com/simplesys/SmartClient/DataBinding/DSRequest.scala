@@ -3,22 +3,22 @@ package com.simplesys.SmartClient.DataBinding
 import com.simplesys.SmartClient.Grids.treeGrid.TreeNode
 import com.simplesys.SmartClient.RPC.{AbstractRPCRequestCompanion, RPCRequest}
 import com.simplesys.SmartClient.System.IscArray
-import com.simplesys.System.{JSFunction, JSObject, JSUndefined}
 import com.simplesys.System.Types.DSOperationType.DSOperationType
 import com.simplesys.System.Types.DSProtocol.DSProtocol
 import com.simplesys.System.Types.ExportDisplay.ExportDisplay
 import com.simplesys.System.Types.ExportFormat.ExportFormat
 import com.simplesys.System.Types.ExportImageFormat.ExportImageFormat
 import com.simplesys.System.Types.PropertyIdentifier.PropertyIdentifier
-import com.simplesys.System.Types.{Callback, Record}
 import com.simplesys.System.Types.TextMatchStyle.TextMatchStyle
 import com.simplesys.System.Types.ValidationMode.ValidationMode
+import com.simplesys.System.Types.{Callback, Record}
+import com.simplesys.System.{JSObject, JSUndefined}
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
+import scala.scalajs.js.annotation.JSGlobal
 import scala.scalajs.js.|
 
-@ScalaJSDefined
+@js.native
 trait InternalClientContext extends JSObject {
   var _callback: JSUndefined[Callback]
 }
@@ -92,6 +92,6 @@ abstract trait AbstractDSRequestCompanion extends AbstractRPCRequestCompanion {
 }
 
 @js.native
-@JSName("isc.DSRequest")
+@JSGlobal("isc.DSRequest")
 object DSRequestStatic extends AbstractDSRequestCompanion
 

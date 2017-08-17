@@ -20,10 +20,10 @@ import com.simplesys.System.Types._
 import com.simplesys.System._
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
+import scala.scalajs.js.annotation.{JSGlobal, JSName, ScalaJSDefined}
 import scala.scalajs.js.|
 
-@ScalaJSDefined
+@js.native
 trait RotationCenter extends JSObject {
     val cx: Double
     val cy: Double
@@ -40,7 +40,7 @@ trait CalculateTitleLabelPositionInfo extends JSObject {
     val dims: DrawLabel
 }
 
-@ScalaJSDefined
+@js.native
 trait LiveObject extends JSObject {
     var canDrag: Boolean
     val fieldDataSource: JSUndefined[DataSource]
@@ -244,5 +244,5 @@ abstract trait AbstractDrawItemCompanion extends AbstractClassCompanion {
 }
 
 @js.native
-@JSName("DrawItem")
+@JSGlobal("DrawItem")
 object DrawItemStatic extends AbstractDrawItemCompanion

@@ -19,8 +19,6 @@ class RestDataSourceSSProps extends RestDataSourceProps {
             //isc debugTrap (resp, req, data)
             thiz.Super("transformResponse", IscArray(resp, req, data))
 
-            //isc debugTrap (resp, req, data)
-
             val status: Int = {
                 if (data.isDefined && data.get.status.isDefined)
                     data.get.status.get
@@ -34,21 +32,18 @@ class RestDataSourceSSProps extends RestDataSourceProps {
                 data.foreach(resp.data.get add _.data)
             }
 
+            //isc debugTrap (status)
             if (data.isDefined && data.get.data.isDefined && status < 0) {
-                //isc debugTrap data
 
                 val errorStruct = data.get.data.get
                 resp.asInstanceOf[JSDynamic].updateDynamic("errorStruct")(errorStruct)
-
-                //isc debugTrap resp
             }
 
-            //isc debugTrap (status)
-
             if (resp.errorStruct.isDefined && resp.status != status) {
-                //isc debugTrap (resp)
                 resp.status = status
-                //isc debugTrap (resp)
+                val errorStruct = resp.errorStruct.asInstanceOf[ErrorStructOld]
+                //isc debugTrap (errorStruct)
+                errorStruct.error.foreach(error ⇒ isc.errorDetail(error.message.getOrElse("Ошибка не определена."), error.stackTrace.getOrElse("Ошибка не определена.")))
             }
 
             resp
