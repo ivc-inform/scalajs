@@ -243,3 +243,5 @@ lazy val backboneJSCrossProj = crossProject.dependsOn(underscoreJSCrossProj).
 
 lazy val backboneJSCrossJVM = backboneJSCrossProj.jvm
 lazy val backboneJSCrossJS = backboneJSCrossProj.js
+
+logLevel := Level.Debug
