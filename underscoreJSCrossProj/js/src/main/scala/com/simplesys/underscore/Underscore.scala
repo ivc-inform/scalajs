@@ -558,7 +558,8 @@ package com.simplesys.underscore {
     }
 
     @js.native
-    object underscore extends js.GlobalScope {
+    @JSGlobalScope
+    object underscore extends js.Any{
         @JSName("_")
         var ___ : UnderscoreStatic = js.native
         type Dictionary[T] = scalajs.js.Dictionary[T]

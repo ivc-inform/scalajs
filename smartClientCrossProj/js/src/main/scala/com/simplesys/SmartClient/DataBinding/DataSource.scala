@@ -31,6 +31,7 @@ import com.simplesys.System.Types._
 import com.simplesys.System.{JSAny, JSObject, JSUndefined}
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSGlobal
 import scala.scalajs.js.|
 
 @js.native
@@ -103,7 +104,7 @@ trait DataSource extends Class {
     def evaluateCriterion(record: Record, criterion: Criterion): Boolean
     def execute(dsRequest: DSRequest): void
     def exportClientData(data: IscArray[Record], requestProperties: DSRequest, callback: DSCallback): void
-    def exportData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
+    def exportData(criteria: Criteria = js.native, requestProperties: DSRequest = js.native, callback: DSCallback = js.native): void
     def fetchData(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def fetchRecord(pkValue: JSAny, requestProperties: DSRequest = js.native, callback: DSCallback = js.native): void
     def fieldMatchesFilter(fieldValue: JSAny, filterValue: JSAny, requestProperties: DSRequest = js.native): Boolean
@@ -235,7 +236,7 @@ trait DataSource extends Class {
     val title: String
     val titleField: String
     val transformMultipleFields: Boolean
-    var transformReques: js.Function1[DSRequest, JSAny]
+    var transformRequest: js.Function1[DSRequest, _]
     var transformResponse: js.Function3[DSResponse, DSRequest, JSON, DSResponse]
     val translatePatternOperators: Boolean
     val trimMilliseconds: Boolean
@@ -295,5 +296,6 @@ abstract trait AbstractDataSourceCompanion extends AbstractClassCompanion {
 }
 
 @js.native
+@JSGlobal
 object DataSourceStatic extends AbstractDataSourceCompanion
 

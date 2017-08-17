@@ -26,7 +26,7 @@ import com.simplesys.System.{JSAny, JSObject, JSUndefined}
 
 import scala.scalajs.js
 import scala.scalajs.js._
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation.{JSGlobal, JSName}
 
 @js.native
 trait DynamicForm extends Canvas with DataBoundComponent {
@@ -96,7 +96,7 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     def getTitleOrientation(item: FormItem = js.native): TitleOrientation
     def getValidatedValues(): JSObject
     def getValue(fieldName: String): JSAny
-    def getValues(): JSObject
+    def getValues[T <: JSObject]():T
     def getValuesAsAdvancedCriteria(textMatchStyle: TextMatchStyle = js.native): AdvancedCriteria
     val grid: JSUndefined[ListGrid]
     def getValuesAsCriteria(advanced: Boolean, textMatchStyle: TextMatchStyle = js.native): Criteria | AdvancedCriteria
@@ -210,6 +210,7 @@ trait DynamicForm extends Canvas with DataBoundComponent {
 }
 
 @js.native
+@JSGlobal
 abstract class AbstractDynamicFormCompanion extends AbstractCanvasCompanion {
     val _instancePrototype: FormItem = js.native
 }

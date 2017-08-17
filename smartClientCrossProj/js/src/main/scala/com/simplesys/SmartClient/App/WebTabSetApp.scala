@@ -1,7 +1,7 @@
 package com.simplesys.SmartClient.App
 
 import com.simplesys.SmartClient.App.formItems.props.LookupTreeGridEditorItemProps
-import com.simplesys.SmartClient.App.props.{EditorUserGroupsProps, EditorUsersProps, SettingsEditorProps}
+import com.simplesys.SmartClient.App.props.{EditorUserGroupsProps, EditorUsersProps}
 import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.Control.props.MenuSSProps
@@ -9,9 +9,7 @@ import com.simplesys.SmartClient.Control.props.menu.MenuSSItemProps
 import com.simplesys.SmartClient.DataBinding.props.dataSource.DataSourceFieldProps
 import com.simplesys.SmartClient.DataBinding.props.{DataSourceProps, DataViewProps}
 import com.simplesys.SmartClient.DataBinding.{DataSource, DataSourceSSstatic, RestDataSourceSS}
-import com.simplesys.SmartClient.Forms.DynamicForm
 import com.simplesys.SmartClient.Forms.formsItems.FormItem
-import com.simplesys.SmartClient.Forms.formsItems.props.{CheckboxItemProps, SpinnerItemProps}
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Foundation.props.LabelProps
 import com.simplesys.SmartClient.Grids.props.ListGridEditorProps
@@ -68,9 +66,10 @@ trait WebTabSetApp extends TabSetStack {
             ).opt
         })
 
-    protected val managedUsersGroups: Seq[RibbonGroupSS]
+    protected def managedUsersGroups: Seq[RibbonGroupSS]
+    protected def progectManagedDevsGroups: Seq[RibbonGroupSS]
 
-    @JSExport
+    //@JSExport
     def getUIContent() {
         Page.setEvent(
             PageEvent.load, {
@@ -104,9 +103,7 @@ trait WebTabSetApp extends TabSetStack {
                                                         new DataViewProps {
                                                             height = "100%"
                                                             width = "100%"
-                                                            members = Seq(
-                                                                mainCanvas
-                                                            ).opt
+                                                            members = Seq(mainCanvas).opt
                                                         }
                                                     )
                                             )
@@ -115,9 +112,7 @@ trait WebTabSetApp extends TabSetStack {
                                                 new DataViewProps {
                                                     height = "100%"
                                                     width = "100%"
-                                                    members = Seq(
-                                                        mainCanvas
-                                                    ).opt
+                                                    members = Seq(mainCanvas).opt
                                                 }
                                             )
                                 })
@@ -136,14 +131,14 @@ trait WebTabSetApp extends TabSetStack {
                 fields = Seq(
                     new DataSourceFieldProps {
                         required = true.opt
-                        `type` = FieldType.sCode_SimpleType.opt
+                        `type` = FieldType.sCode_SimpleType
                         title = "Наименование".opt
                         primaryKey = true.opt
                         name = "libName".opt
                     },
                     new DataSourceFieldProps {
                         required = true.opt
-                        `type` = FieldType.sCode_SimpleType.opt
+                        `type` = FieldType.sCode_SimpleType
                         title = "Версия".opt
                         primaryKey = true.opt
                         name = "libVersion".opt
@@ -263,22 +258,22 @@ trait WebTabSetApp extends TabSetStack {
             controls = Seq(
                 IconButtonSS.create(
                     new IconButtonSSProps {
-                        title = "Информация".ellipsis.opt
-                        icon = Common.info.opt
+                        title = "Настройки".ellipsis.opt
+                        icon = Common.settings.opt
                         click = {
                             (thiz: classHandler) =>
-                                getAbout()
+                                getSettingsEditor()
                                 false
                         }.toThisFunc.opt
                     }
                 ),
                 IconButtonSS.create(
                     new IconButtonSSProps {
-                        title = "Настройки".ellipsis.opt
-                        icon = Common.settings.opt
+                        title = "Информация".ellipsis.opt
+                        icon = Common.info.opt
                         click = {
                             (thiz: classHandler) =>
-                                getSettingsEditor()
+                                getAbout()
                                 false
                         }.toThisFunc.opt
                     }
@@ -304,6 +299,24 @@ trait WebTabSetApp extends TabSetStack {
                             click = {
                                 (thiz: classHandler) =>
                                     isc info(simpleSyS.guid, "163B7F9E-576B-7EFA-8F3C-E536055508B4")
+                                    false
+                            }.toThisFunc.opt
+                        }
+                    )
+                ).opt
+            }
+        ),
+        RibbonGroupSS.create(
+            new RibbonGroupSSProps {
+                title = "Разработчики".ellipsis.opt
+                controls = Seq(
+                    IconButtonSS.create(
+                        new IconButtonSSProps {
+                            title = "Upload Test".opt
+                            icon = Common.upload.opt
+                            orientation = "gorizontal".opt
+                            click = {
+                                (thiz: classHandler) =>                                   
                                     false
                             }.toThisFunc.opt
                         }
@@ -337,10 +350,11 @@ trait WebTabSetApp extends TabSetStack {
                             showResizeBar = true.opt
                             members = (
                               managedUsersGroups ++
+                                progectManagedDevsGroups ++
+                                managedDevsGroups ++
                                 managedAdminsGroups ++
                                 Seq(functionGroup) ++
                                 infoGroup ++
-                                managedDevsGroups ++
                                 Seq(
                                     LayoutSpacer.create(
                                         new LayoutSpacerProps {
@@ -349,7 +363,7 @@ trait WebTabSetApp extends TabSetStack {
                                     ),
                                     RibbonGroupSS.create(
                                         new RibbonGroupSSProps {
-                                            title = "Идентификация".ellipsis.opt
+                                            title = "Аутентификация".ellipsis.opt
                                             defaultLayoutAlign = Alignment.center
                                             width = 40
                                             controls = Seq(
@@ -375,8 +389,10 @@ trait WebTabSetApp extends TabSetStack {
                                                                                     managedAdminsGroups.foreach(_.show())
                                                                                 }
 
-                                                                                if (LoggedGroup.isDevsGroup())
+                                                                                if (LoggedGroup.isDevsGroup()) {
                                                                                     managedDevsGroups.foreach(_.show())
+                                                                                    progectManagedDevsGroups.foreach(_.show())
+                                                                                }
 
                                                                                 LoggedGroup.logged = true
 
@@ -386,6 +402,7 @@ trait WebTabSetApp extends TabSetStack {
                                                                                 managedUsersGroups.foreach(_.hide())
                                                                                 managedAdminsGroups.foreach(_.hide())
                                                                                 managedDevsGroups.foreach(_.hide())
+                                                                                progectManagedDevsGroups.foreach(_.hide())
                                                                                 infoGroup.foreach(_.hide())
                                                                                 captionUserLabel.hide()
                                                                                 tabGroupSet.removeAllTabs()
@@ -404,6 +421,7 @@ trait WebTabSetApp extends TabSetStack {
                                                                     managedUsersGroups.foreach(_.hide())
                                                                     managedAdminsGroups.foreach(_.hide())
                                                                     managedDevsGroups.foreach(_.hide())
+                                                                    progectManagedDevsGroups.foreach(_.hide())
                                                                     captionUserLabel.hide()
                                                                     functionGroup.hide()
                                                                     infoGroup.foreach(_.hide())

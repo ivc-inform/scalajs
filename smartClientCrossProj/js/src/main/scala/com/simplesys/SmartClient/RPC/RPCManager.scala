@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.RPC
 
+import com.simplesys.SmartClient.DataBinding.DSRequest
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.System.{AbstractClassCompanion, Class, IscArray}
 import com.simplesys.System.Types.PromptStyle.PromptStyle
@@ -8,7 +9,7 @@ import com.simplesys.System.Types.{Callback, HTMLString, URL, void}
 import com.simplesys.System.{JSAny, JSUndefined}
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation.{JSGlobal, JSName}
 import scala.scalajs.js.|
 
 @js.native
@@ -60,7 +61,7 @@ abstract trait AbstractRPCManagerCompanion extends AbstractClassCompanion {
     def send(data: JSAny, callback: Callback, requestParams: RPCRequest): void = js.native
     def sendProxied(request: RPCRequest): void = js.native
     def sendQueue(callback: RPCQueueCallback = js.native, prompt: String = js.native, URL: URL = js.native, delay: Int = js.native): void = js.native
-    def sendRequest(rpcRequest: RPCRequest, evalResult: Boolean = js.native): void = js.native
+    def sendRequest(rpcRequest: RPCRequest | DSRequest, evalResult: Boolean = js.native): void = js.native
     var showPrompt: Boolean = js.native
     def startQueue(shouldQueue: Boolean = js.native): Boolean = js.native
     def suspendTransaction(transaction: Int): void = js.native
@@ -73,5 +74,6 @@ abstract trait AbstractRPCManagerCompanion extends AbstractClassCompanion {
 }
 
 @js.native
+@JSGlobal
 object RPCManager extends AbstractRPCManagerCompanion
 

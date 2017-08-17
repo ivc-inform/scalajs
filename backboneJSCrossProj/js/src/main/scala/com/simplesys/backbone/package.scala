@@ -1,10 +1,10 @@
 package com.simplesys
 
 import com.simplesys.backbone.props._
-import org.scalajs.jquery.{JQueryStatic, JQueryXHR, JQueryAjaxSettings}
+import org.scalajs.jquery.{JQueryAjaxSettings, JQueryStatic, JQueryXHR}
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation.{JSGlobal, JSName}
 
 //import com.simplesys.macros.PropsToDictionary
 import com.simplesys.macros.PropsToDictionary
@@ -14,7 +14,7 @@ package object backbone {
     import com.simplesys.System.{JSDynamic, JSObject}
 
     @js.native
-    @JSName("Backbone")
+    @JSGlobal("Backbone")
     object Backbone extends JSObject {
         var history: History = js.native
         def sync(method: String, model: Model, options: JQueryAjaxSettings = js.native): JSDynamic = js.native

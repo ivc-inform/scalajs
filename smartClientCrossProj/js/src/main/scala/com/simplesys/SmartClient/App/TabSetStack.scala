@@ -13,16 +13,16 @@ import com.simplesys.function._
 import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
 
-import scala.scalajs.js.ThisFunction1
+import scala.scalajs.js.{Function0, ThisFunction1}
 
 trait TabSetsStack {
     self: TabSetStack =>
 
     val beforeRemoveTabs: ScOption[ThisFunction1[TabSetSS, Tab, _]] = ScNone
 
-    def checkInnerTabSet(groupIdentifier: ID, canvas: Canvas, menuItem: MenuSSItem): TabSetSS = {
+    def checkInnerTabSet(groupIdentifier: ID, canvas: Canvas, menuItem: MenuSSItem, funcOnTabDeselect: JSUndefined[Function0[Boolean]] = jSUndefined): TabSetSS = {
 
-        val tabSet = tabGroupSet.tabs.map(_.pane.asInstanceOf[TabSetSS]).find(_.identifier == groupIdentifier) match {
+        val tabSet = tabGroupSet.tabs.map(_.pane.asInstanceOf[TabSetSS]).find(_.identifier.getOrElse("") == groupIdentifier) match {
             case None =>
                 TabSetSS.create(
                     new TabSetSSProps {
@@ -54,6 +54,10 @@ trait TabSetsStack {
                     canvas.tabSet = tabSet
                     //isc debugTrap canvas
                     pane = canvas.opt
+                    tabDeselected = {
+                        (tabSet: TabSet, tabNum: Int, tabPane: Canvas, ID: JSUndefined[ID], tab: Tab, tabOld: Tab, name: JSUndefined[String]) =>
+                            funcOnTabDeselect.map(_ ()).getOrElse(true)
+                    }.toFunc.opt
                     tabSelected = {
                         (tabSet: TabSet, tabNum: Int, tabPane: Canvas, ID: JSUndefined[ID], tab: Tab, name: JSUndefined[String]) =>
                             functionButton.menu = tabPane.funcMenu
@@ -75,7 +79,7 @@ trait TabSetsStack {
 
     def checkInnerTabSet(groupIdentifier: ID, canvas: Canvas, button: IconButtonSS): TabSetSS = {
 
-        val tabSet = tabGroupSet.tabs.map(_.pane.asInstanceOf[TabSetSS]).find(_.identifier == groupIdentifier) match {
+        val tabSet = tabGroupSet.tabs.map(_.pane.asInstanceOf[TabSetSS]).find(_.identifier.getOrElse("") == groupIdentifier) match {
             case None =>
                 TabSetSS.create(
                     new TabSetSSProps {
@@ -144,7 +148,9 @@ trait TabSetStack extends TabSetsStack {
         }
     )
 
-    def addTab(canvas: Canvas, menuItem: MenuSSItem): Unit = {
+    def addTab(canvas: Canvas, menuItem: MenuSSItem, funcOnTabDeselect: JSUndefined[Function0[Boolean]] = jSUndefined): Unit = {
+        //isc debugTrap funcOnTabDeselect
+
         if (canvas.funcMenu.isEmpty)
             isc warn s"Отсутствует FuncMenu у компонента: ${canvas.getClassName()} c ID: ${canvas.getID()}, поэтому не будет работать кнопка 'Операции' для этого компонента."
 
@@ -165,7 +171,7 @@ trait TabSetStack extends TabSetsStack {
                 if (tabGroup.isDefined) {
                     tabGroupSet selectTab tabGroup.get
                     //isc debugTrap tabGroup
-                    checkInnerTabSet(groupButton.getIdentifier(), canvas, menuItem)
+                    checkInnerTabSet(groupButton.getIdentifier(), canvas, menuItem, funcOnTabDeselect)
                 }
                 else {
                     val len = tabGroupSet.tabs.length
@@ -173,9 +179,13 @@ trait TabSetStack extends TabSetsStack {
 
                     val tab = Tab(
                         new TabProps {
-                            pane = checkInnerTabSet(groupButton.getIdentifier(), canvas, menuItem).opt
+                            pane = checkInnerTabSet(groupButton.getIdentifier(), canvas, menuItem, funcOnTabDeselect).opt
                             name = groupButton.getIdentifier().opt
                             title = _title.opt
+                            tabDeselected = {
+                                (tabSet: TabSet, tabNum: Int, tabPane: Canvas, ID: JSUndefined[ID], tab: Tab, tabOld: Tab, name: JSUndefined[String]) =>
+                                    funcOnTabDeselect.map(_ ()).getOrElse(true)
+                            }.toFunc.opt
                             tabSelected = {
                                 (tabSet: TabSet, tabNum: Int, tabPane: Canvas, ID: JSUndefined[ID], tab: Tab, name: JSUndefined[String]) =>
                                     if (tabPane.asInstanceOf[TabSetSS].getSelectedTab().isEmpty)

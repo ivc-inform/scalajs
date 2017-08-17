@@ -74,5 +74,7 @@ src/main/webapp/javascript/IncludeModules
 # Scala-IDE specific
 .scala_dependencies
 .worksheet
-
-
+target/
+isomorphic/
+generatedComponents/
+managed/
