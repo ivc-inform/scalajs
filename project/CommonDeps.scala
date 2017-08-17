@@ -6,7 +6,7 @@ import sbt._
 object PluginDeps {
     object versions {
         val scalaJSPluginVersion = "0.6.19"
-        val xsbtWebVersion = "4.0.0"
+        val xsbtWebVersion = "4.0.1-SNAPSHOT"
         val mergeJSVersion = "1.0.10-SNAPSHOT"
         val transpileCoffeScriptVersion = "1.0.12-SNAPSHOT"
     }
