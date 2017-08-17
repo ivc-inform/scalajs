@@ -5,10 +5,10 @@ import com.simplesys.SmartClient.Drawing.DrawItem
 import com.simplesys.SmartClient.Tools.editProxy.DrawPaneEditProxy
 import com.simplesys.System._
 
-import scala.scalajs.js
+import scala.scalajs.js.annotation.ScalaJSDefined
 import scala.scalajs.js.{ThisFunction0, ThisFunction2}
 
-@js.native
+
 trait AddedProps extends JSObject {
     val contextMenu: MenuSS
     val drawPaneEditProxyProperties: DrawPaneEditProxy
