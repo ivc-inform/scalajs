@@ -29,12 +29,7 @@ object CommonDeps {
     val scalaReflect = "org.scala-lang" % "scala-reflect" % settingValues.scalaVersion
     val scalaCompiler = "org.scala-lang" % "scala-compiler" % settingValues.scalaVersion
     val scalaReflection = "org.scala-lang" % "scala-reflection" % settingValues.scalaVersion
-
-    /*val akkaActor = "com.typesafe.akka" %% "akka-actor" % versions.akkaVersion
-    val akkaSLF4J = "com.typesafe.akka" %% "akka-slf4j" % versions.akkaVersion
-    val akkaPersistence = "com.typesafe.akka" %% "akka-persistence" % versions.akkaVersion
-    val akkaTestKit = "com.typesafe.akka" %% "akka-testkit" % versions.akkaVersion
-    val akkaHTTPCore = "com.typesafe.akka" %% "akka-http-core" % versions.akkaVersion*/
+    
     val smartclient = "com.simplesys" % "smartclient-js" % versions.smartclientVersion
     val ssysIscComponents = "com.simplesys.core" %% "isc-components" % versions.ssysCoreVersion
 
