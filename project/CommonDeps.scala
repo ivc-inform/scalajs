@@ -6,9 +6,9 @@ import sbt._
 object PluginDeps {
     object versions {
         val scalaJSPluginVersion = "0.6.19"
-        val xsbtWebVersion = "4.0.1-SNAPSHOT"
-        val mergeJSVersion = "1.0.10-SNAPSHOT"
-        val transpileCoffeScriptVersion = "1.0.12-SNAPSHOT"
+        val xsbtWebVersion = "2.1.0"
+        val mergeJSVersion = "1.0.9"
+        val transpileCoffeScriptVersion = "1.0.12-2.11.1"
     }
 
     val scalaJSPlugin = addSbtPlugin("org.scala-js" % "sbt-scalajs" % versions.scalaJSPluginVersion)
