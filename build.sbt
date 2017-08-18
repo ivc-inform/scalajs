@@ -20,9 +20,7 @@ lazy val root = (project in file(".")).
       backboneJSCrossJVM,
       backboneJSCrossJS,
       underscoreJSCrossJS,
-      underscoreJSCrossJVM,
-      testStendJS,
-      testStendJVM
+      underscoreJSCrossJVM
   ).
   settings(inThisBuild(Seq(
       git.baseVersion := CommonSettings.settingValues.baseVersion,
@@ -145,37 +143,6 @@ lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
 // Needed, so sbt finds the projects
 lazy val smartClientJVM = smartClientCrossProj.jvm
 lazy val smartClientJS = smartClientCrossProj.js
-
-lazy val testStend = crossProject.dependsOn(smartClientCrossProj).
-  settings(
-      name := "test-stend",
-      libraryDependencies ++= {
-          Seq(
-          )
-      },
-      publishArtifact in(Compile, packageDoc) := false
-  ).
-  jvmSettings(
-      libraryDependencies ++= {
-          Seq()
-      }
-  ).
-  jsSettings(
-      scalacOptions += "-P:scalajs:suppressExportDeprecations",
-      //scala.js
-      crossTarget in fastOptJS := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
-      crossTarget in fullOptJS := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
-      crossTarget in packageJSDependencies := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
-      
-      libraryDependencies ++= Seq(
-          CommonDeps.ssysIscComponents,
-          CommonDeps.smartclient
-      )
-  ).dependsOn(smartClientCrossProj).jsConfigure(x => x.dependsOn(smartClientJS).enablePlugins(ScalaJSPlugin)).jvmConfigure(x => x.dependsOn(smartClientJVM))
-
-// Needed, so sbt finds the projects
-lazy val testStendJVM = testStend.jvm
-lazy val testStendJS = testStend.js
 
 lazy val underscoreJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).
   settings(

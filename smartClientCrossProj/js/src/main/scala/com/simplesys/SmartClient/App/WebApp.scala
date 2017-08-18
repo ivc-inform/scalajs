@@ -23,7 +23,7 @@ trait WebApp {
     //Можно при наследование объявлять как lazy val
     protected def mainCanvas: Canvas
 
-    @JSExport
+    //@JSExport
     def getUIContent() {
         Page.setEvent(
             PageEvent.load, { (target: JSObject) =>
