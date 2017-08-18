@@ -130,7 +130,8 @@ class FormItemProps extends ClassProps {
     var loadingDisplayValue: ScOption[String] = ScNone
     var locateItemBy: ScOption[String] = ScNone
     var multipleValueSeparator: ScOption[String] = ScNone
-    @deprecated(message = "Use nameStrong instead.", since = "")
+    //todo uncomment in future
+    //@deprecated(message = "Use nameStrong instead.", since = "")
     var name: ScOption[String] = ScNone
     @JSName("name")
     var _name: ScOption[String] = ScNone

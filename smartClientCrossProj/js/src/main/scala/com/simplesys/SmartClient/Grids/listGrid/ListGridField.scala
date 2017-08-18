@@ -155,7 +155,8 @@ trait ListGridField extends JSObject {
     var linkURLPrefix: String
     var linkURLSuffix: String
     var multiple: Boolean
-    @deprecated(message = "Use nameStrong instead.", since = "")
+    //todo uncomment in future
+    //@deprecated(message = "Use nameStrong instead.", since = "")
     var name: JSUndefined[String]
     @JSName("name")
     var _name: String

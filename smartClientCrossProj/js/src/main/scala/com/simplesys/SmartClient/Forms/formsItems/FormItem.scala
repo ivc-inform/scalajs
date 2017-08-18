@@ -194,7 +194,8 @@ trait FormItem extends Class {
     def mapDisplayToValue(value: String): JSObject
     def mapValueToDisplay(value: JSObject): String
     val multipleValueSeparator: String
-    @deprecated(message = "Use nameStrong instead.", since = "")
+    //todo uncomment in future
+    //@deprecated(message = "Use nameStrong instead.", since = "")
     var name: String
     @JSName("name")
     var _name: String
