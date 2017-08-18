@@ -9,5 +9,8 @@ lazy val root = Project(id = "buildPlugins", base = file(".")).enablePlugins(Git
       git.baseVersion := CommonSettings.settingValues.baseVersion
   ))).
   settings(
-      PluginDeps.scalaJSPlugin
+      PluginDeps.scalaJSPlugin,
+      PluginDeps.xsbtWeb,
+      PluginDeps.mergeJS,
+      PluginDeps.transpileCoffeeScript
   )
