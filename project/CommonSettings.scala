@@ -23,7 +23,6 @@ object CommonSettings {
         val ssysCoreVersion = "1.3-SNAPSHOT"
         val scalajsDOMVersion = "0.9.1"
         val scalajsJQueryVersion = "0.9.1"
-        val smartclientVersion = "11.1-v20170703"
     }
 
 

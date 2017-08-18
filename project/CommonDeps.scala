@@ -5,7 +5,7 @@ import sbt._
 
 object PluginDeps {
     object versions {
-        val scalaJSPluginVersion = "0.6.19"
+        val scalaJSPluginVersion = "0.6.18"
     }
 
     val scalaJSPlugin = addSbtPlugin("org.scala-js" % "sbt-scalajs" % versions.scalaJSPluginVersion)
@@ -23,10 +23,8 @@ object CommonDeps {
     val scalaReflect = "org.scala-lang" % "scala-reflect" % settingValues.scalaVersion
     val scalaCompiler = "org.scala-lang" % "scala-compiler" % settingValues.scalaVersion
     val scalaReflection = "org.scala-lang" % "scala-reflection" % settingValues.scalaVersion
-    
-    val smartclient = "com.simplesys" % "smartclient-js" % versions.smartclientVersion
+
     val ssysIscComponents = "com.simplesys.core" %% "isc-components" % versions.ssysCoreVersion
 
     val scalaTest = "org.scalatest" %% "scalatest" % versions.scalaTestVersion % Test
-    val spray = "io.spray" %% "spray-json" % versions.scalaTestVersion % Test
 }
