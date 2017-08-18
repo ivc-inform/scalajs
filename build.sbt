@@ -1,7 +1,5 @@
 import com.simplesys.build.{CommonDeps, CommonDepsScalaJS, CommonSettings}
-import com.simplesys.mergewebapp.MergeWebappPlugin._
 import com.typesafe.sbt.SbtGit.git
-import com.typesafe.sbt.web.Import.WebKeys.webTarget
 import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport.crossProject
 
 name := "scalajs"
@@ -22,9 +20,7 @@ lazy val root = (project in file(".")).
       backboneJSCrossJVM,
       backboneJSCrossJS,
       underscoreJSCrossJS,
-      underscoreJSCrossJVM,
-      testStendJS,
-      testStendJVM
+      underscoreJSCrossJVM
   ).
   settings(inThisBuild(Seq(
       git.baseVersion := CommonSettings.settingValues.baseVersion,
@@ -59,7 +55,6 @@ lazy val commonDomainsCrossProj = crossProject.dependsOn(smartClientCrossProj).
   jvmSettings().
   jsSettings(
       scalacOptions += "-P:scalajs:sjsDefinedByDefault",
-      scalacOptions += "-P:scalajs:suppressExportDeprecations",
       libraryDependencies ++= Seq()
   ).jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
 
@@ -79,7 +74,7 @@ lazy val commonTypesCrossProj = crossProject.
       publishArtifact in(Compile, packageDoc) := false
   ).
   jvmSettings().
-  jsSettings(scalacOptions += "-P:scalajs:suppressExportDeprecations")
+  jsSettings()
 
 // Needed, so sbt finds the projects
 lazy val commonTypesJVM = commonTypesCrossProj.jvm
@@ -99,24 +94,29 @@ lazy val jointJSCrossProj = crossProject.dependsOn(backboneJSCrossProj).
   jvmSettings().
   jsSettings(
       scalacOptions += "-P:scalajs:sjsDefinedByDefault",
-      scalacOptions += "-P:scalajs:suppressExportDeprecations",
       libraryDependencies ++= Seq(
           CommonDepsScalaJS.scalajsDOM.value,
           CommonDepsScalaJS.scalajsJQuey.value
       )
-  ) //.dependsOn().jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
+  )
 
 lazy val jointJSCrossJVM = jointJSCrossProj.jvm
 lazy val jointJSCrossJS = jointJSCrossProj.js
 
 lazy val macroJS = Project("macrojs", file("macrojs")).settings(
     name := "macrojs",
-    libraryDependencies := Seq(("org.scala-lang" % "scala-compiler" % scalaVersion.value), ("org.scala-lang" % "scala-reflect" % scalaVersion.value))
+    libraryDependencies ++= Seq(
+        CommonDeps.scalaCompiler,
+        CommonDeps.scalaReflect
+    )
 ).dependsOn(commonTypesJS).enablePlugins(ScalaJSPlugin)
 
 lazy val macroJVM = Project("macrojvm", file("macrojvm")).settings(
     name := "macrojvm",
-    libraryDependencies := Seq(("org.scala-lang" % "scala-compiler" % scalaVersion.value), ("org.scala-lang" % "scala-reflect" % scalaVersion.value))
+    libraryDependencies ++= Seq(
+        CommonDeps.scalaCompiler,
+        CommonDeps.scalaReflect
+    )
 ).dependsOn(commonTypesJVM)
 
 lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
@@ -137,7 +137,6 @@ lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
       }).
   jsSettings(
       scalacOptions += "-P:scalajs:sjsDefinedByDefault",
-      scalacOptions += "-P:scalajs:suppressExportDeprecations",
       libraryDependencies ++= Seq(
           CommonDepsScalaJS.scalajsDOM.value,
           CommonDepsScalaJS.scalajsJQuey.value
@@ -147,61 +146,6 @@ lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
 // Needed, so sbt finds the projects
 lazy val smartClientJVM = smartClientCrossProj.jvm
 lazy val smartClientJS = smartClientCrossProj.js
-
-lazy val testStend = crossProject.dependsOn(smartClientCrossProj).
-  settings(
-      name := "test-stend",
-      libraryDependencies ++= {
-          Seq(
-          )
-      },
-      publishArtifact in(Compile, packageDoc) := false
-  ).
-  jvmSettings(
-      libraryDependencies ++= {
-          Seq()
-      }
-  ).
-  jsSettings(
-      scalacOptions += "-P:scalajs:suppressExportDeprecations",
-      //scala.js
-      crossTarget in fastOptJS := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
-      crossTarget in fullOptJS := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
-      crossTarget in packageJSDependencies := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
-
-      //coffeeScript
-      CoffeeScriptKeys.sourceMap := false,
-      CoffeeScriptKeys.bare := false,
-      webTarget := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents" / "coffeescript",
-      sourceDirectory in Assets := (sourceDirectory in Compile).value / "webapp" / "coffeescript" / "developed" / "developedComponents",
-      (managedResources in Compile) ++= CoffeeScriptKeys.csTranspile.value,
-
-      //merger
-      mergeMapping in MergeWebappConfig := Seq(
-          ("com.simplesys.core", "isc-components") -> Seq(
-              Seq("webapp", "javascript", "generated", "generatedComponents") -> Some(Seq("webapp", "managed", "javascript", "isc-components", "generated", "generatedComponents")),
-              Seq("webapp", "javascript", "generated", "generatedComponents", "coffeescript") -> Some(Seq("webapp", "managed", "javascript", "isc-components", "generated", "generatedComponents", "coffeescript")),
-              Seq("javascript", "com", "simplesys") -> Some(Seq("webapp", "managed", "javascript", "isc-components", "developed", "developedComponents")),
-              Seq("coffeescript") -> Some(Seq("webapp", "managed", "coffeescript", "isc-components", "developed", "developedComponents"))
-          ),
-          ("com.simplesys", "smartclient-js") -> Seq(
-              Seq("isomorphic") -> Some(Seq("webapp", "isomorphic"))
-          )
-      ),
-      currentProjectGenerationDirPath in MergeWebappConfig := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
-      currentProjectDevelopedDirPath in MergeWebappConfig := (sourceDirectory in Compile).value / "webapp" / "javascript" / "developed",
-      currentProjectCoffeeDevelopedDirPath in MergeWebappConfig := (sourceDirectory in Compile).value / "webapp" / "coffeescript" / "developed",
-      merge in MergeWebappConfig ++= (merge in MergeWebappConfig).dependsOn(CoffeeScriptKeys.csTranspile in Assets).value,
-
-      libraryDependencies ++= Seq(
-          CommonDeps.ssysIscComponents,
-          CommonDeps.smartclient
-      )
-  ).dependsOn(smartClientCrossProj).jsConfigure(x => x.dependsOn(smartClientJS).enablePlugins(MergeWebappPlugin, ScalaJSPlugin, TranspileCoffeeScript)).jvmConfigure(x => x.dependsOn(smartClientJVM))
-
-// Needed, so sbt finds the projects
-lazy val testStendJVM = testStend.jvm
-lazy val testStendJS = testStend.js
 
 lazy val underscoreJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).
   settings(
@@ -216,7 +160,6 @@ lazy val underscoreJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).
   ).
   jvmSettings().
   jsSettings(
-      scalacOptions += "-P:scalajs:suppressExportDeprecations",
       libraryDependencies ++= Seq()
   )
 
@@ -234,7 +177,6 @@ lazy val backboneJSCrossProj = crossProject.dependsOn(underscoreJSCrossProj).
   ).
   jvmSettings().
   jsSettings(
-      scalacOptions += "-P:scalajs:suppressExportDeprecations",
       libraryDependencies ++= Seq(
           CommonDepsScalaJS.scalajsDOM.value,
           CommonDepsScalaJS.scalajsJQuey.value
@@ -243,5 +185,3 @@ lazy val backboneJSCrossProj = crossProject.dependsOn(underscoreJSCrossProj).
 
 lazy val backboneJSCrossJVM = backboneJSCrossProj.jvm
 lazy val backboneJSCrossJS = backboneJSCrossProj.js
-
-logLevel := Level.Debug
