@@ -105,12 +105,18 @@ lazy val jointJSCrossJS = jointJSCrossProj.js
 
 lazy val macroJS = Project("macrojs", file("macrojs")).settings(
     name := "macrojs",
-    libraryDependencies := Seq(("org.scala-lang" % "scala-compiler" % scalaVersion.value), ("org.scala-lang" % "scala-reflect" % scalaVersion.value))
+    libraryDependencies ++= Seq(
+        CommonDeps.scalaCompiler,
+        CommonDeps.scalaReflect
+    )
 ).dependsOn(commonTypesJS).enablePlugins(ScalaJSPlugin)
 
 lazy val macroJVM = Project("macrojvm", file("macrojvm")).settings(
     name := "macrojvm",
-    libraryDependencies := Seq(("org.scala-lang" % "scala-compiler" % scalaVersion.value), ("org.scala-lang" % "scala-reflect" % scalaVersion.value))
+    libraryDependencies ++= Seq(
+        CommonDeps.scalaCompiler,
+        CommonDeps.scalaReflect
+    )
 ).dependsOn(commonTypesJVM)
 
 lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).

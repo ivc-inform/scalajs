@@ -1,6 +1,7 @@
 package com.simplesys.build
 
 import com.simplesys.build.CommonSettings.{settingValues, versions}
+import sbt.Keys.scalaVersion
 import sbt._
 
 object PluginDeps {
@@ -22,9 +23,7 @@ object CommonDeps {
 
     val scalaReflect = "org.scala-lang" % "scala-reflect" % settingValues.scalaVersion
     val scalaCompiler = "org.scala-lang" % "scala-compiler" % settingValues.scalaVersion
-    val scalaReflection = "org.scala-lang" % "scala-reflection" % settingValues.scalaVersion
 
     val ssysIscComponents = "com.simplesys.core" %% "isc-components" % versions.ssysCoreVersion
-
     val scalaTest = "org.scalatest" %% "scalatest" % versions.scalaTestVersion % Test
 }
