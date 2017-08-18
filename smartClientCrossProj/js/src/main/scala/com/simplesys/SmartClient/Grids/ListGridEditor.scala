@@ -5,6 +5,7 @@ import com.simplesys.SmartClient.Control.menu.MenuSSItem
 import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.DataBinding.{DSRequest, DataSource}
 import com.simplesys.SmartClient.Forms.formsItems.FormItem
+import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord, MasterDetailMapping}
 import com.simplesys.SmartClient.Layout.{AbstractVLayoutSSCompanion, VLayoutSS}
 import com.simplesys.SmartClient.System.IscArray
@@ -41,7 +42,7 @@ trait GridEditor[T <: ListGridField, R <: JSAny, S <: JSAny] extends VLayoutSS {
     def getDataLength(): Int
     def applyRecordData(recordData: IscArray[Record]): void
     def invalidateRecordComponents(): void
-    def refreshRecordComponent(rowNum:Int, colNum:Int = js.native): void
+    def refreshRecordComponent(rowNum: Int, colNum: Int = js.native): void
     var showRecordComponentsByCell: Boolean
     var showRecordComponents: Boolean
     var filterOnKeypress: Boolean
@@ -82,7 +83,7 @@ trait GridEditor[T <: ListGridField, R <: JSAny, S <: JSAny] extends VLayoutSS {
     var selectionAppearance: SelectionAppearance
     def selectRecords(records: IscArray[R], newState: Boolean = js.native): void
     def setFields(newFields: IscArray[T] = js.native): void
-    def selectRecord(record: R, newState: Boolean = js.native): void
+    def selectRecord(record: R | js.Object, newState: Boolean = js.native): void
     def selectRecordByKey(keyValue: JSAny, newState: Boolean = js.native): void
     def fullRefresh(criteria: Criteria = js.native, callback: DSCallback = js.native, requestProperties: DSRequest = js.native): void
     def invalidateCache(): void
@@ -104,11 +105,11 @@ trait GridEditor[T <: ListGridField, R <: JSAny, S <: JSAny] extends VLayoutSS {
     def getRecord(data: JSAny): R
     var dataPageSize: Int
     def getEditorType(field: T, values: JSObject): String
-    def deselectRecord(record: R | Int): void
+    def deselectRecord(record: R | Int | JSObject): void
     def deselectRecords(records: IscArray[R]): void
     def deselectAllRecords(): void
     def selectRecordsByKey(keyValues: JSAny, newState: Boolean = js.native): R
-    def getRowNum(record: R): Int
+    def getRowNum(record: R | JSObject): Int
     var dataSource: DataSource
     def setContextMenu(menu: MenuSS): void
     def getContextMenu(): MenuSS
@@ -146,6 +147,7 @@ trait GridEditor[T <: ListGridField, R <: JSAny, S <: JSAny] extends VLayoutSS {
     val datetimeFormatter: DateDisplayFormat
     val dateFormatter: DateDisplayFormat
     def refreshData(callBack: DSCallback = js.native): void
+    var getExpansionComponent: Function1[ListGridRecord, Canvas]
 }
 
 @js.native

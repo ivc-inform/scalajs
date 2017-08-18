@@ -1,10 +1,12 @@
 package com.simplesys.SmartClient.DataBinding
 
+import com.simplesys.System.Types.void
 import com.simplesys.System._
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.ScalaJSDefined
 
-@js.native
+
 trait ErrorStruct extends JSObject {
     val errorMessage: JSUndefined[String]
     val stackTrace: JSUndefined[String]
@@ -12,12 +14,11 @@ trait ErrorStruct extends JSObject {
 }
 
 
-@js.native
 trait ErrorStructOld extends JSObject {
     val error: JSUndefined[Error]
 }
 
-@js.native
+
 trait ResponseData extends JSObject {
     val data: JSUndefined[ErrorStruct]
     val status: JSUndefined[Int]

@@ -8,7 +8,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSGlobal, JSName, ScalaJSDefined}
 import scala.scalajs.js.|
 
-@js.native
+
 trait Rect extends JSObject {
     val left: Double
     val top: Double
@@ -16,7 +16,7 @@ trait Rect extends JSObject {
     val height: Double
 }
 
-@js.native
+
 trait Rect1 extends Rect {
     val success: Boolean
 }
@@ -51,6 +51,7 @@ trait IscArray[A] extends IscList[A] {
     def getRect1(): Rect
     def Exists(index: Int): Boolean
     def notExists(index: Int): Boolean
+    def forEach[U](f: A ⇒ U): void
 }
 
 @js.native

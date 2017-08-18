@@ -9,7 +9,6 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSGlobal, JSName, ScalaJSDefined}
 
 
-@js.native
 trait Response extends JSObject {
     val response: JSUndefined[RPCResponse]
 }

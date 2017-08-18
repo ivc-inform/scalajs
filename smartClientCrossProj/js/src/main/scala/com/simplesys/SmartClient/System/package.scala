@@ -47,6 +47,8 @@ import com.simplesys.SmartClient.RPC.{RPCRequest, RequestParams}
 import com.simplesys.SmartClient.System.date.Date
 import com.simplesys.SmartClient.System.date.props.DateProps
 import com.simplesys.SmartClient.System.props.TreeProps
+import com.simplesys.SmartClient.System.uRIBuilder.URIBuilder
+import com.simplesys.SmartClient.System.uRIBuilder.props.URIBuilderProps
 import com.simplesys.SmartClient.Tools.editProxy.props.DrawItemEditProxyProps
 import com.simplesys.SmartClient.Tools.editProxy.{DrawItemEditProxy, DrawPaneEditProxy}
 import com.simplesys.SmartClient.Tools.palette._
@@ -59,8 +61,6 @@ import com.simplesys.SmartClient.Tools.{EditContext, EditContextSS, EditProxy, P
 //Должны быть
 //import com.simplesys.macros.PropsToDictionary
 import com.simplesys.macros.PropsToDictionary
-
-//
 
 package object System {
 
@@ -76,7 +76,10 @@ package object System {
     object Date extends SCApply4Object[Date, DateProps]
 
     //<editor-fold desc="Control">
+    object Dialog extends SCApply[Dialog, DialogProps]
+    object DialogSS extends SCApply[DialogSS, DialogSSProps]
     object IButtonSS extends SCApply[IButtonSS, IButtonSSProps]
+    object ImgButton extends SCApply[ImgButton, ImgButtonProps]
     object CancelButton extends SCApply[CancelButton, CancelButtonProps]
     object IMenuButton extends SCApply[IMenuButton, IMenuButtonProps]
     object Slider extends SCApply[Slider, SliderProps]
@@ -138,6 +141,10 @@ package object System {
     object PasswordItem extends SCApply4Object[PasswordItem, PasswordItemProps]
     object SubmitItem extends SCApply4Object[SubmitItem, SubmitItemProps]
     object ButtonItem extends SCApply4Object[ButtonItem, ButtonItemProps]
+    object UploadItem extends SCApply4Object[UploadItem, UploadItemProps]
+    object FileItem extends SCApply4Object[FileItem, FileItemProps]
+    object HiddenItem extends SCApply4Object[HiddenItem, HiddenItemProps]
+    object ProgressbarItem extends SCApply4Object[ProgressbarItem, ProgressbarItemProps]
 
     object FormItemWithButtons extends SCApply4Object[FormItemWithButtons, FormItemWithButtonsProps]
     object ComboboxItemWithButtonsJS extends SCApply4Object[ComboboxItemWithButtonsJS, ComboboxItemWithButtonsJSProps]
@@ -156,6 +163,7 @@ package object System {
 
     //<editor-fold desc="Foundation">
     object Canvas extends SCApply[Canvas, CanvasProps]
+    object Iframe extends SCApply[Iframe, IframeProps]
     object Label extends SCApply[Label, LabelProps]
     object HTMLFlow extends SCApply[HTMLFlow, HTMLFlowProps]
     object HTMLPane extends SCApply[HTMLPane, HTMLPaneProps]
@@ -165,8 +173,8 @@ package object System {
     //</editor-fold>
 
     //<editor-fold desc="RPC">
-    object RPCRequest extends SCApply[RPCRequest, RPCRequestProps]
-    object DSRequest extends SCApply[DSRequest, DSRequestProps]
+    object RPCRequest extends SCApply4Object[RPCRequest, RPCRequestProps]
+    object DSRequest extends SCApply4Object[DSRequest, DSRequestProps]
     //</editor-fold>
 
     //<editor-fold desc="Grids">
@@ -178,9 +186,12 @@ package object System {
     //</editor-fold>
 
     //<editor-fold desc="Layout">
+    object Layout extends SCApply[Layout, LayoutProps]
     object LayoutSS extends SCApply[LayoutSS, LayoutSSProps]
     object HLayoutSS extends SCApply[HLayoutSS, HLayoutSSProps]
+    object HLayout extends SCApply[HLayout, HLayoutProps]
     object VLayoutSS extends SCApply[VLayoutSS, VLayoutSSProps]
+    object VLayout extends SCApply[VLayout, VLayoutProps]
     object IconButton extends SCApply[IconButton, IconButtonProps]
     object IconButtonSS extends SCApply[IconButtonSS, IconButtonSSProps]
     object IconMenuButton extends SCApply[IconMenuButton, IconMenuButtonProps]
@@ -199,7 +210,7 @@ package object System {
     object ToolStripButton extends SCApply[ToolStripButton, ToolStripButtonProps]
     object SectionStack extends SCApply[SectionStack, SectionStackProps]
     object SectionStackSS extends SCApply[SectionStackSS, SectionStackSSProps]
-    object SectionStackSection  extends SCApply4Object[SectionStackSection , SectionStackSectionProps]
+    object SectionStackSection extends SCApply4Object[SectionStackSection, SectionStackSectionProps]
     object LayoutSpacer extends SCApply[LayoutSpacer, LayoutSpacerProps]
     object RichTextEditor extends SCApply[RichTextEditor, RichTextEditorProps]
     //</editor-fold>
@@ -270,6 +281,7 @@ package object System {
 
     object EditorUsers extends SCApply[EditorUsers, EditorUsersProps]
     object EditorUserGroups extends SCApply[EditorUserGroups, EditorUserGroupsProps]
+    object URIBuilder extends SCApply[URIBuilder, URIBuilderProps]
 
     val nbsp = """&nbsp;"""
 }

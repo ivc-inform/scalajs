@@ -161,12 +161,11 @@ class EditContextSSProps extends EditContextProps {
     }.toThisFunc.opt
 
 
-    @ScalaJSDefined
     trait DrawPathProps extends JSObject {
         val points: IscArray[Point]
     }
 
-    @ScalaJSDefined
+
     trait DrawItemProps extends JSObject {
         val shapeData: JSObject
     }
@@ -209,7 +208,7 @@ class EditContextSSProps extends EditContextProps {
             if (topLevel.getOrElse(false)) {
                 _node = isc.addProperties(js.Object(), node, js.Dictionary("defaults" -> defaults))
 
-                if (classObj.isDefined && classObj.get.isA("Canvas") && defaults.visibility != isc.Canvas.HIDDEN && defaults.autoDraw != false)
+                if (classObj.isDefined && classObj.get.isA("Canvas") && defaults.visibility.toString != isc.Canvas.HIDDEN && defaults.autoDraw.asInstanceOf[Boolean] != false)
                     defaults.autoDraw = true
             }
 

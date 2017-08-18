@@ -1,7 +1,5 @@
 import com.simplesys.build.{CommonDeps, CommonDepsScalaJS, CommonSettings}
-import com.simplesys.mergewebapp.MergeWebappPlugin._
 import com.typesafe.sbt.SbtGit.git
-import com.typesafe.sbt.web.Import.WebKeys.webTarget
 import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport.crossProject
 
 name := "scalajs"
@@ -168,36 +166,12 @@ lazy val testStend = crossProject.dependsOn(smartClientCrossProj).
       crossTarget in fastOptJS := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
       crossTarget in fullOptJS := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
       crossTarget in packageJSDependencies := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
-
-      //coffeeScript
-      CoffeeScriptKeys.sourceMap := false,
-      CoffeeScriptKeys.bare := false,
-      webTarget := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents" / "coffeescript",
-      sourceDirectory in Assets := (sourceDirectory in Compile).value / "webapp" / "coffeescript" / "developed" / "developedComponents",
-      (managedResources in Compile) ++= CoffeeScriptKeys.csTranspile.value,
-
-      //merger
-      mergeMapping in MergeWebappConfig := Seq(
-          ("com.simplesys.core", "isc-components") -> Seq(
-              Seq("webapp", "javascript", "generated", "generatedComponents") -> Some(Seq("webapp", "managed", "javascript", "isc-components", "generated", "generatedComponents")),
-              Seq("webapp", "javascript", "generated", "generatedComponents", "coffeescript") -> Some(Seq("webapp", "managed", "javascript", "isc-components", "generated", "generatedComponents", "coffeescript")),
-              Seq("javascript", "com", "simplesys") -> Some(Seq("webapp", "managed", "javascript", "isc-components", "developed", "developedComponents")),
-              Seq("coffeescript") -> Some(Seq("webapp", "managed", "coffeescript", "isc-components", "developed", "developedComponents"))
-          ),
-          ("com.simplesys", "smartclient-js") -> Seq(
-              Seq("isomorphic") -> Some(Seq("webapp", "isomorphic"))
-          )
-      ),
-      currentProjectGenerationDirPath in MergeWebappConfig := (sourceDirectory in Compile).value / "webapp" / "javascript" / "generated" / "generatedComponents",
-      currentProjectDevelopedDirPath in MergeWebappConfig := (sourceDirectory in Compile).value / "webapp" / "javascript" / "developed",
-      currentProjectCoffeeDevelopedDirPath in MergeWebappConfig := (sourceDirectory in Compile).value / "webapp" / "coffeescript" / "developed",
-      merge in MergeWebappConfig ++= (merge in MergeWebappConfig).dependsOn(CoffeeScriptKeys.csTranspile in Assets).value,
-
+      
       libraryDependencies ++= Seq(
           CommonDeps.ssysIscComponents,
           CommonDeps.smartclient
       )
-  ).dependsOn(smartClientCrossProj).jsConfigure(x => x.dependsOn(smartClientJS).enablePlugins(MergeWebappPlugin, ScalaJSPlugin, TranspileCoffeeScript)).jvmConfigure(x => x.dependsOn(smartClientJVM))
+  ).dependsOn(smartClientCrossProj).jsConfigure(x => x.dependsOn(smartClientJS).enablePlugins(ScalaJSPlugin)).jvmConfigure(x => x.dependsOn(smartClientJVM))
 
 // Needed, so sbt finds the projects
 lazy val testStendJVM = testStend.jvm

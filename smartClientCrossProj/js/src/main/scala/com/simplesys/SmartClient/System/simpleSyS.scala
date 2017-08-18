@@ -38,9 +38,11 @@ object simpleSyS extends JSObject {
     var config: Config = js.native
     val aboutData: IscArray[Record] = js.native
     var skin: JSUndefined[String] = js.native
+    var fontIncrease: JSUndefined[Double] = js.native
+    var sizeIncrease: JSUndefined[Double] = js.native
     var expertMode: JSUndefined[Boolean] = js.native
     var scenarioTestMode: JSUndefined[Boolean] = js.native
-    val simpleSysContextPath: URL = js.native
+    val simpleSysContextPath: JSUndefined[URL] = js.native
     var qtyGraphCopies: JSUndefined[Int] = js.native
     val app: appStruct = js.native
 }
