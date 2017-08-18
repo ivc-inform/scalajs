@@ -55,7 +55,6 @@ lazy val commonDomainsCrossProj = crossProject.dependsOn(smartClientCrossProj).
   jvmSettings().
   jsSettings(
       scalacOptions += "-P:scalajs:sjsDefinedByDefault",
-      scalacOptions += "-P:scalajs:suppressExportDeprecations",
       libraryDependencies ++= Seq()
   ).jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
 
@@ -75,7 +74,7 @@ lazy val commonTypesCrossProj = crossProject.
       publishArtifact in(Compile, packageDoc) := false
   ).
   jvmSettings().
-  jsSettings(scalacOptions += "-P:scalajs:suppressExportDeprecations")
+  jsSettings()
 
 // Needed, so sbt finds the projects
 lazy val commonTypesJVM = commonTypesCrossProj.jvm
@@ -95,7 +94,6 @@ lazy val jointJSCrossProj = crossProject.dependsOn(backboneJSCrossProj).
   jvmSettings().
   jsSettings(
       scalacOptions += "-P:scalajs:sjsDefinedByDefault",
-      scalacOptions += "-P:scalajs:suppressExportDeprecations",
       libraryDependencies ++= Seq(
           CommonDepsScalaJS.scalajsDOM.value,
           CommonDepsScalaJS.scalajsJQuey.value
@@ -133,7 +131,6 @@ lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
       }).
   jsSettings(
       scalacOptions += "-P:scalajs:sjsDefinedByDefault",
-      scalacOptions += "-P:scalajs:suppressExportDeprecations",
       libraryDependencies ++= Seq(
           CommonDepsScalaJS.scalajsDOM.value,
           CommonDepsScalaJS.scalajsJQuey.value
@@ -157,7 +154,6 @@ lazy val underscoreJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).
   ).
   jvmSettings().
   jsSettings(
-      scalacOptions += "-P:scalajs:suppressExportDeprecations",
       libraryDependencies ++= Seq()
   )
 
@@ -175,7 +171,6 @@ lazy val backboneJSCrossProj = crossProject.dependsOn(underscoreJSCrossProj).
   ).
   jvmSettings().
   jsSettings(
-      scalacOptions += "-P:scalajs:suppressExportDeprecations",
       libraryDependencies ++= Seq(
           CommonDepsScalaJS.scalajsDOM.value,
           CommonDepsScalaJS.scalajsJQuey.value
