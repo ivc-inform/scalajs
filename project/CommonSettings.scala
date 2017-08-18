@@ -20,12 +20,12 @@ object CommonSettings {
         val uTestVersion = "0.3.1"
         val scalaTestVersion = "3.0.1"
         //val sbtssysCoreVersion = "1.3.1"
-        val ssysCoreVersion = "1.3-SNAPSHOT"
+        val ssysCoreVersion = "1.4-SNAPSHOT"
         val scalajsDOMVersion = "0.9.1"
         val scalajsJQueryVersion = "0.9.1"
-        val akkaVersion = "2.5.3"
-        val akkaHttpVersion = "10.0.9"
-        val smartclientVersion = "11.1-v20170703"
+        //val akkaVersion = "2.5.4"
+        //val akkaHttpVersion = "10.0.9"
+        val smartclientVersion = "11.1-v20170703.1"
     }
 
 
