@@ -98,7 +98,7 @@ lazy val jointJSCrossProj = crossProject.dependsOn(backboneJSCrossProj).
           CommonDepsScalaJS.scalajsDOM.value,
           CommonDepsScalaJS.scalajsJQuey.value
       )
-  ) //.dependsOn().jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
+  )
 
 lazy val jointJSCrossJVM = jointJSCrossProj.jvm
 lazy val jointJSCrossJS = jointJSCrossProj.js
