@@ -1,4 +1,3 @@
-
 import com.simplesys.build.{CommonSettings, PluginDeps}
 import com.typesafe.sbt.GitVersioning
 import com.typesafe.sbt.SbtGit.git
