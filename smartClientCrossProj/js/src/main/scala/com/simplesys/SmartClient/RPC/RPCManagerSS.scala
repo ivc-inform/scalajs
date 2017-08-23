@@ -19,4 +19,4 @@ abstract trait AbstractRPCManagerSSCompanion extends AbstractRPCManagerCompanion
 
 @js.native
 @JSGlobal
-object RPCManagerSSStatic extends AbstractRPCManagerSSCompanion
+object RPCManagerSS extends AbstractRPCManagerSSCompanion
