@@ -8,7 +8,7 @@ import com.simplesys.SmartClient.Foundation.{AbstractCanvasCompanion, Canvas}
 import com.simplesys.SmartClient.Grids.listGrid.{ListGridField, ListGridRecord}
 import com.simplesys.SmartClient.Grids.{Grid, ListGrid}
 import com.simplesys.SmartClient.System.{IscArray, KeyIdentifier}
-import com.simplesys.SmartClient.Workdlow.UserTask
+import com.simplesys.SmartClient.Workflow.UserTask
 import com.simplesys.System.Types.Alignment.Alignment
 import com.simplesys.System.Types.AutoComplete.AutoComplete
 import com.simplesys.System.Types.DSOperationType.DSOperationType
@@ -83,7 +83,7 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     def getErrorsHTML(errors: JSObject): HTMLString
     def getEventItem(): FormItem
     def getEventItemInfo(): FormItemEventInfo
-    def getField(itemName: String): JSUndefined[FormItem]
+    def getField(itemName: String | Int): JSUndefined[FormItem]
     def getFieldErrors(fieldName: String): IscArray[String]
     def getFields(): IscArray[FormItem]
     def getFocusItem(): FormItem
@@ -96,7 +96,7 @@ trait DynamicForm extends Canvas with DataBoundComponent {
     def getTitleOrientation(item: FormItem = js.native): TitleOrientation
     def getValidatedValues(): JSObject
     def getValue(fieldName: String): JSAny
-    def getValues[T <: JSObject]():T
+    def getValues[T <: JSObject](): T
     def getValuesAsAdvancedCriteria(textMatchStyle: TextMatchStyle = js.native): AdvancedCriteria
     val grid: JSUndefined[ListGrid]
     def getValuesAsCriteria(advanced: Boolean, textMatchStyle: TextMatchStyle = js.native): Criteria | AdvancedCriteria

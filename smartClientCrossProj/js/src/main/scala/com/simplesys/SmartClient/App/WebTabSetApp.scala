@@ -66,11 +66,19 @@ trait WebTabSetApp extends TabSetStack {
             ).opt
         })
 
-    protected def managedUsersGroups: Seq[RibbonGroupSS]
-    protected def progectManagedDevsGroups: Seq[RibbonGroupSS]
+    protected val managedUsersGroups: Seq[RibbonGroupSS]
+    protected val progectManagedDevsGroups: Seq[RibbonGroupSS]
 
-    //@JSExport
+    @JSExport
     def getUIContent() {
+        val fontIncrease = isc.getParams().fontIncrease.getOrElse(isc.OfflineSS.getNumber(s"fontIncrease$identifier", 0.0))
+        simpleSyS.fontIncrease = fontIncrease
+        isc.Canvas resizeFonts simpleSyS.fontIncrease.get
+
+        val sizeIncrease = isc.getParams().fontIncrease.getOrElse(isc.OfflineSS.getNumber(s"sizeIncrease$identifier", 0.0))
+        simpleSyS.sizeIncrease = sizeIncrease
+        isc.Canvas resizeControls simpleSyS.sizeIncrease.get
+
         Page.setEvent(
             PageEvent.load, {
                 (target: JSObject) =>
@@ -78,17 +86,13 @@ trait WebTabSetApp extends TabSetStack {
                     isc.params.locale = "ru_RU"
                     //isc.params.locale = "en"
 
-                    val skin: String = simpleSyS.skin.toOption match {
-                        case Some(skin) => skin
-                        case None => isc.OfflineSS.get(s"Skin$identifier", Skin.Enterprise.toString)
-                    }
 
-                    simpleSyS.skin = skin
+                    simpleSyS.skin = isc.OfflineSS.get(s"Skin$identifier", Skin.Enterprise.toString)
 
                     Page setAppImgDir appImageDir
 
                     FileLoader.loadSkin(
-                        skin, {
+                        simpleSyS.skin.get, {
                             () =>
                                 var localeFile = "isomorphic/locales/frameworkMessages.properties"
                                 if (isc.params.locale != "en")
@@ -305,24 +309,6 @@ trait WebTabSetApp extends TabSetStack {
                     )
                 ).opt
             }
-        ),
-        RibbonGroupSS.create(
-            new RibbonGroupSSProps {
-                title = "Разработчики".ellipsis.opt
-                controls = Seq(
-                    IconButtonSS.create(
-                        new IconButtonSSProps {
-                            title = "Upload Test".opt
-                            icon = Common.upload.opt
-                            orientation = "gorizontal".opt
-                            click = {
-                                (thiz: classHandler) =>                                   
-                                    false
-                            }.toThisFunc.opt
-                        }
-                    )
-                ).opt
-            }
         )
     ).map {
         item =>
@@ -373,14 +359,15 @@ trait WebTabSetApp extends TabSetStack {
                                                             (thiz: classHandler) =>
                                                                 if (!LoggedGroup.logged) {
                                                                     RPCManagerSS.loginRequired({
-                                                                        (res: Boolean, captionUser: JSUndefined[String], codeGroup: JSUndefined[String]) =>
+                                                                        (res: Boolean, captionUser: JSUndefined[String], loginedGroup: JSUndefined[String]) =>
                                                                             if (res) {
 
                                                                                 captionUserLabel setContents s"Работает: '${captionUser.toOption.getOrElse("Не определен")}'"
                                                                                 captionUserLabel.show()
                                                                                 managedUsersGroups.foreach(_.show())
                                                                                 infoGroup.foreach(_.show())
-                                                                                LoggedGroup.codeGroup = codeGroup.toOption
+
+                                                                                LoggedGroup.loginedGroup = loginedGroup.toOption
 
                                                                                 if (LoggedGroup.isAdminsGroup() || LoggedGroup.isDevsGroup())
                                                                                     managedAdminsGroups.foreach(_.show())
@@ -415,8 +402,10 @@ trait WebTabSetApp extends TabSetStack {
 
                                                                 } else {
                                                                     RPCManagerSS.logoutRequired()
+
                                                                     thiz setTitle "Вход".ellipsis
                                                                     thiz setIcon Common.login
+
                                                                     LoggedGroup.logged = false
                                                                     managedUsersGroups.foreach(_.hide())
                                                                     managedAdminsGroups.foreach(_.hide())

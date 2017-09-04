@@ -60,7 +60,7 @@ trait FormItem extends Class {
     var changeOnKeypress: Boolean
     def clearErrors(): void
     def clearValue(): void
-    var click: js.Function2[DynamicFormSS, FormItem, Boolean]
+    var click: JSUndefined[js.Function2[DynamicFormSS, FormItem, Boolean]]
     var clipStaticValue: Boolean
     var clipTitle: Boolean
     var colSpan: Int
@@ -194,8 +194,8 @@ trait FormItem extends Class {
     def mapDisplayToValue(value: String): JSObject
     def mapValueToDisplay(value: JSObject): String
     val multipleValueSeparator: String
-    //todo uncomment in future
-    //@deprecated(message = "Use nameStrong instead.", since = "")
+    //todo Надо бы как-то раскоментить
+    //@deprecated(message = "Use nameStrong instead.", "")
     var name: String
     @JSName("name")
     var _name: String

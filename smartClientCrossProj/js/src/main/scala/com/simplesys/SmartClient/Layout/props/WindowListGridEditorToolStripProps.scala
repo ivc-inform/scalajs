@@ -1,5 +1,6 @@
 package com.simplesys.SmartClient.Layout.props
 
+import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.ListGridEditor
 import com.simplesys.SmartClient.Layout.WindowListGridEditorToolStrip
 import com.simplesys.SmartClient.Layout.props.toolStrip.ToolStripButtonProps
@@ -10,11 +11,10 @@ import com.simplesys.function._
 import com.simplesys.option.ScOption._
 import com.simplesys.option.{ScNone, ScOption}
 
-import scala.scalajs.js
 import scala.scalajs.js.ThisFunction0
+import scala.scalajs.js.annotation.ScalaJSDefined
 
 
-@js.native
 trait VisibleButtons extends JSObject {
     val newButton: Visibility
     val editButton: Visibility
@@ -119,7 +119,8 @@ class WindowListGridEditorToolStripProps extends ToolStripProps {
                         owner.hasChanges() && !owner.hasErrors()
                 }.toThisFunc.opt
             }
-        ), ToolStripButton.create(
+        ),
+        ToolStripButton.create(
             new ToolStripButtonProps {
                 icon = Common.cancel.opt
                 prompt = "Отменить изменения".opt

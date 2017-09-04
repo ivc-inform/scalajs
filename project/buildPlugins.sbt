@@ -1,4 +1,3 @@
-
 import com.simplesys.build.{CommonSettings, PluginDeps}
 import com.typesafe.sbt.GitVersioning
 import com.typesafe.sbt.SbtGit.git
@@ -9,8 +8,5 @@ lazy val root = Project(id = "buildPlugins", base = file(".")).enablePlugins(Git
       git.baseVersion := CommonSettings.settingValues.baseVersion
   ))).
   settings(
-      PluginDeps.scalaJSPlugin,
-      PluginDeps.xsbtWeb,
-      PluginDeps.mergeJS,
-      PluginDeps.transpileCoffeeScript
+      PluginDeps.scalaJSPlugin
   )

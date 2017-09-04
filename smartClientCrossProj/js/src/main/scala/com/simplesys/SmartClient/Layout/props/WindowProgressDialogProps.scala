@@ -7,13 +7,15 @@ import com.simplesys.System.JSUndefined
 import com.simplesys.function._
 import com.simplesys.option.DoubleType._
 import com.simplesys.option.ScOption._
+import com.simplesys.SmartClient.System.IscArray
+import com.simplesys.System.JSAny
+import com.simplesys.SmartClient.Layout.WindowProgressDialog
+import com.simplesys.option.{ScNone, ScOption}
+import scala.scalajs.js.{ThisFunction0, ThisFunction1}
+import com.simplesys.SmartClient.Control.props.ProgressbarProps
+import com.simplesys.SmartClient.System.Progressbar
 
 class WindowProgressDialogProps extends WindowSSProps {
-
-    import com.simplesys.SmartClient.Layout.WindowProgressDialog
-    import com.simplesys.option.{ScNone, ScOption}
-
-    import scala.scalajs.js.{ThisFunction0, ThisFunction1}
 
     type classHandler <: WindowProgressDialog
 
@@ -33,6 +35,7 @@ class WindowProgressDialogProps extends WindowSSProps {
     var maxValue: ScOption[Double] = 100.0.opt
     var oneStep: ScOption[Double] = ScNone
     var _breakType: ScOption[BreakType] = BreakType.notBreak.opt
+    var showProgressBarTitle: ScOption[Boolean] = true.opt
 
     identifier = "3D4AD6BB-9715-38A9-7360-808559532CE8".opt
 
@@ -42,6 +45,7 @@ class WindowProgressDialogProps extends WindowSSProps {
     }.toThisFunc.opt
 
     var cancelFunction: ScOption[ThisFunction0[classHandler, _]] = ScNone
+
     var setPercentDone: ScOption[ThisFunction1[classHandler, Double, _]] = {
         (thiz: classHandler, newPercent: Double) ⇒
             thiz.progressBar setPercentDone newPercent
@@ -59,18 +63,15 @@ class WindowProgressDialogProps extends WindowSSProps {
                     //isc debugTrap (percentDone)
                     //println(s"percentDone: $percentDone")
 
+                    thiz.progressBar.showTitle = thiz.showProgressBarTitle
                     thiz.progressBar setPercentDone percentDone
                     thiz.progressBar setTitle s"Progress: ${thiz.progressBar.percentDone}%"
             }, 0)
     }.toThisFunc.opt
 
     initWidget = {
-        import com.simplesys.SmartClient.System.IscArray
-        import com.simplesys.System.JSAny
-        (thizTop: classHandler, args: IscArray[JSAny]) ⇒
 
-            import com.simplesys.SmartClient.Control.props.ProgressbarProps
-            import com.simplesys.SmartClient.System.Progressbar
+        (thizTop: classHandler, args: IscArray[JSAny]) ⇒
 
             thizTop.Super("initWidget", args)
 
@@ -81,13 +82,7 @@ class WindowProgressDialogProps extends WindowSSProps {
             )
 
             thizTop.oneStep = 1 / ((thizTop.maxValue - thizTop.minValue) / 100)
-
-            /*println(s"thizTop.maxValue: ${thizTop.maxValue}")
-            println(s"thizTop.minValue: ${thizTop.minValue}")
-            println(s"thizTop.oneStep: ${thizTop.oneStep}")*/
-
-            //isc debugTrap (thizTop.maxValue, thizTop.minValue, thizTop.oneStep)
-
+            
             thizTop addItem thizTop.progressBar
 
             import com.simplesys.SmartClient.System._

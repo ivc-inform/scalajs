@@ -150,7 +150,7 @@ class ListGridFieldProps extends AbstractClassProps {
     var linkURLSuffix: ScOption[String] = ScNone
     var multiple: ScOption[Boolean] = ScNone
     //todo uncomment in future
-    //@deprecated(message = "Use nameStrong instead.", since = "")
+    //@deprecated(message = "Use nameStrong instead.")
     var name: ScOption[String] = ScNone
     var nameStrong: ScOption[NameStrong] = ScNone
     var optionCriteria: ScOption[Criteria] = ScNone
