@@ -34,7 +34,8 @@ lazy val root = (project in file(".")).
           else
               Some("releases" at corporateRepo + "artifactory/libs-release-local")
       },
-      credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
+      credentials += Credentials(Path.userHome / ".ivy2" / ".credentials"),
+      scalacOptions ++= (if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault") else Nil)
   )
     ++ CommonSettings.defaultSettings),
       publishArtifact in(Compile, packageBin) := false,
