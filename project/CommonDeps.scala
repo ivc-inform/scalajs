@@ -25,4 +25,8 @@ object CommonDeps {
 
     val ssysIscComponents = "com.simplesys.core" %% "isc-components" % versions.ssysCoreVersion
     val scalaTest = "org.scalatest" %% "scalatest" % versions.scalaTestVersion % Test
+
+    val circeCore = "io.circe" %% "circe-core" % versions.circeVersion
+    val circeGeneric = "io.circe" %% "circe-generic" % versions.circeVersion
+    val circeParser = "io.circe" %% "circe-parser" % versions.circeVersion
 }

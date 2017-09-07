@@ -68,7 +68,10 @@ lazy val commonTypesCrossProj = crossProject.
       libraryDependencies ++= Seq(
           CommonDeps.xmlExtender,
           CommonDeps.common,
-          CommonDeps.logbackWrapper
+          CommonDeps.logbackWrapper,
+          CommonDeps.circeCore,
+          CommonDeps.circeGeneric,
+          CommonDeps.circeParser
       ),
       testFrameworks += new TestFramework("utest.runner.Framework"),
       publishArtifact in(Compile, packageDoc) := false
