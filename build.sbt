@@ -48,9 +48,7 @@ lazy val commonDomainsCrossProj = crossProject.dependsOn(smartClientCrossProj).
       libraryDependencies ++= Seq(
           CommonDeps.logbackWrapper
       ),
-
-      testFrameworks += new TestFramework("utest.runner.Framework"),
-      publishArtifact in(Compile, packageDoc) := false
+      publishArtifact := false
   ).
   jvmSettings().
   jsSettings(
@@ -65,10 +63,8 @@ lazy val commonTypesCrossProj = crossProject.
   settings(
       name := "common-types",
       libraryDependencies ++= Seq(
-          CommonDeps.xmlExtender,
           CommonDeps.logbackWrapper
       ),
-      testFrameworks += new TestFramework("utest.runner.Framework"),
       publishArtifact in(Compile, packageDoc) := false
   ).
   jvmSettings().
@@ -83,17 +79,11 @@ lazy val commonTypesJS = commonTypesCrossProj.js
 lazy val jointJSCrossProj = crossProject.dependsOn(backboneJSCrossProj).
   settings(
       name := "joint-js",
-
-      libraryDependencies ++= Seq(
-          CommonDeps.scalaTest
-      ),
-
-      testFrameworks += new TestFramework("utest.runner.Framework"),
-      publishArtifact in(Compile, packageDoc) := false
+      publishArtifact := false
   ).
   jvmSettings().
   jsSettings(
-      scalacOptions += "-P:scalajs:sjsDefinedByDefault",
+      scalacOptions ++= (if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault") else Nil),
       libraryDependencies ++= Seq(
           CommonDepsScalaJS.scalajsDOM.value,
           CommonDepsScalaJS.scalajsJQuey.value
@@ -116,27 +106,18 @@ lazy val macroJVM = Project("macrojvm", file("macrojvm")).settings(
     libraryDependencies ++= Seq(
         CommonDeps.scalaCompiler,
         CommonDeps.scalaReflect
-    )
+    ),
+    publishArtifact := false
 ).dependsOn(commonTypesJVM)
 
 lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
   settings(
       name := "smartclient-wrapper",
-      libraryDependencies ++= {
-          Seq(
-              CommonDeps.xmlExtender,
-              CommonDeps.scalaIOExtender
-          )
-      },
-      testFrameworks += new TestFramework("utest.runner.Framework"),
       publishArtifact in(Compile, packageDoc) := false
   ).
-  jvmSettings(
-      libraryDependencies ++= {
-          Seq()
-      }).
+  jvmSettings().
   jsSettings(
-      scalacOptions += "-P:scalajs:sjsDefinedByDefault",
+      scalacOptions ++= (if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault") else Nil),
       libraryDependencies ++= Seq(
           CommonDepsScalaJS.scalajsDOM.value,
           CommonDepsScalaJS.scalajsJQuey.value
@@ -150,18 +131,10 @@ lazy val smartClientJS = smartClientCrossProj.js
 lazy val underscoreJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).
   settings(
       name := "underscore-js",
-
-      libraryDependencies ++= Seq(
-          CommonDeps.scalaTest
-      ),
-
-      testFrameworks += new TestFramework("utest.runner.Framework"),
-      publishArtifact in(Compile, packageDoc) := false
+      publishArtifact := false
   ).
   jvmSettings().
-  jsSettings(
-      libraryDependencies ++= Seq()
-  )
+  jsSettings()
 
 lazy val underscoreJSCrossJVM = underscoreJSCrossProj.jvm
 lazy val underscoreJSCrossJS = underscoreJSCrossProj.js
@@ -169,11 +142,7 @@ lazy val underscoreJSCrossJS = underscoreJSCrossProj.js
 lazy val backboneJSCrossProj = crossProject.dependsOn(underscoreJSCrossProj).
   settings(
       name := "backbone-js",
-
-      libraryDependencies ++= Seq(),
-
-      testFrameworks += new TestFramework("utest.runner.Framework"),
-      publishArtifact in(Compile, packageDoc) := false
+      publishArtifact := false
   ).
   jvmSettings().
   jsSettings(

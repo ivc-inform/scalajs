@@ -1,7 +1,6 @@
 package com.simplesys.macros
 
 import com.simplesys.System.{JSDictionaryAny, JSObject}
-import com.simplesys.common.Strings._
 import com.simplesys.log.Logging
 import com.simplesys.option._
 import com.simplesys.props.AbstractClassProps
@@ -125,11 +124,11 @@ object PropsToDictionary extends Logging {
         => field
         }
 
-        logger trace s"$newLine// Class: $tpeAbstractPropsClass ///////////////////////////////////////////////////////////////".newLine
+        logger trace s"// Class: $tpeAbstractPropsClass ///////////////////////////////////////////////////////////////"
 
         logger trace "//////////////////////////////////////////////// Fields: ///////////////////////////////////////////////////////////////"
         fields.foreach(field => logger trace field.toString)
-        logger trace "//////////////////////////////////////////////// End Fields: ///////////////////////////////////////////////////////////".newLine
+        logger trace "//////////////////////////////////////////////// End Fields: ///////////////////////////////////////////////////////////"
 
         val (fAbstractPropsClass, fSimple) = fields.map { field =>
             field.typeSignature.baseType(typeOf[ScOption[_]].typeSymbol) match {
