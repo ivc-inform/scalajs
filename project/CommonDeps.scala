@@ -13,8 +13,6 @@ object PluginDeps {
 
 
 object CommonDeps {
-
-    val common = "com.simplesys.core" %% "common" % versions.ssysCoreVersion
     val coreUtils = "com.simplesys.core" %% "core-utils" % versions.ssysCoreVersion
     val xmlExtender = "com.simplesys.core" %% "xml-extender" % versions.ssysCoreVersion
     val logbackWrapper = "com.simplesys.core" %% "logback-wrapper" % versions.ssysCoreVersion

@@ -54,9 +54,8 @@ lazy val commonDomainsCrossProj = crossProject.dependsOn(smartClientCrossProj).
   ).
   jvmSettings().
   jsSettings(
-      scalacOptions += "-P:scalajs:sjsDefinedByDefault",
-      libraryDependencies ++= Seq()
-  ).jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
+      scalacOptions ++= (if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault") else Nil)
+  ).jsConfigure(_.dependsOn(macroJS)).jvmConfigure(_.dependsOn(macroJVM))
 
 // Needed, so sbt finds the projects
 lazy val commonDomainJVM = commonDomainsCrossProj.jvm
@@ -67,14 +66,15 @@ lazy val commonTypesCrossProj = crossProject.
       name := "common-types",
       libraryDependencies ++= Seq(
           CommonDeps.xmlExtender,
-          CommonDeps.common,
           CommonDeps.logbackWrapper
       ),
       testFrameworks += new TestFramework("utest.runner.Framework"),
       publishArtifact in(Compile, packageDoc) := false
   ).
   jvmSettings().
-  jsSettings()
+  jsSettings(
+      scalacOptions ++= (if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault") else Nil)
+  )
 
 // Needed, so sbt finds the projects
 lazy val commonTypesJVM = commonTypesCrossProj.jvm
