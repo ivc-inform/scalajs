@@ -45,6 +45,7 @@ lazy val root = (project in file(".")).
 lazy val commonDomainsCrossProj = crossProject.dependsOn(smartClientCrossProj).
   settings(
       name := "common-domains",
+      publishArtifact in(Compile, packageDoc) := false,
       libraryDependencies ++= Seq(
           CommonDeps.logbackWrapper
       )
@@ -77,6 +78,7 @@ lazy val commonTypesJS = commonTypesCrossProj.js
 
 lazy val jointJSCrossProj = crossProject.dependsOn(backboneJSCrossProj).
   settings(
+      publishArtifact in(Compile, packageDoc) := false,
       name := "joint-js"
   ).
   jvmSettings().
@@ -93,6 +95,7 @@ lazy val jointJSCrossJS = jointJSCrossProj.js
 
 lazy val macroJS = Project("macrojs", file("macrojs")).settings(
     name := "macrojs",
+    publishArtifact in(Compile, packageDoc) := false,
     libraryDependencies ++= Seq(
         CommonDeps.scalaCompiler,
         CommonDeps.scalaReflect
@@ -101,6 +104,7 @@ lazy val macroJS = Project("macrojs", file("macrojs")).settings(
 
 lazy val macroJVM = Project("macrojvm", file("macrojvm")).settings(
     name := "macrojvm",
+    publishArtifact in(Compile, packageDoc) := false,
     libraryDependencies ++= Seq(
         CommonDeps.scalaCompiler,
         CommonDeps.scalaReflect
@@ -115,6 +119,7 @@ lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
   jvmSettings().
   jsSettings(
       scalacOptions ++= (if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault") else Nil),
+      publishArtifact in(Compile, packageDoc) := false,
       libraryDependencies ++= Seq(
           CommonDepsScalaJS.scalajsDOM.value,
           CommonDepsScalaJS.scalajsJQuey.value
@@ -127,6 +132,7 @@ lazy val smartClientJS = smartClientCrossProj.js
 
 lazy val underscoreJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).
   settings(
+      publishArtifact in(Compile, packageDoc) := false,
       name := "underscore-js"
   ).
   jvmSettings().
@@ -137,6 +143,7 @@ lazy val underscoreJSCrossJS = underscoreJSCrossProj.js
 
 lazy val backboneJSCrossProj = crossProject.dependsOn(underscoreJSCrossProj).
   settings(
+      publishArtifact in(Compile, packageDoc) := false,
       name := "backbone-js"
   ).
   jvmSettings().
