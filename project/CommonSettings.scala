@@ -18,11 +18,11 @@ object CommonSettings {
     object versions {
         val sprayVersion = "1.3.2"
         val uTestVersion = "0.3.1"
-        val scalaTestVersion = "3.0.1"
+        val scalaTestVersion = "3.0.3"
         val ssysCoreVersion = "1.4.0.2"
         //val ssysCoreVersion = "1.4-SNAPSHOT"
-        val scalajsDOMVersion = "0.9.1"
-        val scalajsJQueryVersion = "0.9.1"
+        val scalajsDOMVersion = "0.9.3"
+        val scalajsJQueryVersion = "0.9.2"
         val smartclientVersion = "11.1-v20170703.1"
     }
 

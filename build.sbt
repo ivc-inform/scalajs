@@ -96,7 +96,7 @@ lazy val jointJSCrossProj = crossProject.dependsOn(backboneJSCrossProj).
       scalacOptions += "-P:scalajs:sjsDefinedByDefault",
       libraryDependencies ++= Seq(
           CommonDepsScalaJS.scalajsDOM.value,
-          CommonDepsScalaJS.scalajsJQuey.value
+          //CommonDepsScalaJS.scalajsJQuey.value
       )
   )
 
@@ -139,7 +139,7 @@ lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
       scalacOptions += "-P:scalajs:sjsDefinedByDefault",
       libraryDependencies ++= Seq(
           CommonDepsScalaJS.scalajsDOM.value,
-          CommonDepsScalaJS.scalajsJQuey.value
+          //CommonDepsScalaJS.scalajsJQuey.value
       )
   ).dependsOn().jsConfigure(x => x.dependsOn(macroJS).enablePlugins(ScalaJSPlugin)).jvmConfigure(x => x.dependsOn(macroJVM))
 
