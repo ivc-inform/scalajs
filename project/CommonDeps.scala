@@ -5,11 +5,11 @@ import sbt._
 
 object PluginDeps {
     object versions {
-        val scalaJSPluginVersion = "0.6.20"
+        val scalaJSPluginVersion = "0.6.21"
     }
 
     val scalaJSPlugin = addSbtPlugin("org.scala-js" % "sbt-scalajs" % versions.scalaJSPluginVersion)
-    val coursier = addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.0.0-RC12")
+    //val coursier = addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.0.0-RC12")
 }
 
 

@@ -9,5 +9,5 @@ lazy val root = Project(id = "buildPlugins", base = file(".")).enablePlugins(Git
   ))).
   settings(
       PluginDeps.scalaJSPlugin,
-      PluginDeps.coursier
+      //PluginDeps.coursier
   )
