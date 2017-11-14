@@ -8,6 +8,6 @@ lazy val root = Project(id = "buildPlugins", base = file(".")).enablePlugins(Git
       git.baseVersion := CommonSettings.settingValues.baseVersion
   ))).
   settings(
-      PluginDeps.scalaJSPlugin,
-      //PluginDeps.coursier
+      PluginDeps.crossproject,
+      PluginDeps.sbtCrossproject
   )
