@@ -3,6 +3,7 @@ package com.simplesys.SmartClient.System
 import com.simplesys.SmartClient.Control._
 import com.simplesys.SmartClient.Control.menu._
 import com.simplesys.SmartClient.Foundation._
+import com.simplesys.SmartClient.Layout._
 import com.simplesys.System.Types.{Record, URL, void}
 import com.simplesys.System.{JSObject, JSUndefined}
 
@@ -28,9 +29,6 @@ trait appStruct extends JSObject {
 @js.native
 @JSGlobal
 object simpleSyS extends JSObject {
-
-    import com.simplesys.System._
-
     def checkOwner(canvas: Canvas): Canvas = js.native
     def _enableDeleteFromTree(menu: MenuSSItem): Boolean = js.native
     def _openFolders(menu: MenuSS): void = js.native
@@ -45,4 +43,5 @@ object simpleSyS extends JSObject {
     val simpleSysContextPath: JSUndefined[URL] = js.native
     var qtyGraphCopies: JSUndefined[Int] = js.native
     val app: appStruct = js.native
+    var functionButton: js.UndefOr[IconMenuButtonSS] = js.native
 }

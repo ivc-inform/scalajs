@@ -216,7 +216,7 @@ class LookupListGridEditorItemProps extends CanvasItemProps {
                                                                                         else
                                                                                             formItem.filteredGridList.foreach(_.fetchData(criteria = advancedCriteria))
 
-                                                                                        formItem setValue (res)
+                                                                                        formItem setValue res
 
                                                                                     } else {
                                                                                         if (editor.getSelectedRecords().length != 1)
@@ -225,17 +225,21 @@ class LookupListGridEditorItemProps extends CanvasItemProps {
                                                                                             val record = editor.getSelectedRecord()
 
                                                                                             val valueId = record.asInstanceOf[JSDynamic].selectDynamic(idFieldName)
-                                                                                            //isc debugTrap(formItem.foreignField.get, item.name, valueId, formItem.record)
 
                                                                                             val newRecord = formItem.record.isEmpty || formItem.record.get == null
 
                                                                                             if (newRecord && idField != null)
                                                                                                 idField.setValue(valueId)
                                                                                             else {
+                                                                                                val editedField = formItem.foreignField.get
                                                                                                 if (newRecord)
-                                                                                                    form.setValue(formItem.foreignField.get, valueId)
-                                                                                                else
-                                                                                                   formItem.record.foreach(_.asInstanceOf[JSDynamic].updateDynamic(formItem.foreignField.get)(valueId))
+                                                                                                    form.setValue(editedField, valueId)
+                                                                                                else {
+                                                                                                    //isc debugTrap(formItem.record, editedField, valueId)
+                                                                                                    formItem.record.foreach(_.asInstanceOf[JSDynamic].updateDynamic(editedField)(valueId))
+                                                                                                    form.setValue(editedField, valueId)
+                                                                                                    //isc debugTrap(formItem.record)
+                                                                                                }
                                                                                             }
 
                                                                                             //isc debugTrap(formItem.record)
@@ -244,8 +248,12 @@ class LookupListGridEditorItemProps extends CanvasItemProps {
                                                                                             recordFields.foreach {
                                                                                                 field =>
                                                                                                     if (editor.dataSource.getField(field).isDefined)
-                                                                                                        if (newRecord || !editor.dataSource.getField(field).get.primaryKey.getOrElse(false))
-                                                                                                            form.setValue(field, editor.getSelectedRecord().asInstanceOf[JSDynamic].selectDynamic(field))
+                                                                                                        if (newRecord || !editor.dataSource.getField(field).get.primaryKey.getOrElse(false)) {
+                                                                                                            val value = editor.getSelectedRecord().asInstanceOf[JSDynamic].selectDynamic(field)
+                                                                                                            val editedField = if (formItem.foreignField.isEmpty) field else s"${field}_${formItem.foreignField.get.capitalize}"
+                                                                                                            //isc debugTrap(form, editedField, value)
+                                                                                                            form.setValue(editedField, value)
+                                                                                                        }
                                                                                             }
                                                                                         }
                                                                                     }

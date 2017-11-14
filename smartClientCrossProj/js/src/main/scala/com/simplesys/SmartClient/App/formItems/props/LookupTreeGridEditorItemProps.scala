@@ -261,6 +261,7 @@ class LookupTreeGridEditorItemProps extends CanvasItemProps {
                                                                                                         val rec = listGrid.findByKey(listGridKeys)
                                                                                                         listGrid selectRecord rec.asInstanceOf[ListGridRecord]
                                                                                                     }
+                                                                                                    thiz.owner.foreach(_.hide())
                                                                                             })
 
                                                                                         }
