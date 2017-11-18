@@ -54,8 +54,7 @@ lazy val commonDomainsCrossProj = crossProject.dependsOn(smartClientCrossProj).
   ).
   jvmSettings().
   jsSettings(
-      scalacOptions += "-P:scalajs:sjsDefinedByDefault",
-      libraryDependencies ++= Seq()
+      scalacOptions ++= (if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault") else Nil),
   ).jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
 
 // Needed, so sbt finds the projects
@@ -74,7 +73,9 @@ lazy val commonTypesCrossProj = crossProject.
       publishArtifact in(Compile, packageDoc) := false
   ).
   jvmSettings().
-  jsSettings()
+  jsSettings(
+      scalacOptions ++= (if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault") else Nil),
+  )
 
 // Needed, so sbt finds the projects
 lazy val commonTypesJVM = commonTypesCrossProj.jvm
@@ -93,10 +94,10 @@ lazy val jointJSCrossProj = crossProject.dependsOn(backboneJSCrossProj).
   ).
   jvmSettings().
   jsSettings(
-      scalacOptions += "-P:scalajs:sjsDefinedByDefault",
+      scalacOptions ++= (if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault") else Nil),
       libraryDependencies ++= Seq(
           CommonDepsScalaJS.scalajsDOM.value,
-          CommonDepsScalaJS.scalajsJQuey.value
+          //CommonDepsScalaJS.scalajsJQuey.value
       )
   )
 
@@ -136,10 +137,10 @@ lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
           Seq()
       }).
   jsSettings(
-      scalacOptions += "-P:scalajs:sjsDefinedByDefault",
+      scalacOptions ++= (if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault") else Nil),
       libraryDependencies ++= Seq(
           CommonDepsScalaJS.scalajsDOM.value,
-          CommonDepsScalaJS.scalajsJQuey.value
+          //CommonDepsScalaJS.scalajsJQuey.value
       )
   ).dependsOn().jsConfigure(x => x.dependsOn(macroJS).enablePlugins(ScalaJSPlugin)).jvmConfigure(x => x.dependsOn(macroJVM))
 
@@ -159,9 +160,7 @@ lazy val underscoreJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).
       publishArtifact in(Compile, packageDoc) := false
   ).
   jvmSettings().
-  jsSettings(
-      libraryDependencies ++= Seq()
-  )
+  jsSettings()
 
 lazy val underscoreJSCrossJVM = underscoreJSCrossProj.jvm
 lazy val underscoreJSCrossJS = underscoreJSCrossProj.js
