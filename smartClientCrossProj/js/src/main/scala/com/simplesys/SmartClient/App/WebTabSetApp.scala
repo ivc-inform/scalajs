@@ -8,7 +8,7 @@ import com.simplesys.SmartClient.Control.props.MenuSSProps
 import com.simplesys.SmartClient.Control.props.menu.MenuSSItemProps
 import com.simplesys.SmartClient.DataBinding.props.dataSource.DataSourceFieldProps
 import com.simplesys.SmartClient.DataBinding.props.{DataSourceProps, DataViewProps}
-import com.simplesys.SmartClient.DataBinding.{DataSource, DataSourceSSstatic, RestDataSourceSS}
+import com.simplesys.SmartClient.DataBinding.{DataSource, DataSourceSSstatic, DataView, RestDataSourceSS}
 import com.simplesys.SmartClient.Forms.formsItems.FormItem
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Foundation.props.LabelProps
@@ -22,6 +22,7 @@ import com.simplesys.SmartClient.Tools.WindowsStack
 import com.simplesys.System.Types._
 import com.simplesys.System._
 import com.simplesys.function._
+import com.simplesys.js.components.gantt.DateUtils
 import com.simplesys.option.DoubleType._
 import com.simplesys.option.ScOption._
 
@@ -103,7 +104,7 @@ trait WebTabSetApp extends TabSetStack {
                                 if (isc.params.locale != "en")
                                     localeFile = "isomorphic/locales/frameworkMessages_" + isc.params.locale + ".properties"
 
-                                FileLoader.loadJSFiles(localeFile, {
+                                FileLoader.loadJSFiles(localeFile,
                                     () =>
                                         if (loadSchemas)
                                             DataSourceSSstatic.loadComponentSchemas(
@@ -124,7 +125,7 @@ trait WebTabSetApp extends TabSetStack {
                                                     members = Seq(mainCanvas).opt
                                                 }
                                             )
-                                })
+                                )
                         }
                     )
             }
@@ -215,44 +216,45 @@ trait WebTabSetApp extends TabSetStack {
                                             title = "Пользователи".ellipsis.opt
                                             click = {
                                                 (target: Canvas, item: MenuSSItem, menu: MenuSS, colNum: JSUndefined[Int]) =>
-                                                    addTab(EditorUsers.create(
-                                                        new EditorUsersProps {
-                                                            dataSourceList = dataSourcesJS_admin_User_DS.opt
-                                                            dataSourceTree = dataSourcesJS_admin_UserGroup_DS.opt
+                                                    addTab(
+                                                        EditorUsers.create(
+                                                            new EditorUsersProps {
+                                                                dataSourceList = dataSourcesJS_admin_User_DS.opt
+                                                                dataSourceTree = dataSourcesJS_admin_UserGroup_DS.opt
 
-                                                            fieldsTree = listGridFiledsJS_admin_UserGroup_FLDS.opt
-                                                            editingTreeFields = formItemsJS_admin_UserGroup_FRMITM.opt
+                                                                fieldsTree = listGridFiledsJS_admin_UserGroup_FLDS.opt
+                                                                editingTreeFields = formItemsJS_admin_UserGroup_FRMITM.opt
 
-                                                            fieldsList = listGridFiledsJS_admin_User_FLDS.opt
-                                                            editingListFields = formItemsJS_admin_User_FRMITM.opt
+                                                                fieldsList = listGridFiledsJS_admin_User_FLDS.opt
+                                                                editingListFields = formItemsJS_admin_User_FRMITM.opt
 
-                                                            val userGroupEditor = EditorUserGroups.create(
-                                                                new EditorUserGroupsProps {
-                                                                    dataSource = dataSourcesJS_admin_UserGroup_DS.opt
-                                                                    fields = listGridFiledsJS_admin_UserGroup_FLDS.opt
-                                                                    editingFields = formItemsJS_admin_UserGroup_FRMITM.opt
-                                                                })
+                                                                val userGroupEditor = EditorUserGroups.create(
+                                                                    new EditorUserGroupsProps {
+                                                                        dataSource = dataSourcesJS_admin_UserGroup_DS.opt
+                                                                        fields = listGridFiledsJS_admin_UserGroup_FLDS.opt
+                                                                        editingFields = formItemsJS_admin_UserGroup_FRMITM.opt
+                                                                    })
 
-                                                            replacingFieldsList = Seq(
-                                                                new ListGridFieldProps {
-                                                                    nameStrong = admin_User_codeGroup_NameStrong.opt
-                                                                    editorType = FormItemComponentType.LookupTreeGridEditorItem
-                                                                    editorProperties = LookupTreeGridEditorItem(
-                                                                        new LookupTreeGridEditorItemProps {
-                                                                            treeGridEditor = userGroupEditor.opt
-                                                                        }).opt
-                                                                },
-                                                                new ListGridFieldProps {
-                                                                    nameStrong = admin_User_captionGroup_NameStrong.opt
-                                                                    editorType = FormItemComponentType.LookupTreeGridEditorItem
-                                                                    editorProperties = LookupTreeGridEditorItem(
-                                                                        new LookupTreeGridEditorItemProps {
-                                                                            treeGridEditor = userGroupEditor.opt
-                                                                        }).opt
-                                                                }
-                                                            ).opt
-                                                        }
-                                                    ), item)
+                                                                replacingFieldsList = Seq(
+                                                                    new ListGridFieldProps {
+                                                                        nameStrong = admin_User_codeGroup_NameStrong.opt
+                                                                        editorType = FormItemComponentType.LookupTreeGridEditorItem
+                                                                        editorProperties = LookupTreeGridEditorItem(
+                                                                            new LookupTreeGridEditorItemProps {
+                                                                                treeGridEditor = userGroupEditor.opt
+                                                                            }).opt
+                                                                    },
+                                                                    new ListGridFieldProps {
+                                                                        nameStrong = admin_User_captionGroup_NameStrong.opt
+                                                                        editorType = FormItemComponentType.LookupTreeGridEditorItem
+                                                                        editorProperties = LookupTreeGridEditorItem(
+                                                                            new LookupTreeGridEditorItemProps {
+                                                                                treeGridEditor = userGroupEditor.opt
+                                                                            }).opt
+                                                                    }
+                                                                ).opt
+                                                            }
+                                                        ), item)
                                             }.toFunc.opt
                                         }
                                     ).opt
