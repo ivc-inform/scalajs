@@ -1,19 +1,12 @@
 package com.simplesys.SmartClient.App.props
 
-import com.simplesys.SmartClient.App.formItems.props.{LookupListGridEditorItemProps, LookupTreeGridEditorItemProps}
 import com.simplesys.SmartClient.DataBinding.props.DSRequestProps
-import com.simplesys.SmartClient.Forms.formsItems.props.{FormItemProps, PasswordItemProps}
-import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
 import com.simplesys.SmartClient.Layout.props.WindowSSProps
-import com.simplesys.SmartClient.System.{DSRequest, FormItem, LookupListGridEditorItem, LookupTreeGridEditorItem, PasswordItem, WindowSS}
-import com.simplesys.System.Types.{FormItemComponentType, ListGridFieldType}
+import com.simplesys.SmartClient.System.{DSRequest, WindowSS}
 import com.simplesys.System._
-import com.simplesys.app.{OpersType, Tasks}
 import com.simplesys.function._
-import com.simplesys.js.components.asp.props.{OpersTypeProps, TasksProps}
 import com.simplesys.option.DoubleType._
 import com.simplesys.option.ScOption._
-import ru.simplesys.defs.app.gen.scala.ScalaJSGen.{admin_User_password_NameStrong, aps_orders_code_operstype_Oper_type_NameStrong}
 
 
 trait NewDSRequestData extends JSObject {
@@ -26,7 +19,7 @@ class EditorUsersProps extends CommonTreeListGridEditorComponentProps {
     captionMenuTree = "Группы пользователей".opt
     captionMenuList = "Пользователи".opt
 
-    /*newTreeRequestProperties = {
+    newTreeRequestProperties = {
         (thiz: classHandler) =>
             DSRequest(
                 new DSRequestProps {
@@ -36,9 +29,9 @@ class EditorUsersProps extends CommonTreeListGridEditorComponentProps {
                 }
             )
 
-    }.toThisFunc.opt*/
+    }.toThisFunc.opt
 
-    /*newListRequestProperties = {
+    newListRequestProperties = {
         (thiz: classHandler) =>
             DSRequest(
                 new DSRequestProps {
@@ -48,22 +41,9 @@ class EditorUsersProps extends CommonTreeListGridEditorComponentProps {
                 }
             )
 
-    }.toThisFunc.opt*/
+    }.toThisFunc.opt
 
     //showListFilterEditor = false.opt
-
-    replacingFieldsList = Seq(
-        new ListGridFieldProps {
-            nameStrong = admin_User_password_NameStrong.opt
-            `type` = ListGridFieldType.sCaption_SimpleType.opt
-            canFilter = false.opt
-            filterEditorProperties = PasswordItem(
-                new PasswordItemProps {
-                    disabled = true.opt
-                }
-            ).opt
-        }
-    ).opt
 
     editWindowPropertiesTree = WindowSS(
         new WindowSSProps {
