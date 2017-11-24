@@ -45,6 +45,19 @@ class EditorUsersProps extends CommonTreeListGridEditorComponentProps {
 
     //showListFilterEditor = false.opt
 
+    /*replacingFieldsList = Seq(
+        new ListGridFieldProps {
+            nameStrong = admin_User_password_NameStrong.opt
+            `type` = ListGridFieldType.sCaption_SimpleType.opt
+            canFilter = false.opt
+            filterEditorProperties = PasswordItem(
+                new PasswordItemProps {
+                    disabled = true.opt
+                }
+            ).opt
+        }
+    ).opt*/
+
     editWindowPropertiesTree = WindowSS(
         new WindowSSProps {
             width = 285
