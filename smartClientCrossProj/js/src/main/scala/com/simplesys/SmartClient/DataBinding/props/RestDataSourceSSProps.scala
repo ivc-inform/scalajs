@@ -7,6 +7,9 @@ import com.simplesys.System.{JSDynamic, JSUndefined}
 import com.simplesys.System.Types.DSOperationType
 import com.simplesys.function._
 import com.simplesys.option.ScOption._
+import com.simplesys.System._
+
+import scala.scalajs.js.UndefOr
 
 class RestDataSourceSSProps extends RestDataSourceProps {
     type classHandler <: RestDataSourceSS
@@ -33,12 +36,12 @@ class RestDataSourceSSProps extends RestDataSourceProps {
             }
 
             //isc debugTrap (status)
-            if (data.isDefined && data.get.data.isDefined && status < 0) {
+            if ((data.isDefined || data.get.data.isDefined) && status < 0) {
 
-                val errorStruct = data.get.data.get
-                resp.asInstanceOf[JSDynamic].updateDynamic("errorStruct")(errorStruct)
+                val errorStruct: UndefOr[JSObject] = if (data.isDefined && data.get.data.isDefined) data.get.data else if (data.isDefined) data else jSUndefined
+                errorStruct.foreach(resp.asInstanceOf[JSDynamic].updateDynamic("errorStruct")(_))
             }
-
+                
             if (resp.errorStruct.isDefined && resp.status != status) {
                 resp.status = status
                 val errorStruct = resp.errorStruct.asInstanceOf[ErrorStructOld]
