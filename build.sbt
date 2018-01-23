@@ -45,15 +45,17 @@ lazy val root = (project in file(".")).
 lazy val commonDomainsCrossProj = crossProject.dependsOn(smartClientCrossProj).
   settings(
       name := "common-domains",
-      publishArtifact in(Compile, packageDoc) := false,
       libraryDependencies ++= Seq(
           CommonDeps.logbackWrapper
-      )
+      ),
+
+      testFrameworks += new TestFramework("utest.runner.Framework"),
+      publishArtifact in(Compile, packageDoc) := false
   ).
   jvmSettings().
   jsSettings(
-      scalacOptions ++= (if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault") else Nil)
-  ).jsConfigure(_.dependsOn(macroJS)).jvmConfigure(_.dependsOn(macroJVM))
+      scalacOptions ++= (if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault") else Nil),
+  ).jsConfigure(x => x.dependsOn(macroJS)).jvmConfigure(x => x.dependsOn(macroJVM))
 
 // Needed, so sbt finds the projects
 lazy val commonDomainJVM = commonDomainsCrossProj.jvm
@@ -63,13 +65,15 @@ lazy val commonTypesCrossProj = crossProject.
   settings(
       name := "common-types",
       libraryDependencies ++= Seq(
+          CommonDeps.common,
           CommonDeps.logbackWrapper
       ),
+      testFrameworks += new TestFramework("utest.runner.Framework"),
       publishArtifact in(Compile, packageDoc) := false
   ).
   jvmSettings().
   jsSettings(
-      scalacOptions ++= (if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault") else Nil)
+      scalacOptions ++= (if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault") else Nil),
   )
 
 // Needed, so sbt finds the projects
@@ -78,15 +82,21 @@ lazy val commonTypesJS = commonTypesCrossProj.js
 
 lazy val jointJSCrossProj = crossProject.dependsOn(backboneJSCrossProj).
   settings(
-      publishArtifact in(Compile, packageDoc) := false,
-      name := "joint-js"
+      name := "joint-js",
+
+      libraryDependencies ++= Seq(
+          CommonDeps.scalaTest
+      ),
+
+      testFrameworks += new TestFramework("utest.runner.Framework"),
+      publishArtifact in(Compile, packageDoc) := false
   ).
   jvmSettings().
   jsSettings(
       scalacOptions ++= (if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault") else Nil),
       libraryDependencies ++= Seq(
           CommonDepsScalaJS.scalajsDOM.value,
-          CommonDepsScalaJS.scalajsJQuey.value
+          //CommonDepsScalaJS.scalajsJQuey.value
       )
   )
 
@@ -95,7 +105,6 @@ lazy val jointJSCrossJS = jointJSCrossProj.js
 
 lazy val macroJS = Project("macrojs", file("macrojs")).settings(
     name := "macrojs",
-    publishArtifact in(Compile, packageDoc) := false,
     libraryDependencies ++= Seq(
         CommonDeps.scalaCompiler,
         CommonDeps.scalaReflect
@@ -104,7 +113,6 @@ lazy val macroJS = Project("macrojs", file("macrojs")).settings(
 
 lazy val macroJVM = Project("macrojvm", file("macrojvm")).settings(
     name := "macrojvm",
-    publishArtifact in(Compile, packageDoc) := false,
     libraryDependencies ++= Seq(
         CommonDeps.scalaCompiler,
         CommonDeps.scalaReflect
@@ -114,15 +122,21 @@ lazy val macroJVM = Project("macrojvm", file("macrojvm")).settings(
 lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
   settings(
       name := "smartclient-wrapper",
+      libraryDependencies ++= {
+          Seq()
+      },
+      testFrameworks += new TestFramework("utest.runner.Framework"),
       publishArtifact in(Compile, packageDoc) := false
   ).
-  jvmSettings().
+  jvmSettings(
+      libraryDependencies ++= {
+          Seq()
+      }).
   jsSettings(
       scalacOptions ++= (if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault") else Nil),
-      publishArtifact in(Compile, packageDoc) := false,
       libraryDependencies ++= Seq(
           CommonDepsScalaJS.scalajsDOM.value,
-          CommonDepsScalaJS.scalajsJQuey.value
+          //CommonDepsScalaJS.scalajsJQuey.value
       )
   ).dependsOn().jsConfigure(x => x.dependsOn(macroJS).enablePlugins(ScalaJSPlugin)).jvmConfigure(x => x.dependsOn(macroJVM))
 
@@ -132,8 +146,14 @@ lazy val smartClientJS = smartClientCrossProj.js
 
 lazy val underscoreJSCrossProj = crossProject.dependsOn(commonTypesCrossProj).
   settings(
-      publishArtifact in(Compile, packageDoc) := false,
-      name := "underscore-js"
+      name := "underscore-js",
+
+      libraryDependencies ++= Seq(
+          CommonDeps.scalaTest
+      ),
+
+      testFrameworks += new TestFramework("utest.runner.Framework"),
+      publishArtifact in(Compile, packageDoc) := false
   ).
   jvmSettings().
   jsSettings()
@@ -143,8 +163,12 @@ lazy val underscoreJSCrossJS = underscoreJSCrossProj.js
 
 lazy val backboneJSCrossProj = crossProject.dependsOn(underscoreJSCrossProj).
   settings(
-      publishArtifact in(Compile, packageDoc) := false,
-      name := "backbone-js"
+      name := "backbone-js",
+
+      libraryDependencies ++= Seq(),
+
+      testFrameworks += new TestFramework("utest.runner.Framework"),
+      publishArtifact in(Compile, packageDoc) := false
   ).
   jvmSettings().
   jsSettings(

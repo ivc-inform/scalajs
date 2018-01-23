@@ -5,14 +5,17 @@ import sbt._
 
 object PluginDeps {
     object versions {
-        val scalaJSPluginVersion = "0.6.20"
+        val scalaCrossProjectPluginVersion = "0.3.3-SNAPSHOT"
     }
 
-    val scalaJSPlugin = addSbtPlugin("org.scala-js" % "sbt-scalajs" % versions.scalaJSPluginVersion)
+    val crossproject = addSbtPlugin("org.scala-native" % "sbt-crossproject" % versions.scalaCrossProjectPluginVersion)
+    val sbtCrossproject = addSbtPlugin("org.scala-native" % "sbt-scalajs-crossproject" % versions.scalaCrossProjectPluginVersion)
 }
 
 
 object CommonDeps {
+
+    val common = "com.simplesys.core" %% "common" % versions.ssysCoreVersion
     val logbackWrapper = "com.simplesys.core" %% "logback-wrapper" % versions.ssysCoreVersion
 
     val scalaReflect = "org.scala-lang" % "scala-reflect" % settingValues.scalaVersion

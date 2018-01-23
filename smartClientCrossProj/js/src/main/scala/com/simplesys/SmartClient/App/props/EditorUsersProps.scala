@@ -2,11 +2,12 @@ package com.simplesys.SmartClient.App.props
 
 import com.simplesys.SmartClient.DataBinding.props.DSRequestProps
 import com.simplesys.SmartClient.Layout.props.WindowSSProps
+import com.simplesys.SmartClient.System.{DSRequest, WindowSS}
 import com.simplesys.System._
 import com.simplesys.function._
 import com.simplesys.option.DoubleType._
 import com.simplesys.option.ScOption._
-import com.simplesys.SmartClient.System._
+
 
 trait NewDSRequestData extends JSObject {
     val active: Boolean
@@ -29,6 +30,33 @@ class EditorUsersProps extends CommonTreeListGridEditorComponentProps {
             )
 
     }.toThisFunc.opt
+
+    newListRequestProperties = {
+        (thiz: classHandler) =>
+            DSRequest(
+                new DSRequestProps {
+                    data = (new NewDSRequestData {
+                        override val active = true
+                    }).opt
+                }
+            )
+
+    }.toThisFunc.opt
+
+    //showListFilterEditor = false.opt
+
+    /*replacingFieldsList = Seq(
+        new ListGridFieldProps {
+            nameStrong = admin_User_password_NameStrong.opt
+            `type` = ListGridFieldType.sCaption_SimpleType.opt
+            canFilter = false.opt
+            filterEditorProperties = PasswordItem(
+                new PasswordItemProps {
+                    disabled = true.opt
+                }
+            ).opt
+        }
+    ).opt*/
 
     editWindowPropertiesTree = WindowSS(
         new WindowSSProps {

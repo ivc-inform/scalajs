@@ -4,6 +4,7 @@ import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.DataBinding.Callbacks._
 import com.simplesys.SmartClient.Forms.formsItems.CanvasItem
 import com.simplesys.SmartClient.Forms.ValuesManager
+import com.simplesys.SmartClient.Layout.tabSet.Tab
 import com.simplesys.SmartClient.Layout.{PrintWindow, TabSetSS, WindowSS}
 import com.simplesys.SmartClient.System._
 import com.simplesys.SmartClient.Tools.{EditContext, EditNode}
@@ -28,6 +29,7 @@ import com.simplesys.System.Types.VerticalAlignment._
 import com.simplesys.System.Types.Visibility._
 import com.simplesys.System.Types._
 import com.simplesys.System.{JSAny, JSObject, JSUndefined}
+import com.simplesys.option.{ScNone, ScOption}
 import org.scalajs.dom.DocumentEvent
 import org.scalajs.dom.html.Element
 import org.scalajs.dom.raw.HTMLElement
@@ -115,7 +117,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     def containsFocus(): Boolean
     def containsPoint(x: Int, y: Int, withinViewport: Boolean = js.native): Boolean
     var contents: HTMLString
-    var contextMenu: MenuSS
+    var contextMenu: js.UndefOr[MenuSS]
     val cursor: Cursor
     val customEdges: IscArray[String]
     val dataPath: DataPath
@@ -329,6 +331,7 @@ trait Canvas extends com.simplesys.SmartClient.System.Class {
     val proportionalResizing: ProportionalResizeMode
     def redraw(reason: String = js.native): void
     var redrawOnResize: Boolean
+    def readyToDraw(): Boolean
     def removeChild(child: Canvas, name: String = js.native): void
     def removePeer(peer: Canvas, name: String = js.native): void
     def removeSnapAlignCandidate(candidate: Canvas): void

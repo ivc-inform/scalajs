@@ -6,7 +6,6 @@ import com.simplesys.SmartClient.Foundation.props.canvas.ImgPropertiesProps
 import com.simplesys.SmartClient.Grids.props.TreeListGridEditorProps
 import com.simplesys.SmartClient.Grids.props.listGrid.ListGridFieldProps
 import com.simplesys.SmartClient.System._
-import com.simplesys.System.Types.FetchMode
 import com.simplesys.System._
 import com.simplesys.function._
 import com.simplesys.option.ScOption._
@@ -63,10 +62,37 @@ class CommonTreeListGridEditorComponentProps extends TreeListGridEditorProps wit
         (thiz: classHandler, arguments: IscArray[JSAny]) =>
             //isc debugTrac (thiz.getClassName(), thiz.getIdentifier())
 
+            /*def checkReplacingField(fields: js.UndefOr[js.Array[ListGridField]], replacingFields: js.UndefOr[js.Array[ListGridField]]) {
+                replacingFields.foreach {
+                    _.foreach {
+                        field ⇒
+                            if (!fields.get.exists(_.nameStrong.get.name == field.nameStrong.get.name))
+                                thiz.logError(s"Поле ${field.nameStrong.get.name} не найдено.")
+                    }
+                }
+            }
+
+            def checkReplacingField1(fields: js.UndefOr[js.Array[ListGridField]], replacingFields: js.UndefOr[js.Array[FormItem]]) {
+                replacingFields.foreach {
+                    _.foreach {
+                        field ⇒
+                            if (!fields.get.exists(_.nameStrong.get.name == field.nameStrong.get.name))
+                                thiz.logError(s"Поле ${field.nameStrong.get.name} не найдено.")
+                    }
+                }
+            }*/
+
+
+            /*checkReplacingField(thiz.fieldsList, thiz.replacingFieldsList)
+            checkReplacingField1(thiz.fieldsList, thiz.editingListFields)*/
+
             val res = initWidget(thiz, thiz.fieldsList, thiz.replacingFieldsList, thiz.editingListFields)
             thiz.fieldsList = res._1
             thiz.editingListFields = res._2
 
+            /*checkReplacingField(thiz.fieldsTree, thiz.replacingFieldsTree)
+            checkReplacingField1(thiz.fieldsTree, thiz.editingTreeFields)*/
+            
             val res1 = initWidget(thiz, thiz.fieldsTree, thiz.replacingFieldsTree, thiz.editingTreeFields)
             thiz.fieldsTree = res1._1
             thiz.editingTreeFields = res1._2

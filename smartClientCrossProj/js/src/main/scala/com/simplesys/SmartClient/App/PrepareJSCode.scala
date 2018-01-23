@@ -13,6 +13,7 @@ import com.simplesys.SmartClient.Grids.props.ListGridProps
 import com.simplesys.SmartClient.Layout.WindowSSDialog
 import com.simplesys.SmartClient.Layout.props.{WindowSSDialogProps, WindowSSProps}
 import com.simplesys.SmartClient.System._
+import com.simplesys.SmartClient.System.{WindowSS, DrawItemEditProxy, DrawLine, DrawRect, RichTextEditor, DateChooser}
 import com.simplesys.SmartClient.System.date.props.DateProps
 import com.simplesys.SmartClient.Tools.editProxy.props.DrawItemEditProxyProps
 import com.simplesys.System.Types.DateDisplayFormat
@@ -32,6 +33,7 @@ object PrepareJSCode extends StaticJSCode {
         isc.defineClass(RibbonGroupSS.getClass.getSimpleName, RibbonGroup.getClass.getSimpleName)
         isc.defineClass(SettingsEditor.getClass.getSimpleName, WindowSS.getClass.getSimpleName)
         isc.defineClass(ListGridContextMenu.getClass.getSimpleName, MenuSS.getClass.getSimpleName)
+        isc.defineClass(CompoundGridsContextMenu.getClass.getSimpleName, MenuSS.getClass.getSimpleName)
         isc.defineClass(ListGridContextMenuWithForm.getClass.getSimpleName, MenuSS.getClass.getSimpleName)
         isc.defineClass(TreeGridContextMenu.getClass.getSimpleName, MenuSS.getClass.getSimpleName)
         isc.defineClass(TreeListGridContextMenu.getClass.getSimpleName, MenuSS.getClass.getSimpleName)

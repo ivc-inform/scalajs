@@ -1,7 +1,5 @@
 package com.simplesys.System
 
-import com.simplesys.SmartClient.System.IscArray
-
 import scala.scalajs.js
 import scala.scalajs.js.|
 import scala.xml.Elem

@@ -73,10 +73,9 @@ class LookupTreeGridEditorItemProps extends CanvasItemProps {
     }.toThisFunc.opt
 
     createCanvas = {
-        (thiz: classHandler, form: DynamicFormSS, item: CanvasItem) =>
+        (thizTop: classHandler, form: DynamicFormSS, item: CanvasItem) =>
 
-            val formItem = thiz
-
+            //isc debugTrap thizTop
             val df = DynamicFormSS.create(
                 new DynamicFormSSProps {
                     cellPadding = 0.opt
@@ -99,25 +98,25 @@ class LookupTreeGridEditorItemProps extends CanvasItemProps {
                 }
             )
 
-            thiz.textItem = df.getItem(0).asInstanceOf[TextItem]
+            thizTop.textItem = df.getItem(0).asInstanceOf[TextItem]
 
             val button = IButtonSS.create(
                 new IButtonSSProps {
                     iconAlign = "center".opt
-                    icon = thiz.buttonIcon.getOrElse(Common.ellipsis).opt
+                    icon = thizTop.buttonIcon.getOrElse(Common.ellipsis).opt
                     width = 22
                     click = {
                         (thiz: classHandler) =>
-                            if (formItem.treeGridEditor.isEmpty)
+                            if (thizTop.treeGridEditor.isEmpty)
                                 isc.error("Отсутствует редактор.")
                             else {
-                                formItem.treeGridEditor.foreach {
+                                thizTop.treeGridEditor.foreach {
                                     editor =>
                                         //isc debugTrap editor
 
-                                        if (!formItem.lookup.getOrElse(false))
+                                        if (!thizTop.lookup.getOrElse(false))
                                             isc.error("Поле не является полем lookup")
-                                        else if (formItem.foreignField.isEmpty)
+                                        else if (thizTop.foreignField.isEmpty)
                                             isc.error("Нет значения для foreignField.")
                                         else {
                                             val window = WindowSS.create(
@@ -130,7 +129,7 @@ class LookupTreeGridEditorItemProps extends CanvasItemProps {
                                                     showMinimizeButton = false.opt
                                                     dismissOnEscape = true.opt
                                                     identifier = s"${form.identifier}_lookup_${item._name}".opt
-                                                    title = s"${formItem.captionClassLookup.getOrElse("Неизвестное поле captionClassLookup.")}".ellipsis.opt
+                                                    title = s"${thizTop.captionClassLookup.getOrElse("Неизвестное поле captionClassLookup.")}".ellipsis.opt
                                                     headerIconPath = Common.iconEdit.opt
                                                 }
                                             )
@@ -140,12 +139,12 @@ class LookupTreeGridEditorItemProps extends CanvasItemProps {
                                             else
                                                 form.dataSource.foreach {
                                                     dataSource =>
-                                                        val foreignIdField = dataSource.getField(formItem.foreignField.get).get
+                                                        val foreignIdField = dataSource.getField(thizTop.foreignField.get).get
                                                         val idFieldName = foreignIdField.foreignKey.substring(foreignIdField.foreignKey.lastIndexOf(".") + 1)
-                                                        val idField = form.getItem(formItem.foreignField.get)
+                                                        val idField = form.getItem(thizTop.foreignField.get)
 
-                                                        if (idField == null && formItem.record.isEmpty)
-                                                            isc.error(s"Нет поля ${formItem.foreignField.get}")
+                                                        if (idField == null && thizTop.record.isEmpty)
+                                                            isc.error(s"Нет поля ${thizTop.foreignField.get}")
                                                         else
                                                             window.addItems(
                                                                 IscArray[Canvas](
@@ -164,14 +163,14 @@ class LookupTreeGridEditorItemProps extends CanvasItemProps {
 
                                                                                         val records = editor.getSelectedRecords()
 
-                                                                                        formItem setValueMap records
+                                                                                        thizTop setValueMap records
 
-                                                                                        if (formItem.nameStrong.isEmpty)
-                                                                                            formItem.nameStrong = new NameStrong {
-                                                                                                override val name = formItem._name
+                                                                                        if (thizTop.nameStrong.isEmpty)
+                                                                                            thizTop.nameStrong = new NameStrong {
+                                                                                                override val name = thizTop._name
                                                                                             }
 
-                                                                                        val res = editor.getSelectedRecords().map(item => item.asInstanceOf[JSDynamic].selectDynamic(formItem.nameStrong.get.name).toString).mkString(", ")
+                                                                                        val res = editor.getSelectedRecords().map(item => item.asInstanceOf[JSDynamic].selectDynamic(thizTop.nameStrong.get.name).toString).mkString(", ")
                                                                                         //isc debugTrap res
 
                                                                                         val criteria: JSArray[JSObject] = editor.getSelectedRecords().map {
@@ -184,7 +183,7 @@ class LookupTreeGridEditorItemProps extends CanvasItemProps {
                                                                                                         //isc debugTrap (field, editor.dataSource.getField(field))
                                                                                                         if (editor.dataSource.getField(field).isDefined) {
                                                                                                             if (editor.dataSource.getField(field).get.primaryKey.getOrElse(false)) {
-                                                                                                                objDyn.updateDynamic("fieldName")(formItem.foreignField.get)
+                                                                                                                objDyn.updateDynamic("fieldName")(thizTop.foreignField.get)
                                                                                                                 objDyn.updateDynamic("operator")("equals")
                                                                                                                 objDyn.updateDynamic("value")(item.asInstanceOf[JSDynamic].selectDynamic(field))
                                                                                                             }
@@ -202,14 +201,14 @@ class LookupTreeGridEditorItemProps extends CanvasItemProps {
                                                                                             "criteria" -> criteria
                                                                                         )
 
-                                                                                        isc debugTrap formItem.filteredGridList
+                                                                                        isc debugTrap thizTop.filteredGridList
 
-                                                                                        if (formItem.filteredGridList.isEmpty)
-                                                                                            isc.error("Нет поля formItem.filteredGrid.")
+                                                                                        if (thizTop.filteredGridList.isEmpty)
+                                                                                            isc.error("Нет поля thizTop.filteredGrid.")
                                                                                         else
-                                                                                            formItem.filteredGridList.foreach(_.fetchData(criteria = advancedCriteria))
+                                                                                            thizTop.filteredGridList.foreach(_.fetchData(criteria = advancedCriteria))
 
-                                                                                        formItem setValue (res)
+                                                                                        thizTop setValue (res)
 
                                                                                     } else {
                                                                                         if (editor.getSelectedRecords().length != 1)
@@ -219,49 +218,75 @@ class LookupTreeGridEditorItemProps extends CanvasItemProps {
 
                                                                                             val valueId = record.asInstanceOf[JSDynamic].selectDynamic(idFieldName)
 
-                                                                                            if (formItem.record.isEmpty || formItem.record.get == null)
-                                                                                                idField.setValue(valueId)
-                                                                                            else
-                                                                                                formItem.record.foreach(_.asInstanceOf[JSDynamic].updateDynamic(formItem.foreignField.get)(valueId))
+                                                                                            val newRecord = thizTop.record.isEmpty || thizTop.record.get == null
 
+                                                                                            if (newRecord && idField != null)
+                                                                                                idField.setValue(valueId)
+                                                                                            else {
+                                                                                                val editedField = thizTop.foreignField.get
+                                                                                                if (newRecord)
+                                                                                                    form.setValue(editedField, valueId)
+                                                                                                else {
+                                                                                                    //isc debugTrap(thizTop.record, editedField, valueId)
+                                                                                                    thizTop.record.foreach(_.asInstanceOf[JSDynamic].updateDynamic(editedField)(valueId))
+                                                                                                    form.setValue(editedField, valueId)
+                                                                                                    //isc debugTrap(thizTop.record)
+                                                                                                }
+                                                                                            }
+
+                                                                                            //isc debugTrap(thizTop.record)
 
                                                                                             val recordFields = js.Object.keys(record)
                                                                                             recordFields.foreach {
                                                                                                 field =>
                                                                                                     if (editor.dataSource.getField(field).isDefined)
-                                                                                                        if (!editor.dataSource.getField(field).get.primaryKey.getOrElse(false))
-                                                                                                            form.setValue(field, editor.getSelectedRecord().asInstanceOf[JSDynamic].selectDynamic(field))
+                                                                                                        if (newRecord || !editor.dataSource.getField(field).get.primaryKey.getOrElse(false)) {
+                                                                                                            val value = editor.getSelectedRecord().asInstanceOf[JSDynamic].selectDynamic(field)
+                                                                                                            val editedField = if (thizTop.foreignField.isEmpty) field else s"${field}_${thizTop.foreignField.get.capitalize}"
+                                                                                                            //isc debugTrap(form, editedField, value)
+                                                                                                            form.setValue(editedField, value)
+                                                                                                        }
                                                                                             }
 
-                                                                                            val treeGrid = formItem.grid.masterTreeGrid
-                                                                                            val listGrid: ListGrid = formItem.grid
-                                                                                            val listGridKeys = js.Object()
+                                                                                            if (thizTop.grid.isEmpty)
+                                                                                                thiz.owner.foreach(_.hide())
 
-                                                                                            if (formItem.record.isDefined && formItem.record.get != null)
-                                                                                                listGrid.dataSource.foreach {
-                                                                                                    _.getPrimaryKeyFieldNames().foreach {
-                                                                                                        fieldName =>
-                                                                                                            //isc debugTrap (formItem.record, fieldName, formItem.record.get.asInstanceOf[JSDynamic].selectDynamic(fieldName))
-                                                                                                            listGridKeys.asInstanceOf[JSDynamic].updateDynamic(fieldName)(formItem.record.get.asInstanceOf[JSDynamic].selectDynamic(fieldName))
+
+                                                                                            thizTop.grid.foreach {
+                                                                                                listGrid ⇒
+                                                                                                    val listGridKeys = js.Object()
+
+                                                                                                    if (thizTop.record.isDefined && thizTop.record.get != null)
+                                                                                                        listGrid.dataSource.foreach {
+                                                                                                            _.getPrimaryKeyFieldNames().foreach {
+                                                                                                                fieldName =>
+                                                                                                                    //isc debugTrap (thizTop.record, fieldName, thizTop.record.get.asInstanceOf[JSDynamic].selectDynamic(fieldName))
+                                                                                                                    listGridKeys.asInstanceOf[JSDynamic].updateDynamic(fieldName)(thizTop.record.get.asInstanceOf[JSDynamic].selectDynamic(fieldName))
+                                                                                                            }
+                                                                                                        }
+
+                                                                                                    //isc debugTrap listGridKeys
+                                                                                                    listGrid.saveAllEdits()
+                                                                                                    listGrid.cancelEditing()
+
+                                                                                                    listGrid.masterTreeGrid.foreach {
+                                                                                                        treeGrid ⇒
+                                                                                                            isc.ask("Перейти в каталог переноса элемента ?", {
+                                                                                                                (value: Boolean) =>
+                                                                                                                    if (value) {
+                                                                                                                        treeGrid.deselectAllRecords()
+
+                                                                                                                        val keyValue: TreeNode = treeGrid.findByKey(valueId).asInstanceOf[TreeNode]
+                                                                                                                        treeGrid.selectRecord(keyValue)
+
+                                                                                                                        val rec = listGrid.findByKey(listGridKeys)
+                                                                                                                        listGrid selectRecord rec.asInstanceOf[ListGridRecord]
+                                                                                                                    }
+                                                                                                                    thiz.owner.foreach(_.hide())
+                                                                                                            })
                                                                                                     }
-                                                                                                }
+                                                                                            }
 
-                                                                                            //isc debugTrap listGridKeys
-                                                                                            listGrid.saveAllEdits()
-                                                                                            listGrid.cancelEditing()
-
-                                                                                            isc.ask("Перейти в каталог переноса элемента ?", {
-                                                                                                (value: Boolean) =>
-                                                                                                    if (value) {
-                                                                                                        treeGrid.foreach(_.deselectAllRecords())
-
-                                                                                                        val keyValue: TreeNode = treeGrid.get.findByKey(valueId).asInstanceOf[TreeNode]
-                                                                                                        treeGrid.foreach(grid => grid.selectRecord(keyValue))
-
-                                                                                                        val rec = listGrid.findByKey(listGridKeys)
-                                                                                                        listGrid selectRecord rec.asInstanceOf[ListGridRecord]
-                                                                                                    }
-                                                                                            })
 
                                                                                         }
                                                                                     }

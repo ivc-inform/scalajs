@@ -225,7 +225,7 @@ trait FormItem extends Class {
     var prompt: HTMLString
     var readOnlyDisplay: JSUndefined[ReadOnlyDisplayAppearance]
     var readOnlyTextBoxStyle: FormItemBaseStyle
-    val record: JSUndefined[ListGridRecord]
+    var record: JSUndefined[JSObject | JSDictionary[JSAny]]
     def redraw(reason: String): void
     var redrawOnChange: Boolean
     var rejectInvalidValueOnChange: Boolean
@@ -358,7 +358,7 @@ trait FormItem extends Class {
     var filteredGridList: JSUndefined[ListGridEditor]
     @JSName("filteredGrid")
     var filteredGridTree: JSUndefined[TreeGridEditor]
-    val grid: ListGrid
+    val grid: js.UndefOr[ListGrid]
 }
 
 @js.native

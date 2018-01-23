@@ -8,9 +8,10 @@ import com.simplesys.SmartClient.Forms.formsItems.{CanvasItem, TextItem}
 import com.simplesys.SmartClient.Forms.props.DynamicFormSSProps
 import com.simplesys.SmartClient.Foundation.Canvas
 import com.simplesys.SmartClient.Grids.ListGridEditor
+import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Layout.props.{HLayoutSSProps, OkCancelPanelProps, WindowSSProps}
 import com.simplesys.SmartClient.System.{Common, HLayoutSS, IButtonSS, _}
-import com.simplesys.System.Types.ReadOnlyDisplayAppearance.{ReadOnlyDisplayAppearance => _}
+import com.simplesys.System.Types.ReadOnlyDisplayAppearance.{ReadOnlyDisplayAppearance ⇒ _}
 import com.simplesys.System.Types._
 import com.simplesys.System._
 import com.simplesys.function._
@@ -77,9 +78,8 @@ class LookupListGridEditorItemProps extends CanvasItemProps {
     }.toThisFunc.opt
 
     createCanvas = {
-        (thiz: classHandler, form: DynamicFormSS, item: CanvasItem) =>
+        (thizTop: classHandler, form: DynamicFormSS, item: CanvasItem) =>
 
-            val formItem = thiz
             val df = DynamicFormSS.create(
                 new DynamicFormSSProps {
                     cellPadding = 0.opt
@@ -102,25 +102,25 @@ class LookupListGridEditorItemProps extends CanvasItemProps {
                 }
             )
 
-            thiz.textItem = df.getItem(0).asInstanceOf[TextItem]
+            thizTop.textItem = df.getItem(0).asInstanceOf[TextItem]
 
             val button = IButtonSS.create(
                 new IButtonSSProps {
                     iconAlign = "center".opt
-                    icon = thiz.buttonIcon.getOrElse(Common.ellipsis).opt
+                    icon = thizTop.buttonIcon.getOrElse(Common.ellipsis).opt
                     width = 22
                     click = {
                         (thiz: classHandler) =>
-                            if (formItem.listGridEditor.isEmpty)
+                            if (thizTop.listGridEditor.isEmpty)
                                 isc.error("Отсутствует редактор.")
                             else {
-                                formItem.listGridEditor.foreach {
+                                thizTop.listGridEditor.foreach {
                                     editor =>
                                         //isc debugTrap editor
 
-                                        if (!formItem.lookup.getOrElse(false))
+                                        if (!thizTop.lookup.getOrElse(false))
                                             isc.error("Поле не является полем lookup")
-                                        else if (formItem.foreignField.isEmpty)
+                                        else if (thizTop.foreignField.isEmpty)
                                             isc.error("Нет значения для foreignField.")
                                         else {
                                             val window = WindowSS.create(
@@ -133,7 +133,7 @@ class LookupListGridEditorItemProps extends CanvasItemProps {
                                                     showMinimizeButton = false.opt
                                                     dismissOnEscape = true.opt
                                                     identifier = s"${form.identifier}_lookup_${item._name}".opt
-                                                    title = s"${formItem.captionClassLookup.getOrElse("Неизвестное поле captionClassLookup.")}".ellipsis.opt
+                                                    title = s"${thizTop.captionClassLookup.getOrElse("Неизвестное поле captionClassLookup.")}".ellipsis.opt
                                                     headerIconPath = Common.iconEdit.opt
                                                 }
                                             )
@@ -143,12 +143,12 @@ class LookupListGridEditorItemProps extends CanvasItemProps {
                                             else
                                                 form.dataSource.foreach {
                                                     dataSource =>
-                                                        val foreignIdField = dataSource.getField(formItem.foreignField.get).get
+                                                        val foreignIdField = dataSource.getField(thizTop.foreignField.get).get
                                                         val idFieldName = foreignIdField.foreignKey.substring(foreignIdField.foreignKey.lastIndexOf(".") + 1)
-                                                        val idField = form.getItem(formItem.foreignField.get)
+                                                        val idField = form.getItem(thizTop.foreignField.get)
 
-                                                        if (idField == null && formItem.record.isEmpty)
-                                                            isc.error(s"Нет поля ${formItem.foreignField.get}")
+                                                        if (idField == null && thizTop.record.isEmpty)
+                                                            isc.error(s"Нет поля ${thizTop.foreignField.get}")
                                                         else
                                                             window.addItems(
                                                                 IscArray[Canvas](
@@ -168,14 +168,14 @@ class LookupListGridEditorItemProps extends CanvasItemProps {
 
                                                                                         val records = editor.getSelectedRecords()
 
-                                                                                        formItem setValueMap records
+                                                                                        thizTop setValueMap records
 
-                                                                                        if (formItem.nameStrong.isEmpty)
-                                                                                            formItem.nameStrong = new NameStrong {
-                                                                                                override val name = formItem._name
+                                                                                        if (thizTop.nameStrong.isEmpty)
+                                                                                            thizTop.nameStrong = new NameStrong {
+                                                                                                override val name = thizTop._name
                                                                                             }
 
-                                                                                        val res = editor.getSelectedRecords().map(item => item.asInstanceOf[JSDynamic].selectDynamic(formItem.nameStrong.get.name).toString).mkString(", ")
+                                                                                        val res = editor.getSelectedRecords().map(item => item.asInstanceOf[JSDynamic].selectDynamic(thizTop.nameStrong.get.name).toString).mkString(", ")
                                                                                         //isc debugTrap res
 
                                                                                         val criteria: JSArray[JSObject] = editor.getSelectedRecords().map {
@@ -188,7 +188,7 @@ class LookupListGridEditorItemProps extends CanvasItemProps {
                                                                                                         //isc debugTrap (field, editor.dataSource.getField(field))
                                                                                                         if (editor.dataSource.getField(field).isDefined) {
                                                                                                             if (editor.dataSource.getField(field).get.primaryKey.getOrElse(false)) {
-                                                                                                                objDyn.updateDynamic("fieldName")(formItem.foreignField.get)
+                                                                                                                objDyn.updateDynamic("fieldName")(thizTop.foreignField.get)
                                                                                                                 objDyn.updateDynamic("operator")("equals")
                                                                                                                 objDyn.updateDynamic("value")(item.asInstanceOf[JSDynamic].selectDynamic(field))
                                                                                                             }
@@ -206,14 +206,14 @@ class LookupListGridEditorItemProps extends CanvasItemProps {
                                                                                             "criteria" -> criteria
                                                                                         )
 
-                                                                                        //isc debugTrap formItem.filteredGridList
+                                                                                        //isc debugTrap thizTop.filteredGridList
 
-                                                                                        if (formItem.filteredGridList.isEmpty)
-                                                                                            isc.error("Нет поля formItem.filteredGrid.")
+                                                                                        if (thizTop.filteredGridList.isEmpty)
+                                                                                            isc.error("Нет поля thizTop.filteredGrid.")
                                                                                         else
-                                                                                            formItem.filteredGridList.foreach(_.fetchData(criteria = advancedCriteria))
+                                                                                            thizTop.filteredGridList.foreach(_.fetchData(criteria = advancedCriteria))
 
-                                                                                        formItem setValue (res)
+                                                                                        thizTop setValue res
 
                                                                                     } else {
                                                                                         if (editor.getSelectedRecords().length != 1)
@@ -222,22 +222,39 @@ class LookupListGridEditorItemProps extends CanvasItemProps {
                                                                                             val record = editor.getSelectedRecord()
 
                                                                                             val valueId = record.asInstanceOf[JSDynamic].selectDynamic(idFieldName)
-                                                                                            //isc debugTrap(formItem.foreignField.get, item.name, valueId, formItem.record)
 
-                                                                                            if (formItem.record.isEmpty || formItem.record.get == null)
+                                                                                            val newRecord = thizTop.record.isEmpty || thizTop.record.get == null
+
+                                                                                            if (newRecord && idField != null)
                                                                                                 idField.setValue(valueId)
-                                                                                            else
-                                                                                                formItem.record.foreach(_.asInstanceOf[JSDynamic].updateDynamic(formItem.foreignField.get)(valueId))
+                                                                                            else {
+                                                                                                val editedField = thizTop.foreignField.get
+                                                                                                if (newRecord)
+                                                                                                    form.setValue(editedField, valueId)
+                                                                                                else {
+                                                                                                    //isc debugTrap(thizTop.record, editedField, valueId)
+                                                                                                    thizTop.record.foreach(_.asInstanceOf[JSDynamic].updateDynamic(editedField)(valueId))
+                                                                                                    form.setValue(editedField, valueId)
+                                                                                                    //isc debugTrap(thizTop.record)
+                                                                                                }
+                                                                                            }
+
+                                                                                            //isc debugTrap(thizTop.record)
 
                                                                                             val recordFields = js.Object.keys(record)
                                                                                             recordFields.foreach {
                                                                                                 field =>
                                                                                                     if (editor.dataSource.getField(field).isDefined)
-                                                                                                        if (!editor.dataSource.getField(field).get.primaryKey.getOrElse(false))
-                                                                                                            form.setValue(field, editor.getSelectedRecord().asInstanceOf[JSDynamic].selectDynamic(field))
+                                                                                                        if (newRecord || !editor.dataSource.getField(field).get.primaryKey.getOrElse(false)) {
+                                                                                                            val value = editor.getSelectedRecord().asInstanceOf[JSDynamic].selectDynamic(field)
+                                                                                                            val editedField = if (thizTop.foreignField.isEmpty) field else s"${field}_${thizTop.foreignField.get.capitalize}"
+                                                                                                            //isc debugTrap(form, editedField, value)
+                                                                                                            form.setValue(editedField, value)
+                                                                                                        }
                                                                                             }
                                                                                         }
                                                                                     }
+                                                                                    thiz.owner.foreach(_.hide())
                                                                             }.toThisFunc.opt
                                                                         }
                                                                     )

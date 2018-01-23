@@ -1,10 +1,8 @@
 package com.simplesys.SmartClient.DataBinding
 
-import com.simplesys.System.Types.void
 import com.simplesys.System._
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.ScalaJSDefined
 
 
 trait ErrorStruct extends JSObject {
