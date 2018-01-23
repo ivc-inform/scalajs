@@ -65,7 +65,6 @@ lazy val commonTypesCrossProj = crossProject.
   settings(
       name := "common-types",
       libraryDependencies ++= Seq(
-          CommonDeps.xmlExtender,
           CommonDeps.common,
           CommonDeps.logbackWrapper
       ),
@@ -124,10 +123,7 @@ lazy val smartClientCrossProj = crossProject.dependsOn(commonTypesCrossProj).
   settings(
       name := "smartclient-wrapper",
       libraryDependencies ++= {
-          Seq(
-              CommonDeps.xmlExtender,
-              CommonDeps.scalaIOExtender
-          )
+          Seq()
       },
       testFrameworks += new TestFramework("utest.runner.Framework"),
       publishArtifact in(Compile, packageDoc) := false
