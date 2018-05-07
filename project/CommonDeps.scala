@@ -5,7 +5,7 @@ import sbt._
 
 object PluginDeps {
     object versions {
-        val scalaCrossProjectPluginVersion = "0.3.3-SNAPSHOT"
+        val scalaCrossProjectPluginVersion = "0.3.4"
     }
 
     val crossproject = addSbtPlugin("org.scala-native" % "sbt-crossproject" % versions.scalaCrossProjectPluginVersion)
