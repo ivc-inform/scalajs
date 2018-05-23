@@ -270,35 +270,36 @@ trait WebTabSetApp extends TabSetStack {
             item
     }
 
-    private val infoGroup = Seq(RibbonGroupSS.create(
-        new RibbonGroupSSProps {
-            title = "Системные".ellipsis.opt
-            controls = Seq(
-                IconButtonSS.create(
-                    new IconButtonSSProps {
-                        title = "Настройки".ellipsis.opt
-                        icon = Common.settings.opt
-                        click = {
-                            (thiz: classHandler) =>
-                                getSettingsEditor()
-                                false
-                        }.toThisFunc.opt
-                    }
-                ),
-                IconButtonSS.create(
-                    new IconButtonSSProps {
-                        title = "Информация".ellipsis.opt
-                        icon = Common.info.opt
-                        click = {
-                            (thiz: classHandler) =>
-                                getAbout()
-                                false
-                        }.toThisFunc.opt
-                    }
-                )
-            ).opt
-        }
-    )).map {
+    private val infoGroup = Seq(
+        RibbonGroupSS.create(
+            new RibbonGroupSSProps {
+                title = "Системные".ellipsis.opt
+                controls = Seq(
+                    IconButtonSS.create(
+                        new IconButtonSSProps {
+                            title = "Настройки".ellipsis.opt
+                            icon = Common.settings.opt
+                            click = {
+                                (thiz: classHandler) =>
+                                    getSettingsEditor()
+                                    false
+                            }.toThisFunc.opt
+                        }
+                    ),
+                    IconButtonSS.create(
+                        new IconButtonSSProps {
+                            title = "Информация".ellipsis.opt
+                            icon = Common.info.opt
+                            click = {
+                                (thiz: classHandler) =>
+                                    getAbout()
+                                    false
+                            }.toThisFunc.opt
+                        }
+                    )
+                ).opt
+            }
+        )).map {
         item =>
             item.hide()
             item
