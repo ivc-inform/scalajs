@@ -153,212 +153,208 @@ class SettingsEditorProps extends WindowSSProps {
                                  name: JSUndefined[String]) ⇒
                                     thizTop.okCancelPanel.foreach(_.hide())
                             }.toFunc.opt
-                            pane = DynamicFormSS
-                              .create(
-                                  new DynamicFormSSProps {
-                                      colWidths = Seq[JSAny](150, "*").opt
-                                      //action = thizTop.action.opt
-                                      //canSubmit = false.opt
-                                      clearValues = {
-                                          (thiz: classHandler) ⇒
-                                              thiz.getField("oldPassword").foreach(_.clearValue())
+                            pane = DynamicFormSS.create(
+                                new DynamicFormSSProps {
+                                    colWidths = Seq[JSAny](150, "*").opt
+                                    //action = thizTop.action.opt
+                                    //canSubmit = false.opt
+                                    clearValues = {
+                                        (thiz: classHandler) ⇒
+                                            thiz.getField("oldPassword").foreach(_.clearValue())
 
-                                              thiz.getField("password").foreach(_.clearValue())
+                                            thiz.getField("password").foreach(_.clearValue())
 
-                                              thiz.getField("confPassword").foreach { field ⇒
-                                                  field.clearValue()
-                                                  field.disable()
-                                              }
+                                            thiz.getField("confPassword").foreach { field ⇒
+                                                field.clearValue()
+                                                field.disable()
+                                            }
 
-                                              thiz.getField("save").foreach(_.disable())
-                                      }.toThisFunc.opt
-                                      fields = Seq(
-                                          PasswordItem(
-                                              new PasswordItemProps {
-                                                  title = "Введите старый пароль".opt
-                                                  nameStrong = "oldPassword".nameStrongOpt
-                                                  height = 25
-                                                  validateOnChange = true.opt
-                                                  changed = {
-                                                      (form: DynamicFormSS,
-                                                       item: FormItem,
-                                                       value: JSUndefined[String]) =>
-                                                          form.getField("password").foreach { field ⇒
-                                                              if (value.isEmpty)
-                                                                  field.clearValue()
-                                                              field.setDisabled(
-                                                                  item.getValue().toString.length == 0 || value
-                                                                    .getOrElse("")
-                                                                    .length == 0)
-                                                          }
-                                                  }.toFunc.opt
-                                              }
-                                          ),
-                                          PasswordItem(
-                                              new PasswordItemProps {
-                                                  title = "Введите новый пароль".opt
-                                                  nameStrong = "password".nameStrongOpt
-                                                  height = 25
-                                                  disabled = true.opt
-                                                  validators = Seq(
-                                                      Validator(
-                                                          new ValidatorProps {
-                                                              `type` = ValidatorType.lengthRange.opt
-                                                              min = minCharInPassword.opt
-                                                              errorMessage =
-                                                                s"Не может быть короче $minCharInPassword-х символов".opt
-                                                          }
-                                                      )
-                                                  ).opt
-                                                  validateOnChange = true.opt
-                                                  changed = {
-                                                      (form: DynamicFormSS,
-                                                       item: FormItem,
-                                                       value: JSUndefined[String]) =>
-                                                          form.getField("confPassword").foreach { field ⇒
-                                                              if (value.isEmpty)
-                                                                  field.clearValue()
-                                                              field.setDisabled(
-                                                                  item.getValue().toString.length == 0 || value
-                                                                    .getOrElse("")
-                                                                    .length == 0)
-                                                          }
-                                                  }.toFunc.opt
-                                              }
-                                          ),
-                                          PasswordItem(
-                                              new PasswordItemProps {
-                                                  title = "Повторите новый пароль".opt
-                                                  nameStrong = "confPassword".nameStrongOpt
-                                                  height = 25
-                                                  disabled = true.opt
-                                                  validators = Seq(
-                                                      Validator(
-                                                          new ValidatorProps {
-                                                              `type` = ValidatorType.lengthRange.opt
-                                                              min = minCharInPassword.opt
-                                                              errorMessage =
-                                                                s"Не может быть короче $minCharInPassword-х символов".opt
-                                                          }
-                                                      ),
-                                                      Validator(
-                                                          new ValidatorProps {
-                                                              `type` = ValidatorType.custom.opt
-                                                              condition = {
-                                                                  var res = false
-                                                                  (item: FormItem,
-                                                                   validator: Validator,
-                                                                   value: JSUndefined[String],
-                                                                   record: PasswordsStruct) ⇒
-                                                                      value.foreach { value ⇒
-                                                                          item.form.foreach { form ⇒
-                                                                              form.getField("save").foreach { field ⇒
-                                                                                  res = value.length >= minCharInPassword && record.password
-                                                                                    .getOrElse("") == record.confPassword
-                                                                                    .getOrElse("")
-                                                                                  field setDisabled !res
-                                                                              }
-                                                                          }
-                                                                      }
-                                                                      res
-                                                              }.toFunc.opt
-                                                              errorMessage = s"Несовпадение паролей".opt
-                                                          }
-                                                      )
-                                                  ).opt
-                                                  changed = {
-                                                      (form: DynamicFormSS,
-                                                       item: FormItem,
-                                                       value: JSUndefined[String]) =>
-                                                  }.toFunc.opt
-                                              }
-                                          ),
-                                          ButtonItem(
-                                              new ButtonItemProps {
-                                                  title = "Сохранить".opt
-                                                  icon = Common.save.opt
-                                                  nameStrong = "save".nameStrongOpt
-                                                  height = 25
-                                                  colSpan = 2
-                                                  disabled = true.opt
-                                                  init = {
-                                                      (thizButton: classHandler,
-                                                       arguments: IscArray[JSAny]) ⇒
-                                                          thizButton.buttonProperties = IButtonSS(
-                                                              new IButtonSSProps {
-                                                                  showDisabledIcon = false.opt
-                                                                  click = { (thiz: classHandler) ⇒
-                                                                      thizButton.form
-                                                                        .foreach {
-                                                                            form ⇒
-                                                                                //isc debugTrap 0
-                                                                                RPCManagerSS.sendRequest(
-                                                                                    RPCRequest(
-                                                                                        new RPCRequestProps {
-                                                                                            timeout = 60000.opt
-                                                                                            sendNoQueue = true.opt
-                                                                                            data = {
-                                                                                                val res = form.getValues[
-                                                                                                  PasswordsStruct]()
-                                                                                                res.userId =
-                                                                                                  simpleSyS.app.userId
-                                                                                                res
-                                                                                            }.opt
-                                                                                            actionURL = thizTop.action.opt
-                                                                                            callback = {
-                                                                                                (resp: RPCResponse,
-                                                                                                 data: Response,
-                                                                                                 req: RPCRequest) ⇒
-                                                                                                    //isc debugTrap data.response
-                                                                                                    data.response.foreach {
-                                                                                                        response ⇒
-                                                                                                            //isc debugTrap (response.status == RPCResponseStatic.STATUS_SUCCESS)
-                                                                                                            if (response.status != RPCResponseStatic.STATUS_SUCCESS)
-                                                                                                                response.data
-                                                                                                                  .foreach {
-                                                                                                                      error ⇒
-                                                                                                                          if (!isc.isA
-                                                                                                                            .Object(
-                                                                                                                                error))
-                                                                                                                              isc error(error.toString, "163B7F9E-576B-7EFA-8F3C-E536012308B4")
-                                                                                                                          else {
-                                                                                                                              //isc debugTrap error
-                                                                                                                              val _error =
-                                                                                                                                  error.asInstanceOf[ErrorStructOld]
-                                                                                                                              _error.error
-                                                                                                                                .foreach {
-                                                                                                                                    error ⇒
-                                                                                                                                        isc errorDetail(error.message
-                                                                                                                                          .getOrElse(
-                                                                                                                                              "Ошибка не определена"), error.stackTrace
-                                                                                                                                          .getOrElse(
-                                                                                                                                              "Ошибка не определена"))
-                                                                                                                                }
-                                                                                                                          }
-                                                                                                                  } else {
-                                                                                                                form.clearValues()
-                                                                                                                isc ok "Пароль изменен. При следующем входе в систему используйте новый пароль."
-                                                                                                            }
-                                                                                                    }
-
-                                                                                            }.toFunc.opt
-                                                                                        }
-                                                                                    )
-                                                                                )
+                                            thiz.getField("save").foreach(_.disable())
+                                    }.toThisFunc.opt
+                                    fields = Seq(
+                                        PasswordItem(
+                                            new PasswordItemProps {
+                                                title = "Введите старый пароль".opt
+                                                nameStrong = "oldPassword".nameStrongOpt
+                                                height = 25
+                                                validateOnChange = true.opt
+                                                changed = {
+                                                    (form: DynamicFormSS,
+                                                     item: FormItem,
+                                                     value: JSUndefined[String]) =>
+                                                        form.getField("password").foreach { field ⇒
+                                                            if (value.isEmpty)
+                                                                field.clearValue()
+                                                            field.setDisabled(
+                                                                item.getValue().toString.length == 0 || value
+                                                                  .getOrElse("")
+                                                                  .length == 0)
+                                                        }
+                                                }.toFunc.opt
+                                            }
+                                        ),
+                                        PasswordItem(
+                                            new PasswordItemProps {
+                                                title = "Введите новый пароль".opt
+                                                nameStrong = "password".nameStrongOpt
+                                                height = 25
+                                                disabled = true.opt
+                                                validators = Seq(
+                                                    Validator(
+                                                        new ValidatorProps {
+                                                            `type` = ValidatorType.lengthRange.opt
+                                                            min = minCharInPassword.opt
+                                                            errorMessage =
+                                                              s"Не может быть короче $minCharInPassword-х символов".opt
+                                                        }
+                                                    )
+                                                ).opt
+                                                validateOnChange = true.opt
+                                                changed = {
+                                                    (form: DynamicFormSS,
+                                                     item: FormItem,
+                                                     value: JSUndefined[String]) =>
+                                                        form.getField("confPassword").foreach { field ⇒
+                                                            if (value.isEmpty)
+                                                                field.clearValue()
+                                                            field.setDisabled(
+                                                                item.getValue().toString.length == 0 || value
+                                                                  .getOrElse("")
+                                                                  .length == 0)
+                                                        }
+                                                }.toFunc.opt
+                                            }
+                                        ),
+                                        PasswordItem(
+                                            new PasswordItemProps {
+                                                title = "Повторите новый пароль".opt
+                                                nameStrong = "confPassword".nameStrongOpt
+                                                height = 25
+                                                disabled = true.opt
+                                                validators = Seq(
+                                                    Validator(
+                                                        new ValidatorProps {
+                                                            `type` = ValidatorType.lengthRange.opt
+                                                            min = minCharInPassword.opt
+                                                            errorMessage =
+                                                              s"Не может быть короче $minCharInPassword-х символов".opt
+                                                        }
+                                                    ),
+                                                    Validator(
+                                                        new ValidatorProps {
+                                                            `type` = ValidatorType.custom.opt
+                                                            condition = {
+                                                                var res = false
+                                                                (item: FormItem,
+                                                                 validator: Validator,
+                                                                 value: JSUndefined[String],
+                                                                 record: PasswordsStruct) ⇒
+                                                                    value.foreach { value ⇒
+                                                                        item.form.foreach { form ⇒
+                                                                            form.getField("save").foreach { field ⇒
+                                                                                res = value.length >= minCharInPassword && record.password.getOrElse("") == record.confPassword.getOrElse("")
+                                                                                field setDisabled !res
+                                                                            }
                                                                         }
-                                                                      false
-                                                                  }.toThisFunc.opt
-                                                              }
-                                                          )
+                                                                    }
+                                                                    res
+                                                            }.toFunc.opt
+                                                            errorMessage = s"Несовпадение паролей".opt
+                                                        }
+                                                    )
+                                                ).opt
+                                                changed = {
+                                                    (form: DynamicFormSS,
+                                                     item: FormItem,
+                                                     value: JSUndefined[String]) =>
+                                                }.toFunc.opt
+                                            }
+                                        ),
+                                        ButtonItem(
+                                            new ButtonItemProps {
+                                                title = "Сохранить".opt
+                                                icon = Common.save.opt
+                                                nameStrong = "save".nameStrongOpt
+                                                height = 25
+                                                colSpan = 2
+                                                disabled = true.opt
+                                                init = {
+                                                    (thizButton: classHandler,
+                                                     arguments: IscArray[JSAny]) ⇒
+                                                        thizButton.buttonProperties = IButtonSS(
+                                                            new IButtonSSProps {
+                                                                showDisabledIcon = false.opt
+                                                                click = { (thiz: classHandler) ⇒
+                                                                    thizButton.form
+                                                                      .foreach {
+                                                                          form ⇒
+                                                                              //isc debugTrap 0
+                                                                              RPCManagerSS.sendRequest(
+                                                                                  RPCRequest(
+                                                                                      new RPCRequestProps {
+                                                                                          timeout = 60000.opt
+                                                                                          sendNoQueue = true.opt
+                                                                                          data = {
+                                                                                              val res = form.getValues[PasswordsStruct]()
+                                                                                              res.userId =
+                                                                                                simpleSyS.app.userId
+                                                                                              res
+                                                                                          }.opt
+                                                                                          actionURL = thizTop.action.opt
+                                                                                          callback = {
+                                                                                              (resp: RPCResponse,
+                                                                                               data: Response,
+                                                                                               req: RPCRequest) ⇒
+                                                                                                  //isc debugTrap data.response
+                                                                                                  data.response.foreach {
+                                                                                                      response ⇒
+                                                                                                          //isc debugTrap (response.status == RPCResponseStatic.STATUS_SUCCESS)
+                                                                                                          if (response.status != RPCResponseStatic.STATUS_SUCCESS)
+                                                                                                              response.data
+                                                                                                                .foreach {
+                                                                                                                    error ⇒
+                                                                                                                        if (!isc.isA
+                                                                                                                          .Object(
+                                                                                                                              error))
+                                                                                                                            isc error(error.toString, "163B7F9E-576B-7EFA-8F3C-E536012308B4")
+                                                                                                                        else {
+                                                                                                                            //isc debugTrap error
+                                                                                                                            val _error =
+                                                                                                                                error.asInstanceOf[ErrorStructOld]
+                                                                                                                            _error.error
+                                                                                                                              .foreach {
+                                                                                                                                  error ⇒
+                                                                                                                                      isc errorDetail(error.message
+                                                                                                                                        .getOrElse(
+                                                                                                                                            "Ошибка не определена"), error.stackTrace
+                                                                                                                                        .getOrElse(
+                                                                                                                                            "Ошибка не определена"))
+                                                                                                                              }
+                                                                                                                        }
+                                                                                                                } else {
+                                                                                                              form.clearValues()
+                                                                                                              isc ok "Пароль изменен. При следующем входе в систему используйте новый пароль."
+                                                                                                          }
+                                                                                                  }
 
-                                                          thizButton.Super("init", arguments)
-                                                  }.toThisFunc.opt
-                                              }
-                                          )
-                                      ).opt
+                                                                                          }.toFunc.opt
+                                                                                      }
+                                                                                  )
+                                                                              )
+                                                                      }
+                                                                    false
+                                                                }.toThisFunc.opt
+                                                            }
+                                                        )
 
-                                  }
-                              )
+                                                        thizButton.Super("init", arguments)
+                                                }.toThisFunc.opt
+                                            }
+                                        )
+                                    ).opt
+
+                                }
+                            )
                               .opt
                         }
                     )
