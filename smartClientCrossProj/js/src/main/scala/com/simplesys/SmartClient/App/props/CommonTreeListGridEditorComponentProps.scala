@@ -17,6 +17,15 @@ class CommonTreeListGridEditorComponentProps extends TreeListGridEditorProps wit
     var simpleTableTree: ScOption[Boolean] = false.opt
     var simpleTableList: ScOption[Boolean] = false.opt
 
+    var replacingFieldsList: ScOption[Seq[ListGridFieldProps]] = ScNone
+    var replacingFieldsTree: ScOption[Seq[ListGridFieldProps]] = ScNone
+
+    var captionMenuTree: ScOption[String] = ScNone
+    var captionMenuList: ScOption[String] = ScNone
+
+    var customMenuTree: ScOption[Seq[MenuSSItem]] = ScNone
+    var customMenuList: ScOption[Seq[MenuSSItem]] = ScNone
+
     canDragSelectText = false.opt
     autoFetchData = true.opt
     wrapTreeCells = true.opt
@@ -48,15 +57,6 @@ class CommonTreeListGridEditorComponentProps extends TreeListGridEditorProps wit
             width = 24.opt
         }
     ).opt
-
-    var replacingFieldsList: ScOption[Seq[ListGridFieldProps]] = ScNone
-    var replacingFieldsTree: ScOption[Seq[ListGridFieldProps]] = ScNone
-
-    var captionMenuTree: ScOption[String] = ScNone
-    var captionMenuList: ScOption[String] = ScNone
-
-    var customMenuTree: ScOption[Seq[MenuSSItem]] = ScNone
-    var customMenuList: ScOption[Seq[MenuSSItem]] = ScNone
 
     initWidget = {
         (thiz: classHandler, arguments: IscArray[JSAny]) =>
@@ -92,7 +92,7 @@ class CommonTreeListGridEditorComponentProps extends TreeListGridEditorProps wit
 
             /*checkReplacingField(thiz.fieldsTree, thiz.replacingFieldsTree)
             checkReplacingField1(thiz.fieldsTree, thiz.editingTreeFields)*/
-            
+
             val res1 = initWidget(thiz, thiz.fieldsTree, thiz.replacingFieldsTree, thiz.editingTreeFields)
             thiz.fieldsTree = res1._1
             thiz.editingTreeFields = res1._2
