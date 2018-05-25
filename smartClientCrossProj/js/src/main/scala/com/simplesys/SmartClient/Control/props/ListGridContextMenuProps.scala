@@ -36,9 +36,7 @@ object ListGridContextMenuProps {
                     simpleSyS checkOwner owner
                     
                     if (owner.treeGrid.newRequestProperties.isDefined)
-                        owner.startEditingNewInForm(
-                            requestProperties = (owner.treeGrid.newRequestProperties.get) ()
-                        )
+                        owner.startEditingNewInForm(requestProperties = (owner.treeGrid.newRequestProperties.get) ())
                     else
                         owner.startEditingNewInForm()
             }.toFunc.opt

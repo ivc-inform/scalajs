@@ -34,9 +34,7 @@ class TreeGridContextMenuProps extends MenuSSProps {
                     owner.deselectAllRecords()
 
                     if (owner.treeGrid.newRequestProperties.isDefined)
-                        owner.startEditingNewInForm(
-                            requestProperties = (owner.treeGrid.newRequestProperties.get) ()
-                        )
+                        owner.startEditingNewInForm(requestProperties = (owner.treeGrid.newRequestProperties.get) ())
                     else
                         owner.startEditingNewInForm()
 
@@ -67,9 +65,7 @@ class TreeGridContextMenuProps extends MenuSSProps {
 
                     request.data.asInstanceOf[JSDynamic].updateDynamic(parentIdField)(idValue)
 
-                    owner.startEditingNewInForm(
-                        requestProperties = request
-                    )
+                    owner.startEditingNewInForm(requestProperties = request)
 
             }.toFunc.opt
             enableIf = {
