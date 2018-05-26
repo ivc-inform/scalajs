@@ -7,7 +7,7 @@ import com.simplesys.SmartClient.Forms.formsItems.props.{CanvasItemProps, TextIt
 import com.simplesys.SmartClient.Forms.formsItems.{CanvasItem, TextItem}
 import com.simplesys.SmartClient.Forms.props.DynamicFormSSProps
 import com.simplesys.SmartClient.Foundation.Canvas
-import com.simplesys.SmartClient.Grids.ListGridEditor
+import com.simplesys.SmartClient.Grids.{ListGridEditor, TreeGridEditor}
 import com.simplesys.SmartClient.Grids.listGrid.ListGridRecord
 import com.simplesys.SmartClient.Layout.props.{HLayoutSSProps, OkCancelPanelProps, WindowSSProps}
 import com.simplesys.SmartClient.System.{Common, HLayoutSS, IButtonSS, _}
@@ -27,7 +27,7 @@ class LookupListGridEditorItemProps extends CanvasItemProps {
     var buttonIcon: ScOption[SCImgURL] = ScNone
 
     var listGridEditor: ScOption[ListGridEditor] = ScNone
-    var treeGridEditor: ScOption[ListGridEditor] = ScNone
+    var treeGridEditor: ScOption[TreeGridEditor] = ScNone
 
     align = Alignment.center.opt
 
@@ -270,6 +270,7 @@ class LookupListGridEditorItemProps extends CanvasItemProps {
                     }.toThisFunc.opt
                 }
             )
+
             HLayoutSS.create(
                 new HLayoutSSProps {
                     height = 20
