@@ -155,7 +155,6 @@ class LookupListGridEditorItemProps extends CanvasItemProps {
                                                                     editor,
                                                                     OkCancelPanel.create(
                                                                         new OkCancelPanelProps {
-                                                                            owner = window.opt
                                                                             padding = 5.opt
                                                                             okCaption = "Выбрать".opt
                                                                             ownerDestroy = false.opt

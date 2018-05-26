@@ -270,14 +270,14 @@ class LookupTreeGridEditorItemProps extends CanvasItemProps {
                                                                                                     listGrid.cancelEditing()
 
                                                                                                     listGrid.masterTreeGrid.foreach {
-                                                                                                        treeGrid ⇒
+                                                                                                        masterGrid ⇒
                                                                                                             isc.ask("Перейти в каталог переноса элемента ?", {
                                                                                                                 (value: Boolean) =>
                                                                                                                     if (value) {
-                                                                                                                        treeGrid.deselectAllRecords()
+                                                                                                                        masterGrid.deselectAllRecords()
 
-                                                                                                                        val keyValue: TreeNode = treeGrid.findByKey(valueId).asInstanceOf[TreeNode]
-                                                                                                                        treeGrid.selectRecord(keyValue)
+                                                                                                                        val keyValue: TreeNode = masterGrid.findByKey(valueId).asInstanceOf[TreeNode]
+                                                                                                                        masterGrid.selectRecord(keyValue)
 
                                                                                                                         val rec = listGrid.findByKey(listGridKeys)
                                                                                                                         listGrid selectRecord rec.asInstanceOf[ListGridRecord]

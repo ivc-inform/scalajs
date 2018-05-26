@@ -439,7 +439,7 @@ trait WebTabSetApp extends TabSetStack {
                                                         icon = Common.login.opt
                                                     }
                                                 ),
-                                                captionUserLabel
+                                                
                                             ).opt
                                             numRows = 3.opt
                                             titleHeight = 18.opt
