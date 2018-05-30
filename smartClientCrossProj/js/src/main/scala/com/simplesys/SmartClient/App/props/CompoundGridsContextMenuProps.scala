@@ -1,10 +1,9 @@
 package com.simplesys.SmartClient.App.props
 
 import com.simplesys.SmartClient.App.{CompoundGridsContextMenu, GridContextMenuData}
-import com.simplesys.SmartClient.Control.MenuSS
 import com.simplesys.SmartClient.Control.menu.MenuSSItem
+import com.simplesys.SmartClient.Control.props.MenuSSProps
 import com.simplesys.SmartClient.Control.props.menu.MenuSSItemProps
-import com.simplesys.SmartClient.Control.props.{ListGridContextMenuProps, ListGridContextMenuWithFormProps, MenuSSProps, TreeGridContextMenuProps}
 import com.simplesys.SmartClient.System.{MenuSSItem, _}
 import com.simplesys.System._
 import com.simplesys.function._
